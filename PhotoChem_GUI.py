@@ -3328,6 +3328,12 @@ def callback_plot_window(Planet, dir0):
         plot_window(Planet, dir0)
     return dummy
 
+
+def callback_plot(Planet, dir0):
+    def dummy():
+        plot(Planet, dir0)
+    return dummy
+
 ### Window definitions ###
 
 # Directory window
@@ -4044,6 +4050,35 @@ def plot_window(Planet, dir0):
     plt_win.title("Plot")
     plt_win.geometry("720x800")
 
+    plot_btn = tk.Button(plt_win, text=u'Plot')
+    plot_btn["command"] = callback_plot(Planet, dir0)
+    plot_btn.place(x=100, y=20)
+
+    species = []
+
+    path = './'+Planet+'/'+dir0+'/settings/plt_species.dat'
+    if os.path.exists(path) == True:
+        with open(path, mode = 'r') as f:
+            species = f.readlines()
+
+    for isp in range(len(species)):
+        species[isp] = species[isp].strip('\n')
+
+    density = [[] for i in range(len(species))]
+    altitude = [[] for i in range(len(species))]
+
+    for isp in range(len(species)):
+        path = './'+Planet+'/'+dir0+'/output/density/num/'+species[isp]+'.dat'
+        if os.path.exists(path) == True:
+            data = np.loadtxt(path, comments='!')
+            for i in range(len(data)):
+                altitude[isp].append(data[i][0])
+                density[isp].append(data[i][1])
+        
+
+# plot window
+def plot(Planet, dir0):
+
     species = []
 
     path = './'+Planet+'/'+dir0+'/settings/plt_species.dat'
@@ -4068,13 +4103,14 @@ def plot_window(Planet, dir0):
     fig = plt.figure()
     ax = fig.add_subplot(111)
     for isp in range(len(species)):
-        x = density[isp]
-        y = altitude[isp]
-        ax.plot(x, y, label=species[isp])
+        if species[isp] != 'M':
+            x = density[isp]
+            y = altitude[isp]
+            ax.plot(x, y, label=species[isp])
     ax.set_xlabel('density [m'+rf'$^3$'+']')
     ax.set_ylabel('altitude [km]')
     plt.xscale('log')
-    ax.set_xlim([1e5,1e24])
+    ax.set_xlim([1e5,np.max(density)*10])
     plt.legend(loc='best')
     plt.show()
     #print(density[0])
