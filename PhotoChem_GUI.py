@@ -3329,9 +3329,9 @@ def callback_plot_window(Planet, dir0):
     return dummy
 
 
-def callback_plot(Planet, dir0):
+def callback_plot(Planet, dir0, species, altitude, density):
     def dummy():
-        plot(Planet, dir0)
+        plot(Planet, dir0, species, altitude, density)
     return dummy
 
 ### Window definitions ###
@@ -4050,57 +4050,35 @@ def plot_window(Planet, dir0):
     plt_win.title("Plot")
     plt_win.geometry("720x800")
 
-    plot_btn = tk.Button(plt_win, text=u'Plot')
-    plot_btn["command"] = callback_plot(Planet, dir0)
+    species = []
+
+    path = './'+Planet+'/'+dir0+'/settings/plt_species.dat'
+    if os.path.exists(path) == True:
+        with open(path, mode = 'r') as f:
+            species = f.readlines()
+
+    for isp in range(len(species)):
+        species[isp] = species[isp].strip('\n')
+
+    density = [[] for i in range(len(species))]
+    altitude = [[] for i in range(len(species))]
+
+    for isp in range(len(species)):
+        path = './'+Planet+'/'+dir0+'/output/density/num/'+species[isp]+'.dat'
+        if os.path.exists(path) == True:
+            data = np.loadtxt(path, comments='!')
+            for i in range(len(data)):
+                altitude[isp].append(data[i][0])
+                density[isp].append(data[i][1])
+        
+    plot_btn = tk.Button(plt_win, text=u'Plot', font=('', '15'))
+    plot_btn["command"] = callback_plot(Planet, dir0, species, altitude, density)
     plot_btn.place(x=100, y=20)
 
-    species = []
+# plot
+def plot(Planet, dir0, species, altitude, density):
 
-    path = './'+Planet+'/'+dir0+'/settings/plt_species.dat'
-    if os.path.exists(path) == True:
-        with open(path, mode = 'r') as f:
-            species = f.readlines()
-
-    for isp in range(len(species)):
-        species[isp] = species[isp].strip('\n')
-
-    density = [[] for i in range(len(species))]
-    altitude = [[] for i in range(len(species))]
-
-    for isp in range(len(species)):
-        path = './'+Planet+'/'+dir0+'/output/density/num/'+species[isp]+'.dat'
-        if os.path.exists(path) == True:
-            data = np.loadtxt(path, comments='!')
-            for i in range(len(data)):
-                altitude[isp].append(data[i][0])
-                density[isp].append(data[i][1])
-        
-
-# plot window
-def plot(Planet, dir0):
-
-    species = []
-
-    path = './'+Planet+'/'+dir0+'/settings/plt_species.dat'
-    if os.path.exists(path) == True:
-        with open(path, mode = 'r') as f:
-            species = f.readlines()
-
-    for isp in range(len(species)):
-        species[isp] = species[isp].strip('\n')
-
-    density = [[] for i in range(len(species))]
-    altitude = [[] for i in range(len(species))]
-
-    for isp in range(len(species)):
-        path = './'+Planet+'/'+dir0+'/output/density/num/'+species[isp]+'.dat'
-        if os.path.exists(path) == True:
-            data = np.loadtxt(path, comments='!')
-            for i in range(len(data)):
-                altitude[isp].append(data[i][0])
-                density[isp].append(data[i][1])
-        
-    fig = plt.figure()
+    fig = plt.figure(figsize=(8,6))
     ax = fig.add_subplot(111)
     for isp in range(len(species)):
         if species[isp] != 'M':
@@ -4413,7 +4391,7 @@ def reaction_window(iplnt, Planet, list_s, list_e, dir0, version,
     run_btn["command"] = callback_reaction_analysis('Run', iplnt, reaction_chk_bln, fix_species_bln, dir0)
     run_btn.place(x=700, y=20)
 
-    plot_btn = tk.Button(lower_canvas, text=u'Plot')
+    plot_btn = tk.Button(lower_canvas, text=u'Plot', font=('', '15'))
     plot_btn["command"] = callback_plot_window(Planet, dir0)
     plot_btn.place(x=900, y=20)
 
