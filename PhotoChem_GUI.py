@@ -3546,25 +3546,31 @@ def input_fix_window(Planet, dir0, fix_species_bln, input_species_char,
     ybar.pack(side=tk.RIGHT, fill=tk.Y)
     ybar.config(command=fix_canvas.yview)
 
+    fix_canvas.config(yscrollcommand=ybar.set)
+    fix_canvas.config(scrollregion=(0,0,600,yline + 120 + len(input_species) * 60))
+    fix_canvas.pack(anchor=tk.NW, expand=1, fill=tk.BOTH)
+
     #frame on the main canvas
     fix_frame = tk.Frame(fix_canvas, width=600, height=yline + 120 + len(input_species) * 60)
     fix_canvas.create_window((0,0), window=fix_frame, anchor=tk.NW, width=fix_canvas.cget('width')) #place frame on the canvas
+    fix_canvas.bind("<MouseWheel>", lambda e:fix_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
+    fix_frame.bind("<MouseWheel>", lambda e:fix_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
 
     char0 = tk.Label(fix_frame, anchor="w", font=('', 20), text = u"Set path of input density files")
     char0.place(x = 10, y = 10 )
+    char0.bind("<MouseWheel>", lambda e:fix_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
     char1 = tk.Label(fix_frame, anchor="w", justify='left', text = u"Please enter the directory of input density files below.\nDirectory is loacted at ./"+Planet+"/'directory name'")
     char1.place(x = 10, y = 40 )
+    char1.bind("<MouseWheel>", lambda e:fix_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
 
     dir_input_species = tk.Entry(fix_frame, width=30)
     dir_input_species.place(x=10, y=100)
+    dir_input_species.bind("<MouseWheel>", lambda e:fix_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
 
     # display
     char2 = tk.Label(fix_frame, anchor="w", text = u"Please check below if you need to fix the density:") #desity -> density koyama
     char2.place(x = 10, y = yline-30 )
-
-    fix_canvas.config(yscrollcommand=ybar.set)
-    fix_canvas.config(scrollregion=(0,0,600,yline + 120 + len(input_species) * 60))
-    fix_canvas.pack(anchor=tk.NW, expand=1, fill=tk.BOTH)
+    char2.bind("<MouseWheel>", lambda e:fix_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
 
     # make fixed species check button
     chk_fix = {}
@@ -3586,9 +3592,10 @@ def input_fix_window(Planet, dir0, fix_species_bln, input_species_char,
         input_species_unicode = reaction_unicode(input_species[isp])
         chk_fix[isp] = tk.Checkbutton(fix_frame, width = 20, anchor="w", variable = fix_species_bln[isp], text = 'Fix '+input_species_unicode+' density')
         chk_fix[isp].place(x = 10, y = yline + isp * 60 )
+        chk_fix[isp].bind("<MouseWheel>", lambda e:fix_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
         path = tk.Label(fix_frame, anchor="w", text = u"path:")
-        path.pack()
         path.place(x = 10, y = yline + 30 + isp * 60 )
+        path.bind("<MouseWheel>", lambda e:fix_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
 
         fname1 = ''
         fixlabel = '0'
@@ -3610,6 +3617,7 @@ def input_fix_window(Planet, dir0, fix_species_bln, input_species_char,
         fname_input_species[isp] = tk.Entry(fix_frame, width=40)
         fname_input_species[isp].insert(tk.END, fname1)
         fname_input_species[isp].place(x=60,y = yline + 30 + isp * 60 )
+        fname_input_species[isp].bind("<MouseWheel>", lambda e:fix_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
 
     Done_btn = tk.Button(input_fix_win, font=('',15), text=u'Done')
     Done_btn["command"] = callback_done_input_fix_window(Planet, dir0, fix_species_bln, input_species_char,
@@ -3695,6 +3703,7 @@ def boundary_condition_set_window(Planet, dir0, bc_species):
 
     text = tk.Text(bc_frame, font=("",15), height=200, width=190, highlightthickness=0)
     text.pack()
+    text.bind("<MouseWheel>", lambda e:bc_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
     text.insert(tk.END, '====================================\n')
     text.insert(tk.END, '  Boundary Condition Setting\n')
     text.insert(tk.END, '====================================\n')
@@ -3706,12 +3715,16 @@ def boundary_condition_set_window(Planet, dir0, bc_species):
     bc_canvas.config(yscrollcommand=ybar.set)
     bc_canvas.config(scrollregion=(0,0,720,300 + len(bc_species) * 150))
     bc_canvas.pack(anchor=tk.NW, expand=1, fill=tk.BOTH)
+    bc_canvas.bind("<MouseWheel>", lambda e:bc_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
+    bc_frame.bind("<MouseWheel>", lambda e:bc_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
 
     ys = 200
     lower = tk.Label(bc_frame, anchor="w", justify='left', text = u"Lower Boundary")
     lower.place(x = 100, y = ys-30 )
+    lower.bind("<MouseWheel>", lambda e:bc_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
     upper = tk.Label(bc_frame, anchor="w", justify='left', text = u"Upper Boundary")
     upper.place(x = 350, y = ys-30 )
+    upper.bind("<MouseWheel>", lambda e:bc_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
 
     bcvl = {}
     bcvu = {}
@@ -3729,6 +3742,7 @@ def boundary_condition_set_window(Planet, dir0, bc_species):
         bc_species_unicode = reaction_unicode(bc_species[i])
         bcsp = tk.Label(bc_frame, anchor="w", justify='left', text = bc_species_unicode)
         bcsp.place(x = 40, y = ys + i*150 )
+        bcsp.bind("<MouseWheel>", lambda e:bc_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
 
         bcvl[i] = tk.IntVar()
         if jsp >= 0:
@@ -3738,37 +3752,47 @@ def boundary_condition_set_window(Planet, dir0, bc_species):
 
         rb1l = tk.Radiobutton(bc_frame,variable=bcvl[i],value=10000+i,text=u"[n]")
         rb1l.place(x=100, y = ys + i*150)
+        rb1l.bind("<MouseWheel>", lambda e:bc_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
         rb2l = tk.Radiobutton(bc_frame,variable=bcvl[i],value=20000+i,text=u"[f]")
         rb2l.place(x=100, y = ys + i*150+30)
+        rb2l.bind("<MouseWheel>", lambda e:bc_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
         rb3l = tk.Radiobutton(bc_frame,variable=bcvl[i],value=30000+i,text=u"[v]")
         rb3l.place(x=100, y = ys + i*150+60)
+        rb3l.bind("<MouseWheel>", lambda e:bc_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
         rb4l = tk.Radiobutton(bc_frame,variable=bcvl[i],value=40000+i,text=u"non")
         rb4l.place(x=100, y = ys + i*150+90)
+        rb4l.bind("<MouseWheel>", lambda e:bc_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
 
         chl1 = tk.Label(bc_frame,text=u"[/m\u00B3]")
         chl1.place(x=280, y = ys + i*150)
+        chl1.bind("<MouseWheel>", lambda e:bc_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
         chl2 = tk.Label(bc_frame,text=u"[/m\u00B2/s]")
         chl2.place(x=280, y = ys + i*150+30)
+        chl2.bind("<MouseWheel>", lambda e:bc_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
         chl3 = tk.Label(bc_frame,text=u"[/m/s]")
         chl3.place(x=280, y = ys + i*150+60)
+        chl3.bind("<MouseWheel>", lambda e:bc_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
 
         lbc_val1[i] = tk.Entry(bc_frame, width=13)
         if jsp >= 0:
             if Llabel[jsp] == '1':
                 lbc_val1[i].insert(tk.END, Lval[jsp])
         lbc_val1[i].place(x=145,y = ys + i*150 )
+        lbc_val1[i].bind("<MouseWheel>", lambda e:bc_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
 
         lbc_val2[i] = tk.Entry(bc_frame, width=13)
         if jsp >= 0:
             if Llabel[jsp] == '2':
                 lbc_val2[i].insert(tk.END, Lval[jsp])
         lbc_val2[i].place(x=145,y = ys + i*150+30 )
+        lbc_val2[i].bind("<MouseWheel>", lambda e:bc_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
 
         lbc_val3[i] = tk.Entry(bc_frame, width=13)
         if jsp >= 0:
             if Llabel[jsp] == '3':
                 lbc_val3[i].insert(tk.END, Lval[jsp])
         lbc_val3[i].place(x=145,y = ys + i*150+60 )
+        lbc_val3[i].bind("<MouseWheel>", lambda e:bc_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
 
         
         bcvu[i] = tk.IntVar()
@@ -3779,37 +3803,47 @@ def boundary_condition_set_window(Planet, dir0, bc_species):
 
         rb1u = tk.Radiobutton(bc_frame,variable=bcvu[i],value=10000+i,text=u"[n]")
         rb1u.place(x=350, y = ys + i*150)
+        rb1u.bind("<MouseWheel>", lambda e:bc_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
         rb2u = tk.Radiobutton(bc_frame,variable=bcvu[i],value=20000+i,text=u"[f]")
         rb2u.place(x=350, y = ys + i*150+30)
+        rb2u.bind("<MouseWheel>", lambda e:bc_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
         rb3u = tk.Radiobutton(bc_frame,variable=bcvu[i],value=30000+i,text=u"[v]")
         rb3u.place(x=350, y = ys + i*150+60)
+        rb3u.bind("<MouseWheel>", lambda e:bc_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
         rb4u = tk.Radiobutton(bc_frame,variable=bcvu[i],value=40000+i,text=u"non")
         rb4u.place(x=350, y = ys + i*150+90)
+        rb4u.bind("<MouseWheel>", lambda e:bc_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
 
         chu1 = tk.Label(bc_frame,text=u"[/m\u00B3]")
         chu1.place(x=530, y = ys + i*150)
+        chu1.bind("<MouseWheel>", lambda e:bc_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
         chu2 = tk.Label(bc_frame,text=u"[/m\u00B2/s]")
         chu2.place(x=530, y = ys + i*150+30)
+        chu2.bind("<MouseWheel>", lambda e:bc_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
         chu3 = tk.Label(bc_frame,text=u"[/m/s]")
         chu3.place(x=530, y = ys + i*150+60)
+        chu3.bind("<MouseWheel>", lambda e:bc_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
 
         ubc_val1[i] = tk.Entry(bc_frame, width=13)
         if jsp >= 0:
             if Ulabel[jsp] == '1':
                 ubc_val1[i].insert(tk.END, Uval[jsp])
         ubc_val1[i].place(x=395,y = ys + i*150 )
+        ubc_val1[i].bind("<MouseWheel>", lambda e:bc_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
 
         ubc_val2[i] = tk.Entry(bc_frame, width=13)
         if jsp >= 0:
             if Ulabel[jsp] == '2':
                 ubc_val2[i].insert(tk.END, Uval[jsp])
         ubc_val2[i].place(x=395,y = ys + i*150+30 )
+        ubc_val2[i].bind("<MouseWheel>", lambda e:bc_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
 
         ubc_val3[i] = tk.Entry(bc_frame, width=13)
         if jsp >= 0:
             if Ulabel[jsp] == '3':
                 ubc_val3[i].insert(tk.END, Uval[jsp])
         ubc_val3[i].place(x=395,y = ys + i*150+60 )
+        ubc_val3[i].bind("<MouseWheel>", lambda e:bc_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
 
     Done_btn = tk.Button(bc_canvas, font=('',15), text=u'Done')
     Done_btn["command"] = callback_done_boundary_condition_set_window(Planet, dir0, bc_species, bcvl, bcvu, bcset_win, 
@@ -3877,19 +3911,23 @@ def calculation_set_window(Planet, dir0):
     calc_canvas.config(yscrollcommand=ybar.set)
     calc_canvas.config(scrollregion=(0,0,720,1400))
     calc_canvas.pack(anchor=tk.NW, expand=1, fill=tk.BOTH)
+    calc_canvas.bind("<MouseWheel>", lambda e:calc_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
 
     text = tk.Text(calc_frame, font=("",15), height=200, width=190, highlightthickness=0)
     text.place(x=0,y=0)
+    text.bind("<MouseWheel>", lambda e:calc_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
     text.insert(tk.END, '############################################\n')
     text.insert(tk.END, '   Calculation Settings\n')
     text.insert(tk.END, '############################################\n')
 
     text = tk.Text(calc_frame, font=("",15), height=200, width=190, highlightthickness=0)
     text.place(x=0,y=100)
+    text.bind("<MouseWheel>", lambda e:calc_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
     text.insert(tk.END, '### Dimension setting ###\n')
 
     text = tk.Text(calc_frame, font=("",15), height=200, width=190, highlightthickness=0)
     text.place(x=0,y=120)
+    text.bind("<MouseWheel>", lambda e:calc_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
     text.insert(tk.END, '   - 1D \n')
     text.insert(tk.END, '   - 2D Lat \n')
     text.insert(tk.END, '   - 2D Rot \n')
@@ -3897,6 +3935,7 @@ def calculation_set_window(Planet, dir0):
 
     text = tk.Text(calc_frame, font=("",15), height=200, width=190, highlightthickness=0)
     text.place(x=100,y=120)
+    text.bind("<MouseWheel>", lambda e:calc_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
     text.insert(tk.END, ': vertical 1D (latitude is fixed. Please set latitude below.)\n')
     text.insert(tk.END, ': latitudenal 2D (LT is fixed to 0 hr)\n')
     text.insert(tk.END, ': Rotational 2D (latitude is fixed. Please set latitude below.)\n')
@@ -3910,15 +3949,20 @@ def calculation_set_window(Planet, dir0):
     rbval[1].set(int(dimension_input))
     rb1 = tk.Radiobutton(calc_frame,font=("",15),variable=rbval[1],value=1,text=u"1D")
     rb1.place(x=20, y = ys)
+    rb1.bind("<MouseWheel>", lambda e:calc_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
     rb2 = tk.Radiobutton(calc_frame,font=("",15),variable=rbval[1],value=2,text=u"2D Lat")
     rb2.place(x=120, y = ys)
+    rb2.bind("<MouseWheel>", lambda e:calc_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
     rb3 = tk.Radiobutton(calc_frame,font=("",15),variable=rbval[1],value=3,text=u"2D Rot")
     rb3.place(x=220, y = ys)
-    rb3 = tk.Radiobutton(calc_frame,font=("",15),variable=rbval[1],value=4,text=u"3D Rot")
-    rb3.place(x=320, y = ys)
+    rb3.bind("<MouseWheel>", lambda e:calc_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
+    rb4 = tk.Radiobutton(calc_frame,font=("",15),variable=rbval[1],value=4,text=u"3D Rot")
+    rb4.place(x=320, y = ys)
+    rb4.bind("<MouseWheel>", lambda e:calc_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
 
     text = tk.Text(calc_frame, font=("",15), height=200, width=190, highlightthickness=0)
     text.place(x=0,y=ys+50)
+    text.bind("<MouseWheel>", lambda e:calc_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
     text.insert(tk.END, '   - For 1D & 2D Rot mode\n')
     text.insert(tk.END, '      Please set latitude to be calculated. (This is ignored in other modes.)\n')
     text.insert(tk.END, '      Latitude : -90 [deg] ~ 90 [deg] \n')
@@ -3926,80 +3970,105 @@ def calculation_set_window(Planet, dir0):
     LAT = tk.Entry(calc_frame, width=7)
     LAT.insert(tk.END, lat_input)
     LAT.place(x=20,y = ys+120 )
+    LAT.bind("<MouseWheel>", lambda e:calc_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
     char = tk.Label(calc_frame,text=u"[deg]", font=("",15))
     char.place(x=100, y = ys+120)
+    char.bind("<MouseWheel>", lambda e:calc_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
 
     ys = 400
     text = tk.Text(calc_frame, font=("",15), height=200, width=190, highlightthickness=0)
     text.place(x=0,y=ys)
+    text.bind("<MouseWheel>", lambda e:calc_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
     text.insert(tk.END, '### Solar longitude [Ls] ###\n')
 
     char = tk.Label(calc_frame,font=("",15),text=u"Ls:")
     char.place(x=0, y = ys+50)
+    char.bind("<MouseWheel>", lambda e:calc_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
     ls = tk.Entry(calc_frame, width=6)
     ls.insert(tk.END, ls_input)
     ls.place(x=40,y = ys+50 )
+    ls.bind("<MouseWheel>", lambda e:calc_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
     char = tk.Label(calc_frame,font=("",15),text=u"[deg]")
     char.place(x=120, y = ys+50)
+    char.bind("<MouseWheel>", lambda e:calc_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
 
     ys = 500
     text = tk.Text(calc_frame, font=("",15), height=200, width=190, highlightthickness=0)
     text.place(x=0,y=ys)
+    text.bind("<MouseWheel>", lambda e:calc_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
     text.insert(tk.END, '### The number of maximum time steps ###\n')
 
     char = tk.Label(calc_frame,font=("",15),text=u"Maximum:")
     char.place(x=0, y = ys+50)
+    char.bind("<MouseWheel>", lambda e:calc_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
     stepmax = tk.Entry(calc_frame, width=7)
     stepmax.insert(tk.END, stepmax_input)
     stepmax.place(x=140,y = ys+50 )
+    stepmax.bind("<MouseWheel>", lambda e:calc_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
     char = tk.Label(calc_frame,font=("",15),text=u"time steps")
     char.place(x=210, y = ys+50)
+    char.bind("<MouseWheel>", lambda e:calc_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
 
     ys = 650
     text = tk.Text(calc_frame, font=("",15), height=200, width=190, highlightthickness=0)
     text.place(x=0,y=ys)
+    text.bind("<MouseWheel>", lambda e:calc_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
     text.insert(tk.END, '### Time setting for 1D calculation ###\n')
 
     char = tk.Label(calc_frame,font=("",15),text=u"Calculate until:")
     char.place(x=0, y = ys+50)
+    char.bind("<MouseWheel>", lambda e:calc_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
     sumdt = tk.Entry(calc_frame, width=7)
     sumdt.insert(tk.END, sumdt_input)
     sumdt.place(x=140,y = ys+50 )
+    sumdt.bind("<MouseWheel>", lambda e:calc_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
     char = tk.Label(calc_frame,font=("",15),text=u"[sec]")
     char.place(x=210, y = ys+50)
+    char.bind("<MouseWheel>", lambda e:calc_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
 
     char = tk.Label(calc_frame,font=("",15),text=u"dt must not excess:")
     char.place(x=0, y = ys+80)
+    char.bind("<MouseWheel>", lambda e:calc_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
     dtmax = tk.Entry(calc_frame, width=7)
     dtmax.insert(tk.END, dtmax_input)
     dtmax.place(x=140,y = ys+80 )
+    dtmax.bind("<MouseWheel>", lambda e:calc_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
     char = tk.Label(calc_frame,font=("",15),text=u"[sec]")
     char.place(x=210, y = ys+80 )
+    char.bind("<MouseWheel>", lambda e:calc_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
 
     ys = 800
     text = tk.Text(calc_frame, font=("",15), height=200, width=190, highlightthickness=0)
     text.place(x=0,y=ys)
+    text.bind("<MouseWheel>", lambda e:calc_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
     text.insert(tk.END, '### Time setting for 2D & 3D Rotational calculation ###\n')
 
     char = tk.Label(calc_frame,font=("",15),text=u"Calculate until:")
     char.place(x=0, y = ys+50)
+    char.bind("<MouseWheel>", lambda e:calc_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
     sumdtrot = tk.Entry(calc_frame, width=7)
     sumdtrot.insert(tk.END, sumdtrot_input)
     sumdtrot.place(x=140,y = ys+50 )
+    sumdtrot.bind("<MouseWheel>", lambda e:calc_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
     char = tk.Label(calc_frame,font=("",15),text=u"[Planetary days]")
     char.place(x=210, y = ys+50)
+    char.bind("<MouseWheel>", lambda e:calc_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
 
     char = tk.Label(calc_frame,font=("",15),text=u"dt must not excess:")
     char.place(x=0, y = ys+80)
+    char.bind("<MouseWheel>", lambda e:calc_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
     dtmaxrot = tk.Entry(calc_frame, width=7)
     dtmaxrot.insert(tk.END, dtmaxrot_input)
     dtmaxrot.place(x=140,y = ys+80 )
+    dtmaxrot.bind("<MouseWheel>", lambda e:calc_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
     char = tk.Label(calc_frame,font=("",15),text=u"[sec]")
     char.place(x=210, y = ys+80 )
+    char.bind("<MouseWheel>", lambda e:calc_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
 
     ys = 950
     text = tk.Text(calc_frame, font=("",15), height=200, width=190, highlightthickness=0)
     text.place(x=0,y=ys)
+    text.bind("<MouseWheel>", lambda e:calc_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
     text.insert(tk.END, '### Time advance scheme ###\n')
     text.insert(tk.END, '   - implicit scheme\n')
     text.insert(tk.END, '   - semi-implicit scheme\n')
@@ -4011,14 +4080,18 @@ def calculation_set_window(Planet, dir0):
     rbval[2].set(int(scheme_input))
     rb1 = tk.Radiobutton(calc_frame,font=("",15),variable=rbval[2],value=1,text=u"implicit")
     rb1.place(x=20, y = ys+100)
+    rb1.bind("<MouseWheel>", lambda e:calc_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
     rb2 = tk.Radiobutton(calc_frame,font=("",15),variable=rbval[2],value=2,text=u"semi-implicit")
     rb2.place(x=120, y = ys+100)
+    rb2.bind("<MouseWheel>", lambda e:calc_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
     rb3 = tk.Radiobutton(calc_frame,font=("",15),variable=rbval[2],value=3,text=u"explicit")
     rb3.place(x=260, y = ys+100)
+    rb3.bind("<MouseWheel>", lambda e:calc_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
 
     ys = 1100
     text = tk.Text(calc_frame, font=("",15), height=200, width=190, highlightthickness=0)
     text.place(x=0,y=ys)
+    text.bind("<MouseWheel>", lambda e:calc_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
     text.insert(tk.END, '### Inversion method for implicit scheme ###\n')
     text.insert(tk.END, '   - Catling method\n')
     text.insert(tk.END, '   - Chaffin method\n')
@@ -4029,8 +4102,10 @@ def calculation_set_window(Planet, dir0):
     rbval[3].set(int(inversion_input))
     rb1 = tk.Radiobutton(calc_frame,font=("",15),variable=rbval[3],value=1,text=u"Catling")
     rb1.place(x=20, y = ys+70)
+    rb1.bind("<MouseWheel>", lambda e:calc_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
     rb2 = tk.Radiobutton(calc_frame,font=("",15),variable=rbval[3],value=2,text=u"Chaffin")
     rb2.place(x=120, y = ys+70)
+    rb2.bind("<MouseWheel>", lambda e:calc_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
 
 
     # Done button
@@ -4116,11 +4191,6 @@ def ref_window(ref, ref_info):
     text.insert(tk.END, '\n')
     text.insert(tk.END, ' Detail:   '+ref_info+'\n')
 
-def set_mousewheel(widget, command):
-    """Activate / deactivate mousewheel scrolling when 
-    cursor is over / not over the widget respectively."""
-    widget.bind("<Enter>", lambda _: widget.bind_all('<MouseWheel>', command))
-    widget.bind("<Leave>", lambda _: widget.unbind_all('<MouseWheel>'))
 
 # Make Reaction & rate list window
 def reaction_window(iplnt, Planet, list_s, list_e, dir0, version,
