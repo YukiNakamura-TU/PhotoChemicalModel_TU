@@ -4116,6 +4116,12 @@ def ref_window(ref, ref_info):
     text.insert(tk.END, '\n')
     text.insert(tk.END, ' Detail:   '+ref_info+'\n')
 
+def set_mousewheel(widget, command):
+    """Activate / deactivate mousewheel scrolling when 
+    cursor is over / not over the widget respectively."""
+    widget.bind("<Enter>", lambda _: widget.bind_all('<MouseWheel>', command))
+    widget.bind("<Leave>", lambda _: widget.unbind_all('<MouseWheel>'))
+
 # Make Reaction & rate list window
 def reaction_window(iplnt, Planet, list_s, list_e, dir0, version,
                     reaction_chk_bln, fix_species_bln, input_species_char,
@@ -4171,20 +4177,20 @@ def reaction_window(iplnt, Planet, list_s, list_e, dir0, version,
     ### set each canvas ########################################################
     # scroll bar
     ybar = tk.Scrollbar(win, orient=tk.VERTICAL) #scroll bar
-    ybar.pack(side=tk.RIGHT, fill=tk.Y)
     xbar = tk.Scrollbar(win, orient=tk.HORIZONTAL) #scroll bar
     xbar.pack(side=tk.BOTTOM, fill=tk.X)
+    ybar.pack(side=tk.RIGHT, fill=tk.Y)
     #upper canvas
     upper_canvas = tk.Canvas(win, width=100,height=130, highlightthickness=0)
     upper_canvas.pack(side=tk.TOP, fill=tk.BOTH)
     #main canvas
-    main_canvas = tk.Canvas(win, width=1440,height=150, highlightthickness=0)
+    main_canvas = tk.Canvas(win, width=1280,height=600, highlightthickness=0)
     main_canvas.pack(anchor=tk.NW, expand=1, fill=tk.BOTH)
     #frame on the main canvas
-    frame = tk.Frame(main_canvas, width=1440,height=nlist*30+120)
+    frame = tk.Frame(main_canvas, width=1280,height=nlist*30+120)
     main_canvas.create_window((0,0), window=frame, anchor=tk.NW, width=main_canvas.cget('width')) #place frame on the canvas
     #lower canvas
-    lower_canvas = tk.Canvas(win, width=1440,height=60, highlightthickness=0)
+    lower_canvas = tk.Canvas(win, width=1280,height=60, highlightthickness=0)
     lower_canvas.pack(side=tk.BOTTOM, fill=tk.BOTH)
 
     txt = Planet + '    |  Curent project:   ./'+Planet+'/'+dir0
@@ -4207,11 +4213,16 @@ def reaction_window(iplnt, Planet, list_s, list_e, dir0, version,
 
     #set scroll bar
     #config function can access attributes of object
-    ybar.config(command=main_canvas.yview)
-    main_canvas.config(yscrollcommand=ybar.set)
     xbar.config(command=main_canvas.xview)
-    main_canvas.config(xscrollcommand=xbar.set)
-    main_canvas.config(scrollregion=(0,0,1440,nlist*30+120)) #(upper_left_x,upper_left_y,lower_right_x,lower_right_y)
+    ybar.config(command=main_canvas.yview)
+    main_canvas.config(xscrollcommand=xbar.set, yscrollcommand=ybar.set)
+    main_canvas.config(scrollregion=(0,0,1280,nlist*30+120)) #(upper_left_x,upper_left_y,lower_right_x,lower_right_y)
+
+    #mouse wheel bind
+    #ybar.bind('<MouseWheel>', lambda e:main_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),units))  
+    #ybar.bind('<Enter>',lambda e:ybar.focus_set())  
+    main_canvas.bind('<MouseWheel>',lambda e:main_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
+
 
     ########## Buttons ############
 
@@ -4368,16 +4379,20 @@ def reaction_window(iplnt, Planet, list_s, list_e, dir0, version,
     chk_reaction_L = tk.Text(frame, font=("",12), width = 45, height=nlist*30, highlightthickness=0)
     chk_reaction_L.insert(tk.INSERT, all_merged_reaction_L_text)
     chk_reaction_L.place(x = 25, y = 12)
+    chk_reaction_L.bind("<MouseWheel>", lambda e:main_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
     chk_array = tk.Text(frame, font=("",12), width = 45, height=nlist*30, highlightthickness=0)
     chk_array.insert(tk.INSERT, all_merged_array_text)
     chk_array.place(x = 150, y = 12)
+    chk_array.bind("<MouseWheel>", lambda e:main_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
     chk_reaction_R = tk.Text(frame, font=("",12), width = 45, height=nlist*30, highlightthickness=0)
     chk_reaction_R.insert(tk.INSERT, all_merged_reaction_R_text)
     chk_reaction_R.place(x = 200, y = 12)
+    chk_reaction_R.bind("<MouseWheel>", lambda e:main_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
     #rate
     chk_rate_all = tk.Text(frame, font=("",12), width = 45, height=nlist*30, highlightthickness=0)
     chk_rate_all.insert(tk.INSERT, all_merged_rate_text)
     chk_rate_all.place(x = 400, y = 12)
+    chk_rate_all.bind("<MouseWheel>", lambda e:main_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
 
 
     ### Lower canvas ###########################################################
