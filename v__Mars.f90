@@ -73,26 +73,10 @@ contains
       !
 
       ! calculation mode
-      !set%mode        =  1
       set%calc_stable =  0
       set%read_stable =  1
       set%test_loc    =  0
       set%sza         =  0.0_dp
-
-      ! Stable calculation settings
-      !set%nstep       = 30000 ! for stable solution (you should set large enough to calculate stable mode)
-      !set%fin_sec     = 1.0e8_dp*3.0e7_dp ! [sec]: calculation stops when sum of dt reashes this value
-      !set%dtime_limit = 1.0e14_dp ! [sec]: dt DO NOT exceed this value
-      !set%latitude    = 0.0_dp ! latitude [deg]
-
-      ! Solar longitude
-      !set%Ls          = 270
-
-      ! rotational calculation setting
-      !set%nday        = 2 ! planetary days
-
-      ! photochemical calculation scheme
-      !set%scheme      = 1
 
       !----------------------------------------------------------------
       !      SETTING HORIZONTAL RESOLUTION FOR 2D, 3D CALCULATION

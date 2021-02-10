@@ -127,6 +127,7 @@ contains
     type(var_), intent(in) :: var
     type(grd_), intent(in) :: grd
     character(len=256) fname, num
+    real(dp) xx, yy
     integer i, ip, is, ix, iy, iz, isp
 
     do isp = 1, spl%nsp
@@ -148,9 +149,12 @@ contains
           &      //trim(ADJUSTL(num))//'_'//trim(ADJUSTL(spl%species(isp)))//'.dat'
         open(11, file = fname, status = 'unknown' )
           do iy = 1, grd%ny
+            if (grd%ny == 1) yy = set%latitude 
+            if (grd%ny /= 1) yy = 180.0_dp*dble(iy-((grd%ny+1)/2))/dble(grd%ny-1)
             do ix = 1, grd%nx
-              write(11, *) 180_dp*dble(iy-((grd%ny+1)/2))/dble(grd%ny-1), &
-                &          360_dp*dble(ix-1)/dble(grd%nx-1), var%ni_3d(isp,ix,iy,iz)
+              xx = 360.0_dp*dble(ix-1)/dble(grd%nx-1)
+              write(11, *) yy, &
+                &          xx, var%ni_3d(isp,ix,iy,iz)
             end do
             write(11,*)
           end do
