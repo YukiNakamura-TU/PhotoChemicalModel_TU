@@ -19,7 +19,7 @@ contains
     spl%planet = 'Mars'
 
     ! Calculation settings
-    set%mode = '2D Rot'
+    set%mode = '1D'
     set%nstep = 10000
     set%fin_sec = 3.0e15_dp
     set%dtime_limit = 1.0e14_dp

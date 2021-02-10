@@ -16,6 +16,7 @@
 import tkinter as tk #GUI library
 import re #Regular expression
 import os #operating system interface
+import matplotlib.pyplot as plt
 
 # Followings are already in the project directory
 import rpn_parser #Infix Notation to Reversed Polish Notation parser
@@ -2712,6 +2713,12 @@ def reaction_analysis(action, iplnt, reaction_chk_bln, fix_species_bln, dir0):
             # Run Model
             os.system('./PhotoChemistry.sh')
 
+            path = './'+Planet+'/'+dir0+'/setting/plt_species.dat'
+            with open(path, mode = 'w') as f:
+                for isp in range(len(species)):
+                    f.write(species[isp]+'\n')
+                f.write('\n')
+
 
 # Make main Window ########################################################################################################
 win = tk.Tk()
@@ -4324,6 +4331,10 @@ def reaction_window(iplnt, Planet, list_s, list_e, dir0, version,
     run_btn = tk.Button(lower_canvas, text=u'Output f90 module\n& Run model')
     run_btn["command"] = callback_reaction_analysis('Run', iplnt, reaction_chk_bln, fix_species_bln, dir0)
     run_btn.place(x=700, y=20)
+
+    plot_btn = tk.Button(lower_canvas, text=u'Plot')
+    plot_btn["command"] = callback_plot_window(Planet, dir0)
+    plot_btn.place(x=900, y=20)
 
     # set all the check buttons in displayed window as True
     def all_Select_click():

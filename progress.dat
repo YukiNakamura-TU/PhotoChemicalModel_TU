@@ -6,9 +6,10 @@
 
 
  ----------------------------------------
-        2D rotational calculation     
+          1D stable calculation          
  ----------------------------------------
 
- skipped stable solution...
- calculating rotational mode...
- cpu_t  =    23.873345000000000       [s]
+ calculate stable solution...
+ dt     =    100000000000000.00       [s]
+ sum_t  =    3088777905865544.5       [s]
+ cpu_t  =    11.811093999999999       [s]
