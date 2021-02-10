@@ -4070,7 +4070,13 @@ def plot_window(Planet, dir0):
             for i in range(len(data)):
                 altitude[isp].append(data[i][0])
                 density[isp].append(data[i][1])
-        
+    
+    #xr = tk.Entry(plt_win, width=15)
+    #xr.insert(tk.END, xr_input)
+    #xr.place(x=80,y = 70 )
+    #char = tk.Label(plt_win,text=u"x range", font=("",15))
+    #char.place(x=10, y = 70)
+
     plot_btn = tk.Button(plt_win, text=u'Plot', font=('', '15'))
     plot_btn["command"] = callback_plot(Planet, dir0, species, altitude, density)
     plot_btn.place(x=100, y=20)
@@ -4391,7 +4397,7 @@ def reaction_window(iplnt, Planet, list_s, list_e, dir0, version,
     run_btn["command"] = callback_reaction_analysis('Run', iplnt, reaction_chk_bln, fix_species_bln, dir0)
     run_btn.place(x=700, y=20)
 
-    plot_btn = tk.Button(lower_canvas, text=u'Plot', font=('', '15'))
+    plot_btn = tk.Button(lower_canvas, text=u'Plot setting', font=('', '15'))
     plot_btn["command"] = callback_plot_window(Planet, dir0)
     plot_btn.place(x=900, y=20)
 
