@@ -2712,8 +2712,6 @@ def reaction_analysis(action, iplnt, reaction_chk_bln, fix_species_bln, dir0):
             os.system('./PhotoChemistry.sh')
 
 
-
-
 # Make main Window ########################################################################################################
 win = tk.Tk()
 win.title("GUI for Photochemical model")

@@ -15,3 +15,6 @@ tstex_modules
 *.mod
 */*/*.mod
 *.dSYM
+*/*/*.eps
+*/*.eps
+*.eps

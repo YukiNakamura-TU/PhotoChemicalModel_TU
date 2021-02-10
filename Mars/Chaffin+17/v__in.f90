@@ -25,7 +25,7 @@ contains
     set%dtime_limit = 1.0e14_dp
     set%latitude = 0.0_dp
     set%Ls = 0.0_dp
-    set%nday = 3.0
+    set%nday = 3.0_dp
     set%scheme = 'implicit'
     set%inversion = 'Chaffin'
 
