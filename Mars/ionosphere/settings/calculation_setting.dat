@@ -1,0 +1,10 @@
+Dimension : 1
+LAT : 0.0
+Ls : 0.0
+stepmax : 10000
+sumdtst : 1.0e6
+dtmaxst : 1.0e3
+sumdtrot : 3
+dtmaxrot : 100.0
+scheme : 1
+inversion : 1

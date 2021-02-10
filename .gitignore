@@ -1,0 +1,17 @@
+*/*/output/density/num/
+*/*/output/density/vmr/
+*/*/output/density/global/
+*/*/output/flux/
+*/*/output/rate/
+Jupiter/*/input/aurora
+Jupiter/*/input/density
+UV/xct
+html
+latex
+.vscode
+build/
+__pycache__
+tstex_modules
+*.mod
+*/*/*.mod
+*.dSYM

@@ -1,0 +1,4 @@
+O,H,H2
+O : L 4 lval 0 U 2 uval 1.2e12
+H : L 4 lval 0 U 3 uval jeans
+H2 : L 4 lval 0 U 3 uval jeans
