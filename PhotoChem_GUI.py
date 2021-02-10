@@ -17,6 +17,7 @@ import tkinter as tk #GUI library
 import re #Regular expression
 import os #operating system interface
 import matplotlib.pyplot as plt
+import numpy as np
 
 # Followings are already in the project directory
 import rpn_parser #Infix Notation to Reversed Polish Notation parser
@@ -2713,11 +2714,11 @@ def reaction_analysis(action, iplnt, reaction_chk_bln, fix_species_bln, dir0):
             # Run Model
             os.system('./PhotoChemistry.sh')
 
-            path = './'+Planet+'/'+dir0+'/setting/plt_species.dat'
+            path = './'+Planet+'/'+dir0+'/settings/plt_species.dat'
             with open(path, mode = 'w') as f:
-                for isp in range(len(species)):
+                for isp in range(len(species)-1):
                     f.write(species[isp]+'\n')
-                f.write('\n')
+                f.write(species[len(species)-1])
 
 
 # Make main Window ########################################################################################################
@@ -3320,6 +3321,11 @@ def callback_done_calculation_set_window(Planet, dir0,
             f.write('inversion : '+ str(rbval[3].get())+'\n')
 
         calcset_win.destroy()
+    return dummy
+
+def callback_plot_window(Planet, dir0):
+    def dummy():
+        plot_window(Planet, dir0)
     return dummy
 
 ### Window definitions ###
@@ -4032,7 +4038,46 @@ def calculation_set_window(Planet, dir0):
                                                                calcset_win)
     Done_btn.place(x=630, y = 10)
 
+# plot window
+def plot_window(Planet, dir0):
+    plt_win = tk.Toplevel()
+    plt_win.title("Plot")
+    plt_win.geometry("720x800")
 
+    species = []
+
+    path = './'+Planet+'/'+dir0+'/settings/plt_species.dat'
+    if os.path.exists(path) == True:
+        with open(path, mode = 'r') as f:
+            species = f.readlines()
+
+    for isp in range(len(species)):
+        species[isp] = species[isp].strip('\n')
+
+    density = [[] for i in range(len(species))]
+    altitude = [[] for i in range(len(species))]
+
+    for isp in range(len(species)):
+        path = './'+Planet+'/'+dir0+'/output/density/num/'+species[isp]+'.dat'
+        if os.path.exists(path) == True:
+            data = np.loadtxt(path, comments='!')
+            for i in range(len(data)):
+                altitude[isp].append(data[i][0])
+                density[isp].append(data[i][1])
+        
+    fig = plt.figure()
+    ax = fig.add_subplot(111)
+    for isp in range(len(species)):
+        x = density[isp]
+        y = altitude[isp]
+        ax.plot(x, y, label=species[isp])
+    ax.set_xlabel('density [m'+rf'$^3$'+']')
+    ax.set_ylabel('altitude [km]')
+    plt.xscale('log')
+    ax.set_xlim([1e5,1e24])
+    plt.legend(loc='best')
+    plt.show()
+    #print(density[0])
 
 # detailed reference window if no doi link is available
 def ref_window(ref, ref_info):
