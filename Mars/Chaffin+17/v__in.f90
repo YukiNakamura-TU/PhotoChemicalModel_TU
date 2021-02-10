@@ -19,7 +19,7 @@ contains
     spl%planet = 'Mars'
 
     ! Calculation settings
-    set%mode = '1D'
+    set%mode = '2D Rot'
     set%nstep = 10000
     set%fin_sec = 3.0e15_dp
     set%dtime_limit = 1.0e14_dp
@@ -28,6 +28,9 @@ contains
     set%nday = 3.0_dp
     set%scheme = 'implicit'
     set%inversion = 'Chaffin'
+    ! directory setting
+    set%dir_name = './Mars/Chaffin+17'
+    set%fnamestable = './Mars/Chaffin+17/output/density/n_stable.dat'
 
   end subroutine v__in__ini
 
@@ -44,8 +47,6 @@ contains
     real(dp) tmp
     character(len = 256) strm, fname
 
-    ! directory setting
-    set%dir_name = './Mars/Chaffin+17'
 
     ! grid setting
     grd%nx    = set%nx

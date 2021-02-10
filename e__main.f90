@@ -225,7 +225,7 @@ program e__main
           exit loopt
         end if
 
-        write(*,*) var%istep, var%dtime, var%sum_time, trim(adjustl(spl%species(var%max_dn_n(1)))), &
+        write(*,*) var%istep, var%dtime, var%sum_time, var%max_dn_n(1), &
         & var%max_dn_n(2), var%max_dn_n(3), var%m_mean(1)/cst%m_u
 
         var%sum_time = var%sum_time + var%dtime
@@ -257,6 +257,7 @@ program e__main
   end if
 
 
+
   !----------------------------------------------------------------------------------------------------------
   !
   !            Start photochemical calculation: 2D and 3D rotation (not exactly the global model)
@@ -268,7 +269,9 @@ program e__main
 
   if (set%mode == '2D Rot' .or. set%mode == '3D Rot') then
 
-    if (set%calc_stable == 0) then
+    set%inversion = 'Catling'
+
+    if (set%calc_stable == 0 .and. set%read_stable == 1) then
       xs = (grd%nx-1)/2+1
       open(11, file = set%fnamestable, status = 'unknown' )
         do iz = 1, grd%nz
@@ -296,6 +299,7 @@ program e__main
     flx%mode_factor = 1.0_dp
 
     var%dtime = cst%daysec / grd%nx
+    set%dtime_limit = cst%daysec / grd%nx
 
     grd%iy = 1
     do iy = 1, grd%ny
@@ -345,6 +349,8 @@ program e__main
               end do
             end do
           end if
+
+          write(*,*) iday, grd%iy, grd%ix
 
           grd%ix = grd%ix + 1
         end do ! end of x : local time

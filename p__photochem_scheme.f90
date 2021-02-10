@@ -286,7 +286,7 @@ contains
 
           ! if max(dN/N) < 10 %, then goes to larger dt (*10)
           ! if dt becomes 100000 [sec], unstable at HC layer
-          if ( var%dtime < set%dtime_limit - 1.0_dp) then
+          if ( var%dtime < set%dtime_limit * 0.99_dp ) then
             if ( var%max_dn_n(3) < eps ) then
               if (model == 'Catling') var%dtime = var%dtime * 1.1e0_dp
               if (model == 'Chaffin') var%dtime = var%dtime * 1.0e1_dp
@@ -304,7 +304,7 @@ contains
                 var%ni_new(isp,iz) = var%ni_0(isp,iz)
               end if
             end if
-          else if ( var%dtime  >= set%dtime_limit - 1.0_dp ) then
+          else if ( var%dtime  >= set%dtime_limit * 0.99_dp ) then
             var%dtime = set%dtime_limit ! dt DO NOT excess set%dtime_limit <- set at v__'planet'__ini
           end if
 

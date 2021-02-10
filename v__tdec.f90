@@ -14,7 +14,7 @@ module v__tdec
     real(dp) latitude, sza, Ls, DOY
     real(dp) fin_sec, dtime_limit
     integer nday, nlat, nstep
-    integer calc_stable, start_rot, test_loc
+    integer calc_stable, start_rot, test_loc, read_stable
     character(len=256) scheme, inversion, mode
     character(len=256) fnamestable, dir_name
   end type set_

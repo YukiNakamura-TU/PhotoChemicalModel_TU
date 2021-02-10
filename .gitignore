@@ -9,7 +9,8 @@ UV/xct
 html
 latex
 .vscode
-build/
+build/*
+!build/dummy
 __pycache__
 tstex_modules
 *.mod

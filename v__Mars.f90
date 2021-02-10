@@ -74,8 +74,8 @@ contains
 
       ! calculation mode
       !set%mode        =  1
-      set%calc_stable =  1
-      set%fnamestable = './Mars/input/density/n_stable_Ls90.dat'
+      set%calc_stable =  0
+      set%read_stable =  1
       set%test_loc    =  0
       set%sza         =  0.0_dp
 

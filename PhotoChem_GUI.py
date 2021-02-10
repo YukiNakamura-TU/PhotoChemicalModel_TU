@@ -2344,6 +2344,9 @@ def reaction_analysis(action, iplnt, reaction_chk_bln, fix_species_bln, dir0):
             if inversion_input == '2':
                 inv_char = 'Chaffin'
             f.write(   '    set%inversion = \''+inv_char+'\'\n')
+            f.write(   '    ! directory setting\n')
+            f.write(   '    set%dir_name = \'./'+Planet+'/'+dir0+'\'\n')
+            f.write(   "    set%fnamestable = './"+Planet+"/"+dir0+"/output/density/n_stable.dat'\n")
             f.write(   '\n')
             f.write(   '  end subroutine v__in__ini\n')
             f.write(   '\n')
@@ -2360,8 +2363,6 @@ def reaction_analysis(action, iplnt, reaction_chk_bln, fix_species_bln, dir0):
             f.write(   '    real(dp) tmp\n')
             f.write(   '    character(len = 256) strm, fname\n')
             f.write(   '\n')
-            f.write(   '    ! directory setting\n')
-            f.write(   '    set%dir_name = \'./'+Planet+'/'+dir0+'\'\n')
             f.write(   '\n')
 
             #f.write(   '    integer, parameter :: zs = '+str(zs)+'\n')
