@@ -1,0 +1,14 @@
+議事録 7/31(金)
+
+・Charge : ++(double charge)→ +2　+++→ +3　.count関数: 数を数える関数の利用も
+
+・mass: 同位体組成は考えられていない 
+   整数で使いたい時→option  　(pythonの)出力の時に入力パラメーターの確認画面
+
+・配列 1× と 2× 読み込み速い?
+
+・Production list 最大値 L1390～L1393  短縮化(1行で書ける)　　nch→リスト?
+　Jacobian listも
+
+・list 初期化を0に統一?
+

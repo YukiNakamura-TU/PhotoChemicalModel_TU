@@ -1,0 +1,17 @@
+議事録 8/3(月)
+
+・rate_label 不要　rate_coef 0→数字1つ探す
+
+・python 数式の解析パッケージがあると便利   T_electronとか工夫
+　カッコの場合分けをパッケージで
+   メタ
+
+・T/bとb/T 対応してない?
+
+・カッコの中を抜き出す　正規条件
+
+・L1696～L1701 改善?
+
+・condensation type 0で登録　L1570
+
+・鉛直分布は他のプログラムで計算　　ファイル出力　Impact,Meteoroid

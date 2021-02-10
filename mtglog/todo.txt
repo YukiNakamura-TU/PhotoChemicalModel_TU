@@ -1,0 +1,29 @@
+On Going:
+  ・論文のラベル付け->論文で分けれるようにする (藤田くん)
+  ・displayの速度改善(小山)
+  ・逆ポーランド記法(中村くん)
+
+TO DO:
+  GUI系(すぐできる)
+    ・reaction window の done→exitの方がいい
+    ・Update button -> reload? show all?
+    ・help windowでscroll barの注意書き追加(ボタンでしかスクロール出来ない)
+
+  General
+    ・GUI で分子種を操作できるように！(中村)
+    ・重複していて反応係数が違うものを選べるようにする+目立つように; ひとまずwarningを出すようにする
+    ・loss rateがないものにwarning出す+fortran上でlossがないspeciesは計算しない(生成するが、消失しないspeciesの処理)
+    ・温度依存性のあるreferenceとlabel (温度依存性ごとにreferenceが異なる時)をどう登録するか？ (議論)
+    例) 反応速度が3つあり、reference3つ登録が必要なケースが出てきた時
+    案) 反応速度の隣に書く　１行で書きたい
+    reference, labelを”その他”にして、違う場所で自由記述？
+    ・labelの表記法(議論)
+
+  将来:
+    ・重複していて反応係数が違うものを選べるようにする+目立つように
+    ・T(ion)、T(neutral)を各species毎にする？(将来的に)
+    ・同位体を扱えるようにする->表記ルールを決める必要あり,mass
+    ・Charge : ++(double charge)→ +2　+++→ +3　.count関数: 数を数える関数の利用も
+
+Done:
+  ・被っているものを出力できるようにしたい
