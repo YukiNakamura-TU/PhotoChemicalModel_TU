@@ -3363,15 +3363,19 @@ def directory_window(iplnt, Planet, list_s, list_e, reaction_chk_bln, fix_specie
     dir_canvas.config(yscrollcommand=ybar.set)
     dir_canvas.config(scrollregion=(0,0,680,300 + len(dir_list) * 30))
     dir_canvas.pack(anchor=tk.NW, expand=1, fill=tk.BOTH)
+    dir_canvas.bind("<MouseWheel>", lambda e:dir_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
+    dir_frame.bind("<MouseWheel>", lambda e:dir_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
 
     txt  = Planet
     txt_label = tk.Label(dir_frame, anchor="w", justify="left", font=('', 20), text=txt)
     txt_label.place(x=10, y=10)
+    txt_label.bind("<MouseWheel>", lambda e:dir_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
 
     txt  = '--------------------------\n'
     txt += 'Select or Create Project'
     txt_label = tk.Label(dir_frame, anchor="w", justify="left", font=('', 15), text=txt)
     txt_label.place(x=10, y=40)
+    txt_label.bind("<MouseWheel>", lambda e:dir_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
 
     txt  = '    # If you want to create new directory, please enter the name of new project (derectory) and press "Create New".\n'
     txt += '    # If you want to use a directory that already exists, please pless "select" to select from the project (directory) list below. \n'
@@ -3380,12 +3384,15 @@ def directory_window(iplnt, Planet, list_s, list_e, reaction_chk_bln, fix_specie
     txt += '    # Location of the project (directory) is: ./'+Planet+'/"project (directory) name"\n'
     txt_label = tk.Label(dir_frame, anchor="w", justify="left", font=('', 12), text=txt)
     txt_label.place(x=10, y=90)
+    txt_label.bind("<MouseWheel>", lambda e:dir_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
 
     yline = 180
     dir_create = tk.Entry(dir_frame, width=20)
     dir_create.place(x=90, y=yline)
+    dir_create.bind("<MouseWheel>", lambda e:dir_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
     create_btn = tk.Button(dir_frame, font=('', 12), text=u'Create New')
     create_btn.place(x=10, y=yline+4)
+    create_btn.bind("<MouseWheel>", lambda e:dir_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
     create_btn["command"] = callback_create_dir_window(iplnt, Planet, list_s, list_e,
                                                        reaction_chk_bln, fix_species_bln, input_species_char, search_list,
                                                        dir_win, dir_create)
@@ -3393,23 +3400,27 @@ def directory_window(iplnt, Planet, list_s, list_e, reaction_chk_bln, fix_specie
     txt  = 'Project (directory) list:'
     txt_label = tk.Label(dir_frame, anchor="w", justify="left", font=('', 12), text=txt)
     txt_label.place(x=10, y=yline+40)
-
+    txt_label.bind("<MouseWheel>", lambda e:dir_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
  
     for i in range(len(dir_list)):
         dir0 = dir_list[i]
 
         select_btn = tk.Button(dir_frame, font=('', 12), text=u'Select')
         select_btn.place(x=10, y=yline+70+(i*30))
+        select_btn.bind("<MouseWheel>", lambda e:dir_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
         select_btn["command"] = callback_select_dir_window(iplnt, Planet, list_s, list_e, dir0, version,
                                                             reaction_chk_bln, fix_species_bln, input_species_char, search_list,
                                                             dir_win)
         dir_label = tk.Label(dir_frame, font=('', 12), text=dir0)
         dir_label.place(x=70, y=yline+70+(i*30))
+        dir_label.bind("<MouseWheel>", lambda e:dir_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
 
         dir_save = tk.Entry(dir_frame, width=20)
         dir_save.place(x=260, y=yline+66+(i*30))
+        dir_save.bind("<MouseWheel>", lambda e:dir_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
         save_btn = tk.Button(dir_frame, font=('', 12), text=u'Save as')
         save_btn.place(x=200, y=yline+70+(i*30))
+        save_btn.bind("<MouseWheel>", lambda e:dir_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
         save_btn["command"] = callback_save_dir_window(iplnt, Planet, list_s, list_e, dir0, version,
                                                         reaction_chk_bln, fix_species_bln, input_species_char, search_list,
                                                         dir_win, dir_save)
