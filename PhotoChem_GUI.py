@@ -2329,7 +2329,7 @@ def reaction_analysis(action, iplnt, reaction_chk_bln, fix_species_bln, dir0):
             f.write(   '    set%dtime_limit = '+dtmax_input+'_dp\n')
             f.write(   '    set%latitude = '+lat_input+'_dp\n')
             f.write(   '    set%Ls = '+ls_input+'_dp\n')
-            f.write(   '    set%nday = '+sumdtrot_input+'\n')
+            f.write(   '    set%nday = '+sumdtrot_input+'_dp\n')
             scheme_char = ''
             if scheme_input == '1':
                 scheme_char = 'implicit'
