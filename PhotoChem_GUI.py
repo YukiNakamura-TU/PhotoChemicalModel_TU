@@ -3331,12 +3331,21 @@ def callback_plot_window(Planet, dir0):
 
 def callback_plot(Planet, dir0, species, altitude, action,
                   density, mixingratio, 
-                  sp_chk_bln, sp1, sp2):
+                  sp_chk_bln, sp1, sp2, 
+                  xr, yr):
 
     def dummy():
+        path = './'+Planet+'/'+dir0+'/settings/plt_range.dat'
+        with open(path, mode = 'w') as f:
+            f.write('xrm3:'+xr[0][0].get()+':'+xr[0][1].get()+'\n')
+            f.write('xrcm3:'+xr[1][0].get()+':'+xr[1][1].get()+'\n')
+            f.write('xrvmr:'+xr[2][0].get()+':'+xr[2][1].get()+'\n')
+            f.write('yr:'+yr[0].get()+':'+yr[1].get())
+
         plot(Planet, dir0, species, altitude, action,
              density, mixingratio, 
-             sp_chk_bln, sp1, sp2)
+             sp_chk_bln, sp1, sp2, 
+             xr, yr)
 
     return dummy
 
@@ -4173,6 +4182,39 @@ def plot_window(Planet, dir0):
     for isp in range(len(species)):
         species[isp] = species[isp].strip('\n')
 
+    lines = ['','']
+    xrm3 = ['','']
+    xrcm3 = ['','']
+    xrvmr = ['','']
+    yrin = ['','']
+
+    path = './'+Planet+'/'+dir0+'/settings/plt_range.dat'
+    if os.path.exists(path) == True:
+        with open(path, mode = 'r') as f:
+            lines = f.readlines()
+
+    for i in range(len(lines)):
+        if 'xrm3' in lines[i]:
+            tmp = re.findall('xrm3:(.*)',lines[i])
+            xrm3 = tmp[0].split(':')
+            xrm3[0].strip('\n').lstrip().rstrip()
+            xrm3[1].strip('\n').lstrip().rstrip()
+        if 'xrcm3' in lines[i]:
+            tmp = re.findall('xrcm3:(.*)',lines[i])
+            xrcm3 = tmp[0].split(':')
+            xrcm3[0].strip('\n').lstrip().rstrip()
+            xrcm3[1].strip('\n').lstrip().rstrip()
+        if 'xrvmr' in lines[i]:
+            tmp = re.findall('xrvmr:(.*)',lines[i])
+            xrvmr = tmp[0].split(':')
+            xrvmr[0].strip('\n').lstrip().rstrip()
+            xrvmr[1].strip('\n').lstrip().rstrip()
+        if 'yr' in lines[i]:
+            tmp = re.findall('yr:(.*)',lines[i])
+            yrin = tmp[0].split(':')
+            yrin[0].strip('\n').lstrip().rstrip()
+            yrin[1].strip('\n').lstrip().rstrip()
+
     density = [[] for i in range(len(species))]
     mixingratio = [[] for i in range(len(species))]
     altitude = [[] for i in range(len(species))]
@@ -4191,12 +4233,6 @@ def plot_window(Planet, dir0):
             data = np.loadtxt(path, comments='!')
             for i in range(len(data)):
                 mixingratio[isp].append(data[i][1])
-    
-    #xr = tk.Entry(plt_win, width=15)
-    #xr.insert(tk.END, xr_input)
-    #xr.place(x=80,y = 70 )
-    #char = tk.Label(plt_win,text=u"x range", font=("",15))
-    #char.place(x=10, y = 70)
 
     text = tk.Text(plt_frame, font=("",15), height=200, width=190, highlightthickness=0)
     text.place(x=0,y=0)
@@ -4251,46 +4287,109 @@ def plot_window(Planet, dir0):
 
     order_btn = tk.Button(plt_frame, text=u'set order & details', font=('', '15'))
     order_btn["command"] = callback_plot_order(Planet, dir0)
-    order_btn.place(x=500, y=100)
+    order_btn.place(x=500, y=60)
     order_btn.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
 
-    #xr = ['','']
-    #char = tk.Label(plt_frame,text=u"xrange", font=("",15))
-    #char.place(x=120, y = ys+40)
-    #char.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
-    #xr[0]  = tk.Entry(plt_frame, width=7)
-    #xr[0].place(x=40,y = ys+40 )
-    #xr[0].bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
-    #char = tk.Label(plt_frame,text=u" / ", font=("",15))
-    #char.place(x=120, y = ys+40)
-    #char.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
-    #xr[1]  = tk.Entry(plt_frame, width=7)
-    #xr[1].place(x=40,y = ys+40 )
-    #xr[1].bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
+    yr = ['','']
+    char = tk.Label(plt_frame,text=u"yrange:", font=("",15))
+    char.place(x=650, y = 150)
+    char.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
+    yr[0] = tk.Entry(plt_frame, width=6)
+    yr[0].insert(tk.END, yrin[0])
+    yr[0].place(x=720,y = 150 )
+    yr[0].bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
+    char = tk.Label(plt_frame,text=u" ~ ", font=("",15))
+    char.place(x=790, y = 150)
+    char.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
+    yr[1] = tk.Entry(plt_frame, width=6)
+    yr[1].insert(tk.END, yrin[1])
+    yr[1].place(x=815,y = 150 )
+    yr[1].bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
+    char = tk.Label(plt_frame,text=u" [km] ", font=("",15))
+    char.place(x=885, y = 150)
+    char.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
+
+    xr = [['',''],['',''],['','']]
+    char = tk.Label(plt_frame,text=u"xrange:", font=("",15))
+    char.place(x=650, y = 190)
+    char.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
+    xr[0][0]  = tk.Entry(plt_frame, width=6)
+    xr[0][0].insert(tk.END, xrm3[0])
+    xr[0][0].place(x=720,y = 190 )
+    xr[0][0].bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
+    char = tk.Label(plt_frame,text=u" ~ ", font=("",15))
+    char.place(x=790, y = 190)
+    char.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
+    xr[0][1]  = tk.Entry(plt_frame, width=6)
+    xr[0][1].insert(tk.END, xrm3[1])
+    xr[0][1].place(x=815,y = 190 )
+    xr[0][1].bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
+    char = tk.Label(plt_frame,text=u" [/m\u00B3] ", font=("",15))
+    char.place(x=885, y = 190)
+    char.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
 
     plt_denm_btn = tk.Button(plt_frame, text=u'Plot density [/m\u00B3]', font=('', '15'))
     plt_denm_btn["command"] = callback_plot(Planet, dir0, species, altitude, 'density [m^3]',
                                            density, mixingratio, 
-                                           sp_chk_bln, '', '')
-    plt_denm_btn.place(x=650, y=180)
+                                           sp_chk_bln, '', '', 
+                                           xr, yr)
+    plt_denm_btn.place(x=650, y=220)
     plt_denm_btn.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
+
+    char = tk.Label(plt_frame,text=u"xrange:", font=("",15))
+    char.place(x=650, y = 270)
+    char.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
+    xr[1][0]  = tk.Entry(plt_frame, width=6)
+    xr[1][0].insert(tk.END, xrcm3[0])
+    xr[1][0].place(x=720,y = 270 )
+    xr[1][0].bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
+    char = tk.Label(plt_frame,text=u" ~ ", font=("",15))
+    char.place(x=790, y = 270)
+    char.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
+    xr[1][1]  = tk.Entry(plt_frame, width=6)
+    xr[1][1].insert(tk.END, xrcm3[1])
+    xr[1][1].place(x=815,y = 270 )
+    xr[1][1].bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
+    char = tk.Label(plt_frame,text=u" [/cm\u00B3] ", font=("",15))
+    char.place(x=885, y = 270)
+    char.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
 
     plt_dencm_btn = tk.Button(plt_frame, text=u'Plot density [/cm\u00B3]', font=('', '15'))
     plt_dencm_btn["command"] = callback_plot(Planet, dir0, species, altitude, 'density [cm^3]',
                                            density, mixingratio, 
-                                           sp_chk_bln, '', '')
-    plt_dencm_btn.place(x=650, y=210)
+                                           sp_chk_bln, '', '', 
+                                           xr, yr)
+    plt_dencm_btn.place(x=650, y=300)
     plt_dencm_btn.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
+
+    char = tk.Label(plt_frame,text=u"xrange:", font=("",15))
+    char.place(x=650, y = 350)
+    char.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
+    xr[2][0]  = tk.Entry(plt_frame, width=6)
+    xr[2][0].insert(tk.END, xrvmr[0])
+    xr[2][0].place(x=720,y = 350 )
+    xr[2][0].bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
+    char = tk.Label(plt_frame,text=u" ~ ", font=("",15))
+    char.place(x=790, y = 350)
+    char.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
+    xr[2][1]  = tk.Entry(plt_frame, width=6)
+    xr[2][1].insert(tk.END, xrvmr[1])
+    xr[2][1].place(x=815,y = 350 )
+    xr[2][1].bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
+    char = tk.Label(plt_frame,text=u" [/cm\u00B3] ", font=("",15))
+    char.place(x=885, y = 350)
+    char.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
 
     plt_vmr_btn = tk.Button(plt_frame, text=u'Plot mixing ratio', font=('', '15'))
     plt_vmr_btn["command"] = callback_plot(Planet, dir0, species, altitude, 'mixing ratio',
                                            density, mixingratio, 
-                                           sp_chk_bln, '', '')
-    plt_vmr_btn.place(x=650, y=240)
+                                           sp_chk_bln, '', '', 
+                                           xr, yr)
+    plt_vmr_btn.place(x=650, y=380)
     plt_vmr_btn.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
 
     ys = 230 + 30*(len(species) // 5)
-    text = tk.Text(plt_frame, font=("",15), height=200, width=190, highlightthickness=0)
+    text = tk.Text(plt_frame, font=("",15), height=40, width=60, highlightthickness=0)
     text.place(x=0,y=ys)
     text.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
     text.insert(tk.END, '   - Entry 2 Species for density ratio plot\n')
@@ -4308,7 +4407,8 @@ def plot_window(Planet, dir0):
     plt_ratio_btn = tk.Button(plt_frame, text=u'Plot ratio', font=('', '15'))
     plt_ratio_btn["command"] = callback_plot(Planet, dir0, species, altitude, 'ratio',
                                              density, mixingratio, 
-                                             sp_chk_bln, sp1, sp2)
+                                             sp_chk_bln, sp1, sp2, 
+                                             xr, yr)
     plt_ratio_btn.place(x=300, y=ys+40)
     plt_ratio_btn.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
 
@@ -4340,14 +4440,13 @@ def plot_order_window(Planet, dir0):
         with open(path, mode = 'r') as f:
             line = f.readlines()
 
-    for isp in range(len(species)):
-        species[isp] = species[isp].strip('\n')
 
 
 # plot
 def plot(Planet, dir0, species, altitude, action,
          density, mixingratio, 
-         sp_chk_bln, sp1, sp2):
+         sp_chk_bln, sp1, sp2, 
+         xr, yr):
 
     nmax = 1.0e-100
 
@@ -4366,7 +4465,25 @@ def plot(Planet, dir0, species, altitude, action,
         ax1.set_xlabel('density [m'+rf'$^3$'+']')
         ax1.set_ylabel('altitude [km]')
         plt.xscale('log')
-        ax1.set_xlim([1e5,nmax*10])
+        xs = xr[0][0].get().lstrip().rstrip()
+        xe = xr[0][1].get().lstrip().rstrip()
+        if xs == '':
+            xs = '1e5'
+        if xe == '':
+            xe = str(nmax*10)
+        xs = float(xs)
+        xe = float(xe)
+        ax1.set_xlim([xs,xe])
+
+        ys = yr[0].get().lstrip().rstrip()
+        ye = yr[1].get().lstrip().rstrip()
+        if ys == '':
+            ys = np.min(altitude)
+        if ye == '':
+            ye = np.max(altitude)
+        ys = float(ys)
+        ye = float(ye)
+        ax1.set_ylim([ys,ye])
         plt.legend(loc='best')
         plt.show()
 
@@ -4389,7 +4506,25 @@ def plot(Planet, dir0, species, altitude, action,
         ax2.set_xlabel('density [cm'+rf'$^3$'+']')
         ax2.set_ylabel('altitude [km]')
         plt.xscale('log')
-        ax2.set_xlim([1e-1,nmax*10/1e6])
+        xs = xr[1][0].get()
+        xe = xr[1][1].get()
+        if xs == '':
+            xs = '1e-1'
+        if xe == '':
+            xe = str(nmax*10)
+        xs = float(xs)
+        xe = float(xe)
+        ax2.set_xlim([xs,xe])
+
+        ys = yr[0].get()
+        ye = yr[1].get()
+        if ys == '':
+            ys = np.min(altitude)
+        if ye == '':
+            ye = np.max(altitude)
+        ys = float(ys)
+        ye = float(ye)
+        ax2.set_ylim([ys,ye])
         plt.legend(loc='best')
         plt.show()
 
@@ -4406,7 +4541,25 @@ def plot(Planet, dir0, species, altitude, action,
         ax3.set_xlabel('mixing ratio')
         ax3.set_ylabel('altitude [km]')
         plt.xscale('log')
-        ax3.set_xlim([1e-15,1])
+        xs = xr[2][0].get().lstrip().rstrip()
+        xe = xr[2][1].get().lstrip().rstrip()
+        if xs == '':
+            xs = '1e-15'
+        if xe == '':
+            xe = '1'
+        xs = float(xs)
+        xe = float(xe)
+        ax3.set_xlim([xs,xe])
+
+        ys = yr[0].get()
+        ye = yr[1].get()
+        if ys == '':
+            ys = np.min(altitude)
+        if ye == '':
+            ye = np.max(altitude)
+        ys = float(ys)
+        ye = float(ye)
+        ax3.set_ylim([ys,ye])
         plt.legend(loc='upper left')
         plt.show()
 
@@ -4435,6 +4588,13 @@ def plot(Planet, dir0, species, altitude, action,
                     x5[i] = x5[i] * x4[i]
         ax4.set_xlabel(csp1+' / '+csp2+' ratio')
         ax4.set_ylabel('altitude [km]')
+        ys = yr[0].get()
+        ye = yr[1].get()
+        if ys == '':
+            ys = min(altitude)
+        if yr[1] == '':
+            ye = max(altitude)
+        ax4.set_ylim([ys,ye])
         plt.xscale('log')
         plt.legend(loc='upper left')
         plt.show()
