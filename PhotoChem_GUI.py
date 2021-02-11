@@ -3329,9 +3329,15 @@ def callback_plot_window(Planet, dir0):
     return dummy
 
 
-def callback_plot(Planet, dir0, species, altitude, density):
+def callback_plot(Planet, dir0, species, altitude, action,
+                  density, mixingratio, 
+                  sp_chk_bln, sp1, sp2):
+
     def dummy():
-        plot(Planet, dir0, species, altitude, density)
+        plot(Planet, dir0, species, altitude, action,
+             density, mixingratio, 
+             sp_chk_bln, sp1, sp2)
+
     return dummy
 
 ### Window definitions ###
@@ -4134,7 +4140,23 @@ def calculation_set_window(Planet, dir0):
 def plot_window(Planet, dir0):
     plt_win = tk.Toplevel()
     plt_win.title("Plot")
-    plt_win.geometry("720x800")
+    plt_win.geometry("1000x800")
+
+    plt_canvas = tk.Canvas(plt_win, width=1000,height=800,highlightthickness=0)
+
+    ybar = tk.Scrollbar(plt_win, orient=tk.VERTICAL) #scroll bar
+    ybar.pack(side=tk.RIGHT, fill=tk.Y)
+    ybar.config(command=plt_canvas.yview)
+
+    #frame on the main canvas
+    plt_frame = tk.Frame(plt_canvas, width=1000, height=1400)
+    plt_canvas.create_window((0,0), window=plt_frame, anchor=tk.NW, width=plt_canvas.cget('width')) #place frame on the canvas
+
+    plt_canvas.config(yscrollcommand=ybar.set)
+    plt_canvas.config(scrollregion=(0,0,1000,1400))
+    plt_canvas.pack(anchor=tk.NW, expand=1, fill=tk.BOTH)
+    plt_canvas.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
+    plt_frame.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
 
     species = []
 
@@ -4147,6 +4169,7 @@ def plot_window(Planet, dir0):
         species[isp] = species[isp].strip('\n')
 
     density = [[] for i in range(len(species))]
+    mixingratio = [[] for i in range(len(species))]
     altitude = [[] for i in range(len(species))]
 
     for isp in range(len(species)):
@@ -4156,6 +4179,13 @@ def plot_window(Planet, dir0):
             for i in range(len(data)):
                 altitude[isp].append(data[i][0])
                 density[isp].append(data[i][1])
+
+    for isp in range(len(species)):
+        path = './'+Planet+'/'+dir0+'/output/density/vmr/vmr_'+species[isp]+'.dat'
+        if os.path.exists(path) == True:
+            data = np.loadtxt(path, comments='!')
+            for i in range(len(data)):
+                mixingratio[isp].append(data[i][1])
     
     #xr = tk.Entry(plt_win, width=15)
     #xr.insert(tk.END, xr_input)
@@ -4163,26 +4193,173 @@ def plot_window(Planet, dir0):
     #char = tk.Label(plt_win,text=u"x range", font=("",15))
     #char.place(x=10, y = 70)
 
-    plot_btn = tk.Button(plt_win, text=u'Plot', font=('', '15'))
-    plot_btn["command"] = callback_plot(Planet, dir0, species, altitude, density)
-    plot_btn.place(x=100, y=20)
+    text = tk.Text(plt_frame, font=("",15), height=200, width=190, highlightthickness=0)
+    text.place(x=0,y=0)
+    text.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
+    text.insert(tk.END, '############################################\n')
+    text.insert(tk.END, '   Plot Settings\n')
+    text.insert(tk.END, '############################################\n')
+
+    text = tk.Text(plt_frame, font=("",15), height=200, width=190, highlightthickness=0)
+    text.place(x=0,y=120)
+    text.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
+    text.insert(tk.END, '   - Select Species \n')
+
+    sp_chk_bln = {}
+    for isp in range(len(species)):
+        sp_chk_bln[isp] = tk.BooleanVar()
+        sp_chk_bln[isp].set(True)
+        chk_btn = tk.Checkbutton(plt_frame, width = 30, anchor="w", variable = sp_chk_bln[isp], text = species[isp], font=('', '15'))
+        chk_btn.place(x = 50 + 120*(isp % 5), y = 200 + 30*(isp // 5))
+        chk_btn.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
+
+    def all_Select_click():
+        for isp in range(len(species)):
+            sp_chk_bln[isp].set(True)
+    all_Select_Button = tk.Button(plt_frame, text='All Select',command = all_Select_click, font=('', '15'))
+    all_Select_Button.place(x=40, y=150)
+    all_Select_Button.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
+
+    def all_Clear_click():
+        for isp in range(len(species)):
+            sp_chk_bln[isp].set(False)
+
+    all_Clear_Button = tk.Button(plt_frame, text='All Clear',command = all_Clear_click, font=('', '15'))
+    all_Clear_Button.place(x=150, y=150)
+    all_Clear_Button.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
+
+    plt_denm_btn = tk.Button(plt_frame, text=u'Plot density [/m\u00B3]', font=('', '15'))
+    plt_denm_btn["command"] = callback_plot(Planet, dir0, species, altitude, 'density [m^3]',
+                                           density, mixingratio, 
+                                           sp_chk_bln, '', '')
+    plt_denm_btn.place(x=650, y=180)
+    plt_denm_btn.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
+
+    plt_dencm_btn = tk.Button(plt_frame, text=u'Plot density [/cm\u00B3]', font=('', '15'))
+    plt_dencm_btn["command"] = callback_plot(Planet, dir0, species, altitude, 'density [m^3]',
+                                           density, mixingratio, 
+                                           sp_chk_bln, '', '')
+    plt_dencm_btn.place(x=650, y=210)
+    plt_dencm_btn.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
+
+    plt_vmr_btn = tk.Button(plt_frame, text=u'Plot mixing ratio', font=('', '15'))
+    plt_vmr_btn["command"] = callback_plot(Planet, dir0, species, altitude, 'mixing ratio',
+                                           density, mixingratio, 
+                                           sp_chk_bln, '', '')
+    plt_vmr_btn.place(x=650, y=240)
+    plt_vmr_btn.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
+
+    ys = 230 + 30*(len(species) // 5)
+    text = tk.Text(plt_frame, font=("",15), height=200, width=190, highlightthickness=0)
+    text.place(x=0,y=ys)
+    text.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
+    text.insert(tk.END, '   - Entry 2 Species for density ratio plot\n')
+
+    sp1 = tk.Entry(plt_frame, width=7)
+    sp1.place(x=40,y = ys+40 )
+    sp1.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
+    char = tk.Label(plt_frame,text=u" / ", font=("",15))
+    char.place(x=120, y = ys+40)
+    char.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
+    sp2 = tk.Entry(plt_frame, width=7)
+    sp2.place(x=140,y = ys+40 )
+    sp2.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
+
+    plt_ratio_btn = tk.Button(plt_frame, text=u'Plot ratio', font=('', '15'))
+    plt_ratio_btn["command"] = callback_plot(Planet, dir0, species, altitude, 'ratio',
+                                             density, mixingratio, 
+                                             sp_chk_bln, sp1, sp2)
+    plt_ratio_btn.place(x=300, y=ys+40)
+    plt_ratio_btn.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
 
 # plot
-def plot(Planet, dir0, species, altitude, density):
+def plot(Planet, dir0, species, altitude, action,
+         density, mixingratio, 
+         sp_chk_bln, sp1, sp2):
 
-    fig = plt.figure(figsize=(8,6))
-    ax = fig.add_subplot(111)
-    for isp in range(len(species)):
-        if species[isp] != 'M':
-            x = density[isp]
-            y = altitude[isp]
-            ax.plot(x, y, label=species[isp])
-    ax.set_xlabel('density [m'+rf'$^3$'+']')
-    ax.set_ylabel('altitude [km]')
-    plt.xscale('log')
-    ax.set_xlim([1e5,np.max(density)*10])
-    plt.legend(loc='best')
-    plt.show()
+    if action == 'density [m^3]':
+        fig = plt.figure(figsize=(8,6))
+        ax1 = fig.add_subplot(111)
+        x1 = [0]
+        y1 = [0]
+        for isp in range(len(species)):
+            if species[isp] != 'M' and sp_chk_bln[isp].get() == True:
+                x1 = density[isp]
+                y1 = altitude[isp]
+                ax1.plot(x1, y1, label=species[isp])
+        ax1.set_xlabel('density [m'+rf'$^3$'+']')
+        ax1.set_ylabel('altitude [km]')
+        plt.xscale('log')
+        ax1.set_xlim([1e5,np.max(density)*10])
+        plt.legend(loc='best')
+        plt.show()
+
+    if action == 'density [cm^3]':
+        fig = plt.figure(figsize=(8,6))
+        ax2 = fig.add_subplot(111)
+        x2 = [0]
+        y2 = [0]
+        for isp in range(len(species)):
+            if species[isp] != 'M' and sp_chk_bln[isp].get() == True:
+                x2 = density[isp]
+                for i in range(len(x2)):
+                    x2[i] = x2[i] / 1e6
+                y2 = altitude[isp]
+                ax2.plot(x2, y2, label=species[isp])
+                for i in range(len(x2)):
+                    x2[i] = x2[i] * 1e6
+        ax2.set_xlabel('density [cm'+rf'$^3$'+']')
+        ax2.set_ylabel('altitude [km]')
+        plt.xscale('log')
+        ax2.set_xlim([1e-1,np.max(density)*10/1e6])
+        plt.legend(loc='best')
+        plt.show()
+
+    if action == 'mixing ratio':
+        fig = plt.figure(figsize=(8,6))
+        ax3 = fig.add_subplot(111)
+        x3 = [0]
+        y3 = [0]
+        for isp in range(len(species)):
+            if species[isp] != 'M' and sp_chk_bln[isp].get() == True:
+                x3 = mixingratio[isp]
+                y3 = altitude[isp]
+                ax3.plot(x3, y3, label=species[isp])
+        ax3.set_xlabel('mixing ratio')
+        ax3.set_ylabel('altitude [km]')
+        plt.xscale('log')
+        ax3.set_xlim([1e-15,1])
+        plt.legend(loc='upper left')
+        plt.show()
+
+    if action == 'ratio':
+        fig = plt.figure(figsize=(8,6))
+        ax4 = fig.add_subplot(111)
+        x4 = [0]
+        y4 = [0]
+        print(sp1, sp2)
+        for isp in range(len(species)):
+            csp2 = sp2.get().lstrip().rstrip()
+            if species[isp] == csp2:
+                x4 = density[isp]
+                y4 = altitude[isp]
+            csp2 = reaction_unicode(csp2)
+        for isp in range(len(species)):
+            csp1 = sp1.get().lstrip().rstrip()
+            if species[isp] == csp1:
+                x5 = density[isp]
+                for i in range(len(x5)):
+                    x5[i] = x5[i] / x4[i]
+                y5 = altitude[isp]
+                csp1 = reaction_unicode(csp1)
+                ax4.plot(x5, y4, label=csp1+' / '+csp2+' ratio')
+                for i in range(len(x5)):
+                    x5[i] = x5[i] * x4[i]
+        ax4.set_xlabel(csp1+' / '+csp2+' ratio')
+        ax4.set_ylabel('altitude [km]')
+        plt.xscale('log')
+        plt.legend(loc='upper left')
+        plt.show()
 
 # detailed reference window if no doi link is available
 def ref_window(ref, ref_info):
@@ -4482,19 +4659,19 @@ def reaction_window(iplnt, Planet, list_s, list_e, dir0, version,
 
     Analysis_btn = tk.Button(lower_canvas, text=u'Reaction Analysis')
     Analysis_btn["command"] = callback_reaction_analysis('', iplnt, reaction_chk_bln, fix_species_bln, dir0)
-    Analysis_btn.place(x=400, y=20)
+    Analysis_btn.place(x=250, y=20)
 
     Output_btn = tk.Button(lower_canvas, text=u'Output f90 module')
     Output_btn["command"] = callback_reaction_analysis('Output', iplnt, reaction_chk_bln, fix_species_bln, dir0)
-    Output_btn.place(x=550, y=20)
+    Output_btn.place(x=400, y=20)
 
     run_btn = tk.Button(lower_canvas, text=u'Output f90 module\n& Run model')
     run_btn["command"] = callback_reaction_analysis('Run', iplnt, reaction_chk_bln, fix_species_bln, dir0)
-    run_btn.place(x=700, y=20)
+    run_btn.place(x=550, y=20)
 
     plot_btn = tk.Button(lower_canvas, text=u'Plot setting', font=('', '15'))
     plot_btn["command"] = callback_plot_window(Planet, dir0)
-    plot_btn.place(x=900, y=20)
+    plot_btn.place(x=700, y=20)
 
     # set all the check buttons in displayed window as True
     def all_Select_click():
