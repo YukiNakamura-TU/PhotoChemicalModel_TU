@@ -75,7 +75,10 @@ contains
       ! calculation mode
       !set%mode        =  1
       set%calc_stable =  1
-      set%fnamestable = './Jupiter/input/density/n_stable.dat'
+      set%read_stable =  1
+      set%test_loc    =  0
+      set%sza         =  0.0_dp
+      !set%fnamestable = './Jupiter/input/density/n_stable.dat'
 
       ! Stable calculation settings
       !set%nstep       = 30000 ! for stable solution (you should set large enough to calculate stable mode)
@@ -188,7 +191,7 @@ contains
     var%ki_special = 0.0_dp
 
       ! Meteoroid ablation input
-      fname = './'//trim(ADJUSTL(spl%planet))//'/input/Meteoroid/Meteoroid_prod.dat'
+      fname = './'//trim(ADJUSTL(set%dir_name))//'/input/Meteoroid/Meteoroid_prod.dat'
       open(11, file = fname, status = 'unknown' )
         do iz = 1, grd%nz
           read(11, *) tmpzarr(iz)

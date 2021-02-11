@@ -1,5 +1,5 @@
 H2, H2(v>=2), H2(v>=4), He, CH4, C2H2, C2H4, C2H6
-input/density
+in_metal/input/density
 H2:H2.dat;1
 H2(v>=2):H2_v2.dat;1
 H2(v>=4):H2_v4.dat;1

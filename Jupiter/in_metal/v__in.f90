@@ -11,11 +11,26 @@ module v__in
 contains
 
 
-  subroutine v__in__ini(spl) ! out
+  subroutine v__in__ini(spl, set) ! out
     type(spl_),           intent(out) :: spl
+    type(set_),           intent(out) :: set
 
     ! Planet type
     spl%planet = 'Jupiter'
+
+    ! Calculation settings
+    set%mode = '1D'
+    set%nstep = 10000
+    set%fin_sec = 3.0e7_dp
+    set%dtime_limit = 1.0e5_dp
+    set%latitude = 0.0_dp
+    set%Ls = 0.0_dp
+    set%nday = 3.0_dp
+    set%scheme = 'implicit'
+    set%inversion = 'Catling'
+    ! directory setting
+    set%dir_name = './Jupiter/in_metal'
+    set%fnamestable = './Jupiter/in_metal/output/density/n_stable.dat'
 
   end subroutine v__in__ini
 
@@ -32,8 +47,6 @@ contains
     real(dp) tmp
     character(len = 256) strm, fname
 
-    ! directory setting
-    set%dir_name = './Jupiter/in_metal'
 
     ! grid setting
     grd%nx    = set%nx
@@ -684,6 +697,7 @@ contains
     close(11)
 
     ! reaction type characters
+    var%nspecial = 0
     do ich = 1, spl%nch
       if (      spl%reaction_type_list(ich) == 1 ) then
         spl%reaction_type_char(ich) = 'photoionization'
@@ -691,16 +705,20 @@ contains
         spl%reaction_type_char(ich) = 'photodissociation'
       else if ( spl%reaction_type_list(ich) == 11 ) then
         spl%reaction_type_char(ich) = 'electron impact'
+        var%nspecial = var%nspecial + 1
       else if ( spl%reaction_type_list(ich) == 12 ) then
         spl%reaction_type_char(ich) = 'proton impact'
+        var%nspecial = var%nspecial + 1
       else if ( spl%reaction_type_list(ich) == 13 ) then
         spl%reaction_type_char(ich) = 'H impact'
+        var%nspecial = var%nspecial + 1
       else if ( spl%reaction_type_list(ich) == 30 ) then
         spl%reaction_type_char(ich) = 'pressure_dependent_3body'
       else if ( spl%reaction_type_list(ich) == 31 ) then
         spl%reaction_type_char(ich) = 'pressure_dependent_3bodyM'
       else if ( spl%reaction_type_list(ich) == 41 ) then
         spl%reaction_type_char(ich) = 'Meteoroid ablation'
+        var%nspecial = var%nspecial + 1
       end if
     end do
 
@@ -726,63 +744,64 @@ contains
 
     ! input density profiles
     var%ni   = 1.0e-20_dp
-    var%ni_0 = 1.0e-20_dp
 
     isp = sp_index(spl, 'H2')
-    open(11, file = './Jupiter/input/density/H2.dat', status = 'unknown' )
+    open(11, file = './Jupiter/in_metal/input/density/H2.dat', status = 'unknown' )
       do iz = 1, grd%nz
         read(11,*) tmp, var%ni(isp,iz)
       end do
     close(11)
 
     isp = sp_index(spl, 'He')
-    open(11, file = './Jupiter/input/density/He.dat', status = 'unknown' )
+    open(11, file = './Jupiter/in_metal/input/density/He.dat', status = 'unknown' )
       do iz = 1, grd%nz
         read(11,*) tmp, var%ni(isp,iz)
       end do
     close(11)
 
     isp = sp_index(spl, 'CH4')
-    open(11, file = './Jupiter/input/density/CH4.dat', status = 'unknown' )
+    open(11, file = './Jupiter/in_metal/input/density/CH4.dat', status = 'unknown' )
       do iz = 1, grd%nz
         read(11,*) tmp, var%ni(isp,iz)
       end do
     close(11)
 
     isp = sp_index(spl, 'C2H2')
-    open(11, file = './Jupiter/input/density/C2H2.dat', status = 'unknown' )
+    open(11, file = './Jupiter/in_metal/input/density/C2H2.dat', status = 'unknown' )
       do iz = 1, grd%nz
         read(11,*) tmp, var%ni(isp,iz)
       end do
     close(11)
 
     isp = sp_index(spl, 'C2H4')
-    open(11, file = './Jupiter/input/density/C2H4.dat', status = 'unknown' )
+    open(11, file = './Jupiter/in_metal/input/density/C2H4.dat', status = 'unknown' )
       do iz = 1, grd%nz
         read(11,*) tmp, var%ni(isp,iz)
       end do
     close(11)
 
     isp = sp_index(spl, 'C2H6')
-    open(11, file = './Jupiter/input/density/C2H6.dat', status = 'unknown' )
+    open(11, file = './Jupiter/in_metal/input/density/C2H6.dat', status = 'unknown' )
       do iz = 1, grd%nz
         read(11,*) tmp, var%ni(isp,iz)
       end do
     close(11)
 
     isp = sp_index(spl, 'H2(v>=2)')
-    open(11, file = './Jupiter/input/density/H2_v2.dat', status = 'unknown' )
+    open(11, file = './Jupiter/in_metal/input/density/H2_v2.dat', status = 'unknown' )
       do iz = 1, grd%nz
         read(11,*) tmp, var%ni(isp,iz)
       end do
     close(11)
 
     isp = sp_index(spl, 'H2(v>=4)')
-    open(11, file = './Jupiter/input/density/H2_v4.dat', status = 'unknown' )
+    open(11, file = './Jupiter/in_metal/input/density/H2_v4.dat', status = 'unknown' )
       do iz = 1, grd%nz
         read(11,*) tmp, var%ni(isp,iz)
       end do
     close(11)
+
+    var%ni_0 = var%ni
 
     ! Lower boundary condition
     var%LowerBC = 0.0_dp

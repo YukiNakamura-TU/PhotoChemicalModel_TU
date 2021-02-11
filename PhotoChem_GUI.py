@@ -3340,6 +3340,11 @@ def callback_plot(Planet, dir0, species, altitude, action,
 
     return dummy
 
+def callback_plot_order(Planet, dir0):
+    def dummy():
+        plot_order_window(Planet, dir0)
+    return dummy
+
 ### Window definitions ###
 
 # Directory window
@@ -4228,6 +4233,41 @@ def plot_window(Planet, dir0):
     all_Clear_Button.place(x=150, y=150)
     all_Clear_Button.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
 
+    def all_Select_ion_click():
+        for isp in range(len(species)):
+            if '+' in species[isp] or '-' in species[isp]:
+                sp_chk_bln[isp].set(True)
+    all_Select_ion_Button = tk.Button(plt_frame, text='All Select ion',command = all_Select_ion_click, font=('', '15'))
+    all_Select_ion_Button.place(x=250, y=150)
+    all_Select_ion_Button.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
+
+    def all_Select_neutral_click():
+        for isp in range(len(species)):
+            if '+' not in species[isp] and '-' not in species[isp]:
+                sp_chk_bln[isp].set(True)
+    all_Select_neutral_Button = tk.Button(plt_frame, text='All Select neutral',command = all_Select_neutral_click, font=('', '15'))
+    all_Select_neutral_Button.place(x=400, y=150)
+    all_Select_neutral_Button.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
+
+    order_btn = tk.Button(plt_frame, text=u'set order & details', font=('', '15'))
+    order_btn["command"] = callback_plot_order(Planet, dir0)
+    order_btn.place(x=500, y=100)
+    order_btn.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
+
+    #xr = ['','']
+    #char = tk.Label(plt_frame,text=u"xrange", font=("",15))
+    #char.place(x=120, y = ys+40)
+    #char.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
+    #xr[0]  = tk.Entry(plt_frame, width=7)
+    #xr[0].place(x=40,y = ys+40 )
+    #xr[0].bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
+    #char = tk.Label(plt_frame,text=u" / ", font=("",15))
+    #char.place(x=120, y = ys+40)
+    #char.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
+    #xr[1]  = tk.Entry(plt_frame, width=7)
+    #xr[1].place(x=40,y = ys+40 )
+    #xr[1].bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
+
     plt_denm_btn = tk.Button(plt_frame, text=u'Plot density [/m\u00B3]', font=('', '15'))
     plt_denm_btn["command"] = callback_plot(Planet, dir0, species, altitude, 'density [m^3]',
                                            density, mixingratio, 
@@ -4272,10 +4312,44 @@ def plot_window(Planet, dir0):
     plt_ratio_btn.place(x=300, y=ys+40)
     plt_ratio_btn.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
 
+def plot_order_window(Planet, dir0):
+    plt_win = tk.Toplevel()
+    plt_win.title("Set plot details")
+    plt_win.geometry("1000x800")
+
+    plt_canvas = tk.Canvas(plt_win, width=1000,height=800,highlightthickness=0)
+
+    ybar = tk.Scrollbar(plt_win, orient=tk.VERTICAL) #scroll bar
+    ybar.pack(side=tk.RIGHT, fill=tk.Y)
+    ybar.config(command=plt_canvas.yview)
+
+    #frame on the main canvas
+    plt_frame = tk.Frame(plt_canvas, width=1000, height=1400)
+    plt_canvas.create_window((0,0), window=plt_frame, anchor=tk.NW, width=plt_canvas.cget('width')) #place frame on the canvas
+
+    plt_canvas.config(yscrollcommand=ybar.set)
+    plt_canvas.config(scrollregion=(0,0,1000,1400))
+    plt_canvas.pack(anchor=tk.NW, expand=1, fill=tk.BOTH)
+    plt_canvas.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
+    plt_frame.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
+
+    line = []
+
+    path = './'+Planet+'/'+dir0+'/settings/plt_species_order.dat'
+    if os.path.exists(path) == True:
+        with open(path, mode = 'r') as f:
+            line = f.readlines()
+
+    for isp in range(len(species)):
+        species[isp] = species[isp].strip('\n')
+
+
 # plot
 def plot(Planet, dir0, species, altitude, action,
          density, mixingratio, 
          sp_chk_bln, sp1, sp2):
+
+    nmax = 1.0e-100
 
     if action == 'density [m^3]':
         fig = plt.figure(figsize=(8,6))
@@ -4284,13 +4358,15 @@ def plot(Planet, dir0, species, altitude, action,
         y1 = [0]
         for isp in range(len(species)):
             if species[isp] != 'M' and sp_chk_bln[isp].get() == True:
+                if nmax < np.max(density[isp]):
+                    nmax = np.max(density[isp])
                 x1 = density[isp]
                 y1 = altitude[isp]
                 ax1.plot(x1, y1, label=species[isp])
         ax1.set_xlabel('density [m'+rf'$^3$'+']')
         ax1.set_ylabel('altitude [km]')
         plt.xscale('log')
-        ax1.set_xlim([1e5,np.max(density)*10])
+        ax1.set_xlim([1e5,nmax*10])
         plt.legend(loc='best')
         plt.show()
 

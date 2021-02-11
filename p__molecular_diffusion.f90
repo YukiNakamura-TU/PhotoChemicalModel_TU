@@ -37,6 +37,8 @@ contains
           do iz = 1, grd%nz
 
             Tn(iz) = var%Tn(iz)! neutral temperature
+            Ti(iz) = var%Ti(iz)! ion temperature
+            Te(iz) = var%Te(iz)! electron temperature
 
             ! all species other than H, H2
             var%D_mol(isp,iz) = 1.0e17_dp*Tn(iz)**(0.75_dp)/(var%n_tot(iz)/1.0e6_dp)! [cm^2/s]
@@ -68,10 +70,11 @@ contains
     if (spl%planet == 'Jupiter') then
       sigma_atom = 2.7d-10 ! H2 molecule radius
       do isp = 1, spl%nsp
-        if ( spl%label_fix(isp) == 0 .and. spl%species(isp) /= 'M' ) then
+        if (  spl%species(isp) /= 'M' ) then
           do iz = 1, grd%nz
 
             Tn(iz) = var%Tn(iz)
+            Ti(iz) = var%Ti(iz)
 
             ! Collision Frequency
             tmp1 = 2.0_dp * var%n_tot(iz) * sigma_atom**2.0_dp
