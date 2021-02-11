@@ -4276,7 +4276,7 @@ def plot_window(Planet, dir0):
     plt_denm_btn.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
 
     plt_dencm_btn = tk.Button(plt_frame, text=u'Plot density [/cm\u00B3]', font=('', '15'))
-    plt_dencm_btn["command"] = callback_plot(Planet, dir0, species, altitude, 'density [m^3]',
+    plt_dencm_btn["command"] = callback_plot(Planet, dir0, species, altitude, 'density [cm^3]',
                                            density, mixingratio, 
                                            sp_chk_bln, '', '')
     plt_dencm_btn.place(x=650, y=210)
@@ -4377,6 +4377,8 @@ def plot(Planet, dir0, species, altitude, action,
         y2 = [0]
         for isp in range(len(species)):
             if species[isp] != 'M' and sp_chk_bln[isp].get() == True:
+                if nmax < np.max(density[isp]):
+                    nmax = np.max(density[isp])
                 x2 = density[isp]
                 for i in range(len(x2)):
                     x2[i] = x2[i] / 1e6
@@ -4387,7 +4389,7 @@ def plot(Planet, dir0, species, altitude, action,
         ax2.set_xlabel('density [cm'+rf'$^3$'+']')
         ax2.set_ylabel('altitude [km]')
         plt.xscale('log')
-        ax2.set_xlim([1e-1,np.max(density)*10/1e6])
+        ax2.set_xlim([1e-1,nmax*10/1e6])
         plt.legend(loc='best')
         plt.show()
 
