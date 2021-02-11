@@ -4183,7 +4183,6 @@ def plot(Planet, dir0, species, altitude, density):
     ax.set_xlim([1e5,np.max(density)*10])
     plt.legend(loc='best')
     plt.show()
-    #print(density[0])
 
 # detailed reference window if no doi link is available
 def ref_window(ref, ref_info):
