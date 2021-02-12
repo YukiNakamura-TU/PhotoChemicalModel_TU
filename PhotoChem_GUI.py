@@ -4577,7 +4577,6 @@ def plot(Planet, dir0, species, altitude, action,
         ax4 = fig.add_subplot(111)
         x4 = [0]
         y4 = [0]
-        print(sp1, sp2)
         for isp in range(len(species)):
             csp2 = sp2.get().lstrip().rstrip()
             if species[isp] == csp2:
@@ -4601,8 +4600,10 @@ def plot(Planet, dir0, species, altitude, action,
         ye = yr[1].get()
         if ys == '':
             ys = min(altitude)
-        if yr[1] == '':
+        if ye == '':
             ye = max(altitude)
+        ys = float(ys)
+        ye = float(ye)
         ax4.set_ylim([ys,ye])
         plt.xscale('log')
         plt.legend(loc='upper left')
