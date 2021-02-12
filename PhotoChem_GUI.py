@@ -4432,15 +4432,6 @@ def plot_order_window(Planet, dir0):
     ybar.config(command=plt_canvas.yview)
 
     #frame on the main canvas
-    plt_frame = tk.Frame(plt_canvas, width=1000, height=1400)
-    plt_canvas.create_window((0,0), window=plt_frame, anchor=tk.NW, width=plt_canvas.cget('width')) #place frame on the canvas
-
-    plt_canvas.config(yscrollcommand=ybar.set)
-    plt_canvas.config(scrollregion=(0,0,1000,1400))
-    plt_canvas.pack(anchor=tk.NW, expand=1, fill=tk.BOTH)
-    plt_canvas.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
-    plt_frame.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
-
     lines = []
 
     path = './'+Planet+'/'+dir0+'/settings/plt_species_order.dat'
@@ -4448,14 +4439,13 @@ def plot_order_window(Planet, dir0):
         with open(path, mode = 'r') as f:
             lines = f.readlines()
 
-    print(lines)
-    detailtext = tk.Text(plt_frame, highlightthickness=1)
-    detailtext.place(x=0,y=40, height=400, width=400 )
+    detailtext = tk.Text(plt_win, bd = 2, bg = '#EEEEFF')
+    detailtext.place(x=0,y=100, height=400, width=400 )
     detailtext.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
     for i in range(len(lines)):
         detailtext.insert(tk.END, lines[i])
 
-    plt_detail_btn = tk.Button(plt_frame, text=u'Done', font=('', '15'))
+    plt_detail_btn = tk.Button(plt_win, text=u'Done', font=('', '15'))
     plt_detail_btn["command"] = callback_plot_order_done(Planet, dir0, detailtext, plt_win)
     plt_detail_btn.place(x=300, y=40)
     plt_detail_btn.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
