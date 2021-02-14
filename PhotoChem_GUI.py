@@ -4384,7 +4384,7 @@ def plot_window(Planet, dir0):
     xr[2][1].insert(tk.END, xrvmr[1])
     xr[2][1].place(x=815,y = 350 )
     xr[2][1].bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
-    char = tk.Label(plt_frame,text=u" [/cm\u00B3] ", font=("",15))
+    char = tk.Label(plt_frame,text=u"  ", font=("",15))
     char.place(x=885, y = 350)
     char.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
 
@@ -4447,8 +4447,15 @@ def plot_order_window(Planet, dir0):
 
     plt_detail_btn = tk.Button(plt_win, text=u'Done', font=('', '15'))
     plt_detail_btn["command"] = callback_plot_order_done(Planet, dir0, detailtext, plt_win)
-    plt_detail_btn.place(x=300, y=40)
+    plt_detail_btn.place(x=400, y=10)
     plt_detail_btn.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
+
+    # rule
+    # orders are as follows
+    # species:Color
+    # species{bandle}:Color
+    # CO2:#FFFFFF
+    # C3Hn+{C3H+, C3H2+, ,,,}:#FFFFFF
 
 
 # plot
@@ -4582,7 +4589,7 @@ def plot(Planet, dir0, species, altitude, action,
             if species[isp] == csp2:
                 x4 = density[isp]
                 y4 = altitude[isp]
-            csp2 = reaction_unicode(csp2)
+            unicsp2 = reaction_unicode(csp2)
         for isp in range(len(species)):
             csp1 = sp1.get().lstrip().rstrip()
             if species[isp] == csp1:
@@ -4590,11 +4597,11 @@ def plot(Planet, dir0, species, altitude, action,
                 for i in range(len(x5)):
                     x5[i] = x5[i] / x4[i]
                 y5 = altitude[isp]
-                csp1 = reaction_unicode(csp1)
-                ax4.plot(x5, y4, label=csp1+' / '+csp2+' ratio')
+                unicsp1 = reaction_unicode(csp1)
+                ax4.plot(x5, y4, label=unicsp1+' / '+unicsp2+' ratio')
                 for i in range(len(x5)):
                     x5[i] = x5[i] * x4[i]
-        ax4.set_xlabel(csp1+' / '+csp2+' ratio')
+        ax4.set_xlabel(unicsp1+' / '+unicsp2+' ratio')
         ax4.set_ylabel('altitude [km]')
         ys = yr[0].get()
         ye = yr[1].get()

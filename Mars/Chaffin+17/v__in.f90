@@ -365,6 +365,10 @@ contains
     ! Lower boundary condition
     var%LowerBC = 0.0_dp
 
+    isp = sp_index(spl, 'CO2')
+    var%LowerBC(isp,1) = 1.0_dp
+    var%LowerBC(isp,2) = 2.1e23_dp
+
     isp = sp_index(spl, 'N2')
     var%LowerBC(isp,1) = 1.0_dp
     var%LowerBC(isp,2) = 4.0e21_dp
