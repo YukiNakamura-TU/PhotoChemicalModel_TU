@@ -4698,9 +4698,11 @@ def reaction_window(iplnt, Planet, list_s, list_e, dir0, version,
     #main canvas
     main_canvas = tk.Canvas(win, width=1280,height=600, highlightthickness=0)
     main_canvas.pack(anchor=tk.NW, expand=1, fill=tk.BOTH)
+    main_canvas.bind('<MouseWheel>',lambda e:main_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
     #frame on the main canvas
     frame = tk.Frame(main_canvas, width=1280,height=nlist*30+120)
     main_canvas.create_window((0,0), window=frame, anchor=tk.NW, width=main_canvas.cget('width')) #place frame on the canvas
+    frame.bind('<MouseWheel>',lambda e:main_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
     #lower canvas
     lower_canvas = tk.Canvas(win, width=1280,height=60, highlightthickness=0)
     lower_canvas.pack(side=tk.BOTTOM, fill=tk.BOTH)
@@ -4729,12 +4731,6 @@ def reaction_window(iplnt, Planet, list_s, list_e, dir0, version,
     ybar.config(command=main_canvas.yview)
     main_canvas.config(xscrollcommand=xbar.set, yscrollcommand=ybar.set)
     main_canvas.config(scrollregion=(0,0,1280,nlist*30+120)) #(upper_left_x,upper_left_y,lower_right_x,lower_right_y)
-
-    #mouse wheel bind
-    #ybar.bind('<MouseWheel>', lambda e:main_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),units))  
-    #ybar.bind('<Enter>',lambda e:ybar.focus_set())  
-    main_canvas.bind('<MouseWheel>',lambda e:main_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
-
 
     ########## Buttons ############
 
@@ -4802,10 +4798,12 @@ def reaction_window(iplnt, Planet, list_s, list_e, dir0, version,
     chk_label_all = tk.Text(frame, font=("",12), width = 50, height=nlist*30, highlightthickness=0)
     chk_label_all.place(x = 810, y = 12)
     hyperlink_label = tkHyperlinkManager.HyperlinkManager(chk_label_all)
+    chk_label_all.bind("<MouseWheel>", lambda e:main_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
     #reference
     chk_reference_all = tk.Text(frame, font=("",12), width = 100, height=nlist*30, highlightthickness=0)
     chk_reference_all.place(x = 1100, y = 12)
     hyperlink_reference = tkHyperlinkManager.HyperlinkManager(chk_reference_all)
+    chk_reference_all.bind("<MouseWheel>", lambda e:main_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
 
     for ich in range(len(reaction_rate_list)):
         if ich >= list_s and ich <= list_e and search_list[ich] == 1:
