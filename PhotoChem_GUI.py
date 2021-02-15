@@ -4423,7 +4423,7 @@ def plot_window(Planet, dir0):
 def plot_order_window(Planet, dir0):
     plt_win = tk.Toplevel()
     plt_win.title("Set plot details")
-    plt_win.geometry("600x800")
+    plt_win.geometry("1000x800")
 
     plt_canvas = tk.Canvas(plt_win, width=1000,height=800,highlightthickness=0)
 
@@ -4440,7 +4440,7 @@ def plot_order_window(Planet, dir0):
             lines = f.readlines()
 
     detailtext = tk.Text(plt_win, bd = 2, bg = '#EEEEFF', font=('', '15'))
-    detailtext.place(x=0,y=100, height=400, width=400 )
+    detailtext.place(x=0,y=100, height=400, width=800 )
     detailtext.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
     for i in range(len(lines)):
         if lines[i] != '\n':
@@ -4552,17 +4552,53 @@ def plot(Planet, dir0, species, altitude, action,
         ax2 = fig.add_subplot(111)
         x2 = [0]
         y2 = [0]
-        for isp in range(len(species)):
-            if species[isp] != 'M' and sp_chk_bln[isp].get() == True:
-                if nmax < np.max(density[isp]):
-                    nmax = np.max(density[isp])
-                x2 = density[isp]
-                for i in range(len(x2)):
-                    x2[i] = x2[i] / 1e6
-                y2 = altitude[isp]
-                ax2.plot(x2, y2, label=species[isp])
-                for i in range(len(x2)):
-                    x2[i] = x2[i] * 1e6
+        label = 0
+        for i in range(len(sp_order)):
+            if sp_order[i] != '0':
+                label = 1
+        if label == 0:
+            for isp in range(len(species)):
+                if species[isp] != 'M' and sp_chk_bln[isp].get() == True:
+                    if nmax < np.max(density[isp]):
+                        nmax = np.max(density[isp])
+                    x2 = density[isp]
+                    for i in range(len(x2)):
+                        x2[i] = x2[i] / 1e6
+                    y2 = altitude[isp]
+                    ax2.plot(x2, y2, label=reaction_unicode(species[isp]))
+                    for i in range(len(x2)):
+                        x2[i] = x2[i] * 1e6
+        if label == 1:
+            for i in range(len(sp_order)):
+                if sp_bandle[i] == '0':
+                    for isp in range(len(species)):
+                        if sp_order[i] == species[isp]:
+                            if nmax < np.max(density[isp]):
+                                nmax = np.max(density[isp])
+                            x2 = density[isp]
+                            for j in range(len(x2)):
+                                x2[j] = x2[j] / 1e6
+                            y2 = altitude[isp]
+                            ax2.plot(x2, y2, label=reaction_unicode(species[isp]), color = sp_color[i])
+                            for j in range(len(x2)):
+                                x2[j] = x2[j] * 1e6
+                if sp_bandle[i] != '0':
+                    x2 = [0.0 for i in range(len(altitude[0]))]
+                    for j in range(len(sp_bandle[i])):
+                        for isp in range(len(species)):
+                            if sp_bandle[i][j] == species[isp]:
+                                if nmax < np.max(density[isp]):
+                                    nmax = np.max(density[isp])
+                                for k in range(len(x2)):
+                                    x2[k] = x2[k] + density[isp][k]
+                                y2 = altitude[isp]
+                    for j in range(len(x2)):
+                        x2[j] = x2[j] / 1e6
+                    ax2.plot(x2, y2, label=reaction_unicode(sp_order[i]), color = sp_color[i])
+                    for j in range(len(x2)):
+                        x2[j] = x2[j] * 1e6
+
+
         ax2.set_xlabel('density [/cm'+rf'$^3$'+']')
         ax2.set_ylabel('altitude [km]')
         plt.xscale('log')
