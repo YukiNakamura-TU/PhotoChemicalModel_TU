@@ -4439,23 +4439,17 @@ def plot_order_window(Planet, dir0):
         with open(path, mode = 'r') as f:
             lines = f.readlines()
 
-    detailtext = tk.Text(plt_win, bd = 2, bg = '#EEEEFF')
+    detailtext = tk.Text(plt_win, bd = 2, bg = '#EEEEFF', font=('', '15'))
     detailtext.place(x=0,y=100, height=400, width=400 )
     detailtext.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
     for i in range(len(lines)):
-        detailtext.insert(tk.END, lines[i])
+        if lines[i] != '\n':
+            detailtext.insert(tk.END, lines[i])
 
     plt_detail_btn = tk.Button(plt_win, text=u'Done', font=('', '15'))
     plt_detail_btn["command"] = callback_plot_order_done(Planet, dir0, detailtext, plt_win)
     plt_detail_btn.place(x=400, y=10)
     plt_detail_btn.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
-
-    # rule
-    # orders are as follows
-    # species:Color
-    # species{bandle}:Color
-    # CO2:#FFFFFF
-    # C3Hn+{C3H+, C3H2+, ,,,}:#FFFFFF
 
 
 # plot
@@ -4466,18 +4460,68 @@ def plot(Planet, dir0, species, altitude, action,
 
     nmax = 1.0e-100
 
+    path = './'+Planet+'/'+dir0+'/settings/plt_species_order.dat'
+    if os.path.exists(path) == True:
+        with open(path, mode = 'r') as f:
+            lines = f.readlines()
+
+    # rule
+    # orders are as follows
+    # species:Color
+    # species{bandle}:Color
+    # CO2:#FFFFFF
+    # C3Hn+{C3H+, C3H2+, ,,,}:#FFFFFF
+    sp_order = ['0' for i in range(len(lines))]
+    sp_bandle = ['0' for i in range(len(lines))]
+    sp_color = ['0' for i in range(len(lines))]
+    for i in range(len(lines)):
+        if ':' in lines[i]:
+            sp_order[i] = re.findall('(.*):',lines[i])[0].lstrip().rstrip()
+            sp_color[i] = re.findall(':(.*)',lines[i])[0].lstrip().rstrip()
+            if '{' in sp_order[i]:
+                sp_order[i] = re.findall('(.*){',lines[i])[0].lstrip().rstrip()
+                sp_bandle[i] = re.findall('{(.*)}',lines[i])[0].split(',')
+                for j in range(len(sp_bandle[i])):
+                    sp_bandle[i][j] = sp_bandle[i][j].lstrip().rstrip()
+
     if action == 'density [/m^3]':
         fig = plt.figure(figsize=(8,6))
         ax1 = fig.add_subplot(111)
         x1 = [0]
         y1 = [0]
-        for isp in range(len(species)):
-            if species[isp] != 'M' and sp_chk_bln[isp].get() == True:
-                if nmax < np.max(density[isp]):
-                    nmax = np.max(density[isp])
-                x1 = density[isp]
-                y1 = altitude[isp]
-                ax1.plot(x1, y1, label=species[isp])
+        label = 0
+        for i in range(len(sp_order)):
+            if sp_order[i] != '0':
+                label = 1
+        if label == 0:
+            for isp in range(len(species)):
+                if species[isp] != 'M' and sp_chk_bln[isp].get() == True:
+                    if nmax < np.max(density[isp]):
+                        nmax = np.max(density[isp])
+                    x1 = density[isp]
+                    y1 = altitude[isp]
+                    ax1.plot(x1, y1, label=reaction_unicode(species[isp]))
+        if label == 1:
+            for i in range(len(sp_order)):
+                if sp_bandle[i] == '0':
+                    for isp in range(len(species)):
+                        if sp_order[i] == species[isp]:
+                            if nmax < np.max(density[isp]):
+                                nmax = np.max(density[isp])
+                            x1 = density[isp]
+                            y1 = altitude[isp]
+                            ax1.plot(x1, y1, label=reaction_unicode(species[isp]), color = sp_color[i])
+                if sp_bandle[i] != '0':
+                    x1 = [0.0 for i in range(len(altitude[0]))]
+                    for j in range(len(sp_bandle[i])):
+                        for isp in range(len(species)):
+                            if sp_bandle[i][j] == species[isp]:
+                                if nmax < np.max(density[isp]):
+                                    nmax = np.max(density[isp])
+                                for k in range(len(x1)):
+                                    x1[k] = x1[k] + density[isp][k]
+                                y1 = altitude[isp]
+                    ax1.plot(x1, y1, label=reaction_unicode(sp_order[i]), color = sp_color[i])
         ax1.set_xlabel('density [/m'+rf'$^3$'+']')
         ax1.set_ylabel('altitude [km]')
         plt.xscale('log')
