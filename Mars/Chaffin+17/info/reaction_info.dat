@@ -3,7 +3,7 @@
 ############################################
 
 
-* 50 reactions
+* 52 reactions
 
 --------------------------------------------
  CO₂  + hv  →  CO     + O       
@@ -704,9 +704,41 @@ Reaction rate : 2 cases.
 
 
 --------------------------------------------
- CO₂⁺  + H₂         →  CO₂  + H  + H   
+ CO    + OH + M     →  HOCO + M        
 --------------------------------------------
 Reaction number : 50
+Reactant :  CO  ,  OH  ,  M
+Product  :  HOCO
+
+Reaction rate : 2 cases.
+       (1) k0 = 5.9 × 10⁻³³ × (300/T(neutral))¹·⁴
+               T type  : neutral Temperature
+               T range : 0.00 [K]  ~  100000.00 [K]
+
+       (2) kinf = 1.1 × 10⁻¹² × (300/T(neutral))⁻¹·³
+               T type  : neutral Temperature
+               T range : 0.00 [K]  ~  100000.00 [K]
+
+
+
+--------------------------------------------
+ HOCO  + O₂         →  HO₂  + CO₂      
+--------------------------------------------
+Reaction number : 51
+Reactant :  HOCO  ,  O₂
+Product  :  HO₂  ,  CO₂
+
+Reaction rate : 1 case.
+       (1) 2.0 × 10⁻¹²
+               T type  : 
+               T range :   0.00 [K]  ~  100000.00 [K]
+
+
+
+--------------------------------------------
+ CO₂⁺  + H₂         →  CO₂  + H  + H   
+--------------------------------------------
+Reaction number : 52
 Reactant :  CO₂⁺  ,  H₂
 Product  :  CO₂  ,  H  ,  H
 

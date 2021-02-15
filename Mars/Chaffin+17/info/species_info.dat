@@ -28,7 +28,7 @@
 --------------------------------------------
 
 
-### Variable : 12 species ###
+### Variable : 13 species ###
 
 --------------------------------------------
  CO₂
@@ -36,7 +36,7 @@
 # path    : ./Mars/Chaffin+17/input/density/CO2.csv
 # mass    : 44.00950000
 # charge  : 0
-# Produced by following 7 reactions:
+# Produced by following 8 reactions:
 
     * R18     O     + O₂ + CO₂   →  O₃   + CO₂      
     * R20     O     + CO + M     →  CO₂  + M        
@@ -44,7 +44,8 @@
     * R29     H     + H  + CO₂   →  H₂   + CO₂      
     * R30     H     + OH + CO₂   →  H₂O  + CO₂      
     * R49     CO    + OH + M     →  CO₂  + H  + M   
-    * R50     CO₂⁺  + H₂         →  CO₂  + H  + H   
+    * R51     HOCO  + O₂         →  HO₂  + CO₂      
+    * R52     CO₂⁺  + H₂         →  CO₂  + H  + H   
 
 # Lost by following 6 reactions:
 
@@ -65,10 +66,11 @@
     * R1      CO₂  + hv  →  CO     + O       
     * R2      CO₂  + hv  →  CO     + O(¹D)   
 
-# Lost by following 2 reactions:
+# Lost by following 3 reactions:
 
     * R20     O     + CO + M     →  CO₂  + M        
     * R49     CO    + OH + M     →  CO₂  + H  + M   
+    * R50     CO    + OH + M     →  HOCO + M        
 
 --------------------------------------------
  O
@@ -141,7 +143,7 @@
     * R28     OH    + H₂         →  H₂O  + H        
     * R38     O     + OH         →  O₂   + H        
     * R49     CO    + OH + M     →  CO₂  + H  + M   
-    * R50     CO₂⁺  + H₂         →  CO₂  + H  + H   
+    * R52     CO₂⁺  + H₂         →  CO₂  + H  + H   
 
 # Lost by following 9 reactions:
 
@@ -175,7 +177,7 @@
     * R40     O     + H₂O₂       →  OH   + HO₂      
     * R46     HO₂   + O₃         →  OH   + O₂ + O₂  
 
-# Lost by following 11 reactions:
+# Lost by following 12 reactions:
 
     * R10     OH   + hv  →  O      + H       
     * R11     OH   + hv  →  O(¹D)  + H       
@@ -188,6 +190,7 @@
     * R44     OH    + HO₂        →  H₂O  + O₂       
     * R45     OH    + H₂O₂       →  H₂O  + HO₂      
     * R49     CO    + OH + M     →  CO₂  + H  + M   
+    * R50     CO    + OH + M     →  HOCO + M        
 
 --------------------------------------------
  H₂
@@ -207,7 +210,7 @@
     * R24     O(¹D) + H₂         →  H    + OH       
     * R27     H₂    + O          →  OH   + H        
     * R28     OH    + H₂         →  H₂O  + H        
-    * R50     CO₂⁺  + H₂         →  CO₂  + H  + H   
+    * R52     CO₂⁺  + H₂         →  CO₂  + H  + H   
 
 --------------------------------------------
  O₃
@@ -254,7 +257,7 @@
     * R47     HO₂   + HO₂        →  H₂O₂ + O₂       
     * R48     HO₂   + HO₂ + M    →  H₂O₂ + O₂ + M   
 
-# Lost by following 6 reactions:
+# Lost by following 7 reactions:
 
     * R7      O₂   + hv  →  O      + O       
     * R8      O₂   + hv  →  O      + O(¹D)   
@@ -262,13 +265,14 @@
     * R18     O     + O₂ + CO₂   →  O₃   + CO₂      
     * R21     O(¹D) + O₂         →  O    + O₂       
     * R36     H     + O₂ + M     →  HO₂  + M        
+    * R51     HOCO  + O₂         →  HO₂  + CO₂      
 
 --------------------------------------------
  HO₂
 --------------------------------------------
 # mass    : 33.00674000
 # charge  : 0
-# Produced by following 6 reactions:
+# Produced by following 7 reactions:
 
     * R14     H₂O₂ + hv  →  HO₂    + H       
     * R34     H     + H₂O₂       →  HO₂  + H₂       
@@ -276,6 +280,7 @@
     * R40     O     + H₂O₂       →  OH   + HO₂      
     * R43     OH    + O₃         →  HO₂  + O₂       
     * R45     OH    + H₂O₂       →  H₂O  + HO₂      
+    * R51     HOCO  + O₂         →  HO₂  + CO₂      
 
 # Lost by following 9 reactions:
 
@@ -322,6 +327,19 @@
 # Lost by following 1 reactions:
 
     * R17     O     + O₂ + N₂    →  O₃   + N₂       
+
+--------------------------------------------
+ HOCO
+--------------------------------------------
+# mass    : 45.01744000
+# charge  : 0
+# Produced by following 1 reactions:
+
+    * R50     CO    + OH + M     →  HOCO + M        
+
+# Lost by following 1 reactions:
+
+    * R51     HOCO  + O₂         →  HO₂  + CO₂      
 
 --------------------------------------------
 

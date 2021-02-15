@@ -60,13 +60,13 @@ contains
     end do
 
     ! reactions, chemical species
-    spl%nsp     = 15
-    spl%nsp_i   = 12
-    spl%nch     = 50
+    spl%nsp     = 16
+    spl%nsp_i   = 13
+    spl%nch     = 52
     spl%nch_P   = 33
-    spl%nch_L   = 23
-    spl%n_Jlist = 94
-    spl%nch_J   = 25
+    spl%nch_L   = 25
+    spl%n_Jlist = 101
+    spl%nch_J   = 27
     spl%nrpn    = 8
 
     ! allocate
@@ -134,7 +134,8 @@ contains
     spl%species(12) = 'H2O2'
     spl%species(13) = 'M'
     spl%species(14) = 'N2'
-    spl%species(15) = 'CO2+'
+    spl%species(15) = 'HOCO'
+    spl%species(16) = 'CO2+'
 
     ! label_fix
     spl%label_fix(1) = 0 ! CO2: variable
@@ -151,7 +152,8 @@ contains
     spl%label_fix(12) = 0 ! H2O2: variable
     spl%label_fix(13) = 1 ! M: fixed
     spl%label_fix(14) = 0 ! N2: variable
-    spl%label_fix(15) = 1 ! CO2+: fixed
+    spl%label_fix(15) = 0 ! HOCO: variable
+    spl%label_fix(16) = 1 ! CO2+: fixed
 
     ! all_to_var
     spl%all_to_var = 0
@@ -167,6 +169,7 @@ contains
     spl%all_to_var(11) = 10 ! HO2: variable
     spl%all_to_var(12) = 11 ! H2O2: variable
     spl%all_to_var(14) = 12 ! N2: variable
+    spl%all_to_var(15) = 13 ! HOCO: variable
 
     ! var_to_all
     spl%var_to_all(1) = 1 ! CO2: variable
@@ -181,6 +184,7 @@ contains
     spl%var_to_all(10) = 11 ! HO2: variable
     spl%var_to_all(11) = 12 ! H2O2: variable
     spl%var_to_all(12) = 14 ! N2: variable
+    spl%var_to_all(13) = 15 ! HOCO: variable
 
     ! mass
     var%m(1) = 44.00950000_dp * cst%m_u !CO2
@@ -197,7 +201,8 @@ contains
     var%m(12) = 34.01468000_dp * cst%m_u !H2O2
     var%m(13) = 10.00000000_dp * cst%m_u !M
     var%m(14) = 28.01340000_dp * cst%m_u !N2
-    var%m(15) = 44.00895142_dp * cst%m_u !CO2+
+    var%m(15) = 45.01744000_dp * cst%m_u !HOCO
+    var%m(16) = 44.00895142_dp * cst%m_u !CO2+
 
     ! mass zero error
     do isp = 1, spl%nsp
@@ -223,7 +228,8 @@ contains
     var%q(12) = 0.0_dp * cst%q_e !H2O2
     var%q(13) = 0.0_dp * cst%q_e !M
     var%q(14) = 0.0_dp * cst%q_e !N2
-    var%q(15) = 1.0_dp * cst%q_e !CO2+
+    var%q(15) = 0.0_dp * cst%q_e !HOCO
+    var%q(16) = 1.0_dp * cst%q_e !CO2+
 
     ! read P, L, J list
     open(11, file = './Mars/Chaffin+17/input/PLJ_list/Production_list.dat', status = 'unknown' )
