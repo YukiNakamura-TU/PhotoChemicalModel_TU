@@ -4519,7 +4519,7 @@ def plot(Planet, dir0, species, altitude, action,
                 ax2.plot(x2, y2, label=species[isp])
                 for i in range(len(x2)):
                     x2[i] = x2[i] * 1e6
-        ax2.set_xlabel('density [cm'+rf'$^3$'+']')
+        ax2.set_xlabel('density [/cm'+rf'$^3$'+']')
         ax2.set_ylabel('altitude [km]')
         plt.xscale('log')
         xs = xr[1][0].get()

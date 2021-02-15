@@ -112,7 +112,7 @@ contains
 
     ! H2O data --------------------------------------------------------
     xct%h2oxdata = 0.0_dp
-    fname = 'UV/uvxsect/H2Oavgtbl.dat'
+    fname = 'UV/uvxsect/h2oavgtbl.dat'
     call p__count_header(nh, fname)
     open(11, file = fname, status = 'unknown')
       do i = 1, nh
