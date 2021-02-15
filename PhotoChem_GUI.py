@@ -16,8 +16,8 @@
 import tkinter as tk #GUI library
 import re #Regular expression
 import os #operating system interface
-import matplotlib.pyplot as plt
-import numpy as np
+import matplotlib.pyplot as plt #plot library
+import numpy as np #mathematical library
 
 # Followings are already in the project directory
 import rpn_parser #Infix Notation to Reversed Polish Notation parser
