@@ -4337,7 +4337,7 @@ def plot_window(Planet, dir0):
     char.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
 
     plt_denm_btn = tk.Button(plt_frame, text=u'Plot density [/m\u00B3]', font=('', '15'))
-    plt_denm_btn["command"] = callback_plot(Planet, dir0, species, altitude, 'density [m^3]',
+    plt_denm_btn["command"] = callback_plot(Planet, dir0, species, altitude, 'density [/m^3]',
                                            density, mixingratio, 
                                            sp_chk_bln, '', '', 
                                            xr, yr)
@@ -4363,7 +4363,7 @@ def plot_window(Planet, dir0):
     char.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
 
     plt_dencm_btn = tk.Button(plt_frame, text=u'Plot density [/cm\u00B3]', font=('', '15'))
-    plt_dencm_btn["command"] = callback_plot(Planet, dir0, species, altitude, 'density [cm^3]',
+    plt_dencm_btn["command"] = callback_plot(Planet, dir0, species, altitude, 'density [/cm^3]',
                                            density, mixingratio, 
                                            sp_chk_bln, '', '', 
                                            xr, yr)
@@ -4466,7 +4466,7 @@ def plot(Planet, dir0, species, altitude, action,
 
     nmax = 1.0e-100
 
-    if action == 'density [m^3]':
+    if action == 'density [/m^3]':
         fig = plt.figure(figsize=(8,6))
         ax1 = fig.add_subplot(111)
         x1 = [0]
@@ -4478,7 +4478,7 @@ def plot(Planet, dir0, species, altitude, action,
                 x1 = density[isp]
                 y1 = altitude[isp]
                 ax1.plot(x1, y1, label=species[isp])
-        ax1.set_xlabel('density [m'+rf'$^3$'+']')
+        ax1.set_xlabel('density [/m'+rf'$^3$'+']')
         ax1.set_ylabel('altitude [km]')
         plt.xscale('log')
         xs = xr[0][0].get().lstrip().rstrip()
@@ -4503,7 +4503,7 @@ def plot(Planet, dir0, species, altitude, action,
         plt.legend(loc='best')
         plt.show()
 
-    if action == 'density [cm^3]':
+    if action == 'density [/cm^3]':
         fig = plt.figure(figsize=(8,6))
         ax2 = fig.add_subplot(111)
         x2 = [0]
