@@ -25,9 +25,12 @@ contains
     set%dtime_limit = 1.0e4_dp
     set%latitude = 0.0_dp
     set%Ls = 270.0_dp
-    set%nday = 3
+    set%nday = 3_dp
     set%scheme = 'implicit'
     set%inversion = 'Catling'
+    ! directory setting
+    set%dir_name = './Mars/OHtest'
+    set%fnamestable = './Mars/OHtest/output/density/n_stable.dat'
 
   end subroutine v__in__ini
 
@@ -44,8 +47,6 @@ contains
     real(dp) tmp
     character(len = 256) strm, fname
 
-    ! directory setting
-    set%dir_name = './Mars/OHtest'
 
     ! grid setting
     grd%nx    = set%nx
@@ -329,7 +330,6 @@ contains
 
     ! input density profiles
     var%ni   = 1.0e-20_dp
-    var%ni_0 = 1.0e-20_dp
 
     isp = sp_index(spl, 'CO2')
     open(11, file = './Mars/OHtest/input/density/CO2.dat', status = 'unknown' )
@@ -421,6 +421,8 @@ contains
         read(11,*) tmp, var%ni(isp,iz)
       end do
     close(11)
+
+    var%ni_0 = var%ni
 
     ! Lower boundary condition
     var%LowerBC = 0.0_dp
