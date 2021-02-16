@@ -29,8 +29,8 @@ contains
     set%scheme = 'implicit'
     set%inversion = 'Catling'
     ! directory setting
-    set%dir_name = './Jupiter/in_metal'
-    set%fnamestable = './Jupiter/in_metal/output/density/n_stable.dat'
+    set%dir_name = './Jupiter/no_metal'
+    set%fnamestable = './Jupiter/no_metal/output/density/n_stable.dat'
 
   end subroutine v__in__ini
 
@@ -60,13 +60,13 @@ contains
     end do
 
     ! reactions, chemical species
-    spl%nsp     = 88
-    spl%nsp_i   = 69
-    spl%nch     = 408
-    spl%nch_P   = 203
-    spl%nch_L   = 159
-    spl%n_Jlist = 746
-    spl%nch_J   = 161
+    spl%nsp     = 52
+    spl%nsp_i   = 36
+    spl%nch     = 218
+    spl%nch_P   = 147
+    spl%nch_L   = 87
+    spl%n_Jlist = 255
+    spl%nch_J   = 89
     spl%nrpn    = 8
 
     ! allocate
@@ -172,42 +172,6 @@ contains
     spl%species(50) = 'C4H9+'
     spl%species(51) = 'H2(v>=2)'
     spl%species(52) = 'H2(v>=4)'
-    spl%species(53) = 'Na'
-    spl%species(54) = 'Na+'
-    spl%species(55) = 'Fe'
-    spl%species(56) = 'Fe+'
-    spl%species(57) = 'Mg'
-    spl%species(58) = 'Mg+'
-    spl%species(59) = 'Si'
-    spl%species(60) = 'Si+'
-    spl%species(61) = 'NaH'
-    spl%species(62) = 'NaCH3'
-    spl%species(63) = 'NaH2+'
-    spl%species(64) = 'NaCH4+'
-    spl%species(65) = 'NaC2H2+'
-    spl%species(66) = 'NaC2H4+'
-    spl%species(67) = 'H3O+'
-    spl%species(68) = 'H2O'
-    spl%species(69) = 'FeH'
-    spl%species(70) = 'FeH+'
-    spl%species(71) = 'FeH2+'
-    spl%species(72) = 'FeCH4+'
-    spl%species(73) = 'FeC2H2+'
-    spl%species(74) = 'FeC2H4+'
-    spl%species(75) = 'MgH'
-    spl%species(76) = 'MgH+'
-    spl%species(77) = 'MgH2+'
-    spl%species(78) = 'MgCH4+'
-    spl%species(79) = 'MgC2H2+'
-    spl%species(80) = 'MgC2H4+'
-    spl%species(81) = 'SiH'
-    spl%species(82) = 'SiH+'
-    spl%species(83) = 'SiH2+'
-    spl%species(84) = 'SiCnHm+'
-    spl%species(85) = 'SiOH+'
-    spl%species(86) = 'H3O'
-    spl%species(87) = 'SiCH'
-    spl%species(88) = 'SiCH2'
 
     ! label_fix
     spl%label_fix(1) = 0 ! H: variable
@@ -236,8 +200,8 @@ contains
     spl%label_fix(24) = 0 ! CH+: variable
     spl%label_fix(25) = 0 ! CH2+: variable
     spl%label_fix(26) = 1 ! CH: fixed
-    spl%label_fix(27) = 0 ! CH2: variable
-    spl%label_fix(28) = 0 ! CH3: variable
+    spl%label_fix(27) = 1 ! CH2: fixed
+    spl%label_fix(28) = 1 ! CH3: fixed
     spl%label_fix(29) = 0 ! CH5+: variable
     spl%label_fix(30) = 0 ! C2+: variable
     spl%label_fix(31) = 1 ! C2: fixed
@@ -262,42 +226,6 @@ contains
     spl%label_fix(50) = 0 ! C4H9+: variable
     spl%label_fix(51) = 1 ! H2(v>=2): fixed
     spl%label_fix(52) = 1 ! H2(v>=4): fixed
-    spl%label_fix(53) = 0 ! Na: variable
-    spl%label_fix(54) = 0 ! Na+: variable
-    spl%label_fix(55) = 0 ! Fe: variable
-    spl%label_fix(56) = 0 ! Fe+: variable
-    spl%label_fix(57) = 0 ! Mg: variable
-    spl%label_fix(58) = 0 ! Mg+: variable
-    spl%label_fix(59) = 0 ! Si: variable
-    spl%label_fix(60) = 0 ! Si+: variable
-    spl%label_fix(61) = 0 ! NaH: variable
-    spl%label_fix(62) = 1 ! NaCH3: fixed
-    spl%label_fix(63) = 0 ! NaH2+: variable
-    spl%label_fix(64) = 0 ! NaCH4+: variable
-    spl%label_fix(65) = 0 ! NaC2H2+: variable
-    spl%label_fix(66) = 0 ! NaC2H4+: variable
-    spl%label_fix(67) = 0 ! H3O+: variable
-    spl%label_fix(68) = 0 ! H2O: variable
-    spl%label_fix(69) = 0 ! FeH: variable
-    spl%label_fix(70) = 0 ! FeH+: variable
-    spl%label_fix(71) = 0 ! FeH2+: variable
-    spl%label_fix(72) = 0 ! FeCH4+: variable
-    spl%label_fix(73) = 0 ! FeC2H2+: variable
-    spl%label_fix(74) = 0 ! FeC2H4+: variable
-    spl%label_fix(75) = 0 ! MgH: variable
-    spl%label_fix(76) = 0 ! MgH+: variable
-    spl%label_fix(77) = 0 ! MgH2+: variable
-    spl%label_fix(78) = 0 ! MgCH4+: variable
-    spl%label_fix(79) = 0 ! MgC2H2+: variable
-    spl%label_fix(80) = 0 ! MgC2H4+: variable
-    spl%label_fix(81) = 0 ! SiH: variable
-    spl%label_fix(82) = 0 ! SiH+: variable
-    spl%label_fix(83) = 0 ! SiH2+: variable
-    spl%label_fix(84) = 0 ! SiCnHm+: variable
-    spl%label_fix(85) = 1 ! SiOH+: fixed
-    spl%label_fix(86) = 1 ! H3O: fixed
-    spl%label_fix(87) = 1 ! SiCH: fixed
-    spl%label_fix(88) = 1 ! SiCH2: fixed
 
     ! all_to_var
     spl%all_to_var = 0
@@ -319,57 +247,24 @@ contains
     spl%all_to_var(22) = 16 ! C+: variable
     spl%all_to_var(24) = 17 ! CH+: variable
     spl%all_to_var(25) = 18 ! CH2+: variable
-    spl%all_to_var(27) = 19 ! CH2: variable
-    spl%all_to_var(28) = 20 ! CH3: variable
-    spl%all_to_var(29) = 21 ! CH5+: variable
-    spl%all_to_var(30) = 22 ! C2+: variable
-    spl%all_to_var(35) = 23 ! C2H7+: variable
-    spl%all_to_var(36) = 24 ! C3H+: variable
-    spl%all_to_var(37) = 25 ! C3H2+: variable
-    spl%all_to_var(38) = 26 ! C3H3+: variable
-    spl%all_to_var(39) = 27 ! C3H4+: variable
-    spl%all_to_var(40) = 28 ! C3H5+: variable
-    spl%all_to_var(41) = 29 ! C3H6+: variable
-    spl%all_to_var(42) = 30 ! C3H7+: variable
-    spl%all_to_var(43) = 31 ! C3H8+: variable
-    spl%all_to_var(44) = 32 ! C3H9+: variable
-    spl%all_to_var(45) = 33 ! C4H+: variable
-    spl%all_to_var(46) = 34 ! C4H2+: variable
-    spl%all_to_var(47) = 35 ! C4H3+: variable
-    spl%all_to_var(48) = 36 ! C4H5+: variable
-    spl%all_to_var(49) = 37 ! C4H7+: variable
-    spl%all_to_var(50) = 38 ! C4H9+: variable
-    spl%all_to_var(53) = 39 ! Na: variable
-    spl%all_to_var(54) = 40 ! Na+: variable
-    spl%all_to_var(55) = 41 ! Fe: variable
-    spl%all_to_var(56) = 42 ! Fe+: variable
-    spl%all_to_var(57) = 43 ! Mg: variable
-    spl%all_to_var(58) = 44 ! Mg+: variable
-    spl%all_to_var(59) = 45 ! Si: variable
-    spl%all_to_var(60) = 46 ! Si+: variable
-    spl%all_to_var(61) = 47 ! NaH: variable
-    spl%all_to_var(63) = 48 ! NaH2+: variable
-    spl%all_to_var(64) = 49 ! NaCH4+: variable
-    spl%all_to_var(65) = 50 ! NaC2H2+: variable
-    spl%all_to_var(66) = 51 ! NaC2H4+: variable
-    spl%all_to_var(67) = 52 ! H3O+: variable
-    spl%all_to_var(68) = 53 ! H2O: variable
-    spl%all_to_var(69) = 54 ! FeH: variable
-    spl%all_to_var(70) = 55 ! FeH+: variable
-    spl%all_to_var(71) = 56 ! FeH2+: variable
-    spl%all_to_var(72) = 57 ! FeCH4+: variable
-    spl%all_to_var(73) = 58 ! FeC2H2+: variable
-    spl%all_to_var(74) = 59 ! FeC2H4+: variable
-    spl%all_to_var(75) = 60 ! MgH: variable
-    spl%all_to_var(76) = 61 ! MgH+: variable
-    spl%all_to_var(77) = 62 ! MgH2+: variable
-    spl%all_to_var(78) = 63 ! MgCH4+: variable
-    spl%all_to_var(79) = 64 ! MgC2H2+: variable
-    spl%all_to_var(80) = 65 ! MgC2H4+: variable
-    spl%all_to_var(81) = 66 ! SiH: variable
-    spl%all_to_var(82) = 67 ! SiH+: variable
-    spl%all_to_var(83) = 68 ! SiH2+: variable
-    spl%all_to_var(84) = 69 ! SiCnHm+: variable
+    spl%all_to_var(29) = 19 ! CH5+: variable
+    spl%all_to_var(30) = 20 ! C2+: variable
+    spl%all_to_var(35) = 21 ! C2H7+: variable
+    spl%all_to_var(36) = 22 ! C3H+: variable
+    spl%all_to_var(37) = 23 ! C3H2+: variable
+    spl%all_to_var(38) = 24 ! C3H3+: variable
+    spl%all_to_var(39) = 25 ! C3H4+: variable
+    spl%all_to_var(40) = 26 ! C3H5+: variable
+    spl%all_to_var(41) = 27 ! C3H6+: variable
+    spl%all_to_var(42) = 28 ! C3H7+: variable
+    spl%all_to_var(43) = 29 ! C3H8+: variable
+    spl%all_to_var(44) = 30 ! C3H9+: variable
+    spl%all_to_var(45) = 31 ! C4H+: variable
+    spl%all_to_var(46) = 32 ! C4H2+: variable
+    spl%all_to_var(47) = 33 ! C4H3+: variable
+    spl%all_to_var(48) = 34 ! C4H5+: variable
+    spl%all_to_var(49) = 35 ! C4H7+: variable
+    spl%all_to_var(50) = 36 ! C4H9+: variable
 
     ! var_to_all
     spl%var_to_all(1) = 1 ! H: variable
@@ -390,57 +285,24 @@ contains
     spl%var_to_all(16) = 22 ! C+: variable
     spl%var_to_all(17) = 24 ! CH+: variable
     spl%var_to_all(18) = 25 ! CH2+: variable
-    spl%var_to_all(19) = 27 ! CH2: variable
-    spl%var_to_all(20) = 28 ! CH3: variable
-    spl%var_to_all(21) = 29 ! CH5+: variable
-    spl%var_to_all(22) = 30 ! C2+: variable
-    spl%var_to_all(23) = 35 ! C2H7+: variable
-    spl%var_to_all(24) = 36 ! C3H+: variable
-    spl%var_to_all(25) = 37 ! C3H2+: variable
-    spl%var_to_all(26) = 38 ! C3H3+: variable
-    spl%var_to_all(27) = 39 ! C3H4+: variable
-    spl%var_to_all(28) = 40 ! C3H5+: variable
-    spl%var_to_all(29) = 41 ! C3H6+: variable
-    spl%var_to_all(30) = 42 ! C3H7+: variable
-    spl%var_to_all(31) = 43 ! C3H8+: variable
-    spl%var_to_all(32) = 44 ! C3H9+: variable
-    spl%var_to_all(33) = 45 ! C4H+: variable
-    spl%var_to_all(34) = 46 ! C4H2+: variable
-    spl%var_to_all(35) = 47 ! C4H3+: variable
-    spl%var_to_all(36) = 48 ! C4H5+: variable
-    spl%var_to_all(37) = 49 ! C4H7+: variable
-    spl%var_to_all(38) = 50 ! C4H9+: variable
-    spl%var_to_all(39) = 53 ! Na: variable
-    spl%var_to_all(40) = 54 ! Na+: variable
-    spl%var_to_all(41) = 55 ! Fe: variable
-    spl%var_to_all(42) = 56 ! Fe+: variable
-    spl%var_to_all(43) = 57 ! Mg: variable
-    spl%var_to_all(44) = 58 ! Mg+: variable
-    spl%var_to_all(45) = 59 ! Si: variable
-    spl%var_to_all(46) = 60 ! Si+: variable
-    spl%var_to_all(47) = 61 ! NaH: variable
-    spl%var_to_all(48) = 63 ! NaH2+: variable
-    spl%var_to_all(49) = 64 ! NaCH4+: variable
-    spl%var_to_all(50) = 65 ! NaC2H2+: variable
-    spl%var_to_all(51) = 66 ! NaC2H4+: variable
-    spl%var_to_all(52) = 67 ! H3O+: variable
-    spl%var_to_all(53) = 68 ! H2O: variable
-    spl%var_to_all(54) = 69 ! FeH: variable
-    spl%var_to_all(55) = 70 ! FeH+: variable
-    spl%var_to_all(56) = 71 ! FeH2+: variable
-    spl%var_to_all(57) = 72 ! FeCH4+: variable
-    spl%var_to_all(58) = 73 ! FeC2H2+: variable
-    spl%var_to_all(59) = 74 ! FeC2H4+: variable
-    spl%var_to_all(60) = 75 ! MgH: variable
-    spl%var_to_all(61) = 76 ! MgH+: variable
-    spl%var_to_all(62) = 77 ! MgH2+: variable
-    spl%var_to_all(63) = 78 ! MgCH4+: variable
-    spl%var_to_all(64) = 79 ! MgC2H2+: variable
-    spl%var_to_all(65) = 80 ! MgC2H4+: variable
-    spl%var_to_all(66) = 81 ! SiH: variable
-    spl%var_to_all(67) = 82 ! SiH+: variable
-    spl%var_to_all(68) = 83 ! SiH2+: variable
-    spl%var_to_all(69) = 84 ! SiCnHm+: variable
+    spl%var_to_all(19) = 29 ! CH5+: variable
+    spl%var_to_all(20) = 30 ! C2+: variable
+    spl%var_to_all(21) = 35 ! C2H7+: variable
+    spl%var_to_all(22) = 36 ! C3H+: variable
+    spl%var_to_all(23) = 37 ! C3H2+: variable
+    spl%var_to_all(24) = 38 ! C3H3+: variable
+    spl%var_to_all(25) = 39 ! C3H4+: variable
+    spl%var_to_all(26) = 40 ! C3H5+: variable
+    spl%var_to_all(27) = 41 ! C3H6+: variable
+    spl%var_to_all(28) = 42 ! C3H7+: variable
+    spl%var_to_all(29) = 43 ! C3H8+: variable
+    spl%var_to_all(30) = 44 ! C3H9+: variable
+    spl%var_to_all(31) = 45 ! C4H+: variable
+    spl%var_to_all(32) = 46 ! C4H2+: variable
+    spl%var_to_all(33) = 47 ! C4H3+: variable
+    spl%var_to_all(34) = 48 ! C4H5+: variable
+    spl%var_to_all(35) = 49 ! C4H7+: variable
+    spl%var_to_all(36) = 50 ! C4H9+: variable
 
     ! mass
     var%m(1) = 1.00794000_dp * cst%m_u !H
@@ -495,42 +357,6 @@ contains
     var%m(50) = 57.11371142_dp * cst%m_u !C4H9+
     var%m(51) = 2.01588000_dp * cst%m_u !H2(v>=2)
     var%m(52) = 2.01588000_dp * cst%m_u !H2(v>=4)
-    var%m(53) = 22.98900000_dp * cst%m_u !Na
-    var%m(54) = 22.98845142_dp * cst%m_u !Na+
-    var%m(55) = 55.84500000_dp * cst%m_u !Fe
-    var%m(56) = 55.84445142_dp * cst%m_u !Fe+
-    var%m(57) = 24.30500000_dp * cst%m_u !Mg
-    var%m(58) = 24.30445142_dp * cst%m_u !Mg+
-    var%m(59) = 28.08550000_dp * cst%m_u !Si
-    var%m(60) = 28.08495142_dp * cst%m_u !Si+
-    var%m(61) = 23.99694000_dp * cst%m_u !NaH
-    var%m(62) = 38.02352000_dp * cst%m_u !NaCH3
-    var%m(63) = 25.00433142_dp * cst%m_u !NaH2+
-    var%m(64) = 39.03091142_dp * cst%m_u !NaCH4+
-    var%m(65) = 49.02573142_dp * cst%m_u !NaC2H2+
-    var%m(66) = 51.04161142_dp * cst%m_u !NaC2H4+
-    var%m(67) = 19.02267142_dp * cst%m_u !H3O+
-    var%m(68) = 18.01528000_dp * cst%m_u !H2O
-    var%m(69) = 56.85294000_dp * cst%m_u !FeH
-    var%m(70) = 56.85239142_dp * cst%m_u !FeH+
-    var%m(71) = 57.86033142_dp * cst%m_u !FeH2+
-    var%m(72) = 71.88691142_dp * cst%m_u !FeCH4+
-    var%m(73) = 81.88173142_dp * cst%m_u !FeC2H2+
-    var%m(74) = 83.89761142_dp * cst%m_u !FeC2H4+
-    var%m(75) = 25.31294000_dp * cst%m_u !MgH
-    var%m(76) = 25.31239142_dp * cst%m_u !MgH+
-    var%m(77) = 26.32033142_dp * cst%m_u !MgH2+
-    var%m(78) = 40.34691142_dp * cst%m_u !MgCH4+
-    var%m(79) = 50.34173142_dp * cst%m_u !MgC2H2+
-    var%m(80) = 52.35761142_dp * cst%m_u !MgC2H4+
-    var%m(81) = 29.09344000_dp * cst%m_u !SiH
-    var%m(82) = 29.09289142_dp * cst%m_u !SiH+
-    var%m(83) = 30.10083142_dp * cst%m_u !SiH2+
-    var%m(84) = 28.08495142_dp * cst%m_u !SiCnHm+
-    var%m(85) = 45.09229142_dp * cst%m_u !SiOH+
-    var%m(86) = 19.02322000_dp * cst%m_u !H3O
-    var%m(87) = 41.10414000_dp * cst%m_u !SiCH
-    var%m(88) = 42.11208000_dp * cst%m_u !SiCH2
 
     ! mass zero error
     do isp = 1, spl%nsp
@@ -594,81 +420,45 @@ contains
     var%q(50) = 1.0_dp * cst%q_e !C4H9+
     var%q(51) = 0.0_dp * cst%q_e !H2(v>=2)
     var%q(52) = 0.0_dp * cst%q_e !H2(v>=4)
-    var%q(53) = 0.0_dp * cst%q_e !Na
-    var%q(54) = 1.0_dp * cst%q_e !Na+
-    var%q(55) = 0.0_dp * cst%q_e !Fe
-    var%q(56) = 1.0_dp * cst%q_e !Fe+
-    var%q(57) = 0.0_dp * cst%q_e !Mg
-    var%q(58) = 1.0_dp * cst%q_e !Mg+
-    var%q(59) = 0.0_dp * cst%q_e !Si
-    var%q(60) = 1.0_dp * cst%q_e !Si+
-    var%q(61) = 0.0_dp * cst%q_e !NaH
-    var%q(62) = 0.0_dp * cst%q_e !NaCH3
-    var%q(63) = 1.0_dp * cst%q_e !NaH2+
-    var%q(64) = 1.0_dp * cst%q_e !NaCH4+
-    var%q(65) = 1.0_dp * cst%q_e !NaC2H2+
-    var%q(66) = 1.0_dp * cst%q_e !NaC2H4+
-    var%q(67) = 1.0_dp * cst%q_e !H3O+
-    var%q(68) = 0.0_dp * cst%q_e !H2O
-    var%q(69) = 0.0_dp * cst%q_e !FeH
-    var%q(70) = 1.0_dp * cst%q_e !FeH+
-    var%q(71) = 1.0_dp * cst%q_e !FeH2+
-    var%q(72) = 1.0_dp * cst%q_e !FeCH4+
-    var%q(73) = 1.0_dp * cst%q_e !FeC2H2+
-    var%q(74) = 1.0_dp * cst%q_e !FeC2H4+
-    var%q(75) = 0.0_dp * cst%q_e !MgH
-    var%q(76) = 1.0_dp * cst%q_e !MgH+
-    var%q(77) = 1.0_dp * cst%q_e !MgH2+
-    var%q(78) = 1.0_dp * cst%q_e !MgCH4+
-    var%q(79) = 1.0_dp * cst%q_e !MgC2H2+
-    var%q(80) = 1.0_dp * cst%q_e !MgC2H4+
-    var%q(81) = 0.0_dp * cst%q_e !SiH
-    var%q(82) = 1.0_dp * cst%q_e !SiH+
-    var%q(83) = 1.0_dp * cst%q_e !SiH2+
-    var%q(84) = 1.0_dp * cst%q_e !SiCnHm+
-    var%q(85) = 1.0_dp * cst%q_e !SiOH+
-    var%q(86) = 0.0_dp * cst%q_e !H3O
-    var%q(87) = 0.0_dp * cst%q_e !SiCH
-    var%q(88) = 0.0_dp * cst%q_e !SiCH2
 
     ! read P, L, J list
-    open(11, file = './Jupiter/in_metal/input/PLJ_list/Production_list.dat', status = 'unknown' )
+    open(11, file = './Jupiter/no_metal/input/PLJ_list/Production_list.dat', status = 'unknown' )
       do isp = 1, spl%nsp_i
         read(11,*) (spl%Prod_list(isp,ich), ich = 1, spl%nch_P)
       end do
     close(11)
 
-    open(11, file = './Jupiter/in_metal/input/PLJ_list/Loss_list.dat', status = 'unknown' )
+    open(11, file = './Jupiter/no_metal/input/PLJ_list/Loss_list.dat', status = 'unknown' )
       do isp = 1, spl%nsp_i
         read(11,*) (spl%Loss_list(isp,ich), ich = 1, spl%nch_L)
       end do
     close(11)
 
-    open(11, file = './Jupiter/in_metal/input/PLJ_list/Jacobian_list.dat', status = 'unknown' )
+    open(11, file = './Jupiter/no_metal/input/PLJ_list/Jacobian_list.dat', status = 'unknown' )
       do i = 1, spl%n_Jlist
         read(11,*) (spl%Jmtx_list(i,j), j = 1, spl%nch_J)
       end do
     close(11)
 
-    open(11, file = './Jupiter/in_metal/input/PLJ_list/reactant_list.dat', status = 'unknown' )
+    open(11, file = './Jupiter/no_metal/input/PLJ_list/reactant_list.dat', status = 'unknown' )
       do ich = 1, spl%nch
         read(11,*) (spl%reactant_list(ich,isp), isp = 1, 10)
       end do
     close(11)
 
-    open(11, file = './Jupiter/in_metal/input/PLJ_list/product_list.dat', status = 'unknown' )
+    open(11, file = './Jupiter/no_metal/input/PLJ_list/product_list.dat', status = 'unknown' )
       do ich = 1, spl%nch
         read(11,*) (spl%product_list(ich,isp), isp = 1, 10)
       end do
     close(11)
 
-    open(11, file = './Jupiter/in_metal/input/PLJ_list/reaction_type_list.dat', status = 'unknown' )
+    open(11, file = './Jupiter/no_metal/input/PLJ_list/reaction_type_list.dat', status = 'unknown' )
       do ich = 1, spl%nch
         read(11,*) spl%reaction_type_list(ich)
       end do
     close(11)
 
-    open(11, file = './Jupiter/in_metal/input/PLJ_list/rate_rpn_token.dat', status = 'unknown' )
+    open(11, file = './Jupiter/no_metal/input/PLJ_list/rate_rpn_token.dat', status = 'unknown' )
       do ich = 1, spl%nch
         do i = 1, 3
           read(11,*) (spl%rate_rpn_token(ich,i,j), j = 1, spl%nrpn)
@@ -676,7 +466,7 @@ contains
       end do
     close(11)
 
-    open(11, file = './Jupiter/in_metal/input/PLJ_list/rate_rpn_label.dat', status = 'unknown' )
+    open(11, file = './Jupiter/no_metal/input/PLJ_list/rate_rpn_label.dat', status = 'unknown' )
       do ich = 1, spl%nch
         do i = 1, 3
           read(11,*) (spl%rate_rpn_label(ich,i,j), j = 1, spl%nrpn)
@@ -684,11 +474,11 @@ contains
       end do
     close(11)
 
-    open(11, file = './Jupiter/in_metal/input/PLJ_list/rate_cases.dat', status = 'unknown' )
+    open(11, file = './Jupiter/no_metal/input/PLJ_list/rate_cases.dat', status = 'unknown' )
       read(11,*) (spl%rate_cases(ich), ich = 1, spl%nch)
     close(11)
 
-    open(11, file = './Jupiter/in_metal/input/PLJ_list/T_range.dat', status = 'unknown' )
+    open(11, file = './Jupiter/no_metal/input/PLJ_list/T_range.dat', status = 'unknown' )
       do ich = 1, spl%nch
         do i = 1, 3
           read(11,*) (spl%T_range(ich,i,j), j = 1, 3)
@@ -724,19 +514,19 @@ contains
 
     ! input Temperature profiles
 
-    open(11, file = './Jupiter/in_metal/input/Temperature/T_e.dat', status = 'unknown' )
+    open(11, file = './Jupiter/no_metal/input/Temperature/T_e.dat', status = 'unknown' )
       do iz = 1, grd%nz
         read(11,*) tmp,var%Te(iz)
       end do
     close(11)
 
-    open(11, file = './Jupiter/in_metal/input/Temperature/T_i.dat', status = 'unknown' )
+    open(11, file = './Jupiter/no_metal/input/Temperature/T_i.dat', status = 'unknown' )
       do iz = 1, grd%nz
         read(11,*) tmp,var%Ti(iz)
       end do
     close(11)
 
-    open(11, file = './Jupiter/in_metal/input/Temperature/T_n.dat', status = 'unknown' )
+    open(11, file = './Jupiter/no_metal/input/Temperature/T_n.dat', status = 'unknown' )
       do iz = 1, grd%nz
         read(11,*) tmp,var%Tn(iz)
       end do
@@ -746,56 +536,56 @@ contains
     var%ni   = 1.0e-20_dp
 
     isp = sp_index(spl, 'H2')
-    open(11, file = './Jupiter/in_metal/input/density/H2.dat', status = 'unknown' )
+    open(11, file = './Jupiter/no_metal/input/density/H2.dat', status = 'unknown' )
       do iz = 1, grd%nz
         read(11,*) tmp, var%ni(isp,iz)
       end do
     close(11)
 
     isp = sp_index(spl, 'He')
-    open(11, file = './Jupiter/in_metal/input/density/He.dat', status = 'unknown' )
+    open(11, file = './Jupiter/no_metal/input/density/He.dat', status = 'unknown' )
       do iz = 1, grd%nz
         read(11,*) tmp, var%ni(isp,iz)
       end do
     close(11)
 
     isp = sp_index(spl, 'CH4')
-    open(11, file = './Jupiter/in_metal/input/density/CH4.dat', status = 'unknown' )
+    open(11, file = './Jupiter/no_metal/input/density/CH4.dat', status = 'unknown' )
       do iz = 1, grd%nz
         read(11,*) tmp, var%ni(isp,iz)
       end do
     close(11)
 
     isp = sp_index(spl, 'C2H2')
-    open(11, file = './Jupiter/in_metal/input/density/C2H2.dat', status = 'unknown' )
+    open(11, file = './Jupiter/no_metal/input/density/C2H2.dat', status = 'unknown' )
       do iz = 1, grd%nz
         read(11,*) tmp, var%ni(isp,iz)
       end do
     close(11)
 
     isp = sp_index(spl, 'C2H4')
-    open(11, file = './Jupiter/in_metal/input/density/C2H4.dat', status = 'unknown' )
+    open(11, file = './Jupiter/no_metal/input/density/C2H4.dat', status = 'unknown' )
       do iz = 1, grd%nz
         read(11,*) tmp, var%ni(isp,iz)
       end do
     close(11)
 
     isp = sp_index(spl, 'C2H6')
-    open(11, file = './Jupiter/in_metal/input/density/C2H6.dat', status = 'unknown' )
+    open(11, file = './Jupiter/no_metal/input/density/C2H6.dat', status = 'unknown' )
       do iz = 1, grd%nz
         read(11,*) tmp, var%ni(isp,iz)
       end do
     close(11)
 
     isp = sp_index(spl, 'H2(v>=2)')
-    open(11, file = './Jupiter/in_metal/input/density/H2_v2.dat', status = 'unknown' )
+    open(11, file = './Jupiter/no_metal/input/density/H2_v2.dat', status = 'unknown' )
       do iz = 1, grd%nz
         read(11,*) tmp, var%ni(isp,iz)
       end do
     close(11)
 
     isp = sp_index(spl, 'H2(v>=4)')
-    open(11, file = './Jupiter/in_metal/input/density/H2_v4.dat', status = 'unknown' )
+    open(11, file = './Jupiter/no_metal/input/density/H2_v4.dat', status = 'unknown' )
       do iz = 1, grd%nz
         read(11,*) tmp, var%ni(isp,iz)
       end do
