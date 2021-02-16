@@ -4459,6 +4459,7 @@ def plot(Planet, dir0, species, altitude, action,
          xr, yr):
 
     nmax = 1.0e-100
+    lines = ['']
 
     path = './'+Planet+'/'+dir0+'/settings/plt_species_order.dat'
     if os.path.exists(path) == True:
