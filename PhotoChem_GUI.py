@@ -2678,6 +2678,34 @@ def reaction_analysis(action, iplnt, reaction_chk_bln, fix_species_bln, dir0):
 
             print('Output f90 module "v__in.f90" in the directory '+Planet+'/'+dir0+' !')
 
+            path = './CMakeLists.txt'
+            with open(path, mode = 'w') as f:
+                f.write('cmake_minimum_required(VERSION 3.19)\n')
+                f.write('enable_language(Fortran) \n')
+                f.write('project(PhotoChemistry)\n')
+                f.write('set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ..)\n')
+                f.write('add_executable(e__main\n')
+                f.write('    e__main.f90\n')
+                f.write('    v__tdec.f90\n')
+                f.write('    c__prm.f90\n')
+                f.write('    p__io.f90\n')
+                f.write('    p__search.f90\n')
+                f.write('    v__Jupiter.f90\n')
+                f.write('    v__Mars.f90\n')
+                f.write('    p__EUVAC.f90\n')
+                f.write('    p__UV.f90\n')
+                f.write('    p__eddy_diffusion.f90\n')
+                f.write('    p__molecular_diffusion.f90\n')
+                f.write('    p__photochem_opticaldepth.f90\n')
+                f.write('    p__photochem_rate.f90\n')
+                f.write('    p__photochem_transport.f90\n')
+                f.write('    p__photochem_scheme.f90\n')
+                f.write('    p__airglow.f90\n')
+                f.write('    '+Planet+'/'+dir0+'/v__in.f90\n')
+                f.write(')')
+
+            print('CMakeList updated!')
+
         ###########################################################
         #
         #                Run PhotoChemical Model
@@ -2710,6 +2738,7 @@ def reaction_analysis(action, iplnt, reaction_chk_bln, fix_species_bln, dir0):
                 f.write('    '+Planet+'/'+dir0+'/v__in.f90\n')
                 f.write(')')
             print('Output f90 module "v__in.f90" in the directory '+Planet+'/'+dir0+' !')
+            print('CMakeList updated!')
 
             # Run Model
             os.system('./PhotoChemistry.sh')
@@ -4258,9 +4287,13 @@ def plot_window(Planet, dir0):
     for isp in range(len(species)):
         sp_chk_bln[isp] = tk.BooleanVar()
         sp_chk_bln[isp].set(True)
-        chk_btn = tk.Checkbutton(plt_frame, width = 30, anchor="w", variable = sp_chk_bln[isp], text = species[isp], font=('', '15'))
+        chk_btn = tk.Checkbutton(plt_frame, anchor="w", variable = sp_chk_bln[isp])
         chk_btn.place(x = 50 + 120*(isp % 5), y = 200 + 30*(isp // 5))
         chk_btn.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
+
+        char_sp = tk.Label(plt_frame, width = 30, anchor="w", text = species[isp], font=('', '15'))
+        char_sp.place(x = 75 + 120*(isp % 5), y = 200 + 30*(isp // 5))
+        char_sp.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
 
     def all_Select_click():
         for isp in range(len(species)):
