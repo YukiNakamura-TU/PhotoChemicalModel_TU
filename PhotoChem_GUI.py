@@ -3398,7 +3398,7 @@ def directory_window(iplnt, Planet, list_s, list_e, reaction_chk_bln, fix_specie
 
     dir_win = tk.Toplevel() #display on the main window
     dir_win.title("Select Project")
-    dir_win.geometry("680x400")
+    dir_win.geometry("720x400")
 
     dir_list = []
     path = './'+Planet+'/dir_list.dat'
@@ -3407,18 +3407,18 @@ def directory_window(iplnt, Planet, list_s, list_e, reaction_chk_bln, fix_specie
             dir_list = f.readlines()
         f.close()
 
-    dir_canvas = tk.Canvas(dir_win, width=680,height=100, highlightthickness=0)
+    dir_canvas = tk.Canvas(dir_win, width=720,height=100, highlightthickness=0)
 
     ybar = tk.Scrollbar(dir_win, orient=tk.VERTICAL) #scroll bar
     ybar.pack(side=tk.RIGHT, fill=tk.Y)
     ybar.config(command=dir_canvas.yview)
 
     #frame on the main canvas
-    dir_frame = tk.Frame(dir_canvas, width=680, height=300 + len(dir_list) * 30)
+    dir_frame = tk.Frame(dir_canvas, width=720, height=300 + len(dir_list) * 30)
     dir_canvas.create_window((0,0), window=dir_frame, anchor=tk.NW, width=dir_canvas.cget('width')) #place frame on the canvas
 
     dir_canvas.config(yscrollcommand=ybar.set)
-    dir_canvas.config(scrollregion=(0,0,680,300 + len(dir_list) * 30))
+    dir_canvas.config(scrollregion=(0,0,720,300 + len(dir_list) * 30))
     dir_canvas.pack(anchor=tk.NW, expand=1, fill=tk.BOTH)
     dir_canvas.bind("<MouseWheel>", lambda e:dir_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
     dir_frame.bind("<MouseWheel>", lambda e:dir_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
@@ -4326,7 +4326,7 @@ def plot_window(Planet, dir0):
     all_Select_neutral_Button.place(x=400, y=150)
     all_Select_neutral_Button.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
 
-    order_btn = tk.Button(plt_frame, text=u'set order & details', font=('', '15'))
+    order_btn = tk.Button(plt_frame, text=u'set details', font=('', '15'))
     order_btn["command"] = callback_plot_order(Planet, dir0)
     order_btn.place(x=500, y=60)
     order_btn.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
