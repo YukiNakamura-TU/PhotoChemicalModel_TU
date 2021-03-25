@@ -289,7 +289,7 @@ contains
           if ( set%mode == '1D' .or. set%mode == '2D Lat' ) then 
             if ( var%dtime < set%dtime_limit * 0.99_dp ) then
               if ( var%max_dn_n(3) < eps ) then
-                if (model == 'Catling') var%dtime = var%dtime * 1.09e0_dp
+                if (model == 'Catling') var%dtime = var%dtime * 1.0e1_dp
                 if (model == 'Chaffin') var%dtime = var%dtime * 1.0e1_dp
                 var%iter = 0
                 do iz = 1, grd%nz
