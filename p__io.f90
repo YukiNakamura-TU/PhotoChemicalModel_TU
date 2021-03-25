@@ -30,50 +30,54 @@ contains
     end do
     close(11)
 
-    do isp = 1, spl%nsp
-      fname = './'//trim(ADJUSTL(set%dir_name))//'/output/density/num/'//trim(ADJUSTL(spl%species(isp)))//'.dat'
-      open(11, file = fname, status = 'unknown' )
-        do iz = 1, grd%nz
-          write(11, *) grd%alt(iz)/1d3, var%ni(isp,iz)
-        end do
-      close(11)
+    if (set%mode == '1D') then 
 
-      fname = './'//trim(ADJUSTL(set%dir_name))//'/output/density/vmr/vmr_'//trim(ADJUSTL(spl%species(isp)))//'.dat'
-      open(11, file = fname, status = 'unknown' )
-        do iz = 1, grd%nz
-          write(11, *) grd%alt(iz)/1d3, var%ni(isp,iz)/var%n_tot(iz)
-        end do
-      close(11)
-
-      if (spl%label_fix(isp) == 0) then
-
-        fname = './'//trim(ADJUSTL(set%dir_name))//'/output/flux/'//trim(ADJUSTL(spl%species(isp)))//'.dat'
+      do isp = 1, spl%nsp
+        fname = './'//trim(ADJUSTL(set%dir_name))//'/output/density/num/'//trim(ADJUSTL(spl%species(isp)))//'.dat'
         open(11, file = fname, status = 'unknown' )
           do iz = 1, grd%nz
-            write(11, *) grd%alt(iz)/1d3, &
-              & var%Fluxup(spl%all_to_var(isp),iz)/1.0e4_dp, &
-              & var%Fluxdwn(spl%all_to_var(isp),iz)/1.0e4_dp
+            write(11, *) grd%alt(iz)/1d3, var%ni(isp,iz)
           end do
         close(11)
 
-        fname = './'//trim(ADJUSTL(set%dir_name))//'/output/flux/v_'//trim(ADJUSTL(spl%species(isp)))//'.dat'
+        fname = './'//trim(ADJUSTL(set%dir_name))//'/output/density/vmr/vmr_'//trim(ADJUSTL(spl%species(isp)))//'.dat'
         open(11, file = fname, status = 'unknown' )
           do iz = 1, grd%nz
-            write(11, *) grd%alt(iz)/1d3, &
-              & var%Fluxup(spl%all_to_var(isp),iz)/var%ni(isp,iz), &
-              & var%Fluxdwn(spl%all_to_var(isp),iz)/var%ni(isp,iz)
+            write(11, *) grd%alt(iz)/1d3, var%ni(isp,iz)/var%n_tot(iz)
           end do
         close(11)
 
-        fname = './'//trim(ADJUSTL(set%dir_name))//'/output/flux/D_'//trim(ADJUSTL(spl%species(isp)))//'.dat'
-        open(11, file = fname, status = 'unknown' )
-          do iz = 1, grd%nz
-            write(11, *) grd%alt(iz)/1d3, var%D_mol(isp,iz)
-          end do
-        close(11)
+        if (spl%label_fix(isp) == 0) then
 
-      end if
-    end do
+          fname = './'//trim(ADJUSTL(set%dir_name))//'/output/flux/'//trim(ADJUSTL(spl%species(isp)))//'.dat'
+          open(11, file = fname, status = 'unknown' )
+            do iz = 1, grd%nz
+              write(11, *) grd%alt(iz)/1d3, &
+                & var%Fluxup(spl%all_to_var(isp),iz)/1.0e4_dp, &
+                & var%Fluxdwn(spl%all_to_var(isp),iz)/1.0e4_dp
+            end do
+          close(11)
+
+          fname = './'//trim(ADJUSTL(set%dir_name))//'/output/flux/v_'//trim(ADJUSTL(spl%species(isp)))//'.dat'
+          open(11, file = fname, status = 'unknown' )
+            do iz = 1, grd%nz
+              write(11, *) grd%alt(iz)/1d3, &
+                & var%Fluxup(spl%all_to_var(isp),iz)/var%ni(isp,iz), &
+                & var%Fluxdwn(spl%all_to_var(isp),iz)/var%ni(isp,iz)
+            end do
+          close(11)
+
+          fname = './'//trim(ADJUSTL(set%dir_name))//'/output/flux/D_'//trim(ADJUSTL(spl%species(isp)))//'.dat'
+          open(11, file = fname, status = 'unknown' )
+            do iz = 1, grd%nz
+              write(11, *) grd%alt(iz)/1d3, var%D_mol(isp,iz)
+            end do
+          close(11)
+
+        end if
+      end do
+
+    end if
 
     do ich = 1, spl%nch
       write(num,'(I3)') ich

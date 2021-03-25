@@ -302,7 +302,11 @@ contains
                 if ( var%iter > 5000 ) then
                   var%dtime = 1.0e-8_dp
                   var%iter = 0
-                  var%ni_new(isp,iz) = var%ni_0(isp,iz)
+                  do iz = 1, grd%nz
+                    do isp = 1, spl%nsp
+                      var%ni_0(isp,iz) = var%ni_new(isp,iz)
+                    end do
+                  end do
                 end if
               end if
             else if ( var%dtime  >= set%dtime_limit * 0.99_dp ) then

@@ -86,10 +86,14 @@ contains
       alpha = 0.0_dp
 
       isp = sp_index(spl, 'H')
-      alpha(isp) = -0.25_dp
+      if (isp >= 1 .and. isp <= spl%nsp) then 
+        alpha(isp) = -0.25_dp
+      end if
 
       isp = sp_index(spl, 'H2')
-      alpha(isp) = -0.25_dp
+      if (isp >= 1 .and. isp <= spl%nsp) then 
+        alpha(isp) = -0.25_dp
+      end if
 
       ! temperature & electron density
       do iz = 1, grd%nz
@@ -117,318 +121,323 @@ contains
 
         jsp = spl%all_to_var(isp)
 
-        if (spl%label_fix(isp) == 0 .and. spl%species(isp) /= 'e-' &
-          & .and. spl%species(isp) /= 'M' .and. spl%species(isp) /= 'hv') then
+        if (jsp /= 0) then 
 
-          do iz = 2, grd%nz-1
+          if (spl%label_fix(isp) == 0 .and. spl%species(isp) /= 'e-' &
+            & .and. spl%species(isp) /= 'M' .and. spl%species(isp) /= 'hv') then
 
-            ! grid definition
+            do iz = 2, grd%nz-1
 
-            ! iz+1    : p1
-            ! iz+1/2  : ph ＞ dz00
-            ! iz      : 00
-            ! iz-1/2  : mh ＞ dzm1
-            ! iz-1    : m1
+              ! grid definition
 
-            zu  = grd%alt(iz+1)
-            z0  = grd%alt(iz)
-            zl  = grd%alt(iz-1)
+              ! iz+1    : p1
+              ! iz+1/2  : ph ＞ dz00
+              ! iz      : 00
+              ! iz-1/2  : mh ＞ dzm1
+              ! iz-1    : m1
+
+              zu  = grd%alt(iz+1)
+              z0  = grd%alt(iz)
+              zl  = grd%alt(iz-1)
+              zp  = ( zu + z0 ) / 2.0_dp
+              zm  = ( z0 + zl ) / 2.0_dp
+
+              dz0 = grd%dalt(iz)
+              dzl = grd%dalt(iz-1)
+
+              mu  = var%m_mean(iz+1)
+              m0  = var%m_mean(iz)
+              ml  = var%m_mean(iz-1)
+              mp  = ( mu + m0 ) / 2.0_dp
+              mm  = ( m0 + ml ) / 2.0_dp
+
+              mi  = var%m(isp)
+
+              niu = var%ni(isp,iz+1)
+              ni0 = var%ni(isp,iz)
+              nil = var%ni(isp,iz-1)
+              nip = ( niu + ni0 ) / 2.0_dp
+              nim = ( ni0 + nil ) / 2.0_dp
+              neu = ne(iz+1)
+              ne0 = ne(iz)
+              nel = ne(iz-1)
+              nep = ( neu + ne0 ) / 2.0_dp
+              nem = ( ne0 + nel ) / 2.0_dp
+
+              Diu = var%D_mol(isp,iz+1)
+              Di0 = var%D_mol(isp,iz)
+              Dil = var%D_mol(isp,iz-1)
+              Dip = ( Diu + Di0 ) / 2.0_dp
+              Dim = ( Di0 + Dil ) / 2.0_dp
+              Kiu = var%K_eddy(iz+1)
+              Ki0 = var%K_eddy(iz)
+              Kil = var%K_eddy(iz-1)
+              Kip = ( Kiu + Ki0 ) / 2.0_dp
+              Kim = ( Ki0 + Kil ) / 2.0_dp
+
+              if ( var%q(isp) /= 0.0_dp ) then
+                Tiu = Ti(iz+1)
+                Ti0 = Ti(iz)
+                Til = Ti(iz-1)
+              else if ( var%q(isp) == 0.0_dp ) then
+                Tiu = Tn(iz+1)
+                Ti0 = Tn(iz)
+                Til = Tn(iz-1)
+              end if
+              Tip = ( Tiu + Ti0 ) / 2.0_dp
+              Tim = ( Ti0 + Til ) / 2.0_dp
+
+              Teu = Te(iz+1)
+              Te0 = Te(iz)
+              Tel = Te(iz-1)
+              Tep = ( Teu + Te0 ) / 2.0_dp
+              Tem = ( Te0 + Tel ) / 2.0_dp
+
+              Peu = neu * cst%k_B * Teu
+              Pe0 = ne0 * cst%k_B * Te0
+              Pel = nel * cst%k_B * Tel
+              Pep = ( Peu + Pe0 ) / 2.0_dp
+              Pem = ( Pe0 + Pel ) / 2.0_dp
+
+              dni_dzp = ( niu - ni0 ) / dz0
+              dni_dzm = ( ni0 - nil ) / dzl
+              dne_dzp = ( neu - ne0 ) / dz0
+              dne_dzm = ( ne0 - nel ) / dzl
+              dTi_dzp = ( Tiu - Ti0 ) / dz0
+              dTi_dzm = ( Ti0 - Til ) / dzl
+              dTe_dzp = ( Teu - Te0 ) / dz0
+              dTe_dzm = ( Te0 - Tel ) / dzl
+              dPe_dzp = ( Peu - Pe0 ) / dz0
+              dPe_dzm = ( Pe0 - Pel ) / dzl
+
+              if ( neu > 0.0_dp .and. ne0 > 0.0_dp .and. nel > 0.0_dp &
+                  & .and. var%q(isp) /= 0.0_dp ) then
+                gradPep = (Tep/Tip) / Pep * dPe_dzp
+                gradPem = (Tem/Tim) / Pem * dPe_dzm
+              else
+                gradPep = 0.0_dp
+                gradPem = 0.0_dp
+              end if
+              
+              Thermp = 1.0_dp / Tip * dTi_dzp
+              Thermm = 1.0_dp / Tim * dTi_dzm
+              Hiu = cst%k_B * Tiu / mi / (cst%BigG*cst%Mplanet/(cst%R+zu)**2.0_dp)
+              Hi0 = cst%k_B * Ti0 / mi / (cst%BigG*cst%Mplanet/(cst%R+z0)**2.0_dp)
+              Hil = cst%k_B * Til / mi / (cst%BigG*cst%Mplanet/(cst%R+zl)**2.0_dp)
+              Hau = cst%k_B * Tiu / mu / (cst%BigG*cst%Mplanet/(cst%R+zu)**2.0_dp)
+              Ha0 = cst%k_B * Ti0 / m0 / (cst%BigG*cst%Mplanet/(cst%R+z0)**2.0_dp)
+              Hal = cst%k_B * Til / ml / (cst%BigG*cst%Mplanet/(cst%R+zl)**2.0_dp)
+              Hip = ( Hiu + Hi0 ) / 2.0_dp
+              Him = ( Hi0 + Hil ) / 2.0_dp
+              Hap = ( Hau + Ha0 ) / 2.0_dp
+              Ham = ( Ha0 + Hal ) / 2.0_dp
+
+              if ( var%q(isp) == 0.0_dp ) then
+                zetap = Dip * ( 1.0_dp/Hip + (1.0_dp+alpha(isp))*Thermp) + Kip * (1.0_dp/Hap + Thermp)
+                zetam = Dim * ( 1.0_dp/Him + (1.0_dp+alpha(isp))*Thermm) + Kim * (1.0_dp/Ham + Thermm)
+              else if ( var%q(isp) > 0.0_dp ) then 
+                zetap = Dip * (gradPep + 1.0_dp/Hip + (1.0_dp+alpha(isp))*Thermp) 
+                zetam = Dim * (gradPem + 1.0_dp/Him + (1.0_dp+alpha(isp))*Thermm) 
+              end if
+
+              var%dPhi_dz(jsp,iz) = niu * ( - (Dip+Kip)/dz0/dz0 - zetap/2.0_dp/dz0 ) & ! iz+1 -> iz
+                &                 + ni0 * (   (Dip+Kip)/dz0/dz0 - zetap/2.0_dp/dz0   & ! iz   -> iz+1
+                &                           + (Dim+Kim)/dzl/dzl + zetam/2.0_dp/dzl ) & ! iz   -> iz-1
+                &                 + nil * ( - (Dim+Kim)/dzl/dzl + zetam/2.0_dp/dzl )   ! iz-1 -> iz
+              var%d_dniu_dPhi_dz(jsp,iz) =  - (Dip+Kip)/dz0/dz0 - zetap/2.0_dp/dz0
+              var%d_dni0_dPhi_dz(jsp,iz) =    (Dip+Kip)/dz0/dz0 - zetap/2.0_dp/dz0   &
+                &                           + (Dim+Kim)/dzl/dzl + zetam/2.0_dp/dzl
+              var%d_dnil_dPhi_dz(jsp,iz) =  - (Dim+Kim)/dzl/dzl + zetam/2.0_dp/dzl
+
+              var%Phip(jsp,iz) = - (Dip+Kip)*dni_dzp - zetap*nip
+              var%Phim(jsp,iz) = - (Dim+Kim)*dni_dzm - zetam*nim
+
+            end do
+
+            ! Lower Boundary Condition
+            zu  = grd%alt(2)
+            z0  = grd%alt(1)
             zp  = ( zu + z0 ) / 2.0_dp
+
+            dz0 = grd%dalt(1)
+
+            mu  = var%m_mean(2)
+            m0  = var%m_mean(1)
+            mp  = ( mu + m0 ) / 2.0_dp
+
+            mi  = var%m(isp)
+
+            niu = var%ni(isp,2)
+            ni0 = var%ni(isp,1)
+            nip = ( niu + ni0 ) / 2.0_dp
+            neu = ne(2)
+            ne0 = ne(1)
+            nep = ( neu + ne0 ) / 2.0_dp
+
+            Diu = var%D_mol(isp,2)
+            Di0 = var%D_mol(isp,1)
+            Dip = ( Diu + Di0 ) / 2.0_dp
+            Kiu = var%K_eddy(2)
+            Ki0 = var%K_eddy(1)
+            Kip = ( Kiu + Ki0 ) / 2.0_dp
+
+            if ( var%q(isp) /= 0.0_dp ) then
+              Tiu = Ti(2)
+              Ti0 = Ti(1)
+            else if ( var%q(isp) == 0.0_dp ) then
+              Tiu = Tn(2)
+              Ti0 = Tn(1)
+            end if
+            Tip = ( Tiu + Ti0 ) / 2.0_dp
+
+            Teu = Te(2)
+            Te0 = Te(1)
+            Tep = ( Teu + Te0 ) / 2.0_dp
+
+            Peu = neu * cst%k_B * Teu
+            Pe0 = ne0 * cst%k_B * Te0
+            Pep = nep * cst%k_B * Tep
+
+            dni_dzp = ( niu - ni0 ) / dz0
+            dne_dzp = ( neu - ne0 ) / dz0
+            dTi_dzp = ( Tiu - Ti0 ) / dz0
+            dTe_dzp = ( Teu - Te0 ) / dz0
+            dPe_dzp = ( Peu - Pe0 ) / dz0
+
+            if ( neu > 0.0_dp .and. ne0 > 0.0_dp &
+                & .and. var%q(isp) /= 0.0_dp ) then
+              gradPep = (Tep/Tip) / Pep * dPe_dzp
+            else
+              gradPep = 0.0_dp
+            end if
+            Thermp = 1.0_dp / Tip * dTi_dzp
+            Hiu = cst%k_B * Tiu / mi / (cst%BigG*cst%Mplanet/(cst%R+zu)**2.0_dp)
+            Hi0 = cst%k_B * Ti0 / mi / (cst%BigG*cst%Mplanet/(cst%R+z0)**2.0_dp)
+            Hau = cst%k_B * Tiu / mu / (cst%BigG*cst%Mplanet/(cst%R+zu)**2.0_dp)
+            Ha0 = cst%k_B * Ti0 / m0 / (cst%BigG*cst%Mplanet/(cst%R+z0)**2.0_dp)
+            Hip = ( Hiu + Hi0 ) / 2.0_dp
+            Hap = ( Hau + Ha0 ) / 2.0_dp
+
+            if ( var%q(isp) == 0.0_dp ) then
+              zetap = Dip * ( 1.0_dp/Hip + (1.0_dp+alpha(isp))*Thermp) + Kip * (1.0_dp/Hap + Thermp)
+            else if ( var%q(isp) > 0.0_dp ) then 
+              zetap = Dip * (gradPep + 1.0_dp/Hip + (1.0_dp+alpha(isp))*Thermp) 
+            end if
+
+            var%dPhi_dz(jsp,1) = niu * ( - (Dip+Kip)/dz0/dz0 - zetap/2.0_dp/dz0 ) & ! iz+1 -> iz
+              &                + ni0 * (   (Dip+Kip)/dz0/dz0 - zetap/2.0_dp/dz0 )   ! iz   -> iz+1
+            var%d_dniu_dPhi_dz(jsp,1) =  - (Dip+Kip)/dz0/dz0 - zetap/2.0_dp/dz0
+            var%d_dni0_dPhi_dz(jsp,1) =    (Dip+Kip)/dz0/dz0 - zetap/2.0_dp/dz0
+            var%d_dnil_dPhi_dz(jsp,1) = 0.0_dp
+
+            var%Phip(jsp,1) = - (Dip+Kip)*dni_dzp - zetap*nip
+
+            if (nint(var%LowerBC(isp,1)) == 2) then 
+              var%dPhi_dz(jsp,1) = var%dPhi_dz(jsp,1) &
+                &                - var%LowerBC(isp,2)/dz0 ! Lower boundary: flux 
+              var%Phim(jsp,1) = - var%LowerBC(isp,2)
+            else if (nint(var%LowerBC(isp,1)) == 3) then 
+              var%dPhi_dz(jsp,1) = var%dPhi_dz(jsp,1) &
+                &                - ni0 * var%LowerBC(isp,2)/dz0 ! Lower boundary: velocity
+              var%d_dni0_dPhi_dz(jsp,1) =  var%d_dni0_dPhi_dz(jsp,1) &
+                &                       - var%LowerBC(isp,2)/dz0
+              var%Phim(jsp,1) = - ni0 * var%LowerBC(isp,2)
+            end if 
+
+            ! Upper Boundary Condition
+            z0  = grd%alt(grd%nz)
+            zl  = grd%alt(grd%nz-1)
             zm  = ( z0 + zl ) / 2.0_dp
 
-            dz0 = grd%dalt(iz)
-            dzl = grd%dalt(iz-1)
+            dzl = grd%dalt(grd%nz)
 
-            mu  = var%m_mean(iz+1)
-            m0  = var%m_mean(iz)
-            ml  = var%m_mean(iz-1)
-            mp  = ( mu + m0 ) / 2.0_dp
+            m0  = var%m_mean(grd%nz)
+            ml  = var%m_mean(grd%nz-1)
             mm  = ( m0 + ml ) / 2.0_dp
 
             mi  = var%m(isp)
 
-            niu = var%ni(isp,iz+1)
-            ni0 = var%ni(isp,iz)
-            nil = var%ni(isp,iz-1)
-            nip = ( niu + ni0 ) / 2.0_dp
+            ni0 = var%ni(isp,grd%nz)
+            nil = var%ni(isp,grd%nz-1)
             nim = ( ni0 + nil ) / 2.0_dp
-            neu = ne(iz+1)
-            ne0 = ne(iz)
-            nel = ne(iz-1)
-            nep = ( neu + ne0 ) / 2.0_dp
+            ne0 = ne(grd%nz)
+            nel = ne(grd%nz-1)
             nem = ( ne0 + nel ) / 2.0_dp
 
-            Diu = var%D_mol(isp,iz+1)
-            Di0 = var%D_mol(isp,iz)
-            Dil = var%D_mol(isp,iz-1)
-            Dip = ( Diu + Di0 ) / 2.0_dp
+            Di0 = var%D_mol(isp,grd%nz)
+            Dil = var%D_mol(isp,grd%nz-1)
             Dim = ( Di0 + Dil ) / 2.0_dp
-            Kiu = var%K_eddy(iz+1)
-            Ki0 = var%K_eddy(iz)
-            Kil = var%K_eddy(iz-1)
-            Kip = ( Kiu + Ki0 ) / 2.0_dp
+            Ki0 = var%K_eddy(grd%nz)
+            Kil = var%K_eddy(grd%nz-1)
             Kim = ( Ki0 + Kil ) / 2.0_dp
 
             if ( var%q(isp) /= 0.0_dp ) then
-              Tiu = Ti(iz+1)
-              Ti0 = Ti(iz)
-              Til = Ti(iz-1)
+              Ti0 = Ti(grd%nz)
+              Til = Ti(grd%nz-1)
             else if ( var%q(isp) == 0.0_dp ) then
-              Tiu = Tn(iz+1)
-              Ti0 = Tn(iz)
-              Til = Tn(iz-1)
+              Ti0 = Tn(grd%nz)
+              Til = Tn(grd%nz-1)
             end if
-            Tip = ( Tiu + Ti0 ) / 2.0_dp
             Tim = ( Ti0 + Til ) / 2.0_dp
 
-            Teu = Te(iz+1)
-            Te0 = Te(iz)
-            Tel = Te(iz-1)
-            Tep = ( Teu + Te0 ) / 2.0_dp
+            Te0 = Te(grd%nz)
+            Tel = Te(grd%nz-1)
             Tem = ( Te0 + Tel ) / 2.0_dp
 
-            Peu = neu * cst%k_B * Teu
             Pe0 = ne0 * cst%k_B * Te0
             Pel = nel * cst%k_B * Tel
-            Pep = ( Peu + Pe0 ) / 2.0_dp
-            Pem = ( Pe0 + Pel ) / 2.0_dp
+            Pem = nem * cst%k_B * Tem
 
-            dni_dzp = ( niu - ni0 ) / dz0
             dni_dzm = ( ni0 - nil ) / dzl
-            dne_dzp = ( neu - ne0 ) / dz0
             dne_dzm = ( ne0 - nel ) / dzl
-            dTi_dzp = ( Tiu - Ti0 ) / dz0
             dTi_dzm = ( Ti0 - Til ) / dzl
-            dTe_dzp = ( Teu - Te0 ) / dz0
             dTe_dzm = ( Te0 - Tel ) / dzl
-            dPe_dzp = ( Peu - Pe0 ) / dz0
             dPe_dzm = ( Pe0 - Pel ) / dzl
 
-            if ( neu > 0.0_dp .and. ne0 > 0.0_dp .and. nel > 0.0_dp &
+            if ( ne0 > 0.0_dp .and. nel > 0.0_dp &
                 & .and. var%q(isp) /= 0.0_dp ) then
-              gradPep = (Tep/Tip) / Pep * dPe_dzp
               gradPem = (Tem/Tim) / Pem * dPe_dzm
             else
-              gradPep = 0.0_dp
               gradPem = 0.0_dp
             end if
-            
-            Thermp = 1.0_dp / Tip * dTi_dzp
             Thermm = 1.0_dp / Tim * dTi_dzm
-            Hiu = cst%k_B * Tiu / mi / (cst%BigG*cst%Mplanet/(cst%R+zu)**2.0_dp)
             Hi0 = cst%k_B * Ti0 / mi / (cst%BigG*cst%Mplanet/(cst%R+z0)**2.0_dp)
             Hil = cst%k_B * Til / mi / (cst%BigG*cst%Mplanet/(cst%R+zl)**2.0_dp)
-            Hau = cst%k_B * Tiu / mu / (cst%BigG*cst%Mplanet/(cst%R+zu)**2.0_dp)
             Ha0 = cst%k_B * Ti0 / m0 / (cst%BigG*cst%Mplanet/(cst%R+z0)**2.0_dp)
             Hal = cst%k_B * Til / ml / (cst%BigG*cst%Mplanet/(cst%R+zl)**2.0_dp)
-            Hip = ( Hiu + Hi0 ) / 2.0_dp
             Him = ( Hi0 + Hil ) / 2.0_dp
-            Hap = ( Hau + Ha0 ) / 2.0_dp
             Ham = ( Ha0 + Hal ) / 2.0_dp
 
             if ( var%q(isp) == 0.0_dp ) then
-              zetap = Dip * ( 1.0_dp/Hip + (1.0_dp+alpha(isp))*Thermp) + Kip * (1.0_dp/Hap + Thermp)
               zetam = Dim * ( 1.0_dp/Him + (1.0_dp+alpha(isp))*Thermm) + Kim * (1.0_dp/Ham + Thermm)
             else if ( var%q(isp) > 0.0_dp ) then 
-              zetap = Dip * (gradPep + 1.0_dp/Hip + (1.0_dp+alpha(isp))*Thermp) 
               zetam = Dim * (gradPem + 1.0_dp/Him + (1.0_dp+alpha(isp))*Thermm) 
             end if
 
-            var%dPhi_dz(jsp,iz) = niu * ( - (Dip+Kip)/dz0/dz0 - zetap/2.0_dp/dz0 ) & ! iz+1 -> iz
-              &                 + ni0 * (   (Dip+Kip)/dz0/dz0 - zetap/2.0_dp/dz0   & ! iz   -> iz+1
-              &                           + (Dim+Kim)/dzl/dzl + zetam/2.0_dp/dzl ) & ! iz   -> iz-1
-              &                 + nil * ( - (Dim+Kim)/dzl/dzl + zetam/2.0_dp/dzl )   ! iz-1 -> iz
-            var%d_dniu_dPhi_dz(jsp,iz) =  - (Dip+Kip)/dz0/dz0 - zetap/2.0_dp/dz0
-            var%d_dni0_dPhi_dz(jsp,iz) =    (Dip+Kip)/dz0/dz0 - zetap/2.0_dp/dz0   &
-              &                           + (Dim+Kim)/dzl/dzl + zetam/2.0_dp/dzl
-            var%d_dnil_dPhi_dz(jsp,iz) =  - (Dim+Kim)/dzl/dzl + zetam/2.0_dp/dzl
+            var%dPhi_dz(jsp,grd%nz) = ni0 * (   (Dim+Kim)/dzl/dzl + zetam/2.0_dp/dzl ) & ! iz   -> iz-1
+              &                     + nil * ( - (Dim+Kim)/dzl/dzl + zetam/2.0_dp/dzl )   ! iz-1 -> iz
+            var%d_dniu_dPhi_dz(jsp,grd%nz) = 0.0_dp
+            var%d_dni0_dPhi_dz(jsp,grd%nz) =    (Dim+Kim)/dzl/dzl + zetam/2.0_dp/dzl
+            var%d_dnil_dPhi_dz(jsp,grd%nz) =  - (Dim+Kim)/dzl/dzl + zetam/2.0_dp/dzl
 
-            var%Phip(jsp,iz) = - (Dip+Kip)*dni_dzp - zetap*nip
             var%Phim(jsp,iz) = - (Dim+Kim)*dni_dzm - zetam*nim
 
-          end do
+            if (nint(var%UpperBC(isp,1)) == 2) then 
+              var%dPhi_dz(jsp,grd%nz) = var%dPhi_dz(jsp,grd%nz) &
+                &                     + var%UpperBC(isp,2)/dzl ! Upper boundary: flux 
+              var%Phip(jsp,iz) = var%UpperBC(isp,2)
+            else if (nint(var%UpperBC(isp,1)) == 3 .or. nint(var%UpperBC(isp,1)) == 10) then 
+              var%dPhi_dz(jsp,grd%nz) = var%dPhi_dz(jsp,grd%nz) &
+                &                     + ni0 * var%UpperBC(isp,2)/dzl ! Upper boundary: velocity
+              var%d_dni0_dPhi_dz(jsp,grd%nz) = var%d_dni0_dPhi_dz(jsp,grd%nz) &
+                &                            + var%UpperBC(isp,2)/dzl
+              var%Phip(jsp,iz) = ni0 * var%UpperBC(isp,2)
+            end if 
 
-          ! Lower Boundary Condition
-          zu  = grd%alt(2)
-          z0  = grd%alt(1)
-          zp  = ( zu + z0 ) / 2.0_dp
-
-          dz0 = grd%dalt(1)
-
-          mu  = var%m_mean(2)
-          m0  = var%m_mean(1)
-          mp  = ( mu + m0 ) / 2.0_dp
-
-          mi  = var%m(isp)
-
-          niu = var%ni(isp,2)
-          ni0 = var%ni(isp,1)
-          nip = ( niu + ni0 ) / 2.0_dp
-          neu = ne(2)
-          ne0 = ne(1)
-          nep = ( neu + ne0 ) / 2.0_dp
-
-          Diu = var%D_mol(isp,2)
-          Di0 = var%D_mol(isp,1)
-          Dip = ( Diu + Di0 ) / 2.0_dp
-          Kiu = var%K_eddy(2)
-          Ki0 = var%K_eddy(1)
-          Kip = ( Kiu + Ki0 ) / 2.0_dp
-
-          if ( var%q(isp) /= 0.0_dp ) then
-            Tiu = Ti(2)
-            Ti0 = Ti(1)
-          else if ( var%q(isp) == 0.0_dp ) then
-            Tiu = Tn(2)
-            Ti0 = Tn(1)
           end if
-          Tip = ( Tiu + Ti0 ) / 2.0_dp
-
-          Teu = Te(2)
-          Te0 = Te(1)
-          Tep = ( Teu + Te0 ) / 2.0_dp
-
-          Peu = neu * cst%k_B * Teu
-          Pe0 = ne0 * cst%k_B * Te0
-          Pep = nep * cst%k_B * Tep
-
-          dni_dzp = ( niu - ni0 ) / dz0
-          dne_dzp = ( neu - ne0 ) / dz0
-          dTi_dzp = ( Tiu - Ti0 ) / dz0
-          dTe_dzp = ( Teu - Te0 ) / dz0
-          dPe_dzp = ( Peu - Pe0 ) / dz0
-
-          if ( neu > 0.0_dp .and. ne0 > 0.0_dp &
-              & .and. var%q(isp) /= 0.0_dp ) then
-            gradPep = (Tep/Tip) / Pep * dPe_dzp
-          else
-            gradPep = 0.0_dp
-          end if
-          Thermp = 1.0_dp / Tip * dTi_dzp
-          Hiu = cst%k_B * Tiu / mi / (cst%BigG*cst%Mplanet/(cst%R+zu)**2.0_dp)
-          Hi0 = cst%k_B * Ti0 / mi / (cst%BigG*cst%Mplanet/(cst%R+z0)**2.0_dp)
-          Hau = cst%k_B * Tiu / mu / (cst%BigG*cst%Mplanet/(cst%R+zu)**2.0_dp)
-          Ha0 = cst%k_B * Ti0 / m0 / (cst%BigG*cst%Mplanet/(cst%R+z0)**2.0_dp)
-          Hip = ( Hiu + Hi0 ) / 2.0_dp
-          Hap = ( Hau + Ha0 ) / 2.0_dp
-
-          if ( var%q(isp) == 0.0_dp ) then
-            zetap = Dip * ( 1.0_dp/Hip + (1.0_dp+alpha(isp))*Thermp) + Kip * (1.0_dp/Hap + Thermp)
-          else if ( var%q(isp) > 0.0_dp ) then 
-            zetap = Dip * (gradPep + 1.0_dp/Hip + (1.0_dp+alpha(isp))*Thermp) 
-          end if
-
-          var%dPhi_dz(jsp,1) = niu * ( - (Dip+Kip)/dz0/dz0 - zetap/2.0_dp/dz0 ) & ! iz+1 -> iz
-            &                + ni0 * (   (Dip+Kip)/dz0/dz0 - zetap/2.0_dp/dz0 )   ! iz   -> iz+1
-          var%d_dniu_dPhi_dz(jsp,1) =  - (Dip+Kip)/dz0/dz0 - zetap/2.0_dp/dz0
-          var%d_dni0_dPhi_dz(jsp,1) =    (Dip+Kip)/dz0/dz0 - zetap/2.0_dp/dz0
-          var%d_dnil_dPhi_dz(jsp,1) = 0.0_dp
-
-          var%Phip(jsp,1) = - (Dip+Kip)*dni_dzp - zetap*nip
-
-          if (nint(var%LowerBC(isp,1)) == 2) then 
-            var%dPhi_dz(jsp,1) = var%dPhi_dz(jsp,1) &
-              &                - var%LowerBC(isp,2)/dz0 ! Lower boundary: flux 
-            var%Phim(jsp,1) = - var%LowerBC(isp,2)
-          else if (nint(var%LowerBC(isp,1)) == 3) then 
-            var%dPhi_dz(jsp,1) = var%dPhi_dz(jsp,1) &
-              &                - ni0 * var%LowerBC(isp,2)/dz0 ! Lower boundary: velocity
-            var%d_dni0_dPhi_dz(jsp,1) =  var%d_dni0_dPhi_dz(jsp,1) &
-              &                       - var%LowerBC(isp,2)/dz0
-            var%Phim(jsp,1) = - ni0 * var%LowerBC(isp,2)
-          end if 
-
-          ! Upper Boundary Condition
-          z0  = grd%alt(grd%nz)
-          zl  = grd%alt(grd%nz-1)
-          zm  = ( z0 + zl ) / 2.0_dp
-
-          dzl = grd%dalt(grd%nz)
-
-          m0  = var%m_mean(grd%nz)
-          ml  = var%m_mean(grd%nz-1)
-          mm  = ( m0 + ml ) / 2.0_dp
-
-          mi  = var%m(isp)
-
-          ni0 = var%ni(isp,grd%nz)
-          nil = var%ni(isp,grd%nz-1)
-          nim = ( ni0 + nil ) / 2.0_dp
-          ne0 = ne(grd%nz)
-          nel = ne(grd%nz-1)
-          nem = ( ne0 + nel ) / 2.0_dp
-
-          Di0 = var%D_mol(isp,grd%nz)
-          Dil = var%D_mol(isp,grd%nz-1)
-          Dim = ( Di0 + Dil ) / 2.0_dp
-          Ki0 = var%K_eddy(grd%nz)
-          Kil = var%K_eddy(grd%nz-1)
-          Kim = ( Ki0 + Kil ) / 2.0_dp
-
-          if ( var%q(isp) /= 0.0_dp ) then
-            Ti0 = Ti(grd%nz)
-            Til = Ti(grd%nz-1)
-          else if ( var%q(isp) == 0.0_dp ) then
-            Ti0 = Tn(grd%nz)
-            Til = Tn(grd%nz-1)
-          end if
-          Tim = ( Ti0 + Til ) / 2.0_dp
-
-          Te0 = Te(grd%nz)
-          Tel = Te(grd%nz-1)
-          Tem = ( Te0 + Tel ) / 2.0_dp
-
-          Pe0 = ne0 * cst%k_B * Te0
-          Pel = nel * cst%k_B * Tel
-          Pem = nem * cst%k_B * Tem
-
-          dni_dzm = ( ni0 - nil ) / dzl
-          dne_dzm = ( ne0 - nel ) / dzl
-          dTi_dzm = ( Ti0 - Til ) / dzl
-          dTe_dzm = ( Te0 - Tel ) / dzl
-          dPe_dzm = ( Pe0 - Pel ) / dzl
-
-          if ( ne0 > 0.0_dp .and. nel > 0.0_dp &
-              & .and. var%q(isp) /= 0.0_dp ) then
-            gradPem = (Tem/Tim) / Pem * dPe_dzm
-          else
-            gradPem = 0.0_dp
-          end if
-          Thermm = 1.0_dp / Tim * dTi_dzm
-          Hi0 = cst%k_B * Ti0 / mi / (cst%BigG*cst%Mplanet/(cst%R+z0)**2.0_dp)
-          Hil = cst%k_B * Til / mi / (cst%BigG*cst%Mplanet/(cst%R+zl)**2.0_dp)
-          Ha0 = cst%k_B * Ti0 / m0 / (cst%BigG*cst%Mplanet/(cst%R+z0)**2.0_dp)
-          Hal = cst%k_B * Til / ml / (cst%BigG*cst%Mplanet/(cst%R+zl)**2.0_dp)
-          Him = ( Hi0 + Hil ) / 2.0_dp
-          Ham = ( Ha0 + Hal ) / 2.0_dp
-
-          if ( var%q(isp) == 0.0_dp ) then
-            zetam = Dim * ( 1.0_dp/Him + (1.0_dp+alpha(isp))*Thermm) + Kim * (1.0_dp/Ham + Thermm)
-          else if ( var%q(isp) > 0.0_dp ) then 
-            zetam = Dim * (gradPem + 1.0_dp/Him + (1.0_dp+alpha(isp))*Thermm) 
-          end if
-
-          var%dPhi_dz(jsp,grd%nz) = ni0 * (   (Dim+Kim)/dzl/dzl + zetam/2.0_dp/dzl ) & ! iz   -> iz-1
-            &                     + nil * ( - (Dim+Kim)/dzl/dzl + zetam/2.0_dp/dzl )   ! iz-1 -> iz
-          var%d_dniu_dPhi_dz(jsp,grd%nz) = 0.0_dp
-          var%d_dni0_dPhi_dz(jsp,grd%nz) =    (Dim+Kim)/dzl/dzl + zetam/2.0_dp/dzl
-          var%d_dnil_dPhi_dz(jsp,grd%nz) =  - (Dim+Kim)/dzl/dzl + zetam/2.0_dp/dzl
-
-          var%Phim(jsp,iz) = - (Dim+Kim)*dni_dzm - zetam*nim
-
-          if (nint(var%UpperBC(isp,1)) == 2) then 
-            var%dPhi_dz(jsp,grd%nz) = var%dPhi_dz(jsp,grd%nz) &
-              &                     + var%UpperBC(isp,2)/dzl ! Upper boundary: flux 
-            var%Phip(jsp,iz) = var%UpperBC(isp,2)
-          else if (nint(var%UpperBC(isp,1)) == 3 .or. nint(var%UpperBC(isp,1)) == 10) then 
-            var%dPhi_dz(jsp,grd%nz) = var%dPhi_dz(jsp,grd%nz) &
-              &                     + ni0 * var%UpperBC(isp,2)/dzl ! Upper boundary: velocity
-            var%d_dni0_dPhi_dz(jsp,grd%nz) = var%d_dni0_dPhi_dz(jsp,grd%nz) &
-              &                            + var%UpperBC(isp,2)/dzl
-            var%Phip(jsp,iz) = ni0 * var%UpperBC(isp,2)
-          end if 
 
         end if
+        
       end do
 
       ! electron : NO transport
@@ -436,13 +445,15 @@ contains
 
         jsp = spl%all_to_var(isp)
 
-        if (spl%species(isp) == 'e-') then
-          do iz = 1, grd%nz
-            var%dPhi_dz(jsp,iz)        = 0.0_dp
-            var%d_dniu_dPhi_dz(jsp,iz) = 0.0_dp
-            var%d_dni0_dPhi_dz(jsp,iz) = 0.0_dp
-            var%d_dnil_dPhi_dz(jsp,iz) = 0.0_dp
-          end do
+        if (jsp /= 0) then 
+          if (spl%species(isp) == 'e-') then
+            do iz = 1, grd%nz
+              var%dPhi_dz(jsp,iz)        = 0.0_dp
+              var%d_dniu_dPhi_dz(jsp,iz) = 0.0_dp
+              var%d_dni0_dPhi_dz(jsp,iz) = 0.0_dp
+              var%d_dnil_dPhi_dz(jsp,iz) = 0.0_dp
+            end do
+          end if
         end if
       end do
 
@@ -453,10 +464,12 @@ contains
 
           jsp = spl%all_to_var(isp)
 
-          if (var%Phip(jsp,iz) >= 0.0_dp) then
-            var%Fluxup(jsp,iz) = var%Phip(jsp,iz)
-          else if (var%Phip(spl%all_to_var(isp),iz) < 0.0_dp) then
-            var%Fluxdwn(jsp,iz) = - var%Phip(jsp,iz)
+          if (jsp /= 0) then 
+            if (var%Phip(jsp,iz) >= 0.0_dp) then
+              var%Fluxup(jsp,iz) = var%Phip(jsp,iz)
+            else if (var%Phip(spl%all_to_var(isp),iz) < 0.0_dp) then
+              var%Fluxdwn(jsp,iz) = - var%Phip(jsp,iz)
+            end if
           end if
 
         end do
@@ -466,10 +479,12 @@ contains
 
         jsp = spl%all_to_var(isp)
 
-        if (var%Phim(jsp,1) >= 0.0_dp) then
-          var%Fluxup(jsp,0) = var%Phip(jsp,1)
-        else if (var%Phim(jsp,1) < 0.0_dp) then
-          var%Fluxdwn(jsp,0) = - var%Phim(jsp,1)
+        if (jsp /= 0) then 
+          if (var%Phim(jsp,1) >= 0.0_dp) then
+            var%Fluxup(jsp,0) = var%Phip(jsp,1)
+          else if (var%Phim(jsp,1) < 0.0_dp) then
+            var%Fluxdwn(jsp,0) = - var%Phim(jsp,1)
+          end if
         end if
 
       end do
