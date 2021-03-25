@@ -19,9 +19,6 @@
 !        1-4 Press 'Output' to output 'v__in.f90' which contains planet info, results of species/reaction analysis,
 !            input density paths and vertical grids.
 !
-!         * It may be useful to rename 'v__in.f90' like 'v__in_Mars.f90', which avoids it from being replaced by new
-!         'v__in.f90' at the next time you run PhotoChem_GUI.py. By do so, settings for each planet can be preserved.
-!
 !       (2) Rename "v__in.f90" with its directory in CMakeList.txt
 !
 !       (3) Calculation settings
