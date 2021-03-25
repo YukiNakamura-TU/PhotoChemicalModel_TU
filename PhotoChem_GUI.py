@@ -3068,6 +3068,10 @@ def callback_create_dir_window(iplnt, Planet, list_s, list_e,
             if os.path.exists(path) == False:
                 os.makedirs(path)
 
+            path = './'+Planet+'/'+dir0+'/output/density/2Dstable'
+            if os.path.exists(path) == False:
+                os.makedirs(path)
+
             path = './'+Planet+'/'+dir0+'/output/density/num'
             if os.path.exists(path) == False:
                 os.makedirs(path)
@@ -3118,6 +3122,10 @@ def callback_select_dir_window(iplnt, Planet, list_s, list_e, dir0, version, rea
                 os.makedirs(path)
 
             path = './'+Planet+'/'+dir1+'/output/density/global'
+            if os.path.exists(path) == False:
+                os.makedirs(path)
+
+            path = './'+Planet+'/'+dir1+'/output/density/2Dstable'
             if os.path.exists(path) == False:
                 os.makedirs(path)
 
@@ -3215,6 +3223,10 @@ def callback_save_dir_window(iplnt, Planet, list_s, list_e, dir0, version,
                 os.makedirs(path)
 
             path = './'+Planet+'/'+dir2+'/output/density/global'
+            if os.path.exists(path) == False:
+                os.makedirs(path)
+            
+            path = './'+Planet+'/'+dir2+'/output/density/2Dstable'
             if os.path.exists(path) == False:
                 os.makedirs(path)
 
