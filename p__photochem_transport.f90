@@ -121,7 +121,7 @@ contains
 
         jsp = spl%all_to_var(isp)
 
-        if (jsp /= 0) then 
+        if (jsp >= 1 .and. jsp <= spl%nsp_i) then 
 
           if (spl%label_fix(isp) == 0 .and. spl%species(isp) /= 'e-' &
             & .and. spl%species(isp) /= 'M' .and. spl%species(isp) /= 'hv') then
@@ -445,7 +445,7 @@ contains
 
         jsp = spl%all_to_var(isp)
 
-        if (jsp /= 0) then 
+        if (jsp >= 1 .and. jsp <= spl%nsp_i) then 
           if (spl%species(isp) == 'e-') then
             do iz = 1, grd%nz
               var%dPhi_dz(jsp,iz)        = 0.0_dp
@@ -464,7 +464,7 @@ contains
 
           jsp = spl%all_to_var(isp)
 
-          if (jsp /= 0) then 
+          if (jsp >= 1 .and. jsp <= spl%nsp_i) then 
             if (var%Phip(jsp,iz) >= 0.0_dp) then
               var%Fluxup(jsp,iz) = var%Phip(jsp,iz)
             else if (var%Phip(spl%all_to_var(isp),iz) < 0.0_dp) then
@@ -479,7 +479,7 @@ contains
 
         jsp = spl%all_to_var(isp)
 
-        if (jsp /= 0) then 
+        if (jsp >= 1 .and. jsp <= spl%nsp_i) then 
           if (var%Phim(jsp,1) >= 0.0_dp) then
             var%Fluxup(jsp,0) = var%Phip(jsp,1)
           else if (var%Phim(jsp,1) < 0.0_dp) then
