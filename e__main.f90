@@ -88,6 +88,7 @@ program e__main
   type(spl_) :: spl ! type of species list and planet info
   type(flx_) :: flx ! type of solar flux
   integer i, j, k, ix, xs, iy, iz, ich, isp, jsp, is, iday
+  real(dp) tmp
   character(len=256) fname
 
   real(dp) t1, t2
@@ -227,7 +228,7 @@ program e__main
           exit loopt
         end if
 
-        write(*,*) var%istep, var%dtime, var%sum_time, var%max_dn_n(1), &
+        write(*,*) grd%iy, var%istep, var%dtime, var%sum_time, var%max_dn_n(1), &
         & var%max_dn_n(2), var%max_dn_n(3), var%m_mean(1)/cst%m_u
 
         var%sum_time = var%sum_time + var%dtime
@@ -273,17 +274,30 @@ program e__main
 
     set%inversion = 'Catling'
 
-    if (set%calc_stable == 0 .and. set%read_stable == 1) then
-      xs = (grd%nx-1)/2+1
-      open(11, file = set%fnamestable, status = 'unknown' )
-        do iz = 1, grd%nz
-          do iy = 1, grd%ny
-            do isp = 1, spl%nsp
-              read(11,*) var%ni_stable(isp,iy,iz)
+    if (set%mode == '2D Rot') then
+      if (set%calc_stable == 0 .and. set%read_stable == 1) then
+        xs = (grd%nx-1)/2+1
+        do isp = 1, spl%nsp
+          fname = './'//trim(ADJUSTL(set%dir_name))//'/output/density/num/'//trim(ADJUSTL(spl%species(isp)))//'.dat'
+          open(11, file = fname, status = 'unknown' )
+            do iz = 1, grd%nz
+              read(11, *) tmp, var%ni_stable(isp,1,iz) ! tmp: altitude in km
             end do
-          end do
+          close(11)
         end do
-      close(11)
+      end if
+    else if (set%mode == '3D Rot') then
+      if (set%calc_stable == 0 .and. set%read_stable == 1) then
+        xs = (grd%nx-1)/2+1
+        do isp = 1, spl%nsp
+          fname = './'//trim(ADJUSTL(set%dir_name))//'/output/density/2Dstable/'//trim(ADJUSTL(spl%species(isp)))//'.dat'
+          open(11, file = fname, status = 'unknown' )
+            do iz = 1, grd%nz
+              read(11, *) tmp, (var%ni_stable(isp,iy,iz), iy = 1, grd%ny) ! tmp: altitude in km
+            end do
+          close(11)
+        end do
+      end if
     end if
 
     do iz = 1, grd%nz

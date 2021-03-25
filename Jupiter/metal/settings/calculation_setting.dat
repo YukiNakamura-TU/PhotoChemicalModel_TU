@@ -1,7 +1,7 @@
-Dimension : 1
+Dimension : 2
 LAT : 0.0
 Ls : 0.0
-stepmax : 10000
+stepmax : 1
 sumdtst : 3.0e7
 dtmaxst : 1.0e5
 sumdtrot : 3.0
