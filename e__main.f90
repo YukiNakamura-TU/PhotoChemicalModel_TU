@@ -48,6 +48,8 @@
 !include "v__Mars.f90"
 !include "p__EUVAC.f90"
 !include "p__UV.f90"
+!include "p__eddy_diffusion.f90"
+!include "p__molecular_diffusion.f90"
 !include "p__photochem_opticaldepth.f90"
 !include "p__photochem_rate.f90"
 !include "p__photochem_transport.f90"
