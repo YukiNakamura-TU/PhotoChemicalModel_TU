@@ -28,7 +28,7 @@ contains
     &                        set  ) ! inout
     type(spl_),   intent(in)      :: spl
     type(set_),   intent(inout)   :: set
-    real(dp), parameter :: Jday = 35729.0_dp
+    real(dp), parameter :: Jday = 35729.685_dp
     character(len=256) fname
 
     if ( spl%planet == 'Jupiter' ) then
@@ -74,7 +74,7 @@ contains
 
       ! calculation mode
       !set%mode        =  1
-      set%calc_stable =  1
+      set%calc_stable =  0
       set%read_stable =  1
       set%test_loc    =  0
       set%sza         =  0.0_dp

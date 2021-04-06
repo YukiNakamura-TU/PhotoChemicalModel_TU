@@ -137,8 +137,9 @@ contains
     integer i, ip, is, ix, iy, iz, isp
 
     do isp = 1, spl%nsp
-      fname = './'//trim(ADJUSTL(set%dir_name))//'/output/density/num/rot_'//trim(ADJUSTL(spl%species(isp)))//'.dat'
+      fname = './'//trim(ADJUSTL(set%dir_name))//'/output/density/global/'//trim(ADJUSTL(spl%species(isp)))//'.dat'
       open(11, file = fname, status = 'unknown' )
+        write(11, *) grd%nx, grd%ny, grd%nz
         do ix = 1, grd%nx
           do iy = 1, grd%ny
             do iz = 1, grd%nz
@@ -149,22 +150,22 @@ contains
         end do
       close(11)
 
-      do iz = 1, grd%nz
-        write(num,'(I3)') iz
-        fname = './'//trim(ADJUSTL(set%dir_name))//'/output/density/global/global_' &
-          &      //trim(ADJUSTL(num))//'_'//trim(ADJUSTL(spl%species(isp)))//'.dat'
-        open(11, file = fname, status = 'unknown' )
-          do iy = 1, grd%ny
-            if (grd%ny == 1) yy = set%latitude 
-            if (grd%ny /= 1) yy = 180.0_dp*dble(iy-((grd%ny+1)/2))/dble(grd%ny-1)
-            do ix = 1, grd%nx
-              xx = 360.0_dp*dble(ix-1)/dble(grd%nx-1)
-              write(11, *) yy, &
-                &          xx, var%ni_3d(isp,ix,iy,iz)
-            end do
-            write(11,*)
-          end do
-        close(11)
+      !do iz = 1, grd%nz
+      !  write(num,'(I3)') iz
+      !  fname = './'//trim(ADJUSTL(set%dir_name))//'/output/density/global/global_' &
+      !    &      //trim(ADJUSTL(num))//'_'//trim(ADJUSTL(spl%species(isp)))//'.dat'
+      !  open(11, file = fname, status = 'unknown' )
+      !    do iy = 1, grd%ny
+      !      if (grd%ny == 1) yy = set%latitude 
+      !      if (grd%ny /= 1) yy = 180.0_dp*dble(iy-((grd%ny+1)/2))/dble(grd%ny-1)
+      !      do ix = 1, grd%nx
+      !        xx = 360.0_dp*dble(ix-1)/dble(grd%nx-1)
+      !        write(11, *) yy, &
+      !          &          xx, var%ni_3d(isp,ix,iy,iz)
+      !      end do
+      !      write(11,*)
+      !    end do
+      !  close(11)
       end do
 
 
