@@ -66,7 +66,7 @@ contains
 
       cst%g      = 24.8_dp ! gravity acceleration @ Jupiter
       cst%Mplanet= 1.898e27_dp ! Mass of Jupiter
-      cst%daysec = 9.0_dp * 3600.0_dp + 55.0_dp * 60.0_dp
+      cst%daysec = 35729.685_dp ! rotational period of Jupiter [sec]
 
       omega      = 0.0_dp    ! angle from solstice
 

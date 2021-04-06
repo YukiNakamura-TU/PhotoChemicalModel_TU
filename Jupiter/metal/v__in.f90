@@ -20,8 +20,8 @@ contains
 
     ! Calculation settings
     set%mode = '2D Lat'
-    set%nstep = 1
-    set%fin_sec = 3.0e7_dp
+    set%nstep = 20000
+    set%fin_sec = 35729.685e3_dp
     set%dtime_limit = 1.0e5_dp
     set%latitude = 0.0_dp
     set%Ls = 0.0_dp

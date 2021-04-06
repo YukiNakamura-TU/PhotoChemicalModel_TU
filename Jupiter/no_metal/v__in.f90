@@ -19,9 +19,9 @@ contains
     spl%planet = 'Jupiter'
 
     ! Calculation settings
-    set%mode = '1D'
-    set%nstep = 10000
-    set%fin_sec = 3.0e7_dp
+    set%mode = '2D Lat'
+    set%nstep = 20000
+    set%fin_sec = 35729.685e3_dp
     set%dtime_limit = 1.0e5_dp
     set%latitude = 0.0_dp
     set%Ls = 0.0_dp
