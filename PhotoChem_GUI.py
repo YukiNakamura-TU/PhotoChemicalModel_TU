@@ -38,6 +38,22 @@ iplnt = 0
 #   * In reaction expression, each species and array should be separeted by at least 1 space.
 #   * Electron should be expressed by "e-"
 
+#--------------------------------------------------------------------------------------------------------------------------
+#
+#                                                       Venus
+#
+#--------------------------------------------------------------------------------------------------------------------------
+Planet_list.append(['Venus',len(reaction_rate_list)])
+# reaction list
+
+
+#--------------------------------------------------------------------------------------------------------------------------
+#
+#                                                       Earth
+#
+#--------------------------------------------------------------------------------------------------------------------------
+Planet_list.append(['Earth',len(reaction_rate_list)])
+# reaction list
 
 
 #--------------------------------------------------------------------------------------------------------------------------
@@ -845,10 +861,10 @@ reaction_rate_list.append("  SiCnHm+ +  e-      ->  products                   :
 
 #--------------------------------------------------------------------------------------------------------------------------
 #
-#                                                          Earth
+#                                                        Saturn
 #
 #--------------------------------------------------------------------------------------------------------------------------
-Planet_list.append(['Earth',len(reaction_rate_list)])
+Planet_list.append(['Saturn',len(reaction_rate_list)])
 # reaction list
 
 
@@ -856,7 +872,7 @@ Planet_list.append(['Earth',len(reaction_rate_list)])
 
 # --------------------------------------------------------------------------------------------------------------------------
 #
-#                                                           Titan
+#                                                        Titan
 #
 # --------------------------------------------------------------------------------------------------------------------------
 Planet_list.append(['Titan',len(reaction_rate_list)])
@@ -1263,12 +1279,12 @@ def reaction_analysis(action, iplnt, reaction_chk_bln, fix_species_bln, dir0):
     type_photoionization  =  1 #reaction including hv in left side
     type_photodissociaion =  2 #reaction including hv in right side
     type_hv_right         =  4 #reaction including hv in right side
-    type_e_impact         = 11
-    type_p_impact         = 12
-    type_H_impact         = 13
-    type_pressure_3body   = 30 #reaction including 3 body reaction
-    type_pressure_3bodyM  = 31 #reaction including 3 body reaction: k*M
-    type_Meteoroid        = 41
+    type_e_impact         = 11 #electron impact reaction
+    type_p_impact         = 12 #proton impact reaction
+    type_H_impact         = 13 #H atom impact reaction
+    type_pressure_3body   = 30 #3 body reaction
+    type_pressure_3bodyM  = 31 #3 body reaction: k*M
+    type_Meteoroid        = 41 #Meteoroid ablation
 
     #this index counts selected reaction number in the loop below
     isp = 0
@@ -2636,11 +2652,13 @@ def reaction_analysis(action, iplnt, reaction_chk_bln, fix_species_bln, dir0):
                     if species[isp] == input_species_char[i]:
                         f.write(   '\n')
                         f.write(   "    isp = sp_index(spl, '"+species[isp]+"')\n")
-                        f.write(   '    open(11, file = \''+input_species_path[i]+'\', status = \'unknown\' )\n')
-                        f.write(   '      do iz = 1, grd%nz\n')
-                        f.write(   '        read(11,*) tmp, var%ni(isp,iz)\n')
-                        f.write(   '      end do\n')
-                        f.write(   '    close(11)\n')
+                        f.write(   '    if (isp >= 1 .and. isp <= spl%nsp) then\n')
+                        f.write(   '      open(11, file = \''+input_species_path[i]+'\', status = \'unknown\' )\n')
+                        f.write(   '        do iz = 1, grd%nz\n')
+                        f.write(   '          read(11,*) tmp, var%ni(isp,iz)\n')
+                        f.write(   '        end do\n')
+                        f.write(   '      close(11)\n')
+                        f.write(   '    end if\n')
 
             f.write(   '\n')
             f.write(   '    var%ni_0 = var%ni\n')

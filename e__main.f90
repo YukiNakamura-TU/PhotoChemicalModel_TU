@@ -170,8 +170,8 @@ program e__main
   !                          Start photochemical calculation: 1D and 2D stable solution
   !
   !----------------------------------------------------------------------------------------------------------
-
-  if (set%calc_stable == 1 .or. set%mode == '1D' .or. set%mode == '2D Lat') then
+  if (set%mode == '1D' .or. set%mode == '2D Lat') set%calc_stable = 1
+  if (set%calc_stable == 1) then
 
     call cpu_time(var%t1)
 
@@ -322,7 +322,7 @@ program e__main
       call cpu_time(var%t4)
       call p__io_progress(spl, var, grd, set) ! in
 
-      var%istep = 1
+      grd%iday = 1
       do iday = 1, set%nday
 
         if ( iday == 1 ) then
@@ -370,7 +370,7 @@ program e__main
           grd%ix = grd%ix + 1
         end do ! end of x : local time
 
-        var%istep = var%istep + 1
+        grd%iday = grd%iday + 1
       end do ! end of rotation
 
       call cpu_time(var%t4)

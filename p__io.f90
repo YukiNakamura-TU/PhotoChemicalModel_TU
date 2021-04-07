@@ -133,19 +133,23 @@ contains
     type(var_), intent(in) :: var
     type(grd_), intent(in) :: grd
     character(len=256) fname, num
-    real(dp) xx, yy
+    real(dp) xx, yy, lat, lt
     integer i, ip, is, ix, iy, iz, isp
 
     do isp = 1, spl%nsp
       fname = './'//trim(ADJUSTL(set%dir_name))//'/output/density/global/'//trim(ADJUSTL(spl%species(isp)))//'.dat'
       open(11, file = fname, status = 'unknown' )
-        write(11, *) grd%nx, grd%ny, grd%nz
         do ix = 1, grd%nx
+          lt = 24.0_dp*dble(ix-1)/dble(grd%nx-1)
           do iy = 1, grd%ny
+            if (grd%ny == 1) lat = set%latitude 
+            if (grd%ny /= 1) lat = 180.0_dp*dble(iy-((grd%ny+1)/2))/dble(grd%ny-1)
+            write(11, fmt='(e10.3)', advance='no') lt
+            write(11, fmt='(e10.3)', advance='no') lat
             do iz = 1, grd%nz
-              write(11, *) ix, iy, grd%alt(iz)/1.0e3_dp, var%ni_3d(isp,ix,iy,iz)
+              write(11, fmt='(e10.3)', advance='no') var%ni_3d(isp,ix,iy,iz)
             end do
-          write(11,*)
+            write(11, *)
           end do
         end do
       close(11)
@@ -166,7 +170,7 @@ contains
       !      write(11,*)
       !    end do
       !  close(11)
-      end do
+      !end do
 
 
       if (spl%label_fix(isp) == 0) then

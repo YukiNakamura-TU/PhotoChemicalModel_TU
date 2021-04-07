@@ -1,15 +1,15 @@
  ########################################
 
-             Mars
+             Jupiter
 
  ########################################
 
 
  ----------------------------------------
-          1D stable calculation          
+        3D rotational calculation     
  ----------------------------------------
 
- calculate stable solution...
- dt     =    100000000000000.00       [s]
- sum_t  =    3081111117976666.5       [s]
- cpu_t  =    22.893535000000000       [s]
+ skipped stable solution...
+ calculating rotational mode...
+ current progress =           59  %
+ cpu_t  =    77256.372846999991       [s]

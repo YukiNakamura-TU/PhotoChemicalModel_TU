@@ -186,7 +186,7 @@ contains
       nspecial = var%nspecial
       allocate(var%ich_special(nspecial), var%ki_special(nspecial,grd%nx,grd%ny,grd%nz))
 
-    FAC = ''
+    FAC = 'Hill'
 
     var%ki_special = 0.0_dp
 
@@ -335,17 +335,16 @@ contains
         end do
       end if
 
-
-      ! auroral electron precipitation
-      do ich = 1, spl%nch
-        if ( spl%reaction_type_char(ich) == 'electron impact' ) then
-          var%ich_special(9) = ich
-        end if
-      end do
-
       if( set%mode == '3D Rot' .or. set%mode == '3D Global' ) then
 
-        fname = './'//trim(ADJUSTL(spl%planet))//'/input/aurora/k1_R2_60d6.dat'
+        ! auroral electron precipitation
+        do ich = 1, spl%nch
+          if ( spl%reaction_type_char(ich) == 'electron impact' ) then
+            var%ich_special(9) = ich
+          end if
+        end do
+
+        fname = './'//trim(ADJUSTL(set%dir_name))//'/input/aurora/k1_R2_60d6.dat'
         open(11, file = fname, status = 'unknown' )
           do iz = 1, grd%nz
           do iy = 1, grd%ny

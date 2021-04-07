@@ -23,7 +23,7 @@ module v__tdec
   type grd_
     integer(sp)            :: nx, ny, nz               ! number of grid index
     integer(sp)            :: xs, xe, ys, ye, zs, ze   ! grid index range
-    integer(sp)            :: ix, iy
+    integer(sp)            :: ix, iy, iday
     real(dp), allocatable  :: dalt(:), alt(:), lt(:), lat(:), sza(:,:), sza_xact(:,:)   ! altitude, longitude, latitude
     real(dp)               :: tilt, season, latitude ! solar zenith angle, tilt angle, season
   end type grd_
