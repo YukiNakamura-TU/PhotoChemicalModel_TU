@@ -132,20 +132,20 @@ contains
     type(spl_), intent(in) :: spl
     type(var_), intent(in) :: var
     type(grd_), intent(in) :: grd
-    character(len=256) fname, num
+    character(len=256) fname, num, command, outdir
     real(dp) xx, yy, lat, lt
     integer i, ip, is, ix, iy, iz, isp
 
     do isp = 1, spl%nsp
-      fname = './'//trim(ADJUSTL(set%dir_name))//'/output/density/global/'//trim(ADJUSTL(spl%species(isp)))//'.dat'
+      fname = trim(ADJUSTL(set%dir_name))//'/output/density/3Drot/all/'//trim(ADJUSTL(spl%species(isp)))//'.dat'
       open(11, file = fname, status = 'unknown' )
         do ix = 1, grd%nx
           lt = 24.0_dp*dble(ix-1)/dble(grd%nx-1)
           do iy = 1, grd%ny
             if (grd%ny == 1) lat = set%latitude 
             if (grd%ny /= 1) lat = 180.0_dp*dble(iy-((grd%ny+1)/2))/dble(grd%ny-1)
-            write(11, fmt='(e10.3)', advance='no') lt
-            write(11, fmt='(e10.3)', advance='no') lat
+            write(11, fmt='(f10.3)', advance='no') lt
+            write(11, fmt='(f10.3)', advance='no') lat
             do iz = 1, grd%nz
               write(11, fmt='(e10.3)', advance='no') var%ni_3d(isp,ix,iy,iz)
             end do
@@ -203,12 +203,26 @@ contains
       end if
     end do
 
-    fname = './'//trim(ADJUSTL(set%dir_name))//'/output/flux/K_eddy.dat'
+    fname = trim(ADJUSTL(set%dir_name))//'/output/density/3Drot/resolution.dat'
     open(11, file = fname, status = 'unknown' )
-      do iz = 1, grd%nz
-        write(11, *) grd%alt(iz)/1.0e3_dp, var%K_eddy(iz)
-      end do
+      write(11, *) grd%nx, grd%ny, grd%nz
     close(11)
+
+    do ix = 1, grd%nx
+      write(num,*) ix
+      outdir = trim(ADJUSTL(set%dir_name))//'/output/density/3Drot/'//trim(ADJUSTL(num))
+      write(command,*) 'if [ ! -d ', trim(outdir), ' ]; then mkdir -p ', trim(outdir), '; fi'
+      write(*,*) trim(ADJUSTL(command))
+      call system(command)
+      do isp = 1, spl%nsp
+        fname = trim(ADJUSTL(outdir))//'/'//trim(ADJUSTL(spl%species(isp)))//'.dat'
+        open(11, file = fname, status = 'unknown' )
+          do iz = 1, grd%nz
+            write(11, *) grd%alt(iz)/1.0e3_dp, (var%ni_3d(isp,ix,iy,iz), iy = 1, grd%ny)
+          end do
+        close(11)
+      end do
+    end do
 
 
   end subroutine p__io_rotation__fin

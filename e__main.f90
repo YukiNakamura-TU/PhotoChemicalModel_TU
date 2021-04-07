@@ -299,12 +299,12 @@ program e__main
       end if
     end if
 
+    var%ni_3d = 0.0_dp
     do iz = 1, grd%nz
       do iy = 1, grd%ny
-        do ix = 1, grd%nx
-          do isp = 1, spl%nsp
-            var%ni_3d(isp,ix,iy,iz) = var%ni_stable(isp,iy,iz)
-          end do
+        ix = (grd%nx-1)/2+1
+        do isp = 1, spl%nsp
+          var%ni_3d(isp,ix,iy,iz) = var%ni_stable(isp,iy,iz)
         end do
       end do
     end do

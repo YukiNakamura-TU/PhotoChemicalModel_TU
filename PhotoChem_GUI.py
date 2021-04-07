@@ -3082,7 +3082,7 @@ def callback_create_dir_window(iplnt, Planet, list_s, list_e,
             if os.path.exists(path) == False:
                 os.makedirs(path)
 
-            path = './'+Planet+'/'+dir0+'/output/density/global'
+            path = './'+Planet+'/'+dir0+'/output/density/3Drot'
             if os.path.exists(path) == False:
                 os.makedirs(path)
 
@@ -3139,7 +3139,11 @@ def callback_select_dir_window(iplnt, Planet, list_s, list_e, dir0, version, rea
             if os.path.exists(path) == False:
                 os.makedirs(path)
 
-            path = './'+Planet+'/'+dir1+'/output/density/global'
+            path = './'+Planet+'/'+dir1+'/output/density/3Drot'
+            if os.path.exists(path) == False:
+                os.makedirs(path)
+
+            path = './'+Planet+'/'+dir1+'/output/density/3Drot/all'
             if os.path.exists(path) == False:
                 os.makedirs(path)
 
@@ -3240,7 +3244,7 @@ def callback_save_dir_window(iplnt, Planet, list_s, list_e, dir0, version,
             if os.path.exists(path) == False:
                 os.makedirs(path)
 
-            path = './'+Planet+'/'+dir2+'/output/density/global'
+            path = './'+Planet+'/'+dir2+'/output/density/3Drot'
             if os.path.exists(path) == False:
                 os.makedirs(path)
             
@@ -3388,10 +3392,9 @@ def callback_plot_window(Planet, dir0):
     return dummy
 
 
-def callback_plot(Planet, dir0, species, altitude, action,
-                  density, mixingratio, 
+def callback_plot(Planet, dir0, species, action,
                   sp_chk_bln, sp1, sp2, 
-                  xr, yr):
+                  xr, yr, LAT, LT):
 
     def dummy():
         path = './'+Planet+'/'+dir0+'/settings/plt_range.dat'
@@ -3401,10 +3404,9 @@ def callback_plot(Planet, dir0, species, altitude, action,
             f.write('xrvmr:'+xr[2][0].get()+':'+xr[2][1].get()+'\n')
             f.write('yr:'+yr[0].get()+':'+yr[1].get())
 
-        plot(Planet, dir0, species, altitude, action,
-             density, mixingratio, 
+        plot(Planet, dir0, species, action,
              sp_chk_bln, sp1, sp2, 
-             xr, yr)
+             xr, yr, LAT, LT)
 
     return dummy
 
@@ -4282,25 +4284,6 @@ def plot_window(Planet, dir0):
             yrin[0].strip('\n').lstrip().rstrip()
             yrin[1].strip('\n').lstrip().rstrip()
 
-    density = [[] for i in range(len(species))]
-    mixingratio = [[] for i in range(len(species))]
-    altitude = [[] for i in range(len(species))]
-
-    for isp in range(len(species)):
-        path = './'+Planet+'/'+dir0+'/output/density/num/'+species[isp]+'.dat'
-        if os.path.exists(path) == True:
-            data = np.loadtxt(path, comments='!')
-            for i in range(len(data)):
-                altitude[isp].append(data[i][0])
-                density[isp].append(data[i][1])
-
-    for isp in range(len(species)):
-        path = './'+Planet+'/'+dir0+'/output/density/vmr/vmr_'+species[isp]+'.dat'
-        if os.path.exists(path) == True:
-            data = np.loadtxt(path, comments='!')
-            for i in range(len(data)):
-                mixingratio[isp].append(data[i][1])
-
     text = tk.Text(plt_frame, font=("",15), height=200, width=190, highlightthickness=0)
     text.place(x=0,y=0)
     text.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
@@ -4399,11 +4382,13 @@ def plot_window(Planet, dir0):
     char.place(x=885, y = 190)
     char.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
 
+    LAT = 0
+    LT = 0
+
     plt_denm_btn = tk.Button(plt_frame, text=u'Plot density [/m\u00B3]', font=('', '15'))
-    plt_denm_btn["command"] = callback_plot(Planet, dir0, species, altitude, 'density [/m^3]',
-                                           density, mixingratio, 
+    plt_denm_btn["command"] = callback_plot(Planet, dir0, species, 'density [/m^3]',
                                            sp_chk_bln, '', '', 
-                                           xr, yr)
+                                           xr, yr, LAT, LT)
     plt_denm_btn.place(x=650, y=220)
     plt_denm_btn.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
 
@@ -4426,10 +4411,9 @@ def plot_window(Planet, dir0):
     char.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
 
     plt_dencm_btn = tk.Button(plt_frame, text=u'Plot density [/cm\u00B3]', font=('', '15'))
-    plt_dencm_btn["command"] = callback_plot(Planet, dir0, species, altitude, 'density [/cm^3]',
-                                           density, mixingratio, 
+    plt_dencm_btn["command"] = callback_plot(Planet, dir0, species, 'density [/cm^3]',
                                            sp_chk_bln, '', '', 
-                                           xr, yr)
+                                           xr, yr, LAT, LT)
     plt_dencm_btn.place(x=650, y=300)
     plt_dencm_btn.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
 
@@ -4452,10 +4436,9 @@ def plot_window(Planet, dir0):
     char.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
 
     plt_vmr_btn = tk.Button(plt_frame, text=u'Plot mixing ratio', font=('', '15'))
-    plt_vmr_btn["command"] = callback_plot(Planet, dir0, species, altitude, 'mixing ratio',
-                                           density, mixingratio, 
+    plt_vmr_btn["command"] = callback_plot(Planet, dir0, species, 'mixing ratio',
                                            sp_chk_bln, '', '', 
-                                           xr, yr)
+                                           xr, yr, LAT, LT)
     plt_vmr_btn.place(x=650, y=380)
     plt_vmr_btn.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
 
@@ -4476,12 +4459,25 @@ def plot_window(Planet, dir0):
     sp2.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
 
     plt_ratio_btn = tk.Button(plt_frame, text=u'Plot ratio', font=('', '15'))
-    plt_ratio_btn["command"] = callback_plot(Planet, dir0, species, altitude, 'ratio',
-                                             density, mixingratio, 
+    plt_ratio_btn["command"] = callback_plot(Planet, dir0, species, 'ratio',
                                              sp_chk_bln, sp1, sp2, 
-                                             xr, yr)
+                                             xr, yr, LAT, LT)
     plt_ratio_btn.place(x=300, y=ys+40)
     plt_ratio_btn.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
+
+    plt_2D_btn = tk.Button(plt_frame, text=u'Plot 2Dstable', font=('', '15'))
+    plt_2D_btn["command"] = callback_plot(Planet, dir0, species, '2D Lat density [/m^3]',
+                                             sp_chk_bln, sp1, sp2, 
+                                             xr, yr, LAT, LT)
+    plt_2D_btn.place(x=300, y=ys+80)
+    plt_2D_btn.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
+
+    plt_3D_btn = tk.Button(plt_frame, text=u'Plot 3D rotation', font=('', '15'))
+    plt_3D_btn["command"] = callback_plot(Planet, dir0, species, '3D Rot density [/m^3]',
+                                             sp_chk_bln, sp1, sp2, 
+                                             xr, yr, LAT, LT)
+    plt_3D_btn.place(x=300, y=ys+120)
+    plt_3D_btn.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
 
 def plot_order_window(Planet, dir0):
     plt_win = tk.Toplevel()
@@ -4516,13 +4512,16 @@ def plot_order_window(Planet, dir0):
 
 
 # plot
-def plot(Planet, dir0, species, altitude, action,
-         density, mixingratio, 
+def plot(Planet, dir0, species, action,
          sp_chk_bln, sp1, sp2, 
-         xr, yr):
+         xr, yr, LAT, LT):
 
     nmax = 1.0e-100
     lines = ['']
+
+    density = [[] for i in range(len(species))]
+    mixingratio = [[] for i in range(len(species))]
+    altitude = [[] for i in range(len(species))]
 
     path = './'+Planet+'/'+dir0+'/settings/plt_species_order.dat'
     if os.path.exists(path) == True:
@@ -4548,7 +4547,51 @@ def plot(Planet, dir0, species, altitude, action,
                 for j in range(len(sp_bandle[i])):
                     sp_bandle[i][j] = sp_bandle[i][j].lstrip().rstrip()
 
-    if action == 'density [/m^3]':
+    if '2D Lat'in action:
+        for isp in range(len(species)):
+            path1 = './'+Planet+'/'+dir0+'/output/density/2Dstable/'+species[isp]+'.dat'
+            if os.path.exists(path1) == True:
+                data = np.loadtxt(path1, comments='!')
+                ny = len(data[0])-1
+                dy = 180.0/(float(ny)-1.0)
+                LAT = 75
+                iy = int((float(LAT)+90.0)/dy)
+                for i in range(len(data)):
+                    altitude[isp].append(data[i][0])
+                    density[isp].append(data[i][iy+1])
+    
+    if '3D Rot'in action:
+        LT  = 0
+        LAT = 0
+        path1 = './'+Planet+'/'+dir0+'/output/density/3Drot/resolution.dat'
+        if os.path.exists(path1) == True:
+            data = np.loadtxt(path1, comments='!')
+            nx = data[0]
+            ny = data[1]
+            nz = data[2]
+        dx = 24.0/(float(nx)-1.0)
+        ix = int((float(LT))/dx)
+        dy = 180.0/(float(ny)-1.0)
+        iy = int((float(LAT)+90.0)/dy)
+
+        for isp in range(len(species)):
+            path1 = './'+Planet+'/'+dir0+'/output/density/3Drot/'+str(ix+1)+'/'+species[isp]+'.dat'
+            if os.path.exists(path1) == True:
+                data = np.loadtxt(path1, comments='!')
+                for i in range(len(data)):
+                    altitude[isp].append(data[i][0])
+                    density[isp].append(data[i][iy+1])
+
+    if 'density [/m^3]' in action:
+        if '2D Lat'not in action and '3D Rot'not in action:
+            for isp in range(len(species)):
+                path = './'+Planet+'/'+dir0+'/output/density/num/'+species[isp]+'.dat'
+                if os.path.exists(path) == True:
+                    data = np.loadtxt(path, comments='!')
+                    for i in range(len(data)):
+                        altitude[isp].append(data[i][0])
+                        density[isp].append(data[i][1])
+
         fig = plt.figure(figsize=(8,6))
         ax1 = fig.add_subplot(111)
         x1 = [0]
@@ -4612,6 +4655,14 @@ def plot(Planet, dir0, species, altitude, action,
         plt.show()
 
     if action == 'density [/cm^3]':
+        for isp in range(len(species)):
+            path = './'+Planet+'/'+dir0+'/output/density/num/'+species[isp]+'.dat'
+            if os.path.exists(path) == True:
+                data = np.loadtxt(path, comments='!')
+                for i in range(len(data)):
+                    altitude[isp].append(data[i][0])
+                    density[isp].append(data[i][1])
+
         fig = plt.figure(figsize=(8,6))
         ax2 = fig.add_subplot(111)
         x2 = [0]
@@ -4630,8 +4681,6 @@ def plot(Planet, dir0, species, altitude, action,
                         x2[i] = x2[i] / 1e6
                     y2 = altitude[isp]
                     ax2.plot(x2, y2, label=reaction_unicode(species[isp]))
-                    for i in range(len(x2)):
-                        x2[i] = x2[i] * 1e6
         if label == 1:
             for i in range(len(sp_order)):
                 if sp_bandle[i] == '0':
@@ -4644,8 +4693,6 @@ def plot(Planet, dir0, species, altitude, action,
                                 x2[j] = x2[j] / 1e6
                             y2 = altitude[isp]
                             ax2.plot(x2, y2, label=reaction_unicode(species[isp]), color = sp_color[i])
-                            for j in range(len(x2)):
-                                x2[j] = x2[j] * 1e6
                 if sp_bandle[i] != '0':
                     x2 = [0.0 for i in range(len(altitude[0]))]
                     for j in range(len(sp_bandle[i])):
@@ -4659,8 +4706,6 @@ def plot(Planet, dir0, species, altitude, action,
                     for j in range(len(x2)):
                         x2[j] = x2[j] / 1e6
                     ax2.plot(x2, y2, label=reaction_unicode(sp_order[i]), color = sp_color[i])
-                    for j in range(len(x2)):
-                        x2[j] = x2[j] * 1e6
 
 
         ax2.set_xlabel('density [/cm'+rf'$^3$'+']')
@@ -4689,6 +4734,14 @@ def plot(Planet, dir0, species, altitude, action,
         plt.show()
 
     if action == 'mixing ratio':
+        for isp in range(len(species)):
+            path = './'+Planet+'/'+dir0+'/output/density/vmr/vmr_'+species[isp]+'.dat'
+            if os.path.exists(path) == True:
+                data = np.loadtxt(path, comments='!')
+                for i in range(len(data)):
+                    altitude[isp].append(data[i][0])
+                    mixingratio[isp].append(data[i][1])
+
         fig = plt.figure(figsize=(8,6))
         ax3 = fig.add_subplot(111)
         x3 = [0]
@@ -4724,6 +4777,14 @@ def plot(Planet, dir0, species, altitude, action,
         plt.show()
 
     if action == 'ratio':
+        for isp in range(len(species)):
+            path = './'+Planet+'/'+dir0+'/output/density/num/'+species[isp]+'.dat'
+            if os.path.exists(path) == True:
+                data = np.loadtxt(path, comments='!')
+                for i in range(len(data)):
+                    altitude[isp].append(data[i][0])
+                    density[isp].append(data[i][1])
+
         fig = plt.figure(figsize=(8,6))
         ax4 = fig.add_subplot(111)
         x4 = [0]
@@ -4743,8 +4804,6 @@ def plot(Planet, dir0, species, altitude, action,
                 y5 = altitude[isp]
                 unicsp1 = reaction_unicode(csp1)
                 ax4.plot(x5, y4, label=unicsp1+' / '+unicsp2+' ratio')
-                for i in range(len(x5)):
-                    x5[i] = x5[i] * x4[i]
         ax4.set_xlabel(unicsp1+' / '+unicsp2+' ratio')
         ax4.set_ylabel('altitude [km]')
         ys = yr[0].get()
@@ -4759,6 +4818,33 @@ def plot(Planet, dir0, species, altitude, action,
         plt.xscale('log')
         plt.legend(loc='upper left')
         plt.show()
+
+    if action == '2D Lat density [/m^3]':
+        for isp in range(len(species)):
+            path1 = './'+Planet+'/'+dir0+'/output/density/2Dstable/'+species[isp]+'.dat'
+            if os.path.exists(path1) == True:
+                data = np.loadtxt(path1, comments='!')
+                for i in range(len(data)):
+                    altitude[isp].append(data[i][0])
+                    density[isp].append(data[i][1])
+
+    if action == '2D Lat density [/cm^3]':
+        for isp in range(len(species)):
+            path1 = './'+Planet+'/'+dir0+'/output/density/2Dstable/'+species[isp]+'.dat'
+            if os.path.exists(path1) == True:
+                data = np.loadtxt(path1, comments='!')
+                for i in range(len(data)):
+                    altitude[isp].append(data[i][0])
+                    density[isp].append(data[i][1])
+
+    if action == '3D Rot':
+        for isp in range(len(species)):
+            path1 = './'+Planet+'/'+dir0+'/output/density/2Dstable/'+species[isp]+'.dat'
+            if os.path.exists(path1) == True:
+                data = np.loadtxt(path1, comments='!')
+                for i in range(len(data)):
+                    altitude[isp].append(data[i][0])
+                    density[isp].append(data[i][1])
 
 # detailed reference window if no doi link is available
 def ref_window(ref, ref_info):
