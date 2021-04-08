@@ -346,25 +346,31 @@ contains
     var%ni   = 1.0e-20_dp
 
     isp = sp_index(spl, 'CO2')
-    open(11, file = './Mars/Chaffin+17/input/density/CO2.csv', status = 'unknown' )
-      do iz = 1, grd%nz
-        read(11,*) tmp, var%ni(isp,iz)
-      end do
-    close(11)
+    if (isp >= 1 .and. isp <= spl%nsp) then
+      open(11, file = './Mars/Chaffin+17/input/density/CO2.csv', status = 'unknown' )
+        do iz = 1, grd%nz
+          read(11,*) tmp, var%ni(isp,iz)
+        end do
+      close(11)
+    end if
 
     isp = sp_index(spl, 'H2O')
-    open(11, file = './Mars/Chaffin+17/input/density/H2O.csv', status = 'unknown' )
-      do iz = 1, grd%nz
-        read(11,*) tmp, var%ni(isp,iz)
-      end do
-    close(11)
+    if (isp >= 1 .and. isp <= spl%nsp) then
+      open(11, file = './Mars/Chaffin+17/input/density/H2O.csv', status = 'unknown' )
+        do iz = 1, grd%nz
+          read(11,*) tmp, var%ni(isp,iz)
+        end do
+      close(11)
+    end if
 
     isp = sp_index(spl, 'CO2+')
-    open(11, file = './Mars/Chaffin+17/input/density/CO2+.dat', status = 'unknown' )
-      do iz = 1, grd%nz
-        read(11,*) tmp, var%ni(isp,iz)
-      end do
-    close(11)
+    if (isp >= 1 .and. isp <= spl%nsp) then
+      open(11, file = './Mars/Chaffin+17/input/density/CO2+.dat', status = 'unknown' )
+        do iz = 1, grd%nz
+          read(11,*) tmp, var%ni(isp,iz)
+        end do
+      close(11)
+    end if
 
     var%ni_0 = var%ni
 
