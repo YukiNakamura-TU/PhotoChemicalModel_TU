@@ -153,14 +153,12 @@ contains
         phi = grd%lat(iy)
         tmp = dacos( dsin(phi) * dsin(delta) + dcos(phi) * dcos(delta) * dcos(h) )
         grd%sza_xact(ix,iy) = tmp
-        if( tmp >= 1.36_dp ) then
-          tmp = 1.36_dp
-        end if
+        !if( tmp >= 1.36_dp ) then
+        !  tmp = 1.36_dp
+        !end if
         grd%sza(ix,iy) = tmp
-        print *, iy, grd%lat(iy)*180.0_dp/cst%pi, grd%sza(ix,iy)
       end do
     end do
-    stop
 
   end subroutine c__prm__planet
 

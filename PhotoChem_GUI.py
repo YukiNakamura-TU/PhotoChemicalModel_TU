@@ -3404,6 +3404,13 @@ def callback_plot(Planet, dir0, species, action, rbvar, adv, fs,
             f.write('xrvmr:'+xr[2][0].get()+':'+xr[2][1].get()+'\n')
             f.write('yr:'+yr[0].get()+':'+yr[1].get())
 
+        path = './'+Planet+'/'+dir0+'/settings/plt_fontsize.dat'
+        with open(path, mode = 'w') as f:
+            f.write('xlabel:'+fs[0].get()+'\n')
+            f.write('ylabel:'+fs[1].get()+'\n')
+            f.write('tick:'+fs[2].get()+'\n')
+            f.write('legend:'+fs[3].get())
+
         if rbvar.get() == 1:
             action1 = action
             LAT = 0
@@ -4307,6 +4314,31 @@ def plot_window(Planet, dir0):
             yrin[0].strip('\n').lstrip().rstrip()
             yrin[1].strip('\n').lstrip().rstrip()
 
+    #default font size of plot
+    fs_xlabel = '15'
+    fs_ylabel = '15'
+    fs_tick   = '15'
+    fs_legend = '15'
+
+    path = './'+Planet+'/'+dir0+'/settings/plt_fontsize.dat'
+    if os.path.exists(path) == True:
+        with open(path, mode = 'r') as f:
+            lines = f.readlines()
+
+    for i in range(len(lines)):
+        if 'xlabel' in lines[i]:
+            tmp = re.findall('xlabel:(.*)',lines[i])
+            fs_xlabel = tmp[0].strip('\n').lstrip().rstrip()
+        if 'ylabel' in lines[i]:
+            tmp = re.findall('ylabel:(.*)',lines[i])
+            fs_ylabel = tmp[0].strip('\n').lstrip().rstrip()
+        if 'tick' in lines[i]:
+            tmp = re.findall('tick:(.*)',lines[i])
+            fs_tick = tmp[0].strip('\n').lstrip().rstrip()
+        if 'legend' in lines[i]:
+            tmp = re.findall('legend:(.*)',lines[i])
+            fs_legend = tmp[0].strip('\n').lstrip().rstrip()
+
     text = tk.Text(plt_frame, font=("",15), height=200, width=190, highlightthickness=0)
     text.place(x=0,y=0)
     text.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
@@ -4539,24 +4571,28 @@ def plot_window(Planet, dir0):
     char.place(x=650, y = ys+30)
     char.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
     fs[0] = tk.Entry(plt_frame, width=6)
+    fs[0].insert(tk.END,fs_xlabel)
     fs[0].place(x=720,y = ys+30)
     fs[0].bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
     char = tk.Label(plt_frame,text=u"ylabel:", font=("",15))
     char.place(x=650, y = ys+60)
     char.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
     fs[1] = tk.Entry(plt_frame, width=6)
+    fs[1].insert(tk.END,fs_ylabel)
     fs[1].place(x=720,y = ys+60)
     fs[1].bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
     char = tk.Label(plt_frame,text=u"ticks:", font=("",15))
     char.place(x=650, y = ys+90)
     char.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
     fs[2] = tk.Entry(plt_frame, width=6)
+    fs[2].insert(tk.END,fs_tick)
     fs[2].place(x=720,y = ys+90)
     fs[2].bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
     char = tk.Label(plt_frame,text=u"legend:", font=("",15))
     char.place(x=650, y = ys+120)
     char.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
     fs[3] = tk.Entry(plt_frame, width=6)
+    fs[3].insert(tk.END,fs_legend)
     fs[3].place(x=720,y = ys+120)
     fs[3].bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
     
@@ -4631,6 +4667,7 @@ def plot(Planet, dir0, species, action, adv, fs,
     density = [[] for i in range(len(species))]
     mixingratio = [[] for i in range(len(species))]
     altitude = [[] for i in range(len(species))]
+    total = []
 
     fs_xlabel = int(fs[0].get())
     fs_ylabel = int(fs[1].get())
@@ -4772,14 +4809,15 @@ def plot(Planet, dir0, species, action, adv, fs,
         plt.show()
 
     # Plot density profile [/cm^3]
-    if action == 'density [/cm^3]':
-        for isp in range(len(species)):
-            path = './'+Planet+'/'+dir0+'/output/density/num/'+species[isp]+'.dat'
-            if os.path.exists(path) == True:
-                data = np.loadtxt(path, comments='!')
-                for i in range(len(data)):
-                    altitude[isp].append(data[i][0])
-                    density[isp].append(data[i][1])
+    if 'density [/cm^3]' in action:
+        if '2D Lat'not in action and '3D Rot'not in action:
+            for isp in range(len(species)):
+                path = './'+Planet+'/'+dir0+'/output/density/num/'+species[isp]+'.dat'
+                if os.path.exists(path) == True:
+                    data = np.loadtxt(path, comments='!')
+                    for i in range(len(data)):
+                        altitude[isp].append(data[i][0])
+                        density[isp].append(data[i][1])
 
         fig = plt.figure(figsize=(8,6))
         ax2 = fig.add_subplot(111)
@@ -4855,14 +4893,26 @@ def plot(Planet, dir0, species, action, adv, fs,
         plt.show()
 
     # Plot mixing ratio profile [mol/mol]
-    if action == 'mixing ratio':
+    if 'mixing ratio' in action:
+        if '2D Lat'not in action and '3D Rot'not in action:
+            for isp in range(len(species)):
+                path = './'+Planet+'/'+dir0+'/output/density/vmr/vmr_'+species[isp]+'.dat'
+                if os.path.exists(path) == True:
+                    data = np.loadtxt(path, comments='!')
+                    for i in range(len(data)):
+                        altitude[isp].append(data[i][0])
+                        mixingratio[isp].append(data[i][1])
+        
+        for iz in range(len(altitude[0])):
+            tmp = 0
+            for isp in range(len(species)):
+                if species[isp] != 'M':
+                    tmp = tmp + density[isp][iz]
+            total.append(tmp)
+        
         for isp in range(len(species)):
-            path = './'+Planet+'/'+dir0+'/output/density/vmr/vmr_'+species[isp]+'.dat'
-            if os.path.exists(path) == True:
-                data = np.loadtxt(path, comments='!')
-                for i in range(len(data)):
-                    altitude[isp].append(data[i][0])
-                    mixingratio[isp].append(data[i][1])
+            for iz in range(len(density[isp])):
+                mixingratio[isp].append(density[isp][iz]/total[iz])
 
         fig = plt.figure(figsize=(8,6))
         ax3 = fig.add_subplot(111)
@@ -4901,14 +4951,15 @@ def plot(Planet, dir0, species, action, adv, fs,
         plt.show()
 
     # Plot 2 species  ratio profile [mol/mol]
-    if action == 'ratio':
-        for isp in range(len(species)):
-            path = './'+Planet+'/'+dir0+'/output/density/num/'+species[isp]+'.dat'
-            if os.path.exists(path) == True:
-                data = np.loadtxt(path, comments='!')
-                for i in range(len(data)):
-                    altitude[isp].append(data[i][0])
-                    density[isp].append(data[i][1])
+    if 'ratio' in action and 'mixing' not in action:
+        if '2D Lat'not in action and '3D Rot'not in action:
+            for isp in range(len(species)):
+                path = './'+Planet+'/'+dir0+'/output/density/num/'+species[isp]+'.dat'
+                if os.path.exists(path) == True:
+                    data = np.loadtxt(path, comments='!')
+                    for i in range(len(data)):
+                        altitude[isp].append(data[i][0])
+                        density[isp].append(data[i][1])
 
         fig = plt.figure(figsize=(8,6))
         ax4 = fig.add_subplot(111)

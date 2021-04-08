@@ -470,10 +470,10 @@ contains
     deallocate(var%n_tot,var%m_mean)
 
     deallocate(flx%F74113,flx%Ai,flx%solar_EUV)
-    deallocate(var%tau_EUV,var%I_EUV)
+    deallocate(var%tau_EUV,var%tau_EUV_subsolar,var%I_EUV)
     deallocate(xct%sigma_a_EUV, xct%sigma_i_EUV)
     deallocate(flx%solar_UV)
-    deallocate(var%tau_UV,var%I_UV)
+    deallocate(var%tau_UV,var%tau_UV_subsolar,var%I_UV)
     deallocate(xct%sigma_a_UV, xct%sigma_d_UV)
 
 

@@ -27,7 +27,8 @@ contains
     flx%nwl_EUV = 37
     allocate(flx%lambda_EUV(flx%nwl_EUV))
     allocate(flx%F74113(flx%nwl_EUV),flx%Ai(flx%nwl_EUV),flx%solar_EUV(flx%nwl_EUV))
-    allocate(var%tau_EUV(flx%nwl_EUV,grd%nz),var%I_EUV(flx%nwl_EUV,grd%nz))
+    allocate(var%tau_EUV(flx%nwl_EUV,grd%nz),var%tau_EUV_subsolar(flx%nwl_EUV,grd%nz))
+    allocate(var%I_EUV(flx%nwl_EUV,grd%nz))
     allocate(xct%sigma_a_EUV(flx%nwl_EUV,spl%nsp), xct%sigma_i_EUV(flx%nwl_EUV,spl%nch))
 
     flx%multiplying_factor_EUV = 1.0_dp

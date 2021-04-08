@@ -51,7 +51,7 @@ module v__tdec
     real(dp), allocatable  :: clm_ni(:,:) ! column density
     real(dp), allocatable  :: Ti(:), Te(:), Tn(:)
     real(dp), allocatable  :: Ti_3d(:,:,:), Te_3d(:,:,:), Tn_3d(:,:,:)
-    real(dp), allocatable  :: tau_EUV(:,:), tau_UV(:,:)
+    real(dp), allocatable  :: tau_EUV(:,:), tau_UV(:,:), tau_EUV_subsolar(:,:), tau_UV_subsolar(:,:)
     real(dp), allocatable  :: E_fld(:,:,:), B_fld(:,:,:) ! electric and magnetic field
     real(dp)               :: dtime, sum_time
     real(dp), allocatable  :: ki(:,:), ki_special(:,:,:,:), ich_special(:), Pi(:,:), Li(:,:), Jmtx(:,:), rate(:,:)

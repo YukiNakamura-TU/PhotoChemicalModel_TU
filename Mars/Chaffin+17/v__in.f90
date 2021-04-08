@@ -27,7 +27,7 @@ contains
     set%Ls = 0.0_dp
     set%nday = 3.0_dp
     set%scheme = 'implicit'
-    set%inversion = 'Catling'
+    set%inversion = 'Chaffin'
     ! directory setting
     set%dir_name = './Mars/Chaffin+17'
     set%fnamestable = './Mars/Chaffin+17/output/density/n_stable.dat'

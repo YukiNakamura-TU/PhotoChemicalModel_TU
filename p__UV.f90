@@ -32,7 +32,8 @@ contains
     flx%nwl_UV = 2000
     allocate(flx%solar_UV(flx%nwl_UV), flx%lambda_UV(flx%nwl_UV))
     allocate(tmparr1(flx%nwl_UV), tmparr2(flx%nwl_UV))
-    allocate(var%tau_UV(flx%nwl_UV,grd%nz),var%I_UV(flx%nwl_UV,grd%nz))
+    allocate(var%tau_UV(flx%nwl_UV,grd%nz),var%tau_UV_subsolar(flx%nwl_UV,grd%nz))
+    allocate(var%I_UV(flx%nwl_UV,grd%nz))
     allocate(xct%sigma_a_UV(flx%nwl_UV,grd%nz,spl%nsp), xct%sigma_d_UV(flx%nwl_UV,grd%nz,spl%nch))
     allocate(xct%sigma_a_UV_EUV(flx%nwl_UV,spl%nsp))
 

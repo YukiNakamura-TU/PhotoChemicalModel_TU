@@ -98,17 +98,17 @@ contains
         !print *, Chfunc(iz), grd%sza_xact(grd%ix,grd%iy)*180.0_dp/cst%pi
       end do
 
-      ! avoid '0' ionization source at night: 1/100 of sza 1.366 [rad] ~ 77 [deg] value
-      tmp  = grd%sza_xact(grd%ix,grd%iy)
-      tmp1 = 1.36_dp
-      tmp2 = cst%pi
-      if ( tmp < tmp1 ) then
-        tau_factor = 1.0_dp
-      else if ( tmp >= tmp1 .and. tmp < tmp2 ) then
-        tau_factor  = 0.1d0*dexp(1.7d0*datan(35.0d0*(11.0d0*cst%pi/24.0d0-grd%sza(grd%ix,grd%iy))))
-      else if ( tmp > tmp2 ) then
-        tau_factor  = 0.01_dp
-      end if
+      !! avoid '0' ionization source at night: 1/100 of sza 1.366 [rad] ~ 77 [deg] value
+      !tmp  = grd%sza(grd%ix,grd%iy)
+      !tmp1 = 1.36_dp
+      !tmp2 = cst%pi
+      !if ( tmp < tmp1 ) then
+      !  tau_factor = 1.0_dp
+      !else if ( tmp >= tmp1 .and. tmp < tmp2 ) then
+      !  tau_factor  = 0.1d0*dexp(1.7d0*datan(35.0d0*(11.0d0*cst%pi/24.0d0-grd%sza(grd%ix,grd%iy))))
+      !else if ( tmp > tmp2 ) then
+      !  tau_factor  = 0.01_dp
+      !end if
 
     ! solar flux at each altitude ------------------------------------------------------------------
       var%tau_EUV = 0.0_dp
@@ -128,7 +128,9 @@ contains
           do iwl = 1, flx%nwl_EUV
             var%tau_EUV(iwl,iz) = var%tau_EUV(iwl,iz) &
               &                 + var%clm_ni(isp,iz) * xct%sigma_a_EUV(iwl,isp) &
-              &                 * Chfunc(iz)
+              &                 * Chfunc(iz) 
+            var%tau_EUV_subsolar(iwl,iz) = var%tau_EUV_subsolar(iwl,iz) &
+              &                          + var%clm_ni(isp,iz) * xct%sigma_a_EUV(iwl,isp) 
             if ( var%tau_EUV(iwl,iz) > 100.0_dp ) then
               var%tau_EUV(iwl,iz) = 100.0_dp
             end if
@@ -156,6 +158,9 @@ contains
               &                + var%clm_ni(isp,iz) * xct%sigma_a_UV_EUV(iwl,isp) &
               &                * Chfunc(iz)
           end do
+          if ( var%tau_UV(iwl,iz) > 100.0_dp ) then
+            var%tau_UV(iwl,iz) = 100.0_dp
+          end if
         end do
       end do
 
@@ -171,14 +176,17 @@ contains
       do iz  = 1, grd%nz
         do iwl = 1, flx%nwl_EUV
           var%I_EUV(iwl,iz) = flx%solar_EUV(iwl) &
-            &               * dexp( -var%tau_EUV(iwl,iz) ) * flx%mode_factor !* tau_factor
+            &               * dexp( -var%tau_EUV(iwl,iz) ) * flx%mode_factor & 
+            ! ionization by soft electron?, photoelectron? : 1% of subsolar value
+            &               + flx%solar_EUV(iwl) * 0.01_dp &
+            &               * dexp( -var%tau_EUV_subsolar(iwl,iz) ) * flx%mode_factor
         end do
       end do
 
       do iz  = 1, grd%nz
         do iwl = 1, flx%nwl_UV
           var%I_UV(iwl,iz) = flx%solar_UV(iwl) &
-          &                * dexp( -var%tau_UV(iwl,iz) ) * flx%mode_factor !* tau_factor
+          &                * dexp( -var%tau_UV(iwl,iz) ) * flx%mode_factor 
         end do
       end do
       !stop

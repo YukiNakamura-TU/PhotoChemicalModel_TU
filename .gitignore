@@ -8,6 +8,7 @@
 Jupiter/*/input/aurora
 Jupiter/*/input/density
 UV/xct
+Doxyfile
 html
 latex
 .vscode
