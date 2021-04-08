@@ -144,7 +144,7 @@ contains
       end do
     end if
 
-    ! solar zenithd angle
+    ! solar zenith angle
     alpha = grd%tilt
     delta = dasin(dsin(alpha)*dsin(omega-omega0))
     do ix = 1, grd%nx
