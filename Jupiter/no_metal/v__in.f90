@@ -20,7 +20,7 @@ contains
 
     ! Calculation settings
     set%mode = '2D Lat'
-    set%nstep = 20000
+    set%nstep = 30000
     set%fin_sec = 35729.685e3_dp
     set%dtime_limit = 1.0e5_dp
     set%latitude = 0.0_dp
@@ -536,60 +536,76 @@ contains
     var%ni   = 1.0e-20_dp
 
     isp = sp_index(spl, 'H2')
-    open(11, file = './Jupiter/no_metal/input/density/H2.dat', status = 'unknown' )
-      do iz = 1, grd%nz
-        read(11,*) tmp, var%ni(isp,iz)
-      end do
-    close(11)
+    if (isp >= 1 .and. isp <= spl%nsp) then
+      open(11, file = './Jupiter/no_metal/input/density/H2.dat', status = 'unknown' )
+        do iz = 1, grd%nz
+          read(11,*) tmp, var%ni(isp,iz)
+        end do
+      close(11)
+    end if
 
     isp = sp_index(spl, 'He')
-    open(11, file = './Jupiter/no_metal/input/density/He.dat', status = 'unknown' )
-      do iz = 1, grd%nz
-        read(11,*) tmp, var%ni(isp,iz)
-      end do
-    close(11)
+    if (isp >= 1 .and. isp <= spl%nsp) then
+      open(11, file = './Jupiter/no_metal/input/density/He.dat', status = 'unknown' )
+        do iz = 1, grd%nz
+          read(11,*) tmp, var%ni(isp,iz)
+        end do
+      close(11)
+    end if
 
     isp = sp_index(spl, 'CH4')
-    open(11, file = './Jupiter/no_metal/input/density/CH4.dat', status = 'unknown' )
-      do iz = 1, grd%nz
-        read(11,*) tmp, var%ni(isp,iz)
-      end do
-    close(11)
+    if (isp >= 1 .and. isp <= spl%nsp) then
+      open(11, file = './Jupiter/no_metal/input/density/CH4.dat', status = 'unknown' )
+        do iz = 1, grd%nz
+          read(11,*) tmp, var%ni(isp,iz)
+        end do
+      close(11)
+    end if
 
     isp = sp_index(spl, 'C2H2')
-    open(11, file = './Jupiter/no_metal/input/density/C2H2.dat', status = 'unknown' )
-      do iz = 1, grd%nz
-        read(11,*) tmp, var%ni(isp,iz)
-      end do
-    close(11)
+    if (isp >= 1 .and. isp <= spl%nsp) then
+      open(11, file = './Jupiter/no_metal/input/density/C2H2.dat', status = 'unknown' )
+        do iz = 1, grd%nz
+          read(11,*) tmp, var%ni(isp,iz)
+        end do
+      close(11)
+    end if
 
     isp = sp_index(spl, 'C2H4')
-    open(11, file = './Jupiter/no_metal/input/density/C2H4.dat', status = 'unknown' )
-      do iz = 1, grd%nz
-        read(11,*) tmp, var%ni(isp,iz)
-      end do
-    close(11)
+    if (isp >= 1 .and. isp <= spl%nsp) then
+      open(11, file = './Jupiter/no_metal/input/density/C2H4.dat', status = 'unknown' )
+        do iz = 1, grd%nz
+          read(11,*) tmp, var%ni(isp,iz)
+        end do
+      close(11)
+    end if
 
     isp = sp_index(spl, 'C2H6')
-    open(11, file = './Jupiter/no_metal/input/density/C2H6.dat', status = 'unknown' )
-      do iz = 1, grd%nz
-        read(11,*) tmp, var%ni(isp,iz)
-      end do
-    close(11)
+    if (isp >= 1 .and. isp <= spl%nsp) then
+      open(11, file = './Jupiter/no_metal/input/density/C2H6.dat', status = 'unknown' )
+        do iz = 1, grd%nz
+          read(11,*) tmp, var%ni(isp,iz)
+        end do
+      close(11)
+    end if
 
     isp = sp_index(spl, 'H2(v>=2)')
-    open(11, file = './Jupiter/no_metal/input/density/H2_v2.dat', status = 'unknown' )
-      do iz = 1, grd%nz
-        read(11,*) tmp, var%ni(isp,iz)
-      end do
-    close(11)
+    if (isp >= 1 .and. isp <= spl%nsp) then
+      open(11, file = './Jupiter/no_metal/input/density/H2_v2.dat', status = 'unknown' )
+        do iz = 1, grd%nz
+          read(11,*) tmp, var%ni(isp,iz)
+        end do
+      close(11)
+    end if
 
     isp = sp_index(spl, 'H2(v>=4)')
-    open(11, file = './Jupiter/no_metal/input/density/H2_v4.dat', status = 'unknown' )
-      do iz = 1, grd%nz
-        read(11,*) tmp, var%ni(isp,iz)
-      end do
-    close(11)
+    if (isp >= 1 .and. isp <= spl%nsp) then
+      open(11, file = './Jupiter/no_metal/input/density/H2_v4.dat', status = 'unknown' )
+        do iz = 1, grd%nz
+          read(11,*) tmp, var%ni(isp,iz)
+        end do
+      close(11)
+    end if
 
     var%ni_0 = var%ni
 

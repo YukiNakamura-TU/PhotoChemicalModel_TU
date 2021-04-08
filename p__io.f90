@@ -235,7 +235,7 @@ contains
     type(set_), intent(in) :: set
     character(len=256) fname
 
-    fname = './progress.dat'
+    fname = './'//trim(ADJUSTL(set%dir_name))//'/progress.dat'
     open(11, file = fname, status = 'unknown' )
 
       write(11, *) '########################################'
