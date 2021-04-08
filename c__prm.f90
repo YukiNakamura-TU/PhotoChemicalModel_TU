@@ -140,7 +140,7 @@ contains
       do iy = 1, grd%ny
         ! iy = 1      : south pole
         ! iy = grd%ny : north pole
-        grd%lat(iy) = ( dble(iy) - dble(grd%ny+1)/.02_dp ) * cst%pi / dble(grd%ny - 1)
+        grd%lat(iy) = ( dble(iy) - dble(grd%ny+1)/2.0_dp ) * cst%pi / dble(grd%ny - 1)
       end do
     end if
 
@@ -157,8 +157,10 @@ contains
           tmp = 1.36_dp
         end if
         grd%sza(ix,iy) = tmp
+        print *, iy, grd%lat(iy)*180.0_dp/cst%pi, grd%sza(ix,iy)
       end do
     end do
+    stop
 
   end subroutine c__prm__planet
 

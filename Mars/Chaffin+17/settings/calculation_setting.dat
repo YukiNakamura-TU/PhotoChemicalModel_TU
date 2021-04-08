@@ -1,10 +1,10 @@
-Dimension : 1
+Dimension : 2
 LAT : 0.0
 Ls : 0.0
-stepmax : 10000
+stepmax : 30000
 sumdtst : 3.0e15
 dtmaxst : 1.0e14
 sumdtrot : 3.0
 dtmaxrot : 100.0
 scheme : 1
-inversion : 2
+inversion : 1

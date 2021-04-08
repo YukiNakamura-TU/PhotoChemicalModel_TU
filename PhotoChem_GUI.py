@@ -4507,7 +4507,7 @@ def plot_window(Planet, dir0):
     char.place(x=885, y = ys)
     char.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
 
-    plt_vmr_btn = tk.Button(plt_frame, text=u'Plot mixing ratio', font=('', '15'))
+    plt_vmr_btn = tk.Button(plt_frame, text=u'Plot mixing ratio', font=("",15))
     plt_vmr_btn["command"] = callback_plot(Planet, dir0, species, 'mixing ratio', rbvar, adv, fs, 
                                            sp_chk_bln, '', '', 
                                            xr, yr, LATin2, LATin3, LTin3)
@@ -4519,7 +4519,7 @@ def plot_window(Planet, dir0):
     char = tk.Label(plt_frame,text=u"========== Advanced setting ==========", font=("",15))
     char.place(x=650, y = ys)
     char.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
-    order_btn = tk.Button(plt_frame, text=u'Colors and orders', font=('', '15'))
+    order_btn = tk.Button(plt_frame, text=u'Colors and orders', font=("",15))
     order_btn["command"] = callback_plot_order(Planet, dir0)
     order_btn.place(x=650, y=ys+30)
     order_btn.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
@@ -4670,6 +4670,7 @@ def plot(Planet, dir0, species, action, adv, fs,
                 ny = len(data[0])-1
                 dy = 180.0/(float(ny)-1.0)
                 iy = int((float(LAT)+90.0)/dy)
+                print(iy)
                 for i in range(len(data)):
                     altitude[isp].append(data[i][0])
                     density[isp].append(data[i][iy+1])

@@ -19,15 +19,15 @@ contains
     spl%planet = 'Mars'
 
     ! Calculation settings
-    set%mode = '1D'
-    set%nstep = 10000
+    set%mode = '2D Lat'
+    set%nstep = 30000
     set%fin_sec = 3.0e15_dp
     set%dtime_limit = 1.0e14_dp
     set%latitude = 0.0_dp
     set%Ls = 0.0_dp
     set%nday = 3.0_dp
     set%scheme = 'implicit'
-    set%inversion = 'Chaffin'
+    set%inversion = 'Catling'
     ! directory setting
     set%dir_name = './Mars/Chaffin+17'
     set%fnamestable = './Mars/Chaffin+17/output/density/n_stable.dat'
