@@ -174,7 +174,7 @@ contains
     type(flx_),   intent(in)     :: flx
     type(set_),   intent(in)     :: set
     type(var_),   intent(inout)  :: var
-    integer i, j, ix, iy, iz, isp, ich, nspecial
+    integer i, j, ix, iy, iz, isp, ich, nspecial, Metal_label
     integer N1, N2, N3, N4, N5, N6, N7, N8, N9, N0
     real(dp) tmp, tmp1, tmp2, tmpzarr(grd%nz)
     real(dp) tmp_ijh1(grd%nx,grd%ny,grd%nz), tmp_ijh2(grd%nx,grd%ny,grd%nz)
@@ -182,8 +182,8 @@ contains
 
     if ( spl%planet == 'Jupiter' ) then
 
-      nspecial = var%nspecial
       if (var%nspecial == 0) nspecial = 1
+      nspecial = var%nspecial
       allocate(var%ich_special(nspecial), var%ki_special(nspecial,grd%nx,grd%ny,grd%nz))
 
     FAC = 'Hill'
@@ -204,9 +204,11 @@ contains
         end do
       close(11)
 
+      Metal_label = 0
       do ich = 1, spl%nch
 
         if ( spl%reaction_type_char(ich) == 'Meteoroid ablation' ) then
+          Metal_label = 1
 
           if ( p__search_product(spl, ich, 'Na') == 1 ) then
 
@@ -319,20 +321,22 @@ contains
       end do
 
       ! dawn dusk asymmetry of meteoroid flux: 2D or 3D calculation
-      if (set%mode == '2D Rot' .or. set%mode == '3D Rot' .or. set%mode == '3D Global') then
-        do iz = 1, grd%nz
-        do iy = 1, grd%ny
-        do ix = 1, grd%nx
-          do ich = 1, 8
-            if ( grd%lt(ix) > 0.0_dp .and. grd%lt(ix) <= cst%pi ) then ! dawn : * 1.8
-              var%ki_special(ich,ix,iy,iz) = var%ki_special(ich,ix,iy,iz) * 1.8_dp
-            else if ( grd%lt(ix) > cst%pi  ) then ! dusk : * 0.2
-              var%ki_special(ich,ix,iy,iz) = var%ki_special(ich,ix,iy,iz) * 0.2_dp
-            end if
+      if (Metal_label == 1) then 
+        if (set%mode == '2D Rot' .or. set%mode == '3D Rot' .or. set%mode == '3D Global') then
+          do iz = 1, grd%nz
+          do iy = 1, grd%ny
+          do ix = 1, grd%nx
+            do ich = 1, 8
+              if ( grd%lt(ix) > 0.0_dp .and. grd%lt(ix) <= cst%pi ) then ! dawn : * 1.8
+                var%ki_special(ich,ix,iy,iz) = var%ki_special(ich,ix,iy,iz) * 1.8_dp
+              else if ( grd%lt(ix) > cst%pi  ) then ! dusk : * 0.2
+                var%ki_special(ich,ix,iy,iz) = var%ki_special(ich,ix,iy,iz) * 0.2_dp
+              end if
+            end do
           end do
-        end do
-        end do
-        end do
+          end do
+          end do
+        end if
       end if
 
       if( set%mode == '3D Rot' .or. set%mode == '3D Global' ) then
