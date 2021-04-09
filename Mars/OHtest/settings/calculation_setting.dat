@@ -1,9 +1,9 @@
 Dimension : 1
 LAT : 0.0
-Ls : 270.0
+Ls : 0.0
 stepmax : 10000
-sumdtst : 9.0e5
-dtmaxst : 1.0e4
+sumdtst : 87.0e4
+dtmaxst : 1.0e3
 sumdtrot : 3
 dtmaxrot : 1.0e4
 scheme : 1

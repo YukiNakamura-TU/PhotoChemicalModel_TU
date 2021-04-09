@@ -2723,6 +2723,12 @@ def reaction_analysis(action, iplnt, reaction_chk_bln, fix_species_bln, dir0):
                 f.write(')')
 
             print('CMakeList updated!')
+            
+            path = './'+Planet+'/'+dir0+'/settings/plt_species.dat'
+            with open(path, mode = 'w') as f:
+                for isp in range(len(species)-1):
+                    f.write(species[isp]+'\n')
+                f.write(species[len(species)-1])
 
         ###########################################################
         #

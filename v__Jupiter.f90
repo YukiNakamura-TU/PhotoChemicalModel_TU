@@ -182,8 +182,8 @@ contains
 
     if ( spl%planet == 'Jupiter' ) then
 
-      if (var%nspecial == 0) nspecial = 1
       nspecial = var%nspecial
+      if (var%nspecial == 0) nspecial = 1
       allocate(var%ich_special(nspecial), var%ki_special(nspecial,grd%nx,grd%ny,grd%nz))
 
     FAC = 'Hill'

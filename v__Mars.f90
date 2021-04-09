@@ -164,8 +164,8 @@ contains
     character(len=256) fname
 
     if ( spl%planet == 'Mars' ) then 
-      if (var%nspecial == 0) nspecial = 1
       nspecial = var%nspecial
+      if (var%nspecial == 0) nspecial = 1
       allocate(var%ich_special(nspecial), var%ki_special(nspecial,grd%nx,grd%ny,grd%nz))
       var%ki_special = 0.0_dp
 
@@ -185,7 +185,7 @@ contains
           do iz = 1, grd%nz
           do iy = 1, grd%ny
           do ix = 1, grd%nx
-            var%ki_special(1,ix,iy,iz) = ((tmpzarr1(iz) + tmpzarr2(iz))*1.0e6_dp )*1.0e0_dp
+            var%ki_special(1,ix,iy,iz) = ((tmpzarr1(iz) + tmpzarr2(iz))*1.0e6_dp )*1.0e1_dp
           end do
           end do
           !print *, ich, iz, var%ki_special(1,1,1,iz)

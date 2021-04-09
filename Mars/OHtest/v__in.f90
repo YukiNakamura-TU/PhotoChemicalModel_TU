@@ -21,10 +21,10 @@ contains
     ! Calculation settings
     set%mode = '1D'
     set%nstep = 10000
-    set%fin_sec = 9.0e5_dp
-    set%dtime_limit = 1.0e4_dp
+    set%fin_sec = 87.0e4_dp
+    set%dtime_limit = 1.0e3_dp
     set%latitude = 0.0_dp
-    set%Ls = 270.0_dp
+    set%Ls = 0.0_dp
     set%nday = 3_dp
     set%scheme = 'implicit'
     set%inversion = 'Catling'
@@ -60,13 +60,13 @@ contains
     end do
 
     ! reactions, chemical species
-    spl%nsp     = 14
-    spl%nsp_i   = 10
-    spl%nch     = 50
+    spl%nsp     = 16
+    spl%nsp_i   = 12
+    spl%nch     = 52
     spl%nch_P   = 33
-    spl%nch_L   = 23
-    spl%n_Jlist = 72
-    spl%nch_J   = 25
+    spl%nch_L   = 25
+    spl%n_Jlist = 84
+    spl%nch_J   = 27
     spl%nrpn    = 8
 
     ! allocate
@@ -133,7 +133,9 @@ contains
     spl%species(11) = 'HO2'
     spl%species(12) = 'H2O2'
     spl%species(13) = 'M'
-    spl%species(14) = 'CO2+'
+    spl%species(14) = 'N2'
+    spl%species(15) = 'HOCO'
+    spl%species(16) = 'CO2+'
 
     ! label_fix
     spl%label_fix(1) = 1 ! CO2: fixed
@@ -149,7 +151,9 @@ contains
     spl%label_fix(11) = 0 ! HO2: variable
     spl%label_fix(12) = 0 ! H2O2: variable
     spl%label_fix(13) = 1 ! M: fixed
-    spl%label_fix(14) = 1 ! CO2+: fixed
+    spl%label_fix(14) = 0 ! N2: variable
+    spl%label_fix(15) = 0 ! HOCO: variable
+    spl%label_fix(16) = 1 ! CO2+: fixed
 
     ! all_to_var
     spl%all_to_var = 0
@@ -163,6 +167,8 @@ contains
     spl%all_to_var(10) = 8 ! O2: variable
     spl%all_to_var(11) = 9 ! HO2: variable
     spl%all_to_var(12) = 10 ! H2O2: variable
+    spl%all_to_var(14) = 11 ! N2: variable
+    spl%all_to_var(15) = 12 ! HOCO: variable
 
     ! var_to_all
     spl%var_to_all(1) = 2 ! CO: variable
@@ -175,6 +181,8 @@ contains
     spl%var_to_all(8) = 10 ! O2: variable
     spl%var_to_all(9) = 11 ! HO2: variable
     spl%var_to_all(10) = 12 ! H2O2: variable
+    spl%var_to_all(11) = 14 ! N2: variable
+    spl%var_to_all(12) = 15 ! HOCO: variable
 
     ! mass
     var%m(1) = 44.00950000_dp * cst%m_u !CO2
@@ -190,7 +198,9 @@ contains
     var%m(11) = 33.00674000_dp * cst%m_u !HO2
     var%m(12) = 34.01468000_dp * cst%m_u !H2O2
     var%m(13) = 10.00000000_dp * cst%m_u !M
-    var%m(14) = 44.00895142_dp * cst%m_u !CO2+
+    var%m(14) = 28.01340000_dp * cst%m_u !N2
+    var%m(15) = 45.01744000_dp * cst%m_u !HOCO
+    var%m(16) = 44.00895142_dp * cst%m_u !CO2+
 
     ! mass zero error
     do isp = 1, spl%nsp
@@ -215,7 +225,9 @@ contains
     var%q(11) = 0.0_dp * cst%q_e !HO2
     var%q(12) = 0.0_dp * cst%q_e !H2O2
     var%q(13) = 0.0_dp * cst%q_e !M
-    var%q(14) = 1.0_dp * cst%q_e !CO2+
+    var%q(14) = 0.0_dp * cst%q_e !N2
+    var%q(15) = 0.0_dp * cst%q_e !HOCO
+    var%q(16) = 1.0_dp * cst%q_e !CO2+
 
     ! read P, L, J list
     open(11, file = './Mars/OHtest/input/PLJ_list/Production_list.dat', status = 'unknown' )
@@ -332,95 +344,130 @@ contains
     var%ni   = 1.0e-20_dp
 
     isp = sp_index(spl, 'CO2')
-    open(11, file = './Mars/OHtest/input/density/CO2.dat', status = 'unknown' )
-      do iz = 1, grd%nz
-        read(11,*) tmp, var%ni(isp,iz)
-      end do
-    close(11)
+    if (isp >= 1 .and. isp <= spl%nsp) then
+      open(11, file = './Mars/OHtest/input/density_3day/CO2.dat', status = 'unknown' )
+        do iz = 1, grd%nz
+          read(11,*) tmp, var%ni(isp,iz)
+        end do
+      close(11)
+    end if
 
     isp = sp_index(spl, 'CO')
-    open(11, file = './Mars/OHtest/input/density/CO.dat', status = 'unknown' )
-      do iz = 1, grd%nz
-        read(11,*) tmp, var%ni(isp,iz)
-      end do
-    close(11)
+    if (isp >= 1 .and. isp <= spl%nsp) then
+      open(11, file = './Mars/OHtest/input/density_3day/CO.dat', status = 'unknown' )
+        do iz = 1, grd%nz
+          read(11,*) tmp, var%ni(isp,iz)
+        end do
+      close(11)
+    end if
 
     isp = sp_index(spl, 'O')
-    open(11, file = './Mars/OHtest/input/density/O.dat', status = 'unknown' )
-      do iz = 1, grd%nz
-        read(11,*) tmp, var%ni(isp,iz)
-      end do
-    close(11)
+    if (isp >= 1 .and. isp <= spl%nsp) then
+      open(11, file = './Mars/OHtest/input/density_3day/O.dat', status = 'unknown' )
+        do iz = 1, grd%nz
+          read(11,*) tmp, var%ni(isp,iz)
+        end do
+      close(11)
+    end if
 
     isp = sp_index(spl, 'O(1D)')
-    open(11, file = './Mars/OHtest/input/density/O(1D).dat', status = 'unknown' )
-      do iz = 1, grd%nz
-        read(11,*) tmp, var%ni(isp,iz)
-      end do
-    close(11)
+    if (isp >= 1 .and. isp <= spl%nsp) then
+      open(11, file = './Mars/OHtest/input/density_3day/O(1D).dat', status = 'unknown' )
+        do iz = 1, grd%nz
+          read(11,*) tmp, var%ni(isp,iz)
+        end do
+      close(11)
+    end if
 
     isp = sp_index(spl, 'H2O')
-    open(11, file = './Mars/OHtest/input/density/H2O.dat', status = 'unknown' )
-      do iz = 1, grd%nz
-        read(11,*) tmp, var%ni(isp,iz)
-      end do
-    close(11)
+    if (isp >= 1 .and. isp <= spl%nsp) then
+      open(11, file = './Mars/OHtest/input/density_3day/H2O.dat', status = 'unknown' )
+        do iz = 1, grd%nz
+          read(11,*) tmp, var%ni(isp,iz)
+        end do
+      close(11)
+    end if
 
     isp = sp_index(spl, 'H')
-    open(11, file = './Mars/OHtest/input/density/H.dat', status = 'unknown' )
-      do iz = 1, grd%nz
-        read(11,*) tmp, var%ni(isp,iz)
-      end do
-    close(11)
+    if (isp >= 1 .and. isp <= spl%nsp) then
+      open(11, file = './Mars/OHtest/input/density_3day/H.dat', status = 'unknown' )
+        do iz = 1, grd%nz
+          read(11,*) tmp, var%ni(isp,iz)
+        end do
+      close(11)
+    end if
 
     isp = sp_index(spl, 'OH')
-    open(11, file = './Mars/OHtest/input/density/OH.dat', status = 'unknown' )
-      do iz = 1, grd%nz
-        read(11,*) tmp, var%ni(isp,iz)
-      end do
-    close(11)
+    if (isp >= 1 .and. isp <= spl%nsp) then
+      open(11, file = './Mars/OHtest/input/density_3day/OH.dat', status = 'unknown' )
+        do iz = 1, grd%nz
+          read(11,*) tmp, var%ni(isp,iz)
+        end do
+      close(11)
+    end if
 
     isp = sp_index(spl, 'H2')
-    open(11, file = './Mars/OHtest/input/density/H2.dat', status = 'unknown' )
-      do iz = 1, grd%nz
-        read(11,*) tmp, var%ni(isp,iz)
-      end do
-    close(11)
+    if (isp >= 1 .and. isp <= spl%nsp) then
+      open(11, file = './Mars/OHtest/input/density_3day/H2.dat', status = 'unknown' )
+        do iz = 1, grd%nz
+          read(11,*) tmp, var%ni(isp,iz)
+        end do
+      close(11)
+    end if
 
     isp = sp_index(spl, 'O3')
-    open(11, file = './Mars/OHtest/input/density/O3.dat', status = 'unknown' )
-      do iz = 1, grd%nz
-        read(11,*) tmp, var%ni(isp,iz)
-      end do
-    close(11)
+    if (isp >= 1 .and. isp <= spl%nsp) then
+      open(11, file = './Mars/OHtest/input/density_3day/O3.dat', status = 'unknown' )
+        do iz = 1, grd%nz
+          read(11,*) tmp, var%ni(isp,iz)
+        end do
+      close(11)
+    end if
 
     isp = sp_index(spl, 'O2')
-    open(11, file = './Mars/OHtest/input/density/O2.dat', status = 'unknown' )
-      do iz = 1, grd%nz
-        read(11,*) tmp, var%ni(isp,iz)
-      end do
-    close(11)
+    if (isp >= 1 .and. isp <= spl%nsp) then
+      open(11, file = './Mars/OHtest/input/density_3day/O2.dat', status = 'unknown' )
+        do iz = 1, grd%nz
+          read(11,*) tmp, var%ni(isp,iz)
+        end do
+      close(11)
+    end if
 
     isp = sp_index(spl, 'HO2')
-    open(11, file = './Mars/OHtest/input/density/HO2.dat', status = 'unknown' )
-      do iz = 1, grd%nz
-        read(11,*) tmp, var%ni(isp,iz)
-      end do
-    close(11)
+    if (isp >= 1 .and. isp <= spl%nsp) then
+      open(11, file = './Mars/OHtest/input/density_3day/HO2.dat', status = 'unknown' )
+        do iz = 1, grd%nz
+          read(11,*) tmp, var%ni(isp,iz)
+        end do
+      close(11)
+    end if
 
     isp = sp_index(spl, 'H2O2')
-    open(11, file = './Mars/OHtest/input/density/H2O2.dat', status = 'unknown' )
-      do iz = 1, grd%nz
-        read(11,*) tmp, var%ni(isp,iz)
-      end do
-    close(11)
+    if (isp >= 1 .and. isp <= spl%nsp) then
+      open(11, file = './Mars/OHtest/input/density_3day/H2O2.dat', status = 'unknown' )
+        do iz = 1, grd%nz
+          read(11,*) tmp, var%ni(isp,iz)
+        end do
+      close(11)
+    end if
+
+    isp = sp_index(spl, 'N2')
+    if (isp >= 1 .and. isp <= spl%nsp) then
+      open(11, file = './Mars/OHtest/input/density_3day/N2.dat', status = 'unknown' )
+        do iz = 1, grd%nz
+          read(11,*) tmp, var%ni(isp,iz)
+        end do
+      close(11)
+    end if
 
     isp = sp_index(spl, 'CO2+')
-    open(11, file = './Mars/OHtest/input/density/CO2+.dat', status = 'unknown' )
-      do iz = 1, grd%nz
-        read(11,*) tmp, var%ni(isp,iz)
-      end do
-    close(11)
+    if (isp >= 1 .and. isp <= spl%nsp) then
+      open(11, file = './Mars/OHtest/input/density_3day/CO2+.dat', status = 'unknown' )
+        do iz = 1, grd%nz
+          read(11,*) tmp, var%ni(isp,iz)
+        end do
+      close(11)
+    end if
 
     var%ni_0 = var%ni
 

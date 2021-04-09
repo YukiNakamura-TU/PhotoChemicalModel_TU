@@ -7,6 +7,9 @@
 */*/output/rate/
 Jupiter/*/input/aurora
 Jupiter/*/input/density
+Mars/OHtest/input/
+Mars/OHtest/output/
+Mars/OHtest/settings/
 UV/xct
 Doxyfile
 html

@@ -3,7 +3,7 @@
 ############################################
 
 
-* 50 reactions
+* 52 reactions
 
 --------------------------------------------
  CO₂  + hv  →  CO     + O       
@@ -230,9 +230,23 @@ Reaction rate : 1 case.
 
 
 --------------------------------------------
- O     + O₂ + CO₂   →  O₃   + CO₂      
+ O     + O₂ + N₂    →  O₃   + N₂       
 --------------------------------------------
 Reaction number : 17
+Reactant :  O  ,  O₂  ,  N₂
+Product  :  O₃  ,  N₂
+
+Reaction rate : 1 case.
+       (1) 5.0 × 10⁻³⁵ × exp(724/T(neutral))
+               T type  : neutral Temperature
+               T range :   0.00 [K]  ~  100000.00 [K]
+
+
+
+--------------------------------------------
+ O     + O₂ + CO₂   →  O₃   + CO₂      
+--------------------------------------------
+Reaction number : 18
 Reactant :  O  ,  O₂  ,  CO₂
 Product  :  O₃  ,  CO₂
 
@@ -246,7 +260,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  O     + O₃         →  O₂   + O₂       
 --------------------------------------------
-Reaction number : 18
+Reaction number : 19
 Reactant :  O  ,  O₃
 Product  :  O₂  ,  O₂
 
@@ -260,7 +274,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  O     + CO + M     →  CO₂  + M        
 --------------------------------------------
-Reaction number : 19
+Reaction number : 20
 Reactant :  O  ,  CO  ,  M
 Product  :  CO₂  ,  M
 
@@ -274,7 +288,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  O(¹D) + O₂         →  O    + O₂       
 --------------------------------------------
-Reaction number : 20
+Reaction number : 21
 Reactant :  O(¹D)  ,  O₂
 Product  :  O  ,  O₂
 
@@ -288,7 +302,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  O(¹D) + O₃         →  O₂   + O₂       
 --------------------------------------------
-Reaction number : 21
+Reaction number : 22
 Reactant :  O(¹D)  ,  O₃
 Product  :  O₂  ,  O₂
 
@@ -302,7 +316,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  O(¹D) + O₃         →  O    + O  + O₂  
 --------------------------------------------
-Reaction number : 22
+Reaction number : 23
 Reactant :  O(¹D)  ,  O₃
 Product  :  O  ,  O  ,  O₂
 
@@ -316,7 +330,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  O(¹D) + H₂         →  H    + OH       
 --------------------------------------------
-Reaction number : 23
+Reaction number : 24
 Reactant :  O(¹D)  ,  H₂
 Product  :  H  ,  OH
 
@@ -330,7 +344,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  O(¹D) + CO₂        →  O    + CO₂      
 --------------------------------------------
-Reaction number : 24
+Reaction number : 25
 Reactant :  O(¹D)  ,  CO₂
 Product  :  O  ,  CO₂
 
@@ -344,7 +358,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  O(¹D) + H₂O        →  OH   + OH       
 --------------------------------------------
-Reaction number : 25
+Reaction number : 26
 Reactant :  O(¹D)  ,  H₂O
 Product  :  OH  ,  OH
 
@@ -358,7 +372,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  H₂    + O          →  OH   + H        
 --------------------------------------------
-Reaction number : 26
+Reaction number : 27
 Reactant :  H₂  ,  O
 Product  :  OH  ,  H
 
@@ -372,7 +386,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  OH    + H₂         →  H₂O  + H        
 --------------------------------------------
-Reaction number : 27
+Reaction number : 28
 Reactant :  OH  ,  H₂
 Product  :  H₂O  ,  H
 
@@ -386,7 +400,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  H     + H  + CO₂   →  H₂   + CO₂      
 --------------------------------------------
-Reaction number : 28
+Reaction number : 29
 Reactant :  H  ,  H  ,  CO₂
 Product  :  H₂  ,  CO₂
 
@@ -400,7 +414,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  H     + OH + CO₂   →  H₂O  + CO₂      
 --------------------------------------------
-Reaction number : 29
+Reaction number : 30
 Reactant :  H  ,  OH  ,  CO₂
 Product  :  H₂O  ,  CO₂
 
@@ -414,7 +428,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  H     + HO₂        →  OH   + OH       
 --------------------------------------------
-Reaction number : 30
+Reaction number : 31
 Reactant :  H  ,  HO₂
 Product  :  OH  ,  OH
 
@@ -428,7 +442,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  H     + HO₂        →  H₂O  + O(¹D)    
 --------------------------------------------
-Reaction number : 31
+Reaction number : 32
 Reactant :  H  ,  HO₂
 Product  :  H₂O  ,  O(¹D)
 
@@ -442,7 +456,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  H     + HO₂        →  H₂   + O₂       
 --------------------------------------------
-Reaction number : 32
+Reaction number : 33
 Reactant :  H  ,  HO₂
 Product  :  H₂  ,  O₂
 
@@ -456,7 +470,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  H     + H₂O₂       →  HO₂  + H₂       
 --------------------------------------------
-Reaction number : 33
+Reaction number : 34
 Reactant :  H  ,  H₂O₂
 Product  :  HO₂  ,  H₂
 
@@ -470,7 +484,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  H     + H₂O₂       →  H₂O  + OH       
 --------------------------------------------
-Reaction number : 34
+Reaction number : 35
 Reactant :  H  ,  H₂O₂
 Product  :  H₂O  ,  OH
 
@@ -484,7 +498,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  H     + O₂ + M     →  HO₂  + M        
 --------------------------------------------
-Reaction number : 35
+Reaction number : 36
 Reactant :  H  ,  O₂  ,  M
 Product  :  HO₂
 
@@ -502,7 +516,7 @@ Reaction rate : 2 cases.
 --------------------------------------------
  H     + O₃         →  OH   + O₂       
 --------------------------------------------
-Reaction number : 36
+Reaction number : 37
 Reactant :  H  ,  O₃
 Product  :  OH  ,  O₂
 
@@ -516,7 +530,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  O     + OH         →  O₂   + H        
 --------------------------------------------
-Reaction number : 37
+Reaction number : 38
 Reactant :  O  ,  OH
 Product  :  O₂  ,  H
 
@@ -530,7 +544,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  O     + HO₂        →  OH   + O₂       
 --------------------------------------------
-Reaction number : 38
+Reaction number : 39
 Reactant :  O  ,  HO₂
 Product  :  OH  ,  O₂
 
@@ -544,7 +558,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  O     + H₂O₂       →  OH   + HO₂      
 --------------------------------------------
-Reaction number : 39
+Reaction number : 40
 Reactant :  O  ,  H₂O₂
 Product  :  OH  ,  HO₂
 
@@ -558,7 +572,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  OH    + OH         →  H₂O  + O        
 --------------------------------------------
-Reaction number : 40
+Reaction number : 41
 Reactant :  OH  ,  OH
 Product  :  H₂O  ,  O
 
@@ -572,7 +586,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  OH    + OH + M     →  H₂O₂ + M        
 --------------------------------------------
-Reaction number : 41
+Reaction number : 42
 Reactant :  OH  ,  OH  ,  M
 Product  :  H₂O₂
 
@@ -590,7 +604,7 @@ Reaction rate : 2 cases.
 --------------------------------------------
  OH    + O₃         →  HO₂  + O₂       
 --------------------------------------------
-Reaction number : 42
+Reaction number : 43
 Reactant :  OH  ,  O₃
 Product  :  HO₂  ,  O₂
 
@@ -604,7 +618,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  OH    + HO₂        →  H₂O  + O₂       
 --------------------------------------------
-Reaction number : 43
+Reaction number : 44
 Reactant :  OH  ,  HO₂
 Product  :  H₂O  ,  O₂
 
@@ -618,7 +632,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  OH    + H₂O₂       →  H₂O  + HO₂      
 --------------------------------------------
-Reaction number : 44
+Reaction number : 45
 Reactant :  OH  ,  H₂O₂
 Product  :  H₂O  ,  HO₂
 
@@ -632,7 +646,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  HO₂   + O₃         →  OH   + O₂ + O₂  
 --------------------------------------------
-Reaction number : 45
+Reaction number : 46
 Reactant :  HO₂  ,  O₃
 Product  :  OH  ,  O₂  ,  O₂
 
@@ -646,7 +660,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  HO₂   + HO₂        →  H₂O₂ + O₂       
 --------------------------------------------
-Reaction number : 46
+Reaction number : 47
 Reactant :  HO₂  ,  HO₂
 Product  :  H₂O₂  ,  O₂
 
@@ -660,7 +674,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  HO₂   + HO₂ + M    →  H₂O₂ + O₂ + M   
 --------------------------------------------
-Reaction number : 47
+Reaction number : 48
 Reactant :  HO₂  ,  HO₂  ,  M
 Product  :  H₂O₂  ,  O₂  ,  M
 
@@ -674,7 +688,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  CO    + OH + M     →  CO₂  + H  + M   
 --------------------------------------------
-Reaction number : 48
+Reaction number : 49
 Reactant :  CO  ,  OH  ,  M
 Product  :  CO₂  ,  H
 
@@ -690,28 +704,46 @@ Reaction rate : 2 cases.
 
 
 --------------------------------------------
- CO₂⁺  + H₂         →  CO₂  + H  + H   
+ CO    + OH + M     →  HOCO + M        
 --------------------------------------------
-Reaction number : 49
-Reactant :  CO₂⁺  ,  H₂
-Product  :  CO₂  ,  H  ,  H
+Reaction number : 50
+Reactant :  CO  ,  OH  ,  M
+Product  :  HOCO
+
+Reaction rate : 2 cases.
+       (1) k0 = 5.9 × 10⁻³³ × (300/T(neutral))¹·⁴
+               T type  : neutral Temperature
+               T range : 0.00 [K]  ~  100000.00 [K]
+
+       (2) kinf = 1.1 × 10⁻¹² × (300/T(neutral))⁻¹·³
+               T type  : neutral Temperature
+               T range : 0.00 [K]  ~  100000.00 [K]
+
+
+
+--------------------------------------------
+ HOCO  + O₂         →  HO₂  + CO₂      
+--------------------------------------------
+Reaction number : 51
+Reactant :  HOCO  ,  O₂
+Product  :  HO₂  ,  CO₂
 
 Reaction rate : 1 case.
-       (1) 8.7 × 10⁻¹⁰
+       (1) 2.0 × 10⁻¹²
                T type  : 
                T range :   0.00 [K]  ~  100000.00 [K]
 
 
 
 --------------------------------------------
-  e⁻*  →  H   + OH + e⁻*      
+ CO₂⁺  + H₂         →  CO₂  + H  + H   
 --------------------------------------------
-Reaction number : 50
-Reactant :  
-Product  :  H  ,  OH
+Reaction number : 52
+Reactant :  CO₂⁺  ,  H₂
+Product  :  CO₂  ,  H  ,  H
 
 Reaction rate : 1 case.
-       (1) 0
+       (1) 8.7 × 10⁻¹⁰
                T type  : 
                T range :   0.00 [K]  ~  100000.00 [K]
 
