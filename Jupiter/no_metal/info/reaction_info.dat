@@ -3,12 +3,26 @@
 ############################################
 
 
-* 218 reactions
+* 219 reactions
+
+--------------------------------------------
+ H₂   + e⁻*  →  H₂⁺   + e⁻ + e⁻*      
+--------------------------------------------
+Reaction number : 1
+Reactant :  H₂
+Product  :  H₂⁺  ,  e⁻
+
+Reaction rate : 1 case.
+       (1) 0
+               T type  : 
+               T range :   0.00 [K]  ~  100000.00 [K]
+
+
 
 --------------------------------------------
  H    + hv   →  H⁺    + e⁻            
 --------------------------------------------
-Reaction number : 1
+Reaction number : 2
 Reactant :  H
 Product  :  H⁺  ,  e⁻
 
@@ -22,7 +36,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  H₂   + hv   →  H₂⁺   + e⁻            
 --------------------------------------------
-Reaction number : 2
+Reaction number : 3
 Reactant :  H₂
 Product  :  H₂⁺  ,  e⁻
 
@@ -36,7 +50,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  H₂   + hv   →  H⁺    + e⁻ + H        
 --------------------------------------------
-Reaction number : 3
+Reaction number : 4
 Reactant :  H₂
 Product  :  H⁺  ,  e⁻  ,  H
 
@@ -50,7 +64,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  He   + hv   →  He⁺   + e⁻            
 --------------------------------------------
-Reaction number : 4
+Reaction number : 5
 Reactant :  He
 Product  :  He⁺  ,  e⁻
 
@@ -64,7 +78,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  CH₄  + hv   →  CH₄⁺  + e⁻            
 --------------------------------------------
-Reaction number : 5
+Reaction number : 6
 Reactant :  CH₄
 Product  :  CH₄⁺  ,  e⁻
 
@@ -78,7 +92,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  CH₄  + hv   →  CH₃⁺  + e⁻ + H        
 --------------------------------------------
-Reaction number : 6
+Reaction number : 7
 Reactant :  CH₄
 Product  :  CH₃⁺  ,  e⁻  ,  H
 
@@ -92,7 +106,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  CH₄  + hv   →  H₂⁺   + e⁻ + products 
 --------------------------------------------
-Reaction number : 7
+Reaction number : 8
 Reactant :  CH₄
 Product  :  H₂⁺  ,  e⁻
 
@@ -106,7 +120,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂H₂ + hv   →  C₂H₂⁺ + e⁻            
 --------------------------------------------
-Reaction number : 8
+Reaction number : 9
 Reactant :  C₂H₂
 Product  :  C₂H₂⁺  ,  e⁻
 
@@ -120,7 +134,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂H₄ + hv   →  C₂H₄⁺ + e⁻            
 --------------------------------------------
-Reaction number : 9
+Reaction number : 10
 Reactant :  C₂H₄
 Product  :  C₂H₄⁺  ,  e⁻
 
@@ -134,7 +148,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂H₄ + hv   →  C₂H₃⁺ + e⁻ + H        
 --------------------------------------------
-Reaction number : 10
+Reaction number : 11
 Reactant :  C₂H₄
 Product  :  C₂H₃⁺  ,  e⁻  ,  H
 
@@ -148,7 +162,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂H₄ + hv   →  C₂H₂⁺ + e⁻ + products 
 --------------------------------------------
-Reaction number : 11
+Reaction number : 12
 Reactant :  C₂H₄
 Product  :  C₂H₂⁺  ,  e⁻
 
@@ -162,7 +176,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂H₄ + hv   →  C₂H⁺  + e⁻ + products 
 --------------------------------------------
-Reaction number : 12
+Reaction number : 13
 Reactant :  C₂H₄
 Product  :  C₂H⁺  ,  e⁻
 
@@ -176,7 +190,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂H₆ + hv   →  C₂H₆⁺ + e⁻            
 --------------------------------------------
-Reaction number : 13
+Reaction number : 14
 Reactant :  C₂H₆
 Product  :  C₂H₆⁺  ,  e⁻
 
@@ -190,7 +204,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂H₆ + hv   →  C₂H₅⁺ + e⁻ + H        
 --------------------------------------------
-Reaction number : 14
+Reaction number : 15
 Reactant :  C₂H₆
 Product  :  C₂H₅⁺  ,  e⁻  ,  H
 
@@ -204,7 +218,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂H₆ + hv   →  C₂H₄⁺ + e⁻ + products 
 --------------------------------------------
-Reaction number : 15
+Reaction number : 16
 Reactant :  C₂H₆
 Product  :  C₂H₄⁺  ,  e⁻
 
@@ -218,7 +232,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂H₆ + hv   →  C₂H₃⁺ + e⁻ + products 
 --------------------------------------------
-Reaction number : 16
+Reaction number : 17
 Reactant :  C₂H₆
 Product  :  C₂H₃⁺  ,  e⁻
 
@@ -232,7 +246,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂H₆ + hv   →  C₂H₂⁺ + e⁻ + products 
 --------------------------------------------
-Reaction number : 17
+Reaction number : 18
 Reactant :  C₂H₆
 Product  :  C₂H₂⁺  ,  e⁻
 
@@ -246,7 +260,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  H⁺    + e⁻  →  H               
 --------------------------------------------
-Reaction number : 18
+Reaction number : 19
 Reactant :  H⁺  ,  e⁻
 Product  :  H
 
@@ -260,7 +274,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  He⁺   + e⁻  →  He              
 --------------------------------------------
-Reaction number : 19
+Reaction number : 20
 Reactant :  He⁺  ,  e⁻
 Product  :  He
 
@@ -274,7 +288,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  HeH⁺  + e⁻  →  H    +  He      
 --------------------------------------------
-Reaction number : 20
+Reaction number : 21
 Reactant :  HeH⁺  ,  e⁻
 Product  :  H  ,  He
 
@@ -288,7 +302,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  H₂⁺   + e⁻  →  H    +  H       
 --------------------------------------------
-Reaction number : 21
+Reaction number : 22
 Reactant :  H₂⁺  ,  e⁻
 Product  :  H  ,  H
 
@@ -302,7 +316,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  H₃⁺   + e⁻  →  H₂   +  H       
 --------------------------------------------
-Reaction number : 22
+Reaction number : 23
 Reactant :  H₃⁺  ,  e⁻
 Product  :  H₂  ,  H
 
@@ -316,7 +330,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  H₃⁺   + e⁻  →  H    +  H +  H  
 --------------------------------------------
-Reaction number : 23
+Reaction number : 24
 Reactant :  H₃⁺  ,  e⁻
 Product  :  H  ,  H  ,  H
 
@@ -330,7 +344,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C⁺    + e⁻  →  C               
 --------------------------------------------
-Reaction number : 24
+Reaction number : 25
 Reactant :  C⁺  ,  e⁻
 Product  :  C
 
@@ -344,7 +358,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  CH⁺   + e⁻  →  C    +  H       
 --------------------------------------------
-Reaction number : 25
+Reaction number : 26
 Reactant :  CH⁺  ,  e⁻
 Product  :  C  ,  H
 
@@ -358,7 +372,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  CH₂⁺  + e⁻  →  CH   +  H       
 --------------------------------------------
-Reaction number : 26
+Reaction number : 27
 Reactant :  CH₂⁺  ,  e⁻
 Product  :  CH  ,  H
 
@@ -372,7 +386,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  CH₃⁺  + e⁻  →  CH₂  +  H       
 --------------------------------------------
-Reaction number : 27
+Reaction number : 28
 Reactant :  CH₃⁺  ,  e⁻
 Product  :  CH₂  ,  H
 
@@ -386,7 +400,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  CH₄⁺  + e⁻  →  CH₃  +  H       
 --------------------------------------------
-Reaction number : 28
+Reaction number : 29
 Reactant :  CH₄⁺  ,  e⁻
 Product  :  CH₃  ,  H
 
@@ -400,7 +414,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  CH₄⁺  + e⁻  →  CH₂  +  H +  H  
 --------------------------------------------
-Reaction number : 29
+Reaction number : 30
 Reactant :  CH₄⁺  ,  e⁻
 Product  :  CH₂  ,  H  ,  H
 
@@ -414,7 +428,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  CH₅⁺  + e⁻  →  CH₂  +  H +  H₂ 
 --------------------------------------------
-Reaction number : 30
+Reaction number : 31
 Reactant :  CH₅⁺  ,  e⁻
 Product  :  CH₂  ,  H  ,  H₂
 
@@ -428,7 +442,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  CH₅⁺  + e⁻  →  CH₃  +  H +  H  
 --------------------------------------------
-Reaction number : 31
+Reaction number : 32
 Reactant :  CH₅⁺  ,  e⁻
 Product  :  CH₃  ,  H  ,  H
 
@@ -442,7 +456,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂⁺   + e⁻  →  C    +  C       
 --------------------------------------------
-Reaction number : 32
+Reaction number : 33
 Reactant :  C₂⁺  ,  e⁻
 Product  :  C  ,  C
 
@@ -456,7 +470,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂H⁺  + e⁻  →  C₂   +  H       
 --------------------------------------------
-Reaction number : 33
+Reaction number : 34
 Reactant :  C₂H⁺  ,  e⁻
 Product  :  C₂  ,  H
 
@@ -470,7 +484,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂H⁺  + e⁻  →  CH   +  C       
 --------------------------------------------
-Reaction number : 34
+Reaction number : 35
 Reactant :  C₂H⁺  ,  e⁻
 Product  :  CH  ,  C
 
@@ -484,7 +498,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂H₂⁺ + e⁻  →  C₂H  +  H       
 --------------------------------------------
-Reaction number : 35
+Reaction number : 36
 Reactant :  C₂H₂⁺  ,  e⁻
 Product  :  C₂H  ,  H
 
@@ -498,7 +512,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂H₂⁺ + e⁻  →  CH   +  CH      
 --------------------------------------------
-Reaction number : 36
+Reaction number : 37
 Reactant :  C₂H₂⁺  ,  e⁻
 Product  :  CH  ,  CH
 
@@ -512,7 +526,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂H₃⁺ + e⁻  →  C₂H₂ +  H       
 --------------------------------------------
-Reaction number : 37
+Reaction number : 38
 Reactant :  C₂H₃⁺  ,  e⁻
 Product  :  C₂H₂  ,  H
 
@@ -526,7 +540,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂H₃⁺ + e⁻  →  CH₂  +  CH      
 --------------------------------------------
-Reaction number : 38
+Reaction number : 39
 Reactant :  C₂H₃⁺  ,  e⁻
 Product  :  CH₂  ,  CH
 
@@ -540,7 +554,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂H₄⁺ + e⁻  →  C₂H₃ +  H       
 --------------------------------------------
-Reaction number : 39
+Reaction number : 40
 Reactant :  C₂H₄⁺  ,  e⁻
 Product  :  C₂H₃  ,  H
 
@@ -554,7 +568,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂H₄⁺ + e⁻  →  CH₂  +  CH₂     
 --------------------------------------------
-Reaction number : 40
+Reaction number : 41
 Reactant :  C₂H₄⁺  ,  e⁻
 Product  :  CH₂  ,  CH₂
 
@@ -568,7 +582,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂H₅⁺ + e⁻  →  C₂H₄ +  H       
 --------------------------------------------
-Reaction number : 41
+Reaction number : 42
 Reactant :  C₂H₅⁺  ,  e⁻
 Product  :  C₂H₄  ,  H
 
@@ -582,7 +596,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂H₅⁺ + e⁻  →  CH₃  +  CH₂     
 --------------------------------------------
-Reaction number : 42
+Reaction number : 43
 Reactant :  C₂H₅⁺  ,  e⁻
 Product  :  CH₃  ,  CH₂
 
@@ -596,7 +610,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂H₆⁺ + e⁻  →  C₂H₅ +  H       
 --------------------------------------------
-Reaction number : 43
+Reaction number : 44
 Reactant :  C₂H₆⁺  ,  e⁻
 Product  :  C₂H₅  ,  H
 
@@ -610,7 +624,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂H₆⁺ + e⁻  →  CH₃  +  CH₃     
 --------------------------------------------
-Reaction number : 44
+Reaction number : 45
 Reactant :  C₂H₆⁺  ,  e⁻
 Product  :  CH₃  ,  CH₃
 
@@ -624,7 +638,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂H₇⁺ + e⁻  →  C₂H₆ +  H       
 --------------------------------------------
-Reaction number : 45
+Reaction number : 46
 Reactant :  C₂H₇⁺  ,  e⁻
 Product  :  C₂H₆  ,  H
 
@@ -638,7 +652,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₃H⁺  + e⁻  →  products        
 --------------------------------------------
-Reaction number : 46
+Reaction number : 47
 Reactant :  C₃H⁺  ,  e⁻
 Product  :  
 
@@ -652,7 +666,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₃H₂⁺ + e⁻  →  products        
 --------------------------------------------
-Reaction number : 47
+Reaction number : 48
 Reactant :  C₃H₂⁺  ,  e⁻
 Product  :  
 
@@ -666,7 +680,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₃H₃⁺ + e⁻  →  products        
 --------------------------------------------
-Reaction number : 48
+Reaction number : 49
 Reactant :  C₃H₃⁺  ,  e⁻
 Product  :  
 
@@ -680,7 +694,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₃H₄⁺ + e⁻  →  products        
 --------------------------------------------
-Reaction number : 49
+Reaction number : 50
 Reactant :  C₃H₄⁺  ,  e⁻
 Product  :  
 
@@ -694,7 +708,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₃H₅⁺ + e⁻  →  products        
 --------------------------------------------
-Reaction number : 50
+Reaction number : 51
 Reactant :  C₃H₅⁺  ,  e⁻
 Product  :  
 
@@ -708,7 +722,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₃H₆⁺ + e⁻  →  products        
 --------------------------------------------
-Reaction number : 51
+Reaction number : 52
 Reactant :  C₃H₆⁺  ,  e⁻
 Product  :  
 
@@ -722,7 +736,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₃H₇⁺ + e⁻  →  products        
 --------------------------------------------
-Reaction number : 52
+Reaction number : 53
 Reactant :  C₃H₇⁺  ,  e⁻
 Product  :  
 
@@ -736,7 +750,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₃H₈⁺ + e⁻  →  products        
 --------------------------------------------
-Reaction number : 53
+Reaction number : 54
 Reactant :  C₃H₈⁺  ,  e⁻
 Product  :  
 
@@ -750,7 +764,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₃H₉⁺ + e⁻  →  products        
 --------------------------------------------
-Reaction number : 54
+Reaction number : 55
 Reactant :  C₃H₉⁺  ,  e⁻
 Product  :  
 
@@ -764,7 +778,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₄H⁺  + e⁻  →  products        
 --------------------------------------------
-Reaction number : 55
+Reaction number : 56
 Reactant :  C₄H⁺  ,  e⁻
 Product  :  
 
@@ -778,7 +792,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₄H₂⁺ + e⁻  →  products        
 --------------------------------------------
-Reaction number : 56
+Reaction number : 57
 Reactant :  C₄H₂⁺  ,  e⁻
 Product  :  
 
@@ -792,7 +806,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₄H₃⁺ + e⁻  →  products        
 --------------------------------------------
-Reaction number : 57
+Reaction number : 58
 Reactant :  C₄H₃⁺  ,  e⁻
 Product  :  
 
@@ -806,7 +820,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₄H₅⁺ + e⁻  →  products        
 --------------------------------------------
-Reaction number : 58
+Reaction number : 59
 Reactant :  C₄H₅⁺  ,  e⁻
 Product  :  
 
@@ -820,7 +834,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₄H₇⁺ + e⁻  →  products        
 --------------------------------------------
-Reaction number : 59
+Reaction number : 60
 Reactant :  C₄H₇⁺  ,  e⁻
 Product  :  
 
@@ -834,7 +848,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₄H₉⁺ + e⁻  →  products        
 --------------------------------------------
-Reaction number : 60
+Reaction number : 61
 Reactant :  C₄H₉⁺  ,  e⁻
 Product  :  
 
@@ -848,7 +862,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  H₂⁺   + H₂        →  H₃⁺   + H             
 --------------------------------------------
-Reaction number : 61
+Reaction number : 62
 Reactant :  H₂⁺  ,  H₂
 Product  :  H₃⁺  ,  H
 
@@ -862,7 +876,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  H₂⁺   + H         →  H⁺    + H₂            
 --------------------------------------------
-Reaction number : 62
+Reaction number : 63
 Reactant :  H₂⁺  ,  H
 Product  :  H⁺  ,  H₂
 
@@ -876,7 +890,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  H₂⁺   + He        →  HeH⁺  + H             
 --------------------------------------------
-Reaction number : 63
+Reaction number : 64
 Reactant :  H₂⁺  ,  He
 Product  :  HeH⁺  ,  H
 
@@ -890,7 +904,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  H₂⁺   + CH₄       →  CH₅⁺  + H             
 --------------------------------------------
-Reaction number : 64
+Reaction number : 65
 Reactant :  H₂⁺  ,  CH₄
 Product  :  CH₅⁺  ,  H
 
@@ -904,7 +918,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  H₂⁺   + CH₄       →  CH₄⁺  + H₂            
 --------------------------------------------
-Reaction number : 65
+Reaction number : 66
 Reactant :  H₂⁺  ,  CH₄
 Product  :  CH₄⁺  ,  H₂
 
@@ -918,7 +932,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  H₂⁺   + CH₄       →  CH₃⁺  + H   + H₂      
 --------------------------------------------
-Reaction number : 66
+Reaction number : 67
 Reactant :  H₂⁺  ,  CH₄
 Product  :  CH₃⁺  ,  H  ,  H₂
 
@@ -932,7 +946,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  H₂⁺   + C₂H₂      →  C₂H₃⁺ + H             
 --------------------------------------------
-Reaction number : 67
+Reaction number : 68
 Reactant :  H₂⁺  ,  C₂H₂
 Product  :  C₂H₃⁺  ,  H
 
@@ -946,7 +960,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  H₂⁺   + C₂H₂      →  C₂H₂⁺ + H₂            
 --------------------------------------------
-Reaction number : 68
+Reaction number : 69
 Reactant :  H₂⁺  ,  C₂H₂
 Product  :  C₂H₂⁺  ,  H₂
 
@@ -960,7 +974,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  H₂⁺   + C₂H₆      →  C₂H₆⁺ + H₂            
 --------------------------------------------
-Reaction number : 69
+Reaction number : 70
 Reactant :  H₂⁺  ,  C₂H₆
 Product  :  C₂H₆⁺  ,  H₂
 
@@ -974,7 +988,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  H₂⁺   + C₂H₆      →  C₂H₅⁺ + H   + H₂      
 --------------------------------------------
-Reaction number : 70
+Reaction number : 71
 Reactant :  H₂⁺  ,  C₂H₆
 Product  :  C₂H₅⁺  ,  H  ,  H₂
 
@@ -988,7 +1002,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  H₂⁺   + C₂H₆      →  C₂H₄⁺ + H₂  + H₂      
 --------------------------------------------
-Reaction number : 71
+Reaction number : 72
 Reactant :  H₂⁺  ,  C₂H₆
 Product  :  C₂H₄⁺  ,  H₂  ,  H₂
 
@@ -1002,7 +1016,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  H₂⁺   + C₂H₆      →  C₂H₃⁺ + H   + H₂ + H₂ 
 --------------------------------------------
-Reaction number : 72
+Reaction number : 73
 Reactant :  H₂⁺  ,  C₂H₆
 Product  :  C₂H₃⁺  ,  H  ,  H₂  ,  H₂
 
@@ -1016,7 +1030,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  H₂⁺   + C₂H₆      →  C₂H₂⁺ + H₂  + H₂ + H₂ 
 --------------------------------------------
-Reaction number : 73
+Reaction number : 74
 Reactant :  H₂⁺  ,  C₂H₆
 Product  :  C₂H₂⁺  ,  H₂  ,  H₂  ,  H₂
 
@@ -1030,7 +1044,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  He⁺   + H₂        →  H₂⁺   + He            
 --------------------------------------------
-Reaction number : 74
+Reaction number : 75
 Reactant :  He⁺  ,  H₂
 Product  :  H₂⁺  ,  He
 
@@ -1044,7 +1058,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  He⁺   + H₂        →  H⁺    + H   + He      
 --------------------------------------------
-Reaction number : 75
+Reaction number : 76
 Reactant :  He⁺  ,  H₂
 Product  :  H⁺  ,  H  ,  He
 
@@ -1058,7 +1072,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  He⁺   + H₂(v>=2)  →  H⁺    + H   + He      
 --------------------------------------------
-Reaction number : 76
+Reaction number : 77
 Reactant :  He⁺  ,  H₂(v>=2)
 Product  :  H⁺  ,  H  ,  He
 
@@ -1072,7 +1086,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  He⁺   + CH₄       →  H⁺    + CH₃ + He      
 --------------------------------------------
-Reaction number : 77
+Reaction number : 78
 Reactant :  He⁺  ,  CH₄
 Product  :  H⁺  ,  CH₃  ,  He
 
@@ -1086,7 +1100,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  He⁺   + CH₄       →  CH⁺   + H₂  + H  + He 
 --------------------------------------------
-Reaction number : 78
+Reaction number : 79
 Reactant :  He⁺  ,  CH₄
 Product  :  CH⁺  ,  H₂  ,  H  ,  He
 
@@ -1100,7 +1114,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  He⁺   + CH₄       →  CH₂⁺  + H₂  + He      
 --------------------------------------------
-Reaction number : 79
+Reaction number : 80
 Reactant :  He⁺  ,  CH₄
 Product  :  CH₂⁺  ,  H₂  ,  He
 
@@ -1114,7 +1128,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  He⁺   + CH₄       →  CH₃⁺  + H   + He      
 --------------------------------------------
-Reaction number : 80
+Reaction number : 81
 Reactant :  He⁺  ,  CH₄
 Product  :  CH₃⁺  ,  H  ,  He
 
@@ -1128,7 +1142,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  He⁺   + CH₄       →  CH₄⁺  + He            
 --------------------------------------------
-Reaction number : 81
+Reaction number : 82
 Reactant :  He⁺  ,  CH₄
 Product  :  CH₄⁺  ,  He
 
@@ -1142,7 +1156,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  He⁺   + C₂H₂      →  C₂H₂⁺ + He            
 --------------------------------------------
-Reaction number : 82
+Reaction number : 83
 Reactant :  He⁺  ,  C₂H₂
 Product  :  C₂H₂⁺  ,  He
 
@@ -1156,7 +1170,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  He⁺   + C₂H₂      →  C₂H⁺  + H   + He      
 --------------------------------------------
-Reaction number : 83
+Reaction number : 84
 Reactant :  He⁺  ,  C₂H₂
 Product  :  C₂H⁺  ,  H  ,  He
 
@@ -1170,7 +1184,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  He⁺   + C₂H₂      →  C₂⁺   + H₂  + He      
 --------------------------------------------
-Reaction number : 84
+Reaction number : 85
 Reactant :  He⁺  ,  C₂H₂
 Product  :  C₂⁺  ,  H₂  ,  He
 
@@ -1184,7 +1198,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  He⁺   + C₂H₂      →  CH⁺   + CH  + He      
 --------------------------------------------
-Reaction number : 85
+Reaction number : 86
 Reactant :  He⁺  ,  C₂H₂
 Product  :  CH⁺  ,  CH  ,  He
 
@@ -1198,7 +1212,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  He⁺   + C₂H₄      →  C₂H₄⁺ + He            
 --------------------------------------------
-Reaction number : 86
+Reaction number : 87
 Reactant :  He⁺  ,  C₂H₄
 Product  :  C₂H₄⁺  ,  He
 
@@ -1212,7 +1226,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  He⁺   + C₂H₄      →  C₂H₃⁺ + H   + He      
 --------------------------------------------
-Reaction number : 87
+Reaction number : 88
 Reactant :  He⁺  ,  C₂H₄
 Product  :  C₂H₃⁺  ,  H  ,  He
 
@@ -1226,7 +1240,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  He⁺   + C₂H₄      →  C₂H₂⁺ + H₂  + He      
 --------------------------------------------
-Reaction number : 88
+Reaction number : 89
 Reactant :  He⁺  ,  C₂H₄
 Product  :  C₂H₂⁺  ,  H₂  ,  He
 
@@ -1240,7 +1254,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  He⁺   + C₂H₄      →  C₂H⁺  + H   + H₂ + He 
 --------------------------------------------
-Reaction number : 89
+Reaction number : 90
 Reactant :  He⁺  ,  C₂H₄
 Product  :  C₂H⁺  ,  H  ,  H₂  ,  He
 
@@ -1254,7 +1268,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  He⁺   + C₂H₄      →  CH₂⁺  + CH₂ + He      
 --------------------------------------------
-Reaction number : 90
+Reaction number : 91
 Reactant :  He⁺  ,  C₂H₄
 Product  :  CH₂⁺  ,  CH₂  ,  He
 
@@ -1268,7 +1282,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  He⁺   + C₂H₆      →  C₂H₄⁺ + H₂  + He      
 --------------------------------------------
-Reaction number : 91
+Reaction number : 92
 Reactant :  He⁺  ,  C₂H₆
 Product  :  C₂H₄⁺  ,  H₂  ,  He
 
@@ -1282,7 +1296,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  He⁺   + C₂H₆      →  C₂H₃⁺ + H   + H₂ + He 
 --------------------------------------------
-Reaction number : 92
+Reaction number : 93
 Reactant :  He⁺  ,  C₂H₆
 Product  :  C₂H₃⁺  ,  H  ,  H₂  ,  He
 
@@ -1296,7 +1310,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  He⁺   + C₂H₆      →  C₂H₂⁺ + H₂  + H₂ + He 
 --------------------------------------------
-Reaction number : 93
+Reaction number : 94
 Reactant :  He⁺  ,  C₂H₆
 Product  :  C₂H₂⁺  ,  H₂  ,  H₂  ,  He
 
@@ -1310,7 +1324,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  H⁺    + CH₄       →  CH₃⁺  + H₂            
 --------------------------------------------
-Reaction number : 94
+Reaction number : 95
 Reactant :  H⁺  ,  CH₄
 Product  :  CH₃⁺  ,  H₂
 
@@ -1324,7 +1338,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  H⁺    + CH₄       →  CH₄⁺  + H             
 --------------------------------------------
-Reaction number : 95
+Reaction number : 96
 Reactant :  H⁺  ,  CH₄
 Product  :  CH₄⁺  ,  H
 
@@ -1338,7 +1352,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  H⁺    + C₂H₆      →  C₂H₃⁺ + H₂ +  H₂      
 --------------------------------------------
-Reaction number : 96
+Reaction number : 97
 Reactant :  H⁺  ,  C₂H₆
 Product  :  C₂H₃⁺  ,  H₂  ,  H₂
 
@@ -1352,7 +1366,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  H⁺    + C₂H₆      →  C₂H₄⁺ + H  +  H₂      
 --------------------------------------------
-Reaction number : 97
+Reaction number : 98
 Reactant :  H⁺  ,  C₂H₆
 Product  :  C₂H₄⁺  ,  H  ,  H₂
 
@@ -1366,7 +1380,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  H⁺    + C₂H₆      →  C₂H₅⁺ + H₂            
 --------------------------------------------
-Reaction number : 98
+Reaction number : 99
 Reactant :  H⁺  ,  C₂H₆
 Product  :  C₂H₅⁺  ,  H₂
 
@@ -1380,7 +1394,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  H⁺    + H₂(v>=4)  →  H₂⁺   + H             
 --------------------------------------------
-Reaction number : 99
+Reaction number : 100
 Reactant :  H⁺  ,  H₂(v>=4)
 Product  :  H₂⁺  ,  H
 
@@ -1394,7 +1408,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  HeH⁺  + H₂        →  H₃⁺   + He            
 --------------------------------------------
-Reaction number : 100
+Reaction number : 101
 Reactant :  HeH⁺  ,  H₂
 Product  :  H₃⁺  ,  He
 
@@ -1408,7 +1422,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  HeH⁺  + H         →  H₂⁺   + He            
 --------------------------------------------
-Reaction number : 101
+Reaction number : 102
 Reactant :  HeH⁺  ,  H
 Product  :  H₂⁺  ,  He
 
@@ -1422,7 +1436,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  HeH⁺  + C₂H₄      →  C₂H₄⁺ + H  +  He      
 --------------------------------------------
-Reaction number : 102
+Reaction number : 103
 Reactant :  HeH⁺  ,  C₂H₄
 Product  :  C₂H₄⁺  ,  H  ,  He
 
@@ -1436,7 +1450,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  HeH⁺  + C₂H₄      →  C₂H₃⁺ + H₂ +  He      
 --------------------------------------------
-Reaction number : 103
+Reaction number : 104
 Reactant :  HeH⁺  ,  C₂H₄
 Product  :  C₂H₃⁺  ,  H₂  ,  He
 
@@ -1450,7 +1464,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  HeH⁺  + C₂H₆      →  C₂H₃⁺ + H₂ +  H₂ + He 
 --------------------------------------------
-Reaction number : 104
+Reaction number : 105
 Reactant :  HeH⁺  ,  C₂H₆
 Product  :  C₂H₃⁺  ,  H₂  ,  H₂  ,  He
 
@@ -1464,7 +1478,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  HeH⁺  + C₂H₆      →  C₂H₅⁺ + H₂ +  He      
 --------------------------------------------
-Reaction number : 105
+Reaction number : 106
 Reactant :  HeH⁺  ,  C₂H₆
 Product  :  C₂H₅⁺  ,  H₂  ,  He
 
@@ -1478,7 +1492,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  H₃⁺   + CH₄       →  CH₅⁺  + H₂            
 --------------------------------------------
-Reaction number : 106
+Reaction number : 107
 Reactant :  H₃⁺  ,  CH₄
 Product  :  CH₅⁺  ,  H₂
 
@@ -1492,7 +1506,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  H₃⁺   + C₂H₂      →  C₂H₃⁺ + H₂            
 --------------------------------------------
-Reaction number : 107
+Reaction number : 108
 Reactant :  H₃⁺  ,  C₂H₂
 Product  :  C₂H₃⁺  ,  H₂
 
@@ -1506,7 +1520,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  H₃⁺   + C₂H₄      →  C₂H₅⁺ + H₂            
 --------------------------------------------
-Reaction number : 108
+Reaction number : 109
 Reactant :  H₃⁺  ,  C₂H₄
 Product  :  C₂H₅⁺  ,  H₂
 
@@ -1520,7 +1534,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  H₃⁺   + C₂H₄      →  C₂H₃⁺ + H₂  +  H₂     
 --------------------------------------------
-Reaction number : 109
+Reaction number : 110
 Reactant :  H₃⁺  ,  C₂H₄
 Product  :  C₂H₃⁺  ,  H₂  ,  H₂
 
@@ -1534,7 +1548,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  H₃⁺   + C₂H₆      →  C₂H₅⁺ + H₂  +  H₂     
 --------------------------------------------
-Reaction number : 110
+Reaction number : 111
 Reactant :  H₃⁺  ,  C₂H₆
 Product  :  C₂H₅⁺  ,  H₂  ,  H₂
 
@@ -1548,7 +1562,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C⁺    + CH₄       →  C₂H₂⁺ + H₂            
 --------------------------------------------
-Reaction number : 111
+Reaction number : 112
 Reactant :  C⁺  ,  CH₄
 Product  :  C₂H₂⁺  ,  H₂
 
@@ -1562,7 +1576,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C⁺    + CH₄       →  C₂H₃⁺ + H             
 --------------------------------------------
-Reaction number : 112
+Reaction number : 113
 Reactant :  C⁺  ,  CH₄
 Product  :  C₂H₃⁺  ,  H
 
@@ -1576,7 +1590,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C⁺    + C₂H₂      →  C₃H⁺  + H             
 --------------------------------------------
-Reaction number : 113
+Reaction number : 114
 Reactant :  C⁺  ,  C₂H₂
 Product  :  C₃H⁺  ,  H
 
@@ -1590,7 +1604,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C⁺    + C₂H₄      →  C₂H₃⁺ + CH            
 --------------------------------------------
-Reaction number : 114
+Reaction number : 115
 Reactant :  C⁺  ,  C₂H₄
 Product  :  C₂H₃⁺  ,  CH
 
@@ -1604,7 +1618,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C⁺    + C₂H₄      →  C₂H₄⁺ + C             
 --------------------------------------------
-Reaction number : 115
+Reaction number : 116
 Reactant :  C⁺  ,  C₂H₄
 Product  :  C₂H₄⁺  ,  C
 
@@ -1618,7 +1632,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C⁺    + C₂H₄      →  C₃H⁺  + H   +  H₂     
 --------------------------------------------
-Reaction number : 116
+Reaction number : 117
 Reactant :  C⁺  ,  C₂H₄
 Product  :  C₃H⁺  ,  H  ,  H₂
 
@@ -1632,7 +1646,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C⁺    + C₂H₄      →  C₃H₂⁺ + H₂            
 --------------------------------------------
-Reaction number : 117
+Reaction number : 118
 Reactant :  C⁺  ,  C₂H₄
 Product  :  C₃H₂⁺  ,  H₂
 
@@ -1646,7 +1660,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C⁺    + C₂H₄      →  C₃H₃⁺ + H             
 --------------------------------------------
-Reaction number : 118
+Reaction number : 119
 Reactant :  C⁺  ,  C₂H₄
 Product  :  C₃H₃⁺  ,  H
 
@@ -1660,7 +1674,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C⁺    + C₂H₆      →  C₂H₂⁺ + CH₄           
 --------------------------------------------
-Reaction number : 119
+Reaction number : 120
 Reactant :  C⁺  ,  C₂H₆
 Product  :  C₂H₂⁺  ,  CH₄
 
@@ -1674,7 +1688,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C⁺    + C₂H₆      →  C₂H₃⁺ + CH₃           
 --------------------------------------------
-Reaction number : 120
+Reaction number : 121
 Reactant :  C⁺  ,  C₂H₆
 Product  :  C₂H₃⁺  ,  CH₃
 
@@ -1688,7 +1702,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C⁺    + C₂H₆      →  C₂H₅⁺ + CH            
 --------------------------------------------
-Reaction number : 121
+Reaction number : 122
 Reactant :  C⁺  ,  C₂H₆
 Product  :  C₂H₅⁺  ,  CH
 
@@ -1702,7 +1716,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C⁺    + C₂H₆      →  C₃H₃⁺ + H   +  H₂     
 --------------------------------------------
-Reaction number : 122
+Reaction number : 123
 Reactant :  C⁺  ,  C₂H₆
 Product  :  C₃H₃⁺  ,  H  ,  H₂
 
@@ -1716,7 +1730,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  CH⁺   + H         →  C⁺    + H₂            
 --------------------------------------------
-Reaction number : 123
+Reaction number : 124
 Reactant :  CH⁺  ,  H
 Product  :  C⁺  ,  H₂
 
@@ -1730,7 +1744,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  CH⁺   + H₂        →  CH₂⁺  + H             
 --------------------------------------------
-Reaction number : 124
+Reaction number : 125
 Reactant :  CH⁺  ,  H₂
 Product  :  CH₂⁺  ,  H
 
@@ -1744,7 +1758,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  CH⁺   + CH₄       →  C₂H₄⁺ + H             
 --------------------------------------------
-Reaction number : 125
+Reaction number : 126
 Reactant :  CH⁺  ,  CH₄
 Product  :  C₂H₄⁺  ,  H
 
@@ -1758,7 +1772,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  CH⁺   + CH₄       →  C₂H₃⁺ + H₂            
 --------------------------------------------
-Reaction number : 126
+Reaction number : 127
 Reactant :  CH⁺  ,  CH₄
 Product  :  C₂H₃⁺  ,  H₂
 
@@ -1772,7 +1786,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  CH⁺   + CH₄       →  C₂H₂⁺ + H   +  H₂     
 --------------------------------------------
-Reaction number : 127
+Reaction number : 128
 Reactant :  CH⁺  ,  CH₄
 Product  :  C₂H₂⁺  ,  H  ,  H₂
 
@@ -1786,7 +1800,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  CH⁺   + C₂H₂      →  C₃H₂⁺ + H             
 --------------------------------------------
-Reaction number : 128
+Reaction number : 129
 Reactant :  CH⁺  ,  C₂H₂
 Product  :  C₃H₂⁺  ,  H
 
@@ -1800,7 +1814,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  CH₂⁺  + H₂        →  CH₃⁺  + H             
 --------------------------------------------
-Reaction number : 129
+Reaction number : 130
 Reactant :  CH₂⁺  ,  H₂
 Product  :  CH₃⁺  ,  H
 
@@ -1814,7 +1828,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  CH₂⁺  + CH₄       →  C₂H₅⁺ + H             
 --------------------------------------------
-Reaction number : 130
+Reaction number : 131
 Reactant :  CH₂⁺  ,  CH₄
 Product  :  C₂H₅⁺  ,  H
 
@@ -1828,7 +1842,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  CH₂⁺  + CH₄       →  C₂H₄⁺ + H₂            
 --------------------------------------------
-Reaction number : 131
+Reaction number : 132
 Reactant :  CH₂⁺  ,  CH₄
 Product  :  C₂H₄⁺  ,  H₂
 
@@ -1842,7 +1856,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  CH₂⁺  + C₂H₂      →  C₃H₃⁺ + H             
 --------------------------------------------
-Reaction number : 132
+Reaction number : 133
 Reactant :  CH₂⁺  ,  C₂H₂
 Product  :  C₃H₃⁺  ,  H
 
@@ -1856,7 +1870,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  CH₃⁺  + CH₄       →  C₂H₅⁺ + H₂            
 --------------------------------------------
-Reaction number : 133
+Reaction number : 134
 Reactant :  CH₃⁺  ,  CH₄
 Product  :  C₂H₅⁺  ,  H₂
 
@@ -1870,7 +1884,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  CH₃⁺  + C₂H₂      →  C₃H₃⁺ + H₂            
 --------------------------------------------
-Reaction number : 134
+Reaction number : 135
 Reactant :  CH₃⁺  ,  C₂H₂
 Product  :  C₃H₃⁺  ,  H₂
 
@@ -1884,7 +1898,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  CH₃⁺  + C₂H₄      →  C₂H₃⁺ + CH₄           
 --------------------------------------------
-Reaction number : 135
+Reaction number : 136
 Reactant :  CH₃⁺  ,  C₂H₄
 Product  :  C₂H₃⁺  ,  CH₄
 
@@ -1898,7 +1912,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  CH₃⁺  + C₂H₄      →  C₃H₃⁺ + H₂  +  H₂     
 --------------------------------------------
-Reaction number : 136
+Reaction number : 137
 Reactant :  CH₃⁺  ,  C₂H₄
 Product  :  C₃H₃⁺  ,  H₂  ,  H₂
 
@@ -1912,7 +1926,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  CH₃⁺  + C₂H₄      →  C₃H₅⁺ + H₂            
 --------------------------------------------
-Reaction number : 137
+Reaction number : 138
 Reactant :  CH₃⁺  ,  C₂H₄
 Product  :  C₃H₅⁺  ,  H₂
 
@@ -1926,7 +1940,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  CH₃⁺  + C₂H₆      →  C₂H₅⁺ + CH₄           
 --------------------------------------------
-Reaction number : 138
+Reaction number : 139
 Reactant :  CH₃⁺  ,  C₂H₆
 Product  :  C₂H₅⁺  ,  CH₄
 
@@ -1940,7 +1954,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  CH₃⁺  + C₂H₆      →  C₃H₅⁺ + H₂  +  H₂     
 --------------------------------------------
-Reaction number : 139
+Reaction number : 140
 Reactant :  CH₃⁺  ,  C₂H₆
 Product  :  C₃H₅⁺  ,  H₂  ,  H₂
 
@@ -1954,7 +1968,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  CH₃⁺  + C₂H₆      →  C₃H₇⁺ + H₂            
 --------------------------------------------
-Reaction number : 140
+Reaction number : 141
 Reactant :  CH₃⁺  ,  C₂H₆
 Product  :  C₃H₇⁺  ,  H₂
 
@@ -1968,7 +1982,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  CH₄⁺  + H₂        →  CH₅⁺  + H             
 --------------------------------------------
-Reaction number : 141
+Reaction number : 142
 Reactant :  CH₄⁺  ,  H₂
 Product  :  CH₅⁺  ,  H
 
@@ -1982,7 +1996,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  CH₄⁺  + CH₄       →  CH₅⁺  + CH₃           
 --------------------------------------------
-Reaction number : 142
+Reaction number : 143
 Reactant :  CH₄⁺  ,  CH₄
 Product  :  CH₅⁺  ,  CH₃
 
@@ -1996,7 +2010,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  CH₄⁺  + C₂H₂      →  C₂H₂⁺ + CH₄           
 --------------------------------------------
-Reaction number : 143
+Reaction number : 144
 Reactant :  CH₄⁺  ,  C₂H₂
 Product  :  C₂H₂⁺  ,  CH₄
 
@@ -2010,7 +2024,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  CH₄⁺  + C₂H₂      →  C₂H₃⁺ + CH₃           
 --------------------------------------------
-Reaction number : 144
+Reaction number : 145
 Reactant :  CH₄⁺  ,  C₂H₂
 Product  :  C₂H₃⁺  ,  CH₃
 
@@ -2024,7 +2038,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  CH₄⁺  + C₂H₂      →  C₃H₃⁺ + H   +  H₂     
 --------------------------------------------
-Reaction number : 145
+Reaction number : 146
 Reactant :  CH₄⁺  ,  C₂H₂
 Product  :  C₃H₃⁺  ,  H  ,  H₂
 
@@ -2038,7 +2052,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  CH₄⁺  + C₂H₄      →  C₂H₄⁺ + CH₄           
 --------------------------------------------
-Reaction number : 146
+Reaction number : 147
 Reactant :  CH₄⁺  ,  C₂H₄
 Product  :  C₂H₄⁺  ,  CH₄
 
@@ -2052,7 +2066,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  CH₄⁺  + C₂H₄      →  C₂H₅⁺ + CH₃           
 --------------------------------------------
-Reaction number : 147
+Reaction number : 148
 Reactant :  CH₄⁺  ,  C₂H₄
 Product  :  C₂H₅⁺  ,  CH₃
 
@@ -2066,7 +2080,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  CH₄⁺  + C₂H₄      →  C₃H₅⁺ + H   +  H₂     
 --------------------------------------------
-Reaction number : 148
+Reaction number : 149
 Reactant :  CH₄⁺  ,  C₂H₄
 Product  :  C₃H₅⁺  ,  H  ,  H₂
 
@@ -2080,7 +2094,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  CH₄⁺  + C₂H₆      →  C₂H₄⁺ + CH₄ +  H₂     
 --------------------------------------------
-Reaction number : 149
+Reaction number : 150
 Reactant :  CH₄⁺  ,  C₂H₆
 Product  :  C₂H₄⁺  ,  CH₄  ,  H₂
 
@@ -2094,7 +2108,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  CH₅⁺  + H         →  CH₄⁺  + H₂            
 --------------------------------------------
-Reaction number : 150
+Reaction number : 151
 Reactant :  CH₅⁺  ,  H
 Product  :  CH₄⁺  ,  H₂
 
@@ -2108,7 +2122,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  CH₅⁺  + C₂H₂      →  C₂H₃⁺ + CH₄           
 --------------------------------------------
-Reaction number : 151
+Reaction number : 152
 Reactant :  CH₅⁺  ,  C₂H₂
 Product  :  C₂H₃⁺  ,  CH₄
 
@@ -2122,7 +2136,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  CH₅⁺  + C₂H₄      →  C₂H₅⁺ + CH₄           
 --------------------------------------------
-Reaction number : 152
+Reaction number : 153
 Reactant :  CH₅⁺  ,  C₂H₄
 Product  :  C₂H₅⁺  ,  CH₄
 
@@ -2136,7 +2150,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  CH₅⁺  + C₂H₆      →  C₂H₅⁺ + CH₄ +  H₂     
 --------------------------------------------
-Reaction number : 153
+Reaction number : 154
 Reactant :  CH₅⁺  ,  C₂H₆
 Product  :  C₂H₅⁺  ,  CH₄  ,  H₂
 
@@ -2150,7 +2164,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  CH₅⁺  + C₂H₆      →  C₂H₇⁺ + CH₄           
 --------------------------------------------
-Reaction number : 154
+Reaction number : 155
 Reactant :  CH₅⁺  ,  C₂H₆
 Product  :  C₂H₇⁺  ,  CH₄
 
@@ -2164,7 +2178,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂⁺   + H₂        →  C₂H⁺  + H             
 --------------------------------------------
-Reaction number : 155
+Reaction number : 156
 Reactant :  C₂⁺  ,  H₂
 Product  :  C₂H⁺  ,  H
 
@@ -2178,7 +2192,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂⁺   + CH₄       →  C₂H⁺  + CH₃           
 --------------------------------------------
-Reaction number : 156
+Reaction number : 157
 Reactant :  C₂⁺  ,  CH₄
 Product  :  C₂H⁺  ,  CH₃
 
@@ -2192,7 +2206,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂⁺   + CH₄       →  C₂H₂⁺ + CH₂           
 --------------------------------------------
-Reaction number : 157
+Reaction number : 158
 Reactant :  C₂⁺  ,  CH₄
 Product  :  C₂H₂⁺  ,  CH₂
 
@@ -2206,7 +2220,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂⁺   + CH₄       →  C₃H⁺  + H   +  H₂     
 --------------------------------------------
-Reaction number : 158
+Reaction number : 159
 Reactant :  C₂⁺  ,  CH₄
 Product  :  C₃H⁺  ,  H  ,  H₂
 
@@ -2220,7 +2234,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂⁺   + CH₄       →  C₃H₂⁺ + H₂            
 --------------------------------------------
-Reaction number : 159
+Reaction number : 160
 Reactant :  C₂⁺  ,  CH₄
 Product  :  C₃H₂⁺  ,  H₂
 
@@ -2234,7 +2248,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂⁺   + CH₄       →  C₃H₃⁺ + H             
 --------------------------------------------
-Reaction number : 160
+Reaction number : 161
 Reactant :  C₂⁺  ,  CH₄
 Product  :  C₃H₃⁺  ,  H
 
@@ -2248,7 +2262,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂⁺   + C₂H₂      →  C₄H⁺  + H             
 --------------------------------------------
-Reaction number : 161
+Reaction number : 162
 Reactant :  C₂⁺  ,  C₂H₂
 Product  :  C₄H⁺  ,  H
 
@@ -2262,7 +2276,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂⁺   + C₂H₄      →  products              
 --------------------------------------------
-Reaction number : 162
+Reaction number : 163
 Reactant :  C₂⁺  ,  C₂H₄
 Product  :  
 
@@ -2276,7 +2290,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂H⁺  + H₂        →  C₂H₂⁺ + H             
 --------------------------------------------
-Reaction number : 163
+Reaction number : 164
 Reactant :  C₂H⁺  ,  H₂
 Product  :  C₂H₂⁺  ,  H
 
@@ -2290,7 +2304,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂H⁺  + CH₄       →  C₂H₂⁺ + CH₃           
 --------------------------------------------
-Reaction number : 164
+Reaction number : 165
 Reactant :  C₂H⁺  ,  CH₄
 Product  :  C₂H₂⁺  ,  CH₃
 
@@ -2304,7 +2318,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂H⁺  + CH₄       →  C₃H₃⁺ + H₂            
 --------------------------------------------
-Reaction number : 165
+Reaction number : 166
 Reactant :  C₂H⁺  ,  CH₄
 Product  :  C₃H₃⁺  ,  H₂
 
@@ -2318,7 +2332,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂H⁺  + CH₄       →  C₃H₄⁺ + H             
 --------------------------------------------
-Reaction number : 166
+Reaction number : 167
 Reactant :  C₂H⁺  ,  CH₄
 Product  :  C₃H₄⁺  ,  H
 
@@ -2332,7 +2346,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂H⁺  + CH₄       →  C₃H₅⁺                 
 --------------------------------------------
-Reaction number : 167
+Reaction number : 168
 Reactant :  C₂H⁺  ,  CH₄
 Product  :  C₃H₅⁺
 
@@ -2346,7 +2360,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂H⁺  + C₂H₂      →  C₄H₂⁺ + H             
 --------------------------------------------
-Reaction number : 168
+Reaction number : 169
 Reactant :  C₂H⁺  ,  C₂H₂
 Product  :  C₄H₂⁺  ,  H
 
@@ -2360,7 +2374,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂H⁺  + C₂H₄      →  products              
 --------------------------------------------
-Reaction number : 169
+Reaction number : 170
 Reactant :  C₂H⁺  ,  C₂H₄
 Product  :  
 
@@ -2374,7 +2388,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂H₂⁺ + H₂        →  C₂H₃⁺ + H             
 --------------------------------------------
-Reaction number : 170
+Reaction number : 171
 Reactant :  C₂H₂⁺  ,  H₂
 Product  :  C₂H₃⁺  ,  H
 
@@ -2388,7 +2402,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂H₂⁺ + CH₄       →  C₃H₄⁺ + H₂            
 --------------------------------------------
-Reaction number : 171
+Reaction number : 172
 Reactant :  C₂H₂⁺  ,  CH₄
 Product  :  C₃H₄⁺  ,  H₂
 
@@ -2402,7 +2416,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂H₂⁺ + CH₄       →  C₃H₅⁺ + H             
 --------------------------------------------
-Reaction number : 172
+Reaction number : 173
 Reactant :  C₂H₂⁺  ,  CH₄
 Product  :  C₃H₅⁺  ,  H
 
@@ -2416,7 +2430,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂H₂⁺ + C₂H₂      →  C₄H₂⁺ + H₂            
 --------------------------------------------
-Reaction number : 173
+Reaction number : 174
 Reactant :  C₂H₂⁺  ,  C₂H₂
 Product  :  C₄H₂⁺  ,  H₂
 
@@ -2430,7 +2444,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂H₂⁺ + C₂H₂      →  C₄H₃⁺ + H             
 --------------------------------------------
-Reaction number : 174
+Reaction number : 175
 Reactant :  C₂H₂⁺  ,  C₂H₂
 Product  :  C₄H₃⁺  ,  H
 
@@ -2444,7 +2458,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂H₂⁺ + C₂H₄      →  C₂H₄⁺ + C₂H₂          
 --------------------------------------------
-Reaction number : 175
+Reaction number : 176
 Reactant :  C₂H₂⁺  ,  C₂H₄
 Product  :  C₂H₄⁺  ,  C₂H₂
 
@@ -2458,7 +2472,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂H₂⁺ + C₂H₄      →  C₃H₃⁺ + CH₃           
 --------------------------------------------
-Reaction number : 176
+Reaction number : 177
 Reactant :  C₂H₂⁺  ,  C₂H₄
 Product  :  C₃H₃⁺  ,  CH₃
 
@@ -2472,7 +2486,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂H₂⁺ + C₂H₄      →  C₄H₅⁺ + H             
 --------------------------------------------
-Reaction number : 177
+Reaction number : 178
 Reactant :  C₂H₂⁺  ,  C₂H₄
 Product  :  C₄H₅⁺  ,  H
 
@@ -2486,7 +2500,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂H₂⁺ + C₂H₆      →  C₂H₄⁺ + C₂H₄          
 --------------------------------------------
-Reaction number : 178
+Reaction number : 179
 Reactant :  C₂H₂⁺  ,  C₂H₆
 Product  :  C₂H₄⁺  ,  C₂H₄
 
@@ -2500,7 +2514,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂H₂⁺ + C₂H₆      →  C₂H₅⁺ + C₂H₃          
 --------------------------------------------
-Reaction number : 179
+Reaction number : 180
 Reactant :  C₂H₂⁺  ,  C₂H₆
 Product  :  C₂H₅⁺  ,  C₂H₃
 
@@ -2514,7 +2528,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂H₂⁺ + C₂H₆      →  C₃H₃⁺ + CH₃ +  H₂     
 --------------------------------------------
-Reaction number : 180
+Reaction number : 181
 Reactant :  C₂H₂⁺  ,  C₂H₆
 Product  :  C₃H₃⁺  ,  CH₃  ,  H₂
 
@@ -2528,7 +2542,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂H₂⁺ + C₂H₆      →  C₃H₄⁺ + CH₄           
 --------------------------------------------
-Reaction number : 181
+Reaction number : 182
 Reactant :  C₂H₂⁺  ,  C₂H₆
 Product  :  C₃H₄⁺  ,  CH₄
 
@@ -2542,7 +2556,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂H₂⁺ + C₂H₆      →  C₃H₅⁺ + CH₃           
 --------------------------------------------
-Reaction number : 182
+Reaction number : 183
 Reactant :  C₂H₂⁺  ,  C₂H₆
 Product  :  C₃H₅⁺  ,  CH₃
 
@@ -2556,7 +2570,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂H₂⁺ + C₂H₆      →  C₄H₅⁺ + H   +  H₂     
 --------------------------------------------
-Reaction number : 183
+Reaction number : 184
 Reactant :  C₂H₂⁺  ,  C₂H₆
 Product  :  C₄H₅⁺  ,  H  ,  H₂
 
@@ -2570,7 +2584,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂H₂⁺ + C₂H₆      →  C₄H₇⁺ + H             
 --------------------------------------------
-Reaction number : 184
+Reaction number : 185
 Reactant :  C₂H₂⁺  ,  C₂H₆
 Product  :  C₄H₇⁺  ,  H
 
@@ -2584,7 +2598,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂H₃⁺ + H         →  C₂H₂⁺ + H₂            
 --------------------------------------------
-Reaction number : 185
+Reaction number : 186
 Reactant :  C₂H₃⁺  ,  H
 Product  :  C₂H₂⁺  ,  H₂
 
@@ -2598,7 +2612,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂H₃⁺ + CH₄       →  C₃H₅⁺ + H₂            
 --------------------------------------------
-Reaction number : 186
+Reaction number : 187
 Reactant :  C₂H₃⁺  ,  CH₄
 Product  :  C₃H₅⁺  ,  H₂
 
@@ -2612,7 +2626,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂H₃⁺ + C₂H₂      →  C₄H₃⁺ + H₂            
 --------------------------------------------
-Reaction number : 187
+Reaction number : 188
 Reactant :  C₂H₃⁺  ,  C₂H₂
 Product  :  C₄H₃⁺  ,  H₂
 
@@ -2626,7 +2640,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂H₃⁺ + C₂H₄      →  C₂H₅⁺ + C₂H₂          
 --------------------------------------------
-Reaction number : 188
+Reaction number : 189
 Reactant :  C₂H₃⁺  ,  C₂H₄
 Product  :  C₂H₅⁺  ,  C₂H₂
 
@@ -2640,7 +2654,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂H₃⁺ + C₂H₆      →  C₂H₅⁺ + C₂H₄          
 --------------------------------------------
-Reaction number : 189
+Reaction number : 190
 Reactant :  C₂H₃⁺  ,  C₂H₆
 Product  :  C₂H₅⁺  ,  C₂H₄
 
@@ -2654,7 +2668,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂H₃⁺ + C₂H₆      →  C₃H₅⁺ + CH₄           
 --------------------------------------------
-Reaction number : 190
+Reaction number : 191
 Reactant :  C₂H₃⁺  ,  C₂H₆
 Product  :  C₃H₅⁺  ,  CH₄
 
@@ -2668,7 +2682,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂H₃⁺ + C₂H₆      →  C₄H₇⁺ + H₂            
 --------------------------------------------
-Reaction number : 191
+Reaction number : 192
 Reactant :  C₂H₃⁺  ,  C₂H₆
 Product  :  C₄H₇⁺  ,  H₂
 
@@ -2682,7 +2696,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂H₄⁺ + H         →  C₂H₃⁺ + H₂            
 --------------------------------------------
-Reaction number : 192
+Reaction number : 193
 Reactant :  C₂H₄⁺  ,  H
 Product  :  C₂H₃⁺  ,  H₂
 
@@ -2696,7 +2710,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂H₄⁺ + C₂H₂      →  C₃H₃⁺ + CH₃           
 --------------------------------------------
-Reaction number : 193
+Reaction number : 194
 Reactant :  C₂H₄⁺  ,  C₂H₂
 Product  :  C₃H₃⁺  ,  CH₃
 
@@ -2710,7 +2724,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂H₄⁺ + C₂H₂      →  C₄H₅⁺ + H             
 --------------------------------------------
-Reaction number : 194
+Reaction number : 195
 Reactant :  C₂H₄⁺  ,  C₂H₂
 Product  :  C₄H₅⁺  ,  H
 
@@ -2724,7 +2738,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂H₄⁺ + C₂H₄      →  C₃H₅⁺ + CH₃           
 --------------------------------------------
-Reaction number : 195
+Reaction number : 196
 Reactant :  C₂H₄⁺  ,  C₂H₄
 Product  :  C₃H₅⁺  ,  CH₃
 
@@ -2738,7 +2752,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂H₄⁺ + C₂H₄      →  C₄H₇⁺ + H             
 --------------------------------------------
-Reaction number : 196
+Reaction number : 197
 Reactant :  C₂H₄⁺  ,  C₂H₄
 Product  :  C₄H₇⁺  ,  H
 
@@ -2752,7 +2766,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂H₄⁺ + C₂H₆      →  C₃H₆⁺ + CH₄           
 --------------------------------------------
-Reaction number : 197
+Reaction number : 198
 Reactant :  C₂H₄⁺  ,  C₂H₆
 Product  :  C₃H₆⁺  ,  CH₄
 
@@ -2766,7 +2780,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂H₄⁺ + C₂H₆      →  C₃H₇⁺ + CH₃           
 --------------------------------------------
-Reaction number : 198
+Reaction number : 199
 Reactant :  C₂H₄⁺  ,  C₂H₆
 Product  :  C₃H₇⁺  ,  CH₃
 
@@ -2780,7 +2794,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂H₅⁺ + H         →  C₂H₄⁺ + H₂            
 --------------------------------------------
-Reaction number : 199
+Reaction number : 200
 Reactant :  C₂H₅⁺  ,  H
 Product  :  C₂H₄⁺  ,  H₂
 
@@ -2794,7 +2808,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂H₅⁺ + CH₄       →  C₃H₇⁺ + H₂            
 --------------------------------------------
-Reaction number : 200
+Reaction number : 201
 Reactant :  C₂H₅⁺  ,  CH₄
 Product  :  C₃H₇⁺  ,  H₂
 
@@ -2808,7 +2822,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂H₅⁺ + C₂H₂      →  C₃H₃⁺ + CH₄           
 --------------------------------------------
-Reaction number : 201
+Reaction number : 202
 Reactant :  C₂H₅⁺  ,  C₂H₂
 Product  :  C₃H₃⁺  ,  CH₄
 
@@ -2822,7 +2836,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂H₅⁺ + C₂H₂      →  C₄H₅⁺ + H₂            
 --------------------------------------------
-Reaction number : 202
+Reaction number : 203
 Reactant :  C₂H₅⁺  ,  C₂H₂
 Product  :  C₄H₅⁺  ,  H₂
 
@@ -2836,7 +2850,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂H₅⁺ + C₂H₄      →  C₃H₅⁺ + CH₄           
 --------------------------------------------
-Reaction number : 203
+Reaction number : 204
 Reactant :  C₂H₅⁺  ,  C₂H₄
 Product  :  C₃H₅⁺  ,  CH₄
 
@@ -2850,7 +2864,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂H₅⁺ + C₂H₆      →  C₄H₉⁺ + H₂            
 --------------------------------------------
-Reaction number : 204
+Reaction number : 205
 Reactant :  C₂H₅⁺  ,  C₂H₆
 Product  :  C₄H₉⁺  ,  H₂
 
@@ -2864,7 +2878,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂H₆⁺ + H         →  C₂H₅⁺ + H₂            
 --------------------------------------------
-Reaction number : 205
+Reaction number : 206
 Reactant :  C₂H₆⁺  ,  H
 Product  :  C₂H₅⁺  ,  H₂
 
@@ -2878,7 +2892,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂H₆⁺ + C₂H₂      →  C₂H₅⁺ + C₂H₃          
 --------------------------------------------
-Reaction number : 206
+Reaction number : 207
 Reactant :  C₂H₆⁺  ,  C₂H₂
 Product  :  C₂H₅⁺  ,  C₂H₃
 
@@ -2892,7 +2906,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂H₆⁺ + C₂H₂      →  C₃H₅⁺ + CH₃           
 --------------------------------------------
-Reaction number : 207
+Reaction number : 208
 Reactant :  C₂H₆⁺  ,  C₂H₂
 Product  :  C₃H₅⁺  ,  CH₃
 
@@ -2906,7 +2920,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂H₆⁺ + C₂H₂      →  C₄H₇⁺ + H             
 --------------------------------------------
-Reaction number : 208
+Reaction number : 209
 Reactant :  C₂H₆⁺  ,  C₂H₂
 Product  :  C₄H₇⁺  ,  H
 
@@ -2920,7 +2934,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂H₆⁺ + C₂H₄      →  C₂H₄⁺ + C₂H₆          
 --------------------------------------------
-Reaction number : 209
+Reaction number : 210
 Reactant :  C₂H₆⁺  ,  C₂H₄
 Product  :  C₂H₄⁺  ,  C₂H₆
 
@@ -2934,7 +2948,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂H₆⁺ + C₂H₆      →  C₃H₈⁺ + CH₄           
 --------------------------------------------
-Reaction number : 210
+Reaction number : 211
 Reactant :  C₂H₆⁺  ,  C₂H₆
 Product  :  C₃H₈⁺  ,  CH₄
 
@@ -2948,7 +2962,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂H₆⁺ + C₂H₆      →  C₃H₉⁺ + CH₃           
 --------------------------------------------
-Reaction number : 211
+Reaction number : 212
 Reactant :  C₂H₆⁺  ,  C₂H₆
 Product  :  C₃H₉⁺  ,  CH₃
 
@@ -2962,7 +2976,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂H₇⁺ + C₂H₂      →  C₂H₃⁺ + C₂H₆          
 --------------------------------------------
-Reaction number : 212
+Reaction number : 213
 Reactant :  C₂H₇⁺  ,  C₂H₂
 Product  :  C₂H₃⁺  ,  C₂H₆
 
@@ -2976,7 +2990,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂H₇⁺ + C₂H₄      →  C₂H₅⁺ + C₂H₆          
 --------------------------------------------
-Reaction number : 213
+Reaction number : 214
 Reactant :  C₂H₇⁺  ,  C₂H₄
 Product  :  C₂H₅⁺  ,  C₂H₆
 
@@ -2990,7 +3004,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  H⁺    + H₂ + H₂  →  H₃⁺   + H₂ 
 --------------------------------------------
-Reaction number : 214
+Reaction number : 215
 Reactant :  H⁺  ,  H₂  ,  H₂
 Product  :  H₃⁺  ,  H₂
 
@@ -3004,7 +3018,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  CH₃⁺  + H₂ + H₂  →  CH₅⁺  + H₂ 
 --------------------------------------------
-Reaction number : 215
+Reaction number : 216
 Reactant :  CH₃⁺  ,  H₂  ,  H₂
 Product  :  CH₅⁺  ,  H₂
 
@@ -3018,7 +3032,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  CH₃⁺  + H₂ + He  →  CH₅⁺  + He 
 --------------------------------------------
-Reaction number : 216
+Reaction number : 217
 Reactant :  CH₃⁺  ,  H₂  ,  He
 Product  :  CH₅⁺  ,  He
 
@@ -3032,7 +3046,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  C₂H₂⁺ + H₂ + He  →  C₂H₄⁺ + He 
 --------------------------------------------
-Reaction number : 217
+Reaction number : 218
 Reactant :  C₂H₂⁺  ,  H₂  ,  He
 Product  :  C₂H₄⁺  ,  He
 
@@ -3046,7 +3060,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  H     + H  + H₂  →  H₂    + H₂ 
 --------------------------------------------
-Reaction number : 218
+Reaction number : 219
 Reactant :  H  ,  H  ,  H₂
 Product  :  H₂  ,  H₂
 

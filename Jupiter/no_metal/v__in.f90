@@ -19,7 +19,7 @@ contains
     spl%planet = 'Jupiter'
 
     ! Calculation settings
-    set%mode = '2D Lat'
+    set%mode = '3D Rot'
     set%nstep = 30000
     set%fin_sec = 35729.685e3_dp
     set%dtime_limit = 1.0e5_dp
@@ -62,7 +62,7 @@ contains
     ! reactions, chemical species
     spl%nsp     = 52
     spl%nsp_i   = 36
-    spl%nch     = 218
+    spl%nch     = 219
     spl%nch_P   = 147
     spl%nch_L   = 87
     spl%n_Jlist = 255
@@ -120,11 +120,11 @@ contains
     allocate(var%Umtx(spl%nsp_i*grd%nz,2*spl%nsp_i+1))
 
     ! species
-    spl%species(1) = 'H'
-    spl%species(2) = 'H+'
+    spl%species(1) = 'H2'
+    spl%species(2) = 'H2+'
     spl%species(3) = 'e-'
-    spl%species(4) = 'H2'
-    spl%species(5) = 'H2+'
+    spl%species(4) = 'H'
+    spl%species(5) = 'H+'
     spl%species(6) = 'He'
     spl%species(7) = 'He+'
     spl%species(8) = 'CH4'
@@ -174,11 +174,11 @@ contains
     spl%species(52) = 'H2(v>=4)'
 
     ! label_fix
-    spl%label_fix(1) = 0 ! H: variable
-    spl%label_fix(2) = 0 ! H+: variable
+    spl%label_fix(1) = 1 ! H2: fixed
+    spl%label_fix(2) = 0 ! H2+: variable
     spl%label_fix(3) = 0 ! e-: variable
-    spl%label_fix(4) = 1 ! H2: fixed
-    spl%label_fix(5) = 0 ! H2+: variable
+    spl%label_fix(4) = 0 ! H: variable
+    spl%label_fix(5) = 0 ! H+: variable
     spl%label_fix(6) = 1 ! He: fixed
     spl%label_fix(7) = 0 ! He+: variable
     spl%label_fix(8) = 1 ! CH4: fixed
@@ -229,10 +229,10 @@ contains
 
     ! all_to_var
     spl%all_to_var = 0
-    spl%all_to_var(1) = 1 ! H: variable
-    spl%all_to_var(2) = 2 ! H+: variable
-    spl%all_to_var(3) = 3 ! e-: variable
-    spl%all_to_var(5) = 4 ! H2+: variable
+    spl%all_to_var(2) = 1 ! H2+: variable
+    spl%all_to_var(3) = 2 ! e-: variable
+    spl%all_to_var(4) = 3 ! H: variable
+    spl%all_to_var(5) = 4 ! H+: variable
     spl%all_to_var(7) = 5 ! He+: variable
     spl%all_to_var(9) = 6 ! CH4+: variable
     spl%all_to_var(10) = 7 ! CH3+: variable
@@ -267,10 +267,10 @@ contains
     spl%all_to_var(50) = 36 ! C4H9+: variable
 
     ! var_to_all
-    spl%var_to_all(1) = 1 ! H: variable
-    spl%var_to_all(2) = 2 ! H+: variable
-    spl%var_to_all(3) = 3 ! e-: variable
-    spl%var_to_all(4) = 5 ! H2+: variable
+    spl%var_to_all(1) = 2 ! H2+: variable
+    spl%var_to_all(2) = 3 ! e-: variable
+    spl%var_to_all(3) = 4 ! H: variable
+    spl%var_to_all(4) = 5 ! H+: variable
     spl%var_to_all(5) = 7 ! He+: variable
     spl%var_to_all(6) = 9 ! CH4+: variable
     spl%var_to_all(7) = 10 ! CH3+: variable
@@ -305,11 +305,11 @@ contains
     spl%var_to_all(36) = 50 ! C4H9+: variable
 
     ! mass
-    var%m(1) = 1.00794000_dp * cst%m_u !H
-    var%m(2) = 1.00739142_dp * cst%m_u !H+
+    var%m(1) = 2.01588000_dp * cst%m_u !H2
+    var%m(2) = 2.01533142_dp * cst%m_u !H2+
     var%m(3) = 0.00054858_dp * cst%m_u !e-
-    var%m(4) = 2.01588000_dp * cst%m_u !H2
-    var%m(5) = 2.01533142_dp * cst%m_u !H2+
+    var%m(4) = 1.00794000_dp * cst%m_u !H
+    var%m(5) = 1.00739142_dp * cst%m_u !H+
     var%m(6) = 4.00260200_dp * cst%m_u !He
     var%m(7) = 4.00205342_dp * cst%m_u !He+
     var%m(8) = 16.04246000_dp * cst%m_u !CH4
@@ -368,11 +368,11 @@ contains
     end do
 
     ! charge
-    var%q(1) = 0.0_dp * cst%q_e !H
-    var%q(2) = 1.0_dp * cst%q_e !H+
+    var%q(1) = 0.0_dp * cst%q_e !H2
+    var%q(2) = 1.0_dp * cst%q_e !H2+
     var%q(3) = -1.0_dp * cst%q_e !e-
-    var%q(4) = 0.0_dp * cst%q_e !H2
-    var%q(5) = 1.0_dp * cst%q_e !H2+
+    var%q(4) = 0.0_dp * cst%q_e !H
+    var%q(5) = 1.0_dp * cst%q_e !H+
     var%q(6) = 0.0_dp * cst%q_e !He
     var%q(7) = 1.0_dp * cst%q_e !He+
     var%q(8) = 0.0_dp * cst%q_e !CH4
