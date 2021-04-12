@@ -168,27 +168,28 @@ contains
   !----------------------------------------------------------------------------------------------------------
   subroutine v__Jupiter__exe(spl, cst, grd, flx, set, & ! in
     &                        var                      ) ! inout
+    implicit none
     type(spl_),   intent(in)     :: spl
     type(cst_),   intent(in)     :: cst
     type(grd_),   intent(in)     :: grd
     type(flx_),   intent(in)     :: flx
     type(set_),   intent(in)     :: set
     type(var_),   intent(inout)  :: var
-    integer i, j, ix, iy, iz, isp, ich, nspecial, Metal_label
+    integer i, j, ix, iy, iz, isp, ich, jch, nspecial, Metal_label
     integer N1, N2, N3, N4, N5, N6, N7, N8, N9, N0
     real(dp) tmp, tmp1, tmp2, tmpzarr(grd%nz)
-    real(dp) tmp_ijh1(grd%nx,grd%ny,grd%nz), tmp_ijh2(grd%nx,grd%ny,grd%nz)
+    real(dp) tmp_ijh1(361,181,141), tmp_ijh2(361,181,141)
     character(len=256) fname, FAC
 
     if ( spl%planet == 'Jupiter' ) then
 
       if (var%nspecial == 0) nspecial = 1
-      nspecial = var%nspecial
+      if (var%nspecial /= 0) nspecial = var%nspecial
       allocate(var%ich_special(nspecial), var%ki_special(nspecial,grd%nx,grd%ny,grd%nz))
 
-    FAC = 'Hill'
+      FAC = 'Hill'
 
-    var%ki_special = 0.0_dp
+      var%ki_special = 0.0_dp
 
       ! Meteoroid ablation input
       fname = './'//trim(ADJUSTL(set%dir_name))//'/input/Meteoroid/Meteoroid_prod.dat'
@@ -344,32 +345,41 @@ contains
         ! auroral electron precipitation
         do ich = 1, spl%nch
           if ( spl%reaction_type_char(ich) == 'electron impact' ) then
-            var%ich_special(9) = ich
+            if (Metal_label == 1) jch = 9 ! metal
+            if (Metal_label == 0) jch = 1 ! no metal
+            var%ich_special(jch) = ich
+            print *, 'aurora: ', ich
           end if
         end do
 
         fname = './'//trim(ADJUSTL(set%dir_name))//'/input/aurora/k1_R2_60d6.dat'
         open(11, file = fname, status = 'unknown' )
-          do iz = 1, grd%nz
-          do iy = 1, grd%ny
-          do ix = 1, grd%nx
+          do iz = 1, 141
+          do iy = 1, 181
+          do ix = 1, 361
               read(11,*) tmp_ijh1(ix,iy,iz), tmp_ijh2(ix,iy,iz) ! Hill , Hill + R2
           end do
           end do
           end do
         close(11)
 
+        isp = sp_index(spl, 'H2')
         do iz = 1, grd%nz
         do iy = 1, grd%ny
         do ix = 1, grd%nx
           if ( FAC == 'Hill' ) then
-            var%ki_special(9,ix,iy,iz) = tmp_ijh1(ix,iy,iz)
+            var%ki_special(jch,ix,iy,iz) = tmp_ijh1(ix,iy,iz)/var%ni(isp,iz)
           else if ( FAC == 'Hill+R2' ) then
-            var%ki_special(9,ix,iy,iz) = tmp_ijh2(ix,iy,iz)
+            var%ki_special(jch,ix,iy,iz) = tmp_ijh2(ix,iy,iz)/var%ni(isp,iz)
           end if
         end do
         end do
         end do
+
+        !do iz = 1, grd%nz
+        !  print *, iz, var%ki_special(jch,1,164,iz)
+        !end do 
+        !stop
 
       end if
 

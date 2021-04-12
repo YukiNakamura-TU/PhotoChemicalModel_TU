@@ -194,8 +194,8 @@ program e__main
       end do
     end do
 
-    grd%iy = 1
     do iy = 1, grd%ny
+      grd%iy = iy
 
       do iz = 1, grd%nz
         do isp = 1, spl%nsp
@@ -208,8 +208,8 @@ program e__main
       call cpu_time(var%t2)
       call p__io_progress(spl, var, grd, set) ! in
 
-      var%istep = 1
       loopt: do is = 1, set%nstep
+        var%istep = is
 
         !-----------------------------------------------------
         !            Photochemical calculation
@@ -231,7 +231,6 @@ program e__main
         & var%max_dn_n(2), var%max_dn_n(3), var%m_mean(1)/cst%m_u
 
         var%sum_time = var%sum_time + var%dtime
-        var%istep = var%istep + 1
 
       end do loopt ! end of time step
 
@@ -243,7 +242,6 @@ program e__main
 
       call cpu_time(var%t2)
 
-      grd%iy = grd%iy + 1
       call p__io_progress(spl, var, grd, set) ! in
     end do ! end y
 
@@ -316,14 +314,14 @@ program e__main
     var%dtime = cst%daysec / grd%nx
     set%dtime_limit = cst%daysec / grd%nx
 
-    grd%iy = 1
     do iy = 1, grd%ny
+      grd%iy = iy
 
       call cpu_time(var%t4)
       call p__io_progress(spl, var, grd, set) ! in
 
-      grd%iday = 1
       do iday = 1, set%nday
+        grd%iday = iday
 
         if ( iday == 1 ) then
           xs = (grd%nx-1)/2+1
@@ -337,8 +335,8 @@ program e__main
           end do
         end do
 
-        grd%ix = xs
         do ix = xs, grd%nx
+          grd%ix = ix
 
           !-----------------------------------------------------
           !            Photochemical calculation
@@ -367,15 +365,12 @@ program e__main
 
           write(*,*) iday, grd%iy, grd%ix
 
-          grd%ix = grd%ix + 1
         end do ! end of x : local time
 
-        grd%iday = grd%iday + 1
       end do ! end of rotation
 
       call cpu_time(var%t4)
 
-      grd%iy = grd%iy + 1
       call p__io_progress(spl, var, grd, set) ! in
     end do ! end of y : latitude
 
