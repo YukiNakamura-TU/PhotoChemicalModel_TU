@@ -4627,8 +4627,6 @@ def plot_window(Planet, dir0):
     plt_ratio_btn.place(x=300, y=ys+40)
     plt_ratio_btn.bind("<MouseWheel>", lambda e:plt_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))  
 
-    
-
 
 def plot_order_window(Planet, dir0):
     plt_win = tk.Toplevel()
@@ -5201,6 +5199,7 @@ def reaction_window(iplnt, Planet, list_s, list_e, dir0, version,
             reaction_find = re.findall('(.*):', reaction_rate_list[ich]) #species part
             reaction = reaction_find[0]
             reaction = reaction_unicode(reaction)
+            reaction = re.sub('\s+', '  ', reaction)
 
             #divide reaction species into reactants(left side) and products(right side)
             reaction_Ldisplay = re.findall('(.*)\u2192', reaction) #\u2192 = arrow
