@@ -314,7 +314,7 @@ program e__main
     var%dtime = cst%daysec / grd%nx
     set%dtime_limit = cst%daysec / grd%nx
 
-    do iy = 1, grd%ny
+    do iy = 91, 91
       grd%iy = iy
 
       call cpu_time(var%t4)
@@ -329,14 +329,22 @@ program e__main
           xs = 1
         end if
 
-        do iz = 1, grd%nz
-          do isp = 1, spl%nsp
-            var%ni(isp,iz) = var%ni_3d(isp,xs,iy,iz)
-          end do
-        end do
-
         do ix = xs, grd%nx
           grd%ix = ix
+          
+          if ( ix == xs ) then
+            do iz = 1, grd%nz
+              do isp = 1, spl%nsp
+                var%ni(isp,iz) = var%ni_3d(isp,ix,iy,iz)
+              end do
+            end do
+          else if ( ix >= xs+1 ) then
+            do iz = 1, grd%nz
+              do isp = 1, spl%nsp
+                var%ni(isp,iz) = var%ni_3d(isp,ix-1,iy,iz)
+              end do
+            end do
+          end if
 
           !-----------------------------------------------------
           !            Photochemical calculation
@@ -355,7 +363,8 @@ program e__main
               var%ni_3d(isp,ix,iy,iz) = var%ni(isp,iz)
             end do
           end do
-          if ( grd%ix == grd%nx ) then
+
+          if ( ix == grd%nx ) then
             do iz = 1, grd%nz
               do isp = 1, spl%nsp
                 var%ni_3d(isp,1,iy,iz) = var%ni(isp,iz)

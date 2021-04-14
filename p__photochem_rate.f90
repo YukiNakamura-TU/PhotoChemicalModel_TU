@@ -22,6 +22,7 @@ contains
 
   subroutine p__photochem_rate__exe(spl, cst, flx, grd, set, & ! in
     &                               xct, var                 ) ! inout
+    implicit none
     type(cst_),           intent(in)    :: cst
     type(spl_),           intent(in)    :: spl
     type(grd_),           intent(in)    :: grd

@@ -21,6 +21,7 @@ contains
 
   subroutine p__photochem_scheme__exe(spl, grd, set, & ! in
     &                                 var            ) ! inout
+    implicit none
     type(spl_),           intent(in)    :: spl
     type(grd_),           intent(in)    :: grd
     type(set_),           intent(in)    :: set
@@ -325,9 +326,18 @@ contains
             var%ni_new(isp,iz) = var%ni_0(isp,iz)
             var%dtime = 1.0e-8_dp
             var%iter = 0
-            !print *, iz, isp
-            !call p__io_stable__fin(set, spl, var, grd) ! in
-            !stop
+            jsp = spl%all_to_var(isp)
+            print *, iz, trim(spl%species(isp)), var%Pi(jsp,iz), var%Li(jsp,iz) 
+            do ich = 1, spl%nch
+              print *, ich, var%ki(ich,iz)
+            end do
+
+            do i = 1, grd%nz
+              print *, i, var%tau_EUV(5,i)
+            end do
+
+            call p__io_stable__fin(set, spl, var, grd) ! in
+            stop
           end if
           !var%ni_0(isp,iz) = var%ni(isp,iz)
           var%ni(isp,iz) = var%ni_new(isp,iz)

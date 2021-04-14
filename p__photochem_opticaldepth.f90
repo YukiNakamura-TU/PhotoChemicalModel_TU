@@ -20,6 +20,7 @@ contains
 
   subroutine p__photochem_opticaldepth__exe(spl, cst, flx, grd, set, & ! in
     &                                       xct, var                 ) ! inout
+    implicit none
     type(cst_),           intent(in)    :: cst
     type(spl_),           intent(in)    :: spl
     type(grd_),           intent(in)    :: grd
@@ -30,12 +31,13 @@ contains
 
     integer isp, jsp, ksp, ich, jch, iz, iwl
     integer i, j, k
-    real(dp) tau_factor
     real(dp) tmp, tmp1, tmp2, tmpzarr(grd%nz)
     character(len=256) fname
 
     ! for solar zenith angle near and greater than 90deg [Smith et al., 1972]
     real(dp) Hz, yz, Xz, chiz, Chfunc(grd%nz)
+    ! ap : parameter in approximating exp(x^2)*erfc(x) recommended by Ren and MacKenzie [2007]
+    real(dp), parameter :: ap = 2.7889_dp 
 
     !-------------------------------------------------------------------------------------------------
     !
@@ -81,38 +83,35 @@ contains
         var%n_tot(iz) = tmp2
       end do
 
-    ! Ch*(X,chi) function in Smith et al., 1972: treatment of solar zenith angle for terminator ---
-    ! currently, sza <= 1.36  >> Chfunc = 1/cos(sza)
+    ! Ch*(X,chi) function (Chfunc) in Smith et al., 1972: treatment of solar zenith angle near terminator ---
+
       do iz = 1, grd%nz
         chiz = grd%sza(grd%ix, grd%iy)
         Hz   = cst%k_B * var%Tn(iz) / var%m_mean(iz) / cst%g
         Xz   = (cst%R + grd%alt(iz)) / Hz
-        yz   = dsqrt(0.5_dp * Xz) * dcos(chiz)
-        if (chiz <= 1.36_dp) then
-          Chfunc(iz) = 1_dp/dcos(grd%sza(grd%ix,grd%iy))
-        else if (chiz > 1.36_dp .and. chiz <= cst%pi) then
-          Chfunc(iz) = dsqrt(cst%pi/2.0_dp*Xz) * dexp(yz*yz) * derfc(yz)
-        else if (chiz > cst%pi) then
-          Chfunc(iz) = 1.0e2_dp
+        yz   = dsqrt(0.5_dp * Xz) * dabs(dcos(chiz))
+ 
+        ! exp(x^2)*erfc(x) is approximated by using the formula of Ren & MacKenzie [2007]
+        if (chiz <= cst%pi / 2.0_dp) then 
+          Chfunc(iz) = dsqrt(cst%pi/2.0_dp*Xz) &
+            &        * ap / ((ap-1.0_dp)*dsqrt(cst%pi*yz*yz) + dsqrt(cst%pi*yz*yz + ap*ap))
+        else if (chiz > cst%pi / 2.0_dp) then 
+          Chfunc(iz) = dsqrt(2.0_dp*cst%pi*Xz) &
+            &        * ( dsqrt(dsin(chiz)) * dexp( Xz*(1.0_dp - dsin(chiz)) ) &
+            &          - 0.5_dp * ap / ((ap-1.0_dp)*dsqrt(cst%pi*yz*yz) + dsqrt(cst%pi*yz*yz + ap*ap)) )
         end if
-        !print *, Chfunc(iz), grd%sza_xact(grd%ix,grd%iy)*180.0_dp/cst%pi
-      end do
 
-      !! avoid '0' ionization source at night: 1/100 of sza 1.366 [rad] ~ 77 [deg] value
-      !tmp  = grd%sza(grd%ix,grd%iy)
-      !tmp1 = 1.36_dp
-      !tmp2 = cst%pi
-      !if ( tmp < tmp1 ) then
-      !  tau_factor = 1.0_dp
-      !else if ( tmp >= tmp1 .and. tmp < tmp2 ) then
-      !  tau_factor  = 0.1d0*dexp(1.7d0*datan(35.0d0*(11.0d0*cst%pi/24.0d0-grd%sza(grd%ix,grd%iy))))
-      !else if ( tmp > tmp2 ) then
-      !  tau_factor  = 0.01_dp
-      !end if
+        ! upper limit of Chfunc is 10^10
+        if (Chfunc(iz) > 1.0e10_dp) then
+          Chfunc(iz) = 1.0e10_dp
+        end if
+      end do
 
     ! solar flux at each altitude ------------------------------------------------------------------
       var%tau_EUV = 0.0_dp
+      var%tau_EUV_subsolar = 0.0_dp
       var%tau_UV  = 0.0_dp
+      var%tau_UV_subsolar = 0.0_dp
       xct%type       = 'absorption'
       xct%sigma_a_EUV = 0.0_dp
       xct%sigma_a_UV  = 0.0_dp
@@ -176,10 +175,10 @@ contains
       do iz  = 1, grd%nz
         do iwl = 1, flx%nwl_EUV
           var%I_EUV(iwl,iz) = flx%solar_EUV(iwl) &
-            &               * dexp( -var%tau_EUV(iwl,iz) ) * flx%mode_factor & 
+            &               * dexp( -var%tau_EUV(iwl,iz) ) * flx%mode_factor !& 
             ! ionization by soft electron?, photoelectron? : 1% of subsolar value
-            &               + flx%solar_EUV(iwl) * 0.01_dp &
-            &               * dexp( -var%tau_EUV_subsolar(iwl,iz) ) * flx%mode_factor
+            !&               + flx%solar_EUV(iwl) * 0.01_dp &
+            !&               * dexp( -var%tau_EUV_subsolar(iwl,iz) ) * flx%mode_factor
         end do
       end do
 
