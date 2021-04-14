@@ -29,10 +29,8 @@ contains
     type(xct_),           intent(inout) :: xct
     type(var_),           intent(inout) :: var
 
-    integer isp, jsp, ksp, ich, jch, iz, iwl
-    integer i, j, k
-    real(dp) tmp, tmp1, tmp2, tmpzarr(grd%nz)
-    character(len=256) fname
+    integer isp, jsp, iz, iwl
+    real(dp) tmp1, tmp2
 
     ! for solar zenith angle near and greater than 90deg [Smith et al., 1972]
     real(dp) Hz, yz, Xz, chiz, Chfunc(grd%nz)
@@ -105,6 +103,7 @@ contains
         if (Chfunc(iz) > 1.0e10_dp) then
           Chfunc(iz) = 1.0e10_dp
         end if
+        
       end do
 
     ! solar flux at each altitude ------------------------------------------------------------------
