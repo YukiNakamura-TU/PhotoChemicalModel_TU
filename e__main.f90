@@ -314,7 +314,7 @@ program e__main
     var%dtime = cst%daysec / grd%nx
     set%dtime_limit = cst%daysec / grd%nx
 
-    do iy = 91, 91
+    do iy = 1, grd%ny
       grd%iy = iy
 
       call cpu_time(var%t4)
