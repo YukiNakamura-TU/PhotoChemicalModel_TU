@@ -19,7 +19,7 @@
 !        1-4 Press 'Output' to output 'v__in.f90' which contains planet info, results of species/reaction analysis,
 !            input density paths and vertical grids.
 !
-!       (2) Rename "v__in.f90" with its directory in CMakeList.txt
+!       (2) Rename "v__in.f90" with its directory in CMakeList.txt if you want to change the project
 !
 !       (3) Calculation settings
 !             - 1D-3D mode selection
@@ -37,7 +37,7 @@
 !
 
 !
-! NOT RECOMMENDED TO USE INCLUDE
+! NOT RECOMMENDED TO USE INCLUDE, BUT JUST IN CASE CMAKE DOES NOT WORK
 !
 
 !include "v__tdec.f90"
@@ -56,8 +56,8 @@
 !include "p__photochem_scheme.f90"
 !include "p__airglow.f90" ! not yet
 !
-!include "./Mars/Chaffin/v__in.f90"
-!include "./Jupiter/in_metal/v__in.f90"
+!include "./Mars/Chaffin+17/v__in.f90"
+!include "./Jupiter/metal/v__in.f90"
 
 program e__main
 

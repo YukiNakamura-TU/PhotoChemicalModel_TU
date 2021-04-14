@@ -99,7 +99,7 @@ contains
             &          - 0.5_dp * ap / ((ap-1.0_dp)*dsqrt(cst%pi*yz*yz) + dsqrt(cst%pi*yz*yz + ap*ap)) )
         end if
 
-        ! upper limit of Chfunc is 10^10
+        ! upper limit of Chfunc is 10^10 in order not to cause infinity tau
         if (Chfunc(iz) > 1.0e10_dp) then
           Chfunc(iz) = 1.0e10_dp
         end if
