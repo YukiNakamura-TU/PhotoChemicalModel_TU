@@ -7,6 +7,8 @@
 */*/output/rate/
 Jupiter/*/input/aurora
 Jupiter/*/input/density
+Jupiter/*/output/
+Jupiter/dipole_Jupiter.dat
 Mars/OHtest/input/
 Mars/OHtest/output/
 Mars/OHtest/settings/

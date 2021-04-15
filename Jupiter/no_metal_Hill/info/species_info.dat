@@ -1,0 +1,1031 @@
+############################################
+############### species info ###############
+############################################
+
+
+### Fixed : 16 species ###
+
+--------------------------------------------
+ H₂
+--------------------------------------------
+# path    : ./Jupiter/no_metal_Hill/input/density/H2.dat
+# mass    : 2.01588000
+# charge  : 0
+
+--------------------------------------------
+ He
+--------------------------------------------
+# path    : ./Jupiter/no_metal_Hill/input/density/He.dat
+# mass    : 4.00260200
+# charge  : 0
+
+--------------------------------------------
+ CH₄
+--------------------------------------------
+# path    : ./Jupiter/no_metal_Hill/input/density/CH4.dat
+# mass    : 16.04246000
+# charge  : 0
+
+--------------------------------------------
+ C₂H₂
+--------------------------------------------
+# path    : ./Jupiter/no_metal_Hill/input/density/C2H2.dat
+# mass    : 26.03728000
+# charge  : 0
+
+--------------------------------------------
+ C₂H₄
+--------------------------------------------
+# path    : ./Jupiter/no_metal_Hill/input/density/C2H4.dat
+# mass    : 28.05316000
+# charge  : 0
+
+--------------------------------------------
+ C₂H₆
+--------------------------------------------
+# path    : ./Jupiter/no_metal_Hill/input/density/C2H6.dat
+# mass    : 30.06904000
+# charge  : 0
+
+--------------------------------------------
+ C
+--------------------------------------------
+# mass    : 12.01070000
+# charge  : 0
+
+--------------------------------------------
+ CH
+--------------------------------------------
+# mass    : 13.01864000
+# charge  : 0
+
+--------------------------------------------
+ CH₂
+--------------------------------------------
+# mass    : 14.02658000
+# charge  : 0
+
+--------------------------------------------
+ CH₃
+--------------------------------------------
+# mass    : 15.03452000
+# charge  : 0
+
+--------------------------------------------
+ C₂
+--------------------------------------------
+# mass    : 24.02140000
+# charge  : 0
+
+--------------------------------------------
+ C₂H
+--------------------------------------------
+# mass    : 25.02934000
+# charge  : 0
+
+--------------------------------------------
+ C₂H₃
+--------------------------------------------
+# mass    : 27.04522000
+# charge  : 0
+
+--------------------------------------------
+ C₂H₅
+--------------------------------------------
+# mass    : 29.06110000
+# charge  : 0
+
+--------------------------------------------
+ H₂(v>=2)
+--------------------------------------------
+# path    : ./Jupiter/no_metal_Hill/input/density/H2_v2.dat
+# mass    : 2.01588000
+# charge  : 0
+
+--------------------------------------------
+ H₂(v>=4)
+--------------------------------------------
+# path    : ./Jupiter/no_metal_Hill/input/density/H2_v4.dat
+# mass    : 2.01588000
+# charge  : 0
+
+--------------------------------------------
+
+
+### Variable : 36 species ###
+
+--------------------------------------------
+ H₂⁺
+--------------------------------------------
+# mass    : 2.01533142
+# charge  : 1
+# Produced by following 6 reactions:
+
+    * R1      H₂   + e⁻*  →  H₂⁺   + e⁻ + e⁻*      
+    * R3      H₂   + hv   →  H₂⁺   + e⁻            
+    * R8      CH₄  + hv   →  H₂⁺   + e⁻ + products 
+    * R75     He⁺   + H₂        →  H₂⁺   + He            
+    * R100    H⁺    + H₂(v>=4)  →  H₂⁺   + H             
+    * R102    HeH⁺  + H         →  H₂⁺   + He            
+
+# Lost by following 14 reactions:
+
+    * R22     H₂⁺   + e⁻  →  H    +  H       
+    * R62     H₂⁺   + H₂        →  H₃⁺   + H             
+    * R63     H₂⁺   + H         →  H⁺    + H₂            
+    * R64     H₂⁺   + He        →  HeH⁺  + H             
+    * R65     H₂⁺   + CH₄       →  CH₅⁺  + H             
+    * R66     H₂⁺   + CH₄       →  CH₄⁺  + H₂            
+    * R67     H₂⁺   + CH₄       →  CH₃⁺  + H   + H₂      
+    * R68     H₂⁺   + C₂H₂      →  C₂H₃⁺ + H             
+    * R69     H₂⁺   + C₂H₂      →  C₂H₂⁺ + H₂            
+    * R70     H₂⁺   + C₂H₆      →  C₂H₆⁺ + H₂            
+    * R71     H₂⁺   + C₂H₆      →  C₂H₅⁺ + H   + H₂      
+    * R72     H₂⁺   + C₂H₆      →  C₂H₄⁺ + H₂  + H₂      
+    * R73     H₂⁺   + C₂H₆      →  C₂H₃⁺ + H   + H₂ + H₂ 
+    * R74     H₂⁺   + C₂H₆      →  C₂H₂⁺ + H₂  + H₂ + H₂ 
+
+--------------------------------------------
+ e⁻
+--------------------------------------------
+# mass    : 0.00054858
+# charge  : -1
+# Produced by following 18 reactions:
+
+    * R1      H₂   + e⁻*  →  H₂⁺   + e⁻ + e⁻*      
+    * R2      H    + hv   →  H⁺    + e⁻            
+    * R3      H₂   + hv   →  H₂⁺   + e⁻            
+    * R4      H₂   + hv   →  H⁺    + e⁻ + H        
+    * R5      He   + hv   →  He⁺   + e⁻            
+    * R6      CH₄  + hv   →  CH₄⁺  + e⁻            
+    * R7      CH₄  + hv   →  CH₃⁺  + e⁻ + H        
+    * R8      CH₄  + hv   →  H₂⁺   + e⁻ + products 
+    * R9      C₂H₂ + hv   →  C₂H₂⁺ + e⁻            
+    * R10     C₂H₄ + hv   →  C₂H₄⁺ + e⁻            
+    * R11     C₂H₄ + hv   →  C₂H₃⁺ + e⁻ + H        
+    * R12     C₂H₄ + hv   →  C₂H₂⁺ + e⁻ + products 
+    * R13     C₂H₄ + hv   →  C₂H⁺  + e⁻ + products 
+    * R14     C₂H₆ + hv   →  C₂H₆⁺ + e⁻            
+    * R15     C₂H₆ + hv   →  C₂H₅⁺ + e⁻ + H        
+    * R16     C₂H₆ + hv   →  C₂H₄⁺ + e⁻ + products 
+    * R17     C₂H₆ + hv   →  C₂H₃⁺ + e⁻ + products 
+    * R18     C₂H₆ + hv   →  C₂H₂⁺ + e⁻ + products 
+
+# Lost by following 43 reactions:
+
+    * R19     H⁺    + e⁻  →  H               
+    * R20     He⁺   + e⁻  →  He              
+    * R21     HeH⁺  + e⁻  →  H    +  He      
+    * R22     H₂⁺   + e⁻  →  H    +  H       
+    * R23     H₃⁺   + e⁻  →  H₂   +  H       
+    * R24     H₃⁺   + e⁻  →  H    +  H +  H  
+    * R25     C⁺    + e⁻  →  C               
+    * R26     CH⁺   + e⁻  →  C    +  H       
+    * R27     CH₂⁺  + e⁻  →  CH   +  H       
+    * R28     CH₃⁺  + e⁻  →  CH₂  +  H       
+    * R29     CH₄⁺  + e⁻  →  CH₃  +  H       
+    * R30     CH₄⁺  + e⁻  →  CH₂  +  H +  H  
+    * R31     CH₅⁺  + e⁻  →  CH₂  +  H +  H₂ 
+    * R32     CH₅⁺  + e⁻  →  CH₃  +  H +  H  
+    * R33     C₂⁺   + e⁻  →  C    +  C       
+    * R34     C₂H⁺  + e⁻  →  C₂   +  H       
+    * R35     C₂H⁺  + e⁻  →  CH   +  C       
+    * R36     C₂H₂⁺ + e⁻  →  C₂H  +  H       
+    * R37     C₂H₂⁺ + e⁻  →  CH   +  CH      
+    * R38     C₂H₃⁺ + e⁻  →  C₂H₂ +  H       
+    * R39     C₂H₃⁺ + e⁻  →  CH₂  +  CH      
+    * R40     C₂H₄⁺ + e⁻  →  C₂H₃ +  H       
+    * R41     C₂H₄⁺ + e⁻  →  CH₂  +  CH₂     
+    * R42     C₂H₅⁺ + e⁻  →  C₂H₄ +  H       
+    * R43     C₂H₅⁺ + e⁻  →  CH₃  +  CH₂     
+    * R44     C₂H₆⁺ + e⁻  →  C₂H₅ +  H       
+    * R45     C₂H₆⁺ + e⁻  →  CH₃  +  CH₃     
+    * R46     C₂H₇⁺ + e⁻  →  C₂H₆ +  H       
+    * R47     C₃H⁺  + e⁻  →  products        
+    * R48     C₃H₂⁺ + e⁻  →  products        
+    * R49     C₃H₃⁺ + e⁻  →  products        
+    * R50     C₃H₄⁺ + e⁻  →  products        
+    * R51     C₃H₅⁺ + e⁻  →  products        
+    * R52     C₃H₆⁺ + e⁻  →  products        
+    * R53     C₃H₇⁺ + e⁻  →  products        
+    * R54     C₃H₈⁺ + e⁻  →  products        
+    * R55     C₃H₉⁺ + e⁻  →  products        
+    * R56     C₄H⁺  + e⁻  →  products        
+    * R57     C₄H₂⁺ + e⁻  →  products        
+    * R58     C₄H₃⁺ + e⁻  →  products        
+    * R59     C₄H₅⁺ + e⁻  →  products        
+    * R60     C₄H₇⁺ + e⁻  →  products        
+    * R61     C₄H₉⁺ + e⁻  →  products        
+
+--------------------------------------------
+ H
+--------------------------------------------
+# mass    : 1.00794000
+# charge  : 0
+# Produced by following 73 reactions:
+
+    * R4      H₂   + hv   →  H⁺    + e⁻ + H        
+    * R7      CH₄  + hv   →  CH₃⁺  + e⁻ + H        
+    * R11     C₂H₄ + hv   →  C₂H₃⁺ + e⁻ + H        
+    * R15     C₂H₆ + hv   →  C₂H₅⁺ + e⁻ + H        
+    * R19     H⁺    + e⁻  →  H               
+    * R21     HeH⁺  + e⁻  →  H    +  He      
+    * R22     H₂⁺   + e⁻  →  H    +  H       
+    * R23     H₃⁺   + e⁻  →  H₂   +  H       
+    * R24     H₃⁺   + e⁻  →  H    +  H +  H  
+    * R26     CH⁺   + e⁻  →  C    +  H       
+    * R27     CH₂⁺  + e⁻  →  CH   +  H       
+    * R28     CH₃⁺  + e⁻  →  CH₂  +  H       
+    * R29     CH₄⁺  + e⁻  →  CH₃  +  H       
+    * R30     CH₄⁺  + e⁻  →  CH₂  +  H +  H  
+    * R31     CH₅⁺  + e⁻  →  CH₂  +  H +  H₂ 
+    * R32     CH₅⁺  + e⁻  →  CH₃  +  H +  H  
+    * R34     C₂H⁺  + e⁻  →  C₂   +  H       
+    * R36     C₂H₂⁺ + e⁻  →  C₂H  +  H       
+    * R38     C₂H₃⁺ + e⁻  →  C₂H₂ +  H       
+    * R40     C₂H₄⁺ + e⁻  →  C₂H₃ +  H       
+    * R42     C₂H₅⁺ + e⁻  →  C₂H₄ +  H       
+    * R44     C₂H₆⁺ + e⁻  →  C₂H₅ +  H       
+    * R46     C₂H₇⁺ + e⁻  →  C₂H₆ +  H       
+    * R62     H₂⁺   + H₂        →  H₃⁺   + H             
+    * R64     H₂⁺   + He        →  HeH⁺  + H             
+    * R65     H₂⁺   + CH₄       →  CH₅⁺  + H             
+    * R67     H₂⁺   + CH₄       →  CH₃⁺  + H   + H₂      
+    * R68     H₂⁺   + C₂H₂      →  C₂H₃⁺ + H             
+    * R71     H₂⁺   + C₂H₆      →  C₂H₅⁺ + H   + H₂      
+    * R73     H₂⁺   + C₂H₆      →  C₂H₃⁺ + H   + H₂ + H₂ 
+    * R76     He⁺   + H₂        →  H⁺    + H   + He      
+    * R77     He⁺   + H₂(v>=2)  →  H⁺    + H   + He      
+    * R79     He⁺   + CH₄       →  CH⁺   + H₂  + H  + He 
+    * R81     He⁺   + CH₄       →  CH₃⁺  + H   + He      
+    * R84     He⁺   + C₂H₂      →  C₂H⁺  + H   + He      
+    * R88     He⁺   + C₂H₄      →  C₂H₃⁺ + H   + He      
+    * R90     He⁺   + C₂H₄      →  C₂H⁺  + H   + H₂ + He 
+    * R93     He⁺   + C₂H₆      →  C₂H₃⁺ + H   + H₂ + He 
+    * R96     H⁺    + CH₄       →  CH₄⁺  + H             
+    * R98     H⁺    + C₂H₆      →  C₂H₄⁺ + H  +  H₂      
+    * R100    H⁺    + H₂(v>=4)  →  H₂⁺   + H             
+    * R103    HeH⁺  + C₂H₄      →  C₂H₄⁺ + H  +  He      
+    * R113    C⁺    + CH₄       →  C₂H₃⁺ + H             
+    * R114    C⁺    + C₂H₂      →  C₃H⁺  + H             
+    * R117    C⁺    + C₂H₄      →  C₃H⁺  + H   +  H₂     
+    * R119    C⁺    + C₂H₄      →  C₃H₃⁺ + H             
+    * R123    C⁺    + C₂H₆      →  C₃H₃⁺ + H   +  H₂     
+    * R125    CH⁺   + H₂        →  CH₂⁺  + H             
+    * R126    CH⁺   + CH₄       →  C₂H₄⁺ + H             
+    * R128    CH⁺   + CH₄       →  C₂H₂⁺ + H   +  H₂     
+    * R129    CH⁺   + C₂H₂      →  C₃H₂⁺ + H             
+    * R130    CH₂⁺  + H₂        →  CH₃⁺  + H             
+    * R131    CH₂⁺  + CH₄       →  C₂H₅⁺ + H             
+    * R133    CH₂⁺  + C₂H₂      →  C₃H₃⁺ + H             
+    * R142    CH₄⁺  + H₂        →  CH₅⁺  + H             
+    * R146    CH₄⁺  + C₂H₂      →  C₃H₃⁺ + H   +  H₂     
+    * R149    CH₄⁺  + C₂H₄      →  C₃H₅⁺ + H   +  H₂     
+    * R156    C₂⁺   + H₂        →  C₂H⁺  + H             
+    * R159    C₂⁺   + CH₄       →  C₃H⁺  + H   +  H₂     
+    * R161    C₂⁺   + CH₄       →  C₃H₃⁺ + H             
+    * R162    C₂⁺   + C₂H₂      →  C₄H⁺  + H             
+    * R164    C₂H⁺  + H₂        →  C₂H₂⁺ + H             
+    * R167    C₂H⁺  + CH₄       →  C₃H₄⁺ + H             
+    * R169    C₂H⁺  + C₂H₂      →  C₄H₂⁺ + H             
+    * R171    C₂H₂⁺ + H₂        →  C₂H₃⁺ + H             
+    * R173    C₂H₂⁺ + CH₄       →  C₃H₅⁺ + H             
+    * R175    C₂H₂⁺ + C₂H₂      →  C₄H₃⁺ + H             
+    * R178    C₂H₂⁺ + C₂H₄      →  C₄H₅⁺ + H             
+    * R184    C₂H₂⁺ + C₂H₆      →  C₄H₅⁺ + H   +  H₂     
+    * R185    C₂H₂⁺ + C₂H₆      →  C₄H₇⁺ + H             
+    * R195    C₂H₄⁺ + C₂H₂      →  C₄H₅⁺ + H             
+    * R197    C₂H₄⁺ + C₂H₄      →  C₄H₇⁺ + H             
+    * R209    C₂H₆⁺ + C₂H₂      →  C₄H₇⁺ + H             
+
+# Lost by following 10 reactions:
+
+    * R2      H    + hv   →  H⁺    + e⁻            
+    * R63     H₂⁺   + H         →  H⁺    + H₂            
+    * R102    HeH⁺  + H         →  H₂⁺   + He            
+    * R124    CH⁺   + H         →  C⁺    + H₂            
+    * R151    CH₅⁺  + H         →  CH₄⁺  + H₂            
+    * R186    C₂H₃⁺ + H         →  C₂H₂⁺ + H₂            
+    * R193    C₂H₄⁺ + H         →  C₂H₃⁺ + H₂            
+    * R200    C₂H₅⁺ + H         →  C₂H₄⁺ + H₂            
+    * R206    C₂H₆⁺ + H         →  C₂H₅⁺ + H₂            
+    * R219    H     + H  + H₂  →  H₂    + H₂ 
+
+--------------------------------------------
+ H⁺
+--------------------------------------------
+# mass    : 1.00739142
+# charge  : 1
+# Produced by following 6 reactions:
+
+    * R2      H    + hv   →  H⁺    + e⁻            
+    * R4      H₂   + hv   →  H⁺    + e⁻ + H        
+    * R63     H₂⁺   + H         →  H⁺    + H₂            
+    * R76     He⁺   + H₂        →  H⁺    + H   + He      
+    * R77     He⁺   + H₂(v>=2)  →  H⁺    + H   + He      
+    * R78     He⁺   + CH₄       →  H⁺    + CH₃ + He      
+
+# Lost by following 8 reactions:
+
+    * R19     H⁺    + e⁻  →  H               
+    * R95     H⁺    + CH₄       →  CH₃⁺  + H₂            
+    * R96     H⁺    + CH₄       →  CH₄⁺  + H             
+    * R97     H⁺    + C₂H₆      →  C₂H₃⁺ + H₂ +  H₂      
+    * R98     H⁺    + C₂H₆      →  C₂H₄⁺ + H  +  H₂      
+    * R99     H⁺    + C₂H₆      →  C₂H₅⁺ + H₂            
+    * R100    H⁺    + H₂(v>=4)  →  H₂⁺   + H             
+    * R215    H⁺    + H₂ + H₂  →  H₃⁺   + H₂ 
+
+--------------------------------------------
+ He⁺
+--------------------------------------------
+# mass    : 4.00205342
+# charge  : 1
+# Produced by following 1 reactions:
+
+    * R5      He   + hv   →  He⁺   + e⁻            
+
+# Lost by following 21 reactions:
+
+    * R20     He⁺   + e⁻  →  He              
+    * R75     He⁺   + H₂        →  H₂⁺   + He            
+    * R76     He⁺   + H₂        →  H⁺    + H   + He      
+    * R77     He⁺   + H₂(v>=2)  →  H⁺    + H   + He      
+    * R78     He⁺   + CH₄       →  H⁺    + CH₃ + He      
+    * R79     He⁺   + CH₄       →  CH⁺   + H₂  + H  + He 
+    * R80     He⁺   + CH₄       →  CH₂⁺  + H₂  + He      
+    * R81     He⁺   + CH₄       →  CH₃⁺  + H   + He      
+    * R82     He⁺   + CH₄       →  CH₄⁺  + He            
+    * R83     He⁺   + C₂H₂      →  C₂H₂⁺ + He            
+    * R84     He⁺   + C₂H₂      →  C₂H⁺  + H   + He      
+    * R85     He⁺   + C₂H₂      →  C₂⁺   + H₂  + He      
+    * R86     He⁺   + C₂H₂      →  CH⁺   + CH  + He      
+    * R87     He⁺   + C₂H₄      →  C₂H₄⁺ + He            
+    * R88     He⁺   + C₂H₄      →  C₂H₃⁺ + H   + He      
+    * R89     He⁺   + C₂H₄      →  C₂H₂⁺ + H₂  + He      
+    * R90     He⁺   + C₂H₄      →  C₂H⁺  + H   + H₂ + He 
+    * R91     He⁺   + C₂H₄      →  CH₂⁺  + CH₂ + He      
+    * R92     He⁺   + C₂H₆      →  C₂H₄⁺ + H₂  + He      
+    * R93     He⁺   + C₂H₆      →  C₂H₃⁺ + H   + H₂ + He 
+    * R94     He⁺   + C₂H₆      →  C₂H₂⁺ + H₂  + H₂ + He 
+
+--------------------------------------------
+ CH₄⁺
+--------------------------------------------
+# mass    : 16.04191142
+# charge  : 1
+# Produced by following 5 reactions:
+
+    * R6      CH₄  + hv   →  CH₄⁺  + e⁻            
+    * R66     H₂⁺   + CH₄       →  CH₄⁺  + H₂            
+    * R82     He⁺   + CH₄       →  CH₄⁺  + He            
+    * R96     H⁺    + CH₄       →  CH₄⁺  + H             
+    * R151    CH₅⁺  + H         →  CH₄⁺  + H₂            
+
+# Lost by following 11 reactions:
+
+    * R29     CH₄⁺  + e⁻  →  CH₃  +  H       
+    * R30     CH₄⁺  + e⁻  →  CH₂  +  H +  H  
+    * R142    CH₄⁺  + H₂        →  CH₅⁺  + H             
+    * R143    CH₄⁺  + CH₄       →  CH₅⁺  + CH₃           
+    * R144    CH₄⁺  + C₂H₂      →  C₂H₂⁺ + CH₄           
+    * R145    CH₄⁺  + C₂H₂      →  C₂H₃⁺ + CH₃           
+    * R146    CH₄⁺  + C₂H₂      →  C₃H₃⁺ + H   +  H₂     
+    * R147    CH₄⁺  + C₂H₄      →  C₂H₄⁺ + CH₄           
+    * R148    CH₄⁺  + C₂H₄      →  C₂H₅⁺ + CH₃           
+    * R149    CH₄⁺  + C₂H₄      →  C₃H₅⁺ + H   +  H₂     
+    * R150    CH₄⁺  + C₂H₆      →  C₂H₄⁺ + CH₄ +  H₂     
+
+--------------------------------------------
+ CH₃⁺
+--------------------------------------------
+# mass    : 15.03397142
+# charge  : 1
+# Produced by following 5 reactions:
+
+    * R7      CH₄  + hv   →  CH₃⁺  + e⁻ + H        
+    * R67     H₂⁺   + CH₄       →  CH₃⁺  + H   + H₂      
+    * R81     He⁺   + CH₄       →  CH₃⁺  + H   + He      
+    * R95     H⁺    + CH₄       →  CH₃⁺  + H₂            
+    * R130    CH₂⁺  + H₂        →  CH₃⁺  + H             
+
+# Lost by following 11 reactions:
+
+    * R28     CH₃⁺  + e⁻  →  CH₂  +  H       
+    * R134    CH₃⁺  + CH₄       →  C₂H₅⁺ + H₂            
+    * R135    CH₃⁺  + C₂H₂      →  C₃H₃⁺ + H₂            
+    * R136    CH₃⁺  + C₂H₄      →  C₂H₃⁺ + CH₄           
+    * R137    CH₃⁺  + C₂H₄      →  C₃H₃⁺ + H₂  +  H₂     
+    * R138    CH₃⁺  + C₂H₄      →  C₃H₅⁺ + H₂            
+    * R139    CH₃⁺  + C₂H₆      →  C₂H₅⁺ + CH₄           
+    * R140    CH₃⁺  + C₂H₆      →  C₃H₅⁺ + H₂  +  H₂     
+    * R141    CH₃⁺  + C₂H₆      →  C₃H₇⁺ + H₂            
+    * R216    CH₃⁺  + H₂ + H₂  →  CH₅⁺  + H₂ 
+    * R217    CH₃⁺  + H₂ + He  →  CH₅⁺  + He 
+
+--------------------------------------------
+ C₂H₂⁺
+--------------------------------------------
+# mass    : 26.03673142
+# charge  : 1
+# Produced by following 16 reactions:
+
+    * R9      C₂H₂ + hv   →  C₂H₂⁺ + e⁻            
+    * R12     C₂H₄ + hv   →  C₂H₂⁺ + e⁻ + products 
+    * R18     C₂H₆ + hv   →  C₂H₂⁺ + e⁻ + products 
+    * R69     H₂⁺   + C₂H₂      →  C₂H₂⁺ + H₂            
+    * R74     H₂⁺   + C₂H₆      →  C₂H₂⁺ + H₂  + H₂ + H₂ 
+    * R83     He⁺   + C₂H₂      →  C₂H₂⁺ + He            
+    * R89     He⁺   + C₂H₄      →  C₂H₂⁺ + H₂  + He      
+    * R94     He⁺   + C₂H₆      →  C₂H₂⁺ + H₂  + H₂ + He 
+    * R112    C⁺    + CH₄       →  C₂H₂⁺ + H₂            
+    * R120    C⁺    + C₂H₆      →  C₂H₂⁺ + CH₄           
+    * R128    CH⁺   + CH₄       →  C₂H₂⁺ + H   +  H₂     
+    * R144    CH₄⁺  + C₂H₂      →  C₂H₂⁺ + CH₄           
+    * R158    C₂⁺   + CH₄       →  C₂H₂⁺ + CH₂           
+    * R164    C₂H⁺  + H₂        →  C₂H₂⁺ + H             
+    * R165    C₂H⁺  + CH₄       →  C₂H₂⁺ + CH₃           
+    * R186    C₂H₃⁺ + H         →  C₂H₂⁺ + H₂            
+
+# Lost by following 18 reactions:
+
+    * R36     C₂H₂⁺ + e⁻  →  C₂H  +  H       
+    * R37     C₂H₂⁺ + e⁻  →  CH   +  CH      
+    * R171    C₂H₂⁺ + H₂        →  C₂H₃⁺ + H             
+    * R172    C₂H₂⁺ + CH₄       →  C₃H₄⁺ + H₂            
+    * R173    C₂H₂⁺ + CH₄       →  C₃H₅⁺ + H             
+    * R174    C₂H₂⁺ + C₂H₂      →  C₄H₂⁺ + H₂            
+    * R175    C₂H₂⁺ + C₂H₂      →  C₄H₃⁺ + H             
+    * R176    C₂H₂⁺ + C₂H₄      →  C₂H₄⁺ + C₂H₂          
+    * R177    C₂H₂⁺ + C₂H₄      →  C₃H₃⁺ + CH₃           
+    * R178    C₂H₂⁺ + C₂H₄      →  C₄H₅⁺ + H             
+    * R179    C₂H₂⁺ + C₂H₆      →  C₂H₄⁺ + C₂H₄          
+    * R180    C₂H₂⁺ + C₂H₆      →  C₂H₅⁺ + C₂H₃          
+    * R181    C₂H₂⁺ + C₂H₆      →  C₃H₃⁺ + CH₃ +  H₂     
+    * R182    C₂H₂⁺ + C₂H₆      →  C₃H₄⁺ + CH₄           
+    * R183    C₂H₂⁺ + C₂H₆      →  C₃H₅⁺ + CH₃           
+    * R184    C₂H₂⁺ + C₂H₆      →  C₄H₅⁺ + H   +  H₂     
+    * R185    C₂H₂⁺ + C₂H₆      →  C₄H₇⁺ + H             
+    * R218    C₂H₂⁺ + H₂ + He  →  C₂H₄⁺ + He 
+
+--------------------------------------------
+ C₂H₄⁺
+--------------------------------------------
+# mass    : 28.05261142
+# charge  : 1
+# Produced by following 17 reactions:
+
+    * R10     C₂H₄ + hv   →  C₂H₄⁺ + e⁻            
+    * R16     C₂H₆ + hv   →  C₂H₄⁺ + e⁻ + products 
+    * R72     H₂⁺   + C₂H₆      →  C₂H₄⁺ + H₂  + H₂      
+    * R87     He⁺   + C₂H₄      →  C₂H₄⁺ + He            
+    * R92     He⁺   + C₂H₆      →  C₂H₄⁺ + H₂  + He      
+    * R98     H⁺    + C₂H₆      →  C₂H₄⁺ + H  +  H₂      
+    * R103    HeH⁺  + C₂H₄      →  C₂H₄⁺ + H  +  He      
+    * R116    C⁺    + C₂H₄      →  C₂H₄⁺ + C             
+    * R126    CH⁺   + CH₄       →  C₂H₄⁺ + H             
+    * R132    CH₂⁺  + CH₄       →  C₂H₄⁺ + H₂            
+    * R147    CH₄⁺  + C₂H₄      →  C₂H₄⁺ + CH₄           
+    * R150    CH₄⁺  + C₂H₆      →  C₂H₄⁺ + CH₄ +  H₂     
+    * R176    C₂H₂⁺ + C₂H₄      →  C₂H₄⁺ + C₂H₂          
+    * R179    C₂H₂⁺ + C₂H₆      →  C₂H₄⁺ + C₂H₄          
+    * R200    C₂H₅⁺ + H         →  C₂H₄⁺ + H₂            
+    * R210    C₂H₆⁺ + C₂H₄      →  C₂H₄⁺ + C₂H₆          
+    * R218    C₂H₂⁺ + H₂ + He  →  C₂H₄⁺ + He 
+
+# Lost by following 9 reactions:
+
+    * R40     C₂H₄⁺ + e⁻  →  C₂H₃ +  H       
+    * R41     C₂H₄⁺ + e⁻  →  CH₂  +  CH₂     
+    * R193    C₂H₄⁺ + H         →  C₂H₃⁺ + H₂            
+    * R194    C₂H₄⁺ + C₂H₂      →  C₃H₃⁺ + CH₃           
+    * R195    C₂H₄⁺ + C₂H₂      →  C₄H₅⁺ + H             
+    * R196    C₂H₄⁺ + C₂H₄      →  C₃H₅⁺ + CH₃           
+    * R197    C₂H₄⁺ + C₂H₄      →  C₄H₇⁺ + H             
+    * R198    C₂H₄⁺ + C₂H₆      →  C₃H₆⁺ + CH₄           
+    * R199    C₂H₄⁺ + C₂H₆      →  C₃H₇⁺ + CH₃           
+
+--------------------------------------------
+ C₂H₃⁺
+--------------------------------------------
+# mass    : 27.04467142
+# charge  : 1
+# Produced by following 21 reactions:
+
+    * R11     C₂H₄ + hv   →  C₂H₃⁺ + e⁻ + H        
+    * R17     C₂H₆ + hv   →  C₂H₃⁺ + e⁻ + products 
+    * R68     H₂⁺   + C₂H₂      →  C₂H₃⁺ + H             
+    * R73     H₂⁺   + C₂H₆      →  C₂H₃⁺ + H   + H₂ + H₂ 
+    * R88     He⁺   + C₂H₄      →  C₂H₃⁺ + H   + He      
+    * R93     He⁺   + C₂H₆      →  C₂H₃⁺ + H   + H₂ + He 
+    * R97     H⁺    + C₂H₆      →  C₂H₃⁺ + H₂ +  H₂      
+    * R104    HeH⁺  + C₂H₄      →  C₂H₃⁺ + H₂ +  He      
+    * R105    HeH⁺  + C₂H₆      →  C₂H₃⁺ + H₂ +  H₂ + He 
+    * R108    H₃⁺   + C₂H₂      →  C₂H₃⁺ + H₂            
+    * R110    H₃⁺   + C₂H₄      →  C₂H₃⁺ + H₂  +  H₂     
+    * R113    C⁺    + CH₄       →  C₂H₃⁺ + H             
+    * R115    C⁺    + C₂H₄      →  C₂H₃⁺ + CH            
+    * R121    C⁺    + C₂H₆      →  C₂H₃⁺ + CH₃           
+    * R127    CH⁺   + CH₄       →  C₂H₃⁺ + H₂            
+    * R136    CH₃⁺  + C₂H₄      →  C₂H₃⁺ + CH₄           
+    * R145    CH₄⁺  + C₂H₂      →  C₂H₃⁺ + CH₃           
+    * R152    CH₅⁺  + C₂H₂      →  C₂H₃⁺ + CH₄           
+    * R171    C₂H₂⁺ + H₂        →  C₂H₃⁺ + H             
+    * R193    C₂H₄⁺ + H         →  C₂H₃⁺ + H₂            
+    * R213    C₂H₇⁺ + C₂H₂      →  C₂H₃⁺ + C₂H₆          
+
+# Lost by following 9 reactions:
+
+    * R38     C₂H₃⁺ + e⁻  →  C₂H₂ +  H       
+    * R39     C₂H₃⁺ + e⁻  →  CH₂  +  CH      
+    * R186    C₂H₃⁺ + H         →  C₂H₂⁺ + H₂            
+    * R187    C₂H₃⁺ + CH₄       →  C₃H₅⁺ + H₂            
+    * R188    C₂H₃⁺ + C₂H₂      →  C₄H₃⁺ + H₂            
+    * R189    C₂H₃⁺ + C₂H₄      →  C₂H₅⁺ + C₂H₂          
+    * R190    C₂H₃⁺ + C₂H₆      →  C₂H₅⁺ + C₂H₄          
+    * R191    C₂H₃⁺ + C₂H₆      →  C₃H₅⁺ + CH₄           
+    * R192    C₂H₃⁺ + C₂H₆      →  C₄H₇⁺ + H₂            
+
+--------------------------------------------
+ C₂H⁺
+--------------------------------------------
+# mass    : 25.02879142
+# charge  : 1
+# Produced by following 5 reactions:
+
+    * R13     C₂H₄ + hv   →  C₂H⁺  + e⁻ + products 
+    * R84     He⁺   + C₂H₂      →  C₂H⁺  + H   + He      
+    * R90     He⁺   + C₂H₄      →  C₂H⁺  + H   + H₂ + He 
+    * R156    C₂⁺   + H₂        →  C₂H⁺  + H             
+    * R157    C₂⁺   + CH₄       →  C₂H⁺  + CH₃           
+
+# Lost by following 9 reactions:
+
+    * R34     C₂H⁺  + e⁻  →  C₂   +  H       
+    * R35     C₂H⁺  + e⁻  →  CH   +  C       
+    * R164    C₂H⁺  + H₂        →  C₂H₂⁺ + H             
+    * R165    C₂H⁺  + CH₄       →  C₂H₂⁺ + CH₃           
+    * R166    C₂H⁺  + CH₄       →  C₃H₃⁺ + H₂            
+    * R167    C₂H⁺  + CH₄       →  C₃H₄⁺ + H             
+    * R168    C₂H⁺  + CH₄       →  C₃H₅⁺                 
+    * R169    C₂H⁺  + C₂H₂      →  C₄H₂⁺ + H             
+    * R170    C₂H⁺  + C₂H₄      →  products              
+
+--------------------------------------------
+ C₂H₆⁺
+--------------------------------------------
+# mass    : 30.06849142
+# charge  : 1
+# Produced by following 2 reactions:
+
+    * R14     C₂H₆ + hv   →  C₂H₆⁺ + e⁻            
+    * R70     H₂⁺   + C₂H₆      →  C₂H₆⁺ + H₂            
+
+# Lost by following 9 reactions:
+
+    * R44     C₂H₆⁺ + e⁻  →  C₂H₅ +  H       
+    * R45     C₂H₆⁺ + e⁻  →  CH₃  +  CH₃     
+    * R206    C₂H₆⁺ + H         →  C₂H₅⁺ + H₂            
+    * R207    C₂H₆⁺ + C₂H₂      →  C₂H₅⁺ + C₂H₃          
+    * R208    C₂H₆⁺ + C₂H₂      →  C₃H₅⁺ + CH₃           
+    * R209    C₂H₆⁺ + C₂H₂      →  C₄H₇⁺ + H             
+    * R210    C₂H₆⁺ + C₂H₄      →  C₂H₄⁺ + C₂H₆          
+    * R211    C₂H₆⁺ + C₂H₆      →  C₃H₈⁺ + CH₄           
+    * R212    C₂H₆⁺ + C₂H₆      →  C₃H₉⁺ + CH₃           
+
+--------------------------------------------
+ C₂H₅⁺
+--------------------------------------------
+# mass    : 29.06055142
+# charge  : 1
+# Produced by following 19 reactions:
+
+    * R15     C₂H₆ + hv   →  C₂H₅⁺ + e⁻ + H        
+    * R71     H₂⁺   + C₂H₆      →  C₂H₅⁺ + H   + H₂      
+    * R99     H⁺    + C₂H₆      →  C₂H₅⁺ + H₂            
+    * R106    HeH⁺  + C₂H₆      →  C₂H₅⁺ + H₂ +  He      
+    * R109    H₃⁺   + C₂H₄      →  C₂H₅⁺ + H₂            
+    * R111    H₃⁺   + C₂H₆      →  C₂H₅⁺ + H₂  +  H₂     
+    * R122    C⁺    + C₂H₆      →  C₂H₅⁺ + CH            
+    * R131    CH₂⁺  + CH₄       →  C₂H₅⁺ + H             
+    * R134    CH₃⁺  + CH₄       →  C₂H₅⁺ + H₂            
+    * R139    CH₃⁺  + C₂H₆      →  C₂H₅⁺ + CH₄           
+    * R148    CH₄⁺  + C₂H₄      →  C₂H₅⁺ + CH₃           
+    * R153    CH₅⁺  + C₂H₄      →  C₂H₅⁺ + CH₄           
+    * R154    CH₅⁺  + C₂H₆      →  C₂H₅⁺ + CH₄ +  H₂     
+    * R180    C₂H₂⁺ + C₂H₆      →  C₂H₅⁺ + C₂H₃          
+    * R189    C₂H₃⁺ + C₂H₄      →  C₂H₅⁺ + C₂H₂          
+    * R190    C₂H₃⁺ + C₂H₆      →  C₂H₅⁺ + C₂H₄          
+    * R206    C₂H₆⁺ + H         →  C₂H₅⁺ + H₂            
+    * R207    C₂H₆⁺ + C₂H₂      →  C₂H₅⁺ + C₂H₃          
+    * R214    C₂H₇⁺ + C₂H₄      →  C₂H₅⁺ + C₂H₆          
+
+# Lost by following 8 reactions:
+
+    * R42     C₂H₅⁺ + e⁻  →  C₂H₄ +  H       
+    * R43     C₂H₅⁺ + e⁻  →  CH₃  +  CH₂     
+    * R200    C₂H₅⁺ + H         →  C₂H₄⁺ + H₂            
+    * R201    C₂H₅⁺ + CH₄       →  C₃H₇⁺ + H₂            
+    * R202    C₂H₅⁺ + C₂H₂      →  C₃H₃⁺ + CH₄           
+    * R203    C₂H₅⁺ + C₂H₂      →  C₄H₅⁺ + H₂            
+    * R204    C₂H₅⁺ + C₂H₄      →  C₃H₅⁺ + CH₄           
+    * R205    C₂H₅⁺ + C₂H₆      →  C₄H₉⁺ + H₂            
+
+--------------------------------------------
+ HeH⁺
+--------------------------------------------
+# mass    : 5.00999342
+# charge  : 1
+# Produced by following 1 reactions:
+
+    * R64     H₂⁺   + He        →  HeH⁺  + H             
+
+# Lost by following 7 reactions:
+
+    * R21     HeH⁺  + e⁻  →  H    +  He      
+    * R101    HeH⁺  + H₂        →  H₃⁺   + He            
+    * R102    HeH⁺  + H         →  H₂⁺   + He            
+    * R103    HeH⁺  + C₂H₄      →  C₂H₄⁺ + H  +  He      
+    * R104    HeH⁺  + C₂H₄      →  C₂H₃⁺ + H₂ +  He      
+    * R105    HeH⁺  + C₂H₆      →  C₂H₃⁺ + H₂ +  H₂ + He 
+    * R106    HeH⁺  + C₂H₆      →  C₂H₅⁺ + H₂ +  He      
+
+--------------------------------------------
+ H₃⁺
+--------------------------------------------
+# mass    : 3.02327142
+# charge  : 1
+# Produced by following 3 reactions:
+
+    * R62     H₂⁺   + H₂        →  H₃⁺   + H             
+    * R101    HeH⁺  + H₂        →  H₃⁺   + He            
+    * R215    H⁺    + H₂ + H₂  →  H₃⁺   + H₂ 
+
+# Lost by following 7 reactions:
+
+    * R23     H₃⁺   + e⁻  →  H₂   +  H       
+    * R24     H₃⁺   + e⁻  →  H    +  H +  H  
+    * R107    H₃⁺   + CH₄       →  CH₅⁺  + H₂            
+    * R108    H₃⁺   + C₂H₂      →  C₂H₃⁺ + H₂            
+    * R109    H₃⁺   + C₂H₄      →  C₂H₅⁺ + H₂            
+    * R110    H₃⁺   + C₂H₄      →  C₂H₃⁺ + H₂  +  H₂     
+    * R111    H₃⁺   + C₂H₆      →  C₂H₅⁺ + H₂  +  H₂     
+
+--------------------------------------------
+ C⁺
+--------------------------------------------
+# mass    : 12.01015142
+# charge  : 1
+# Produced by following 1 reactions:
+
+    * R124    CH⁺   + H         →  C⁺    + H₂            
+
+# Lost by following 13 reactions:
+
+    * R25     C⁺    + e⁻  →  C               
+    * R112    C⁺    + CH₄       →  C₂H₂⁺ + H₂            
+    * R113    C⁺    + CH₄       →  C₂H₃⁺ + H             
+    * R114    C⁺    + C₂H₂      →  C₃H⁺  + H             
+    * R115    C⁺    + C₂H₄      →  C₂H₃⁺ + CH            
+    * R116    C⁺    + C₂H₄      →  C₂H₄⁺ + C             
+    * R117    C⁺    + C₂H₄      →  C₃H⁺  + H   +  H₂     
+    * R118    C⁺    + C₂H₄      →  C₃H₂⁺ + H₂            
+    * R119    C⁺    + C₂H₄      →  C₃H₃⁺ + H             
+    * R120    C⁺    + C₂H₆      →  C₂H₂⁺ + CH₄           
+    * R121    C⁺    + C₂H₆      →  C₂H₃⁺ + CH₃           
+    * R122    C⁺    + C₂H₆      →  C₂H₅⁺ + CH            
+    * R123    C⁺    + C₂H₆      →  C₃H₃⁺ + H   +  H₂     
+
+--------------------------------------------
+ CH⁺
+--------------------------------------------
+# mass    : 13.01809142
+# charge  : 1
+# Produced by following 2 reactions:
+
+    * R79     He⁺   + CH₄       →  CH⁺   + H₂  + H  + He 
+    * R86     He⁺   + C₂H₂      →  CH⁺   + CH  + He      
+
+# Lost by following 7 reactions:
+
+    * R26     CH⁺   + e⁻  →  C    +  H       
+    * R124    CH⁺   + H         →  C⁺    + H₂            
+    * R125    CH⁺   + H₂        →  CH₂⁺  + H             
+    * R126    CH⁺   + CH₄       →  C₂H₄⁺ + H             
+    * R127    CH⁺   + CH₄       →  C₂H₃⁺ + H₂            
+    * R128    CH⁺   + CH₄       →  C₂H₂⁺ + H   +  H₂     
+    * R129    CH⁺   + C₂H₂      →  C₃H₂⁺ + H             
+
+--------------------------------------------
+ CH₂⁺
+--------------------------------------------
+# mass    : 14.02603142
+# charge  : 1
+# Produced by following 3 reactions:
+
+    * R80     He⁺   + CH₄       →  CH₂⁺  + H₂  + He      
+    * R91     He⁺   + C₂H₄      →  CH₂⁺  + CH₂ + He      
+    * R125    CH⁺   + H₂        →  CH₂⁺  + H             
+
+# Lost by following 5 reactions:
+
+    * R27     CH₂⁺  + e⁻  →  CH   +  H       
+    * R130    CH₂⁺  + H₂        →  CH₃⁺  + H             
+    * R131    CH₂⁺  + CH₄       →  C₂H₅⁺ + H             
+    * R132    CH₂⁺  + CH₄       →  C₂H₄⁺ + H₂            
+    * R133    CH₂⁺  + C₂H₂      →  C₃H₃⁺ + H             
+
+--------------------------------------------
+ CH₅⁺
+--------------------------------------------
+# mass    : 17.04985142
+# charge  : 1
+# Produced by following 6 reactions:
+
+    * R65     H₂⁺   + CH₄       →  CH₅⁺  + H             
+    * R107    H₃⁺   + CH₄       →  CH₅⁺  + H₂            
+    * R142    CH₄⁺  + H₂        →  CH₅⁺  + H             
+    * R143    CH₄⁺  + CH₄       →  CH₅⁺  + CH₃           
+    * R216    CH₃⁺  + H₂ + H₂  →  CH₅⁺  + H₂ 
+    * R217    CH₃⁺  + H₂ + He  →  CH₅⁺  + He 
+
+# Lost by following 7 reactions:
+
+    * R31     CH₅⁺  + e⁻  →  CH₂  +  H +  H₂ 
+    * R32     CH₅⁺  + e⁻  →  CH₃  +  H +  H  
+    * R151    CH₅⁺  + H         →  CH₄⁺  + H₂            
+    * R152    CH₅⁺  + C₂H₂      →  C₂H₃⁺ + CH₄           
+    * R153    CH₅⁺  + C₂H₄      →  C₂H₅⁺ + CH₄           
+    * R154    CH₅⁺  + C₂H₆      →  C₂H₅⁺ + CH₄ +  H₂     
+    * R155    CH₅⁺  + C₂H₆      →  C₂H₇⁺ + CH₄           
+
+--------------------------------------------
+ C₂⁺
+--------------------------------------------
+# mass    : 24.02085142
+# charge  : 1
+# Produced by following 1 reactions:
+
+    * R85     He⁺   + C₂H₂      →  C₂⁺   + H₂  + He      
+
+# Lost by following 9 reactions:
+
+    * R33     C₂⁺   + e⁻  →  C    +  C       
+    * R156    C₂⁺   + H₂        →  C₂H⁺  + H             
+    * R157    C₂⁺   + CH₄       →  C₂H⁺  + CH₃           
+    * R158    C₂⁺   + CH₄       →  C₂H₂⁺ + CH₂           
+    * R159    C₂⁺   + CH₄       →  C₃H⁺  + H   +  H₂     
+    * R160    C₂⁺   + CH₄       →  C₃H₂⁺ + H₂            
+    * R161    C₂⁺   + CH₄       →  C₃H₃⁺ + H             
+    * R162    C₂⁺   + C₂H₂      →  C₄H⁺  + H             
+    * R163    C₂⁺   + C₂H₄      →  products              
+
+--------------------------------------------
+ C₂H₇⁺
+--------------------------------------------
+# mass    : 31.07643142
+# charge  : 1
+# Produced by following 1 reactions:
+
+    * R155    CH₅⁺  + C₂H₆      →  C₂H₇⁺ + CH₄           
+
+# Lost by following 3 reactions:
+
+    * R46     C₂H₇⁺ + e⁻  →  C₂H₆ +  H       
+    * R213    C₂H₇⁺ + C₂H₂      →  C₂H₃⁺ + C₂H₆          
+    * R214    C₂H₇⁺ + C₂H₄      →  C₂H₅⁺ + C₂H₆          
+
+--------------------------------------------
+ C₃H⁺
+--------------------------------------------
+# mass    : 37.03949142
+# charge  : 1
+# Produced by following 3 reactions:
+
+    * R114    C⁺    + C₂H₂      →  C₃H⁺  + H             
+    * R117    C⁺    + C₂H₄      →  C₃H⁺  + H   +  H₂     
+    * R159    C₂⁺   + CH₄       →  C₃H⁺  + H   +  H₂     
+
+# Lost by following 1 reactions:
+
+    * R47     C₃H⁺  + e⁻  →  products        
+
+--------------------------------------------
+ C₃H₂⁺
+--------------------------------------------
+# mass    : 38.04743142
+# charge  : 1
+# Produced by following 3 reactions:
+
+    * R118    C⁺    + C₂H₄      →  C₃H₂⁺ + H₂            
+    * R129    CH⁺   + C₂H₂      →  C₃H₂⁺ + H             
+    * R160    C₂⁺   + CH₄       →  C₃H₂⁺ + H₂            
+
+# Lost by following 1 reactions:
+
+    * R48     C₃H₂⁺ + e⁻  →  products        
+
+--------------------------------------------
+ C₃H₃⁺
+--------------------------------------------
+# mass    : 39.05537142
+# charge  : 1
+# Produced by following 12 reactions:
+
+    * R119    C⁺    + C₂H₄      →  C₃H₃⁺ + H             
+    * R123    C⁺    + C₂H₆      →  C₃H₃⁺ + H   +  H₂     
+    * R133    CH₂⁺  + C₂H₂      →  C₃H₃⁺ + H             
+    * R135    CH₃⁺  + C₂H₂      →  C₃H₃⁺ + H₂            
+    * R137    CH₃⁺  + C₂H₄      →  C₃H₃⁺ + H₂  +  H₂     
+    * R146    CH₄⁺  + C₂H₂      →  C₃H₃⁺ + H   +  H₂     
+    * R161    C₂⁺   + CH₄       →  C₃H₃⁺ + H             
+    * R166    C₂H⁺  + CH₄       →  C₃H₃⁺ + H₂            
+    * R177    C₂H₂⁺ + C₂H₄      →  C₃H₃⁺ + CH₃           
+    * R181    C₂H₂⁺ + C₂H₆      →  C₃H₃⁺ + CH₃ +  H₂     
+    * R194    C₂H₄⁺ + C₂H₂      →  C₃H₃⁺ + CH₃           
+    * R202    C₂H₅⁺ + C₂H₂      →  C₃H₃⁺ + CH₄           
+
+# Lost by following 1 reactions:
+
+    * R49     C₃H₃⁺ + e⁻  →  products        
+
+--------------------------------------------
+ C₃H₄⁺
+--------------------------------------------
+# mass    : 40.06331142
+# charge  : 1
+# Produced by following 3 reactions:
+
+    * R167    C₂H⁺  + CH₄       →  C₃H₄⁺ + H             
+    * R172    C₂H₂⁺ + CH₄       →  C₃H₄⁺ + H₂            
+    * R182    C₂H₂⁺ + C₂H₆      →  C₃H₄⁺ + CH₄           
+
+# Lost by following 1 reactions:
+
+    * R50     C₃H₄⁺ + e⁻  →  products        
+
+--------------------------------------------
+ C₃H₅⁺
+--------------------------------------------
+# mass    : 41.07125142
+# charge  : 1
+# Produced by following 11 reactions:
+
+    * R138    CH₃⁺  + C₂H₄      →  C₃H₅⁺ + H₂            
+    * R140    CH₃⁺  + C₂H₆      →  C₃H₅⁺ + H₂  +  H₂     
+    * R149    CH₄⁺  + C₂H₄      →  C₃H₅⁺ + H   +  H₂     
+    * R168    C₂H⁺  + CH₄       →  C₃H₅⁺                 
+    * R173    C₂H₂⁺ + CH₄       →  C₃H₅⁺ + H             
+    * R183    C₂H₂⁺ + C₂H₆      →  C₃H₅⁺ + CH₃           
+    * R187    C₂H₃⁺ + CH₄       →  C₃H₅⁺ + H₂            
+    * R191    C₂H₃⁺ + C₂H₆      →  C₃H₅⁺ + CH₄           
+    * R196    C₂H₄⁺ + C₂H₄      →  C₃H₅⁺ + CH₃           
+    * R204    C₂H₅⁺ + C₂H₄      →  C₃H₅⁺ + CH₄           
+    * R208    C₂H₆⁺ + C₂H₂      →  C₃H₅⁺ + CH₃           
+
+# Lost by following 1 reactions:
+
+    * R51     C₃H₅⁺ + e⁻  →  products        
+
+--------------------------------------------
+ C₃H₆⁺
+--------------------------------------------
+# mass    : 42.07919142
+# charge  : 1
+# Produced by following 1 reactions:
+
+    * R198    C₂H₄⁺ + C₂H₆      →  C₃H₆⁺ + CH₄           
+
+# Lost by following 1 reactions:
+
+    * R52     C₃H₆⁺ + e⁻  →  products        
+
+--------------------------------------------
+ C₃H₇⁺
+--------------------------------------------
+# mass    : 43.08713142
+# charge  : 1
+# Produced by following 3 reactions:
+
+    * R141    CH₃⁺  + C₂H₆      →  C₃H₇⁺ + H₂            
+    * R199    C₂H₄⁺ + C₂H₆      →  C₃H₇⁺ + CH₃           
+    * R201    C₂H₅⁺ + CH₄       →  C₃H₇⁺ + H₂            
+
+# Lost by following 1 reactions:
+
+    * R53     C₃H₇⁺ + e⁻  →  products        
+
+--------------------------------------------
+ C₃H₈⁺
+--------------------------------------------
+# mass    : 44.09507142
+# charge  : 1
+# Produced by following 1 reactions:
+
+    * R211    C₂H₆⁺ + C₂H₆      →  C₃H₈⁺ + CH₄           
+
+# Lost by following 1 reactions:
+
+    * R54     C₃H₈⁺ + e⁻  →  products        
+
+--------------------------------------------
+ C₃H₉⁺
+--------------------------------------------
+# mass    : 45.10301142
+# charge  : 1
+# Produced by following 1 reactions:
+
+    * R212    C₂H₆⁺ + C₂H₆      →  C₃H₉⁺ + CH₃           
+
+# Lost by following 1 reactions:
+
+    * R55     C₃H₉⁺ + e⁻  →  products        
+
+--------------------------------------------
+ C₄H⁺
+--------------------------------------------
+# mass    : 49.05019142
+# charge  : 1
+# Produced by following 1 reactions:
+
+    * R162    C₂⁺   + C₂H₂      →  C₄H⁺  + H             
+
+# Lost by following 1 reactions:
+
+    * R56     C₄H⁺  + e⁻  →  products        
+
+--------------------------------------------
+ C₄H₂⁺
+--------------------------------------------
+# mass    : 50.05813142
+# charge  : 1
+# Produced by following 2 reactions:
+
+    * R169    C₂H⁺  + C₂H₂      →  C₄H₂⁺ + H             
+    * R174    C₂H₂⁺ + C₂H₂      →  C₄H₂⁺ + H₂            
+
+# Lost by following 1 reactions:
+
+    * R57     C₄H₂⁺ + e⁻  →  products        
+
+--------------------------------------------
+ C₄H₃⁺
+--------------------------------------------
+# mass    : 51.06607142
+# charge  : 1
+# Produced by following 2 reactions:
+
+    * R175    C₂H₂⁺ + C₂H₂      →  C₄H₃⁺ + H             
+    * R188    C₂H₃⁺ + C₂H₂      →  C₄H₃⁺ + H₂            
+
+# Lost by following 1 reactions:
+
+    * R58     C₄H₃⁺ + e⁻  →  products        
+
+--------------------------------------------
+ C₄H₅⁺
+--------------------------------------------
+# mass    : 53.08195142
+# charge  : 1
+# Produced by following 4 reactions:
+
+    * R178    C₂H₂⁺ + C₂H₄      →  C₄H₅⁺ + H             
+    * R184    C₂H₂⁺ + C₂H₆      →  C₄H₅⁺ + H   +  H₂     
+    * R195    C₂H₄⁺ + C₂H₂      →  C₄H₅⁺ + H             
+    * R203    C₂H₅⁺ + C₂H₂      →  C₄H₅⁺ + H₂            
+
+# Lost by following 1 reactions:
+
+    * R59     C₄H₅⁺ + e⁻  →  products        
+
+--------------------------------------------
+ C₄H₇⁺
+--------------------------------------------
+# mass    : 55.09783142
+# charge  : 1
+# Produced by following 4 reactions:
+
+    * R185    C₂H₂⁺ + C₂H₆      →  C₄H₇⁺ + H             
+    * R192    C₂H₃⁺ + C₂H₆      →  C₄H₇⁺ + H₂            
+    * R197    C₂H₄⁺ + C₂H₄      →  C₄H₇⁺ + H             
+    * R209    C₂H₆⁺ + C₂H₂      →  C₄H₇⁺ + H             
+
+# Lost by following 1 reactions:
+
+    * R60     C₄H₇⁺ + e⁻  →  products        
+
+--------------------------------------------
+ C₄H₉⁺
+--------------------------------------------
+# mass    : 57.11371142
+# charge  : 1
+# Produced by following 1 reactions:
+
+    * R205    C₂H₅⁺ + C₂H₆      →  C₄H₉⁺ + H₂            
+
+# Lost by following 1 reactions:
+
+    * R61     C₄H₉⁺ + e⁻  →  products        
+
+--------------------------------------------
+
