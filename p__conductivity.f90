@@ -1,44 +1,8 @@
 !==============================================================================================================
 !
-!                                               PHOTOCHEMICAL MODEL
+!                                         Ionospheric conductivity model
 !
 !==============================================================================================================
-!
-! 2 July 2020, Yuki Nakamura
-!
-!         This photochemical model is designed for application to many planets like Earth, Mars, Venus, Jupiter,
-!       Titan, exoplanets, etc. For the flexibility to select a planet, to add and to remove chemical reactions,
-!       Graphical User Interface run on Python tkinter is connected to this model. The usage of this model for all
-!       users is as follows.
-!
-!       (1) Run PhotoChem_GUI.py on Python 3.
-!        1-1 On the Planet Selection window, please select a planet intended to run.
-!        1-2 On the Chemical reaction lists window, please select chemical reactions intended to include the photo-
-!            chemical model. You can search certain reactions by species, references and labels on the search window.
-!        1-3 Please set input density paths and vertical grids.
-!        1-4 Press 'Output' to output 'v__in.f90' which contains planet info, results of species/reaction analysis,
-!            input density paths and vertical grids.
-!
-!       (2) Rename "v__in.f90" with its directory in CMakeList.txt if you want to change the project
-!
-!       (3) Calculation settings
-!             - 1D-3D mode selection
-!             - horizontal grids
-!             - calculation days, season (DOY, Ls, etc.),
-!             - time advance scheme (explicit, semi-implicit or implicit) )
-!           for each planet are available in 'v__'planet'.f90'. (e.g. v__Mars.f90, v__Jupiter.f90)
-!
-!       (4) goto "build" directory and type followings in terminal:
-!           $ cmake ..
-!           $ cmake --build .
-!
-!       (5) executable file "PhotoChemistry" is generated in the project directory.
-!
-!
-
-!
-! NOT RECOMMENDED TO USE INCLUDE, BUT JUST IN CASE CMAKE DOES NOT WORK
-!
 
 include "v__tdec.f90"
 include "c__prm.f90"
@@ -85,7 +49,7 @@ program p__conductivity
   type(xct_) :: xct ! type of cross section
   type(spl_) :: spl ! type of species list and planet info
   type(flx_) :: flx ! type of solar flux
-  integer i, j, k, ix, xs, iy, iz, ich, isp, jsp, is, iday
+  integer i, j, k, ix, xs, iy, iz, ich, isp, jsp, is, iday, s
   real(dp) tmp
   character(len=256) fname, num
 
@@ -96,11 +60,16 @@ program p__conductivity
   real(dp), allocatable :: hi_sigma_P(:,:), hi_sigma_H(:,:), hi_sigma_0(:,:)
   real(dp), allocatable :: sigma_tt(:,:,:), sigma_tp(:,:,:), sigma_pp(:,:,:)
   real(dp), allocatable :: hi_sigma_tt(:,:), hi_sigma_tp(:,:), hi_sigma_pp(:,:)
+  real(dp), allocatable :: sigma_prime_tp(:,:,:), sigma_prime_tz(:,:,:), sigma_prime_zp(:,:,:), sigma_prime_zz(:,:,:)
+  real(dp), allocatable :: tmparr(:,:)
+  real(dp) B_factor, sigma_min
   
 
   real(dp) t1, t2
 
   call cpu_time(t1)
+
+  B_factor = 1.0_dp
 
 
   !----------------------------------------------------------------------------------------------------------
@@ -193,6 +162,11 @@ program p__conductivity
   allocate(hi_sigma_tt(grd%nx,grd%ny))
   allocate(hi_sigma_tp(grd%nx,grd%ny))
   allocate(hi_sigma_pp(grd%nx,grd%ny))
+  allocate(tmparr(grd%nx,grd%ny))
+  allocate(sigma_prime_tp(grd%nx,grd%ny,grd%nz))
+  allocate(sigma_prime_tz(grd%nx,grd%ny,grd%nz))
+  allocate(sigma_prime_zp(grd%nx,grd%ny,grd%nz))
+  allocate(sigma_prime_zz(grd%nx,grd%ny,grd%nz))
 
   print *, 'reading density data...'
   do ix = 1, grd%nx
@@ -209,18 +183,27 @@ program p__conductivity
   end do
   print *, 'finished reading density data!'
 
-  print *, 'reading B data...'
-  open(11, file = './Jupiter/dipole_Jupiter.dat', status = 'unknown')
-    do iz = 1, grd%nz
-    do iy = 1, grd%ny
-    do ix = 1, grd%nx
-        !read(11,*) B_abs(i,j,h), sinI(i,j,h), cosI(i,j,h)
-        read(11,*) B_abs(ix,iy,iz), sinI(ix,iy,iz), cosI(ix,iy,iz)
-    end do
-    end do
-    end do
-  close(11)
-  print *, 'finished reading B data!'
+
+  !-----------------------------------------------------
+  ! Magnetic field data 
+  !-----------------------------------------------------
+  if (spl%planet == 'Jupiter') then 
+
+    print *, 'reading B data...'
+    open(11, file = './Jupiter/dipole_Jupiter.dat', status = 'unknown')
+      do iz = 1, grd%nz
+      do iy = 1, grd%ny
+      do ix = 1, grd%nx
+          !read(11,*) B_abs(ix,iy,iz), sinI(ix,iy,iz), cosI(ix,iy,iz)
+          read(11,*) B_abs(ix,iy,iz), sinI(ix,iy,iz), cosI(ix,iy,iz)
+          B_abs(ix,iy,iz) = B_abs(ix,iy,iz) * B_factor
+      end do
+      end do
+      end do
+    close(11)
+    print *, 'finished reading B data!'
+
+  end if
 
 
   ! ionospheric conductivity ---------------------------------------------
@@ -369,6 +352,174 @@ program p__conductivity
   end do 
   end do
 
+
+  !modulation written by Nakamezo et al., 2012
+    !theta-theta
+  do ix = 1, grd%nx
+      hi_sigma_tt(ix,91) = 2.0d0 * hi_sigma_tt(ix,90) - hi_sigma_tt(ix,89)
+  end do
+
+      !phi-phi
+  do ix = 1, grd%nx
+      do iy = 66, 88
+          hi_sigma_pp(ix,iy) = ( (dble(iy) - 66.0d0) / 23.0d0 + 1.0d0 ) * hi_sigma_pp(ix,iy)
+      end do
+      hi_sigma_pp(ix,89) = 2.0d0 * hi_sigma_pp(ix,89)
+      hi_sigma_pp(ix,90) = 1.8d0 * hi_sigma_pp(ix,90)
+      hi_sigma_pp(ix,91) = 1.2d0 * hi_sigma_pp(ix,91)
+      hi_sigma_pp(ix,92) = 1.8d0 * hi_sigma_pp(ix,92)
+      hi_sigma_pp(ix,93) = 2.0d0 * hi_sigma_pp(ix,93)
+      do j = 94, 116
+          hi_sigma_pp(ix,iy) = ( -(dble(iy) - 93.0d0) / 23.0d0 + 2.0d0 ) * hi_sigma_pp(ix,iy)
+      end do
+  end do
+
+      !theta-phi
+  do iz = 1, grd%nz
+  do iy = 62, 120
+  do ix = 1, grd%nx
+      sigma_prime_tp(ix,iy,iz) = -sigma_H(ix,iy,iz) * sinI(ix,iy,iz)
+
+      sigma_prime_tz(ix,iy,iz) = (sigma_0(ix,iy,iz) - sigma_P(ix,iy,iz)) &
+  &                             * sinI(ix,iy,iz) * cosI(ix,iy,iz)
+
+      sigma_prime_zp(ix,iy,iz) = sigma_H(ix,iy,iz) * cosI(ix,iy,iz)
+
+      sigma_prime_zz(ix,iy,iz) = sigma_0(ix,iy,iz) * sinI(ix,iy,iz)**2.0d0 &
+  &                             + sigma_P(ix,iy,iz) * cosI(ix,iy,iz)**2.0d0
+  end do
+  end do
+  end do
+
+  do ix = 1, grd%nx
+      do iy = 62, 91
+      do iz = 1, grd%nz
+          sigma_tp(ix,iy,iz) &
+          = sigma_prime_tp(ix,iy,iz) - (-(dble(iy)-61.0d0) / 30.0d0 + 1.0d0) &
+  &           * sigma_prime_tz(ix,iy,iz) * sigma_prime_zp(ix,iy,iz) / sigma_prime_zz(ix,iy,iz)
+      end do
+      end do
+
+      do iy = 92, 120
+      do iz = 1, grd%nz
+          sigma_tp(ix,iy,iz) &
+          = sigma_prime_tp(ix,iy,iz) - (dble(iy)-91.0d0) / 30.0d0 &
+  &           * sigma_prime_tz(ix,iy,iz) * sigma_prime_zp(ix,iy,iz) / sigma_prime_zz(ix,iy,iz)
+      end do
+      end do
+  end do
+
+  do iy = 62, 120
+  do ix = 1, grd%nx
+      hi_sigma_tp(ix,iy) = 0.0d0
+  end do
+  end do
+
+  do iy = 62, 120
+  do ix = 1, grd%nx
+      do iz = 1, (grd%nz-1)
+          hi_sigma_tp(ix,iy) = hi_sigma_tp(ix,iy) + 0.5d0 * grd%dalt(iz) &
+  &                       * (sigma_tp(ix,iy,iz) + sigma_tp(i,j,iz+1))
+      end do
+  end do
+  end do
+
+  !minimum values
+  sigma_min = 1.0d100
+
+  do iy = 1, grd%ny
+  do ix = 1, grd%nx
+      if( hi_sigma_tt(ix,iy) /= 0.0d0 &
+  &           .and. hi_sigma_tt(ix,iy) < sigma_min ) then
+          sigma_min = hi_sigma_tt(ix,iy)
+      end if
+      if( hi_sigma_pp(ix,iy) /= 0.0d0 &
+  &           .and. hi_sigma_pp(ix,iy) < sigma_min ) then
+          sigma_min = hi_sigma_pp(ix,iy)
+      end if
+      if( hi_sigma_tp(ix,iy) /= 0.0d0 &
+  &           .and. hi_sigma_tp(ix,iy) < sigma_min ) then
+          sigma_min = hi_sigma_tp(ix,iy)
+      end if
+  end do
+  end do
+
+  do iy = 1, grd%ny
+  do ix = 1, grd%nx
+      if( hi_sigma_tt(ix,iy) == 0.0d0 ) then
+          hi_sigma_tt(ix,iy) = sigma_min * 0.01d0
+      end if
+      if( hi_sigma_pp(ix,iy) == 0.0d0 ) then
+          hi_sigma_pp(ix,iy) = sigma_min * 0.01d0
+      end if
+      if( hi_sigma_tp(ix,iy) == 0.0d0 ) then
+          hi_sigma_tp(ix,iy) = sigma_min * 0.01d0
+      end if
+  end do
+  end do
+
+  write(*,*) sigma_min, sigma_min, sigma_min
+  write(*,*) hi_sigma_tt(271,91), hi_sigma_tp(271,91), hi_sigma_pp(271,91)
+
+  !!!!!!!!!!
+  ! smoothing
+  do s = 1, 3
+      do iy = 2, 180
+      do ix = 2, 360
+          tmparr(ix,iy) = ( 4.0d0 * hi_sigma_tt(ix,iy) + hi_sigma_tt(ix-1,iy) + hi_sigma_tt(ix+1,iy) &
+  &                    + hi_sigma_tt(ix,iy-1) + hi_sigma_tt(ix,iy+1) ) * 0.125d0
+      end do
+      end do
+
+      do i = 2, 360
+          tmparr(i,1) = ( 2.0d0 * hi_sigma_tt(ix,1) + hi_sigma_tt(ix-1,1) &
+  &                    + hi_sigma_tt(ix+1,1) ) * 0.25d0
+          tmparr(i,181) = ( 2.0d0 * hi_sigma_tt(ix,181) + hi_sigma_tt(ix-1,181) &
+  &                      + hi_sigma_tt(ix+1,181) ) * 0.25d0
+      end do
+
+      hi_sigma_tt(2:360, 1:181) = tmparr(2:360, 1:181)
+      hi_sigma_tt(1, 1:181) = hi_sigma_tt(360, 1:181)
+      hi_sigma_tt(361, 1:181) = hi_sigma_tt(1, 1:181)
+
+      do j = 2, 180
+      do i = 2, 360
+          tmparr(ix,iy) = ( 4.0d0 * hi_sigma_pp(ix,iy) + hi_sigma_pp(ix-1,iy) + hi_sigma_pp(ix+1,iy) &
+  &                    + hi_sigma_pp(ix,iy-1) + hi_sigma_pp(ix,iy+1) ) * 0.125d0
+      end do
+      end do
+
+      do i = 2, 360
+          tmparr(i,1) = ( 2.0d0 * hi_sigma_pp(ix,1) + hi_sigma_pp(ix-1,1) &
+  &                    + hi_sigma_pp(ix+1,1) ) * 0.25d0
+          tmparr(i,181) = ( 2.0d0 * hi_sigma_pp(ix,181) + hi_sigma_pp(ix-1,181) &
+  &                      + hi_sigma_pp(ix+1,181) ) * 0.25d0
+      end do
+
+      hi_sigma_pp(2:360, 1:181) = tmparr(2:360, 1:181)
+      hi_sigma_pp(1, 1:181) = hi_sigma_pp(360, 1:181)
+      hi_sigma_pp(361, 1:181) = hi_sigma_pp(1, 1:181)
+
+      do j = 2, 180
+      do i = 2, 360
+          tmparr(ix,iy) = ( 4.0d0 * hi_sigma_tp(ix,iy) + hi_sigma_tp(ix-1,iy) + hi_sigma_tp(ix+1,iy) &
+  &                    + hi_sigma_tp(ix,iy-1) + hi_sigma_tp(ix,iy+1) ) * 0.125d0
+      end do
+      end do
+
+      do i = 2, 360
+          tmparr(i,1) = ( 2.0d0 * hi_sigma_tp(i,1) + hi_sigma_tp(ix-1,1) &
+  &                    + hi_sigma_tp(ix+1,1) ) * 0.25d0
+          tmparr(i,181) = ( 2.0d0 * hi_sigma_tp(i,181) + hi_sigma_tp(ix-1,181) &
+  &                      + hi_sigma_tp(ix+1,181) ) * 0.25d0
+      end do
+
+      hi_sigma_tp(2:360, 1:181) = tmparr(2:360, 1:181)
+      hi_sigma_tp(1, 1:181) = hi_sigma_tp(360, 1:181)
+      hi_sigma_tp(361, 1:181) = hi_sigma_tp(1, 1:181)
+  end do
+  !!!!!!!!!!
+
   ! output ----------------------------------
 
   fname = trim(ADJUSTL(set%dir_name))//'/output/conductivity/sigma_HP0.dat'
@@ -401,7 +552,7 @@ program p__conductivity
     end do
   close(11)
 
-  fname = trim(ADJUSTL(set%dir_name))//'/output/conductivity/hi_sigma_tp.dat'
+  fname = trim(ADJUSTL(set%dir_name))//'/output/conductivity/hi_sigma_t-p.dat'
   open(11, file = fname, status = 'unknown' )
     do iy = 1, grd%ny
     do ix = 1, grd%nx
@@ -426,6 +577,11 @@ program p__conductivity
   deallocate(hi_sigma_tt)
   deallocate(hi_sigma_tp)
   deallocate(hi_sigma_pp)
+  deallocate(tmparr)
+  deallocate(sigma_prime_tp)
+  deallocate(sigma_prime_tz)
+  deallocate(sigma_prime_zp)
+  deallocate(sigma_prime_zz)
 
   call p__io_deallocate(var, spl, xct, flx) ! inout
 
