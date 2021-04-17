@@ -27,3 +27,5 @@ tstex_modules
 */*/*.eps
 */*.eps
 *.eps
+a.out
+e__main
