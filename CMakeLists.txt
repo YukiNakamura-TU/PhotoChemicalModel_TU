@@ -19,5 +19,5 @@ add_executable(e__main
     p__photochem_transport.f90
     p__photochem_scheme.f90
     p__airglow.f90
-    Jupiter/no_metal_Hill/v__in.f90
+    Jupiter/metal_Hill/v__in.f90
 )

@@ -20,9 +20,9 @@ include "p__photochem_transport.f90"
 include "p__photochem_scheme.f90"
 include "p__airglow.f90" ! not yet
 
-include "./Jupiter/no_metal_Hill/v__in.f90"
+include "./Jupiter/metal_Hill/v__in.f90"
 
-program p__conductivity
+program e__conductivity
 
   use v__tdec,                   only : set_, grd_, var_, cst_, xct_, spl_, flx_
   use c__prm,                    only : c__prm__ini, c__prm__planet
@@ -588,4 +588,4 @@ program p__conductivity
   print *, 'finish'
 
 
-end program p__conductivity
+end program e__conductivity
