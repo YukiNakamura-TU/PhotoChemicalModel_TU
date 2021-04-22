@@ -43,7 +43,7 @@ iplnt = 0
 #                                                       Venus
 #
 #--------------------------------------------------------------------------------------------------------------------------
-Planet_list.append(['Venus',len(reaction_rate_list)])
+#Planet_list.append(['Venus',len(reaction_rate_list)])
 # reaction list
 
 
@@ -52,7 +52,7 @@ Planet_list.append(['Venus',len(reaction_rate_list)])
 #                                                       Earth
 #
 #--------------------------------------------------------------------------------------------------------------------------
-Planet_list.append(['Earth',len(reaction_rate_list)])
+#Planet_list.append(['Earth',len(reaction_rate_list)])
 # reaction list
 
 
@@ -864,7 +864,7 @@ reaction_rate_list.append(" SiCnHm+ +  e-      ->  products                   : 
 #                                                        Saturn
 #
 #--------------------------------------------------------------------------------------------------------------------------
-Planet_list.append(['Saturn',len(reaction_rate_list)])
+#Planet_list.append(['Saturn',len(reaction_rate_list)])
 # reaction list
 
 
@@ -875,8 +875,17 @@ Planet_list.append(['Saturn',len(reaction_rate_list)])
 #                                                        Titan
 #
 # --------------------------------------------------------------------------------------------------------------------------
-Planet_list.append(['Titan',len(reaction_rate_list)])
+#Planet_list.append(['Titan',len(reaction_rate_list)])
 # reaction list
+
+
+
+# --------------------------------------------------------------------------------------------------------------------------
+Planet_list.append(['END',len(reaction_rate_list)])
+#
+#                                               END of Reaction list
+#
+# --------------------------------------------------------------------------------------------------------------------------
 
 
 
@@ -4907,12 +4916,13 @@ def plot(Planet, dir0, species, action, adv, fs,
                         altitude[isp].append(data[i][0])
                         mixingratio[isp].append(data[i][1])
         
-        for iz in range(len(altitude[0])):
-            tmp = 0
-            for isp in range(len(species)):
-                if species[isp] != 'M':
-                    tmp = tmp + density[isp][iz]
-            total.append(tmp)
+        if '2D Lat' in action or '3D Rot' in action:
+            for iz in range(len(altitude[0])):
+                tmp = 0
+                for isp in range(len(species)):
+                    if species[isp] != 'M':
+                        tmp = tmp + density[isp][iz]
+                total.append(tmp)
         
         for isp in range(len(species)):
             for iz in range(len(density[isp])):
@@ -5342,12 +5352,13 @@ hbar.place(x=0,y=50)
 #planet button
 Planet_btn = {}
 for iplnt in range(len(Planet_list)):
-    Planet_btn[iplnt] = tk.Button(win, font=('', '20'), text=Planet_list[iplnt][0]) #text=planet name
-    Planet_btn[iplnt]["command"] = callback_directory_window(iplnt, list_s, list_e,
-                                                            reaction_chk_bln, fix_species_bln, input_species_char,
-                                                            search_list) #display reaction window if pushed
-    #Planet_btn[iplnt].pack()
-    Planet_btn[iplnt].place(x=30, y=90+iplnt*60)
+    if Planet_list[iplnt][0] != 'END':
+        Planet_btn[iplnt] = tk.Button(win, font=('', '20'), text=Planet_list[iplnt][0]) #text=planet name
+        Planet_btn[iplnt]["command"] = callback_directory_window(iplnt, list_s, list_e,
+                                                                reaction_chk_bln, fix_species_bln, input_species_char,
+                                                                search_list) #display reaction window if pushed
+        #Planet_btn[iplnt].pack()
+        Planet_btn[iplnt].place(x=30, y=90+iplnt*60)
 
 #help button
 help_btn = tk.Button(win, font=('', '20'), text=u'Help')
