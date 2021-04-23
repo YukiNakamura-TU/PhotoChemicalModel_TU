@@ -5142,7 +5142,7 @@ def reaction_window(iplnt, Planet, list_s, list_e, dir0, version,
     Search_btn.place(x=220, y=40)
 
     ### update button ###
-    # TODO "update" name should be changed later
+    # TO DO "update" name should be changed later
     Update_btn = tk.Button(upper_canvas, text=u'Update list')
     Update_btn["command"] = callback_update_reaction_window(main_canvas, xbar, ybar, frame, upper_canvas, lower_canvas,
                                                             iplnt, Planet, list_s, list_e, dir0, version,

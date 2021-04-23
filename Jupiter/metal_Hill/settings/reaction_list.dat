@@ -233,43 +233,43 @@
  Fe                  ->  Condensation              : 1.0e-5 
  Mg                  ->  Condensation              : 1.0e-5 
  Si                  ->  Condensation              : 1.0e-5 
-  Na      +  H       +  H2      ->  NaH     +  H2  :  1.2e-30 * (T(neutral)/1.0)^(-0.6) @ estimate
-  Na      +  CH3     +  H2      ->  NaCH3   +  H2  :  4.0e-25 * (T(neutral)/1.0)^(-1.8) @ estimate
-  Na+     +  H2      +  H2      ->  NaH2+   +  H2  :  1.6e-30 * (T(neutral)/80)^(-0.5) @ Smith et al. [1983]
-  Na+     +  CH4     +  H2      ->  NaCH4+  +  H2  :  1.5e-28 * (T(neutral)/80)^(-1.5) @ Smith et al. [1983]
-  Na+     +  C2H2    +  H2      ->  NaC2H2+ +  H2  :  1.3e-28 * (T(neutral)/80)^(-1.0) @ Smith et al. [1983]
-  Na+     +  C2H4    +  H2      ->  NaC2H4+ +  H2  :  1.3e-28 * (T(neutral)/80)^(-1.5) @ Smith et al. [1983]
-  Na      +  H+      ->  Na+     +  H              :  1.2e-9 @ Miller et al. [1997]
-  Na      +  H3+     ->  Na+     +  H       +  H2  :  1.1e-9 @ Miller et al. [1997]
-  Na      +  CH3+    ->  Na+     +  CH3            :  3.4e-9 @ Miller et al. [1997]
-  Na      +  C2H2+   ->  Na+     +  C2H2           :  2.7e-9 @ Miller et al. [1997]
-  Na      +  C3H+    ->  Na+     +  products       :  3.0e-9 @ estimate
-  Na      +  C3H2+   ->  Na+     +  products       :  3.0e-9 @ estimate
-  Na      +  C3H3+   ->  Na+     +  products       :  3.0e-9 @ estimate
-  Na      +  C3H4+   ->  Na+     +  products       :  3.0e-9 @ estimate
-  Na      +  C3H5+   ->  Na+     +  products       :  3.0e-9 @ estimate
-  Na      +  C3H6+   ->  Na+     +  products       :  3.0e-9 @ estimate
-  Na      +  C3H7+   ->  Na+     +  products       :  3.0e-9 @ estimate
-  Na      +  C3H8+   ->  Na+     +  products       :  3.0e-9 @ estimate
-  Na      +  C3H9+   ->  Na+     +  products       :  3.0e-9 @ estimate
-  Na      +  C4H+    ->  Na+     +  products       :  3.0e-9 @ estimate
-  Na      +  C4H2+   ->  Na+     +  products       :  3.0e-9 @ estimate
-  Na      +  C4H3+   ->  Na+     +  products       :  3.0e-9 @ estimate
-  Na      +  C4H5+   ->  Na+     +  products       :  3.0e-9 @ estimate
-  Na      +  C4H7+   ->  Na+     +  products       :  3.0e-9 @ estimate
-  Na      +  C4H9+   ->  Na+     +  products       :  3.0e-9 @ estimate
-  Na      +  Si+     ->  Na+     +  Si             :  2.7e-9 @ Miller et al. [1997]
-  Na      +  H3O+    ->  Na+     +  H2O     +  H   :  3.1e-9 @ Miller et al. [1997]
-  NaH     +  H       ->  Na      +  H2             :  1.0e-10 * (T(neutral)/300)^(-0.5) @ estimate
-  Na+     +  e-      ->  Na                        :  2.7e-12 * (T(electron)/300)^(-0.6) @ Miller et al. [1997]
-  NaH2+   +  e-      ->  Na      +  H2             :  1.5e-7  * (T(electron)/300)^(-0.5) @ estimate
-  NaH2+   +  e-      ->  NaH     +  H              :  1.5e-7  * (T(electron)/300)^(-0.5) @ estimate
-  NaCH4+  +  e-      ->  Na      +  products       :  1.5e-7  * (T(electron)/300)^(-0.5) @ estimate
-  NaC2H2+ +  e-      ->  Na      +  products       :  1.5e-7  * (T(electron)/300)^(-0.5) @ estimate
-  NaC2H4+ +  e-      ->  Na      +  products       :  1.5e-7  * (T(electron)/300)^(-0.5) @ estimate
-  NaCH4+  +  e-      ->  products                  :  1.5e-7  * (T(electron)/300)^(-0.5) @ estimate
-  NaC2H2+ +  e-      ->  products                  :  1.5e-7  * (T(electron)/300)^(-0.5) @ estimate
-  NaC2H4+ +  e-      ->  products                  :  1.5e-7  * (T(electron)/300)^(-0.5) @ estimate
+ Na      +  H       +  H2      ->  NaH     +  H2  :  1.2e-30 * (T(neutral)/1.0)^(-0.6) @ estimate
+ Na      +  CH3     +  H2      ->  NaCH3   +  H2  :  4.0e-25 * (T(neutral)/1.0)^(-1.8) @ estimate
+ Na+     +  H2      +  H2      ->  NaH2+   +  H2  :  1.6e-30 * (T(neutral)/80)^(-0.5) @ Smith et al. [1983]
+ Na+     +  CH4     +  H2      ->  NaCH4+  +  H2  :  1.5e-28 * (T(neutral)/80)^(-1.5) @ Smith et al. [1983]
+ Na+     +  C2H2    +  H2      ->  NaC2H2+ +  H2  :  1.3e-28 * (T(neutral)/80)^(-1.0) @ Smith et al. [1983]
+ Na+     +  C2H4    +  H2      ->  NaC2H4+ +  H2  :  1.3e-28 * (T(neutral)/80)^(-1.5) @ Smith et al. [1983]
+ Na      +  H+      ->  Na+     +  H              :  1.2e-9 @ Miller et al. [1997]
+ Na      +  H3+     ->  Na+     +  H       +  H2  :  1.1e-9 @ Miller et al. [1997]
+ Na      +  CH3+    ->  Na+     +  CH3            :  3.4e-9 @ Miller et al. [1997]
+ Na      +  C2H2+   ->  Na+     +  C2H2           :  2.7e-9 @ Miller et al. [1997]
+ Na      +  C3H+    ->  Na+     +  products       :  3.0e-9 @ estimate
+ Na      +  C3H2+   ->  Na+     +  products       :  3.0e-9 @ estimate
+ Na      +  C3H3+   ->  Na+     +  products       :  3.0e-9 @ estimate
+ Na      +  C3H4+   ->  Na+     +  products       :  3.0e-9 @ estimate
+ Na      +  C3H5+   ->  Na+     +  products       :  3.0e-9 @ estimate
+ Na      +  C3H6+   ->  Na+     +  products       :  3.0e-9 @ estimate
+ Na      +  C3H7+   ->  Na+     +  products       :  3.0e-9 @ estimate
+ Na      +  C3H8+   ->  Na+     +  products       :  3.0e-9 @ estimate
+ Na      +  C3H9+   ->  Na+     +  products       :  3.0e-9 @ estimate
+ Na      +  C4H+    ->  Na+     +  products       :  3.0e-9 @ estimate
+ Na      +  C4H2+   ->  Na+     +  products       :  3.0e-9 @ estimate
+ Na      +  C4H3+   ->  Na+     +  products       :  3.0e-9 @ estimate
+ Na      +  C4H5+   ->  Na+     +  products       :  3.0e-9 @ estimate
+ Na      +  C4H7+   ->  Na+     +  products       :  3.0e-9 @ estimate
+ Na      +  C4H9+   ->  Na+     +  products       :  3.0e-9 @ estimate
+ Na      +  Si+     ->  Na+     +  Si             :  2.7e-9 @ Miller et al. [1997]
+ Na      +  H3O+    ->  Na+     +  H2O     +  H   :  3.1e-9 @ Miller et al. [1997]
+ NaH     +  H       ->  Na      +  H2             :  1.0e-10 * (T(neutral)/300)^(-0.5) @ estimate
+ Na+     +  e-      ->  Na                        :  2.7e-12 * (T(electron)/300)^(-0.6) @ Miller et al. [1997]
+ NaH2+   +  e-      ->  Na      +  H2             :  1.5e-7  * (T(electron)/300)^(-0.5) @ estimate
+ NaH2+   +  e-      ->  NaH     +  H              :  1.5e-7  * (T(electron)/300)^(-0.5) @ estimate
+ NaCH4+  +  e-      ->  Na      +  products       :  1.5e-7  * (T(electron)/300)^(-0.5) @ estimate
+ NaC2H2+ +  e-      ->  Na      +  products       :  1.5e-7  * (T(electron)/300)^(-0.5) @ estimate
+ NaC2H4+ +  e-      ->  Na      +  products       :  1.5e-7  * (T(electron)/300)^(-0.5) @ estimate
+ NaCH4+  +  e-      ->  products                  :  1.5e-7  * (T(electron)/300)^(-0.5) @ estimate
+ NaC2H2+ +  e-      ->  products                  :  1.5e-7  * (T(electron)/300)^(-0.5) @ estimate
+ NaC2H4+ +  e-      ->  products                  :  1.5e-7  * (T(electron)/300)^(-0.5) @ estimate
  Fe      +  H       +  H2      ->  FeH     +  H2  : 1.2e-30 * (T(neutral)/1.0)^(-1.6) @ estimate
  Fe+     +  H       +  H2      ->  FeH+    +  H2  : 3.0e-30 * (T(neutral)/1.0)^(-1.0) @ estimate
  Fe+     +  H2      +  H2      ->  FeH2+   +  H2  : 2.0e-30 @ Petrie et al. [1997]
@@ -312,98 +312,98 @@
  FeCH4+  +  e-      ->  products                  : 1.5e-7  * (T(electron)/300)^(-0.5) @ estimate
  FeC2H2+ +  e-      ->  products                  : 1.5e-7  * (T(electron)/300)^(-0.5) @ estimate
  FeC2H4+ +  e-      ->  products                  : 1.5e-7  * (T(electron)/300)^(-0.5) @ estimate
-  Mg      +  H       +  H2      ->  MgH     +  H2  : 1.2e-30 * (T(neutral)/1.0)^(-0.6) @ estimate
-  Mg+     +  H       +  H2      ->  MgH+    +  H2  : 3.0e-30 * (T(neutral)/1.0)^(-1.0) @ Smith et al. [1983]
-  Mg+     +  H2      +  H2      ->  MgH2+   +  H2  : 1.6e-30 * (T(neutral)/80.0)^(-0.5) @ Smith et al. [1983]
-  Mg+     +  CH4     +  H2      ->  MgCH4+  +  H2  : 1.5e-28 * (T(neutral)/80.0)^(-1.5) @ Smith et al. [1983]
-  Mg+     +  C2H2    +  H2      ->  MgC2H2+ +  H2  : 1.3e-28 * (T(neutral)/80.0)^(-1.0) @ Smith et al. [1983]
-  Mg+     +  C2H4    +  H2      ->  MgC2H4+ +  H2  : 1.3e-28 * (T(neutral)/80.0)^(-1.5) @ Smith et al. [1983]
-  Mg+     +  Na      ->  Mg      +  Na+            : 1.0e-11 @ Miller et al. [1997]
-  MgH+    +  H       ->  Mg+     +  H2             : 1.8e-9 @ estimate
-  MgH2+   +  H       ->  MgH+    +  H2             : 1.8e-9 @ estimate
-  Mg      +  H+      ->  Mg+     +  H              : 1.1e-9 @ Miller et al. [1997]
-  Mg      +  H3+     ->  Mg+     +  H       +  H2  : 1.0e-9 @ Miller et al. [1997]
-  Mg      +  C+      ->  Mg+     +  C              : 1.1e-9 @ Miller et al. [1997]
-  Mg      +  CH3+    ->  Mg+     +  CH3            : 3.5e-10 @ Miller et al. [1997]
-  Mg      +  CH5+    ->  Mg+     +  CH4     +  H   : 1.4e-9 @ Po and Porter [1977]
-  Mg      +  C2H2+   ->  Mg+     +  C2H2           : 3.0e-9 @ Miller et al. [1997]
-  Mg      +  C3H+    ->  Mg+     +  products       : 3.0e-9 @ estimate
-  Mg      +  C3H2+   ->  Mg+     +  products       : 3.0e-9 @ estimate
-  Mg      +  C3H3+   ->  Mg+     +  products       : 3.0e-9 @ estimate
-  Mg      +  C3H4+   ->  Mg+     +  products       : 3.0e-9 @ estimate
-  Mg      +  C3H5+   ->  Mg+     +  products       : 3.0e-9 @ estimate
-  Mg      +  C3H6+   ->  Mg+     +  products       : 3.0e-9 @ estimate
-  Mg      +  C3H7+   ->  Mg+     +  products       : 3.0e-9 @ estimate
-  Mg      +  C3H8+   ->  Mg+     +  products       : 3.0e-9 @ estimate
-  Mg      +  C3H9+   ->  Mg+     +  products       : 3.0e-9 @ estimate
-  Mg      +  C4H+    ->  Mg+     +  products       : 3.0e-9 @ estimate
-  Mg      +  C4H2+   ->  Mg+     +  products       : 3.0e-9 @ estimate
-  Mg      +  C4H3+   ->  Mg+     +  products       : 3.0e-9 @ estimate
-  Mg      +  C4H5+   ->  Mg+     +  products       : 3.0e-9 @ estimate
-  Mg      +  C4H7+   ->  Mg+     +  products       : 3.0e-9 @ estimate
-  Mg      +  C4H9+   ->  Mg+     +  products       : 3.0e-9 @ estimate
-  Mg      +  Si+     ->  Mg+     +  Si             : 2.9e-9 @ Miller et al. [1997]
-  MgH     +  H       ->  Mg      +  H2             : 1.0e-10 * (T(neutral)/300)^( 0.5) @ estimate
-  Mg+     +  e-      ->  Mg                        : 2.8e-12 * (T(electron)/300)^(-0.8) @ Miller et al. [1997]
-  MgH+    +  e-      ->  Mg      +  H              : 3.0e-7  * (T(electron)/300)^(-0.5) @ estimate
-  MgH2+   +  e-      ->  Mg      +  H2             : 1.5e-7  * (T(electron)/300)^(-0.5) @ estimate
-  MgH2+   +  e-      ->  MgH     +  H              : 1.5e-7  * (T(electron)/300)^(-0.5) @ estimate
-  MgCH4+  +  e-      ->  Mg      +  products       : 1.5e-7  * (T(electron)/300)^(-0.5) @ estimate
-  MgC2H2+ +  e-      ->  Mg      +  products       : 1.5e-7  * (T(electron)/300)^(-0.5) @ estimate
-  MgC2H4+ +  e-      ->  Mg      +  products       : 1.5e-7  * (T(electron)/300)^(-0.5) @ estimate
-  MgCH4+  +  e-      ->  products                  : 1.5e-7  * (T(electron)/300)^(-0.5) @ estimate
-  MgC2H2+ +  e-      ->  products                  : 1.5e-7  * (T(electron)/300)^(-0.5) @ estimate
-  MgC2H4+ +  e-      ->  products                  : 1.5e-7  * (T(electron)/300)^(-0.5) @ estimate
-  Si      +  H       +  H2      ->  SiH     +  H2  : 1.2e-30 * (T(neutral)/1.0)^(-0.6) @ estimate
-  Si+     +  H       +  H2      ->  SiH+    +  H2  : 3.0e-30 * (T(neutral)/1.0)^(-1.0) @ estimate
-  Si+     +  H2      +  H2      ->  SiH2+   +  H2  : 1.6e-30 * (T(neutral)/80)^(-0.5) @ Smith et al. [1983]
-  Si+     +  CH4     +  H2      ->  SiCnHm+ +  H2  : 1.4e-28 * (T(neutral)/80)^(-1.5) @ Smith et al. [1983]
-  Si+     +  C2H2    +  H2      ->  SiCnHm+ +  H2  : 1.2e-28 * (T(neutral)/80)^(-1.0) @ Smith et al. [1983]
-  Si+     +  C2H4    +  H2      ->  SiCnHm+ +  H2  : 1.2e-28 * (T(neutral)/80)^(-1.5) @ Smith et al. [1983]
-  Si+     +  H2      ->  SiH2+                      : 3.0e-18 @ Herbst et al. [1989]
-  Si+     +  CH3     ->  SiCnHm+ +  H               : 1.0e-9  @ Herbst et al. [1989]
-  Si+     +  CH3     ->  SiCnHm+ +  H2              : 1.0e-9  @ Herbst et al. [1989]
-  Si+     +  CH4     ->  SiCnHm+ +  H               : 7.7e-11 @ Cheng et al. [1973]
-  Si+     +  C2H2    ->  SiCnHm+ +  H               : 1.8e-10 @ Wlodek et al. [1991]
-  Si+     +  C2H4    ->  SiCnHm+ +  CH3     +  H    : 7.4e-11 @ Wlodek et al. [1991]
-  Si+     +  C2H4    ->  SiCnHm+ +  H               : 1.0e-9  @ Herbst et al. [1989]
-  Si+     +  C2H6    ->  SiCnHm+ +  CH4             : 1.2e-10 @ Wlodek et al. [1991]
-  Si+     +  C2H6    ->  SiCnHm+ +  CH3             : 6.4e-10 @ Wlodek et al. [1991]
-  Si+     +  C2H6    ->  SiCnHm+ +  CH3     +  H2   : 2.4e-11 @ Wlodek et al. [1991]
-  Si+     +  H2O     ->  SiOH+   +  H               : 2.3e-10 @ Fahey et al. [1981]
-  SiH+    +  H       ->  Si+     +  H2              : 1.9e-9  @ Herbst et al. [1989]
-  SiH2+   +  H       ->  SiH+    +  H2              : 1.8e-9  @ estimate
-  Si      +  H+      ->  Si+     +  H               : 9.9e-10 @ Miller et al. [1997]
-  Si      +  H3+     ->  SiH+    +  H2              : 3.7e-9  @ Miller et al. [1997]
-  Si      +  CH3+    ->  SiCnHm+ +  H               : 2.0e-9  @ Herbst et al. [1989]
-  Si      +  CH3+    ->  SiCnHm+ +  H2              : 2.0e-9  @ Herbst et al. [1989]
-  Si      +  CH5+    ->  SiCnHm+ +  H               : 2.0e-10 @ Herbst et al. [1989]
-  Si      +  CH5+    ->  SiCnHm+ +  H2              : 2.0e-10 @ Herbst et al. [1989]
-  Si      +  C2H3+   ->  SiCnHm+ +  H2              : 2.0e-10 @ Herbst et al. [1989]
-  Si      +  C2H3+   ->  SiCnHm+ +  H               : 2.0e-10 @ Herbst et al. [1989]
-  Si      +  C3H+    ->  SiCnHm+ +  products        : 2.0e-10 @ estimate
-  Si      +  C3H2+   ->  SiCnHm+ +  products        : 2.0e-10 @ estimate
-  Si      +  C3H3+   ->  SiCnHm+ +  products        : 2.0e-10 @ estimate
-  Si      +  C3H4+   ->  SiCnHm+ +  products        : 2.0e-10 @ estimate
-  Si      +  C3H5+   ->  SiCnHm+ +  products        : 2.0e-10 @ estimate
-  Si      +  C3H6+   ->  SiCnHm+ +  products        : 2.0e-10 @ estimate
-  Si      +  C3H7+   ->  SiCnHm+ +  products        : 2.0e-10 @ estimate
-  Si      +  C3H8+   ->  SiCnHm+ +  products        : 2.0e-10 @ estimate
-  Si      +  C3H9+   ->  SiCnHm+ +  products        : 2.0e-10 @ estimate
-  Si      +  C4H+    ->  SiCnHm+ +  products        : 2.0e-10 @ estimate
-  Si      +  C4H2+   ->  SiCnHm+ +  products        : 2.0e-10 @ estimate
-  Si      +  C4H3+   ->  SiCnHm+ +  products        : 2.0e-10 @ estimate
-  Si      +  C4H5+   ->  SiCnHm+ +  products        : 2.0e-10 @ estimate
-  Si      +  C4H7+   ->  SiCnHm+ +  products        : 2.0e-10 @ estimate
-  Si      +  C4H9+   ->  SiCnHm+ +  products        : 2.0e-10 @ estimate
-  Si      +  H3O+    ->  SiH+    +  H3O             : 1.8e-9  @ Miller et al. [1997]
-  Si      +  CH2     ->  SiCH    +  H               : 2.0e-11 * (T(neutral)/300)^(-0.5) @ Herbst et al. [1989]
-  Si      +  CH3     ->  SiCH2   +  H               : 4.0e-11 * (T(neutral)/300)^( 0.5) @ Herbst et al. [1989]
-  SiH     +  H       ->  Si      +  H2              : 1.0e-10 * (T(neutral)/300)^( 0.5) @ estimate
-  Si+     +  e-      ->  Si                         : 4.9e-12 * (T(electron)/300)^(-0.6) @ Miller et al. [1997]
-  SiH+    +  e-      ->  Si      +  H               : 2.0e-7 * (T(electron)/300)^(-0.5) @ Miller et al. [1997]
-  SiH2+   +  e-      ->  Si      +  H       +  H    : 2.0e-7 * (T(electron)/300)^(-0.5) @ Miller et al. [1997]
-  SiH2+   +  e-      ->  SiH     +  H               : 1.5e-7 * (T(electron)/300)^(-0.5) @ Miller et al. [1997]
-  SiH2+   +  e-      ->  Si      +  H2              : 1.5e-7 * (T(electron)/300)^(-0.5) @ Miller et al. [1997]
-  SiCnHm+ +  e-      ->  Si                         : 1.5e-7 * (T(electron)/300)^(-0.5) @ estimate
-  SiCnHm+ +  e-      ->  products                   : 1.5e-7 * (T(electron)/300)^(-0.5) @ estimate
+ Mg      +  H       +  H2      ->  MgH     +  H2  : 1.2e-30 * (T(neutral)/1.0)^(-0.6) @ estimate
+ Mg+     +  H       +  H2      ->  MgH+    +  H2  : 3.0e-30 * (T(neutral)/1.0)^(-1.0) @ Smith et al. [1983]
+ Mg+     +  H2      +  H2      ->  MgH2+   +  H2  : 1.6e-30 * (T(neutral)/80.0)^(-0.5) @ Smith et al. [1983]
+ Mg+     +  CH4     +  H2      ->  MgCH4+  +  H2  : 1.5e-28 * (T(neutral)/80.0)^(-1.5) @ Smith et al. [1983]
+ Mg+     +  C2H2    +  H2      ->  MgC2H2+ +  H2  : 1.3e-28 * (T(neutral)/80.0)^(-1.0) @ Smith et al. [1983]
+ Mg+     +  C2H4    +  H2      ->  MgC2H4+ +  H2  : 1.3e-28 * (T(neutral)/80.0)^(-1.5) @ Smith et al. [1983]
+ Mg+     +  Na      ->  Mg      +  Na+            : 1.0e-11 @ Miller et al. [1997]
+ MgH+    +  H       ->  Mg+     +  H2             : 1.8e-9 @ estimate
+ MgH2+   +  H       ->  MgH+    +  H2             : 1.8e-9 @ estimate
+ Mg      +  H+      ->  Mg+     +  H              : 1.1e-9 @ Miller et al. [1997]
+ Mg      +  H3+     ->  Mg+     +  H       +  H2  : 1.0e-9 @ Miller et al. [1997]
+ Mg      +  C+      ->  Mg+     +  C              : 1.1e-9 @ Miller et al. [1997]
+ Mg      +  CH3+    ->  Mg+     +  CH3            : 3.5e-10 @ Miller et al. [1997]
+ Mg      +  CH5+    ->  Mg+     +  CH4     +  H   : 1.4e-9 @ Po and Porter [1977]
+ Mg      +  C2H2+   ->  Mg+     +  C2H2           : 3.0e-9 @ Miller et al. [1997]
+ Mg      +  C3H+    ->  Mg+     +  products       : 3.0e-9 @ estimate
+ Mg      +  C3H2+   ->  Mg+     +  products       : 3.0e-9 @ estimate
+ Mg      +  C3H3+   ->  Mg+     +  products       : 3.0e-9 @ estimate
+ Mg      +  C3H4+   ->  Mg+     +  products       : 3.0e-9 @ estimate
+ Mg      +  C3H5+   ->  Mg+     +  products       : 3.0e-9 @ estimate
+ Mg      +  C3H6+   ->  Mg+     +  products       : 3.0e-9 @ estimate
+ Mg      +  C3H7+   ->  Mg+     +  products       : 3.0e-9 @ estimate
+ Mg      +  C3H8+   ->  Mg+     +  products       : 3.0e-9 @ estimate
+ Mg      +  C3H9+   ->  Mg+     +  products       : 3.0e-9 @ estimate
+ Mg      +  C4H+    ->  Mg+     +  products       : 3.0e-9 @ estimate
+ Mg      +  C4H2+   ->  Mg+     +  products       : 3.0e-9 @ estimate
+ Mg      +  C4H3+   ->  Mg+     +  products       : 3.0e-9 @ estimate
+ Mg      +  C4H5+   ->  Mg+     +  products       : 3.0e-9 @ estimate
+ Mg      +  C4H7+   ->  Mg+     +  products       : 3.0e-9 @ estimate
+ Mg      +  C4H9+   ->  Mg+     +  products       : 3.0e-9 @ estimate
+ Mg      +  Si+     ->  Mg+     +  Si             : 2.9e-9 @ Miller et al. [1997]
+ MgH     +  H       ->  Mg      +  H2             : 1.0e-10 * (T(neutral)/300)^( 0.5) @ estimate
+ Mg+     +  e-      ->  Mg                        : 2.8e-12 * (T(electron)/300)^(-0.8) @ Miller et al. [1997]
+ MgH+    +  e-      ->  Mg      +  H              : 3.0e-7  * (T(electron)/300)^(-0.5) @ estimate
+ MgH2+   +  e-      ->  Mg      +  H2             : 1.5e-7  * (T(electron)/300)^(-0.5) @ estimate
+ MgH2+   +  e-      ->  MgH     +  H              : 1.5e-7  * (T(electron)/300)^(-0.5) @ estimate
+ MgCH4+  +  e-      ->  Mg      +  products       : 1.5e-7  * (T(electron)/300)^(-0.5) @ estimate
+ MgC2H2+ +  e-      ->  Mg      +  products       : 1.5e-7  * (T(electron)/300)^(-0.5) @ estimate
+ MgC2H4+ +  e-      ->  Mg      +  products       : 1.5e-7  * (T(electron)/300)^(-0.5) @ estimate
+ MgCH4+  +  e-      ->  products                  : 1.5e-7  * (T(electron)/300)^(-0.5) @ estimate
+ MgC2H2+ +  e-      ->  products                  : 1.5e-7  * (T(electron)/300)^(-0.5) @ estimate
+ MgC2H4+ +  e-      ->  products                  : 1.5e-7  * (T(electron)/300)^(-0.5) @ estimate
+ Si      +  H       +  H2      ->  SiH     +  H2  : 1.2e-30 * (T(neutral)/1.0)^(-0.6) @ estimate
+ Si+     +  H       +  H2      ->  SiH+    +  H2  : 3.0e-30 * (T(neutral)/1.0)^(-1.0) @ estimate
+ Si+     +  H2      +  H2      ->  SiH2+   +  H2  : 1.6e-30 * (T(neutral)/80)^(-0.5) @ Smith et al. [1983]
+ Si+     +  CH4     +  H2      ->  SiCnHm+ +  H2  : 1.4e-28 * (T(neutral)/80)^(-1.5) @ Smith et al. [1983]
+ Si+     +  C2H2    +  H2      ->  SiCnHm+ +  H2  : 1.2e-28 * (T(neutral)/80)^(-1.0) @ Smith et al. [1983]
+ Si+     +  C2H4    +  H2      ->  SiCnHm+ +  H2  : 1.2e-28 * (T(neutral)/80)^(-1.5) @ Smith et al. [1983]
+ Si+     +  H2      ->  SiH2+                      : 3.0e-18 @ Herbst et al. [1989]
+ Si+     +  CH3     ->  SiCnHm+ +  H               : 1.0e-9  @ Herbst et al. [1989]
+ Si+     +  CH3     ->  SiCnHm+ +  H2              : 1.0e-9  @ Herbst et al. [1989]
+ Si+     +  CH4     ->  SiCnHm+ +  H               : 7.7e-11 @ Cheng et al. [1973]
+ Si+     +  C2H2    ->  SiCnHm+ +  H               : 1.8e-10 @ Wlodek et al. [1991]
+ Si+     +  C2H4    ->  SiCnHm+ +  CH3     +  H    : 7.4e-11 @ Wlodek et al. [1991]
+ Si+     +  C2H4    ->  SiCnHm+ +  H               : 1.0e-9  @ Herbst et al. [1989]
+ Si+     +  C2H6    ->  SiCnHm+ +  CH4             : 1.2e-10 @ Wlodek et al. [1991]
+ Si+     +  C2H6    ->  SiCnHm+ +  CH3             : 6.4e-10 @ Wlodek et al. [1991]
+ Si+     +  C2H6    ->  SiCnHm+ +  CH3     +  H2   : 2.4e-11 @ Wlodek et al. [1991]
+ Si+     +  H2O     ->  SiOH+   +  H               : 2.3e-10 @ Fahey et al. [1981]
+ SiH+    +  H       ->  Si+     +  H2              : 1.9e-9  @ Herbst et al. [1989]
+ SiH2+   +  H       ->  SiH+    +  H2              : 1.8e-9  @ estimate
+ Si      +  H+      ->  Si+     +  H               : 9.9e-10 @ Miller et al. [1997]
+ Si      +  H3+     ->  SiH+    +  H2              : 3.7e-9  @ Miller et al. [1997]
+ Si      +  CH3+    ->  SiCnHm+ +  H               : 2.0e-9  @ Herbst et al. [1989]
+ Si      +  CH3+    ->  SiCnHm+ +  H2              : 2.0e-9  @ Herbst et al. [1989]
+ Si      +  CH5+    ->  SiCnHm+ +  H               : 2.0e-10 @ Herbst et al. [1989]
+ Si      +  CH5+    ->  SiCnHm+ +  H2              : 2.0e-10 @ Herbst et al. [1989]
+ Si      +  C2H3+   ->  SiCnHm+ +  H2              : 2.0e-10 @ Herbst et al. [1989]
+ Si      +  C2H3+   ->  SiCnHm+ +  H               : 2.0e-10 @ Herbst et al. [1989]
+ Si      +  C3H+    ->  SiCnHm+ +  products        : 2.0e-10 @ estimate
+ Si      +  C3H2+   ->  SiCnHm+ +  products        : 2.0e-10 @ estimate
+ Si      +  C3H3+   ->  SiCnHm+ +  products        : 2.0e-10 @ estimate
+ Si      +  C3H4+   ->  SiCnHm+ +  products        : 2.0e-10 @ estimate
+ Si      +  C3H5+   ->  SiCnHm+ +  products        : 2.0e-10 @ estimate
+ Si      +  C3H6+   ->  SiCnHm+ +  products        : 2.0e-10 @ estimate
+ Si      +  C3H7+   ->  SiCnHm+ +  products        : 2.0e-10 @ estimate
+ Si      +  C3H8+   ->  SiCnHm+ +  products        : 2.0e-10 @ estimate
+ Si      +  C3H9+   ->  SiCnHm+ +  products        : 2.0e-10 @ estimate
+ Si      +  C4H+    ->  SiCnHm+ +  products        : 2.0e-10 @ estimate
+ Si      +  C4H2+   ->  SiCnHm+ +  products        : 2.0e-10 @ estimate
+ Si      +  C4H3+   ->  SiCnHm+ +  products        : 2.0e-10 @ estimate
+ Si      +  C4H5+   ->  SiCnHm+ +  products        : 2.0e-10 @ estimate
+ Si      +  C4H7+   ->  SiCnHm+ +  products        : 2.0e-10 @ estimate
+ Si      +  C4H9+   ->  SiCnHm+ +  products        : 2.0e-10 @ estimate
+ Si      +  H3O+    ->  SiH+    +  H3O             : 1.8e-9  @ Miller et al. [1997]
+ Si      +  CH2     ->  SiCH    +  H               : 2.0e-11 * (T(neutral)/300)^(-0.5) @ Herbst et al. [1989]
+ Si      +  CH3     ->  SiCH2   +  H               : 4.0e-11 * (T(neutral)/300)^( 0.5) @ Herbst et al. [1989]
+ SiH     +  H       ->  Si      +  H2              : 1.0e-10 * (T(neutral)/300)^( 0.5) @ estimate
+ Si+     +  e-      ->  Si                         : 4.9e-12 * (T(electron)/300)^(-0.6) @ Miller et al. [1997]
+ SiH+    +  e-      ->  Si      +  H               : 2.0e-7 * (T(electron)/300)^(-0.5) @ Miller et al. [1997]
+ SiH2+   +  e-      ->  Si      +  H       +  H    : 2.0e-7 * (T(electron)/300)^(-0.5) @ Miller et al. [1997]
+ SiH2+   +  e-      ->  SiH     +  H               : 1.5e-7 * (T(electron)/300)^(-0.5) @ Miller et al. [1997]
+ SiH2+   +  e-      ->  Si      +  H2              : 1.5e-7 * (T(electron)/300)^(-0.5) @ Miller et al. [1997]
+ SiCnHm+ +  e-      ->  Si                         : 1.5e-7 * (T(electron)/300)^(-0.5) @ estimate
+ SiCnHm+ +  e-      ->  products                   : 1.5e-7 * (T(electron)/300)^(-0.5) @ estimate
