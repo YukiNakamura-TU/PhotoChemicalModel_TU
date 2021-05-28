@@ -1,0 +1,16 @@
+CO2, H2O, CO, H, H2, H2O2, HO2, N2, O, O(1D), O2, O3, OH
+OHtest/input/density_3day
+CO2:CO2.dat;1
+H2O:H2O.dat;1
+CO:CO.dat;0
+H:H.dat;0
+H2:H2.dat;0
+H2O2:H2O2.dat;0
+HO2:HO2.dat;0
+N2:N2.dat;0
+O:O.dat;0
+O(1D):O(1D).dat;0
+O2:O2.dat;0
+O3:O3.dat;0
+OH:OH.dat;0
+CO2+:CO2+.dat;1

@@ -116,7 +116,7 @@
 # path    : ./Mars/OHtest/input/density_3day/H.dat
 # mass    : 1.00794000
 # charge  : 0
-# Produced by following 11 reactions:
+# Produced by following 12 reactions:
 
     * R3      H₂O  + hv  →  H      + OH      
     * R9      H₂   + hv  →  H      + H       
@@ -129,6 +129,7 @@
     * R38     O     + OH         →  O₂   + H        
     * R49     CO    + OH + M     →  CO₂  + H  + M   
     * R52     CO₂⁺  + H₂         →  CO₂  + H  + H   
+    * R53      e⁻*  →  H   + OH + e⁻*      
 
 # Lost by following 9 reactions:
 
@@ -148,7 +149,7 @@
 # path    : ./Mars/OHtest/input/density_3day/OH.dat
 # mass    : 17.00734000
 # charge  : 0
-# Produced by following 12 reactions:
+# Produced by following 13 reactions:
 
     * R3      H₂O  + hv  →  H      + OH      
     * R12     HO₂  + hv  →  OH     + O       
@@ -162,6 +163,7 @@
     * R39     O     + HO₂        →  OH   + O₂       
     * R40     O     + H₂O₂       →  OH   + HO₂      
     * R46     HO₂   + O₃         →  OH   + O₂ + O₂  
+    * R53      e⁻*  →  H   + OH + e⁻*      
 
 # Lost by following 12 reactions:
 

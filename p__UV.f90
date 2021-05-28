@@ -200,7 +200,7 @@ contains
     end do
     o3chapxdata(0,1) = 2001.0_dp
 
-    do iwl = 400, 2000
+    do iwl = 400, 1999 ! 2000
       tmpu = 0.0_dp
       tmpl = 0.0_dp
       do jnu = int(1.0e7_dp/dble(iwl+1))-5000+1, int(1.0e7_dp/dble(iwl))-5000

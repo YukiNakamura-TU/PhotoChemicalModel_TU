@@ -64,6 +64,9 @@ module v__tdec
     real(dp), allocatable  :: d_dniu_dPhi_dz(:,:)  ! d/dniu * dPhi/dz
     real(dp), allocatable  :: d_dni0_dPhi_dz(:,:)  ! d/dni0 * dPhi/dz
     real(dp), allocatable  :: d_dnil_dPhi_dz(:,:)  ! d/dnil * dPhi/dz
+    real(dp), allocatable  :: d_dneu_dPhi_dz_add(:,:)  ! d/dneu * dPhi/dz
+    real(dp), allocatable  :: d_dne0_dPhi_dz_add(:,:)  ! d/dne0 * dPhi/dz
+    real(dp), allocatable  :: d_dnel_dPhi_dz_add(:,:)  ! d/dnel * dPhi/dz
     real(dp), allocatable  :: Amtx(:,:), Lmtx(:,:), Umtx(:,:), barr(:), xarr(:), yarr(:), dxarr(:), rarr(:)
     real(dp)               :: max_dn_n(3)
   end type var_

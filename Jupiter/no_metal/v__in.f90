@@ -19,9 +19,9 @@ contains
     spl%planet = 'Jupiter'
 
     ! Calculation settings
-    set%mode = '3D Rot'
-    set%nstep = 30000
-    set%fin_sec = 35729.685e3_dp
+    set%mode = '1D'
+    set%nstep = 2000
+    set%fin_sec = 35729.685e1_dp
     set%dtime_limit = 1.0e5_dp
     set%latitude = 0.0_dp
     set%Ls = 0.0_dp
@@ -113,6 +113,9 @@ contains
     allocate(var%d_dniu_dPhi_dz(spl%nsp_i,grd%nz))
     allocate(var%d_dni0_dPhi_dz(spl%nsp_i,grd%nz))
     allocate(var%d_dnil_dPhi_dz(spl%nsp_i,grd%nz))
+    allocate(var%d_dneu_dPhi_dz_add(spl%nsp_i,grd%nz))
+    allocate(var%d_dne0_dPhi_dz_add(spl%nsp_i,grd%nz))
+    allocate(var%d_dnel_dPhi_dz_add(spl%nsp_i,grd%nz))
     allocate(var%barr(spl%nsp_i*grd%nz), var%xarr(spl%nsp_i*grd%nz))
     allocate(var%yarr(spl%nsp_i*grd%nz), var%dxarr(spl%nsp_i*grd%nz))
     allocate(var%Amtx(spl%nsp_i*grd%nz,2*spl%nsp_i+1))
@@ -360,7 +363,7 @@ contains
 
     ! mass zero error
     do isp = 1, spl%nsp
-      if ( var%m(isp) == 0_dp ) then 
+      if ( var%m(isp) == 0.0_dp ) then 
         write(*,*) 'mass zero error'
         write(*,*) 'please check species list.'
         stop

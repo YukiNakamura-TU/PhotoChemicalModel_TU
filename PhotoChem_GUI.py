@@ -63,6 +63,9 @@ iplnt = 0
 #--------------------------------------------------------------------------------------------------------------------------
 #Planet_list[planet_name, length of reaction_rate_list]
 Planet_list.append(['Mars',len(reaction_rate_list)])
+# special reaction
+reaction_rate_list.append("  e-* -> CO2+ + e- + e-*      : Impact ionization ")
+
 # photoionization
 reaction_rate_list.append(" CO2 + hv -> CO2+   + e-      : Photoionization @ Schunk and Nagy [2001] ")
 reaction_rate_list.append(" CO2 + hv -> CO+    + e- + O  : Photoionization @ Schunk and Nagy [2001] ")
@@ -84,6 +87,10 @@ reaction_rate_list.append(" H2  + hv -> H2+    + e-      : Photoionization @ Sch
 reaction_rate_list.append(" H2  + hv -> H+     + e- + H  : Photoionization @ Schunk and Nagy [2001] ")
 reaction_rate_list.append(" He  + hv -> He+    + e-      : Photoionization @ Schunk and Nagy [2001] ")
 reaction_rate_list.append(" Ar  + hv -> Ar+    + e-      : Photoionization @ Schunk and Nagy [2001] ")
+reaction_rate_list.append(" H2O + hv -> H2O+   + e-      : Photoionization @ Schunk and Nagy [2001] ")
+reaction_rate_list.append(" H2O + hv -> OH+    + e- + H  : Photoionization @ Schunk and Nagy [2001] ")
+reaction_rate_list.append(" H2O + hv -> H+     + e- + OH : Photoionization @ Schunk and Nagy [2001] ")
+reaction_rate_list.append(" H2O + hv -> O+     + e- + H2 : Photoionization @ Schunk and Nagy [2001] ")
 
 # photodissociation
 reaction_rate_list.append(" CO2  + hv -> CO     + O       : Photodissociation # Chaffin et al. [2017] ")
@@ -365,23 +372,91 @@ reaction_rate_list.append(" H3+    + CO    -> HCO+     + H2     : 0.94 * 1.85e-9
 reaction_rate_list.append(" H3+    + CO    -> HOC+     + H2     : 0.06 * 1.85e-9 @ Anicich [1993a] ")
 reaction_rate_list.append(" H3+    + CO2   -> HCO2+    + H2     : 2.50e-9 @ Anicich [1993a] ")
 
+reaction_rate_list.append(" H2O+   + H2    -> H3O+     + H      : 7.60e-10 @ Anicich [1993a] ")
+reaction_rate_list.append(" O+(4S) + H2O   -> H2O+     + O      : 2.60e-9 @ Anicich [1993a] ")
+
+
 ## Shinagawa+ 1987
-#reaction_rate_list.append(" O+(4S) + CO2 -> O2+ + CO : 9.4e-10 @ Schunk and Nagy [1980]")
-#reaction_rate_list.append(" O+(4S) + N2 -> NO+ + N : 1.2e-12 * (300/T(neutral))^1 @ Schunk and Nagy [1980]")
-#reaction_rate_list.append(" O+(4S) + H -> H+ + O : 2.5e-11 * (1/T(neutral))^(-0.5) @ Schunk and Nagy [1980]")
-#reaction_rate_list.append(" CO2+ + O -> CO + O2+ : 1.64e-10 @ Schunk and Nagy [1980]")
-#reaction_rate_list.append(" CO2+ + O -> CO2 + O+(4S) : 9.6e-11 @ Schunk and Nagy [1980]")
-#reaction_rate_list.append(" H+ + O -> O+(4S) + H : 2.2e-11 * (1/T(ion))^(-0.5) @ Schunk and Nagy [1980]")
-#reaction_rate_list.append(" H+ + CO2 -> HCO+ + O : 3.0e-9 @ Schunk and Nagy [1980]")
-#reaction_rate_list.append(" CO2+ + e- -> CO + O : 1.14e-4 * (1/T(electron))^1 @ Schunk and Nagy [1980]")
-#reaction_rate_list.append(" O2+ + e- -> O + O : 1.6e-7 * (300/T(electron))^0.55 @ Schunk and Nagy [1980]")
+reaction_rate_list.append(" O+(4S) + CO2 -> O2+ + CO : 9.4e-10 @ Schunk and Nagy [1980] # Shinagawa et al. [1987]")
+reaction_rate_list.append(" O+(4S) + N2 -> NO+ + N : 1.2e-12 * (300/T(neutral))^1 @ Schunk and Nagy [1980] # Shinagawa et al. [1987]")
+reaction_rate_list.append(" O+(4S) + H -> H+ + O : 2.5e-11 * (1/T(neutral))^(-0.5) @ Schunk and Nagy [1980] # Shinagawa et al. [1987]")
+reaction_rate_list.append(" CO2+ + O -> CO + O2+ : 1.64e-10 @ Schunk and Nagy [1980] # Shinagawa et al. [1987]")
+reaction_rate_list.append(" CO2+ + O -> CO2 + O+(4S) : 9.6e-11 @ Schunk and Nagy [1980] # Shinagawa et al. [1987]")
+reaction_rate_list.append(" H+ + O -> O+(4S) + H : 2.2e-11 * (1/T(ion))^(-0.5) @ Schunk and Nagy [1980] # Shinagawa et al. [1987]")
+reaction_rate_list.append(" H+ + CO2 -> HCO+ + O : 3.0e-9 @ Schunk and Nagy [1980] # Shinagawa et al. [1987]")
+reaction_rate_list.append(" CO2+ + e- -> CO + O : 1.14e-4 * (1/T(electron))^1 @ Schunk and Nagy [1980] # Shinagawa et al. [1987]")
+reaction_rate_list.append(" O2+ + e- -> O + O : 1.6e-7 * (300/T(electron))^0.55 @ Schunk and Nagy [1980] # Shinagawa et al. [1987]")
+
+# Molina-Cuberos+ 2001
+reaction_rate_list.append(" CO2+       +  CO2    + M      -> CO2+CO2    + M          : 2.5e-28  @ Ikezoe et al. [1986]  # R07 in Molina-Cuberos et al. [2001] ")
+reaction_rate_list.append(" CO2+CO2    +  O2              -> O2+        + CO2  + CO2 : 2.5e-28  @ Ikezoe et al. [1986]  # R09 in Molina-Cuberos et al. [2001] ")
+reaction_rate_list.append(" CO2+CO2    +  O2              -> O2+CO2     + CO2        : 2.7e-11  @ Ikezoe et al. [1986]  # R10 in Molina-Cuberos et al. [2001] ")
+#reaction_rate_list.append(" H3O+       +  H2O    + M      -> H3O+H2O    + M          : 3.4e-27  @ Ikezoe et al. [1986]  # R11 in Molina-Cuberos et al. [2001] ")
+reaction_rate_list.append(" H3O+OH     +  H2O             -> H3O+(H2O)  + OH         : 1.4e-9   @ Ikezoe et al. [1986]  # R12 in Molina-Cuberos et al. [2001] ")
+#reaction_rate_list.append(" H3O+H2O    +  H2O    + M      -> H3O+(H2O)2 + M          : 2.3e-27  @ Ikezoe et al. [1986]  # R11 in Molina-Cuberos et al. [2001] ")
+reaction_rate_list.append(" O2+        +  CO2    + M      -> O2+CO2     + M          : 1.7e-29  @ Ikezoe et al. [1986]  # R27 in Molina-Cuberos et al. [2001] ")
+reaction_rate_list.append(" O2+        +  H2O    + M      -> O2+H2O     + M          : 2.8e-28  @ Ikezoe et al. [1986]  # R28 in Molina-Cuberos et al. [2001] ")
+reaction_rate_list.append(" O2+        +  O2     + M      -> O2+O2      + M          : 1.0e-30  @ Turunen et al. [1996] # R30 in Molina-Cuberos et al. [2001] ")
+reaction_rate_list.append(" O2+CO2     +  CO2             -> O2+        + CO2  + CO2 : 2.4e-13  @ Ikezoe et al. [1986]  # R31 in Molina-Cuberos et al. [2001] ")
+reaction_rate_list.append(" O2+CO2     +  H2O             -> O2+H2O     + CO2        : 1.1e-9   @ Ikezoe et al. [1986]  # R33 in Molina-Cuberos et al. [2001] ")
+#reaction_rate_list.append(" O2+CO2     +  CO2    + M      -> O2+(CO2)2  + M          : 1.1e-9   @ Ikezoe et al. [1986]  # R33 in Molina-Cuberos et al. [2001] ")
+#reaction_rate_list.append(" O2+(CO2)2  +  H2O             -> products                : 2.3e-9   @ Ikezoe et al. [1986]  # R34 in Molina-Cuberos et al. [2001] ")
+reaction_rate_list.append(" O2+H2O     +  H2O             -> H3O+       + OH   + O2  : 2.04e-10 @ Ikezoe et al. [1986]  # R35 in Molina-Cuberos et al. [2001] ")
+reaction_rate_list.append(" O2+H2O     +  H2O             -> H3O+OH     + O2         : 9.96e-10 @ Ikezoe et al. [1986]  # R36 in Molina-Cuberos et al. [2001] ")
+#reaction_rate_list.append(" O2+H2O     +  H2O    + M      -> O2+(H2O)2  + M          : 1.3e-27  @ Ikezoe et al. [1986]  # R37 in Molina-Cuberos et al. [2001] ")
+#reaction_rate_list.append(" O2+(H2O)2  +  H2O             -> products                : 3.24e-10 @ Ikezoe et al. [1986]  # R38 in Molina-Cuberos et al. [2001] ")
+reaction_rate_list.append(" O2+O2      +  CO2             -> O2+CO2     + O2         : 4.0e-13  @ Ikezoe et al. [1986]  # R39 in Molina-Cuberos et al. [2001] ")
+reaction_rate_list.append(" O2+O2      +  H2O             -> O2+H2O     + O2         : 1.7e-9   @ Ikezoe et al. [1986]  # R40 in Molina-Cuberos et al. [2001] ")
+
+# Solomon et al. [1981]
+reaction_rate_list.append(" H3O+OH     +  e-              -> H  + OH  + H2O          : 1.4e-6 * (300/T(electron))^0.66 @ R129 in Pavlov et al. [2014] # R9 in Solomon et al. [1981] ")
+
+# Pavlov 2014
+reaction_rate_list.append(" H3O+       +  H2O    + M      -> H3O+(H2O)  + M          : 5.1e-27 * (300/T(neutral))^3.6 && \
+                                                                                       5.1e-27 * (300/T(neutral))^3.9 for T > 300 [K] @ Hamon et al. [2005]; Good et al. [1970a] # R94 in Pavlov [2014] ")
+reaction_rate_list.append(" H3O+(H2O)  +  H2O    + M      -> H3O+(H2O)2 + M          : 2.3e-27 * (300/T(neutral))^7.5 @ Lau et al. [1982]; Good et al. [1970a] # R96 in Pavlov [2014] ")
+reaction_rate_list.append(" H3O+(H2O)2 +  H2O    + M      -> H3O+(H2O)3 + M          : 2.8e-27 * (300/T(neutral))^3.1 && \
+                                                                                       2.4e-27 * (300/T(neutral))^8.1 for T > 290 [K] @ Lau et al. [1982] # R98 in Pavlov [2014] ")
+reaction_rate_list.append(" H3O+(H2O)3 +  H2O    + M      -> H3O+(H2O)4 + M          : 4.6e-27 * (300/T(neutral))^5.1 && \
+                                                                                       9.0e-28 * (300/T(neutral))^14 for T > 250 [K] @ Lau et al. [1982]; Good et al. [1970b] # R100 in Pavlov [2014] ")
+reaction_rate_list.append(" H3O+(H2O)4 +  H2O    + M      -> H3O+(H2O)5 + M          : 1.0e-27 * (300/T(neutral))^7.8 && \
+                                                                                       1.2e-28 * (300/T(neutral))^15.3 for T > 225 [K] @ Lau et al. [1982]; Good et al. [1970b] # R102 in Pavlov [2014] ")
+reaction_rate_list.append(" H3O+(H2O)5 +  H2O    + M      -> H3O+(H2O)6 + M          : 1.0e-27 * (300/T(neutral))^7.8 && \
+                                                                                       1.2e-28 * (300/T(neutral))^15.3 for T > 225 [K]  # R104 in Pavlov [2014] ")
+reaction_rate_list.append(" H3O+(H2O)6 +  H2O    + M      -> H3O+(H2O)7 + M          : 1.0e-27 * (300/T(neutral))^7.8 && \
+                                                                                       1.2e-28 * (300/T(neutral))^15.3 for T > 225 [K]  # R106 in Pavlov [2014] ")
+
+reaction_rate_list.append(" H3O+(H2O)  + M                -> H3O+       + H2O  + M   : 0.074 * (300/T(neutral))^4.6 * exp(-16164/T(neutral)) && \
+                                                                                       0.074 * (300/T(neutral))^4.9 * exp(-16164/T(neutral)) for T > 300 [K]  # R95 in Pavlov [2014] (reverse reaction) ")
+reaction_rate_list.append(" H3O+(H2O)2 + M                -> H3O+(H2O)  + H2O  + M   : 2.6e-3 * (300/T(neutral))^8.5 * exp(-10272/T(neutral)) # R97 in Pavlov [2014] (reverse reaction) ")
+reaction_rate_list.append(" H3O+(H2O)3 + M                -> H3O+(H2O)2 + H2O  + M   : 0.083 * (300/T(neutral))^4.1 * exp(-8661/T(neutral)) && \
+                                                                                       0.071 * (300/T(neutral))^9.1 * exp(-8661/T(neutral)) for T > 290 [K]  # R99 in Pavlov [2014] (reverse reaction) ")
+reaction_rate_list.append(" H3O+(H2O)4 + M                -> H3O+(H2O)3 + H2O  + M   : 0.020 * (300/T(neutral))^6.1 * exp(-6143/T(neutral)) && \
+                                                                                       3.9e-3 * (300/T(neutral))^15 * exp(-6143/T(neutral)) for T > 250 [K]  # R101 in Pavlov [2014] (reverse reaction) ")
+reaction_rate_list.append(" H3O+(H2O)5 + M                -> H3O+(H2O)4 + H2O  + M   : 5.7e-3 * (300/T(neutral))^8.8 * exp(-5841/T(neutral)) && \
+                                                                                       6.7e-4 * (300/T(neutral))^16.3 * exp(-5841/T(neutral)) for T > 225 [K]  # R103 in Pavlov [2014] (reverse reaction) ")
+reaction_rate_list.append(" H3O+(H2O)6 + M                -> H3O+(H2O)5 + H2O  + M   : 0.029 * (300/T(neutral))^8.8 * exp(-5640/T(neutral)) && \
+                                                                                       3.4e-3 * (300/T(neutral))^16.3 * exp(-5640/T(neutral)) for T > 225 [K]  # R105 in Pavlov [2014] (reverse reaction) ")
+reaction_rate_list.append(" H3O+(H2O)7 + M                -> H3O+(H2O)6 + H2O  + M   : 0.030 * (300/T(neutral))^8.8 * exp(-5187/T(neutral)) && \
+                                                                                       3.5e-3 * (300/T(neutral))^16.3 * exp(-5187/T(neutral)) for T > 225 [K]  # R107 in Pavlov [2014] (reverse reaction) ")
+
+reaction_rate_list.append(" H3O+       +  e-              -> H          + H2O        : 7.6e-7 * (300/T(electron))^0.83 && \
+                                                                                       1.05e-6 * (300/T(electron))^1.1 for T > 1000 [K] @ Neau et al. [2000] # R111 in Pavlov [2014] ")
+reaction_rate_list.append(" H3O+(H2O)  +  e-              -> H          + 2H2O       : 1.4e-6 * (300/T(electron))^0.66 && \
+                                                                                       1.54e-6 * (300/T(electron))^0.85 for T > 500 [K] @ Ojekull et al. [2007] # R112 in Pavlov [2014] ")
+reaction_rate_list.append(" H3O+(H2O)2 +  e-              -> H          + 3H2O       : 2.48e-6 * (300/T(electron))^0.763 @ Ojekull et al. [2007] # R113 in Pavlov [2014] ")
+reaction_rate_list.append(" H3O+(H2O)3 +  e-              -> H          + 4H2O       : 5.5e-7 * (300/T(electron))^0.781 @ Ojekull et al. [2008] # R114 in Pavlov [2014] ")
+reaction_rate_list.append(" H3O+(H2O)4 +  e-              -> H          + 5H2O       : 3.80e-6 * (300/T(electron))^0.687 @ Ojekull et al. [2008] # R115 in Pavlov [2014] ")
+reaction_rate_list.append(" H3O+(H2O)5 +  e-              -> H          + 6H2O       : 2.25e-6 * (300/T(electron))^0.652 @ Ojekull et al. [2008] # R116 in Pavlov [2014] ")
+reaction_rate_list.append(" H3O+(H2O)6 +  e-              -> H          + 7H2O       : 1.3e-6 * (300/T(electron))^0.652  # R116 in Pavlov [2014] ")
+reaction_rate_list.append(" H3O+(H2O)7 +  e-              -> H          + 8H2O       : 7.8e-7 * (300/T(electron))^0.652  # R116 in Pavlov [2014] ")
 
 # Chaffin+ 2017
-reaction_rate_list.append(" O     + O  + M    -> O2   + M        : 5.4e-33 * (300/T(neutral))^3.25 # Chaffin et al. [2017] ")
-reaction_rate_list.append(" O     + O2 + N2   -> O3   + N2       : 5.0e-35 * exp(724/T(neutral)) # Chaffin et al. [2017] ")
-reaction_rate_list.append(" O     + O2 + CO2  -> O3   + CO2      : 1.5e-33 * (300/T(neutral))^2.4 # Chaffin et al. [2017] ")
+reaction_rate_list.append(" O     + O   + M   -> O2   + M        : 5.4e-33 * (300/T(neutral))^3.25 # Chaffin et al. [2017] ")
+reaction_rate_list.append(" O     + O2  + N2  -> O3   + N2       : 5.0e-35 * exp(724/T(neutral)) # Chaffin et al. [2017] ")
+reaction_rate_list.append(" O     + O2  + CO2 -> O3   + CO2      : 1.5e-33 * (300/T(neutral))^2.4 # Chaffin et al. [2017] ")
 reaction_rate_list.append(" O     + O3        -> O2   + O2       : 8.0e-12 * exp(-2060/T(neutral)) # Chaffin et al. [2017] ")
-reaction_rate_list.append(" O     + CO + M    -> CO2  + M        : 2.2e-33 * exp(-1780/T(neutral)) # Chaffin et al. [2017] ")
+reaction_rate_list.append(" O     + CO  + M   -> CO2  + M        : 2.2e-33 * exp(-1780/T(neutral)) # Chaffin et al. [2017] ")
 reaction_rate_list.append(" O(1D) + O2        -> O    + O2       : 3.2e-11 * exp(70/T(neutral)) # Chaffin et al. [2017] ")
 reaction_rate_list.append(" O(1D) + O3        -> O2   + O2       : 1.2e-10 # Chaffin et al. [2017] ")
 reaction_rate_list.append(" O(1D) + O3        -> O    + O  + O2  : 1.2e-10 # Chaffin et al. [2017] ")
@@ -390,21 +465,21 @@ reaction_rate_list.append(" O(1D) + CO2       -> O    + CO2      : 7.5e-11 * exp
 reaction_rate_list.append(" O(1D) + H2O       -> OH   + OH       : 1.63e-10 * exp(60/T(neutral)) # Chaffin et al. [2017] ")
 reaction_rate_list.append(" H2    + O         -> OH   + H        : 6.34e-12 * exp(-4000/T(neutral)) # Chaffin et al. [2017] ")
 reaction_rate_list.append(" OH    + H2        -> H2O  + H        : 9.01e-13 * exp(-1526/T(neutral)) # Chaffin et al. [2017] ")
-reaction_rate_list.append(" H     + H  + CO2  -> H2   + CO2      : 1.6e-32 * (298/T(neutral))^2.27 # Chaffin et al. [2017] ")
-reaction_rate_list.append(" H     + OH + CO2  -> H2O  + CO2      : 1.292e-30 * (300/T(neutral))^2 # Chaffin et al. [2017] ")
+reaction_rate_list.append(" H     + H   + CO2 -> H2   + CO2      : 1.6e-32 * (298/T(neutral))^2.27 # Chaffin et al. [2017] ")
+reaction_rate_list.append(" H     + OH  + CO2 -> H2O  + CO2      : 1.292e-30 * (300/T(neutral))^2 # Chaffin et al. [2017] ")
 reaction_rate_list.append(" H     + HO2       -> OH   + OH       : 7.2e-11 # Chaffin et al. [2017] ")
 reaction_rate_list.append(" H     + HO2       -> H2O  + O(1D)    : 1.6e-12 # Chaffin et al. [2017] ")
 reaction_rate_list.append(" H     + HO2       -> H2   + O2       : 3.45e-12 # Chaffin et al. [2017] ")
 reaction_rate_list.append(" H     + H2O2      -> HO2  + H2       : 2.8e-12 * exp(-1890/T(neutral)) # Chaffin et al. [2017] ")
 reaction_rate_list.append(" H     + H2O2      -> H2O  + OH       : 1.7e-11 * exp(-1800/T(neutral)) # Chaffin et al. [2017] ")
-reaction_rate_list.append(" H     + O2 + M    -> HO2  + M        : k0 = 8.8e-32 * (300/T(neutral))^1.3 && \
+reaction_rate_list.append(" H     + O2  + M   -> HO2  + M        : k0 = 8.8e-32 * (300/T(neutral))^1.3 && \
                                                                    kinf = 7.5e-11 * (300/T(neutral))^(-0.2) # Chaffin et al. [2017] ")
 reaction_rate_list.append(" H     + O3        -> OH   + O2       : 1.4e-10 * exp(-470/T(neutral)) # Chaffin et al. [2017] ")
 reaction_rate_list.append(" O     + OH        -> O2   + H        : 1.8e-11 * exp(180/T(neutral)) # Chaffin et al. [2017] ")
 reaction_rate_list.append(" O     + HO2       -> OH   + O2       : 3.0e-11 * exp(200/T(neutral)) # Chaffin et al. [2017] ")
 reaction_rate_list.append(" O     + H2O2      -> OH   + HO2      : 1.4e-12 * exp(-2000/T(neutral)) # Chaffin et al. [2017] ")
 reaction_rate_list.append(" OH    + OH        -> H2O  + O        : 1.8e-12 # Chaffin et al. [2017] ")
-reaction_rate_list.append(" OH    + OH + M    -> H2O2 + M        : k0 = 8.97e-31 * (300/T(neutral))^1 && \
+reaction_rate_list.append(" OH    + OH  + M   -> H2O2 + M        : k0 = 8.97e-31 * (300/T(neutral))^1 && \
                                                                    kinf = 2.6e-11 # Chaffin et al. [2017] ")
 reaction_rate_list.append(" OH    + O3        -> HO2  + O2       : 1.7e-12 * exp(-940/T(neutral)) # Chaffin et al. [2017] ")
 reaction_rate_list.append(" OH    + HO2       -> H2O  + O2       : 4.8e-11 * exp(250/T(neutral)) # Chaffin et al. [2017] ")
@@ -412,15 +487,13 @@ reaction_rate_list.append(" OH    + H2O2      -> H2O  + HO2      : 1.8e-12 # Cha
 reaction_rate_list.append(" HO2   + O3        -> OH   + O2 + O2  : 1.0e-14 * exp(-490/T(neutral)) # Chaffin et al. [2017] ")
 reaction_rate_list.append(" HO2   + HO2       -> H2O2 + O2       : 3.0e-13 * exp(460/T(neutral)) # Chaffin et al. [2017] ")
 reaction_rate_list.append(" HO2   + HO2 + M   -> H2O2 + O2 + M   : 4.2e-33 * exp(920/T(neutral)) # Chaffin et al. [2017] ")
-reaction_rate_list.append(" CO    + OH + M    -> CO2  + H  + M   : k0M = 1.5e-13 * (300/T(neutral))^(-0.6) && \
+reaction_rate_list.append(" CO    + OH  + M   -> CO2  + H  + M   : k0M = 1.5e-13 * (300/T(neutral))^(-0.6) && \
                                                                    kinfM = 2.1e9 * (300/T(neutral))^(-6.1) # Chaffin et al. [2017] ")
-reaction_rate_list.append(" CO    + OH + M    -> HOCO + M        : k0 = 5.9e-33 * (300/T(neutral))^1.4 && \
+reaction_rate_list.append(" CO    + OH  + M   -> HOCO + M        : k0 = 5.9e-33 * (300/T(neutral))^1.4 && \
                                                                    kinf = 1.1e-12 * (300/T(neutral))^(-1.3) # Chaffin et al. [2017] ")
 reaction_rate_list.append(" HOCO  + O2        -> HO2  + CO2      : 2.0e-12 # Chaffin et al. [2017] ")
 reaction_rate_list.append(" CO2+  + H2        -> CO2  + H  + H   : 8.7e-10 # Chaffin et al. [2017] ") # it's only used to reproduce Chaffin+2017, otherwise remove it!
 
-# special reaction
-reaction_rate_list.append("  e-* -> H   + OH + e-*      : Impact ionization ")
 
 
 
@@ -1039,13 +1112,19 @@ doi_list.append(["Zipf [1980]", "Zipf, E. C. (1980), The dissociative recombinat
 
 
 
-
+# isotope : O^{18} is better ?
 
 ###########################################################################################################################
 # reaction -> unicode for display
 # visionally make everything good by unicode
 def reaction_unicode(char):
+    nlabel = 0 # ex) if nH2O -> nlabel = 1
     char = re.sub('->' , ' \u2192 ', char)
+    if re.compile('\s\d').search(char):
+        nlabel = 1
+        num = re.findall('\s+(\d+?)', char)
+        char = re.sub('\s+(\d+?)', ' ?n?', char)
+
     char = re.sub('2' , '\u2082', char)
     char = re.sub('3' , '\u2083', char)
     char = re.sub('4' , '\u2084', char)
@@ -1067,6 +1146,9 @@ def reaction_unicode(char):
     char = re.sub('\(\u2084S\)' , '(\u2074S)', char)
     char = re.sub('\(v>\=\u2082\)' , '(v>=2)', char)
     char = re.sub('\(v>\=\u2084\)' , '(v>=4)', char)
+
+    if nlabel == 1:
+        char = re.sub('\?n\?', num[0], char)
 
     return char
 
@@ -1117,6 +1199,18 @@ def rate_unicode(rate):
     rate = re.sub('\^8.' , '\u2078\u00B7', rate)
     rate = re.sub('\^9.' , '\u2079\u00B7', rate)
     rate = re.sub('\^0.' , '\u2070\u00B7', rate)
+
+    rate = re.sub('\^10.' , '\u00B9\u2070\u00B7', rate)
+    rate = re.sub('\^11.' , '\u00B9\u00B9\u00B7', rate)
+    rate = re.sub('\^12.' , '\u00B9\u00B2\u00B7', rate)
+    rate = re.sub('\^13.' , '\u00B9\u00B3\u00B7', rate)
+    rate = re.sub('\^14.' , '\u00B9\u2074\u00B7', rate)
+    rate = re.sub('\^15.' , '\u00B9\u2075\u00B7', rate)
+    rate = re.sub('\^16.' , '\u00B9\u2076\u00B7', rate)
+    rate = re.sub('\^17.' , '\u00B9\u2077\u00B7', rate)
+    rate = re.sub('\^18.' , '\u00B9\u2078\u00B7', rate)
+    rate = re.sub('\^19.' , '\u00B9\u2079\u00B7', rate)
+
     # .**
     rate = re.sub('\u00B70' , '\u00B7\u2070', rate)
     rate = re.sub('\u00B71' , '\u00B7\u00B9', rate)
@@ -1385,6 +1479,12 @@ def reaction_analysis(action, iplnt, reaction_chk_bln, fix_species_bln, dir0):
             for j in range(len(product[ich])):
                 product[ich][j] = product[ich][j].lstrip()
                 product[ich][j] = product[ich][j].rstrip()
+                if re.compile('^\d+?.*').search(product[ich][j]):
+                    num = re.findall('^(\d+?)', product[ich][j])
+                    product[ich][j] = re.sub('^(\d+?)', '', product[ich][j])
+                    for k in range(int(num[0])-1):
+                        product[ich].append(product[ich][j])
+            #print(product[ich])
 
             reaction_type_list.append(itype)
 
@@ -1448,8 +1548,8 @@ def reaction_analysis(action, iplnt, reaction_chk_bln, fix_species_bln, dir0):
 
     # reactant, product list
     #[[0,0,0,0,0,0,0,0,0,0],[],[],,,]
-    reactant_list = [ [0 for isp in range(10)] for ich in range(len(reactant))]
-    product_list  = [ [0 for isp in range(10)] for ich in range(len(product))]
+    reactant_list = [ [0 for isp in range(20)] for ich in range(len(reactant))]
+    product_list  = [ [0 for isp in range(20)] for ich in range(len(product))]
 
 
     for ich in range(len(reactant)):
@@ -1567,18 +1667,31 @@ def reaction_analysis(action, iplnt, reaction_chk_bln, fix_species_bln, dir0):
 
         ##### Mass calculation ################################################
         # remove unnecessary symbols
-        species_split = species[isp]
-        species_split = re.sub('\(1D\)', '', species_split)
-        species_split = re.sub('\(1S\)', '', species_split)
-        species_split = re.sub('\(2D\)', '', species_split)
-        species_split = re.sub('\(2P\)', '', species_split)
-        species_split = re.sub('\(3P\)', '', species_split)
-        species_split = re.sub('\(4P\)', '', species_split)
-        species_split = re.sub('\(4S\)', '', species_split)
-        species_split = re.sub('\(v>=2\)', '', species_split)
-        species_split = re.sub('\(v>=4\)', '', species_split)
-        species_split = re.sub('\+', '', species_split) #string until here
-        species_split = re.findall('[A-Z][^A-Z]*', species_split) #become list
+        species_tmp = species[isp]
+        species_tmp = re.sub('\(1D\)', '', species_tmp)
+        species_tmp = re.sub('\(1S\)', '', species_tmp)
+        species_tmp = re.sub('\(2D\)', '', species_tmp)
+        species_tmp = re.sub('\(2P\)', '', species_tmp)
+        species_tmp = re.sub('\(3P\)', '', species_tmp)
+        species_tmp = re.sub('\(4P\)', '', species_tmp)
+        species_tmp = re.sub('\(4S\)', '', species_tmp)
+        species_tmp = re.sub('\(v>=2\)', '', species_tmp)
+        species_tmp = re.sub('\(v>=4\)', '', species_tmp)
+        species_tmp = re.sub('\+', '', species_tmp) #string until here
+
+        # ex) (H2O)2 -> H2OH2O
+        if re.compile('\(.*\)\d+').search(species_tmp): #find spcies including (***)n
+            species_brackets = re.findall('\((.*)\)\d+', species_tmp) #find spcies in brackets
+            num_str = re.findall('\)(\d+)', species_tmp) #find number outside the brackets
+            num_int = int(num_str[0], base = 10) #string -> number, base=10: demical number
+            for k in range(num_int-1): #loop "number" times, ex) O2 -> 2 times, O3 -> 3 times
+                species_tmp = re.sub('\)(\d+)', '', species_tmp) #delete number, ex O2-> O
+                species_tmp = re.sub('\(', '', species_tmp) #delete number, ex O2-> O
+                species_tmp = re.sub('\)', '', species_tmp) #delete number, ex O2-> O
+                species_tmp = species_tmp + species_brackets[0] #ex) append O
+            #print(species_tmp)
+
+        species_split = re.findall('[A-Z][^A-Z]*', species_tmp) #become list
 
         for j in range(len(species_split)):
             num_str = re.findall('[A-Z]*(\d*)', species_split[j]) #find spcies which start with capital and end with number
@@ -2458,6 +2571,9 @@ def reaction_analysis(action, iplnt, reaction_chk_bln, fix_species_bln, dir0):
             f.write(   '    allocate(var%d_dniu_dPhi_dz(spl%nsp_i,grd%nz))\n')
             f.write(   '    allocate(var%d_dni0_dPhi_dz(spl%nsp_i,grd%nz))\n')
             f.write(   '    allocate(var%d_dnil_dPhi_dz(spl%nsp_i,grd%nz))\n')
+            f.write(   '    allocate(var%d_dneu_dPhi_dz_add(spl%nsp_i,grd%nz))\n')
+            f.write(   '    allocate(var%d_dne0_dPhi_dz_add(spl%nsp_i,grd%nz))\n')
+            f.write(   '    allocate(var%d_dnel_dPhi_dz_add(spl%nsp_i,grd%nz))\n')
             f.write(   '    allocate(var%barr(spl%nsp_i*grd%nz), var%xarr(spl%nsp_i*grd%nz))\n')
             f.write(   '    allocate(var%yarr(spl%nsp_i*grd%nz), var%dxarr(spl%nsp_i*grd%nz))\n')
             f.write(   '    allocate(var%Amtx(spl%nsp_i*grd%nz,2*spl%nsp_i+1))\n')
@@ -2509,7 +2625,7 @@ def reaction_analysis(action, iplnt, reaction_chk_bln, fix_species_bln, dir0):
             f.write(   '\n')
             f.write(   '    ! mass zero error\n')
             f.write(   '    do isp = 1, spl%nsp\n')
-            f.write(   '      if ( var%m(isp) == 0_dp ) then \n')
+            f.write(   '      if ( var%m(isp) == 0.0_dp ) then \n')
             f.write(   '        write(*,*) \'mass zero error\'\n')
             f.write(   '        write(*,*) \'please check species list.\'\n')
             f.write(   '        stop\n')
@@ -2773,6 +2889,12 @@ def reaction_analysis(action, iplnt, reaction_chk_bln, fix_species_bln, dir0):
             print('CMakeList updated!')
 
             # Run Model
+            #os.system('cd build')
+            #os.system('cmake ..')
+            #os.system('cmake --build .')
+            #os.system('cd ..')
+            #os.system('./e__main')
+
             os.system('./PhotoChemistry.sh')
 
             path = './'+Planet+'/'+dir0+'/settings/plt_species.dat'
@@ -2839,8 +2961,8 @@ def callback_update_reaction_window(main_canvas, xbar, ybar, frame, upper_canvas
         for ich in range(len(reaction_rate_list)):
             search_list[ich] = 1
         reaction_window(iplnt, Planet, list_s, list_e, dir0, version,
-                             reaction_chk_bln, fix_species_bln, input_species_char,
-                             search_list)
+                        reaction_chk_bln, fix_species_bln, input_species_char,
+                        search_list)
     return dummy
 
 # search button
@@ -2887,8 +3009,8 @@ def callback_search_reaction_list(main_canvas, xbar, ybar, frame, upper_canvas, 
             upper_canvas.destroy()
 
             reaction_window(iplnt, Planet, list_s, list_e, dir0, version,
-                                 reaction_chk_bln, fix_species_bln, input_species_char,
-                                 search_list)
+                            reaction_chk_bln, fix_species_bln, input_species_char,
+                            search_list)
     return dummy
 
 #reaction analysis
@@ -3325,8 +3447,8 @@ def callback_enter_boundary_condition_input_window(Planet, dir0, bc_input_win, b
     return dummy
 
 def callback_done_boundary_condition_set_window(Planet, dir0, bc_species, bcvl, bcvu, bcset_win, 
-                                                      lbc_val1, lbc_val2, lbc_val3,
-                                                      ubc_val1, ubc_val2, ubc_val3):
+                                                lbc_val1, lbc_val2, lbc_val3,
+                                                ubc_val1, ubc_val2, ubc_val3):
     def dummy():
 
         path = './'+Planet+'/'+dir0+'/settings/boundary_condition.dat'
@@ -5295,7 +5417,7 @@ def reaction_window(iplnt, Planet, list_s, list_e, dir0, version,
     chk_reaction_R.place(x = 200, y = 12)
     chk_reaction_R.bind("<MouseWheel>", lambda e:main_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))
     #rate
-    chk_rate_all = tk.Text(frame, font=("",12), width = 45, height=nlist*30, highlightthickness=0)
+    chk_rate_all = tk.Text(frame, font=("",12), width = 100, height=nlist*30, highlightthickness=0)
     chk_rate_all.insert(tk.INSERT, all_merged_rate_text)
     chk_rate_all.place(x = 400, y = 12)
     chk_rate_all.bind("<MouseWheel>", lambda e:main_canvas.yview_scroll(-1*(1 if e.delta>0 else -1),'units'))

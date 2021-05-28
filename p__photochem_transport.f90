@@ -40,6 +40,7 @@ contains
     real(dp) dz0, dzl, mi, niu, ni0, nil, nip, nim, neu, ne0, nel, nep, nem
     real(dp) Diu, Di0, Dil, Dip, Dim, Kiu, Ki0, Kil, Kip, Kim
     real(dp) Tiu, Ti0, Til, Teu, Te0, Tel, Tep, Tem, Tip, Tim
+    real(dp) Te_Tiu, Te_Ti0, Te_Til, Te_Tip, Te_Tim
     real(dp) Peu, Pe0, Pel, Pep, Pem
     real(dp) dni_dzp, dni_dzm, dne_dzp, dne_dzm
     real(dp) dTi_dzp, dTi_dzm, dTe_dzp, dTe_dzm, dPe_dzp, dPe_dzm
@@ -104,7 +105,7 @@ contains
           end if
         end do
         Tn(iz) = var%Tn(iz)
-        Ti(iz) = var%Ti(iz)
+        Ti(iz) = var%Ti(iz) 
         Te(iz) = var%Te(iz)
       end do
 
@@ -193,6 +194,12 @@ contains
               Tep = ( Teu + Te0 ) / 2.0_dp
               Tem = ( Te0 + Tel ) / 2.0_dp
 
+              Te_Tiu = Te(iz+1) / Ti(iz+1)
+              Te_Ti0 = Te(iz  ) / Ti(iz  )
+              Te_Til = Te(iz-1) / Ti(iz-1)
+              Te_Tip = ( Te_Tiu + Te_Ti0 ) / 2.0_dp
+              Te_Tim = ( Te_Ti0 + Te_Til ) / 2.0_dp
+
               Peu = neu * cst%k_B * Teu
               Pe0 = ne0 * cst%k_B * Te0
               Pel = nel * cst%k_B * Tel
@@ -212,8 +219,8 @@ contains
 
               if ( neu > 0.0_dp .and. ne0 > 0.0_dp .and. nel > 0.0_dp &
                   & .and. var%q(isp) /= 0.0_dp ) then
-                gradPep = (Tep/Tip) / Pep * dPe_dzp
-                gradPem = (Tem/Tim) / Pem * dPe_dzm
+                gradPep = Tep/Tip / nep * dne_dzp + 1.0_dp / Tip * dTe_dzp
+                gradPem = Tem/Tim / nem * dne_dzm + 1.0_dp / Tim * dTe_dzm
               else
                 gradPep = 0.0_dp
                 gradPem = 0.0_dp
@@ -248,6 +255,13 @@ contains
               var%d_dni0_dPhi_dz(jsp,iz) =    (Dip+Kip)/dz0/dz0 - zetap/2.0_dp/dz0   &
                 &                           + (Dim+Kim)/dzl/dzl + zetam/2.0_dp/dzl
               var%d_dnil_dPhi_dz(jsp,iz) =  - (Dim+Kim)/dzl/dzl + zetam/2.0_dp/dzl
+
+              if (var%q(isp) > 0.0_dp) then 
+                var%d_dneu_dPhi_dz_add(jsp,iz) = - (niu+ni0)*Dip*Tep/Tip/nep/dz0/2.0_dp/dz0
+                var%d_dne0_dPhi_dz_add(jsp,iz) =   (niu+ni0)*Dip*Tep/Tip/nep/dz0/2.0_dp/dz0 &
+                  &                              + (ni0+nil)*Dim*Tem/Tim/nem/dzl/2.0_dp/dzl
+                var%d_dnel_dPhi_dz_add(jsp,iz) = - (ni0+nil)*Dim*Tem/Tim/nem/dzl/2.0_dp/dzl
+              end if
 
               var%Phip(jsp,iz) = - (Dip+Kip)*dni_dzp - zetap*nip
               var%Phim(jsp,iz) = - (Dim+Kim)*dni_dzm - zetam*nim
@@ -294,6 +308,10 @@ contains
             Te0 = Te(1)
             Tep = ( Teu + Te0 ) / 2.0_dp
 
+            Te_Tiu = Te(2) / Ti(2)
+            Te_Ti0 = Te(1) / Ti(1)
+            Te_Tip = ( Te_Tiu + Te_Ti0 ) / 2.0_dp
+
             Peu = neu * cst%k_B * Teu
             Pe0 = ne0 * cst%k_B * Te0
             Pep = nep * cst%k_B * Tep
@@ -306,7 +324,7 @@ contains
 
             if ( neu > 0.0_dp .and. ne0 > 0.0_dp &
                 & .and. var%q(isp) /= 0.0_dp ) then
-              gradPep = (Tep/Tip) / Pep * dPe_dzp
+              gradPep = Tep/Tip / nep * dne_dzp + 1.0_dp / Tip * dTe_dzp
             else
               gradPep = 0.0_dp
             end if
@@ -329,6 +347,12 @@ contains
             var%d_dniu_dPhi_dz(jsp,1) =  - (Dip+Kip)/dz0/dz0 - zetap/2.0_dp/dz0
             var%d_dni0_dPhi_dz(jsp,1) =    (Dip+Kip)/dz0/dz0 - zetap/2.0_dp/dz0
             var%d_dnil_dPhi_dz(jsp,1) = 0.0_dp
+
+            if (var%q(isp) > 0.0_dp) then 
+              var%d_dneu_dPhi_dz_add(jsp,1) = - (niu+ni0)*Dip*Tep/Tip/nep/dz0/2.0_dp/dz0
+              var%d_dne0_dPhi_dz_add(jsp,1) =   (niu+ni0)*Dip*Tep/Tip/nep/dz0/2.0_dp/dz0 
+              var%d_dnel_dPhi_dz_add(jsp,1) = 0.0_dp
+            end if
 
             var%Phip(jsp,1) = - (Dip+Kip)*dni_dzp - zetap*nip
 
@@ -384,6 +408,10 @@ contains
             Tel = Te(grd%nz-1)
             Tem = ( Te0 + Tel ) / 2.0_dp
 
+            Te_Ti0 = Te(grd%nz) / Ti(grd%nz)
+            Te_Til = Te(grd%nz-1) / Ti(grd%nz-1)
+            Te_Tim = ( Te_Ti0 + Te_Til ) / 2.0_dp
+
             Pe0 = ne0 * cst%k_B * Te0
             Pel = nel * cst%k_B * Tel
             Pem = nem * cst%k_B * Tem
@@ -396,7 +424,7 @@ contains
 
             if ( ne0 > 0.0_dp .and. nel > 0.0_dp &
                 & .and. var%q(isp) /= 0.0_dp ) then
-              gradPem = (Tem/Tim) / Pem * dPe_dzm
+              gradPem = Tem/Tim / nem * dne_dzm + 1.0_dp / Tim * dTe_dzm
             else
               gradPem = 0.0_dp
             end if
@@ -419,6 +447,12 @@ contains
             var%d_dniu_dPhi_dz(jsp,grd%nz) = 0.0_dp
             var%d_dni0_dPhi_dz(jsp,grd%nz) =    (Dim+Kim)/dzl/dzl + zetam/2.0_dp/dzl
             var%d_dnil_dPhi_dz(jsp,grd%nz) =  - (Dim+Kim)/dzl/dzl + zetam/2.0_dp/dzl
+
+            if (var%q(isp) > 0.0_dp) then 
+              var%d_dneu_dPhi_dz_add(jsp,grd%nz) = 0.0_dp
+              var%d_dne0_dPhi_dz_add(jsp,grd%nz) =   (ni0+nil)*Dim*Tem/Tim/nem/dzl/2.0_dp/dzl
+              var%d_dnel_dPhi_dz_add(jsp,grd%nz) = - (ni0+nil)*Dim*Tem/Tim/nem/dzl/2.0_dp/dzl
+            end if
 
             var%Phim(jsp,iz) = - (Dim+Kim)*dni_dzm - zetam*nim
 

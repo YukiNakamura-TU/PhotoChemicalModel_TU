@@ -173,7 +173,7 @@ contains
 
         if ( spl%reaction_type_char(ich) == 'electron impact' ) then
 
-          open(11, file = './Mars/OHtest/input/P_CO2+(B2Sigmau+)_2017_09_13.dat', status = 'unknown' )
+          open(11, file = './Mars/P_CO2+_2017_09_13.dat', status = 'unknown' )
             do iz = 1, grd%nz
               read(11,*)
               read(11,*) tmp, tmpzarr1(iz), tmpzarr2(iz)
@@ -185,7 +185,7 @@ contains
           do iz = 1, grd%nz
           do iy = 1, grd%ny
           do ix = 1, grd%nx
-            var%ki_special(1,ix,iy,iz) = ((tmpzarr1(iz) + tmpzarr2(iz))*1.0e6_dp )*1.0e1_dp
+            !var%ki_special(1,ix,iy,iz) = ((tmpzarr1(iz) + tmpzarr2(iz))*1.0e6_dp )
           end do
           end do
           !print *, ich, iz, var%ki_special(1,1,1,iz)

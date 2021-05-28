@@ -62,7 +62,7 @@ contains
     ! reactions, chemical species
     spl%nsp     = 16
     spl%nsp_i   = 12
-    spl%nch     = 52
+    spl%nch     = 53
     spl%nch_P   = 33
     spl%nch_L   = 25
     spl%n_Jlist = 84
@@ -113,6 +113,9 @@ contains
     allocate(var%d_dniu_dPhi_dz(spl%nsp_i,grd%nz))
     allocate(var%d_dni0_dPhi_dz(spl%nsp_i,grd%nz))
     allocate(var%d_dnil_dPhi_dz(spl%nsp_i,grd%nz))
+    allocate(var%d_dneu_dPhi_dz_add(spl%nsp_i,grd%nz))
+    allocate(var%d_dne0_dPhi_dz_add(spl%nsp_i,grd%nz))
+    allocate(var%d_dnel_dPhi_dz_add(spl%nsp_i,grd%nz))
     allocate(var%barr(spl%nsp_i*grd%nz), var%xarr(spl%nsp_i*grd%nz))
     allocate(var%yarr(spl%nsp_i*grd%nz), var%dxarr(spl%nsp_i*grd%nz))
     allocate(var%Amtx(spl%nsp_i*grd%nz,2*spl%nsp_i+1))
@@ -204,7 +207,7 @@ contains
 
     ! mass zero error
     do isp = 1, spl%nsp
-      if ( var%m(isp) == 0_dp ) then 
+      if ( var%m(isp) == 0.0_dp ) then 
         write(*,*) 'mass zero error'
         write(*,*) 'please check species list.'
         stop

@@ -1,0 +1,778 @@
+############################################
+############### species info ###############
+############################################
+
+
+### Fixed : 14 species ###
+
+--------------------------------------------
+ CO₂
+--------------------------------------------
+# path    : ./Mars/OHtest/input/density_3day/CO2.dat
+# mass    : 44.00950000
+# charge  : 0
+
+--------------------------------------------
+ CO⁺
+--------------------------------------------
+# mass    : 28.00955142
+# charge  : 1
+
+--------------------------------------------
+ C⁺
+--------------------------------------------
+# mass    : 12.01015142
+# charge  : 1
+
+--------------------------------------------
+ O⁺(²D)
+--------------------------------------------
+# mass    : 15.99885142
+# charge  : 1
+
+--------------------------------------------
+ O⁺(²P)
+--------------------------------------------
+# mass    : 15.99885142
+# charge  : 1
+
+--------------------------------------------
+ C
+--------------------------------------------
+# mass    : 12.01070000
+# charge  : 0
+
+--------------------------------------------
+ H₂⁺
+--------------------------------------------
+# mass    : 2.01533142
+# charge  : 1
+
+--------------------------------------------
+ H₂O
+--------------------------------------------
+# path    : ./Mars/OHtest/input/density_3day/H2O.dat
+# mass    : 18.01528000
+# charge  : 0
+
+--------------------------------------------
+ OH⁺
+--------------------------------------------
+# mass    : 17.00679142
+# charge  : 1
+
+--------------------------------------------
+ O⁺
+--------------------------------------------
+# mass    : 15.99885142
+# charge  : 1
+
+--------------------------------------------
+ NO⁺
+--------------------------------------------
+# mass    : 30.00555142
+# charge  : 1
+
+--------------------------------------------
+ N
+--------------------------------------------
+# mass    : 14.00670000
+# charge  : 0
+
+--------------------------------------------
+ HCO⁺
+--------------------------------------------
+# mass    : 29.01749142
+# charge  : 1
+
+--------------------------------------------
+ M
+--------------------------------------------
+# mass    : 10.00000000
+# charge  : 0
+
+--------------------------------------------
+
+
+### Variable : 31 species ###
+
+--------------------------------------------
+ CO₂⁺
+--------------------------------------------
+# mass    : 44.00895142
+# charge  : 1
+# Produced by following 2 reactions:
+
+    * R1       e⁻*  →  CO₂⁺ + e⁻ + e⁻*      
+    * R2      CO₂ + hv  →  CO₂⁺   + e⁻      
+
+# Lost by following 5 reactions:
+
+    * R40     CO₂⁺ + O  →  CO + O₂⁺ 
+    * R41     CO₂⁺ + O  →  CO₂ + O⁺(⁴S) 
+    * R44     CO₂⁺ + e⁻  →  CO + O 
+    * R46     CO₂⁺       +  CO₂    + M       →  CO₂⁺CO₂    + M          
+    * R117    CO₂⁺  + H₂         →  CO₂  + H  + H   
+
+--------------------------------------------
+ e⁻
+--------------------------------------------
+# mass    : 0.00054858
+# charge  : -1
+# Produced by following 20 reactions:
+
+    * R1       e⁻*  →  CO₂⁺ + e⁻ + e⁻*      
+    * R2      CO₂ + hv  →  CO₂⁺   + e⁻      
+    * R3      CO₂ + hv  →  CO⁺    + e⁻ + O  
+    * R4      CO₂ + hv  →  O⁺(⁴S)     + e⁻ + CO 
+    * R5      CO₂ + hv  →  C⁺     + e⁻ + O₂ 
+    * R6      O₂  + hv  →  O₂⁺    + e⁻      
+    * R7      O₂  + hv  →  O⁺(⁴S) + e⁻ + O  
+    * R8      O   + hv  →  O⁺(⁴S) + e⁻      
+    * R9      O   + hv  →  O⁺(²D) + e⁻      
+    * R10     O   + hv  →  O⁺(²P) + e⁻      
+    * R11     CO  + hv  →  CO⁺    + e⁻      
+    * R12     CO  + hv  →  O⁺(⁴S)     + e⁻ + C  
+    * R13     CO  + hv  →  C⁺     + e⁻ + O  
+    * R14     H   + hv  →  H⁺     + e⁻      
+    * R15     H₂  + hv  →  H₂⁺    + e⁻      
+    * R16     H₂  + hv  →  H⁺     + e⁻ + H  
+    * R17     H₂O + hv  →  H₂O⁺   + e⁻      
+    * R18     H₂O + hv  →  OH⁺    + e⁻ + H  
+    * R19     H₂O + hv  →  H⁺     + e⁻ + OH 
+    * R20     H₂O + hv  →  O⁺     + e⁻ + H₂ 
+
+# Lost by following 11 reactions:
+
+    * R44     CO₂⁺ + e⁻  →  CO + O 
+    * R45     O₂⁺ + e⁻  →  O + O 
+    * R58     H₃O⁺OH     +  e⁻               →  H  + OH  + H₂O          
+    * R73     H₃O⁺       +  e⁻               →  H          + H₂O        
+    * R74     H₃O⁺(H₂O)  +  e⁻               →  H          + 2H₂O       
+    * R75     H₃O⁺(H₂O)₂ +  e⁻               →  H          + 3H₂O       
+    * R76     H₃O⁺(H₂O)₃ +  e⁻               →  H          + 4H₂O       
+    * R77     H₃O⁺(H₂O)₄ +  e⁻               →  H          + 5H₂O       
+    * R78     H₃O⁺(H₂O)₅ +  e⁻               →  H          + 6H₂O       
+    * R79     H₃O⁺(H₂O)₆ +  e⁻               →  H          + 7H₂O       
+    * R80     H₃O⁺(H₂O)₇ +  e⁻               →  H          + 8H₂O       
+
+--------------------------------------------
+ O
+--------------------------------------------
+# path    : ./Mars/OHtest/input/density_3day/O.dat
+# mass    : 15.99940000
+# charge  : 0
+# Produced by following 17 reactions:
+
+    * R3      CO₂ + hv  →  CO⁺    + e⁻ + O  
+    * R7      O₂  + hv  →  O⁺(⁴S) + e⁻ + O  
+    * R13     CO  + hv  →  C⁺     + e⁻ + O  
+    * R21     CO₂  + hv  →  CO     + O       
+    * R25     O₃   + hv  →  O₂     + O       
+    * R27     O₂   + hv  →  O      + O       
+    * R28     O₂   + hv  →  O      + O(¹D)   
+    * R30     OH   + hv  →  O      + H       
+    * R32     HO₂  + hv  →  OH     + O       
+    * R39     O⁺(⁴S) + H  →  H⁺ + O 
+    * R43     H⁺ + CO₂  →  HCO⁺ + O 
+    * R44     CO₂⁺ + e⁻  →  CO + O 
+    * R45     O₂⁺ + e⁻  →  O + O 
+    * R86     O(¹D) + O₂         →  O    + O₂       
+    * R88     O(¹D) + O₃         →  O    + O  + O₂  
+    * R90     O(¹D) + CO₂        →  O    + CO₂      
+    * R106    OH    + OH         →  H₂O  + O        
+
+# Lost by following 15 reactions:
+
+    * R8      O   + hv  →  O⁺(⁴S) + e⁻      
+    * R9      O   + hv  →  O⁺(²D) + e⁻      
+    * R10     O   + hv  →  O⁺(²P) + e⁻      
+    * R40     CO₂⁺ + O  →  CO + O₂⁺ 
+    * R41     CO₂⁺ + O  →  CO₂ + O⁺(⁴S) 
+    * R42     H⁺ + O  →  O⁺(⁴S) + H 
+    * R81     O     + O  + M     →  O₂   + M        
+    * R82     O     + O₂ + N₂    →  O₃   + N₂       
+    * R83     O     + O₂ + CO₂   →  O₃   + CO₂      
+    * R84     O     + O₃         →  O₂   + O₂       
+    * R85     O     + CO + M     →  CO₂  + M        
+    * R92     H₂    + O          →  OH   + H        
+    * R103    O     + OH         →  O₂   + H        
+    * R104    O     + HO₂        →  OH   + O₂       
+    * R105    O     + H₂O₂       →  OH   + HO₂      
+
+--------------------------------------------
+ O⁺(⁴S)
+--------------------------------------------
+# mass    : 15.99885142
+# charge  : 1
+# Produced by following 6 reactions:
+
+    * R4      CO₂ + hv  →  O⁺(⁴S)     + e⁻ + CO 
+    * R7      O₂  + hv  →  O⁺(⁴S) + e⁻ + O  
+    * R8      O   + hv  →  O⁺(⁴S) + e⁻      
+    * R12     CO  + hv  →  O⁺(⁴S)     + e⁻ + C  
+    * R41     CO₂⁺ + O  →  CO₂ + O⁺(⁴S) 
+    * R42     H⁺ + O  →  O⁺(⁴S) + H 
+
+# Lost by following 3 reactions:
+
+    * R37     O⁺(⁴S) + CO₂  →  O₂⁺ + CO 
+    * R38     O⁺(⁴S) + N₂  →  NO⁺ + N 
+    * R39     O⁺(⁴S) + H  →  H⁺ + O 
+
+--------------------------------------------
+ CO
+--------------------------------------------
+# path    : ./Mars/OHtest/input/density_3day/CO.dat
+# mass    : 28.01010000
+# charge  : 0
+# Produced by following 6 reactions:
+
+    * R4      CO₂ + hv  →  O⁺(⁴S)     + e⁻ + CO 
+    * R21     CO₂  + hv  →  CO     + O       
+    * R22     CO₂  + hv  →  CO     + O(¹D)   
+    * R37     O⁺(⁴S) + CO₂  →  O₂⁺ + CO 
+    * R40     CO₂⁺ + O  →  CO + O₂⁺ 
+    * R44     CO₂⁺ + e⁻  →  CO + O 
+
+# Lost by following 6 reactions:
+
+    * R11     CO  + hv  →  CO⁺    + e⁻      
+    * R12     CO  + hv  →  O⁺(⁴S)     + e⁻ + C  
+    * R13     CO  + hv  →  C⁺     + e⁻ + O  
+    * R85     O     + CO + M     →  CO₂  + M        
+    * R114    CO    + OH + M     →  CO₂  + H  + M   
+    * R115    CO    + OH + M     →  HOCO + M        
+
+--------------------------------------------
+ O₂
+--------------------------------------------
+# path    : ./Mars/OHtest/input/density_3day/O2.dat
+# mass    : 31.99880000
+# charge  : 0
+# Produced by following 21 reactions:
+
+    * R5      CO₂ + hv  →  C⁺     + e⁻ + O₂ 
+    * R25     O₃   + hv  →  O₂     + O       
+    * R26     O₃   + hv  →  O₂     + O(¹D)   
+    * R54     O₂⁺H₂O     +  H₂O              →  H₃O⁺       + OH   + O₂  
+    * R55     O₂⁺H₂O     +  H₂O              →  H₃O⁺OH     + O₂         
+    * R56     O₂⁺O₂      +  CO₂              →  O₂⁺CO₂     + O₂         
+    * R57     O₂⁺O₂      +  H₂O              →  O₂⁺H₂O     + O₂         
+    * R81     O     + O  + M     →  O₂   + M        
+    * R84     O     + O₃         →  O₂   + O₂       
+    * R86     O(¹D) + O₂         →  O    + O₂       
+    * R87     O(¹D) + O₃         →  O₂   + O₂       
+    * R88     O(¹D) + O₃         →  O    + O  + O₂  
+    * R98     H     + HO₂        →  H₂   + O₂       
+    * R102    H     + O₃         →  OH   + O₂       
+    * R103    O     + OH         →  O₂   + H        
+    * R104    O     + HO₂        →  OH   + O₂       
+    * R108    OH    + O₃         →  HO₂  + O₂       
+    * R109    OH    + HO₂        →  H₂O  + O₂       
+    * R111    HO₂   + O₃         →  OH   + O₂ + O₂  
+    * R112    HO₂   + HO₂        →  H₂O₂ + O₂       
+    * R113    HO₂   + HO₂ + M    →  H₂O₂ + O₂ + M   
+
+# Lost by following 12 reactions:
+
+    * R6      O₂  + hv  →  O₂⁺    + e⁻      
+    * R7      O₂  + hv  →  O⁺(⁴S) + e⁻ + O  
+    * R27     O₂   + hv  →  O      + O       
+    * R28     O₂   + hv  →  O      + O(¹D)   
+    * R47     CO₂⁺CO₂    +  O₂               →  O₂⁺        + CO₂  + CO₂ 
+    * R48     CO₂⁺CO₂    +  O₂               →  O₂⁺CO₂     + CO₂        
+    * R51     O₂⁺        +  O₂     + M       →  O₂⁺O₂      + M          
+    * R82     O     + O₂ + N₂    →  O₃   + N₂       
+    * R83     O     + O₂ + CO₂   →  O₃   + CO₂      
+    * R86     O(¹D) + O₂         →  O    + O₂       
+    * R101    H     + O₂ + M     →  HO₂  + M        
+    * R116    HOCO  + O₂         →  HO₂  + CO₂      
+
+--------------------------------------------
+ O₂⁺
+--------------------------------------------
+# mass    : 31.99825142
+# charge  : 1
+# Produced by following 5 reactions:
+
+    * R6      O₂  + hv  →  O₂⁺    + e⁻      
+    * R37     O⁺(⁴S) + CO₂  →  O₂⁺ + CO 
+    * R40     CO₂⁺ + O  →  CO + O₂⁺ 
+    * R47     CO₂⁺CO₂    +  O₂               →  O₂⁺        + CO₂  + CO₂ 
+    * R52     O₂⁺CO₂     +  CO₂              →  O₂⁺        + CO₂  + CO₂ 
+
+# Lost by following 4 reactions:
+
+    * R45     O₂⁺ + e⁻  →  O + O 
+    * R49     O₂⁺        +  CO₂    + M       →  O₂⁺CO₂     + M          
+    * R50     O₂⁺        +  H₂O    + M       →  O₂⁺H₂O     + M          
+    * R51     O₂⁺        +  O₂     + M       →  O₂⁺O₂      + M          
+
+--------------------------------------------
+ H
+--------------------------------------------
+# path    : ./Mars/OHtest/input/density_3day/H.dat
+# mass    : 1.00794000
+# charge  : 0
+# Produced by following 24 reactions:
+
+    * R16     H₂  + hv  →  H⁺     + e⁻ + H  
+    * R18     H₂O + hv  →  OH⁺    + e⁻ + H  
+    * R23     H₂O  + hv  →  H      + OH      
+    * R29     H₂   + hv  →  H      + H       
+    * R30     OH   + hv  →  O      + H       
+    * R31     OH   + hv  →  O(¹D)  + H       
+    * R34     H₂O₂ + hv  →  HO₂    + H       
+    * R36     H₂O⁺   + H₂     →  H₃O⁺     + H      
+    * R42     H⁺ + O  →  O⁺(⁴S) + H 
+    * R58     H₃O⁺OH     +  e⁻               →  H  + OH  + H₂O          
+    * R73     H₃O⁺       +  e⁻               →  H          + H₂O        
+    * R74     H₃O⁺(H₂O)  +  e⁻               →  H          + 2H₂O       
+    * R75     H₃O⁺(H₂O)₂ +  e⁻               →  H          + 3H₂O       
+    * R76     H₃O⁺(H₂O)₃ +  e⁻               →  H          + 4H₂O       
+    * R77     H₃O⁺(H₂O)₄ +  e⁻               →  H          + 5H₂O       
+    * R78     H₃O⁺(H₂O)₅ +  e⁻               →  H          + 6H₂O       
+    * R79     H₃O⁺(H₂O)₆ +  e⁻               →  H          + 7H₂O       
+    * R80     H₃O⁺(H₂O)₇ +  e⁻               →  H          + 8H₂O       
+    * R89     O(¹D) + H₂         →  H    + OH       
+    * R92     H₂    + O          →  OH   + H        
+    * R93     OH    + H₂         →  H₂O  + H        
+    * R103    O     + OH         →  O₂   + H        
+    * R114    CO    + OH + M     →  CO₂  + H  + M   
+    * R117    CO₂⁺  + H₂         →  CO₂  + H  + H   
+
+# Lost by following 11 reactions:
+
+    * R14     H   + hv  →  H⁺     + e⁻      
+    * R39     O⁺(⁴S) + H  →  H⁺ + O 
+    * R94     H     + H  + CO₂   →  H₂   + CO₂      
+    * R95     H     + OH + CO₂   →  H₂O  + CO₂      
+    * R96     H     + HO₂        →  OH   + OH       
+    * R97     H     + HO₂        →  H₂O  + O(¹D)    
+    * R98     H     + HO₂        →  H₂   + O₂       
+    * R99     H     + H₂O₂       →  HO₂  + H₂       
+    * R100    H     + H₂O₂       →  H₂O  + OH       
+    * R101    H     + O₂ + M     →  HO₂  + M        
+    * R102    H     + O₃         →  OH   + O₂       
+
+--------------------------------------------
+ H⁺
+--------------------------------------------
+# mass    : 1.00739142
+# charge  : 1
+# Produced by following 4 reactions:
+
+    * R14     H   + hv  →  H⁺     + e⁻      
+    * R16     H₂  + hv  →  H⁺     + e⁻ + H  
+    * R19     H₂O + hv  →  H⁺     + e⁻ + OH 
+    * R39     O⁺(⁴S) + H  →  H⁺ + O 
+
+# Lost by following 2 reactions:
+
+    * R42     H⁺ + O  →  O⁺(⁴S) + H 
+    * R43     H⁺ + CO₂  →  HCO⁺ + O 
+
+--------------------------------------------
+ H₂
+--------------------------------------------
+# path    : ./Mars/OHtest/input/density_3day/H2.dat
+# mass    : 2.01588000
+# charge  : 0
+# Produced by following 5 reactions:
+
+    * R20     H₂O + hv  →  O⁺     + e⁻ + H₂ 
+    * R24     H₂O  + hv  →  H₂     + O(¹D)   
+    * R94     H     + H  + CO₂   →  H₂   + CO₂      
+    * R98     H     + HO₂        →  H₂   + O₂       
+    * R99     H     + H₂O₂       →  HO₂  + H₂       
+
+# Lost by following 8 reactions:
+
+    * R15     H₂  + hv  →  H₂⁺    + e⁻      
+    * R16     H₂  + hv  →  H⁺     + e⁻ + H  
+    * R29     H₂   + hv  →  H      + H       
+    * R36     H₂O⁺   + H₂     →  H₃O⁺     + H      
+    * R89     O(¹D) + H₂         →  H    + OH       
+    * R92     H₂    + O          →  OH   + H        
+    * R93     OH    + H₂         →  H₂O  + H        
+    * R117    CO₂⁺  + H₂         →  CO₂  + H  + H   
+
+--------------------------------------------
+ H₂O⁺
+--------------------------------------------
+# mass    : 18.01473142
+# charge  : 1
+# Produced by following 1 reactions:
+
+    * R17     H₂O + hv  →  H₂O⁺   + e⁻      
+
+# Lost by following 1 reactions:
+
+    * R36     H₂O⁺   + H₂     →  H₃O⁺     + H      
+
+--------------------------------------------
+ OH
+--------------------------------------------
+# path    : ./Mars/OHtest/input/density_3day/OH.dat
+# mass    : 17.00734000
+# charge  : 0
+# Produced by following 15 reactions:
+
+    * R19     H₂O + hv  →  H⁺     + e⁻ + OH 
+    * R23     H₂O  + hv  →  H      + OH      
+    * R32     HO₂  + hv  →  OH     + O       
+    * R33     H₂O₂ + hv  →  OH     + OH      
+    * R54     O₂⁺H₂O     +  H₂O              →  H₃O⁺       + OH   + O₂  
+    * R58     H₃O⁺OH     +  e⁻               →  H  + OH  + H₂O          
+    * R89     O(¹D) + H₂         →  H    + OH       
+    * R91     O(¹D) + H₂O        →  OH   + OH       
+    * R92     H₂    + O          →  OH   + H        
+    * R96     H     + HO₂        →  OH   + OH       
+    * R100    H     + H₂O₂       →  H₂O  + OH       
+    * R102    H     + O₃         →  OH   + O₂       
+    * R104    O     + HO₂        →  OH   + O₂       
+    * R105    O     + H₂O₂       →  OH   + HO₂      
+    * R111    HO₂   + O₃         →  OH   + O₂ + O₂  
+
+# Lost by following 12 reactions:
+
+    * R30     OH   + hv  →  O      + H       
+    * R31     OH   + hv  →  O(¹D)  + H       
+    * R93     OH    + H₂         →  H₂O  + H        
+    * R95     H     + OH + CO₂   →  H₂O  + CO₂      
+    * R103    O     + OH         →  O₂   + H        
+    * R106    OH    + OH         →  H₂O  + O        
+    * R107    OH    + OH + M     →  H₂O₂ + M        
+    * R108    OH    + O₃         →  HO₂  + O₂       
+    * R109    OH    + HO₂        →  H₂O  + O₂       
+    * R110    OH    + H₂O₂       →  H₂O  + HO₂      
+    * R114    CO    + OH + M     →  CO₂  + H  + M   
+    * R115    CO    + OH + M     →  HOCO + M        
+
+--------------------------------------------
+ O(¹D)
+--------------------------------------------
+# path    : ./Mars/OHtest/input/density_3day/O(1D).dat
+# mass    : 15.99940000
+# charge  : 0
+# Produced by following 7 reactions:
+
+    * R22     CO₂  + hv  →  CO     + O(¹D)   
+    * R24     H₂O  + hv  →  H₂     + O(¹D)   
+    * R26     O₃   + hv  →  O₂     + O(¹D)   
+    * R28     O₂   + hv  →  O      + O(¹D)   
+    * R31     OH   + hv  →  O(¹D)  + H       
+    * R35     H₂O₂ + hv  →  H₂O    + O(¹D)   
+    * R97     H     + HO₂        →  H₂O  + O(¹D)    
+
+# Lost by following 6 reactions:
+
+    * R86     O(¹D) + O₂         →  O    + O₂       
+    * R87     O(¹D) + O₃         →  O₂   + O₂       
+    * R88     O(¹D) + O₃         →  O    + O  + O₂  
+    * R89     O(¹D) + H₂         →  H    + OH       
+    * R90     O(¹D) + CO₂        →  O    + CO₂      
+    * R91     O(¹D) + H₂O        →  OH   + OH       
+
+--------------------------------------------
+ O₃
+--------------------------------------------
+# path    : ./Mars/OHtest/input/density_3day/O3.dat
+# mass    : 47.99820000
+# charge  : 0
+# Produced by following 2 reactions:
+
+    * R82     O     + O₂ + N₂    →  O₃   + N₂       
+    * R83     O     + O₂ + CO₂   →  O₃   + CO₂      
+
+# Lost by following 8 reactions:
+
+    * R25     O₃   + hv  →  O₂     + O       
+    * R26     O₃   + hv  →  O₂     + O(¹D)   
+    * R84     O     + O₃         →  O₂   + O₂       
+    * R87     O(¹D) + O₃         →  O₂   + O₂       
+    * R88     O(¹D) + O₃         →  O    + O  + O₂  
+    * R102    H     + O₃         →  OH   + O₂       
+    * R108    OH    + O₃         →  HO₂  + O₂       
+    * R111    HO₂   + O₃         →  OH   + O₂ + O₂  
+
+--------------------------------------------
+ HO₂
+--------------------------------------------
+# path    : ./Mars/OHtest/input/density_3day/HO2.dat
+# mass    : 33.00674000
+# charge  : 0
+# Produced by following 7 reactions:
+
+    * R34     H₂O₂ + hv  →  HO₂    + H       
+    * R99     H     + H₂O₂       →  HO₂  + H₂       
+    * R101    H     + O₂ + M     →  HO₂  + M        
+    * R105    O     + H₂O₂       →  OH   + HO₂      
+    * R108    OH    + O₃         →  HO₂  + O₂       
+    * R110    OH    + H₂O₂       →  H₂O  + HO₂      
+    * R116    HOCO  + O₂         →  HO₂  + CO₂      
+
+# Lost by following 9 reactions:
+
+    * R32     HO₂  + hv  →  OH     + O       
+    * R96     H     + HO₂        →  OH   + OH       
+    * R97     H     + HO₂        →  H₂O  + O(¹D)    
+    * R98     H     + HO₂        →  H₂   + O₂       
+    * R104    O     + HO₂        →  OH   + O₂       
+    * R109    OH    + HO₂        →  H₂O  + O₂       
+    * R111    HO₂   + O₃         →  OH   + O₂ + O₂  
+    * R112    HO₂   + HO₂        →  H₂O₂ + O₂       
+    * R113    HO₂   + HO₂ + M    →  H₂O₂ + O₂ + M   
+
+--------------------------------------------
+ H₂O₂
+--------------------------------------------
+# path    : ./Mars/OHtest/input/density_3day/H2O2.dat
+# mass    : 34.01468000
+# charge  : 0
+# Produced by following 3 reactions:
+
+    * R107    OH    + OH + M     →  H₂O₂ + M        
+    * R112    HO₂   + HO₂        →  H₂O₂ + O₂       
+    * R113    HO₂   + HO₂ + M    →  H₂O₂ + O₂ + M   
+
+# Lost by following 7 reactions:
+
+    * R33     H₂O₂ + hv  →  OH     + OH      
+    * R34     H₂O₂ + hv  →  HO₂    + H       
+    * R35     H₂O₂ + hv  →  H₂O    + O(¹D)   
+    * R99     H     + H₂O₂       →  HO₂  + H₂       
+    * R100    H     + H₂O₂       →  H₂O  + OH       
+    * R105    O     + H₂O₂       →  OH   + HO₂      
+    * R110    OH    + H₂O₂       →  H₂O  + HO₂      
+
+--------------------------------------------
+ H₃O⁺
+--------------------------------------------
+# mass    : 19.02267142
+# charge  : 1
+# Produced by following 3 reactions:
+
+    * R36     H₂O⁺   + H₂     →  H₃O⁺     + H      
+    * R54     O₂⁺H₂O     +  H₂O              →  H₃O⁺       + OH   + O₂  
+    * R66     H₃O⁺(H₂O)  + M                 →  H₃O⁺       + H₂O  + M   
+
+# Lost by following 2 reactions:
+
+    * R59     H₃O⁺       +  H₂O    + M       →  H₃O⁺(H₂O)  + M          
+    * R73     H₃O⁺       +  e⁻               →  H          + H₂O        
+
+--------------------------------------------
+ N₂
+--------------------------------------------
+# path    : ./Mars/OHtest/input/density_3day/N2.dat
+# mass    : 28.01340000
+# charge  : 0
+# Produced by following 1 reactions:
+
+    * R82     O     + O₂ + N₂    →  O₃   + N₂       
+
+# Lost by following 2 reactions:
+
+    * R38     O⁺(⁴S) + N₂  →  NO⁺ + N 
+    * R82     O     + O₂ + N₂    →  O₃   + N₂       
+
+--------------------------------------------
+ CO₂⁺CO₂
+--------------------------------------------
+# mass    : 88.01845142
+# charge  : 1
+# Produced by following 1 reactions:
+
+    * R46     CO₂⁺       +  CO₂    + M       →  CO₂⁺CO₂    + M          
+
+# Lost by following 2 reactions:
+
+    * R47     CO₂⁺CO₂    +  O₂               →  O₂⁺        + CO₂  + CO₂ 
+    * R48     CO₂⁺CO₂    +  O₂               →  O₂⁺CO₂     + CO₂        
+
+--------------------------------------------
+ O₂⁺CO₂
+--------------------------------------------
+# mass    : 76.00775142
+# charge  : 1
+# Produced by following 3 reactions:
+
+    * R48     CO₂⁺CO₂    +  O₂               →  O₂⁺CO₂     + CO₂        
+    * R49     O₂⁺        +  CO₂    + M       →  O₂⁺CO₂     + M          
+    * R56     O₂⁺O₂      +  CO₂              →  O₂⁺CO₂     + O₂         
+
+# Lost by following 2 reactions:
+
+    * R52     O₂⁺CO₂     +  CO₂              →  O₂⁺        + CO₂  + CO₂ 
+    * R53     O₂⁺CO₂     +  H₂O              →  O₂⁺H₂O     + CO₂        
+
+--------------------------------------------
+ O₂⁺H₂O
+--------------------------------------------
+# mass    : 50.01353142
+# charge  : 1
+# Produced by following 3 reactions:
+
+    * R50     O₂⁺        +  H₂O    + M       →  O₂⁺H₂O     + M          
+    * R53     O₂⁺CO₂     +  H₂O              →  O₂⁺H₂O     + CO₂        
+    * R57     O₂⁺O₂      +  H₂O              →  O₂⁺H₂O     + O₂         
+
+# Lost by following 2 reactions:
+
+    * R54     O₂⁺H₂O     +  H₂O              →  H₃O⁺       + OH   + O₂  
+    * R55     O₂⁺H₂O     +  H₂O              →  H₃O⁺OH     + O₂         
+
+--------------------------------------------
+ O₂⁺O₂
+--------------------------------------------
+# mass    : 63.99705142
+# charge  : 1
+# Produced by following 1 reactions:
+
+    * R51     O₂⁺        +  O₂     + M       →  O₂⁺O₂      + M          
+
+# Lost by following 2 reactions:
+
+    * R56     O₂⁺O₂      +  CO₂              →  O₂⁺CO₂     + O₂         
+    * R57     O₂⁺O₂      +  H₂O              →  O₂⁺H₂O     + O₂         
+
+--------------------------------------------
+ H₃O⁺OH
+--------------------------------------------
+# mass    : 36.03001142
+# charge  : 1
+# Produced by following 1 reactions:
+
+    * R55     O₂⁺H₂O     +  H₂O              →  H₃O⁺OH     + O₂         
+
+# Lost by following 1 reactions:
+
+    * R58     H₃O⁺OH     +  e⁻               →  H  + OH  + H₂O          
+
+--------------------------------------------
+ H₃O⁺(H₂O)
+--------------------------------------------
+# mass    : 5.03915142
+# charge  : 1
+# Produced by following 2 reactions:
+
+    * R59     H₃O⁺       +  H₂O    + M       →  H₃O⁺(H₂O)  + M          
+    * R67     H₃O⁺(H₂O)₂ + M                 →  H₃O⁺(H₂O)  + H₂O  + M   
+
+# Lost by following 3 reactions:
+
+    * R60     H₃O⁺(H₂O)  +  H₂O    + M       →  H₃O⁺(H₂O)₂ + M          
+    * R66     H₃O⁺(H₂O)  + M                 →  H₃O⁺       + H₂O  + M   
+    * R74     H₃O⁺(H₂O)  +  e⁻               →  H          + 2H₂O       
+
+--------------------------------------------
+ H₃O⁺(H₂O)₂
+--------------------------------------------
+# mass    : 55.05323142
+# charge  : 1
+# Produced by following 2 reactions:
+
+    * R60     H₃O⁺(H₂O)  +  H₂O    + M       →  H₃O⁺(H₂O)₂ + M          
+    * R68     H₃O⁺(H₂O)₃ + M                 →  H₃O⁺(H₂O)₂ + H₂O  + M   
+
+# Lost by following 3 reactions:
+
+    * R61     H₃O⁺(H₂O)₂ +  H₂O    + M       →  H₃O⁺(H₂O)₃ + M          
+    * R67     H₃O⁺(H₂O)₂ + M                 →  H₃O⁺(H₂O)  + H₂O  + M   
+    * R75     H₃O⁺(H₂O)₂ +  e⁻               →  H          + 3H₂O       
+
+--------------------------------------------
+ H₃O⁺(H₂O)₃
+--------------------------------------------
+# mass    : 73.06851142
+# charge  : 1
+# Produced by following 2 reactions:
+
+    * R61     H₃O⁺(H₂O)₂ +  H₂O    + M       →  H₃O⁺(H₂O)₃ + M          
+    * R69     H₃O⁺(H₂O)₄ + M                 →  H₃O⁺(H₂O)₃ + H₂O  + M   
+
+# Lost by following 3 reactions:
+
+    * R62     H₃O⁺(H₂O)₃ +  H₂O    + M       →  H₃O⁺(H₂O)₄ + M          
+    * R68     H₃O⁺(H₂O)₃ + M                 →  H₃O⁺(H₂O)₂ + H₂O  + M   
+    * R76     H₃O⁺(H₂O)₃ +  e⁻               →  H          + 4H₂O       
+
+--------------------------------------------
+ H₃O⁺(H₂O)₄
+--------------------------------------------
+# mass    : 91.08379142
+# charge  : 1
+# Produced by following 2 reactions:
+
+    * R62     H₃O⁺(H₂O)₃ +  H₂O    + M       →  H₃O⁺(H₂O)₄ + M          
+    * R70     H₃O⁺(H₂O)₅ + M                 →  H₃O⁺(H₂O)₄ + H₂O  + M   
+
+# Lost by following 3 reactions:
+
+    * R63     H₃O⁺(H₂O)₄ +  H₂O    + M       →  H₃O⁺(H₂O)₅ + M          
+    * R69     H₃O⁺(H₂O)₄ + M                 →  H₃O⁺(H₂O)₃ + H₂O  + M   
+    * R77     H₃O⁺(H₂O)₄ +  e⁻               →  H          + 5H₂O       
+
+--------------------------------------------
+ H₃O⁺(H₂O)₅
+--------------------------------------------
+# mass    : 109.09907142
+# charge  : 1
+# Produced by following 2 reactions:
+
+    * R63     H₃O⁺(H₂O)₄ +  H₂O    + M       →  H₃O⁺(H₂O)₅ + M          
+    * R71     H₃O⁺(H₂O)₆ + M                 →  H₃O⁺(H₂O)₅ + H₂O  + M   
+
+# Lost by following 3 reactions:
+
+    * R64     H₃O⁺(H₂O)₅ +  H₂O    + M       →  H₃O⁺(H₂O)₆ + M          
+    * R70     H₃O⁺(H₂O)₅ + M                 →  H₃O⁺(H₂O)₄ + H₂O  + M   
+    * R78     H₃O⁺(H₂O)₅ +  e⁻               →  H          + 6H₂O       
+
+--------------------------------------------
+ H₃O⁺(H₂O)₆
+--------------------------------------------
+# mass    : 127.11435142
+# charge  : 1
+# Produced by following 2 reactions:
+
+    * R64     H₃O⁺(H₂O)₅ +  H₂O    + M       →  H₃O⁺(H₂O)₆ + M          
+    * R72     H₃O⁺(H₂O)₇ + M                 →  H₃O⁺(H₂O)₆ + H₂O  + M   
+
+# Lost by following 3 reactions:
+
+    * R65     H₃O⁺(H₂O)₆ +  H₂O    + M       →  H₃O⁺(H₂O)₇ + M          
+    * R71     H₃O⁺(H₂O)₆ + M                 →  H₃O⁺(H₂O)₅ + H₂O  + M   
+    * R79     H₃O⁺(H₂O)₆ +  e⁻               →  H          + 7H₂O       
+
+--------------------------------------------
+ H₃O⁺(H₂O)₇
+--------------------------------------------
+# mass    : 145.12963142
+# charge  : 1
+# Produced by following 1 reactions:
+
+    * R65     H₃O⁺(H₂O)₆ +  H₂O    + M       →  H₃O⁺(H₂O)₇ + M          
+
+# Lost by following 2 reactions:
+
+    * R72     H₃O⁺(H₂O)₇ + M                 →  H₃O⁺(H₂O)₆ + H₂O  + M   
+    * R80     H₃O⁺(H₂O)₇ +  e⁻               →  H          + 8H₂O       
+
+--------------------------------------------
+ HOCO
+--------------------------------------------
+# mass    : 45.01744000
+# charge  : 0
+# Produced by following 1 reactions:
+
+    * R115    CO    + OH + M     →  HOCO + M        
+
+# Lost by following 1 reactions:
+
+    * R116    HOCO  + O₂         →  HO₂  + CO₂      
+
+--------------------------------------------
+

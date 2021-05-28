@@ -392,6 +392,47 @@ contains
             xct%sigma_a_EUV(37,isp) =   0.000d-22
           end if
 
+          if (spl%species(isp) == 'H2O') then
+            !------------------------------------  CO2  ---------
+            xct%sigma_a_EUV(1,isp)  =  0.699d-22
+            xct%sigma_a_EUV(2,isp)  =  1.971d-22
+            xct%sigma_a_EUV(3,isp)  =  4.069d-22
+            xct%sigma_a_EUV(4,isp)  =  6.121d-22
+            xct%sigma_a_EUV(5,isp)  =  7.520d-22
+            xct%sigma_a_EUV(6,isp)  =  8.934d-22
+            xct%sigma_a_EUV(7,isp)  =  8.113d-22
+            xct%sigma_a_EUV(8,isp)  =  9.907d-22
+            xct%sigma_a_EUV(9,isp)  =  9.930d-22
+            xct%sigma_a_EUV(10,isp) = 11.350d-22
+            xct%sigma_a_EUV(11,isp) = 13.004d-22
+            xct%sigma_a_EUV(12,isp) = 12.734d-22
+            xct%sigma_a_EUV(13,isp) = 16.032d-22
+            xct%sigma_a_EUV(14,isp) = 18.083d-22
+            xct%sigma_a_EUV(15,isp) = 18.897d-22
+            xct%sigma_a_EUV(16,isp) = 20.047d-22
+            xct%sigma_a_EUV(17,isp) = 21.159d-22
+            xct%sigma_a_EUV(18,isp) = 21.908d-22
+            xct%sigma_a_EUV(19,isp) = 21.857d-22
+            xct%sigma_a_EUV(20,isp) = 22.446d-22
+            xct%sigma_a_EUV(21,isp) = 22.487d-22
+            xct%sigma_a_EUV(22,isp) = 22.502d-22
+            xct%sigma_a_EUV(23,isp) = 22.852d-22
+            xct%sigma_a_EUV(24,isp) = 22.498d-22
+            xct%sigma_a_EUV(25,isp) = 22.118d-22
+            xct%sigma_a_EUV(26,isp) = 19.384d-22
+            xct%sigma_a_EUV(27,isp) = 20.992d-22
+            xct%sigma_a_EUV(28,isp) = 16.975d-22
+            xct%sigma_a_EUV(29,isp) = 18.151d-22
+            xct%sigma_a_EUV(30,isp) = 16.623d-22
+            xct%sigma_a_EUV(31,isp) = 19.837d-22
+            xct%sigma_a_EUV(32,isp) = 20.512d-22
+            xct%sigma_a_EUV(33,isp) = 15.072d-22
+            xct%sigma_a_EUV(34,isp) = 15.176d-22
+            xct%sigma_a_EUV(35,isp) = 18.069d-22
+            xct%sigma_a_EUV(36,isp) = 15.271d-22
+            xct%sigma_a_EUV(37,isp) =  8.001d-22
+          end if
+
           if (spl%species(isp) == 'H') then
             !------------------------------------  H  ---------
             xct%sigma_a_EUV(1,isp)  = 0.0024d-22
@@ -1430,6 +1471,174 @@ contains
               xct%sigma_i_EUV(14,ich) = 1.060d-22
               xct%sigma_i_EUV(15,ich) = 0.699d-22
               xct%sigma_i_EUV(16,ich) = 0.033d-22
+              xct%sigma_i_EUV(17,ich) = 0.000d-22
+              xct%sigma_i_EUV(18,ich) = 0.000d-22
+              xct%sigma_i_EUV(19,ich) = 0.000d-22
+              xct%sigma_i_EUV(20,ich) = 0.000d-22
+              xct%sigma_i_EUV(21,ich) = 0.000d-22
+              xct%sigma_i_EUV(22,ich) = 0.000d-22
+              xct%sigma_i_EUV(23,ich) = 0.000d-22
+              xct%sigma_i_EUV(24,ich) = 0.000d-22
+              xct%sigma_i_EUV(25,ich) = 0.000d-22
+              xct%sigma_i_EUV(26,ich) = 0.000d-22
+              xct%sigma_i_EUV(27,ich) = 0.000d-22
+              xct%sigma_i_EUV(28,ich) = 0.000d-22
+              xct%sigma_i_EUV(29,ich) = 0.000d-22
+              xct%sigma_i_EUV(30,ich) = 0.000d-22
+              xct%sigma_i_EUV(31,ich) = 0.000d-22
+              xct%sigma_i_EUV(32,ich) = 0.000d-22
+              xct%sigma_i_EUV(33,ich) = 0.000d-22
+              xct%sigma_i_EUV(34,ich) = 0.000d-22
+              xct%sigma_i_EUV(35,ich) = 0.000d-22
+              xct%sigma_i_EUV(36,ich) = 0.000d-22
+              xct%sigma_i_EUV(37,ich) = 0.000d-22
+            end if
+
+            if ( reactants(1) == 'H2O' &
+            & .and. products(1) == 'H2O+' .and. products(2) == 'e-' ) then
+              !------------------------------------  H2O + hv -> H2O+ + e-  ---------
+              xct%sigma_i_EUV(1,ich)  =  0.385d-22
+              xct%sigma_i_EUV(2,ich)  =  1.153d-22
+              xct%sigma_i_EUV(3,ich)  =  2.366d-22
+              xct%sigma_i_EUV(4,ich)  =  3.595d-22
+              xct%sigma_i_EUV(5,ich)  =  4.563d-22
+              xct%sigma_i_EUV(6,ich)  =  5.552d-22
+              xct%sigma_i_EUV(7,ich)  =  4.974d-22
+              xct%sigma_i_EUV(8,ich)  =  6.182d-22
+              xct%sigma_i_EUV(9,ich)  =  6.198d-22
+              xct%sigma_i_EUV(10,ich) =  7.237d-22
+              xct%sigma_i_EUV(11,ich) =  8.441d-22
+              xct%sigma_i_EUV(12,ich) =  8.218d-22
+              xct%sigma_i_EUV(13,ich) = 10.561d-22
+              xct%sigma_i_EUV(14,ich) = 11.908d-22
+              xct%sigma_i_EUV(15,ich) = 12.356d-22
+              xct%sigma_i_EUV(16,ich) = 12.990d-22
+              xct%sigma_i_EUV(17,ich) = 13.559d-22
+              xct%sigma_i_EUV(18,ich) = 13.968d-22
+              xct%sigma_i_EUV(19,ich) = 13.972d-22
+              xct%sigma_i_EUV(20,ich) = 14.392d-22
+              xct%sigma_i_EUV(21,ich) = 14.464d-22
+              xct%sigma_i_EUV(22,ich) = 14.558d-22
+              xct%sigma_i_EUV(23,ich) = 17.443d-22
+              xct%sigma_i_EUV(24,ich) = 18.283d-22
+              xct%sigma_i_EUV(25,ich) = 17.557d-22
+              xct%sigma_i_EUV(26,ich) = 13.080d-22
+              xct%sigma_i_EUV(27,ich) = 13.512d-22
+              xct%sigma_i_EUV(28,ich) = 10.636d-22
+              xct%sigma_i_EUV(29,ich) = 11.625d-22
+              xct%sigma_i_EUV(30,ich) =  9.654d-22
+              xct%sigma_i_EUV(31,ich) =  9.567d-22
+              xct%sigma_i_EUV(32,ich) =  8.736d-22
+              xct%sigma_i_EUV(33,ich) =  6.188d-22
+              xct%sigma_i_EUV(34,ich) =  4.234d-22
+              xct%sigma_i_EUV(35,ich) =  0.000d-22
+              xct%sigma_i_EUV(36,ich) =  0.000d-22
+              xct%sigma_i_EUV(37,ich) =  0.000d-22
+            end if
+
+            if ( reactants(1) == 'H2O' &
+            & .and. products(1) == 'OH+' .and. products(2) == 'e-' ) then
+              !------------------------------------  H2O + hv -> OH+ + e- + H ---------
+              xct%sigma_i_EUV(1,ich)  = 0.093d-22
+              xct%sigma_i_EUV(2,ich)  = 0.306d-22
+              xct%sigma_i_EUV(3,ich)  = 0.733d-22
+              xct%sigma_i_EUV(4,ich)  = 1.197d-22
+              xct%sigma_i_EUV(5,ich)  = 1.560d-22
+              xct%sigma_i_EUV(6,ich)  = 1.889d-22
+              xct%sigma_i_EUV(7,ich)  = 1.704d-22
+              xct%sigma_i_EUV(8,ich)  = 2.148d-22
+              xct%sigma_i_EUV(9,ich)  = 2.154d-22
+              xct%sigma_i_EUV(10,ich) = 2.559d-22
+              xct%sigma_i_EUV(11,ich) = 3.065d-22
+              xct%sigma_i_EUV(12,ich) = 2.984d-22
+              xct%sigma_i_EUV(13,ich) = 4.042d-22
+              xct%sigma_i_EUV(14,ich) = 4.688d-22
+              xct%sigma_i_EUV(15,ich) = 4.981d-22
+              xct%sigma_i_EUV(16,ich) = 5.374d-22
+              xct%sigma_i_EUV(17,ich) = 5.789d-22
+              xct%sigma_i_EUV(18,ich) = 6.096d-22
+              xct%sigma_i_EUV(19,ich) = 6.090d-22
+              xct%sigma_i_EUV(20,ich) = 6.383d-22
+              xct%sigma_i_EUV(21,ich) = 6.279d-22
+              xct%sigma_i_EUV(22,ich) = 6.368d-22
+              xct%sigma_i_EUV(23,ich) = 3.118d-22
+              xct%sigma_i_EUV(24,ich) = 1.364d-22
+              xct%sigma_i_EUV(25,ich) = 0.386d-22
+              xct%sigma_i_EUV(26,ich) = 0.000d-22
+              xct%sigma_i_EUV(27,ich) = 0.000d-22
+              xct%sigma_i_EUV(28,ich) = 0.000d-22
+              xct%sigma_i_EUV(29,ich) = 0.000d-22
+              xct%sigma_i_EUV(30,ich) = 0.000d-22
+              xct%sigma_i_EUV(31,ich) = 0.000d-22
+              xct%sigma_i_EUV(32,ich) = 0.000d-22
+              xct%sigma_i_EUV(33,ich) = 0.000d-22
+              xct%sigma_i_EUV(34,ich) = 0.000d-22
+              xct%sigma_i_EUV(35,ich) = 0.000d-22
+              xct%sigma_i_EUV(36,ich) = 0.000d-22
+              xct%sigma_i_EUV(37,ich) = 0.000d-22
+            end if
+
+            if ( reactants(1) == 'H2O' &
+            & .and. products(1) == 'H+' .and. products(2) == 'e-' ) then
+              !------------------------------------  H2O + hv -> H+ + e- + OH ---------
+              xct%sigma_i_EUV(1,ich)  = 0.171d-22
+              xct%sigma_i_EUV(2,ich)  = 0.404d-22
+              xct%sigma_i_EUV(3,ich)  = 0.781d-22
+              xct%sigma_i_EUV(4,ich)  = 1.105d-22
+              xct%sigma_i_EUV(5,ich)  = 1.116d-22
+              xct%sigma_i_EUV(6,ich)  = 1.262d-22
+              xct%sigma_i_EUV(7,ich)  = 1.206d-22
+              xct%sigma_i_EUV(8,ich)  = 1.347d-22
+              xct%sigma_i_EUV(9,ich)  = 1.347d-22
+              xct%sigma_i_EUV(10,ich) = 1.347d-22
+              xct%sigma_i_EUV(11,ich) = 1.327d-22
+              xct%sigma_i_EUV(12,ich) = 1.352d-22
+              xct%sigma_i_EUV(13,ich) = 1.354d-22
+              xct%sigma_i_EUV(14,ich) = 1.458d-22
+              xct%sigma_i_EUV(15,ich) = 1.529d-22
+              xct%sigma_i_EUV(16,ich) = 1.660d-22
+              xct%sigma_i_EUV(17,ich) = 1.811d-22
+              xct%sigma_i_EUV(18,ich) = 1.844d-22
+              xct%sigma_i_EUV(19,ich) = 1.795d-22
+              xct%sigma_i_EUV(20,ich) = 1.672d-22
+              xct%sigma_i_EUV(21,ich) = 1.282d-22
+              xct%sigma_i_EUV(22,ich) = 1.371d-22
+              xct%sigma_i_EUV(23,ich) = 0.174d-22
+              xct%sigma_i_EUV(24,ich) = 0.008d-22
+              xct%sigma_i_EUV(25,ich) = 0.002d-22
+              xct%sigma_i_EUV(26,ich) = 0.000d-22
+              xct%sigma_i_EUV(27,ich) = 0.000d-22
+              xct%sigma_i_EUV(28,ich) = 0.000d-22
+              xct%sigma_i_EUV(29,ich) = 0.000d-22
+              xct%sigma_i_EUV(30,ich) = 0.000d-22
+              xct%sigma_i_EUV(31,ich) = 0.000d-22
+              xct%sigma_i_EUV(32,ich) = 0.000d-22
+              xct%sigma_i_EUV(33,ich) = 0.000d-22
+              xct%sigma_i_EUV(34,ich) = 0.000d-22
+              xct%sigma_i_EUV(35,ich) = 0.000d-22
+              xct%sigma_i_EUV(36,ich) = 0.000d-22
+              xct%sigma_i_EUV(37,ich) = 0.000d-22
+            end if
+
+            if ( reactants(1) == 'H2O' &
+            & .and. products(1) == 'O+' .and. products(2) == 'e-' ) then
+              !------------------------------------  H2O + hv -> O+ + e- + 2H ---------
+              xct%sigma_i_EUV(1,ich)  = 0.050d-22
+              xct%sigma_i_EUV(2,ich)  = 0.107d-22
+              xct%sigma_i_EUV(3,ich)  = 0.189d-22
+              xct%sigma_i_EUV(4,ich)  = 0.223d-22
+              xct%sigma_i_EUV(5,ich)  = 0.230d-22
+              xct%sigma_i_EUV(6,ich)  = 0.230d-22
+              xct%sigma_i_EUV(7,ich)  = 0.230d-22
+              xct%sigma_i_EUV(8,ich)  = 0.231d-22
+              xct%sigma_i_EUV(9,ich)  = 0.230d-22
+              xct%sigma_i_EUV(10,ich) = 0.207d-22
+              xct%sigma_i_EUV(11,ich) = 0.171d-22
+              xct%sigma_i_EUV(12,ich) = 0.180d-22
+              xct%sigma_i_EUV(13,ich) = 0.075d-22
+              xct%sigma_i_EUV(14,ich) = 0.028d-22
+              xct%sigma_i_EUV(15,ich) = 0.031d-22
+              xct%sigma_i_EUV(16,ich) = 0.024d-22
               xct%sigma_i_EUV(17,ich) = 0.000d-22
               xct%sigma_i_EUV(18,ich) = 0.000d-22
               xct%sigma_i_EUV(19,ich) = 0.000d-22

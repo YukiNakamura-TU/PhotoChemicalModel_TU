@@ -49,6 +49,7 @@ contains
 
     if (model == 'Catling') eps = 1.0e-1 ! for convergence
     if (model == 'Chaffin') eps = 1.0e-8 ! for convergence
+    if (set%scheme == 'semi-implicit') eps = 1.0e-2 ! for convergence
 
     ! advance time step scheme ------------------------------------------------------------------
 
@@ -173,10 +174,10 @@ contains
             do isp = 1, spl%nsp_i
               i = (iz-1)*spl%nsp_i+isp
               j = (iz-2)*spl%nsp_i+isp + spl%nsp_i + 1 - i
-              var%Amtx(i,j) = var%d_dnil_dPhi_dz(isp,iz)
+              var%Amtx(i,j) = var%Amtx(i,j) + var%d_dnil_dPhi_dz(isp,iz)
               i = (iz-2)*spl%nsp_i+isp
               j = (iz-1)*spl%nsp_i+isp + spl%nsp_i + 1 - i
-              var%Amtx(i,j) = var%d_dniu_dPhi_dz(isp,iz-1)
+              var%Amtx(i,j) = var%Amtx(i,j) + var%d_dniu_dPhi_dz(isp,iz-1)
             end do
           end do
 
@@ -290,8 +291,9 @@ contains
           if ( set%mode == '1D' .or. set%mode == '2D Lat' ) then 
             if ( var%dtime < set%dtime_limit * 0.99_dp ) then
               if ( var%max_dn_n(3) < eps ) then
-                if (model == 'Catling') var%dtime = var%dtime * 1.0e1_dp
-                if (model == 'Chaffin') var%dtime = var%dtime * 1.0e1_dp
+                if (set%scheme == 'implicit' .and. model == 'Catling') var%dtime = var%dtime * 1.0e1_dp
+                if (set%scheme == 'implicit' .and. model == 'Chaffin') var%dtime = var%dtime * 1.0e1_dp
+                if (set%scheme == 'semi-implicit' ) var%dtime = var%dtime * 1.01e0_dp
                 var%iter = 0
                 do iz = 1, grd%nz
                   do isp = 1, spl%nsp

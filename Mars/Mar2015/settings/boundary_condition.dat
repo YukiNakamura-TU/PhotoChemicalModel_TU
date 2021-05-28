@@ -1,0 +1,5 @@
+CO2,O,H,H2
+CO2 : L 1 lval 2.1e23 U 4 uval 0
+O : L 4 lval 0 U 2 uval 1.2e12
+H : L 4 lval 0 U 3 uval jeans
+H2 : L 4 lval 0 U 3 uval jeans

@@ -1,0 +1,22 @@
+H, CO2, O, CO, N2, N, NO+, HCO+, O2
+Shinagawa/input/density
+H:H.dat;1
+CO2:CO2.dat;1
+O:O.dat;1
+CO:CO.dat;1
+N2:N2.dat;1
+N:N.dat;1
+NO+:NOi.dat;1
+HCO+:HCOi.dat;1
+O2:O2.dat;1
+O+(4S):;1
+CO2+:;1
+O2+:;1
+H+:;1
+e-:;1
+N+:Ni.dat;1
+CO+:COi.dat;1
+C+:Ci.dat;1
+O+(2D):Oi2D.dat;1
+O+(2P):Oi2P.dat;1
+N2+:N2i.dat;1

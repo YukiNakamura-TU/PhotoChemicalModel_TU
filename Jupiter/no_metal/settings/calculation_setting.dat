@@ -1,8 +1,8 @@
-Dimension : 4
+Dimension : 1
 LAT : 0.0
 Ls : 0.0
 stepmax : 30000
-sumdtst : 35729.685e3
+sumdtst : 35729.685e1
 dtmaxst : 1.0e5
 sumdtrot : 3.0
 dtmaxrot : 100.0

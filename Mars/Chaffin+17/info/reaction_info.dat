@@ -216,7 +216,7 @@ Reaction rate : 1 case.
 
 
 --------------------------------------------
- O     + O  + M     →  O₂   + M        
+ O     + O   + M    →  O₂   + M        
 --------------------------------------------
 Reaction number : 16
 Reactant :  O  ,  O  ,  M
@@ -230,7 +230,7 @@ Reaction rate : 1 case.
 
 
 --------------------------------------------
- O     + O₂ + N₂    →  O₃   + N₂       
+ O     + O₂  + N₂   →  O₃   + N₂       
 --------------------------------------------
 Reaction number : 17
 Reactant :  O  ,  O₂  ,  N₂
@@ -244,7 +244,7 @@ Reaction rate : 1 case.
 
 
 --------------------------------------------
- O     + O₂ + CO₂   →  O₃   + CO₂      
+ O     + O₂  + CO₂  →  O₃   + CO₂      
 --------------------------------------------
 Reaction number : 18
 Reactant :  O  ,  O₂  ,  CO₂
@@ -272,7 +272,7 @@ Reaction rate : 1 case.
 
 
 --------------------------------------------
- O     + CO + M     →  CO₂  + M        
+ O     + CO  + M    →  CO₂  + M        
 --------------------------------------------
 Reaction number : 20
 Reactant :  O  ,  CO  ,  M
@@ -398,7 +398,7 @@ Reaction rate : 1 case.
 
 
 --------------------------------------------
- H     + H  + CO₂   →  H₂   + CO₂      
+ H     + H   + CO₂  →  H₂   + CO₂      
 --------------------------------------------
 Reaction number : 29
 Reactant :  H  ,  H  ,  CO₂
@@ -412,7 +412,7 @@ Reaction rate : 1 case.
 
 
 --------------------------------------------
- H     + OH + CO₂   →  H₂O  + CO₂      
+ H     + OH  + CO₂  →  H₂O  + CO₂      
 --------------------------------------------
 Reaction number : 30
 Reactant :  H  ,  OH  ,  CO₂
@@ -496,7 +496,7 @@ Reaction rate : 1 case.
 
 
 --------------------------------------------
- H     + O₂ + M     →  HO₂  + M        
+ H     + O₂  + M    →  HO₂  + M        
 --------------------------------------------
 Reaction number : 36
 Reactant :  H  ,  O₂  ,  M
@@ -584,7 +584,7 @@ Reaction rate : 1 case.
 
 
 --------------------------------------------
- OH    + OH + M     →  H₂O₂ + M        
+ OH    + OH  + M    →  H₂O₂ + M        
 --------------------------------------------
 Reaction number : 42
 Reactant :  OH  ,  OH  ,  M
@@ -686,7 +686,7 @@ Reaction rate : 1 case.
 
 
 --------------------------------------------
- CO    + OH + M     →  CO₂  + H  + M   
+ CO    + OH  + M    →  CO₂  + H  + M   
 --------------------------------------------
 Reaction number : 49
 Reactant :  CO  ,  OH  ,  M
@@ -704,7 +704,7 @@ Reaction rate : 2 cases.
 
 
 --------------------------------------------
- CO    + OH + M     →  HOCO + M        
+ CO    + OH  + M    →  HOCO + M        
 --------------------------------------------
 Reaction number : 50
 Reactant :  CO  ,  OH  ,  M
