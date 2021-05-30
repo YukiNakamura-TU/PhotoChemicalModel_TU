@@ -3,14 +3,7 @@
 ############################################
 
 
-### Fixed : 4 species ###
-
---------------------------------------------
- CO₂
---------------------------------------------
-# path    : ./Mars/Chaffin+17/input/density/CO2.csv
-# mass    : 44.00950000
-# charge  : 0
+### Fixed : 3 species ###
 
 --------------------------------------------
  H₂O
@@ -35,7 +28,33 @@
 --------------------------------------------
 
 
-### Variable : 12 species ###
+### Variable : 13 species ###
+
+--------------------------------------------
+ CO₂
+--------------------------------------------
+# path    : ./Mars/Chaffin+17/input/density/CO2.csv
+# mass    : 44.00950000
+# charge  : 0
+# Produced by following 8 reactions:
+
+    * R18     O     + O₂  + CO₂  →  O₃   + CO₂      
+    * R20     O     + CO  + M    →  CO₂  + M        
+    * R25     O(¹D) + CO₂        →  O    + CO₂      
+    * R29     H     + H   + CO₂  →  H₂   + CO₂      
+    * R30     H     + OH  + CO₂  →  H₂O  + CO₂      
+    * R49     CO    + OH  + M    →  CO₂  + H  + M   
+    * R51     HOCO  + O₂         →  HO₂  + CO₂      
+    * R52     CO₂⁺  + H₂         →  CO₂  + H  + H   
+
+# Lost by following 6 reactions:
+
+    * R1      CO₂  + hv  →  CO     + O       
+    * R2      CO₂  + hv  →  CO     + O(¹D)   
+    * R18     O     + O₂  + CO₂  →  O₃   + CO₂      
+    * R25     O(¹D) + CO₂        →  O    + CO₂      
+    * R29     H     + H   + CO₂  →  H₂   + CO₂      
+    * R30     H     + OH  + CO₂  →  H₂O  + CO₂      
 
 --------------------------------------------
  CO

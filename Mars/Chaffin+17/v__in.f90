@@ -21,7 +21,7 @@ contains
     ! Calculation settings
     set%mode = '1D'
     set%nstep = 30000
-    set%fin_sec = 3.0e8_dp
+    set%fin_sec = 3.0e15_dp
     set%dtime_limit = 1.0e14_dp
     set%latitude = 0.0_dp
     set%Ls = 0.0_dp
@@ -61,11 +61,11 @@ contains
 
     ! reactions, chemical species
     spl%nsp     = 16
-    spl%nsp_i   = 12
+    spl%nsp_i   = 13
     spl%nch     = 52
     spl%nch_P   = 33
     spl%nch_L   = 25
-    spl%n_Jlist = 84
+    spl%n_Jlist = 101
     spl%nch_J   = 27
     spl%nrpn    = 8
 
@@ -141,7 +141,7 @@ contains
     spl%species(16) = 'CO2+'
 
     ! label_fix
-    spl%label_fix(1) = 1 ! CO2: fixed
+    spl%label_fix(1) = 0 ! CO2: variable
     spl%label_fix(2) = 0 ! CO: variable
     spl%label_fix(3) = 0 ! O: variable
     spl%label_fix(4) = 0 ! O(1D): variable
@@ -160,32 +160,34 @@ contains
 
     ! all_to_var
     spl%all_to_var = 0
-    spl%all_to_var(2) = 1 ! CO: variable
-    spl%all_to_var(3) = 2 ! O: variable
-    spl%all_to_var(4) = 3 ! O(1D): variable
-    spl%all_to_var(6) = 4 ! H: variable
-    spl%all_to_var(7) = 5 ! OH: variable
-    spl%all_to_var(8) = 6 ! H2: variable
-    spl%all_to_var(9) = 7 ! O3: variable
-    spl%all_to_var(10) = 8 ! O2: variable
-    spl%all_to_var(11) = 9 ! HO2: variable
-    spl%all_to_var(12) = 10 ! H2O2: variable
-    spl%all_to_var(14) = 11 ! N2: variable
-    spl%all_to_var(15) = 12 ! HOCO: variable
+    spl%all_to_var(1) = 1 ! CO2: variable
+    spl%all_to_var(2) = 2 ! CO: variable
+    spl%all_to_var(3) = 3 ! O: variable
+    spl%all_to_var(4) = 4 ! O(1D): variable
+    spl%all_to_var(6) = 5 ! H: variable
+    spl%all_to_var(7) = 6 ! OH: variable
+    spl%all_to_var(8) = 7 ! H2: variable
+    spl%all_to_var(9) = 8 ! O3: variable
+    spl%all_to_var(10) = 9 ! O2: variable
+    spl%all_to_var(11) = 10 ! HO2: variable
+    spl%all_to_var(12) = 11 ! H2O2: variable
+    spl%all_to_var(14) = 12 ! N2: variable
+    spl%all_to_var(15) = 13 ! HOCO: variable
 
     ! var_to_all
-    spl%var_to_all(1) = 2 ! CO: variable
-    spl%var_to_all(2) = 3 ! O: variable
-    spl%var_to_all(3) = 4 ! O(1D): variable
-    spl%var_to_all(4) = 6 ! H: variable
-    spl%var_to_all(5) = 7 ! OH: variable
-    spl%var_to_all(6) = 8 ! H2: variable
-    spl%var_to_all(7) = 9 ! O3: variable
-    spl%var_to_all(8) = 10 ! O2: variable
-    spl%var_to_all(9) = 11 ! HO2: variable
-    spl%var_to_all(10) = 12 ! H2O2: variable
-    spl%var_to_all(11) = 14 ! N2: variable
-    spl%var_to_all(12) = 15 ! HOCO: variable
+    spl%var_to_all(1) = 1 ! CO2: variable
+    spl%var_to_all(2) = 2 ! CO: variable
+    spl%var_to_all(3) = 3 ! O: variable
+    spl%var_to_all(4) = 4 ! O(1D): variable
+    spl%var_to_all(5) = 6 ! H: variable
+    spl%var_to_all(6) = 7 ! OH: variable
+    spl%var_to_all(7) = 8 ! H2: variable
+    spl%var_to_all(8) = 9 ! O3: variable
+    spl%var_to_all(9) = 10 ! O2: variable
+    spl%var_to_all(10) = 11 ! HO2: variable
+    spl%var_to_all(11) = 12 ! H2O2: variable
+    spl%var_to_all(12) = 14 ! N2: variable
+    spl%var_to_all(13) = 15 ! HOCO: variable
 
     ! mass
     var%m(1) = 44.00950000_dp * cst%m_u !CO2

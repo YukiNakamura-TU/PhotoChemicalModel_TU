@@ -78,7 +78,8 @@ contains
     integer iwl, jnu, i, j, nh
     real(dp) tmpu, tmpl, tmparr(10000)
     real(dp) a0u, a1u, a2u, axl, ax0, ax1, ax2
-    real(dp) o3xdata(215+1601,2), o3chapxdata(0:20001,2), o3xdataadd(1601,2)
+    integer nus, nue
+    real(dp) o3xdata(215+1600,2), o3chapxdata(0:20001,2), o3xdataadd(1600,2)
     real(dp) o2schr130K_raw(0:16000,6), o2schr190K_raw(0:16000,6), o2schr280K_raw(0:16000,6)
     character(len=256) fname
 
@@ -200,16 +201,20 @@ contains
     end do
     o3chapxdata(0,1) = 2001.0_dp
 
-    do iwl = 400, 1999 ! 2000
+    do iwl = 401, 2000
       tmpu = 0.0_dp
       tmpl = 0.0_dp
-      do jnu = int(1.0e7_dp/dble(iwl+1))-5000+1, int(1.0e7_dp/dble(iwl))-5000
+      nus  = int(1.0e7_dp/dble(iwl))-5000+1
+      nue  = int(1.0e7_dp/dble(iwl-1))-5000+1
+      if (nus <= 0) nus = 1
+      if (nue >= 20002) nus = 20001
+      do jnu = nus, nue 
         tmpu = tmpu + (o3chapxdata(jnu,1) - o3chapxdata(jnu-1,1))*o3chapxdata(jnu,2)
         tmpl = tmpl + (o3chapxdata(jnu,1) - o3chapxdata(jnu-1,1))
       end do
-      xct%o3xdata(215+iwl-400+1,1) = dble(iwl)+0.5_dp
-      xct%o3xdata(215+iwl-400+1,2) = tmpu/tmpl
-      !print *, xct%o3xdata(215+iwl-400+1,1), xct%o3xdata(215+iwl-400+1,2)
+      xct%o3xdata(215+iwl-401+1,1) = dble(iwl)-0.5_dp
+      xct%o3xdata(215+iwl-401+1,2) = tmpu/tmpl
+      !print *, xct%o3xdata(215+iwl-401+1,1), xct%o3xdata(215+iwl-401+1,2)
     end do
 
     !stop
@@ -267,12 +272,16 @@ contains
       o2schr280K_raw(iwl,1) = 1.0e7_dp/o2schr280K_raw(iwl,1)
     end do
 
-    do iwl = 176, 203
+    do iwl = 176, 205
       a0u = 0.0_dp
       a1u = 0.0_dp
       a2u = 0.0_dp
       axl = 0.0_dp
-      do jnu = 2*(int(1.0e7_dp/dble(iwl+1))-49000)+1, 2*(int(1.0e7_dp/dble(iwl))-49000)
+      nus = 2*(int(1.0e7_dp/dble(iwl))-49000)+1
+      nue = 2*(int(1.0e7_dp/dble(iwl-1))-49000)+1
+      if (nus <= 0) nus = 1
+      if (nue >= 16001) nue = 16000
+      do jnu = nus, nue
         a0u = a0u + (o2schr130K_raw(jnu,1) - o2schr130K_raw(jnu-1,1))*o2schr130K_raw(jnu,2)
         a1u = a1u + (o2schr130K_raw(jnu,1) - o2schr130K_raw(jnu-1,1))*o2schr130K_raw(jnu,3)
         a2u = a2u + (o2schr130K_raw(jnu,1) - o2schr130K_raw(jnu-1,1))*o2schr130K_raw(jnu,4)
@@ -287,7 +296,11 @@ contains
       a1u = 0.0_dp
       a2u = 0.0_dp
       axl = 0.0_dp
-      do jnu = 2*(int(1.0e7_dp/dble(iwl+1))-49000)+1, 2*(int(1.0e7_dp/dble(iwl))-49000)
+      nus = 2*(int(1.0e7_dp/dble(iwl))-49000)+1
+      nue = 2*(int(1.0e7_dp/dble(iwl-1))-49000)+1
+      if (nus <= 0) nus = 1
+      if (nue >= 16001) nue = 16000
+      do jnu = nus, nue
         a0u = a0u + (o2schr190K_raw(jnu,1) - o2schr190K_raw(jnu-1,1))*o2schr190K_raw(jnu,2)
         a1u = a1u + (o2schr190K_raw(jnu,1) - o2schr190K_raw(jnu-1,1))*o2schr190K_raw(jnu,3)
         a2u = a2u + (o2schr190K_raw(jnu,1) - o2schr190K_raw(jnu-1,1))*o2schr190K_raw(jnu,4)
@@ -302,7 +315,11 @@ contains
       a1u = 0.0_dp
       a2u = 0.0_dp
       axl = 0.0_dp
-      do jnu = 2*(int(1.0e7_dp/dble(iwl+1))-49000)+1, 2*(int(1.0e7_dp/dble(iwl))-49000)
+      nus = 2*(int(1.0e7_dp/dble(iwl))-49000)+1
+      nue = 2*(int(1.0e7_dp/dble(iwl-1))-49000)+1
+      if (nus <= 0) nus = 1
+      if (nue >= 16001) nue = 16000
+      do jnu = nus, nue
         a0u = a0u + (o2schr280K_raw(jnu,1) - o2schr280K_raw(jnu-1,1))*o2schr280K_raw(jnu,2)
         a1u = a1u + (o2schr280K_raw(jnu,1) - o2schr280K_raw(jnu-1,1))*o2schr280K_raw(jnu,3)
         a2u = a2u + (o2schr280K_raw(jnu,1) - o2schr280K_raw(jnu-1,1))*o2schr280K_raw(jnu,4)
@@ -508,7 +525,7 @@ contains
             !fname = 'UV/xct/O3/'//trim(ADJUSTL(num))//'.dat'
             !open(11, file = fname, status = 'unknown' )
 
-            do iwl = nint(xct%o3xdata(1,1)+0.5_dp), nint(xct%o3xdata(215+1601,1)+0.5_dp)
+            do iwl = nint(xct%o3xdata(1,1)+0.5_dp), nint(xct%o3xdata(215+1600,1)+0.5_dp)
               jwl = iwl - nint(xct%O3xdata(1,1)+0.5_dp) + 1
               xct%sigma_a_UV(iwl,iz,isp) = xct%o3xdata(jwl,2)
               !write(11, *) dble(iwl) - 0.5_dp, xct%sigma_a_UV(iwl,iz,isp)
@@ -527,25 +544,25 @@ contains
 
             O2schr = 0.0_dp
             if (Tclamp >= 130.0_dp .and. Tclamp < 190.0_dp) then
-              do iwl = 177, 204
-                O2schr(iwl-176,1) = xct%o2schr130K(iwl-176,1)
-                O2schr(iwl-176,2) = xct%o2schr130K(iwl-176,2)
-                O2schr(iwl-176,3) = xct%o2schr130K(iwl-176,3)
-                O2schr(iwl-176,4) = xct%o2schr130K(iwl-176,4)
+              do iwl = 176, 205
+                O2schr(iwl-176+1,1) = xct%o2schr130K(iwl-176+1,1)
+                O2schr(iwl-176+1,2) = xct%o2schr130K(iwl-176+1,2)
+                O2schr(iwl-176+1,3) = xct%o2schr130K(iwl-176+1,3)
+                O2schr(iwl-176+1,4) = xct%o2schr130K(iwl-176+1,4)
               end do
             else if (Tclamp >= 190.0_dp .and. Tclamp < 280.0_dp) then
-              do iwl = 177, 204
-                O2schr(iwl-176,1) = xct%o2schr190K(iwl-176,1)
-                O2schr(iwl-176,2) = xct%o2schr190K(iwl-176,2)
-                O2schr(iwl-176,3) = xct%o2schr190K(iwl-176,3)
-                O2schr(iwl-176,4) = xct%o2schr190K(iwl-176,4)
+              do iwl = 176, 205
+                O2schr(iwl-176+1,1) = xct%o2schr190K(iwl-176+1,1)
+                O2schr(iwl-176+1,2) = xct%o2schr190K(iwl-176+1,2)
+                O2schr(iwl-176+1,3) = xct%o2schr190K(iwl-176+1,3)
+                O2schr(iwl-176+1,4) = xct%o2schr190K(iwl-176+1,4)
               end do
             else if (Tclamp >= 280.0_dp) then
-              do iwl = 177, 204
-                O2schr(iwl-176,1) = xct%o2schr280K(iwl-176,1)
-                O2schr(iwl-176,2) = xct%o2schr280K(iwl-176,2)
-                O2schr(iwl-176,3) = xct%o2schr280K(iwl-176,3)
-                O2schr(iwl-176,4) = xct%o2schr280K(iwl-176,4)
+              do iwl = 176, 205
+                O2schr(iwl-176+1,1) = xct%o2schr280K(iwl-176+1,1)
+                O2schr(iwl-176+1,2) = xct%o2schr280K(iwl-176+1,2)
+                O2schr(iwl-176+1,3) = xct%o2schr280K(iwl-176+1,3)
+                O2schr(iwl-176+1,4) = xct%o2schr280K(iwl-176+1,4)
               end do
             end if
 
@@ -556,12 +573,12 @@ contains
 
             !fill in the schumann-runge bands according to Minschwaner 1992
             del = ((Tclamp-100.0_dp)/10.0_dp)**2.0_dp
-            do iwl = 177, 204
+            do iwl = 176, 205
               jwl = iwl - nint(xct%O2xdata(1,1)+0.5_dp) + 1
               o2xdata(jwl,2) = o2xdata(jwl,2) &
-                & + 1.0e-24_dp * O2schr(iwl-176,2) * del**2.0_dp &
-                & + 1.0e-24_dp * O2schr(iwl-176,3) * del &
-                & + 1.0e-24_dp * O2schr(iwl-176,4)
+                & + 1.0e-24_dp * O2schr(iwl-176+1,2) * del**2.0_dp &
+                & + 1.0e-24_dp * O2schr(iwl-176+1,3) * del &
+                & + 1.0e-24_dp * O2schr(iwl-176+1,4)
             end do
 
             ! add in the herzberg continuum (though tiny)
@@ -725,7 +742,7 @@ contains
           & .and. products(1) == 'O2' .and. products(2) == 'O' ) then
 
             do iz = 1, nz
-              do iwl = nint(xct%o3xdata(1,1)+0.5_dp), nint(xct%o3xdata(215+1601,1)+0.5_dp)
+              do iwl = nint(xct%o3xdata(1,1)+0.5_dp), nint(xct%o3xdata(215+1600,1)+0.5_dp)
                 if ( flx%lambda_UV(iwl) < 193.0_dp ) then
                   xct%sigma_d_UV(iwl,iz,ich) = xct%sigma_a_UV(iwl,iz,isp) &
                     &                    * (1.0_dp - (1.37e-2_dp*193.0_dp-2.16_dp))
@@ -763,7 +780,7 @@ contains
           & .and. products(1) == 'O2' .and. products(2) == 'O(1D)' ) then
 
             do iz = 1, nz
-              do iwl = nint(xct%o3xdata(1,1)+0.5_dp), nint(xct%o3xdata(215+1601,1)+0.5_dp)
+              do iwl = nint(xct%o3xdata(1,1)+0.5_dp), nint(xct%o3xdata(215+1600,1)+0.5_dp)
                 if ( flx%lambda_UV(iwl) < 193.0_dp ) then
                   xct%sigma_d_UV(iwl,iz,ich) = xct%sigma_a_UV(iwl,iz,isp) &
                     &                    * (1.37e-2_dp*193.0_dp-2.16_dp)

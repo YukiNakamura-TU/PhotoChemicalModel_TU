@@ -130,7 +130,7 @@ module v__tdec
     real(dp)              :: h2o2xdata(70,2), h2o2xdata_l(90,2)
     real(dp)              :: h2xdata(277,2)
     real(dp)              :: ohxdata(601,2), oho1Dxdata(601,2)
-    real(dp)              :: o3xdata(215+1601,2)
+    real(dp)              :: o3xdata(215+1600,2)
     real(dp)              :: o2xdata(115,2), o2schr130K(30,4),o2schr190K(30,4), o2schr280K(30,4)
   end type xct_
 
