@@ -117,9 +117,11 @@ contains
                   do i = 2, nint(spl%rate_rpn_token(ich,icase,1))+1
                     token = spl%rate_rpn_token(ich,icase,i)
                     label = spl%rate_rpn_label(ich,icase,i)
+                    ! values
                     if (label == 0) then
                       pop = pop + 1
                       stack(pop) = dble(token)
+                    ! operators
                     else if (label == 1) then
                       if (nint(token) == 1) then
                         stack(pop-1) = stack(pop-1) + stack(pop)
@@ -146,6 +148,7 @@ contains
                       else if (nint(token) == 8) then
                         stack(pop) = dsqrt(stack(pop))
                       end if
+                    ! temperatures
                     else if (label == 2) then
                       pop = pop + 1
                       if (nint(token) == 1) then
@@ -154,6 +157,12 @@ contains
                         stack(pop) = var%Ti(iz)
                       else if (nint(token) == 3) then
                         stack(pop) = var%Te(iz)
+                      end if
+                    ! densities
+                    else if (label == 3) then
+                      pop = pop + 1
+                      if (nint(token) == 1) then
+                        stack(pop) = var%n_tot(iz) !!!!!! unit !  k -> k*1e-6 not inplemented !!!!!!!!!
                       end if
                     end if
                   end do

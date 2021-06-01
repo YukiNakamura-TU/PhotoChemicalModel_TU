@@ -19,5 +19,5 @@ add_executable(e__main
     p__photochem_transport.f90
     p__photochem_scheme.f90
     p__airglow.f90
-    Mars/Chaffin+17/v__in.f90
+    Mars/sep201709/v__in.f90
 )

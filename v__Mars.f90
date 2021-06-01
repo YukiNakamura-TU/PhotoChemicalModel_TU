@@ -185,13 +185,13 @@ contains
           do iz = 1, grd%nz
           do iy = 1, grd%ny
           do ix = 1, grd%nx
-            !var%ki_special(1,ix,iy,iz) = ((tmpzarr1(iz) + tmpzarr2(iz))*1.0e6_dp )
+            var%ki_special(1,ix,iy,iz) = ((tmpzarr1(iz) + tmpzarr2(iz))*1.0e6_dp )
+            !var%ki_special(1,ix,iy,iz) = 1.0e10_dp
           end do
           end do
           !print *, ich, iz, var%ki_special(1,1,1,iz)
           end do
           !stop
-            
 
         end if
 

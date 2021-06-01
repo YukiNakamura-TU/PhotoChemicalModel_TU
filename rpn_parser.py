@@ -32,7 +32,8 @@ TERM = {
     'sqrt' : (1, 8),
     'Tn'   : (2, 1),
     'Ti'   : (2, 2),
-    'Te'   : (2, 3)
+    'Te'   : (2, 3), 
+    'M'    : (3, 1)
 }
 
 # split characters into tokens

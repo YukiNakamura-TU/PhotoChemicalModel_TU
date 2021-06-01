@@ -1,0 +1,6 @@
+CO2, H2O, CO2+
+stable201709/input/density
+CO2:mcd_CO2_201709.txt;0
+H2O:mcd_H2O_201709.txt;1
+CO2+:CO2+.dat;1
+N2:N2.dat;1

@@ -236,9 +236,13 @@ contains
           if (spl%species(isp) == 'e-') then
             var%ni_new(isp,iz) = 0.0_dp
             do jsp = 1, spl%nsp
-              if (var%q(jsp) /= 0.0_dp .and. jsp /= isp) then
+              if (var%q(jsp) > 0.0_dp .and. jsp /= isp) then
                 var%ni_new(isp,iz) &
                   &  = var%ni_new(isp,iz) + var%ni_new(jsp,iz)
+              end if
+              if (var%q(jsp) < 0.0_dp .and. jsp /= isp) then
+                var%ni_new(isp,iz) &
+                  &  = var%ni_new(isp,iz) - var%ni_new(jsp,iz)
               end if
             end do
           end if

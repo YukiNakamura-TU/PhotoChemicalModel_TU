@@ -238,6 +238,9 @@ contains
               else if ( var%q(isp) > 0.0_dp ) then 
                 zetap = Dip * (gradPep + 1.0_dp/Hip + (1.0_dp+alpha(isp))*Thermp) 
                 zetam = Dim * (gradPem + 1.0_dp/Him + (1.0_dp+alpha(isp))*Thermm) 
+              else if ( var%q(isp) < 0.0_dp ) then 
+                zetap = - Dip * (gradPep + 1.0_dp/Hip + (1.0_dp+alpha(isp))*Thermp) 
+                zetam = - Dim * (gradPem + 1.0_dp/Him + (1.0_dp+alpha(isp))*Thermm) 
               end if
 
               var%dPhi_dz(jsp,iz) = niu * ( - (Dip+Kip)/dz0/dz0 - zetap/2.0_dp/dz0 ) & ! iz+1 -> iz
@@ -322,6 +325,8 @@ contains
               zetap = Dip * ( 1.0_dp/Hip + (1.0_dp+alpha(isp))*Thermp) + Kip * (1.0_dp/Hap + Thermp)
             else if ( var%q(isp) > 0.0_dp ) then 
               zetap = Dip * (gradPep + 1.0_dp/Hip + (1.0_dp+alpha(isp))*Thermp) 
+            else if ( var%q(isp) < 0.0_dp ) then 
+              zetap = - Dip * (gradPep + 1.0_dp/Hip + (1.0_dp+alpha(isp))*Thermp) 
             end if
 
             var%dPhi_dz(jsp,1) = niu * ( - (Dip+Kip)/dz0/dz0 - zetap/2.0_dp/dz0 ) & ! iz+1 -> iz
@@ -412,6 +417,8 @@ contains
               zetam = Dim * ( 1.0_dp/Him + (1.0_dp+alpha(isp))*Thermm) + Kim * (1.0_dp/Ham + Thermm)
             else if ( var%q(isp) > 0.0_dp ) then 
               zetam = Dim * (gradPem + 1.0_dp/Him + (1.0_dp+alpha(isp))*Thermm) 
+            else if ( var%q(isp) < 0.0_dp ) then 
+              zetam = - Dim * (gradPem + 1.0_dp/Him + (1.0_dp+alpha(isp))*Thermm) 
             end if
 
             var%dPhi_dz(jsp,grd%nz) = ni0 * (   (Dim+Kim)/dzl/dzl + zetam/2.0_dp/dzl ) & ! iz   -> iz-1
