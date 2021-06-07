@@ -43,7 +43,7 @@
  CO2+ + e- -> CO + O : 1.14e-4 * (1/T(electron))^1 @ Schunk and Nagy [1980] # Shinagawa et al. [1987]
  O2+ + e- -> O + O : 1.6e-7 * (300/T(electron))^0.55 @ Schunk and Nagy [1980] # Shinagawa et al. [1987]
  CO2+       +  CO2    + M      -> CO2+(CO2)  + M          : 2.5e-28  @ Ikezoe et al. [1986]  # R07 in Molina-Cuberos et al. [2001] 
- CO2+(CO2)  +  O2              -> O2+        + CO2  + CO2 : 2.5e-28  @ Ikezoe et al. [1986]  # R09 in Molina-Cuberos et al. [2001] 
+ CO2+(CO2)  +  O2              -> O2+        + CO2  + CO2 : 1.53e-10  @ Ikezoe et al. [1986]  # R09 in Molina-Cuberos et al. [2001] 
  CO2+(CO2)  +  O2              -> O2+(CO2)   + CO2        : 2.7e-11  @ Ikezoe et al. [1986]  # R10 in Molina-Cuberos et al. [2001] 
  O2+        +  CO2    + M      -> O2+(CO2)   + M          : 1.7e-29  @ Ikezoe et al. [1986]  # R27 in Molina-Cuberos et al. [2001] 
  O2+(CO2)   +  CO2             -> O2+        + CO2  + CO2 : 2.4e-13  @ Ikezoe et al. [1986]  # R31 in Molina-Cuberos et al. [2001] 

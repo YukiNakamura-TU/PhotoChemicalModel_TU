@@ -391,7 +391,7 @@ reaction_rate_list.append(" O2+ + e- -> O + O : 1.6e-7 * (300/T(electron))^0.55 
 ## Molina-Cuberos+ 2001
   # positive ion reactions
 reaction_rate_list.append(" CO2+       +  CO2    + M      -> CO2+(CO2)  + M          : 2.5e-28  @ Ikezoe et al. [1986]  # R07 in Molina-Cuberos et al. [2001] ")
-reaction_rate_list.append(" CO2+(CO2)  +  O2              -> O2+        + CO2  + CO2 : 2.5e-28  @ Ikezoe et al. [1986]  # R09 in Molina-Cuberos et al. [2001] ")
+reaction_rate_list.append(" CO2+(CO2)  +  O2              -> O2+        + CO2  + CO2 : 1.53e-10  @ Ikezoe et al. [1986]  # R09 in Molina-Cuberos et al. [2001] ")
 reaction_rate_list.append(" CO2+(CO2)  +  O2              -> O2+(CO2)   + CO2        : 2.7e-11  @ Ikezoe et al. [1986]  # R10 in Molina-Cuberos et al. [2001] ")
 ##reaction_rate_list.append(" H3O+       +  H2O    + M      -> H3O+H2O    + M          : 3.4e-27  @ Ikezoe et al. [1986]  # R11 in Molina-Cuberos et al. [2001] ")
 #reaction_rate_list.append(" H3O+OH     +  H2O             -> H3O+(H2O)  + OH         : 1.4e-9   @ Ikezoe et al. [1986]  # R12 in Molina-Cuberos et al. [2001] ")
