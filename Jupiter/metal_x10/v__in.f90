@@ -29,8 +29,8 @@ contains
     set%scheme = 'implicit'
     set%inversion = 'Catling'
     ! directory setting
-    set%dir_name = './Jupiter/metal_dev10'
-    set%fnamestable = './Jupiter/metal_dev10/output/density/n_stable.dat'
+    set%dir_name = './Jupiter/metal_x10'
+    set%fnamestable = './Jupiter/metal_x10/output/density/n_stable.dat'
 
   end subroutine v__in__ini
 
@@ -635,43 +635,43 @@ contains
     var%q(88) = 0.0_dp * cst%q_e !SiCH2
 
     ! read P, L, J list
-    open(11, file = './Jupiter/metal_dev10/input/PLJ_list/Production_list.dat', status = 'unknown' )
+    open(11, file = './Jupiter/metal_x10/input/PLJ_list/Production_list.dat', status = 'unknown' )
       do isp = 1, spl%nsp_i
         read(11,*) (spl%Prod_list(isp,ich), ich = 1, spl%nch_P)
       end do
     close(11)
 
-    open(11, file = './Jupiter/metal_dev10/input/PLJ_list/Loss_list.dat', status = 'unknown' )
+    open(11, file = './Jupiter/metal_x10/input/PLJ_list/Loss_list.dat', status = 'unknown' )
       do isp = 1, spl%nsp_i
         read(11,*) (spl%Loss_list(isp,ich), ich = 1, spl%nch_L)
       end do
     close(11)
 
-    open(11, file = './Jupiter/metal_dev10/input/PLJ_list/Jacobian_list.dat', status = 'unknown' )
+    open(11, file = './Jupiter/metal_x10/input/PLJ_list/Jacobian_list.dat', status = 'unknown' )
       do i = 1, spl%n_Jlist
         read(11,*) (spl%Jmtx_list(i,j), j = 1, spl%nch_J)
       end do
     close(11)
 
-    open(11, file = './Jupiter/metal_dev10/input/PLJ_list/reactant_list.dat', status = 'unknown' )
+    open(11, file = './Jupiter/metal_x10/input/PLJ_list/reactant_list.dat', status = 'unknown' )
       do ich = 1, spl%nch
         read(11,*) (spl%reactant_list(ich,isp), isp = 1, 10)
       end do
     close(11)
 
-    open(11, file = './Jupiter/metal_dev10/input/PLJ_list/product_list.dat', status = 'unknown' )
+    open(11, file = './Jupiter/metal_x10/input/PLJ_list/product_list.dat', status = 'unknown' )
       do ich = 1, spl%nch
         read(11,*) (spl%product_list(ich,isp), isp = 1, 10)
       end do
     close(11)
 
-    open(11, file = './Jupiter/metal_dev10/input/PLJ_list/reaction_type_list.dat', status = 'unknown' )
+    open(11, file = './Jupiter/metal_x10/input/PLJ_list/reaction_type_list.dat', status = 'unknown' )
       do ich = 1, spl%nch
         read(11,*) spl%reaction_type_list(ich)
       end do
     close(11)
 
-    open(11, file = './Jupiter/metal_dev10/input/PLJ_list/rate_rpn_token.dat', status = 'unknown' )
+    open(11, file = './Jupiter/metal_x10/input/PLJ_list/rate_rpn_token.dat', status = 'unknown' )
       do ich = 1, spl%nch
         do i = 1, 3
           read(11,*) (spl%rate_rpn_token(ich,i,j), j = 1, spl%nrpn)
@@ -679,7 +679,7 @@ contains
       end do
     close(11)
 
-    open(11, file = './Jupiter/metal_dev10/input/PLJ_list/rate_rpn_label.dat', status = 'unknown' )
+    open(11, file = './Jupiter/metal_x10/input/PLJ_list/rate_rpn_label.dat', status = 'unknown' )
       do ich = 1, spl%nch
         do i = 1, 3
           read(11,*) (spl%rate_rpn_label(ich,i,j), j = 1, spl%nrpn)
@@ -687,11 +687,11 @@ contains
       end do
     close(11)
 
-    open(11, file = './Jupiter/metal_dev10/input/PLJ_list/rate_cases.dat', status = 'unknown' )
+    open(11, file = './Jupiter/metal_x10/input/PLJ_list/rate_cases.dat', status = 'unknown' )
       read(11,*) (spl%rate_cases(ich), ich = 1, spl%nch)
     close(11)
 
-    open(11, file = './Jupiter/metal_dev10/input/PLJ_list/T_range.dat', status = 'unknown' )
+    open(11, file = './Jupiter/metal_x10/input/PLJ_list/T_range.dat', status = 'unknown' )
       do ich = 1, spl%nch
         do i = 1, 3
           read(11,*) (spl%T_range(ich,i,j), j = 1, 3)
@@ -727,19 +727,19 @@ contains
 
     ! input Temperature profiles
 
-    open(11, file = './Jupiter/metal_dev10/input/Temperature/T_e.dat', status = 'unknown' )
+    open(11, file = './Jupiter/metal_x10/input/Temperature/T_e.dat', status = 'unknown' )
       do iz = 1, grd%nz
         read(11,*) tmp,var%Te(iz)
       end do
     close(11)
 
-    open(11, file = './Jupiter/metal_dev10/input/Temperature/T_i.dat', status = 'unknown' )
+    open(11, file = './Jupiter/metal_x10/input/Temperature/T_i.dat', status = 'unknown' )
       do iz = 1, grd%nz
         read(11,*) tmp,var%Ti(iz)
       end do
     close(11)
 
-    open(11, file = './Jupiter/metal_dev10/input/Temperature/T_n.dat', status = 'unknown' )
+    open(11, file = './Jupiter/metal_x10/input/Temperature/T_n.dat', status = 'unknown' )
       do iz = 1, grd%nz
         read(11,*) tmp,var%Tn(iz)
       end do
@@ -750,7 +750,7 @@ contains
 
     isp = sp_index(spl, 'H2')
     if (isp >= 1 .and. isp <= spl%nsp) then
-      open(11, file = './Jupiter/metal/input/density/H2.dat', status = 'unknown' )
+      open(11, file = './Jupiter/metal_x10/input/density/H2.dat', status = 'unknown' )
         do iz = 1, grd%nz
           read(11,*) tmp, var%ni(isp,iz)
         end do
@@ -759,7 +759,7 @@ contains
 
     isp = sp_index(spl, 'He')
     if (isp >= 1 .and. isp <= spl%nsp) then
-      open(11, file = './Jupiter/metal/input/density/He.dat', status = 'unknown' )
+      open(11, file = './Jupiter/metal_x10/input/density/He.dat', status = 'unknown' )
         do iz = 1, grd%nz
           read(11,*) tmp, var%ni(isp,iz)
         end do
@@ -768,7 +768,7 @@ contains
 
     isp = sp_index(spl, 'CH4')
     if (isp >= 1 .and. isp <= spl%nsp) then
-      open(11, file = './Jupiter/metal/input/density/CH4.dat', status = 'unknown' )
+      open(11, file = './Jupiter/metal_x10/input/density/CH4.dat', status = 'unknown' )
         do iz = 1, grd%nz
           read(11,*) tmp, var%ni(isp,iz)
         end do
@@ -777,7 +777,7 @@ contains
 
     isp = sp_index(spl, 'C2H2')
     if (isp >= 1 .and. isp <= spl%nsp) then
-      open(11, file = './Jupiter/metal/input/density/C2H2.dat', status = 'unknown' )
+      open(11, file = './Jupiter/metal_x10/input/density/C2H2.dat', status = 'unknown' )
         do iz = 1, grd%nz
           read(11,*) tmp, var%ni(isp,iz)
         end do
@@ -786,7 +786,7 @@ contains
 
     isp = sp_index(spl, 'C2H4')
     if (isp >= 1 .and. isp <= spl%nsp) then
-      open(11, file = './Jupiter/metal/input/density/C2H4.dat', status = 'unknown' )
+      open(11, file = './Jupiter/metal_x10/input/density/C2H4.dat', status = 'unknown' )
         do iz = 1, grd%nz
           read(11,*) tmp, var%ni(isp,iz)
         end do
@@ -795,7 +795,7 @@ contains
 
     isp = sp_index(spl, 'C2H6')
     if (isp >= 1 .and. isp <= spl%nsp) then
-      open(11, file = './Jupiter/metal/input/density/C2H6.dat', status = 'unknown' )
+      open(11, file = './Jupiter/metal_x10/input/density/C2H6.dat', status = 'unknown' )
         do iz = 1, grd%nz
           read(11,*) tmp, var%ni(isp,iz)
         end do
@@ -804,7 +804,7 @@ contains
 
     isp = sp_index(spl, 'H2(v>=2)')
     if (isp >= 1 .and. isp <= spl%nsp) then
-      open(11, file = './Jupiter/metal/input/density/H2_v2.dat', status = 'unknown' )
+      open(11, file = './Jupiter/metal_x10/input/density/H2_v2.dat', status = 'unknown' )
         do iz = 1, grd%nz
           read(11,*) tmp, var%ni(isp,iz)
         end do
@@ -813,7 +813,7 @@ contains
 
     isp = sp_index(spl, 'H2(v>=4)')
     if (isp >= 1 .and. isp <= spl%nsp) then
-      open(11, file = './Jupiter/metal/input/density/H2_v4.dat', status = 'unknown' )
+      open(11, file = './Jupiter/metal_x10/input/density/H2_v4.dat', status = 'unknown' )
         do iz = 1, grd%nz
           read(11,*) tmp, var%ni(isp,iz)
         end do

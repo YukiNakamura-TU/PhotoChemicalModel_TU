@@ -11,6 +11,6 @@
 
  calculate stable solution...
  finished stable calculation!
- dt     =    1.0000000000000000E-008  [s]
- sum_t  =    0.0000000000000000       [s]
- cpu_t  =    1.0200000000001874E-004  [s]
+ dt     =    100000.00000000000       [s]
+ sum_t  =    35749893.337520197       [s]
+ cpu_t  =    835.80273000000000       [s]

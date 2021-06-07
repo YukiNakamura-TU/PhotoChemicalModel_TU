@@ -8,42 +8,42 @@
 --------------------------------------------
  H₂
 --------------------------------------------
-# path    : ./Jupiter/metal/input/density/H2.dat
+# path    : ./Jupiter/metal_x10/input/density/H2.dat
 # mass    : 2.01588000
 # charge  : 0
 
 --------------------------------------------
  He
 --------------------------------------------
-# path    : ./Jupiter/metal/input/density/He.dat
+# path    : ./Jupiter/metal_x10/input/density/He.dat
 # mass    : 4.00260200
 # charge  : 0
 
 --------------------------------------------
  CH₄
 --------------------------------------------
-# path    : ./Jupiter/metal/input/density/CH4.dat
+# path    : ./Jupiter/metal_x10/input/density/CH4.dat
 # mass    : 16.04246000
 # charge  : 0
 
 --------------------------------------------
  C₂H₂
 --------------------------------------------
-# path    : ./Jupiter/metal/input/density/C2H2.dat
+# path    : ./Jupiter/metal_x10/input/density/C2H2.dat
 # mass    : 26.03728000
 # charge  : 0
 
 --------------------------------------------
  C₂H₄
 --------------------------------------------
-# path    : ./Jupiter/metal/input/density/C2H4.dat
+# path    : ./Jupiter/metal_x10/input/density/C2H4.dat
 # mass    : 28.05316000
 # charge  : 0
 
 --------------------------------------------
  C₂H₆
 --------------------------------------------
-# path    : ./Jupiter/metal/input/density/C2H6.dat
+# path    : ./Jupiter/metal_x10/input/density/C2H6.dat
 # mass    : 30.06904000
 # charge  : 0
 
@@ -86,14 +86,14 @@
 --------------------------------------------
  H₂(v>=2)
 --------------------------------------------
-# path    : ./Jupiter/metal/input/density/H2_v2.dat
+# path    : ./Jupiter/metal_x10/input/density/H2_v2.dat
 # mass    : 2.01588000
 # charge  : 0
 
 --------------------------------------------
  H₂(v>=4)
 --------------------------------------------
-# path    : ./Jupiter/metal/input/density/H2_v4.dat
+# path    : ./Jupiter/metal_x10/input/density/H2_v4.dat
 # mass    : 2.01588000
 # charge  : 0
 

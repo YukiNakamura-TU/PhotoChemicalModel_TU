@@ -200,7 +200,7 @@ contains
           !
           ! Meteoroid flux settings
           !
-          tmpzarr(iz) = tmpzarr(iz) * 1.0_dp
+          tmpzarr(iz) = tmpzarr(iz) * 10.0_dp
 
         end do
       close(11)
