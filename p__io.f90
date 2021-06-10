@@ -233,7 +233,7 @@ contains
     type(var_), intent(in) :: var
     type(grd_), intent(in) :: grd
     type(set_), intent(in) :: set
-    character(len=256) fname
+    character(len=256) fname, char
 
     fname = './'//trim(ADJUSTL(set%dir_name))//'/progress.dat'
     open(11, file = fname, status = 'unknown' )
@@ -258,7 +258,8 @@ contains
         else if ( set%calc_stable == 1 ) then
           write(11, *) 'calculate stable solution...'
           if ( grd%iy < grd%ny ) then
-            write(11, *) 'current progress = ', int(100 * (grd%iy-1)/grd%ny), ' %'
+            write(char,'(f5.1)') 100.0_dp * dble(grd%iy)/dble(grd%ny)    
+            write(11, *) 'current progress = '//trim(ADJUSTL(char))//' %'
           else if ( grd%iy == grd%ny ) then
             write(11, *) 'finished stable calculation!'
           end if
@@ -279,7 +280,8 @@ contains
         else if ( set%calc_stable == 1 ) then
           write(11, *) 'calculate stable solution...'
           if ( grd%iy < grd%ny ) then
-            write(11, *) 'current progress = ', int(100 * (grd%iy-1)/grd%ny), ' %'
+            write(char,'(f5.1)') 100.0_dp * dble(grd%iy)/dble(grd%ny)    
+            write(11, *) 'current progress = '//trim(ADJUSTL(char))//' %'
           else if ( grd%iy == grd%ny ) then
             write(11, *) 'finished stable calculation!'
           end if
@@ -299,7 +301,8 @@ contains
           if ( set%start_rot == 1 ) then
             write(11, *) 'calculating rotational mode...'
             if ( grd%iy < grd%ny ) then
-              write(11, *) 'current progress = ', int(100 * (grd%iy-1)/grd%ny), ' %'
+              write(char,'(f5.1)') 100.0_dp * dble(grd%iy)/dble(grd%ny)    
+              write(11, *) 'current progress = '//trim(ADJUSTL(char))//' %'
             else if ( grd%iy == grd%ny ) then
               write(11, *) 'finished rotational calculation!'
             end if
@@ -309,7 +312,8 @@ contains
           if ( set%start_rot == 0 ) then
             write(11, *) 'calculating stable solution...'
             if ( grd%iy < grd%ny ) then
-              write(11, *) 'current progress = ', int(100 * (grd%iy-1)/grd%ny), ' %'
+              write(char,'(f5.1)') 100.0_dp * dble(grd%iy)/dble(grd%ny)    
+              write(11, *) 'current progress = '//trim(ADJUSTL(char))//' %'
             else if ( grd%iy == grd%ny ) then
               write(11, *) 'finished stable calculation!'
             end if
@@ -326,7 +330,8 @@ contains
             write(11,*)
             if ( grd%iy < grd%ny ) then
               write(11, *) 'calculating rotational mode...'
-              write(11, *) 'current progress = ', int(100 * (grd%iy-1)/grd%ny), ' %'
+              write(char,'(f5.1)') 100.0_dp * dble(grd%iy)/dble(grd%ny)    
+              write(11, *) 'current progress = '//trim(ADJUSTL(char))//' %'
             else if ( grd%iy == grd%ny ) then
               write(11, *) 'finished rotational calculation!'
             end if
@@ -345,7 +350,8 @@ contains
           if ( set%start_rot == 1 ) then
             write(11, *) 'calculating rotational mode...'
             if ( grd%iy < grd%ny ) then
-              write(11, *) 'current progress = ', int(100 * (grd%iy-1)/grd%ny), ' %'
+              write(char,'(f5.1)') 100.0_dp * dble(grd%iy)/dble(grd%ny)    
+              write(11, *) 'current progress = '//trim(ADJUSTL(char))//' %'
             else if ( grd%iy == grd%ny ) then
               write(11, *) 'finished rotational calculation!'
             end if
@@ -355,7 +361,8 @@ contains
           if ( set%start_rot == 0 ) then
             write(11, *) 'calculating stable solution...'
             if ( grd%iy < grd%ny ) then
-              write(11, *) 'current progress = ', int(100 * (grd%iy-1)/grd%ny), ' %'
+              write(char,'(f5.1)') 100.0_dp * dble(grd%iy)/dble(grd%ny)    
+              write(11, *) 'current progress = '//trim(ADJUSTL(char))//' %'
             else if ( grd%iy == grd%ny ) then
               write(11, *) 'finished stable calculation!'
             end if
@@ -372,7 +379,8 @@ contains
             write(11,*)
             if ( grd%iy < grd%ny ) then
               write(11, *) 'calculating rotational mode...'
-              write(11, *) 'current progress = ', int(100 * (grd%iy-1)/grd%ny), ' %'
+              write(char,'(f5.1)') 100.0_dp * dble(grd%iy)/dble(grd%ny)    
+              write(11, *) 'current progress = '//trim(ADJUSTL(char))//' %'
             else if ( grd%iy == grd%ny ) then
               write(11, *) 'finished rotational calculation!'
             end if
@@ -391,7 +399,8 @@ contains
           if ( set%start_rot == 1 ) then
             write(11, *) 'calculating rotational mode...'
             if ( grd%iy < grd%ny ) then
-              write(11, *) 'current progress = ', int(100 * (grd%iy-1)/grd%ny), ' %'
+              write(char,'(f5.1)') 100.0_dp * dble(grd%iy)/dble(grd%ny)    
+              write(11, *) 'current progress = '//trim(ADJUSTL(char))//' %'
             else if ( grd%iy == grd%ny ) then
               write(11, *) 'finished rotational calculation!'
             end if
@@ -400,7 +409,8 @@ contains
         else if ( set%calc_stable == 1 ) then
           write(11, *) 'calculating stable solution...'
           if ( grd%iy < grd%ny ) then
-            write(11, *) 'current progress = ', int(100 * (grd%iy-1)/grd%ny), ' %'
+            write(char,'(f5.1)') 100.0_dp * dble(grd%iy)/dble(grd%ny)    
+            write(11, *) 'current progress = '//trim(ADJUSTL(char))//' %'
           else if ( grd%iy == grd%ny ) then
             write(11, *) 'finished stable calculation!'
           end if
@@ -411,7 +421,8 @@ contains
           if ( set%start_rot == 1 ) then
             write(11, *) 'calculating rotational mode...'
             if ( grd%iy < grd%ny ) then
-              write(11, *) 'current progress = ', int(100 * (grd%iy-1)/grd%ny), ' %'
+              write(char,'(f5.1)') 100.0_dp * dble(grd%iy)/dble(grd%ny)    
+              write(11, *) 'current progress = '//trim(ADJUSTL(char))//' %'
             else if ( grd%iy == grd%ny ) then
               write(11, *) 'finished rotational calculation!'
             end if

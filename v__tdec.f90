@@ -68,7 +68,7 @@ module v__tdec
     real(dp), allocatable  :: d_dne0_dPhi_dz_add(:,:)  ! d/dne0 * dPhi/dz
     real(dp), allocatable  :: d_dnel_dPhi_dz_add(:,:)  ! d/dnel * dPhi/dz
     real(dp), allocatable  :: Amtx(:,:), Lmtx(:,:), Umtx(:,:), barr(:), xarr(:), yarr(:), dxarr(:), rarr(:)
-    real(dp)               :: max_dn_n(3)
+    real(dp)               :: max_dn_n(3), i_dn_n
   end type var_
 
   ! species list

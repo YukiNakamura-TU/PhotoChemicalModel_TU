@@ -12,5 +12,5 @@
  calculate stable solution...
  finished stable calculation!
  dt     =    100000.00000000000       [s]
- sum_t  =    35749893.337520197       [s]
- cpu_t  =    835.80273000000000       [s]
+ sum_t  =    35746693.337520197       [s]
+ cpu_t  =    814.59455000000003       [s]

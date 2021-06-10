@@ -228,7 +228,7 @@ program e__main
         end if
 
         write(*,*) grd%iy, var%istep, var%dtime, var%sum_time, var%max_dn_n(1), &
-        & var%max_dn_n(2), var%max_dn_n(3), var%m_mean(1)/cst%m_u
+        & var%max_dn_n(2), var%max_dn_n(3), var%i_dn_n!, var%m_mean(1)/cst%m_u
 
         var%sum_time = var%sum_time + var%dtime
 

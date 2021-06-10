@@ -258,7 +258,6 @@
  Na      +  C4H7+   ->  Na+     +  products       :  3.0e-9 @ estimate
  Na      +  C4H9+   ->  Na+     +  products       :  3.0e-9 @ estimate
  Na      +  Si+     ->  Na+     +  Si             :  2.7e-9 @ Miller et al. [1997]
- Na      +  H3O+    ->  Na+     +  H2O     +  H   :  3.1e-9 @ Miller et al. [1997]
  NaH     +  H       ->  Na      +  H2             :  1.0e-10 * (T(neutral)/300)^(-0.5) @ estimate
  Na+     +  e-      ->  Na                        :  2.7e-12 * (T(electron)/300)^(-0.6) @ Miller et al. [1997]
  NaH2+   +  e-      ->  Na      +  H2             :  1.5e-7  * (T(electron)/300)^(-0.5) @ estimate
@@ -369,7 +368,6 @@
  Si+     +  C2H6    ->  SiCnHm+ +  CH4             : 1.2e-10 @ Wlodek et al. [1991]
  Si+     +  C2H6    ->  SiCnHm+ +  CH3             : 6.4e-10 @ Wlodek et al. [1991]
  Si+     +  C2H6    ->  SiCnHm+ +  CH3     +  H2   : 2.4e-11 @ Wlodek et al. [1991]
- Si+     +  H2O     ->  SiOH+   +  H               : 2.3e-10 @ Fahey et al. [1981]
  SiH+    +  H       ->  Si+     +  H2              : 1.9e-9  @ Herbst et al. [1989]
  SiH2+   +  H       ->  SiH+    +  H2              : 1.8e-9  @ estimate
  Si      +  H+      ->  Si+     +  H               : 9.9e-10 @ Miller et al. [1997]
@@ -395,7 +393,6 @@
  Si      +  C4H5+   ->  SiCnHm+ +  products        : 2.0e-10 @ estimate
  Si      +  C4H7+   ->  SiCnHm+ +  products        : 2.0e-10 @ estimate
  Si      +  C4H9+   ->  SiCnHm+ +  products        : 2.0e-10 @ estimate
- Si      +  H3O+    ->  SiH+    +  H3O             : 1.8e-9  @ Miller et al. [1997]
  Si      +  CH2     ->  SiCH    +  H               : 2.0e-11 * (T(neutral)/300)^(-0.5) @ Herbst et al. [1989]
  Si      +  CH3     ->  SiCH2   +  H               : 4.0e-11 * (T(neutral)/300)^( 0.5) @ Herbst et al. [1989]
  SiH     +  H       ->  Si      +  H2              : 1.0e-10 * (T(neutral)/300)^( 0.5) @ estimate

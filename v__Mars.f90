@@ -173,7 +173,7 @@ contains
 
         if ( spl%reaction_type_char(ich) == 'electron impact' ) then
 
-          open(11, file = './Mars/P_CO2+_2017_09_13.dat', status = 'unknown' )
+          open(11, file = './Mars/P_CO2+_2003.dat', status = 'unknown' )
             do iz = 1, grd%nz
               read(11,*)
               read(11,*) tmp, tmpzarr1(iz), tmpzarr2(iz)

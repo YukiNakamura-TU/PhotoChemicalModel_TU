@@ -27,7 +27,7 @@ contains
     set%Ls = 0.0_dp
     set%nday = 3.0_dp
     set%scheme = 'implicit'
-    set%inversion = 'Chaffin'
+    set%inversion = 'Catling'
     ! directory setting
     set%dir_name = './Mars/Chaffin+17'
     set%fnamestable = './Mars/Chaffin+17/output/density/n_stable.dat'
@@ -387,6 +387,10 @@ contains
     isp = sp_index(spl, 'N2')
     var%LowerBC(isp,1) = 1.0_dp
     var%LowerBC(isp,2) = 4.0e21_dp
+
+    isp = sp_index(spl, 'CO')
+    var%LowerBC(isp,1) = 1.0_dp
+    var%LowerBC(isp,2) = 1.0e20_dp
 
 
     ! Upper boundary condition

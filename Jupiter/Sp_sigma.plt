@@ -1,7 +1,7 @@
 
 reset
 
-dir = 'metal_Hill'
+dir = 'no_metal_Hill'
 
 
 set terminal postscript enhanced color

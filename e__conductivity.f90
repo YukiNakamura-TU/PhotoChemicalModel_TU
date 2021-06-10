@@ -49,7 +49,7 @@ program e__conductivity
   type(xct_) :: xct ! type of cross section
   type(spl_) :: spl ! type of species list and planet info
   type(flx_) :: flx ! type of solar flux
-  integer i, j, k, ix, xs, iy, iz, ich, isp, jsp, is, iday, s
+  integer i, j, k, ix, xs, iy, iz, ich, isp, jsp, is, iday, s, N
   real(dp) tmp
   character(len=256) fname, num
 
@@ -69,7 +69,16 @@ program e__conductivity
 
   call cpu_time(t1)
 
-  B_factor = 1.0_dp
+  !-----------------------------------------------------
+  ! Magnetic field factor
+  !-----------------------------------------------------
+  ! i = 0  -> 0.1
+  ! i = 2N -> 10
+  i = 1
+
+  N = 10
+  B_factor = 10.0_dp**(dble(i-N)/dble(N))
+  print *, 'B_factor = ', B_factor
 
 
   !----------------------------------------------------------------------------------------------------------

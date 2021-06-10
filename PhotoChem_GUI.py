@@ -965,7 +965,7 @@ reaction_rate_list.append(" Na      +  C4H5+   ->  Na+     +  products       :  
 reaction_rate_list.append(" Na      +  C4H7+   ->  Na+     +  products       :  3.0e-9 @ estimate")
 reaction_rate_list.append(" Na      +  C4H9+   ->  Na+     +  products       :  3.0e-9 @ estimate")
 reaction_rate_list.append(" Na      +  Si+     ->  Na+     +  Si             :  2.7e-9 @ Miller et al. [1997]")
-reaction_rate_list.append(" Na      +  H3O+    ->  Na+     +  H2O     +  H   :  3.1e-9 @ Miller et al. [1997]")
+#reaction_rate_list.append(" Na      +  H3O+    ->  Na+     +  H2O     +  H   :  3.1e-9 @ Miller et al. [1997]")
 reaction_rate_list.append(" NaH     +  H       ->  Na      +  H2             :  1.0e-10 * (T(neutral)/300)^(-0.5) @ estimate")
 reaction_rate_list.append(" Na+     +  e-      ->  Na                        :  2.7e-12 * (T(electron)/300)^(-0.6) @ Miller et al. [1997]")
 reaction_rate_list.append(" NaH2+   +  e-      ->  Na      +  H2             :  1.5e-7  * (T(electron)/300)^(-0.5) @ estimate")
@@ -1079,7 +1079,7 @@ reaction_rate_list.append(" Si+     +  C2H4    ->  SiCnHm+ +  H               : 
 reaction_rate_list.append(" Si+     +  C2H6    ->  SiCnHm+ +  CH4             : 1.2e-10 @ Wlodek et al. [1991]") # <- modified:actually Si+ + C2H6 -> SiCH2+ + CH4
 reaction_rate_list.append(" Si+     +  C2H6    ->  SiCnHm+ +  CH3             : 6.4e-10 @ Wlodek et al. [1991]") # <- modified:actually Si+ + C2H6 -> SiCH3+ + CH3
 reaction_rate_list.append(" Si+     +  C2H6    ->  SiCnHm+ +  CH3     +  H2   : 2.4e-11 @ Wlodek et al. [1991]") # <- modified:actually Si+ + C2H6 -> SiCH2+ + CH3 + H2
-reaction_rate_list.append(" Si+     +  H2O     ->  SiOH+   +  H               : 2.3e-10 @ Fahey et al. [1981]")
+#reaction_rate_list.append(" Si+     +  H2O     ->  SiOH+   +  H               : 2.3e-10 @ Fahey et al. [1981]")
 reaction_rate_list.append(" SiH+    +  H       ->  Si+     +  H2              : 1.9e-9  @ Herbst et al. [1989]")
 reaction_rate_list.append(" SiH2+   +  H       ->  SiH+    +  H2              : 1.8e-9  @ estimate")
 reaction_rate_list.append(" Si      +  H+      ->  Si+     +  H               : 9.9e-10 @ Miller et al. [1997]")
@@ -1105,7 +1105,7 @@ reaction_rate_list.append(" Si      +  C4H3+   ->  SiCnHm+ +  products        : 
 reaction_rate_list.append(" Si      +  C4H5+   ->  SiCnHm+ +  products        : 2.0e-10 @ estimate")
 reaction_rate_list.append(" Si      +  C4H7+   ->  SiCnHm+ +  products        : 2.0e-10 @ estimate")
 reaction_rate_list.append(" Si      +  C4H9+   ->  SiCnHm+ +  products        : 2.0e-10 @ estimate")
-reaction_rate_list.append(" Si      +  H3O+    ->  SiH+    +  H3O             : 1.8e-9  @ Miller et al. [1997]")
+#reaction_rate_list.append(" Si      +  H3O+    ->  SiH+    +  H3O             : 1.8e-9  @ Miller et al. [1997]")
 reaction_rate_list.append(" Si      +  CH2     ->  SiCH    +  H               : 2.0e-11 * (T(neutral)/300)^(-0.5) @ Herbst et al. [1989]")
 reaction_rate_list.append(" Si      +  CH3     ->  SiCH2   +  H               : 4.0e-11 * (T(neutral)/300)^( 0.5) @ Herbst et al. [1989]")
 reaction_rate_list.append(" SiH     +  H       ->  Si      +  H2              : 1.0e-10 * (T(neutral)/300)^( 0.5) @ estimate")
@@ -3704,6 +3704,20 @@ def callback_save_dir_window(iplnt, Planet, list_s, list_e, dir0, version,
             path = './'+Planet+'/'+dir2+'/output/rate'
             if os.path.exists(path) == False:
                 os.makedirs(path)
+
+            # rename directory path of fixed species
+            path = './'+Planet+'/'+dir2+'/settings/input_path_list.dat'
+            if os.path.exists(path) == True:
+                with open(path, mode = 'r') as f:
+                    lines = f.readlines()
+                f.close()
+                with open(path, mode = 'w') as f:
+                    f.write(lines[0])
+                    f.write(dir2+'/input/density\n')
+                    for i in range(len(lines)):
+                        if i >= 2:
+                            f.write(lines[i])
+                f.close()
 
             reaction_window(iplnt, Planet, list_s, list_e, dir2, version, reaction_chk_bln, fix_species_bln, input_species_char, search_list)
 

@@ -1,13 +1,13 @@
 # ionosphere
-#O2+:#EE3333
-#CO2+:#EEEE33
-#O2+(CO2):#0033AA
-#O2+(H2O):#3377AA
-#H3O+(OH):#11AAFF
-#H+(H2O)$_{\rm{n}}${H+(H2O),H+(H2O)2,H+(H2O)3,H+(H2O)4,H+(H2O)5}:#33CCFF
-#CO$_{\rm{n}}$-{CO3-,CO4-}:#33CC00
-#CO3-(H2O)$_{\rm{n}}${CO3-(H2O),CO3-(H2O)2}:#33CC99
-#e-:#000000
+O2+:#EE3333
+CO2+:#EEEE33
+O2+(CO2):#0033AA
+O2+(H2O):#3377AA
+H3O+(OH):#11AAFF
+H+(H2O)$_{\rm{n}}${H+(H2O),H+(H2O)2,H+(H2O)3,H+(H2O)4,H+(H2O)5}:#33CCFF
+CO$_{\rm{n}}$-{CO3-,CO4-}:#33CC00
+CO3-(H2O)$_{\rm{n}}${CO3-(H2O),CO3-(H2O)2}:#33CC99
+e-:#000000
 # neutral
 #CO2:
 #CO:
@@ -16,6 +16,6 @@
 #O:
 #HO2:
 #H2O2:
-OHx{OH,HO2}:#2222EE
-O3:#EE2222
+#OHx{OH,HO2}:#2222EE
+#O3:#EE2222
 

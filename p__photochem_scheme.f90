@@ -110,6 +110,7 @@ contains
           var%Jmtx = 0.0_dp
           var%barr = 0.0_dp
           var%xarr = 0.0_dp
+
           do iz = 1, grd%nz
 
             ! generate Chemical Jacobian matrix
@@ -142,6 +143,12 @@ contains
                 var%Jmtx(i,j) = var%Jmtx(i,j) + tmp
 
               end do
+
+              ! Lower boundary: density fix
+              if (nint(var%LowerBC(ii,1)) == 1.0_dp .and. iz == 1) then 
+                var%Jmtx(i,j) = 0.0_dp
+              end if
+
             end do
 
             do isp = 1, spl%nsp_i
@@ -154,8 +161,15 @@ contains
 
             ! vector b = P - L - dPhi_dz 
             do isp = 1, spl%nsp_i
+              ii = spl%var_to_all(isp)
               i = (iz-1)*spl%nsp_i+isp
               var%barr(i) = ( var%Pi(isp,iz) - var%Li(isp,iz) ) - var%dPhi_dz(isp,iz)
+
+              ! Lower boundary: density fix
+              if (nint(var%LowerBC(ii,1)) == 1.0_dp .and. iz == 1) then 
+                var%barr(i) = 0.0_dp
+              end if
+
             end do
 
           end do ! z
@@ -164,19 +178,27 @@ contains
           !   Combining Chemical Jacobian and Transport Jacobian term
           do iz = 1, grd%nz
             do isp = 1, spl%nsp_i
+              ii = spl%var_to_all(isp)
               i = (iz-1)*spl%nsp_i+isp
               j = (iz-1)*spl%nsp_i+isp + spl%nsp_i + 1 - i
               var%Amtx(i,j) = var%Amtx(i,j) + var%d_dni0_dPhi_dz(isp,iz)
+              if (nint(var%LowerBC(ii,1)) == 1.0_dp .and. iz == 1) then 
+                var%Amtx(i,j) = 0.0_dp
+              end if
             end do
           end do
           do iz = 2, grd%nz
             do isp = 1, spl%nsp_i
+              ii = spl%var_to_all(isp)
               i = (iz-1)*spl%nsp_i+isp
               j = (iz-2)*spl%nsp_i+isp + spl%nsp_i + 1 - i
               var%Amtx(i,j) = var%d_dnil_dPhi_dz(isp,iz)
               i = (iz-2)*spl%nsp_i+isp
               j = (iz-1)*spl%nsp_i+isp + spl%nsp_i + 1 - i
               var%Amtx(i,j) = var%d_dniu_dPhi_dz(isp,iz-1)
+              if (nint(var%LowerBC(ii,1)) == 1.0_dp .and. iz == 2) then 
+                var%Amtx(i,j) = 0.0_dp
+              end if
             end do
           end do
 
@@ -321,6 +343,8 @@ contains
 
         end if
       end if
+
+
 
     ! advance time step ------------------------------------------------------------------
       do iz = 1, grd%nz
