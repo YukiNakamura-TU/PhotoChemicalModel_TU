@@ -72,11 +72,14 @@ program e__conductivity
   !-----------------------------------------------------
   ! Magnetic field factor
   !-----------------------------------------------------
-  ! i = 0  -> 0.1
-  ! i = 2N -> 10
-  i = 1
+  N = 5
 
-  N = 10
+  ! i = 0  ->  0.1
+  ! i = N  ->  1
+  ! i = 2N -> 10
+
+  i = 2
+
   B_factor = 10.0_dp**(dble(i-N)/dble(N))
   print *, 'B_factor = ', B_factor
 

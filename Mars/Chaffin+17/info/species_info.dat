@@ -43,9 +43,9 @@
     * R25     O(¹D) + CO₂        →  O    + CO₂      
     * R29     H     + H   + CO₂  →  H₂   + CO₂      
     * R30     H     + OH  + CO₂  →  H₂O  + CO₂      
-    * R49     CO    + OH  + M    →  CO₂  + H  + M   
-    * R51     HOCO  + O₂         →  HO₂  + CO₂      
-    * R52     CO₂⁺  + H₂         →  CO₂  + H  + H   
+    * R50     HOCO  + O₂         →  HO₂  + CO₂      
+    * R51     CO₂⁺  + H₂         →  CO₂  + H  + H   
+    * R52     CO    + OH         →  CO₂  + H        
 
 # Lost by following 6 reactions:
 
@@ -69,8 +69,8 @@
 # Lost by following 3 reactions:
 
     * R20     O     + CO  + M    →  CO₂  + M        
-    * R49     CO    + OH  + M    →  CO₂  + H  + M   
-    * R50     CO    + OH  + M    →  HOCO + M        
+    * R49     CO    + OH  + M    →  HOCO + M        
+    * R52     CO    + OH         →  CO₂  + H        
 
 --------------------------------------------
  O
@@ -142,8 +142,8 @@
     * R27     H₂    + O          →  OH   + H        
     * R28     OH    + H₂         →  H₂O  + H        
     * R38     O     + OH         →  O₂   + H        
-    * R49     CO    + OH  + M    →  CO₂  + H  + M   
-    * R52     CO₂⁺  + H₂         →  CO₂  + H  + H   
+    * R51     CO₂⁺  + H₂         →  CO₂  + H  + H   
+    * R52     CO    + OH         →  CO₂  + H        
 
 # Lost by following 9 reactions:
 
@@ -189,8 +189,8 @@
     * R43     OH    + O₃         →  HO₂  + O₂       
     * R44     OH    + HO₂        →  H₂O  + O₂       
     * R45     OH    + H₂O₂       →  H₂O  + HO₂      
-    * R49     CO    + OH  + M    →  CO₂  + H  + M   
-    * R50     CO    + OH  + M    →  HOCO + M        
+    * R49     CO    + OH  + M    →  HOCO + M        
+    * R52     CO    + OH         →  CO₂  + H        
 
 --------------------------------------------
  H₂
@@ -210,7 +210,7 @@
     * R24     O(¹D) + H₂         →  H    + OH       
     * R27     H₂    + O          →  OH   + H        
     * R28     OH    + H₂         →  H₂O  + H        
-    * R52     CO₂⁺  + H₂         →  CO₂  + H  + H   
+    * R51     CO₂⁺  + H₂         →  CO₂  + H  + H   
 
 --------------------------------------------
  O₃
@@ -265,7 +265,7 @@
     * R18     O     + O₂  + CO₂  →  O₃   + CO₂      
     * R21     O(¹D) + O₂         →  O    + O₂       
     * R36     H     + O₂  + M    →  HO₂  + M        
-    * R51     HOCO  + O₂         →  HO₂  + CO₂      
+    * R50     HOCO  + O₂         →  HO₂  + CO₂      
 
 --------------------------------------------
  HO₂
@@ -280,7 +280,7 @@
     * R40     O     + H₂O₂       →  OH   + HO₂      
     * R43     OH    + O₃         →  HO₂  + O₂       
     * R45     OH    + H₂O₂       →  H₂O  + HO₂      
-    * R51     HOCO  + O₂         →  HO₂  + CO₂      
+    * R50     HOCO  + O₂         →  HO₂  + CO₂      
 
 # Lost by following 9 reactions:
 
@@ -335,11 +335,11 @@
 # charge  : 0
 # Produced by following 1 reactions:
 
-    * R50     CO    + OH  + M    →  HOCO + M        
+    * R49     CO    + OH  + M    →  HOCO + M        
 
 # Lost by following 1 reactions:
 
-    * R51     HOCO  + O₂         →  HO₂  + CO₂      
+    * R50     HOCO  + O₂         →  HO₂  + CO₂      
 
 --------------------------------------------
 

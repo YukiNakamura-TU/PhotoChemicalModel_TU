@@ -670,6 +670,7 @@ reaction_rate_list.append(" CO    + OH  + M   -> HOCO + M        : k0 = 5.9e-33 
 reaction_rate_list.append(" HOCO  + O2        -> HO2  + CO2      : 2.0e-12 # Chaffin et al. [2017] ")
 reaction_rate_list.append(" CO2+  + H2        -> CO2  + H  + H   : 8.7e-10 # Chaffin et al. [2017] ") # it's only used to reproduce Chaffin+2017, otherwise remove it!
 
+#reaction_rate_list.append(" CO    + OH        -> CO2  + H        : 1.5e-13 # Chaffin et al. [2017] ")
 
 # Pinto et al. [1980] Formaldehyde H2CO reactions
 reaction_rate_list.append(" H     + CO     + M   -> HCO   + M      : 2.0e-33 * exp(-850/T(neutral)) # R7 in Pinto et al. [1980] ")
