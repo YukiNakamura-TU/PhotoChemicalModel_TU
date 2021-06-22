@@ -1,0 +1,68 @@
+############################################
+############## reaction info ###############
+############################################
+
+
+* 4 reactions
+
+--------------------------------------------
+ CO₂  + hv  →  CO     + O       
+--------------------------------------------
+Reaction number : 1
+Reactant :  CO₂
+Product  :  CO  ,  O
+
+Reaction rate : 1 case.
+       (1) 0
+               T type  : 
+               T range :   0.00 [K]  ~  100000.00 [K]
+
+
+
+--------------------------------------------
+ O₂   + hv  →  O      + O       
+--------------------------------------------
+Reaction number : 2
+Reactant :  O₂
+Product  :  O  ,  O
+
+Reaction rate : 1 case.
+       (1) 0
+               T type  : 
+               T range :   0.00 [K]  ~  100000.00 [K]
+
+
+
+--------------------------------------------
+ O     + O   + M    →  O₂   + M        
+--------------------------------------------
+Reaction number : 3
+Reactant :  O  ,  O  ,  M
+Product  :  O₂  ,  M
+
+Reaction rate : 1 case.
+       (1) 5.4 × 10⁻³³ × (300/T(neutral))³·25
+               T type  : neutral Temperature
+               T range :   0.00 [K]  ~  100000.00 [K]
+
+
+
+--------------------------------------------
+ CO    + OH  + M    →   ¹³C₂¹₈O₂  + H  + M   
+--------------------------------------------
+Reaction number : 4
+Reactant :  CO  ,  OH  ,  M
+Product  :   ¹³C₂¹₈O₂  ,  H
+
+Reaction rate : 2 cases.
+       (1) k0 = 1.5 × 10⁻¹³ × (300/T(neutral))⁻⁰·6)
+               T type  : neutral Temperature
+               T range : 0.00 [K]  ~  100000.00 [K]
+
+       (2) kinf = 2.1 × 10⁹ × (300/T(neutral))⁻⁶·1)
+               T type  : neutral Temperature
+               T range : 0.00 [K]  ~  100000.00 [K]
+
+
+
+

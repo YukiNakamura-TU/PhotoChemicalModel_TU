@@ -1,0 +1,204 @@
+############################################
+############## reaction info ###############
+############################################
+
+
+* 14 reactions
+
+--------------------------------------------
+ CO₂ + hv  →  CO₂⁺   + e⁻      
+--------------------------------------------
+Reaction number : 1
+Reactant :  CO₂
+Product  :  CO₂⁺  ,  e⁻
+
+Reaction rate : 1 case.
+       (1) 0
+               T type  : 
+               T range :   0.00 [K]  ~  100000.00 [K]
+
+
+
+--------------------------------------------
+ CO₂ + hv  →  O⁺(⁴S)     + e⁻ + CO 
+--------------------------------------------
+Reaction number : 2
+Reactant :  CO₂
+Product  :  O⁺(⁴S)  ,  e⁻  ,  CO
+
+Reaction rate : 1 case.
+       (1) 0
+               T type  : 
+               T range :   0.00 [K]  ~  100000.00 [K]
+
+
+
+--------------------------------------------
+ O   + hv  →  O⁺(⁴S) + e⁻      
+--------------------------------------------
+Reaction number : 3
+Reactant :  O
+Product  :  O⁺(⁴S)  ,  e⁻
+
+Reaction rate : 1 case.
+       (1) 0
+               T type  : 
+               T range :   0.00 [K]  ~  100000.00 [K]
+
+
+
+--------------------------------------------
+ O   + hv  →  O⁺(²D) + e⁻      
+--------------------------------------------
+Reaction number : 4
+Reactant :  O
+Product  :  O⁺(²D)  ,  e⁻
+
+Reaction rate : 1 case.
+       (1) 0
+               T type  : 
+               T range :   0.00 [K]  ~  100000.00 [K]
+
+
+
+--------------------------------------------
+ O   + hv  →  O⁺(²P) + e⁻      
+--------------------------------------------
+Reaction number : 5
+Reactant :  O
+Product  :  O⁺(²P)  ,  e⁻
+
+Reaction rate : 1 case.
+       (1) 0
+               T type  : 
+               T range :   0.00 [K]  ~  100000.00 [K]
+
+
+
+--------------------------------------------
+ O⁺(⁴S) + CO₂  →  O₂⁺ + CO 
+--------------------------------------------
+Reaction number : 6
+Reactant :  O⁺(⁴S)  ,  CO₂
+Product  :  O₂⁺  ,  CO
+
+Reaction rate : 1 case.
+       (1) 9.4 × 10⁻¹⁰
+               T type  : 
+               T range :   0.00 [K]  ~  100000.00 [K]
+
+
+
+--------------------------------------------
+ O⁺(⁴S) + N₂  →  NO⁺ + N 
+--------------------------------------------
+Reaction number : 7
+Reactant :  O⁺(⁴S)  ,  N₂
+Product  :  NO⁺  ,  N
+
+Reaction rate : 1 case.
+       (1) 1.2 × 10⁻¹² × (300/T(neutral))^1
+               T type  : neutral Temperature
+               T range :   0.00 [K]  ~  100000.00 [K]
+
+
+
+--------------------------------------------
+ O⁺(⁴S) + H  →  H⁺ + O 
+--------------------------------------------
+Reaction number : 8
+Reactant :  O⁺(⁴S)  ,  H
+Product  :  H⁺  ,  O
+
+Reaction rate : 1 case.
+       (1) 2.5 × 10⁻¹¹ × (1/T(neutral))⁻⁰·⁵
+               T type  : neutral Temperature
+               T range :   0.00 [K]  ~  100000.00 [K]
+
+
+
+--------------------------------------------
+ CO₂⁺ + O  →  CO + O₂⁺ 
+--------------------------------------------
+Reaction number : 9
+Reactant :  CO₂⁺  ,  O
+Product  :  CO  ,  O₂⁺
+
+Reaction rate : 1 case.
+       (1) 1.64 × 10⁻¹⁰
+               T type  : 
+               T range :   0.00 [K]  ~  100000.00 [K]
+
+
+
+--------------------------------------------
+ CO₂⁺ + O  →  CO₂ + O⁺(⁴S) 
+--------------------------------------------
+Reaction number : 10
+Reactant :  CO₂⁺  ,  O
+Product  :  CO₂  ,  O⁺(⁴S)
+
+Reaction rate : 1 case.
+       (1) 9.6 × 10⁻¹¹
+               T type  : 
+               T range :   0.00 [K]  ~  100000.00 [K]
+
+
+
+--------------------------------------------
+ H⁺ + O  →  O⁺(⁴S) + H 
+--------------------------------------------
+Reaction number : 11
+Reactant :  H⁺  ,  O
+Product  :  O⁺(⁴S)  ,  H
+
+Reaction rate : 1 case.
+       (1) 2.2 × 10⁻¹¹ × (1/T(ion))⁻⁰·⁵
+               T type  : ion Temperature
+               T range :   0.00 [K]  ~  100000.00 [K]
+
+
+
+--------------------------------------------
+ H⁺ + CO₂  →  HCO⁺ + O 
+--------------------------------------------
+Reaction number : 12
+Reactant :  H⁺  ,  CO₂
+Product  :  HCO⁺  ,  O
+
+Reaction rate : 1 case.
+       (1) 3.0 × 10⁻⁹
+               T type  : 
+               T range :   0.00 [K]  ~  100000.00 [K]
+
+
+
+--------------------------------------------
+ CO₂⁺ + e⁻  →  CO + O 
+--------------------------------------------
+Reaction number : 13
+Reactant :  CO₂⁺  ,  e⁻
+Product  :  CO  ,  O
+
+Reaction rate : 1 case.
+       (1) 1.14 × 10⁻⁴ × (1/T(electron))^1
+               T type  : electron Temperature
+               T range :   0.00 [K]  ~  100000.00 [K]
+
+
+
+--------------------------------------------
+ O₂⁺ + e⁻  →  O + O 
+--------------------------------------------
+Reaction number : 14
+Reactant :  O₂⁺  ,  e⁻
+Product  :  O  ,  O
+
+Reaction rate : 1 case.
+       (1) 1.6 × 10⁻⁷ × (300/T(electron))⁰·⁵⁵
+               T type  : electron Temperature
+               T range :   0.00 [K]  ~  100000.00 [K]
+
+
+
+

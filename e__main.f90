@@ -175,6 +175,10 @@ program e__main
 
     call cpu_time(var%t1)
 
+    !!! For calculation at a certain sza
+    !set%test_loc = 1 !!!!!!!!!!!!
+    !set%sza = 60.0_dp *cst%pi/180.0_dp
+
     !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     flx%mode_factor = 0.5_dp ! average over LT
     if ( set%test_loc == 1 ) then

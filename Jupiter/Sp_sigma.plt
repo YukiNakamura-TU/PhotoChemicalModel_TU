@@ -1,8 +1,9 @@
 
 reset
 
-dir = 'no_metal_Hill'
-
+dir1 = 'no_metal_Hill'
+dir2 = 'metal_x10_Hill'
+mode = 'B_Jupiter_i=5'
 
 set terminal postscript enhanced color
 set view 45,0,1.3, 0.8
@@ -56,8 +57,65 @@ fz(v)   = r*sin(v)
 #set size 1200,900
 
 
-set out './'.dir.'/output/conductivity/sigma_H.eps'
-splot './'.dir.'/output/conductivity/hi_sigma_HP0_ij.dat' using 2:1:(1):3 w pm3d , \
+#set out './'.dir1.'/output/conductivity/sigma_H.eps'
+#splot './'.dir1.'/output/conductivity/hi_sigma_HP0_ij.dat' using 2:1:(1):3 w pm3d , \
+#       r*cos(0)   *cos(u), r*cos(0)   *sin(u), r*sin(0)    w l ls 1 lc rgb "black", \
+#       r*cos(7.5) *cos(u), r*cos(7.5) *sin(u), r*sin(7.5)  w l ls 1 lc rgb "black", \
+#       r*cos(15)  *cos(u), r*cos(15)  *sin(u), r*sin(15)   w l ls 1 lc rgb "black", \
+#       r*cos(22.5)*cos(u), r*cos(22.5)*sin(u), r*sin(22.5) w l ls 1 lc rgb "black", \
+#       r*cos(30)  *cos(u), r*cos(30)  *sin(u), r*sin(30)   w l ls 1 lc rgb "black", \
+#       r*cos(37.5)*cos(u), r*cos(37.5)*sin(u), r*sin(37.5) w l ls 1 lc rgb "black", \
+#       r*cos(45)  *cos(u), r*cos(45)  *sin(u), r*sin(45)   w l ls 1 lc rgb "black", \
+#       r*cos(52.5)*cos(u), r*cos(52.5)*sin(u), r*sin(52.5) w l ls 1 lc rgb "black", \
+#       r*cos(60)  *cos(u), r*cos(60)  *sin(u), r*sin(60)   w l ls 1 lc rgb "black", \
+#       r*cos(67.5)*cos(u), r*cos(67.5)*sin(u), r*sin(67.5) w l ls 1 lc rgb "black", \
+#       r*cos(75)  *cos(u), r*cos(75)  *sin(u), r*sin(75)   w l ls 1 lc rgb "black", \
+#       r*cos(82.5)*cos(u), r*cos(82.5)*sin(u), r*sin(82.5) w l ls 1 lc rgb "black", \
+#       r*cos(0)   *cos(u), r*sin(0)   *cos(u), r*sin(u)    w l ls 1 lc rgb "black", \
+#       r*cos(15)  *cos(u), r*sin(15)  *cos(u), r*sin(u)    w l ls 1 lc rgb "black", \
+#       r*cos(30)  *cos(u), r*sin(30)  *cos(u), r*sin(u)    w l ls 1 lc rgb "black", \
+#       r*cos(45)  *cos(u), r*sin(45)  *cos(u), r*sin(u)    w l ls 1 lc rgb "black", \
+#       r*cos(60)  *cos(u), r*sin(60)  *cos(u), r*sin(u)    w l ls 1 lc rgb "black", \
+#       r*cos(75)  *cos(u), r*sin(75)  *cos(u), r*sin(u)    w l ls 1 lc rgb "black", \
+#       r*cos(90)  *cos(u), r*sin(90)  *cos(u), r*sin(u)    w l ls 1 lc rgb "black", \
+#       r*cos(105) *cos(u), r*sin(105) *cos(u), r*sin(u)    w l ls 1 lc rgb "black", \
+#       r*cos(120) *cos(u), r*sin(120) *cos(u), r*sin(u)    w l ls 1 lc rgb "black", \
+#       r*cos(135) *cos(u), r*sin(135) *cos(u), r*sin(u)    w l ls 1 lc rgb "black", \
+#       r*cos(150) *cos(u), r*sin(150) *cos(u), r*sin(u)    w l ls 1 lc rgb "black", \
+#       r*cos(165) *cos(u), r*sin(165) *cos(u), r*sin(u)    w l ls 1 lc rgb "black"
+
+
+#set out './'.dir1.'/output/conductivity/'.mode.'/sigma_P.eps'
+#splot './'.dir1.'/output/conductivity/'.mode.'/hi_sigma_HP0_ij.dat' using 2:1:(1):4 w pm3d , \
+#       r*cos(0)   *cos(u), r*cos(0)   *sin(u), r*sin(0)    w l ls 1 lc rgb "black", \
+#       r*cos(7.5) *cos(u), r*cos(7.5) *sin(u), r*sin(7.5)  w l ls 1 lc rgb "black", \
+#       r*cos(15)  *cos(u), r*cos(15)  *sin(u), r*sin(15)   w l ls 1 lc rgb "black", \
+#       r*cos(22.5)*cos(u), r*cos(22.5)*sin(u), r*sin(22.5) w l ls 1 lc rgb "black", \
+#       r*cos(30)  *cos(u), r*cos(30)  *sin(u), r*sin(30)   w l ls 1 lc rgb "black", \
+#       r*cos(37.5)*cos(u), r*cos(37.5)*sin(u), r*sin(37.5) w l ls 1 lc rgb "black", \
+#       r*cos(45)  *cos(u), r*cos(45)  *sin(u), r*sin(45)   w l ls 1 lc rgb "black", \
+#       r*cos(52.5)*cos(u), r*cos(52.5)*sin(u), r*sin(52.5) w l ls 1 lc rgb "black", \
+#       r*cos(60)  *cos(u), r*cos(60)  *sin(u), r*sin(60)   w l ls 1 lc rgb "black", \
+#       r*cos(67.5)*cos(u), r*cos(67.5)*sin(u), r*sin(67.5) w l ls 1 lc rgb "black", \
+#       r*cos(75)  *cos(u), r*cos(75)  *sin(u), r*sin(75)   w l ls 1 lc rgb "black", \
+#       r*cos(82.5)*cos(u), r*cos(82.5)*sin(u), r*sin(82.5) w l ls 1 lc rgb "black", \
+#       r*cos(0)   *cos(u), r*sin(0)   *cos(u), r*sin(u)    w l ls 1 lc rgb "black", \
+#       r*cos(15)  *cos(u), r*sin(15)  *cos(u), r*sin(u)    w l ls 1 lc rgb "black", \
+#       r*cos(30)  *cos(u), r*sin(30)  *cos(u), r*sin(u)    w l ls 1 lc rgb "black", \
+#       r*cos(45)  *cos(u), r*sin(45)  *cos(u), r*sin(u)    w l ls 1 lc rgb "black", \
+#       r*cos(60)  *cos(u), r*sin(60)  *cos(u), r*sin(u)    w l ls 1 lc rgb "black", \
+#       r*cos(75)  *cos(u), r*sin(75)  *cos(u), r*sin(u)    w l ls 1 lc rgb "black", \
+#       r*cos(90)  *cos(u), r*sin(90)  *cos(u), r*sin(u)    w l ls 1 lc rgb "black", \
+#       r*cos(105) *cos(u), r*sin(105) *cos(u), r*sin(u)    w l ls 1 lc rgb "black", \
+#       r*cos(120) *cos(u), r*sin(120) *cos(u), r*sin(u)    w l ls 1 lc rgb "black", \
+#       r*cos(135) *cos(u), r*sin(135) *cos(u), r*sin(u)    w l ls 1 lc rgb "black", \
+#       r*cos(150) *cos(u), r*sin(150) *cos(u), r*sin(u)    w l ls 1 lc rgb "black", \
+#       r*cos(165) *cos(u), r*sin(165) *cos(u), r*sin(u)    w l ls 1 lc rgb "black"
+
+
+
+set out './'.dir2.'/output/conductivity/'.mode.'/sigma_H.eps'
+splot './'.dir2.'/output/conductivity/'.mode.'/hi_sigma_HP0_ij.dat' using 2:1:(1):3 w pm3d , \
        r*cos(0)   *cos(u), r*cos(0)   *sin(u), r*sin(0)    w l ls 1 lc rgb "black", \
        r*cos(7.5) *cos(u), r*cos(7.5) *sin(u), r*sin(7.5)  w l ls 1 lc rgb "black", \
        r*cos(15)  *cos(u), r*cos(15)  *sin(u), r*sin(15)   w l ls 1 lc rgb "black", \
@@ -84,8 +142,8 @@ splot './'.dir.'/output/conductivity/hi_sigma_HP0_ij.dat' using 2:1:(1):3 w pm3d
        r*cos(165) *cos(u), r*sin(165) *cos(u), r*sin(u)    w l ls 1 lc rgb "black"
 
 
-set out './'.dir.'/output/conductivity/sigma_P.eps'
-splot './'.dir.'/output/conductivity/hi_sigma_HP0_ij.dat' using 2:1:(1):4 w pm3d , \
+set out './'.dir2.'/output/conductivity/'.mode.'/sigma_P.eps'
+splot './'.dir2.'/output/conductivity/'.mode.'/hi_sigma_HP0_ij.dat' using 2:1:(1):4 w pm3d , \
        r*cos(0)   *cos(u), r*cos(0)   *sin(u), r*sin(0)    w l ls 1 lc rgb "black", \
        r*cos(7.5) *cos(u), r*cos(7.5) *sin(u), r*sin(7.5)  w l ls 1 lc rgb "black", \
        r*cos(15)  *cos(u), r*cos(15)  *sin(u), r*sin(15)   w l ls 1 lc rgb "black", \
@@ -110,3 +168,65 @@ splot './'.dir.'/output/conductivity/hi_sigma_HP0_ij.dat' using 2:1:(1):4 w pm3d
        r*cos(135) *cos(u), r*sin(135) *cos(u), r*sin(u)    w l ls 1 lc rgb "black", \
        r*cos(150) *cos(u), r*sin(150) *cos(u), r*sin(u)    w l ls 1 lc rgb "black", \
        r*cos(165) *cos(u), r*sin(165) *cos(u), r*sin(u)    w l ls 1 lc rgb "black"
+
+
+
+## Ratio
+#
+#set cbrange[1.0:100]
+#set cbtics (1,10,100)
+#
+#set out './'.dir2.'/output/conductivity/sigma_H_ratio.eps'
+#splot "< paste ./'.dir1.'/output/conductivity/hi_sigma_HP0_ij.dat ./'.dir2.'/output/#conductivity/hi_sigma_HP0_ij.dat" using 2:1:(1):($6/$3) w pm3d , \
+#       r*cos(0)   *cos(u), r*cos(0)   *sin(u), r*sin(0)    w l ls 1 lc rgb "black", \
+#       r*cos(7.5) *cos(u), r*cos(7.5) *sin(u), r*sin(7.5)  w l ls 1 lc rgb "black", \
+#       r*cos(15)  *cos(u), r*cos(15)  *sin(u), r*sin(15)   w l ls 1 lc rgb "black", \
+#       r*cos(22.5)*cos(u), r*cos(22.5)*sin(u), r*sin(22.5) w l ls 1 lc rgb "black", \
+#       r*cos(30)  *cos(u), r*cos(30)  *sin(u), r*sin(30)   w l ls 1 lc rgb "black", \
+#       r*cos(37.5)*cos(u), r*cos(37.5)*sin(u), r*sin(37.5) w l ls 1 lc rgb "black", \
+#       r*cos(45)  *cos(u), r*cos(45)  *sin(u), r*sin(45)   w l ls 1 lc rgb "black", \
+#       r*cos(52.5)*cos(u), r*cos(52.5)*sin(u), r*sin(52.5) w l ls 1 lc rgb "black", \
+#       r*cos(60)  *cos(u), r*cos(60)  *sin(u), r*sin(60)   w l ls 1 lc rgb "black", \
+#       r*cos(67.5)*cos(u), r*cos(67.5)*sin(u), r*sin(67.5) w l ls 1 lc rgb "black", \
+#       r*cos(75)  *cos(u), r*cos(75)  *sin(u), r*sin(75)   w l ls 1 lc rgb "black", \
+#       r*cos(82.5)*cos(u), r*cos(82.5)*sin(u), r*sin(82.5) w l ls 1 lc rgb "black", \
+#       r*cos(0)   *cos(u), r*sin(0)   *cos(u), r*sin(u)    w l ls 1 lc rgb "black", \
+#       r*cos(15)  *cos(u), r*sin(15)  *cos(u), r*sin(u)    w l ls 1 lc rgb "black", \
+#       r*cos(30)  *cos(u), r*sin(30)  *cos(u), r*sin(u)    w l ls 1 lc rgb "black", \
+#       r*cos(45)  *cos(u), r*sin(45)  *cos(u), r*sin(u)    w l ls 1 lc rgb "black", \
+#       r*cos(60)  *cos(u), r*sin(60)  *cos(u), r*sin(u)    w l ls 1 lc rgb "black", \
+#       r*cos(75)  *cos(u), r*sin(75)  *cos(u), r*sin(u)    w l ls 1 lc rgb "black", \
+#       r*cos(90)  *cos(u), r*sin(90)  *cos(u), r*sin(u)    w l ls 1 lc rgb "black", \
+#       r*cos(105) *cos(u), r*sin(105) *cos(u), r*sin(u)    w l ls 1 lc rgb "black", \
+#       r*cos(120) *cos(u), r*sin(120) *cos(u), r*sin(u)    w l ls 1 lc rgb "black", \
+#       r*cos(135) *cos(u), r*sin(135) *cos(u), r*sin(u)    w l ls 1 lc rgb "black", \
+#       r*cos(150) *cos(u), r*sin(150) *cos(u), r*sin(u)    w l ls 1 lc rgb "black", \
+#       r*cos(165) *cos(u), r*sin(165) *cos(u), r*sin(u)    w l ls 1 lc rgb "black"
+#
+#
+#set out './'.dir2.'/output/conductivity/sigma_P_ratio.eps'
+#splot './'.dir2.'/output/conductivity/hi_sigma_HP0_ij.dat' using 2:1:(1):4 w pm3d , \
+#       r*cos(0)   *cos(u), r*cos(0)   *sin(u), r*sin(0)    w l ls 1 lc rgb "black", \
+#       r*cos(7.5) *cos(u), r*cos(7.5) *sin(u), r*sin(7.5)  w l ls 1 lc rgb "black", \
+#       r*cos(15)  *cos(u), r*cos(15)  *sin(u), r*sin(15)   w l ls 1 lc rgb "black", \
+#       r*cos(22.5)*cos(u), r*cos(22.5)*sin(u), r*sin(22.5) w l ls 1 lc rgb "black", \
+#       r*cos(30)  *cos(u), r*cos(30)  *sin(u), r*sin(30)   w l ls 1 lc rgb "black", \
+#       r*cos(37.5)*cos(u), r*cos(37.5)*sin(u), r*sin(37.5) w l ls 1 lc rgb "black", \
+#       r*cos(45)  *cos(u), r*cos(45)  *sin(u), r*sin(45)   w l ls 1 lc rgb "black", \
+#       r*cos(52.5)*cos(u), r*cos(52.5)*sin(u), r*sin(52.5) w l ls 1 lc rgb "black", \
+#       r*cos(60)  *cos(u), r*cos(60)  *sin(u), r*sin(60)   w l ls 1 lc rgb "black", \
+#       r*cos(67.5)*cos(u), r*cos(67.5)*sin(u), r*sin(67.5) w l ls 1 lc rgb "black", \
+#       r*cos(75)  *cos(u), r*cos(75)  *sin(u), r*sin(75)   w l ls 1 lc rgb "black", \
+#       r*cos(82.5)*cos(u), r*cos(82.5)*sin(u), r*sin(82.5) w l ls 1 lc rgb "black", \
+#       r*cos(0)   *cos(u), r*sin(0)   *cos(u), r*sin(u)    w l ls 1 lc rgb "black", \
+#       r*cos(15)  *cos(u), r*sin(15)  *cos(u), r*sin(u)    w l ls 1 lc rgb "black", \
+#       r*cos(30)  *cos(u), r*sin(30)  *cos(u), r*sin(u)    w l ls 1 lc rgb "black", \
+#       r*cos(45)  *cos(u), r*sin(45)  *cos(u), r*sin(u)    w l ls 1 lc rgb "black", \
+#       r*cos(60)  *cos(u), r*sin(60)  *cos(u), r*sin(u)    w l ls 1 lc rgb "black", \
+#       r*cos(75)  *cos(u), r*sin(75)  *cos(u), r*sin(u)    w l ls 1 lc rgb "black", \
+#       r*cos(90)  *cos(u), r*sin(90)  *cos(u), r*sin(u)    w l ls 1 lc rgb "black", \
+#       r*cos(105) *cos(u), r*sin(105) *cos(u), r*sin(u)    w l ls 1 lc rgb "black", \
+#       r*cos(120) *cos(u), r*sin(120) *cos(u), r*sin(u)    w l ls 1 lc rgb "black", \
+#       r*cos(135) *cos(u), r*sin(135) *cos(u), r*sin(u)    w l ls 1 lc rgb "black", \
+#       r*cos(150) *cos(u), r*sin(150) *cos(u), r*sin(u)    w l ls 1 lc rgb "black", \
+#       r*cos(165) *cos(u), r*sin(165) *cos(u), r*sin(u)    w l ls 1 lc rgb "black"

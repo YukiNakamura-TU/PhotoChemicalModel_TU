@@ -670,6 +670,9 @@ reaction_rate_list.append(" CO    + OH  + M   -> HOCO + M        : k0 = 5.9e-33 
 reaction_rate_list.append(" HOCO  + O2        -> HO2  + CO2      : 2.0e-12 # Chaffin et al. [2017] ")
 reaction_rate_list.append(" CO2+  + H2        -> CO2  + H  + H   : 8.7e-10 # Chaffin et al. [2017] ") # it's only used to reproduce Chaffin+2017, otherwise remove it!
 
+reaction_rate_list.append(" CO    + OH  + M   -> 2^13C2^18O2  + 3H  + M   : k0M = 1.5e-13 * (300/T(neutral))^(-0.6) && \
+                                                                   kinfM = 2.1e9 * (300/T(neutral))^(-6.1) # Chaffin et al. [2017] ")
+
 #reaction_rate_list.append(" CO    + OH        -> CO2  + H        : 1.5e-13 # Chaffin et al. [2017] ")
 
 # Pinto et al. [1980] Formaldehyde H2CO reactions
@@ -1305,13 +1308,155 @@ doi_list.append(["Zipf [1980]", "Zipf, E. C. (1980), The dissociative recombinat
 ###########################################################################################################################
 # reaction -> unicode for display
 # visionally make everything good by unicode
+def upper_upper_unicode(char):
+    # ^**
+    char = re.sub('\u20700' , '\u2070\u2070', char)
+    char = re.sub('\u20701' , '\u2070\u00B9', char)
+    char = re.sub('\u20702' , '\u2070\u00B2', char)
+    char = re.sub('\u20703' , '\u2070\u00B3', char)
+    char = re.sub('\u20704' , '\u2070\u2074', char)
+    char = re.sub('\u20705' , '\u2070\u2075', char)
+    char = re.sub('\u20706' , '\u2070\u2076', char)
+    char = re.sub('\u20707' , '\u2070\u2077', char)
+    char = re.sub('\u20708' , '\u2070\u2078', char)
+    char = re.sub('\u20709' , '\u2070\u2079', char)
+
+    char = re.sub('\u00B90' , '\u00B9\u2070', char)
+    char = re.sub('\u00B91' , '\u00B9\u00B9', char)
+    char = re.sub('\u00B92' , '\u00B9\u00B2', char)
+    char = re.sub('\u00B93' , '\u00B9\u00B3', char)
+    char = re.sub('\u00B94' , '\u00B9\u2074', char)
+    char = re.sub('\u00B95' , '\u00B9\u2075', char)
+    char = re.sub('\u00B96' , '\u00B9\u2076', char)
+    char = re.sub('\u00B97' , '\u00B9\u2077', char)
+    char = re.sub('\u00B98' , '\u00B9\u2078', char)
+    char = re.sub('\u00B99' , '\u00B9\u2079', char)
+
+    char = re.sub('\u00B20' , '\u00B2\u2070', char)
+    char = re.sub('\u00B21' , '\u00B2\u00B9', char)
+    char = re.sub('\u00B22' , '\u00B2\u00B2', char)
+    char = re.sub('\u00B23' , '\u00B2\u00B3', char)
+    char = re.sub('\u00B24' , '\u00B2\u2074', char)
+    char = re.sub('\u00B25' , '\u00B2\u2075', char)
+    char = re.sub('\u00B26' , '\u00B2\u2076', char)
+    char = re.sub('\u00B27' , '\u00B2\u2077', char)
+    char = re.sub('\u00B28' , '\u00B2\u2078', char)
+    char = re.sub('\u00B29' , '\u00B2\u2079', char)
+
+    char = re.sub('\u00B30' , '\u00B3\u2070', char)
+    char = re.sub('\u00B31' , '\u00B3\u00B9', char)
+    char = re.sub('\u00B32' , '\u00B3\u00B2', char)
+    char = re.sub('\u00B33' , '\u00B3\u00B3', char)
+    char = re.sub('\u00B34' , '\u00B3\u2074', char)
+    char = re.sub('\u00B35' , '\u00B3\u2075', char)
+    char = re.sub('\u00B36' , '\u00B3\u2076', char)
+    char = re.sub('\u00B37' , '\u00B3\u2077', char)
+    char = re.sub('\u00B38' , '\u00B3\u2078', char)
+    char = re.sub('\u00B39' , '\u00B3\u2079', char)
+
+    char = re.sub('\u20740' , '\u2074\u2070', char)
+    char = re.sub('\u20741' , '\u2074\u00B9', char)
+    char = re.sub('\u20742' , '\u2074\u00B2', char)
+    char = re.sub('\u20743' , '\u2074\u00B3', char)
+    char = re.sub('\u20744' , '\u2074\u2074', char)
+    char = re.sub('\u20745' , '\u2074\u2075', char)
+    char = re.sub('\u20746' , '\u2074\u2076', char)
+    char = re.sub('\u20747' , '\u2074\u2077', char)
+    char = re.sub('\u20748' , '\u2074\u2078', char)
+    char = re.sub('\u20749' , '\u2074\u2079', char)
+
+    char = re.sub('\u20750' , '\u2075\u2070', char)
+    char = re.sub('\u20751' , '\u2075\u00B9', char)
+    char = re.sub('\u20752' , '\u2075\u00B2', char)
+    char = re.sub('\u20753' , '\u2075\u00B3', char)
+    char = re.sub('\u20754' , '\u2075\u2074', char)
+    char = re.sub('\u20755' , '\u2075\u2075', char)
+    char = re.sub('\u20756' , '\u2075\u2076', char)
+    char = re.sub('\u20757' , '\u2075\u2077', char)
+    char = re.sub('\u20758' , '\u2075\u2078', char)
+    char = re.sub('\u20759' , '\u2075\u2079', char)
+
+    char = re.sub('\u20760' , '\u2076\u2070', char)
+    char = re.sub('\u20761' , '\u2076\u00B9', char)
+    char = re.sub('\u20762' , '\u2076\u00B2', char)
+    char = re.sub('\u20763' , '\u2076\u00B3', char)
+    char = re.sub('\u20764' , '\u2076\u2074', char)
+    char = re.sub('\u20765' , '\u2076\u2075', char)
+    char = re.sub('\u20766' , '\u2076\u2076', char)
+    char = re.sub('\u20767' , '\u2076\u2077', char)
+    char = re.sub('\u20768' , '\u2076\u2078', char)
+    char = re.sub('\u20769' , '\u2076\u2079', char)
+
+    char = re.sub('\u20770' , '\u2077\u2070', char)
+    char = re.sub('\u20771' , '\u2077\u00B9', char)
+    char = re.sub('\u20772' , '\u2077\u00B2', char)
+    char = re.sub('\u20773' , '\u2077\u00B3', char)
+    char = re.sub('\u20774' , '\u2077\u2074', char)
+    char = re.sub('\u20775' , '\u2077\u2075', char)
+    char = re.sub('\u20776' , '\u2077\u2076', char)
+    char = re.sub('\u20777' , '\u2077\u2077', char)
+    char = re.sub('\u20778' , '\u2077\u2078', char)
+    char = re.sub('\u20779' , '\u2077\u2079', char)
+
+    char = re.sub('\u20780' , '\u2078\u2070', char)
+    char = re.sub('\u20781' , '\u2078\u00B9', char)
+    char = re.sub('\u20782' , '\u2078\u00B2', char)
+    char = re.sub('\u20783' , '\u2078\u00B3', char)
+    char = re.sub('\u20784' , '\u2078\u2074', char)
+    char = re.sub('\u20785' , '\u2078\u2075', char)
+    char = re.sub('\u20786' , '\u2078\u2076', char)
+    char = re.sub('\u20787' , '\u2078\u2077', char)
+    char = re.sub('\u20788' , '\u2078\u2078', char)
+    char = re.sub('\u20789' , '\u2078\u2079', char)
+
+    char = re.sub('\u20790' , '\u2079\u2070', char)
+    char = re.sub('\u20791' , '\u2079\u00B9', char)
+    char = re.sub('\u20792' , '\u2079\u00B2', char)
+    char = re.sub('\u20793' , '\u2079\u00B3', char)
+    char = re.sub('\u20794' , '\u2079\u2074', char)
+    char = re.sub('\u20795' , '\u2079\u2075', char)
+    char = re.sub('\u20796' , '\u2079\u2076', char)
+    char = re.sub('\u20797' , '\u2079\u2077', char)
+    char = re.sub('\u20798' , '\u2079\u2078', char)
+    char = re.sub('\u20799' , '\u2079\u2079', char)
+
+    return char
+
 def reaction_unicode(char):
     nlabel = 0 # ex) if nH2O -> nlabel = 1
     char = re.sub('->' , ' \u2192 ', char)
     if re.compile('\s\d').search(char):
-        nlabel = 1
-        num = re.findall('\s+(\d+?)', char)
-        char = re.sub('\s+(\d+?)', ' ?n?', char)
+        num0 = re.findall('\s+(\d+?)', char)
+        nlabel = len(num0)
+        char = re.sub('\s+(\d+?)', ' ?n?', char,1)
+        char = re.sub('\s+(\d+?)', ' ?nn?', char,1)
+        char = re.sub('\s+(\d+?)', ' ?nnn?', char,1)
+        char = re.sub('\s+(\d+?)', ' ?nnnn?', char,1)
+        char = re.sub('\s+(\d+?)', ' ?nnnnn?', char,1)
+        char = re.sub('\s+(\d+?)', ' ?nnnnnn?', char,1)
+        char = re.sub('\s+(\d+?)', ' ?nnnnnnn?', char,1)
+        char = re.sub('\s+(\d+?)', ' ?nnnnnnnn?', char,1)
+        char = re.sub('\s+(\d+?)', ' ?nnnnnnnnn?', char,1)
+        char = re.sub('\s+(\d+?)', ' ?nnnnnnnnnn?', char,1)
+        print(num0)
+
+    # For isotope expression ex) ^13C, ^18O
+    nisotope = 0
+    if re.compile('\^\d+?').search(char):
+        numi = re.findall('\^(\d+?)\D', char)
+        nisotope = len(numi)
+        char = re.sub('\^\d{1,3}', '^?i?', char,1)
+        char = re.sub('\^\d{1,3}', '^?ii?', char,1)
+        char = re.sub('\^\d{1,3}', '^?iii?', char,1)
+        char = re.sub('\^\d{1,3}', '^?iiii?', char,1)
+        char = re.sub('\^\d{1,3}', '^?iiiii?', char,1)
+        char = re.sub('\^\d{1,3}', '^?iiiiii?', char,1)
+        char = re.sub('\^\d{1,3}', '^?iiiiiii?', char,1)
+        char = re.sub('\^\d{1,3}', '^?iiiiiiii?', char,1)
+        char = re.sub('\^\d{1,3}', '^?iiiiiiiii?', char,1)
+        char = re.sub('\^\d{1,3}', '^?iiiiiiiiii?', char,1)
+        char = re.sub('\^\d{1,3}', '^?iiiiiiiiiii?', char,1)
+        print(char, numi)
 
     char = re.sub('2' , '\u2082', char)
     char = re.sub('3' , '\u2083', char)
@@ -1334,9 +1479,70 @@ def reaction_unicode(char):
     char = re.sub('\(\u2084S\)' , '(\u2074S)', char)
     char = re.sub('\(v>\=\u2082\)' , '(v>=2)', char)
     char = re.sub('\(v>\=\u2084\)' , '(v>=4)', char)
+    
+    # ex) nH2O
+    if nlabel >= 1:
+        char = re.sub('\?n\?', num0[0], char)
+    if nlabel >= 2:
+        char = re.sub('\?nn\?', num0[1], char)
+    if nlabel >= 3:
+        char = re.sub('\?nnn\?', num0[2], char)
+    if nlabel >= 4:
+        char = re.sub('\?nnnn\?', num0[3], char)
+    if nlabel >= 5:
+        char = re.sub('\?nnnnn\?', num0[4], char)
+    if nlabel >= 6:
+        char = re.sub('\?nnnnnn\?', num0[5], char)
+    if nlabel >= 7:
+        char = re.sub('\?nnnnnnn\?', num0[6], char)
+    if nlabel >= 8:
+        char = re.sub('\?nnnnnnnn\?', num0[7], char)
+    if nlabel >= 9:
+        char = re.sub('\?nnnnnnnnn\?', num0[8], char)
+    if nlabel >= 10:
+        char = re.sub('\?nnnnnnnnnn\?', num0[9], char)
 
-    if nlabel == 1:
-        char = re.sub('\?n\?', num[0], char)
+    # isotope expression
+    if nisotope >= 1:
+        char = re.sub('\?i\?', numi[0], char)
+    if nisotope >= 2:
+        char = re.sub('\?ii\?', numi[1], char)
+    if nisotope >= 3:
+        char = re.sub('\?iii\?', numi[2], char)
+    if nisotope >= 4:
+        char = re.sub('\?iiii\?', numi[3], char)
+    if nisotope >= 5:
+        char = re.sub('\?iiiii\?', numi[4], char)
+    if nisotope >= 6:
+        char = re.sub('\?iiiiii\?', numi[5], char)
+    if nisotope >= 7:
+        char = re.sub('\?iiiiiii\?', numi[6], char)
+    if nisotope >= 8:
+        char = re.sub('\?iiiiiiii\?', numi[7], char)
+    if nisotope >= 9:
+        char = re.sub('\?iiiiiiiii\?', numi[8], char)
+    if nisotope >= 10:
+        char = re.sub('\?iiiiiiiiii\?', numi[9], char)
+
+    # ^*.
+    char = re.sub('\^0' , '\u2070', char)
+    char = re.sub('\^1' , '\u00B9', char)
+    char = re.sub('\^2' , '\u00B2', char)
+    char = re.sub('\^3' , '\u00B3', char)
+    char = re.sub('\^4' , '\u2074', char)
+    char = re.sub('\^5' , '\u2075', char)
+    char = re.sub('\^6' , '\u2076', char)
+    char = re.sub('\^7' , '\u2077', char)
+    char = re.sub('\^8' , '\u2078', char)
+    char = re.sub('\^9' , '\u2079', char)
+    char = re.sub('\^0' , '\u2070', char)
+    
+    # ^*
+    char = upper_upper_unicode(char)
+    # ^**
+    char = upper_upper_unicode(char)
+    # ^***
+    char = upper_upper_unicode(char)
 
     return char
 
@@ -1399,237 +1605,10 @@ def rate_unicode(rate):
     rate = re.sub('\^18.' , '\u00B9\u2078\u00B7', rate)
     rate = re.sub('\^19.' , '\u00B9\u2079\u00B7', rate)
 
-    # .**
-    rate = re.sub('\u00B70' , '\u00B7\u2070', rate)
-    rate = re.sub('\u00B71' , '\u00B7\u00B9', rate)
-    rate = re.sub('\u00B72' , '\u00B7\u00B2', rate)
-    rate = re.sub('\u00B73' , '\u00B7\u00B3', rate)
-    rate = re.sub('\u00B74' , '\u00B7\u2074', rate)
-    rate = re.sub('\u00B75' , '\u00B7\u2075', rate)
-    rate = re.sub('\u00B76' , '\u00B7\u2076', rate)
-    rate = re.sub('\u00B77' , '\u00B7\u2077', rate)
-    rate = re.sub('\u00B78' , '\u00B7\u2078', rate)
-    rate = re.sub('\u00B79' , '\u00B7\u2079', rate)
-
-    rate = re.sub('\u20700' , '\u2070\u2070', rate)
-    rate = re.sub('\u20701' , '\u2070\u00B9', rate)
-    rate = re.sub('\u20702' , '\u2070\u00B2', rate)
-    rate = re.sub('\u20703' , '\u2070\u00B3', rate)
-    rate = re.sub('\u20704' , '\u2070\u2074', rate)
-    rate = re.sub('\u20705' , '\u2070\u2075', rate)
-    rate = re.sub('\u20706' , '\u2070\u2076', rate)
-    rate = re.sub('\u20707' , '\u2070\u2077', rate)
-    rate = re.sub('\u20708' , '\u2070\u2078', rate)
-    rate = re.sub('\u20709' , '\u2070\u2079', rate)
-
-    rate = re.sub('\u00B90' , '\u00B9\u2070', rate)
-    rate = re.sub('\u00B91' , '\u00B9\u00B9', rate)
-    rate = re.sub('\u00B92' , '\u00B9\u00B2', rate)
-    rate = re.sub('\u00B93' , '\u00B9\u00B3', rate)
-    rate = re.sub('\u00B94' , '\u00B9\u2074', rate)
-    rate = re.sub('\u00B95' , '\u00B9\u2075', rate)
-    rate = re.sub('\u00B96' , '\u00B9\u2076', rate)
-    rate = re.sub('\u00B97' , '\u00B9\u2077', rate)
-    rate = re.sub('\u00B98' , '\u00B9\u2078', rate)
-    rate = re.sub('\u00B99' , '\u00B9\u2079', rate)
-
-    rate = re.sub('\u00B20' , '\u00B2\u2070', rate)
-    rate = re.sub('\u00B21' , '\u00B2\u00B9', rate)
-    rate = re.sub('\u00B22' , '\u00B2\u00B2', rate)
-    rate = re.sub('\u00B23' , '\u00B2\u00B3', rate)
-    rate = re.sub('\u00B24' , '\u00B2\u2074', rate)
-    rate = re.sub('\u00B25' , '\u00B2\u2075', rate)
-    rate = re.sub('\u00B26' , '\u00B2\u2076', rate)
-    rate = re.sub('\u00B27' , '\u00B2\u2077', rate)
-    rate = re.sub('\u00B28' , '\u00B2\u2078', rate)
-    rate = re.sub('\u00B29' , '\u00B2\u2079', rate)
-
-    rate = re.sub('\u00B30' , '\u00B3\u2070', rate)
-    rate = re.sub('\u00B31' , '\u00B3\u00B9', rate)
-    rate = re.sub('\u00B32' , '\u00B3\u00B2', rate)
-    rate = re.sub('\u00B33' , '\u00B3\u00B3', rate)
-    rate = re.sub('\u00B34' , '\u00B3\u2074', rate)
-    rate = re.sub('\u00B35' , '\u00B3\u2075', rate)
-    rate = re.sub('\u00B36' , '\u00B3\u2076', rate)
-    rate = re.sub('\u00B37' , '\u00B3\u2077', rate)
-    rate = re.sub('\u00B38' , '\u00B3\u2078', rate)
-    rate = re.sub('\u00B39' , '\u00B3\u2079', rate)
-
-    rate = re.sub('\u20740' , '\u2074\u2070', rate)
-    rate = re.sub('\u20741' , '\u2074\u00B9', rate)
-    rate = re.sub('\u20742' , '\u2074\u00B2', rate)
-    rate = re.sub('\u20743' , '\u2074\u00B3', rate)
-    rate = re.sub('\u20744' , '\u2074\u2074', rate)
-    rate = re.sub('\u20745' , '\u2074\u2075', rate)
-    rate = re.sub('\u20746' , '\u2074\u2076', rate)
-    rate = re.sub('\u20747' , '\u2074\u2077', rate)
-    rate = re.sub('\u20748' , '\u2074\u2078', rate)
-    rate = re.sub('\u20749' , '\u2074\u2079', rate)
-
-    rate = re.sub('\u20750' , '\u2075\u2070', rate)
-    rate = re.sub('\u20751' , '\u2075\u00B9', rate)
-    rate = re.sub('\u20752' , '\u2075\u00B2', rate)
-    rate = re.sub('\u20753' , '\u2075\u00B3', rate)
-    rate = re.sub('\u20754' , '\u2075\u2074', rate)
-    rate = re.sub('\u20755' , '\u2075\u2075', rate)
-    rate = re.sub('\u20756' , '\u2075\u2076', rate)
-    rate = re.sub('\u20757' , '\u2075\u2077', rate)
-    rate = re.sub('\u20758' , '\u2075\u2078', rate)
-    rate = re.sub('\u20759' , '\u2075\u2079', rate)
-
-    rate = re.sub('\u20760' , '\u2076\u2070', rate)
-    rate = re.sub('\u20761' , '\u2076\u00B9', rate)
-    rate = re.sub('\u20762' , '\u2076\u00B2', rate)
-    rate = re.sub('\u20763' , '\u2076\u00B3', rate)
-    rate = re.sub('\u20764' , '\u2076\u2074', rate)
-    rate = re.sub('\u20765' , '\u2076\u2075', rate)
-    rate = re.sub('\u20766' , '\u2076\u2076', rate)
-    rate = re.sub('\u20767' , '\u2076\u2077', rate)
-    rate = re.sub('\u20768' , '\u2076\u2078', rate)
-    rate = re.sub('\u20769' , '\u2076\u2079', rate)
-
-    rate = re.sub('\u20770' , '\u2077\u2070', rate)
-    rate = re.sub('\u20771' , '\u2077\u00B9', rate)
-    rate = re.sub('\u20772' , '\u2077\u00B2', rate)
-    rate = re.sub('\u20773' , '\u2077\u00B3', rate)
-    rate = re.sub('\u20774' , '\u2077\u2074', rate)
-    rate = re.sub('\u20775' , '\u2077\u2075', rate)
-    rate = re.sub('\u20776' , '\u2077\u2076', rate)
-    rate = re.sub('\u20777' , '\u2077\u2077', rate)
-    rate = re.sub('\u20778' , '\u2077\u2078', rate)
-    rate = re.sub('\u20779' , '\u2077\u2079', rate)
-
-    rate = re.sub('\u20780' , '\u2078\u2070', rate)
-    rate = re.sub('\u20781' , '\u2078\u00B9', rate)
-    rate = re.sub('\u20782' , '\u2078\u00B2', rate)
-    rate = re.sub('\u20783' , '\u2078\u00B3', rate)
-    rate = re.sub('\u20784' , '\u2078\u2074', rate)
-    rate = re.sub('\u20785' , '\u2078\u2075', rate)
-    rate = re.sub('\u20786' , '\u2078\u2076', rate)
-    rate = re.sub('\u20787' , '\u2078\u2077', rate)
-    rate = re.sub('\u20788' , '\u2078\u2078', rate)
-    rate = re.sub('\u20789' , '\u2078\u2079', rate)
-
-    rate = re.sub('\u20790' , '\u2079\u2070', rate)
-    rate = re.sub('\u20791' , '\u2079\u00B9', rate)
-    rate = re.sub('\u20792' , '\u2079\u00B2', rate)
-    rate = re.sub('\u20793' , '\u2079\u00B3', rate)
-    rate = re.sub('\u20794' , '\u2079\u2074', rate)
-    rate = re.sub('\u20795' , '\u2079\u2075', rate)
-    rate = re.sub('\u20796' , '\u2079\u2076', rate)
-    rate = re.sub('\u20797' , '\u2079\u2077', rate)
-    rate = re.sub('\u20798' , '\u2079\u2078', rate)
-    rate = re.sub('\u20799' , '\u2079\u2079', rate)
-
-    rate = re.sub('\u20700' , '\u2070\u2070', rate)
-    rate = re.sub('\u20701' , '\u2070\u00B9', rate)
-    rate = re.sub('\u20702' , '\u2070\u00B2', rate)
-    rate = re.sub('\u20703' , '\u2070\u00B3', rate)
-    rate = re.sub('\u20704' , '\u2070\u2074', rate)
-    rate = re.sub('\u20705' , '\u2070\u2075', rate)
-    rate = re.sub('\u20706' , '\u2070\u2076', rate)
-    rate = re.sub('\u20707' , '\u2070\u2077', rate)
-    rate = re.sub('\u20708' , '\u2070\u2078', rate)
-    rate = re.sub('\u20709' , '\u2070\u2079', rate)
-
-    rate = re.sub('\u00B90' , '\u00B9\u2070', rate)
-    rate = re.sub('\u00B91' , '\u00B9\u00B9', rate)
-    rate = re.sub('\u00B92' , '\u00B9\u00B2', rate)
-    rate = re.sub('\u00B93' , '\u00B9\u00B3', rate)
-    rate = re.sub('\u00B94' , '\u00B9\u2074', rate)
-    rate = re.sub('\u00B95' , '\u00B9\u2075', rate)
-    rate = re.sub('\u00B96' , '\u00B9\u2076', rate)
-    rate = re.sub('\u00B97' , '\u00B9\u2077', rate)
-    rate = re.sub('\u00B98' , '\u00B9\u2078', rate)
-    rate = re.sub('\u00B99' , '\u00B9\u2079', rate)
-
-    rate = re.sub('\u00B20' , '\u00B2\u2070', rate)
-    rate = re.sub('\u00B21' , '\u00B2\u00B9', rate)
-    rate = re.sub('\u00B22' , '\u00B2\u00B2', rate)
-    rate = re.sub('\u00B23' , '\u00B2\u00B3', rate)
-    rate = re.sub('\u00B24' , '\u00B2\u2074', rate)
-    rate = re.sub('\u00B25' , '\u00B2\u2075', rate)
-    rate = re.sub('\u00B26' , '\u00B2\u2076', rate)
-    rate = re.sub('\u00B27' , '\u00B2\u2077', rate)
-    rate = re.sub('\u00B28' , '\u00B2\u2078', rate)
-    rate = re.sub('\u00B29' , '\u00B2\u2079', rate)
-
-    rate = re.sub('\u00B30' , '\u00B3\u2070', rate)
-    rate = re.sub('\u00B31' , '\u00B3\u00B9', rate)
-    rate = re.sub('\u00B32' , '\u00B3\u00B2', rate)
-    rate = re.sub('\u00B33' , '\u00B3\u00B3', rate)
-    rate = re.sub('\u00B34' , '\u00B3\u2074', rate)
-    rate = re.sub('\u00B35' , '\u00B3\u2075', rate)
-    rate = re.sub('\u00B36' , '\u00B3\u2076', rate)
-    rate = re.sub('\u00B37' , '\u00B3\u2077', rate)
-    rate = re.sub('\u00B38' , '\u00B3\u2078', rate)
-    rate = re.sub('\u00B39' , '\u00B3\u2079', rate)
-
-    rate = re.sub('\u20740' , '\u2074\u2070', rate)
-    rate = re.sub('\u20741' , '\u2074\u00B9', rate)
-    rate = re.sub('\u20742' , '\u2074\u00B2', rate)
-    rate = re.sub('\u20743' , '\u2074\u00B3', rate)
-    rate = re.sub('\u20744' , '\u2074\u2074', rate)
-    rate = re.sub('\u20745' , '\u2074\u2075', rate)
-    rate = re.sub('\u20746' , '\u2074\u2076', rate)
-    rate = re.sub('\u20747' , '\u2074\u2077', rate)
-    rate = re.sub('\u20748' , '\u2074\u2078', rate)
-    rate = re.sub('\u20749' , '\u2074\u2079', rate)
-
-    rate = re.sub('\u20750' , '\u2075\u2070', rate)
-    rate = re.sub('\u20751' , '\u2075\u00B9', rate)
-    rate = re.sub('\u20752' , '\u2075\u00B2', rate)
-    rate = re.sub('\u20753' , '\u2075\u00B3', rate)
-    rate = re.sub('\u20754' , '\u2075\u2074', rate)
-    rate = re.sub('\u20755' , '\u2075\u2075', rate)
-    rate = re.sub('\u20756' , '\u2075\u2076', rate)
-    rate = re.sub('\u20757' , '\u2075\u2077', rate)
-    rate = re.sub('\u20758' , '\u2075\u2078', rate)
-    rate = re.sub('\u20759' , '\u2075\u2079', rate)
-
-    rate = re.sub('\u20760' , '\u2076\u2070', rate)
-    rate = re.sub('\u20761' , '\u2076\u00B9', rate)
-    rate = re.sub('\u20762' , '\u2076\u00B2', rate)
-    rate = re.sub('\u20763' , '\u2076\u00B3', rate)
-    rate = re.sub('\u20764' , '\u2076\u2074', rate)
-    rate = re.sub('\u20765' , '\u2076\u2075', rate)
-    rate = re.sub('\u20766' , '\u2076\u2076', rate)
-    rate = re.sub('\u20767' , '\u2076\u2077', rate)
-    rate = re.sub('\u20768' , '\u2076\u2078', rate)
-    rate = re.sub('\u20769' , '\u2076\u2079', rate)
-
-    rate = re.sub('\u20770' , '\u2077\u2070', rate)
-    rate = re.sub('\u20771' , '\u2077\u00B9', rate)
-    rate = re.sub('\u20772' , '\u2077\u00B2', rate)
-    rate = re.sub('\u20773' , '\u2077\u00B3', rate)
-    rate = re.sub('\u20774' , '\u2077\u2074', rate)
-    rate = re.sub('\u20775' , '\u2077\u2075', rate)
-    rate = re.sub('\u20776' , '\u2077\u2076', rate)
-    rate = re.sub('\u20777' , '\u2077\u2077', rate)
-    rate = re.sub('\u20778' , '\u2077\u2078', rate)
-    rate = re.sub('\u20779' , '\u2077\u2079', rate)
-
-    rate = re.sub('\u20780' , '\u2078\u2070', rate)
-    rate = re.sub('\u20781' , '\u2078\u00B9', rate)
-    rate = re.sub('\u20782' , '\u2078\u00B2', rate)
-    rate = re.sub('\u20783' , '\u2078\u00B3', rate)
-    rate = re.sub('\u20784' , '\u2078\u2074', rate)
-    rate = re.sub('\u20785' , '\u2078\u2075', rate)
-    rate = re.sub('\u20786' , '\u2078\u2076', rate)
-    rate = re.sub('\u20787' , '\u2078\u2077', rate)
-    rate = re.sub('\u20788' , '\u2078\u2078', rate)
-    rate = re.sub('\u20789' , '\u2078\u2079', rate)
-
-    rate = re.sub('\u20790' , '\u2079\u2070', rate)
-    rate = re.sub('\u20791' , '\u2079\u00B9', rate)
-    rate = re.sub('\u20792' , '\u2079\u00B2', rate)
-    rate = re.sub('\u20793' , '\u2079\u00B3', rate)
-    rate = re.sub('\u20794' , '\u2079\u2074', rate)
-    rate = re.sub('\u20795' , '\u2079\u2075', rate)
-    rate = re.sub('\u20796' , '\u2079\u2076', rate)
-    rate = re.sub('\u20797' , '\u2079\u2077', rate)
-    rate = re.sub('\u20798' , '\u2079\u2078', rate)
-    rate = re.sub('\u20799' , '\u2079\u2079', rate)
+    # ^**
+    rate = upper_upper_unicode(rate)
+    # ^***
+    rate = upper_upper_unicode(rate)
 
     rate = re.sub('\u00B9\)' , '\u00B9', rate)
     rate = re.sub('\u00B2\)' , '\u00B2', rate)
@@ -1982,18 +1961,37 @@ def reaction_analysis(action, iplnt, reaction_chk_bln, fix_species_bln, dir0):
         species_tmp = re.sub('\+', '', species_tmp) #string until here
 
         # ex) (H2O)2 -> H2OH2O
-        if re.compile('\(.*\)\d+').search(species_tmp): #find spcies including (***)n
-            species_brackets = re.findall('\((.*)\)\d+', species_tmp) #find spcies in brackets
-            num_str = re.findall('\)(\d+)', species_tmp) #find number outside the brackets
+        if re.compile('\(.*\)\d+?').search(species_tmp): #find spcies including (***)n
+            species_brackets = re.findall('\((.*)\)\d+?', species_tmp) #find spcies in brackets
+            num_str = re.findall('\)(\d+?)', species_tmp) #find number outside the brackets
             num_int = int(num_str[0], base = 10) #string -> number, base=10: demical number
-            for k in range(num_int-1): #loop "number" times, ex) O2 -> 2 times, O3 -> 3 times
-                species_tmp = re.sub('\)(\d+)', '', species_tmp) #delete number, ex O2-> O
-                species_tmp = re.sub('\(', '', species_tmp) #delete number, ex O2-> O
-                species_tmp = re.sub('\)', '', species_tmp) #delete number, ex O2-> O
-                species_tmp = species_tmp + species_brackets[0] #ex) append O
+            for k in range(num_int-1): #loop "number" times, ex) (H2O)2 -> 2 times, (H2O)3 -> 3 times
+                species_tmp = re.sub('\)(\d+?)', '', species_tmp) #delete number, ex (H2O)2-> O
+                species_tmp = re.sub('\(', '', species_tmp) #delete (
+                species_tmp = re.sub('\)', '', species_tmp) #delete )
+                species_tmp = species_tmp + species_brackets[0] #ex) append H2O
             #print(species_tmp)
 
-        species_split = re.findall('[A-Z][^A-Z]*', species_tmp) #become list
+        #isotope_label = 0
+        #isotopes = []
+        #if re.compile('\^\d+?').search(species_tmp):
+        #    isotope_label = 1
+        #    isotopes = re.findall('\^\d+?[A-Z][^A-Z]*', species_tmp)
+        #    species_tmp = re.sub('\^\d+?[A-Z][^A-Z]*', '', species_tmp)
+        #    print(species_tmp, isotopes)
+
+        species_split=[]
+        species_split_tmp1 = re.findall('(\^\d+?[A-Z][^\^\d+?A-Z]*)', species_tmp) #split isotopes
+        print(species_split_tmp1)
+        for i in range(len(species_split_tmp1)):
+            if '^' in species_split_tmp1[i]:
+                species_split.append(species_split_tmp1[i])
+            if '^' not in species_split_tmp1[i]:
+                species_split_tmp2 = re.findall('[A-Z][^A-Z]*', species_split_tmp1[i]) #split elements
+                for j in range(len(species_split_tmp2)):
+                    species_split.append(species_split_tmp2[j])
+        
+        #print(species_split)
 
         for j in range(len(species_split)):
             num_str = re.findall('[A-Z]*(\d*)', species_split[j]) #find spcies which start with capital and end with number
@@ -2015,6 +2013,8 @@ def reaction_analysis(action, iplnt, reaction_chk_bln, fix_species_bln, dir0):
                 mass[isp] = mass[isp] + 4.0026020
             if species_split[j] == 'C':
                 mass[isp] = mass[isp] + 12.01070
+            if species_split[j] == '^13C':
+                mass[isp] = mass[isp] + 13.01070
             if species_split[j] == 'N':
                 mass[isp] = mass[isp] + 14.00670
             if species_split[j] == 'O':
@@ -2034,7 +2034,7 @@ def reaction_analysis(action, iplnt, reaction_chk_bln, fix_species_bln, dir0):
             mass[isp] = mass[isp] - 0.00054858
         if '-' in species[isp] and species[isp] != 'e-':
             mass[isp] = mass[isp] + 0.00054858
-        # 'M': major = none 0 value
+        # followings are fixed species, but avoiding 0 mass
         if species[isp] == 'M':
             mass[isp] = 10.00000
         if species[isp] == 'hv':
