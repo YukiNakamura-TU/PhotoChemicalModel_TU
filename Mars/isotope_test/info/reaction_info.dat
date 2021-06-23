@@ -48,11 +48,11 @@ Reaction rate : 1 case.
 
 
 --------------------------------------------
- CO    + OH  + M    →   ¹³C₂¹₈O₂  + H  + M   
+ CO    + OH  + M    →  ¹³C¹⁸O₂  + 3H  + M   
 --------------------------------------------
 Reaction number : 4
 Reactant :  CO  ,  OH  ,  M
-Product  :   ¹³C₂¹₈O₂  ,  H
+Product  :  ¹³C¹⁸O₂  ,  H  ,  H  ,  H
 
 Reaction rate : 2 cases.
        (1) k0 = 1.5 × 10⁻¹³ × (300/T(neutral))⁻⁰·6)

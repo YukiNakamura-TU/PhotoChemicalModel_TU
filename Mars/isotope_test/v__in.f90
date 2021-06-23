@@ -129,7 +129,7 @@ contains
     spl%species(4) = 'O2'
     spl%species(5) = 'M'
     spl%species(6) = 'OH'
-    spl%species(7) = '^13C2^18O2'
+    spl%species(7) = '^13C^18O2'
     spl%species(8) = 'H'
 
     ! label_fix
@@ -139,7 +139,7 @@ contains
     spl%label_fix(4) = 0 ! O2: variable
     spl%label_fix(5) = 1 ! M: fixed
     spl%label_fix(6) = 0 ! OH: variable
-    spl%label_fix(7) = 1 ! ^13C2^18O2: fixed
+    spl%label_fix(7) = 1 ! ^13C^18O2: fixed
     spl%label_fix(8) = 1 ! H: fixed
 
     ! all_to_var
@@ -158,14 +158,14 @@ contains
     spl%var_to_all(5) = 6 ! OH: variable
 
     ! mass
-    var%m(1) = 0.00000000_dp * cst%m_u !CO2
-    var%m(2) = 0.00000000_dp * cst%m_u !CO
-    var%m(3) = 0.00000000_dp * cst%m_u !O
-    var%m(4) = 0.00000000_dp * cst%m_u !O2
+    var%m(1) = 44.00950000_dp * cst%m_u !CO2
+    var%m(2) = 28.01010000_dp * cst%m_u !CO
+    var%m(3) = 15.99940000_dp * cst%m_u !O
+    var%m(4) = 31.99880000_dp * cst%m_u !O2
     var%m(5) = 10.00000000_dp * cst%m_u !M
-    var%m(6) = 0.00000000_dp * cst%m_u !OH
-    var%m(7) = 13.01070000_dp * cst%m_u !^13C2^18O2
-    var%m(8) = 0.00000000_dp * cst%m_u !H
+    var%m(6) = 17.00734000_dp * cst%m_u !OH
+    var%m(7) = 49.00000000_dp * cst%m_u !^13C^18O2
+    var%m(8) = 1.00794000_dp * cst%m_u !H
 
     ! mass zero error
     do isp = 1, spl%nsp
@@ -183,7 +183,7 @@ contains
     var%q(4) = 0.0_dp * cst%q_e !O2
     var%q(5) = 0.0_dp * cst%q_e !M
     var%q(6) = 0.0_dp * cst%q_e !OH
-    var%q(7) = 0.0_dp * cst%q_e !^13C2^18O2
+    var%q(7) = 0.0_dp * cst%q_e !^13C^18O2
     var%q(8) = 0.0_dp * cst%q_e !H
 
     ! read P, L, J list

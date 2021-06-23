@@ -1,4 +1,4 @@
  CO2  + hv -> CO     + O       : Photodissociation # Chaffin et al. [2017] 
  O2   + hv -> O      + O       : Photodissociation # Chaffin et al. [2017] 
  O     + O   + M   -> O2   + M        : 5.4e-33 * (300/T(neutral))^3.25 # Chaffin et al. [2017] 
- CO    + OH  + M   -> ^13C2^18O2  + H  + M   : k0M = 1.5e-13 * (300/T(neutral))^(-0.6) &&                                                                    kinfM = 2.1e9 * (300/T(neutral))^(-6.1) # Chaffin et al. [2017] 
+ CO    + OH  + M   -> ^13C^18O2  + 3H  + M   : k0M = 1.5e-13 * (300/T(neutral))^(-0.6) &&                                                                    kinfM = 2.1e9 * (300/T(neutral))^(-6.1) # Chaffin et al. [2017] 

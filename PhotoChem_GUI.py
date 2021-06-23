@@ -670,7 +670,7 @@ reaction_rate_list.append(" CO    + OH  + M   -> HOCO + M        : k0 = 5.9e-33 
 reaction_rate_list.append(" HOCO  + O2        -> HO2  + CO2      : 2.0e-12 # Chaffin et al. [2017] ")
 reaction_rate_list.append(" CO2+  + H2        -> CO2  + H  + H   : 8.7e-10 # Chaffin et al. [2017] ") # it's only used to reproduce Chaffin+2017, otherwise remove it!
 
-reaction_rate_list.append(" CO    + OH  + M   -> 2^13C2^18O2  + 3H  + M   : k0M = 1.5e-13 * (300/T(neutral))^(-0.6) && \
+reaction_rate_list.append(" CO    + OH  + M   -> ^13C^18O2  + 3H  + M   : k0M = 1.5e-13 * (300/T(neutral))^(-0.6) && \
                                                                    kinfM = 2.1e9 * (300/T(neutral))^(-6.1) # Chaffin et al. [2017] ")
 
 #reaction_rate_list.append(" CO    + OH        -> CO2  + H        : 1.5e-13 # Chaffin et al. [2017] ")
@@ -1422,107 +1422,146 @@ def upper_upper_unicode(char):
 
     return char
 
+def lower_lower_unicode(char):
+    # ^**
+    char = re.sub('\u20800' , '\u2080\u2080', char)
+    char = re.sub('\u20801' , '\u2080\u2081', char)
+    char = re.sub('\u20802' , '\u2080\u2082', char)
+    char = re.sub('\u20803' , '\u2080\u2083', char)
+    char = re.sub('\u20804' , '\u2080\u2084', char)
+    char = re.sub('\u20805' , '\u2080\u2085', char)
+    char = re.sub('\u20806' , '\u2080\u2086', char)
+    char = re.sub('\u20807' , '\u2080\u2087', char)
+    char = re.sub('\u20808' , '\u2080\u2088', char)
+    char = re.sub('\u20809' , '\u2080\u2089', char)
+
+    char = re.sub('\u20810' , '\u2081\u2080', char)
+    char = re.sub('\u20811' , '\u2081\u2081', char)
+    char = re.sub('\u20812' , '\u2081\u2082', char)
+    char = re.sub('\u20813' , '\u2081\u2083', char)
+    char = re.sub('\u20814' , '\u2081\u2084', char)
+    char = re.sub('\u20815' , '\u2081\u2085', char)
+    char = re.sub('\u20816' , '\u2081\u2086', char)
+    char = re.sub('\u20817' , '\u2081\u2087', char)
+    char = re.sub('\u20818' , '\u2081\u2088', char)
+    char = re.sub('\u20819' , '\u2081\u2089', char)
+
+    char = re.sub('\u20820' , '\u2082\u2080', char)
+    char = re.sub('\u20821' , '\u2082\u2081', char)
+    char = re.sub('\u20822' , '\u2082\u2082', char)
+    char = re.sub('\u20823' , '\u2082\u2083', char)
+    char = re.sub('\u20824' , '\u2082\u2084', char)
+    char = re.sub('\u20825' , '\u2082\u2085', char)
+    char = re.sub('\u20826' , '\u2082\u2086', char)
+    char = re.sub('\u20827' , '\u2082\u2087', char)
+    char = re.sub('\u20828' , '\u2082\u2088', char)
+    char = re.sub('\u20829' , '\u2082\u2089', char)
+
+    char = re.sub('\u20830' , '\u2083\u2080', char)
+    char = re.sub('\u20831' , '\u2083\u2081', char)
+    char = re.sub('\u20832' , '\u2083\u2082', char)
+    char = re.sub('\u20833' , '\u2083\u2083', char)
+    char = re.sub('\u20834' , '\u2083\u2084', char)
+    char = re.sub('\u20835' , '\u2083\u2085', char)
+    char = re.sub('\u20836' , '\u2083\u2086', char)
+    char = re.sub('\u20837' , '\u2083\u2087', char)
+    char = re.sub('\u20838' , '\u2083\u2088', char)
+    char = re.sub('\u20839' , '\u2083\u2089', char)
+
+    char = re.sub('\u20840' , '\u2084\u2080', char)
+    char = re.sub('\u20841' , '\u2084\u2081', char)
+    char = re.sub('\u20842' , '\u2084\u2082', char)
+    char = re.sub('\u20843' , '\u2084\u2083', char)
+    char = re.sub('\u20844' , '\u2084\u2084', char)
+    char = re.sub('\u20845' , '\u2084\u2085', char)
+    char = re.sub('\u20846' , '\u2084\u2086', char)
+    char = re.sub('\u20847' , '\u2084\u2087', char)
+    char = re.sub('\u20848' , '\u2084\u2088', char)
+    char = re.sub('\u20849' , '\u2084\u2089', char)
+
+    char = re.sub('\u20850' , '\u2085\u2080', char)
+    char = re.sub('\u20851' , '\u2085\u2081', char)
+    char = re.sub('\u20852' , '\u2085\u2082', char)
+    char = re.sub('\u20853' , '\u2085\u2083', char)
+    char = re.sub('\u20854' , '\u2085\u2084', char)
+    char = re.sub('\u20855' , '\u2085\u2085', char)
+    char = re.sub('\u20856' , '\u2085\u2086', char)
+    char = re.sub('\u20857' , '\u2085\u2087', char)
+    char = re.sub('\u20858' , '\u2085\u2088', char)
+    char = re.sub('\u20859' , '\u2085\u2089', char)
+
+    char = re.sub('\u20860' , '\u2086\u2080', char)
+    char = re.sub('\u20861' , '\u2086\u2081', char)
+    char = re.sub('\u20862' , '\u2086\u2082', char)
+    char = re.sub('\u20863' , '\u2086\u2083', char)
+    char = re.sub('\u20864' , '\u2086\u2084', char)
+    char = re.sub('\u20865' , '\u2086\u2085', char)
+    char = re.sub('\u20866' , '\u2086\u2086', char)
+    char = re.sub('\u20867' , '\u2086\u2087', char)
+    char = re.sub('\u20868' , '\u2086\u2088', char)
+    char = re.sub('\u20869' , '\u2086\u2089', char)
+
+    char = re.sub('\u20870' , '\u2087\u2080', char)
+    char = re.sub('\u20871' , '\u2087\u2081', char)
+    char = re.sub('\u20872' , '\u2087\u2082', char)
+    char = re.sub('\u20873' , '\u2087\u2083', char)
+    char = re.sub('\u20874' , '\u2087\u2084', char)
+    char = re.sub('\u20875' , '\u2087\u2085', char)
+    char = re.sub('\u20876' , '\u2087\u2086', char)
+    char = re.sub('\u20877' , '\u2087\u2087', char)
+    char = re.sub('\u20878' , '\u2087\u2088', char)
+    char = re.sub('\u20879' , '\u2087\u2089', char)
+
+    char = re.sub('\u20880' , '\u2088\u2080', char)
+    char = re.sub('\u20881' , '\u2088\u2081', char)
+    char = re.sub('\u20882' , '\u2088\u2082', char)
+    char = re.sub('\u20883' , '\u2088\u2083', char)
+    char = re.sub('\u20884' , '\u2088\u2084', char)
+    char = re.sub('\u20885' , '\u2088\u2085', char)
+    char = re.sub('\u20886' , '\u2088\u2086', char)
+    char = re.sub('\u20887' , '\u2088\u2087', char)
+    char = re.sub('\u20888' , '\u2088\u2088', char)
+    char = re.sub('\u20889' , '\u2088\u2089', char)
+
+    char = re.sub('\u20890' , '\u2089\u2080', char)
+    char = re.sub('\u20891' , '\u2089\u2081', char)
+    char = re.sub('\u20892' , '\u2089\u2082', char)
+    char = re.sub('\u20893' , '\u2089\u2083', char)
+    char = re.sub('\u20894' , '\u2089\u2084', char)
+    char = re.sub('\u20895' , '\u2089\u2085', char)
+    char = re.sub('\u20896' , '\u2089\u2086', char)
+    char = re.sub('\u20897' , '\u2089\u2087', char)
+    char = re.sub('\u20898' , '\u2089\u2088', char)
+    char = re.sub('\u20899' , '\u2089\u2089', char)
+
+    return char
+
 def reaction_unicode(char):
-    nlabel = 0 # ex) if nH2O -> nlabel = 1
+    nlabel0 = 0 # ex) if nH2O -> nlabel = 1
     char = re.sub('->' , ' \u2192 ', char)
     if re.compile('\s\d').search(char):
-        num0 = re.findall('\s+(\d+?)', char)
-        nlabel = len(num0)
-        char = re.sub('\s+(\d+?)', ' ?n?', char,1)
-        char = re.sub('\s+(\d+?)', ' ?nn?', char,1)
-        char = re.sub('\s+(\d+?)', ' ?nnn?', char,1)
-        char = re.sub('\s+(\d+?)', ' ?nnnn?', char,1)
-        char = re.sub('\s+(\d+?)', ' ?nnnnn?', char,1)
-        char = re.sub('\s+(\d+?)', ' ?nnnnnn?', char,1)
-        char = re.sub('\s+(\d+?)', ' ?nnnnnnn?', char,1)
-        char = re.sub('\s+(\d+?)', ' ?nnnnnnnn?', char,1)
-        char = re.sub('\s+(\d+?)', ' ?nnnnnnnnn?', char,1)
-        char = re.sub('\s+(\d+?)', ' ?nnnnnnnnnn?', char,1)
-        print(num0)
+        num0 = re.findall('\s+(\d{1,3})', char)
+        nlabel0 = len(num0)
+        char = re.sub('\s+\d{1,3}', ' ?na?', char,1)
+        char = re.sub('\s+\d{1,3}', ' ?nb?', char,1)
+        char = re.sub('\s+\d{1,3}', ' ?nc?', char,1)
+        char = re.sub('\s+\d{1,3}', ' ?nd?', char,1)
+        char = re.sub('\s+\d{1,3}', ' ?ne?', char,1)
+        char = re.sub('\s+\d{1,3}', ' ?nf?', char,1)
+        char = re.sub('\s+\d{1,3}', ' ?ng?', char,1)
+        char = re.sub('\s+\d{1,3}', ' ?nh?', char,1)
+        char = re.sub('\s+\d{1,3}', ' ?ni?', char,1)
+        char = re.sub('\s+\d{1,3}', ' ?nj?', char,1)
+        #print(num0)
+
+    nlabel1 = 0
+    if re.compile('^\d').search(char):
+        num1 = re.findall('^\d{1,3}', char)
+        nlabel1 = 1
+        char = re.sub('^\d{1,3}', '?ma?', char,1)
+        print(num1, char)
 
     # For isotope expression ex) ^13C, ^18O
-    nisotope = 0
-    if re.compile('\^\d+?').search(char):
-        numi = re.findall('\^(\d+?)\D', char)
-        nisotope = len(numi)
-        char = re.sub('\^\d{1,3}', '^?i?', char,1)
-        char = re.sub('\^\d{1,3}', '^?ii?', char,1)
-        char = re.sub('\^\d{1,3}', '^?iii?', char,1)
-        char = re.sub('\^\d{1,3}', '^?iiii?', char,1)
-        char = re.sub('\^\d{1,3}', '^?iiiii?', char,1)
-        char = re.sub('\^\d{1,3}', '^?iiiiii?', char,1)
-        char = re.sub('\^\d{1,3}', '^?iiiiiii?', char,1)
-        char = re.sub('\^\d{1,3}', '^?iiiiiiii?', char,1)
-        char = re.sub('\^\d{1,3}', '^?iiiiiiiii?', char,1)
-        char = re.sub('\^\d{1,3}', '^?iiiiiiiiii?', char,1)
-        char = re.sub('\^\d{1,3}', '^?iiiiiiiiiii?', char,1)
-        print(char, numi)
-
-    char = re.sub('2' , '\u2082', char)
-    char = re.sub('3' , '\u2083', char)
-    char = re.sub('4' , '\u2084', char)
-    char = re.sub('5' , '\u2085', char)
-    char = re.sub('6' , '\u2086', char)
-    char = re.sub('7' , '\u2087', char)
-    char = re.sub('8' , '\u2088', char)
-    char = re.sub('9' , '\u2089', char)
-    char = re.sub('\+' , '\u207A', char)
-    char = re.sub(' \u207A ' , ' + ', char)
-    char = re.sub('\-' , '\u207B', char)
-    char = re.sub(' \u207B ' , ' - ', char)
-    char = re.sub('\(1D\)' , '(\u00B9D)', char)
-    char = re.sub('\(1S\)' , '(\u00B9S)', char)
-    char = re.sub('\(\u2082D\)' , '(\u00B2D)', char)
-    char = re.sub('\(\u2082P\)' , '(\u00B2P)', char)
-    char = re.sub('\(\u2083P\)' , '(\u00B3P)', char)
-    char = re.sub('\(\u2084P\)' , '(\u2074P)', char)
-    char = re.sub('\(\u2084S\)' , '(\u2074S)', char)
-    char = re.sub('\(v>\=\u2082\)' , '(v>=2)', char)
-    char = re.sub('\(v>\=\u2084\)' , '(v>=4)', char)
-    
-    # ex) nH2O
-    if nlabel >= 1:
-        char = re.sub('\?n\?', num0[0], char)
-    if nlabel >= 2:
-        char = re.sub('\?nn\?', num0[1], char)
-    if nlabel >= 3:
-        char = re.sub('\?nnn\?', num0[2], char)
-    if nlabel >= 4:
-        char = re.sub('\?nnnn\?', num0[3], char)
-    if nlabel >= 5:
-        char = re.sub('\?nnnnn\?', num0[4], char)
-    if nlabel >= 6:
-        char = re.sub('\?nnnnnn\?', num0[5], char)
-    if nlabel >= 7:
-        char = re.sub('\?nnnnnnn\?', num0[6], char)
-    if nlabel >= 8:
-        char = re.sub('\?nnnnnnnn\?', num0[7], char)
-    if nlabel >= 9:
-        char = re.sub('\?nnnnnnnnn\?', num0[8], char)
-    if nlabel >= 10:
-        char = re.sub('\?nnnnnnnnnn\?', num0[9], char)
-
-    # isotope expression
-    if nisotope >= 1:
-        char = re.sub('\?i\?', numi[0], char)
-    if nisotope >= 2:
-        char = re.sub('\?ii\?', numi[1], char)
-    if nisotope >= 3:
-        char = re.sub('\?iii\?', numi[2], char)
-    if nisotope >= 4:
-        char = re.sub('\?iiii\?', numi[3], char)
-    if nisotope >= 5:
-        char = re.sub('\?iiiii\?', numi[4], char)
-    if nisotope >= 6:
-        char = re.sub('\?iiiiii\?', numi[5], char)
-    if nisotope >= 7:
-        char = re.sub('\?iiiiiii\?', numi[6], char)
-    if nisotope >= 8:
-        char = re.sub('\?iiiiiiii\?', numi[7], char)
-    if nisotope >= 9:
-        char = re.sub('\?iiiiiiiii\?', numi[8], char)
-    if nisotope >= 10:
-        char = re.sub('\?iiiiiiiiii\?', numi[9], char)
 
     # ^*.
     char = re.sub('\^0' , '\u2070', char)
@@ -1543,6 +1582,61 @@ def reaction_unicode(char):
     char = upper_upper_unicode(char)
     # ^***
     char = upper_upper_unicode(char)
+
+
+    char = re.sub('1' , '\u2081', char)
+    char = re.sub('2' , '\u2082', char)
+    char = re.sub('3' , '\u2083', char)
+    char = re.sub('4' , '\u2084', char)
+    char = re.sub('5' , '\u2085', char)
+    char = re.sub('6' , '\u2086', char)
+    char = re.sub('7' , '\u2087', char)
+    char = re.sub('8' , '\u2088', char)
+    char = re.sub('9' , '\u2089', char)
+    char = re.sub('\+' , '\u207A', char)
+    char = re.sub(' \u207A ' , ' + ', char)
+    char = re.sub('\-' , '\u207B', char)
+    char = re.sub(' \u207B ' , ' - ', char)
+    char = re.sub('\(\u2081D\)' , '(\u00B9D)', char)
+    char = re.sub('\(\u2081S\)' , '(\u00B9S)', char)
+    char = re.sub('\(\u2082D\)' , '(\u00B2D)', char)
+    char = re.sub('\(\u2082P\)' , '(\u00B2P)', char)
+    char = re.sub('\(\u2083P\)' , '(\u00B3P)', char)
+    char = re.sub('\(\u2084P\)' , '(\u2074P)', char)
+    char = re.sub('\(\u2084S\)' , '(\u2074S)', char)
+    char = re.sub('\(v>\=\u2082\)' , '(v>=2)', char)
+    char = re.sub('\(v>\=\u2084\)' , '(v>=4)', char)
+
+    # _**
+    char = lower_lower_unicode(char)
+    # _***
+    char = lower_lower_unicode(char)
+    
+    # ex) nH2O
+    if nlabel0 >= 1:
+        char = re.sub('\?na\?', num0[0], char)
+    if nlabel0 >= 2:
+        char = re.sub('\?nb\?', num0[1], char)
+    if nlabel0 >= 3:
+        char = re.sub('\?nc\?', num0[2], char)
+    if nlabel0 >= 4:
+        char = re.sub('\?nd\?', num0[3], char)
+    if nlabel0 >= 5:
+        char = re.sub('\?ne\?', num0[4], char)
+    if nlabel0 >= 6:
+        char = re.sub('\?nf\?', num0[5], char)
+    if nlabel0 >= 7:
+        char = re.sub('\?ng\?', num0[6], char)
+    if nlabel0 >= 8:
+        char = re.sub('\?nh\?', num0[7], char)
+    if nlabel0 >= 9:
+        char = re.sub('\?ni\?', num0[8], char)
+    if nlabel0 >= 10:
+        char = re.sub('\?nj\?', num0[9], char)
+
+    # ex) "nH2O ...
+    if nlabel1 == 1:
+        char = re.sub('\?ma\?', num1[0], char)
 
     return char
 
@@ -1755,14 +1849,19 @@ def reaction_analysis(action, iplnt, reaction_chk_bln, fix_species_bln, dir0):
             for j in range(len(reactant[ich])):
                 reactant[ich][j] = reactant[ich][j].lstrip()
                 reactant[ich][j] = reactant[ich][j].rstrip()
+                if re.compile('^\d+?').search(reactant[ich][j]):
+                    num = re.findall('^(\d{1,3})', reactant[ich][j])
+                    reactant[ich][j] = re.sub('^\d{1,3}', '', reactant[ich][j])
+                    for k in range(int(num[0])-1):
+                        reactant[ich].append(reactant[ich][j])
 
             product.append(reaction_right[0].split(' + '))
             for j in range(len(product[ich])):
                 product[ich][j] = product[ich][j].lstrip()
                 product[ich][j] = product[ich][j].rstrip()
-                if re.compile('^\d+?.*').search(product[ich][j]):
-                    num = re.findall('^(\d+?)', product[ich][j])
-                    product[ich][j] = re.sub('^(\d+?)', '', product[ich][j])
+                if re.compile('^\d+?').search(product[ich][j]):
+                    num = re.findall('^(\d{1,3})', product[ich][j])
+                    product[ich][j] = re.sub('^\d{1,3}', '', product[ich][j])
                     for k in range(int(num[0])-1):
                         product[ich].append(product[ich][j])
             #print(product[ich])
@@ -1829,8 +1928,8 @@ def reaction_analysis(action, iplnt, reaction_chk_bln, fix_species_bln, dir0):
 
     # reactant, product list
     #[[0,0,0,0,0,0,0,0,0,0],[],[],,,]
-    reactant_list = [ [0 for isp in range(20)] for ich in range(len(reactant))]
-    product_list  = [ [0 for isp in range(20)] for ich in range(len(product))]
+    reactant_list = [ [0 for isp in range(100)] for ich in range(len(reactant))]
+    product_list  = [ [0 for isp in range(100)] for ich in range(len(product))]
 
 
     for ich in range(len(reactant)):
@@ -1972,35 +2071,34 @@ def reaction_analysis(action, iplnt, reaction_chk_bln, fix_species_bln, dir0):
                 species_tmp = species_tmp + species_brackets[0] #ex) append H2O
             #print(species_tmp)
 
-        #isotope_label = 0
-        #isotopes = []
-        #if re.compile('\^\d+?').search(species_tmp):
-        #    isotope_label = 1
-        #    isotopes = re.findall('\^\d+?[A-Z][^A-Z]*', species_tmp)
-        #    species_tmp = re.sub('\^\d+?[A-Z][^A-Z]*', '', species_tmp)
-        #    print(species_tmp, isotopes)
+        nisotope = 0
+        isotopes = []
+        if re.compile('\^\d+?').search(species_tmp):
+            isotopes = re.findall('\^\d{1,3}[A-Z][^A-Z|\^]*', species_tmp)
+            nisotope = len(isotopes)
+            species_tmp = re.sub('\^\d{1,3}[A-Z][^A-Z|\^]*', 'Isotopea', species_tmp,1)
+            species_tmp = re.sub('\^\d{1,3}[A-Z][^A-Z|\^]*', 'Isotopeb', species_tmp,1)
+            #print(species_tmp, isotopes)
 
-        species_split=[]
-        species_split_tmp1 = re.findall('(\^\d+?[A-Z][^\^\d+?A-Z]*)', species_tmp) #split isotopes
-        print(species_split_tmp1)
-        for i in range(len(species_split_tmp1)):
-            if '^' in species_split_tmp1[i]:
-                species_split.append(species_split_tmp1[i])
-            if '^' not in species_split_tmp1[i]:
-                species_split_tmp2 = re.findall('[A-Z][^A-Z]*', species_split_tmp1[i]) #split elements
-                for j in range(len(species_split_tmp2)):
-                    species_split.append(species_split_tmp2[j])
-        
+        species_split = re.findall('[A-Z][^A-Z]*', species_tmp) #split elements
+        if nisotope >= 1:
+            for i in range(len(species_split)):
+                species_split[i] = re.sub('Isotopea', isotopes[0], species_split[i],1)
+        if nisotope >= 2:
+            for i in range(len(species_split)):
+                species_split[i] = re.sub('Isotopeb', isotopes[1], species_split[i],1)
         #print(species_split)
 
         for j in range(len(species_split)):
-            num_str = re.findall('[A-Z]*(\d*)', species_split[j]) #find spcies which start with capital and end with number
+            num_str = re.findall('[A-Z]*(\d*)$', species_split[j]) #find spcies which start with capital and end with number
             # ex) CO2 -> C,O,O
             if num_str[0] != '':
                 num_int = int(num_str[0], base = 10) #string -> number
                 for k in range(num_int-1): #loop "number" times, ex) O2 -> 2 times, O3 -> 3 times
-                    species_split[j] = re.sub('\d*', '', species_split[j]) #delete number, ex O2-> O
+                    species_split[j] = re.sub('\d*$', '', species_split[j]) #delete number, ex O2-> O
                     species_split.append(species_split[j]) #ex) append O
+
+        print(species_split)
 
         # electron mass
         if species[isp] == 'e-':
@@ -2014,11 +2112,13 @@ def reaction_analysis(action, iplnt, reaction_chk_bln, fix_species_bln, dir0):
             if species_split[j] == 'C':
                 mass[isp] = mass[isp] + 12.01070
             if species_split[j] == '^13C':
-                mass[isp] = mass[isp] + 13.01070
+                mass[isp] = mass[isp] + 13.0
             if species_split[j] == 'N':
                 mass[isp] = mass[isp] + 14.00670
             if species_split[j] == 'O':
                 mass[isp] = mass[isp] + 15.99940
+            if species_split[j] == '^18O':
+                mass[isp] = mass[isp] + 18.0
             if species_split[j] == 'Na':
                 mass[isp] = mass[isp] + 22.989
             if species_split[j] == 'Mg':
