@@ -20,10 +20,10 @@ contains
 
     ! Calculation settings
     set%mode = '1D'
-    set%nstep = 2000
+    set%nstep = 30000
     set%fin_sec = 35729.685e1_dp
     set%dtime_limit = 1.0e5_dp
-    set%latitude = 0.0_dp
+    set%latitude = 73.0_dp
     set%Ls = 0.0_dp
     set%nday = 3.0_dp
     set%scheme = 'implicit'
@@ -308,58 +308,58 @@ contains
     spl%var_to_all(36) = 50 ! C4H9+: variable
 
     ! mass
-    var%m(1) = 2.01588000_dp * cst%m_u !H2
-    var%m(2) = 2.01533142_dp * cst%m_u !H2+
+    var%m(1) = 2.00000000_dp * cst%m_u !H2
+    var%m(2) = 1.99945142_dp * cst%m_u !H2+
     var%m(3) = 0.00054858_dp * cst%m_u !e-
-    var%m(4) = 1.00794000_dp * cst%m_u !H
-    var%m(5) = 1.00739142_dp * cst%m_u !H+
-    var%m(6) = 4.00260200_dp * cst%m_u !He
-    var%m(7) = 4.00205342_dp * cst%m_u !He+
-    var%m(8) = 16.04246000_dp * cst%m_u !CH4
-    var%m(9) = 16.04191142_dp * cst%m_u !CH4+
-    var%m(10) = 15.03397142_dp * cst%m_u !CH3+
-    var%m(11) = 26.03728000_dp * cst%m_u !C2H2
-    var%m(12) = 26.03673142_dp * cst%m_u !C2H2+
-    var%m(13) = 28.05316000_dp * cst%m_u !C2H4
-    var%m(14) = 28.05261142_dp * cst%m_u !C2H4+
-    var%m(15) = 27.04467142_dp * cst%m_u !C2H3+
-    var%m(16) = 25.02879142_dp * cst%m_u !C2H+
-    var%m(17) = 30.06904000_dp * cst%m_u !C2H6
-    var%m(18) = 30.06849142_dp * cst%m_u !C2H6+
-    var%m(19) = 29.06055142_dp * cst%m_u !C2H5+
-    var%m(20) = 5.00999342_dp * cst%m_u !HeH+
-    var%m(21) = 3.02327142_dp * cst%m_u !H3+
-    var%m(22) = 12.01015142_dp * cst%m_u !C+
-    var%m(23) = 12.01070000_dp * cst%m_u !C
-    var%m(24) = 13.01809142_dp * cst%m_u !CH+
-    var%m(25) = 14.02603142_dp * cst%m_u !CH2+
-    var%m(26) = 13.01864000_dp * cst%m_u !CH
-    var%m(27) = 14.02658000_dp * cst%m_u !CH2
-    var%m(28) = 15.03452000_dp * cst%m_u !CH3
-    var%m(29) = 17.04985142_dp * cst%m_u !CH5+
-    var%m(30) = 24.02085142_dp * cst%m_u !C2+
-    var%m(31) = 24.02140000_dp * cst%m_u !C2
-    var%m(32) = 25.02934000_dp * cst%m_u !C2H
-    var%m(33) = 27.04522000_dp * cst%m_u !C2H3
-    var%m(34) = 29.06110000_dp * cst%m_u !C2H5
-    var%m(35) = 31.07643142_dp * cst%m_u !C2H7+
-    var%m(36) = 37.03949142_dp * cst%m_u !C3H+
-    var%m(37) = 38.04743142_dp * cst%m_u !C3H2+
-    var%m(38) = 39.05537142_dp * cst%m_u !C3H3+
-    var%m(39) = 40.06331142_dp * cst%m_u !C3H4+
-    var%m(40) = 41.07125142_dp * cst%m_u !C3H5+
-    var%m(41) = 42.07919142_dp * cst%m_u !C3H6+
-    var%m(42) = 43.08713142_dp * cst%m_u !C3H7+
-    var%m(43) = 44.09507142_dp * cst%m_u !C3H8+
-    var%m(44) = 45.10301142_dp * cst%m_u !C3H9+
-    var%m(45) = 49.05019142_dp * cst%m_u !C4H+
-    var%m(46) = 50.05813142_dp * cst%m_u !C4H2+
-    var%m(47) = 51.06607142_dp * cst%m_u !C4H3+
-    var%m(48) = 53.08195142_dp * cst%m_u !C4H5+
-    var%m(49) = 55.09783142_dp * cst%m_u !C4H7+
-    var%m(50) = 57.11371142_dp * cst%m_u !C4H9+
-    var%m(51) = 2.01588000_dp * cst%m_u !H2(v>=2)
-    var%m(52) = 2.01588000_dp * cst%m_u !H2(v>=4)
+    var%m(4) = 1.00000000_dp * cst%m_u !H
+    var%m(5) = 0.99945142_dp * cst%m_u !H+
+    var%m(6) = 4.00000000_dp * cst%m_u !He
+    var%m(7) = 3.99945142_dp * cst%m_u !He+
+    var%m(8) = 16.00000000_dp * cst%m_u !CH4
+    var%m(9) = 15.99945142_dp * cst%m_u !CH4+
+    var%m(10) = 14.99945142_dp * cst%m_u !CH3+
+    var%m(11) = 26.00000000_dp * cst%m_u !C2H2
+    var%m(12) = 25.99945142_dp * cst%m_u !C2H2+
+    var%m(13) = 28.00000000_dp * cst%m_u !C2H4
+    var%m(14) = 27.99945142_dp * cst%m_u !C2H4+
+    var%m(15) = 26.99945142_dp * cst%m_u !C2H3+
+    var%m(16) = 24.99945142_dp * cst%m_u !C2H+
+    var%m(17) = 30.00000000_dp * cst%m_u !C2H6
+    var%m(18) = 29.99945142_dp * cst%m_u !C2H6+
+    var%m(19) = 28.99945142_dp * cst%m_u !C2H5+
+    var%m(20) = 4.99945142_dp * cst%m_u !HeH+
+    var%m(21) = 2.99945142_dp * cst%m_u !H3+
+    var%m(22) = 11.99945142_dp * cst%m_u !C+
+    var%m(23) = 12.00000000_dp * cst%m_u !C
+    var%m(24) = 12.99945142_dp * cst%m_u !CH+
+    var%m(25) = 13.99945142_dp * cst%m_u !CH2+
+    var%m(26) = 13.00000000_dp * cst%m_u !CH
+    var%m(27) = 14.00000000_dp * cst%m_u !CH2
+    var%m(28) = 15.00000000_dp * cst%m_u !CH3
+    var%m(29) = 16.99945142_dp * cst%m_u !CH5+
+    var%m(30) = 23.99945142_dp * cst%m_u !C2+
+    var%m(31) = 24.00000000_dp * cst%m_u !C2
+    var%m(32) = 25.00000000_dp * cst%m_u !C2H
+    var%m(33) = 27.00000000_dp * cst%m_u !C2H3
+    var%m(34) = 29.00000000_dp * cst%m_u !C2H5
+    var%m(35) = 30.99945142_dp * cst%m_u !C2H7+
+    var%m(36) = 36.99945142_dp * cst%m_u !C3H+
+    var%m(37) = 37.99945142_dp * cst%m_u !C3H2+
+    var%m(38) = 38.99945142_dp * cst%m_u !C3H3+
+    var%m(39) = 39.99945142_dp * cst%m_u !C3H4+
+    var%m(40) = 40.99945142_dp * cst%m_u !C3H5+
+    var%m(41) = 41.99945142_dp * cst%m_u !C3H6+
+    var%m(42) = 42.99945142_dp * cst%m_u !C3H7+
+    var%m(43) = 43.99945142_dp * cst%m_u !C3H8+
+    var%m(44) = 44.99945142_dp * cst%m_u !C3H9+
+    var%m(45) = 48.99945142_dp * cst%m_u !C4H+
+    var%m(46) = 49.99945142_dp * cst%m_u !C4H2+
+    var%m(47) = 50.99945142_dp * cst%m_u !C4H3+
+    var%m(48) = 52.99945142_dp * cst%m_u !C4H5+
+    var%m(49) = 54.99945142_dp * cst%m_u !C4H7+
+    var%m(50) = 56.99945142_dp * cst%m_u !C4H9+
+    var%m(51) = 2.00000000_dp * cst%m_u !H2(v>=2)
+    var%m(52) = 2.00000000_dp * cst%m_u !H2(v>=4)
 
     ! mass zero error
     do isp = 1, spl%nsp

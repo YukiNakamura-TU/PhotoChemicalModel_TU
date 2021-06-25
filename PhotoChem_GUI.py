@@ -5463,7 +5463,7 @@ def plot(Planet, dir0, species, action, adv, fs,
                 ny = len(data[0])-1
                 dy = 180.0/(float(ny)-1.0)
                 iy = int((float(LAT)+90.0)/dy)
-                print(iy)
+                #print(iy)
                 for i in range(len(data)):
                     altitude[isp].append(data[i][0])
                     density[isp].append(data[i][iy+1])

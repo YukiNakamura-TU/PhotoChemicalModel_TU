@@ -265,7 +265,7 @@ Reactant :  H⁺  ,  e⁻
 Product  :  H
 
 Reaction rate : 1 case.
-       (1) 4.0 × 10⁻¹²× ( T(electron)/250.0)⁻⁰·⁷
+       (1) 4.0 × 10⁻¹²× ( T(electron)/250.0)⁻⁰·7)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -279,7 +279,7 @@ Reactant :  He⁺  ,  e⁻
 Product  :  He
 
 Reaction rate : 1 case.
-       (1) 4.0 × 10⁻¹²× ( T(electron)/250.0)⁻⁰·⁷
+       (1) 4.0 × 10⁻¹²× ( T(electron)/250.0)⁻⁰·7)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -293,7 +293,7 @@ Reactant :  HeH⁺  ,  e⁻
 Product  :  H  ,  He
 
 Reaction rate : 1 case.
-       (1) 1.0 × 10⁻⁸ × ( T(electron)/300.0)⁻⁰·⁶
+       (1) 1.0 × 10⁻⁸ × ( T(electron)/300.0)⁻⁰·6)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -307,7 +307,7 @@ Reactant :  H₂⁺  ,  e⁻
 Product  :  H  ,  H
 
 Reaction rate : 1 case.
-       (1) 2.3 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·⁴
+       (1) 2.3 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·4)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -321,7 +321,7 @@ Reactant :  H₃⁺  ,  e⁻
 Product  :  H₂  ,  H
 
 Reaction rate : 1 case.
-       (1) 4.4 × 10⁻⁸ × ( T(electron)/300.0)⁻⁰·⁵
+       (1) 4.4 × 10⁻⁸ × ( T(electron)/300.0)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -335,7 +335,7 @@ Reactant :  H₃⁺  ,  e⁻
 Product  :  H  ,  H  ,  H
 
 Reaction rate : 1 case.
-       (1) 5.6 × 10⁻⁸ × ( T(electron)/300.0)⁻⁰·⁵
+       (1) 5.6 × 10⁻⁸ × ( T(electron)/300.0)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -349,7 +349,7 @@ Reactant :  C⁺  ,  e⁻
 Product  :  C
 
 Reaction rate : 1 case.
-       (1) 4.0 × 10⁻¹²× ( T(electron)/250.0)⁻⁰·⁷
+       (1) 4.0 × 10⁻¹²× ( T(electron)/250.0)⁻⁰·7)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -363,7 +363,7 @@ Reactant :  CH⁺  ,  e⁻
 Product  :  C  ,  H
 
 Reaction rate : 1 case.
-       (1) 1.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·⁴²
+       (1) 1.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·42)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -377,7 +377,7 @@ Reactant :  CH₂⁺  ,  e⁻
 Product  :  CH  ,  H
 
 Reaction rate : 1 case.
-       (1) 2.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·⁵
+       (1) 2.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -391,7 +391,7 @@ Reactant :  CH₃⁺  ,  e⁻
 Product  :  CH₂  ,  H
 
 Reaction rate : 1 case.
-       (1) 3.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·⁵
+       (1) 3.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -405,7 +405,7 @@ Reactant :  CH₄⁺  ,  e⁻
 Product  :  CH₃  ,  H
 
 Reaction rate : 1 case.
-       (1) 3.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·⁵
+       (1) 3.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -419,7 +419,7 @@ Reactant :  CH₄⁺  ,  e⁻
 Product  :  CH₂  ,  H  ,  H
 
 Reaction rate : 1 case.
-       (1) 3.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·⁵
+       (1) 3.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -433,7 +433,7 @@ Reactant :  CH₅⁺  ,  e⁻
 Product  :  CH₂  ,  H  ,  H₂
 
 Reaction rate : 1 case.
-       (1) 8.8 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·⁵
+       (1) 8.8 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -447,7 +447,7 @@ Reactant :  CH₅⁺  ,  e⁻
 Product  :  CH₃  ,  H  ,  H
 
 Reaction rate : 1 case.
-       (1) 2.2 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·⁵
+       (1) 2.2 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -461,7 +461,7 @@ Reactant :  C₂⁺  ,  e⁻
 Product  :  C  ,  C
 
 Reaction rate : 1 case.
-       (1) 3.0 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·⁵
+       (1) 3.0 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -475,7 +475,7 @@ Reactant :  C₂H⁺  ,  e⁻
 Product  :  C₂  ,  H
 
 Reaction rate : 1 case.
-       (1) 2.7 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·⁵
+       (1) 2.7 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -489,7 +489,7 @@ Reactant :  C₂H⁺  ,  e⁻
 Product  :  CH  ,  C
 
 Reaction rate : 1 case.
-       (1) 2.7 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·⁵
+       (1) 2.7 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -503,7 +503,7 @@ Reactant :  C₂H₂⁺  ,  e⁻
 Product  :  C₂H  ,  H
 
 Reaction rate : 1 case.
-       (1) 2.7 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·⁵
+       (1) 2.7 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -517,7 +517,7 @@ Reactant :  C₂H₂⁺  ,  e⁻
 Product  :  CH  ,  CH
 
 Reaction rate : 1 case.
-       (1) 2.7 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·⁵
+       (1) 2.7 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -531,7 +531,7 @@ Reactant :  C₂H₃⁺  ,  e⁻
 Product  :  C₂H₂  ,  H
 
 Reaction rate : 1 case.
-       (1) 4.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·⁵
+       (1) 4.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -545,7 +545,7 @@ Reactant :  C₂H₃⁺  ,  e⁻
 Product  :  CH₂  ,  CH
 
 Reaction rate : 1 case.
-       (1) 4.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·⁵
+       (1) 4.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -559,7 +559,7 @@ Reactant :  C₂H₄⁺  ,  e⁻
 Product  :  C₂H₃  ,  H
 
 Reaction rate : 1 case.
-       (1) 3.0 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·⁵
+       (1) 3.0 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -573,7 +573,7 @@ Reactant :  C₂H₄⁺  ,  e⁻
 Product  :  CH₂  ,  CH₂
 
 Reaction rate : 1 case.
-       (1) 3.0 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·⁵
+       (1) 3.0 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -587,7 +587,7 @@ Reactant :  C₂H₅⁺  ,  e⁻
 Product  :  C₂H₄  ,  H
 
 Reaction rate : 1 case.
-       (1) 7.4 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·⁵
+       (1) 7.4 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -601,7 +601,7 @@ Reactant :  C₂H₅⁺  ,  e⁻
 Product  :  CH₃  ,  CH₂
 
 Reaction rate : 1 case.
-       (1) 7.4 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·⁵
+       (1) 7.4 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -615,7 +615,7 @@ Reactant :  C₂H₆⁺  ,  e⁻
 Product  :  C₂H₅  ,  H
 
 Reaction rate : 1 case.
-       (1) 3.0 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·⁵
+       (1) 3.0 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -629,7 +629,7 @@ Reactant :  C₂H₆⁺  ,  e⁻
 Product  :  CH₃  ,  CH₃
 
 Reaction rate : 1 case.
-       (1) 3.0 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·⁵
+       (1) 3.0 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -643,7 +643,7 @@ Reactant :  C₂H₇⁺  ,  e⁻
 Product  :  C₂H₆  ,  H
 
 Reaction rate : 1 case.
-       (1) 3.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·⁵
+       (1) 3.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -657,7 +657,7 @@ Reactant :  C₃H⁺  ,  e⁻
 Product  :  
 
 Reaction rate : 1 case.
-       (1) 7.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·⁵
+       (1) 7.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -671,7 +671,7 @@ Reactant :  C₃H₂⁺  ,  e⁻
 Product  :  
 
 Reaction rate : 1 case.
-       (1) 7.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·⁵
+       (1) 7.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -685,7 +685,7 @@ Reactant :  C₃H₃⁺  ,  e⁻
 Product  :  
 
 Reaction rate : 1 case.
-       (1) 7.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·⁵
+       (1) 7.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -699,7 +699,7 @@ Reactant :  C₃H₄⁺  ,  e⁻
 Product  :  
 
 Reaction rate : 1 case.
-       (1) 7.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·⁵
+       (1) 7.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -713,7 +713,7 @@ Reactant :  C₃H₅⁺  ,  e⁻
 Product  :  
 
 Reaction rate : 1 case.
-       (1) 7.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·⁵
+       (1) 7.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -727,7 +727,7 @@ Reactant :  C₃H₆⁺  ,  e⁻
 Product  :  
 
 Reaction rate : 1 case.
-       (1) 7.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·⁵
+       (1) 7.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -741,7 +741,7 @@ Reactant :  C₃H₇⁺  ,  e⁻
 Product  :  
 
 Reaction rate : 1 case.
-       (1) 7.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·⁵
+       (1) 7.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -755,7 +755,7 @@ Reactant :  C₃H₈⁺  ,  e⁻
 Product  :  
 
 Reaction rate : 1 case.
-       (1) 7.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·⁵
+       (1) 7.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -769,7 +769,7 @@ Reactant :  C₃H₉⁺  ,  e⁻
 Product  :  
 
 Reaction rate : 1 case.
-       (1) 7.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·⁵
+       (1) 7.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -783,7 +783,7 @@ Reactant :  C₄H⁺  ,  e⁻
 Product  :  
 
 Reaction rate : 1 case.
-       (1) 7.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·⁵
+       (1) 7.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -797,7 +797,7 @@ Reactant :  C₄H₂⁺  ,  e⁻
 Product  :  
 
 Reaction rate : 1 case.
-       (1) 7.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·⁵
+       (1) 7.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -811,7 +811,7 @@ Reactant :  C₄H₃⁺  ,  e⁻
 Product  :  
 
 Reaction rate : 1 case.
-       (1) 7.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·⁵
+       (1) 7.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -825,7 +825,7 @@ Reactant :  C₄H₅⁺  ,  e⁻
 Product  :  
 
 Reaction rate : 1 case.
-       (1) 7.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·⁵
+       (1) 7.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -839,7 +839,7 @@ Reactant :  C₄H₇⁺  ,  e⁻
 Product  :  
 
 Reaction rate : 1 case.
-       (1) 7.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·⁵
+       (1) 7.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -853,7 +853,7 @@ Reactant :  C₄H₉⁺  ,  e⁻
 Product  :  
 
 Reaction rate : 1 case.
-       (1) 7.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·⁵
+       (1) 7.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -3065,7 +3065,7 @@ Reactant :  H  ,  H  ,  H₂
 Product  :  H₂  ,  H₂
 
 Reaction rate : 1 case.
-       (1) 2.7 × 10⁻³¹ × (T(neutral)/1)⁻⁰·⁶
+       (1) 2.7 × 10⁻³¹ × (T(neutral)/1)⁻⁰·6)
                T type  : neutral Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 

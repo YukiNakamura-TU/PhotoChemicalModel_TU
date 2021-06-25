@@ -340,7 +340,7 @@ contains
         end if
       end if
 
-      if( set%mode == '3D Rot' .or. set%mode == '3D Global' ) then
+      !if( set%mode == '3D Rot' .or. set%mode == '3D Global' ) then
 
         ! auroral electron precipitation
         do ich = 1, spl%nch
@@ -362,26 +362,38 @@ contains
           end do
           end do
         close(11)
-
-        isp = sp_index(spl, 'H2')
-        do iz = 1, grd%nz
-        do iy = 1, grd%ny
-        do ix = 1, grd%nx
-          if ( FAC == 'Hill' ) then
-            var%ki_special(jch,ix,iy,iz) = tmp_ijh1(ix,iy,iz)/var%ni(isp,iz)
-          else if ( FAC == 'Hill+R2' ) then
-            var%ki_special(jch,ix,iy,iz) = tmp_ijh2(ix,iy,iz)/var%ni(isp,iz)
-          end if
-        end do
-        end do
-        end do
+        
+        if( set%mode == '3D Rot' .or. set%mode == '3D Global' ) then
+          isp = sp_index(spl, 'H2')
+          do iz = 1, grd%nz
+          do iy = 1, grd%ny
+          do ix = 1, grd%nx
+            if ( FAC == 'Hill' ) then
+              var%ki_special(jch,ix,iy,iz) = tmp_ijh1(ix,iy,iz)/var%ni(isp,iz)
+            else if ( FAC == 'Hill+R2' ) then
+              var%ki_special(jch,ix,iy,iz) = tmp_ijh2(ix,iy,iz)/var%ni(isp,iz)
+            end if
+          end do
+          end do
+          end do
+        else if( set%mode == '1D' ) then
+          isp = sp_index(spl, 'H2')
+          iy = nint(set%latitude)+91
+          do iz = 1, grd%nz
+            if ( FAC == 'Hill' ) then
+              var%ki_special(jch,1,1,iz) = tmp_ijh1(181,iy,iz)/var%ni(isp,iz)
+            else if ( FAC == 'Hill+R2' ) then
+              var%ki_special(jch,1,1,iz) = tmp_ijh2(181,iy,iz)/var%ni(isp,iz)
+            end if
+          end do
+        end if
 
         !do iz = 1, grd%nz
         !  print *, iz, var%ki_special(jch,1,164,iz)
         !end do 
         !stop
 
-      end if
+      !end if
 
     end if
 
