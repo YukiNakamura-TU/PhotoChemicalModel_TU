@@ -3,7 +3,7 @@
 ############################################
 
 
-* 409 reactions
+* 406 reactions
 
 --------------------------------------------
  H₂   + e⁻*  →  H₂⁺   + e⁻ + e⁻*      
@@ -265,7 +265,7 @@ Reactant :  H⁺  ,  e⁻
 Product  :  H
 
 Reaction rate : 1 case.
-       (1) 4.0 × 10⁻¹²× ( T(electron)/250.0)⁻⁰·⁷
+       (1) 4.0 × 10⁻¹²× ( T(electron)/250.0)⁻⁰·7)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -279,7 +279,7 @@ Reactant :  He⁺  ,  e⁻
 Product  :  He
 
 Reaction rate : 1 case.
-       (1) 4.0 × 10⁻¹²× ( T(electron)/250.0)⁻⁰·⁷
+       (1) 4.0 × 10⁻¹²× ( T(electron)/250.0)⁻⁰·7)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -293,7 +293,7 @@ Reactant :  HeH⁺  ,  e⁻
 Product  :  H  ,  He
 
 Reaction rate : 1 case.
-       (1) 1.0 × 10⁻⁸ × ( T(electron)/300.0)⁻⁰·⁶
+       (1) 1.0 × 10⁻⁸ × ( T(electron)/300.0)⁻⁰·6)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -307,7 +307,7 @@ Reactant :  H₂⁺  ,  e⁻
 Product  :  H  ,  H
 
 Reaction rate : 1 case.
-       (1) 2.3 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·⁴
+       (1) 2.3 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·4)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -321,7 +321,7 @@ Reactant :  H₃⁺  ,  e⁻
 Product  :  H₂  ,  H
 
 Reaction rate : 1 case.
-       (1) 4.4 × 10⁻⁸ × ( T(electron)/300.0)⁻⁰·⁵
+       (1) 4.4 × 10⁻⁸ × ( T(electron)/300.0)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -335,7 +335,7 @@ Reactant :  H₃⁺  ,  e⁻
 Product  :  H  ,  H  ,  H
 
 Reaction rate : 1 case.
-       (1) 5.6 × 10⁻⁸ × ( T(electron)/300.0)⁻⁰·⁵
+       (1) 5.6 × 10⁻⁸ × ( T(electron)/300.0)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -349,7 +349,7 @@ Reactant :  C⁺  ,  e⁻
 Product  :  C
 
 Reaction rate : 1 case.
-       (1) 4.0 × 10⁻¹²× ( T(electron)/250.0)⁻⁰·⁷
+       (1) 4.0 × 10⁻¹²× ( T(electron)/250.0)⁻⁰·7)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -363,7 +363,7 @@ Reactant :  CH⁺  ,  e⁻
 Product  :  C  ,  H
 
 Reaction rate : 1 case.
-       (1) 1.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·⁴²
+       (1) 1.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·42)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -377,7 +377,7 @@ Reactant :  CH₂⁺  ,  e⁻
 Product  :  CH  ,  H
 
 Reaction rate : 1 case.
-       (1) 2.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·⁵
+       (1) 2.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -391,7 +391,7 @@ Reactant :  CH₃⁺  ,  e⁻
 Product  :  CH₂  ,  H
 
 Reaction rate : 1 case.
-       (1) 3.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·⁵
+       (1) 3.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -405,7 +405,7 @@ Reactant :  CH₄⁺  ,  e⁻
 Product  :  CH₃  ,  H
 
 Reaction rate : 1 case.
-       (1) 3.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·⁵
+       (1) 3.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -419,7 +419,7 @@ Reactant :  CH₄⁺  ,  e⁻
 Product  :  CH₂  ,  H  ,  H
 
 Reaction rate : 1 case.
-       (1) 3.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·⁵
+       (1) 3.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -433,7 +433,7 @@ Reactant :  CH₅⁺  ,  e⁻
 Product  :  CH₂  ,  H  ,  H₂
 
 Reaction rate : 1 case.
-       (1) 8.8 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·⁵
+       (1) 8.8 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -447,7 +447,7 @@ Reactant :  CH₅⁺  ,  e⁻
 Product  :  CH₃  ,  H  ,  H
 
 Reaction rate : 1 case.
-       (1) 2.2 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·⁵
+       (1) 2.2 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -461,7 +461,7 @@ Reactant :  C₂⁺  ,  e⁻
 Product  :  C  ,  C
 
 Reaction rate : 1 case.
-       (1) 3.0 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·⁵
+       (1) 3.0 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -475,7 +475,7 @@ Reactant :  C₂H⁺  ,  e⁻
 Product  :  C₂  ,  H
 
 Reaction rate : 1 case.
-       (1) 2.7 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·⁵
+       (1) 2.7 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -489,7 +489,7 @@ Reactant :  C₂H⁺  ,  e⁻
 Product  :  CH  ,  C
 
 Reaction rate : 1 case.
-       (1) 2.7 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·⁵
+       (1) 2.7 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -503,7 +503,7 @@ Reactant :  C₂H₂⁺  ,  e⁻
 Product  :  C₂H  ,  H
 
 Reaction rate : 1 case.
-       (1) 2.7 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·⁵
+       (1) 2.7 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -517,7 +517,7 @@ Reactant :  C₂H₂⁺  ,  e⁻
 Product  :  CH  ,  CH
 
 Reaction rate : 1 case.
-       (1) 2.7 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·⁵
+       (1) 2.7 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -531,7 +531,7 @@ Reactant :  C₂H₃⁺  ,  e⁻
 Product  :  C₂H₂  ,  H
 
 Reaction rate : 1 case.
-       (1) 4.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·⁵
+       (1) 4.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -545,7 +545,7 @@ Reactant :  C₂H₃⁺  ,  e⁻
 Product  :  CH₂  ,  CH
 
 Reaction rate : 1 case.
-       (1) 4.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·⁵
+       (1) 4.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -559,7 +559,7 @@ Reactant :  C₂H₄⁺  ,  e⁻
 Product  :  C₂H₃  ,  H
 
 Reaction rate : 1 case.
-       (1) 3.0 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·⁵
+       (1) 3.0 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -573,7 +573,7 @@ Reactant :  C₂H₄⁺  ,  e⁻
 Product  :  CH₂  ,  CH₂
 
 Reaction rate : 1 case.
-       (1) 3.0 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·⁵
+       (1) 3.0 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -587,7 +587,7 @@ Reactant :  C₂H₅⁺  ,  e⁻
 Product  :  C₂H₄  ,  H
 
 Reaction rate : 1 case.
-       (1) 7.4 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·⁵
+       (1) 7.4 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -601,7 +601,7 @@ Reactant :  C₂H₅⁺  ,  e⁻
 Product  :  CH₃  ,  CH₂
 
 Reaction rate : 1 case.
-       (1) 7.4 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·⁵
+       (1) 7.4 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -615,7 +615,7 @@ Reactant :  C₂H₆⁺  ,  e⁻
 Product  :  C₂H₅  ,  H
 
 Reaction rate : 1 case.
-       (1) 3.0 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·⁵
+       (1) 3.0 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -629,7 +629,7 @@ Reactant :  C₂H₆⁺  ,  e⁻
 Product  :  CH₃  ,  CH₃
 
 Reaction rate : 1 case.
-       (1) 3.0 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·⁵
+       (1) 3.0 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -643,7 +643,7 @@ Reactant :  C₂H₇⁺  ,  e⁻
 Product  :  C₂H₆  ,  H
 
 Reaction rate : 1 case.
-       (1) 3.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·⁵
+       (1) 3.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -657,7 +657,7 @@ Reactant :  C₃H⁺  ,  e⁻
 Product  :  
 
 Reaction rate : 1 case.
-       (1) 7.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·⁵
+       (1) 7.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -671,7 +671,7 @@ Reactant :  C₃H₂⁺  ,  e⁻
 Product  :  
 
 Reaction rate : 1 case.
-       (1) 7.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·⁵
+       (1) 7.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -685,7 +685,7 @@ Reactant :  C₃H₃⁺  ,  e⁻
 Product  :  
 
 Reaction rate : 1 case.
-       (1) 7.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·⁵
+       (1) 7.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -699,7 +699,7 @@ Reactant :  C₃H₄⁺  ,  e⁻
 Product  :  
 
 Reaction rate : 1 case.
-       (1) 7.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·⁵
+       (1) 7.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -713,7 +713,7 @@ Reactant :  C₃H₅⁺  ,  e⁻
 Product  :  
 
 Reaction rate : 1 case.
-       (1) 7.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·⁵
+       (1) 7.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -727,7 +727,7 @@ Reactant :  C₃H₆⁺  ,  e⁻
 Product  :  
 
 Reaction rate : 1 case.
-       (1) 7.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·⁵
+       (1) 7.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -741,7 +741,7 @@ Reactant :  C₃H₇⁺  ,  e⁻
 Product  :  
 
 Reaction rate : 1 case.
-       (1) 7.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·⁵
+       (1) 7.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -755,7 +755,7 @@ Reactant :  C₃H₈⁺  ,  e⁻
 Product  :  
 
 Reaction rate : 1 case.
-       (1) 7.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·⁵
+       (1) 7.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -769,7 +769,7 @@ Reactant :  C₃H₉⁺  ,  e⁻
 Product  :  
 
 Reaction rate : 1 case.
-       (1) 7.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·⁵
+       (1) 7.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -783,7 +783,7 @@ Reactant :  C₄H⁺  ,  e⁻
 Product  :  
 
 Reaction rate : 1 case.
-       (1) 7.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·⁵
+       (1) 7.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -797,7 +797,7 @@ Reactant :  C₄H₂⁺  ,  e⁻
 Product  :  
 
 Reaction rate : 1 case.
-       (1) 7.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·⁵
+       (1) 7.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -811,7 +811,7 @@ Reactant :  C₄H₃⁺  ,  e⁻
 Product  :  
 
 Reaction rate : 1 case.
-       (1) 7.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·⁵
+       (1) 7.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -825,7 +825,7 @@ Reactant :  C₄H₅⁺  ,  e⁻
 Product  :  
 
 Reaction rate : 1 case.
-       (1) 7.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·⁵
+       (1) 7.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -839,7 +839,7 @@ Reactant :  C₄H₇⁺  ,  e⁻
 Product  :  
 
 Reaction rate : 1 case.
-       (1) 7.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·⁵
+       (1) 7.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -853,7 +853,7 @@ Reactant :  C₄H₉⁺  ,  e⁻
 Product  :  
 
 Reaction rate : 1 case.
-       (1) 7.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·⁵
+       (1) 7.5 × 10⁻⁷ × ( T(electron)/300.0)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -3065,7 +3065,7 @@ Reactant :  H  ,  H  ,  H₂
 Product  :  H₂  ,  H₂
 
 Reaction rate : 1 case.
-       (1) 2.7 × 10⁻³¹ × (T(neutral)/1)⁻⁰·⁶
+       (1) 2.7 × 10⁻³¹ × (T(neutral)/1)⁻⁰·6)
                T type  : neutral Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -3303,7 +3303,7 @@ Reactant :  Na  ,  H  ,  H₂
 Product  :  NaH  ,  H₂
 
 Reaction rate : 1 case.
-       (1) 1.2 × 10⁻³⁰ × (T(neutral)/1.0)⁻⁰·⁶
+       (1) 1.2 × 10⁻³⁰ × (T(neutral)/1.0)⁻⁰·6)
                T type  : neutral Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -3317,7 +3317,7 @@ Reactant :  Na  ,  CH₃  ,  H₂
 Product  :  NaCH₃  ,  H₂
 
 Reaction rate : 1 case.
-       (1) 4.0 × 10⁻²⁵ × (T(neutral)/1.0)⁻¹·⁸
+       (1) 4.0 × 10⁻²⁵ × (T(neutral)/1.0)⁻¹·8)
                T type  : neutral Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -3331,7 +3331,7 @@ Reactant :  Na⁺  ,  H₂  ,  H₂
 Product  :  NaH₂⁺  ,  H₂
 
 Reaction rate : 1 case.
-       (1) 1.6 × 10⁻³⁰ × (T(neutral)/80)⁻⁰·⁵
+       (1) 1.6 × 10⁻³⁰ × (T(neutral)/80)⁻⁰·5)
                T type  : neutral Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -3345,7 +3345,7 @@ Reactant :  Na⁺  ,  CH₄  ,  H₂
 Product  :  NaCH₄⁺  ,  H₂
 
 Reaction rate : 1 case.
-       (1) 1.5 × 10⁻²⁸ × (T(neutral)/80)⁻¹·⁵
+       (1) 1.5 × 10⁻²⁸ × (T(neutral)/80)⁻¹·5)
                T type  : neutral Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -3359,7 +3359,7 @@ Reactant :  Na⁺  ,  C₂H₂  ,  H₂
 Product  :  NaC₂H₂⁺  ,  H₂
 
 Reaction rate : 1 case.
-       (1) 1.3 × 10⁻²⁸ × (T(neutral)/80)⁻¹·⁰
+       (1) 1.3 × 10⁻²⁸ × (T(neutral)/80)⁻¹·0)
                T type  : neutral Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -3373,7 +3373,7 @@ Reactant :  Na⁺  ,  C₂H₄  ,  H₂
 Product  :  NaC₂H₄⁺  ,  H₂
 
 Reaction rate : 1 case.
-       (1) 1.3 × 10⁻²⁸ × (T(neutral)/80)⁻¹·⁵
+       (1) 1.3 × 10⁻²⁸ × (T(neutral)/80)⁻¹·5)
                T type  : neutral Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -3660,28 +3660,14 @@ Reaction rate : 1 case.
 
 
 --------------------------------------------
- Na      +  H₃O⁺     →   Na⁺     +  H₂O     +  H   
---------------------------------------------
-Reaction number : 262
-Reactant :  Na  ,  H₃O⁺
-Product  :  Na⁺  ,  H₂O  ,  H
-
-Reaction rate : 1 case.
-       (1) 3.1 × 10⁻⁹
-               T type  : 
-               T range :   0.00 [K]  ~  100000.00 [K]
-
-
-
---------------------------------------------
  NaH     +  H        →   Na      +  H₂             
 --------------------------------------------
-Reaction number : 263
+Reaction number : 262
 Reactant :  NaH  ,  H
 Product  :  Na  ,  H₂
 
 Reaction rate : 1 case.
-       (1) 1.0 × 10⁻¹⁰ × (T(neutral)/300)⁻⁰·⁵
+       (1) 1.0 × 10⁻¹⁰ × (T(neutral)/300)⁻⁰·5)
                T type  : neutral Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -3690,12 +3676,12 @@ Reaction rate : 1 case.
 --------------------------------------------
  Na⁺     +  e⁻       →   Na                        
 --------------------------------------------
-Reaction number : 264
+Reaction number : 263
 Reactant :  Na⁺  ,  e⁻
 Product  :  Na
 
 Reaction rate : 1 case.
-       (1) 2.7 × 10⁻¹² × (T(electron)/300)⁻⁰·⁶
+       (1) 2.7 × 10⁻¹² × (T(electron)/300)⁻⁰·6)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -3704,12 +3690,12 @@ Reaction rate : 1 case.
 --------------------------------------------
  NaH₂⁺   +  e⁻       →   Na      +  H₂             
 --------------------------------------------
-Reaction number : 265
+Reaction number : 264
 Reactant :  NaH₂⁺  ,  e⁻
 Product  :  Na  ,  H₂
 
 Reaction rate : 1 case.
-       (1) 1.5 × 10⁻⁷  × (T(electron)/300)⁻⁰·⁵
+       (1) 1.5 × 10⁻⁷  × (T(electron)/300)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -3718,12 +3704,12 @@ Reaction rate : 1 case.
 --------------------------------------------
  NaH₂⁺   +  e⁻       →   NaH     +  H              
 --------------------------------------------
-Reaction number : 266
+Reaction number : 265
 Reactant :  NaH₂⁺  ,  e⁻
 Product  :  NaH  ,  H
 
 Reaction rate : 1 case.
-       (1) 1.5 × 10⁻⁷  × (T(electron)/300)⁻⁰·⁵
+       (1) 1.5 × 10⁻⁷  × (T(electron)/300)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -3732,12 +3718,12 @@ Reaction rate : 1 case.
 --------------------------------------------
  NaCH₄⁺  +  e⁻       →   Na      +  products       
 --------------------------------------------
-Reaction number : 267
+Reaction number : 266
 Reactant :  NaCH₄⁺  ,  e⁻
 Product  :  Na
 
 Reaction rate : 1 case.
-       (1) 1.5 × 10⁻⁷  × (T(electron)/300)⁻⁰·⁵
+       (1) 1.5 × 10⁻⁷  × (T(electron)/300)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -3746,12 +3732,12 @@ Reaction rate : 1 case.
 --------------------------------------------
  NaC₂H₂⁺ +  e⁻       →   Na      +  products       
 --------------------------------------------
-Reaction number : 268
+Reaction number : 267
 Reactant :  NaC₂H₂⁺  ,  e⁻
 Product  :  Na
 
 Reaction rate : 1 case.
-       (1) 1.5 × 10⁻⁷  × (T(electron)/300)⁻⁰·⁵
+       (1) 1.5 × 10⁻⁷  × (T(electron)/300)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -3760,12 +3746,12 @@ Reaction rate : 1 case.
 --------------------------------------------
  NaC₂H₄⁺ +  e⁻       →   Na      +  products       
 --------------------------------------------
-Reaction number : 269
+Reaction number : 268
 Reactant :  NaC₂H₄⁺  ,  e⁻
 Product  :  Na
 
 Reaction rate : 1 case.
-       (1) 1.5 × 10⁻⁷  × (T(electron)/300)⁻⁰·⁵
+       (1) 1.5 × 10⁻⁷  × (T(electron)/300)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -3774,12 +3760,12 @@ Reaction rate : 1 case.
 --------------------------------------------
  NaCH₄⁺  +  e⁻       →   products                  
 --------------------------------------------
-Reaction number : 270
+Reaction number : 269
 Reactant :  NaCH₄⁺  ,  e⁻
 Product  :  
 
 Reaction rate : 1 case.
-       (1) 1.5 × 10⁻⁷  × (T(electron)/300)⁻⁰·⁵
+       (1) 1.5 × 10⁻⁷  × (T(electron)/300)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -3788,12 +3774,12 @@ Reaction rate : 1 case.
 --------------------------------------------
  NaC₂H₂⁺ +  e⁻       →   products                  
 --------------------------------------------
-Reaction number : 271
+Reaction number : 270
 Reactant :  NaC₂H₂⁺  ,  e⁻
 Product  :  
 
 Reaction rate : 1 case.
-       (1) 1.5 × 10⁻⁷  × (T(electron)/300)⁻⁰·⁵
+       (1) 1.5 × 10⁻⁷  × (T(electron)/300)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -3802,12 +3788,12 @@ Reaction rate : 1 case.
 --------------------------------------------
  NaC₂H₄⁺ +  e⁻       →   products                  
 --------------------------------------------
-Reaction number : 272
+Reaction number : 271
 Reactant :  NaC₂H₄⁺  ,  e⁻
 Product  :  
 
 Reaction rate : 1 case.
-       (1) 1.5 × 10⁻⁷  × (T(electron)/300)⁻⁰·⁵
+       (1) 1.5 × 10⁻⁷  × (T(electron)/300)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -3816,12 +3802,12 @@ Reaction rate : 1 case.
 --------------------------------------------
  Fe      +  H       +  H₂       →   FeH     +  H₂  
 --------------------------------------------
-Reaction number : 273
+Reaction number : 272
 Reactant :  Fe  ,  H  ,  H₂
 Product  :  FeH  ,  H₂
 
 Reaction rate : 1 case.
-       (1) 1.2 × 10⁻³⁰ × (T(neutral)/1.0)⁻¹·⁶
+       (1) 1.2 × 10⁻³⁰ × (T(neutral)/1.0)⁻¹·6)
                T type  : neutral Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -3830,12 +3816,12 @@ Reaction rate : 1 case.
 --------------------------------------------
  Fe⁺     +  H       +  H₂       →   FeH⁺    +  H₂  
 --------------------------------------------
-Reaction number : 274
+Reaction number : 273
 Reactant :  Fe⁺  ,  H  ,  H₂
 Product  :  FeH⁺  ,  H₂
 
 Reaction rate : 1 case.
-       (1) 3.0 × 10⁻³⁰ × (T(neutral)/1.0)⁻¹·⁰
+       (1) 3.0 × 10⁻³⁰ × (T(neutral)/1.0)⁻¹·0)
                T type  : neutral Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -3844,7 +3830,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Fe⁺     +  H₂      +  H₂       →   FeH₂⁺   +  H₂  
 --------------------------------------------
-Reaction number : 275
+Reaction number : 274
 Reactant :  Fe⁺  ,  H₂  ,  H₂
 Product  :  FeH₂⁺  ,  H₂
 
@@ -3858,12 +3844,12 @@ Reaction rate : 1 case.
 --------------------------------------------
  Fe⁺     +  CH₄     +  H₂       →   FeCH₄⁺  +  H₂  
 --------------------------------------------
-Reaction number : 276
+Reaction number : 275
 Reactant :  Fe⁺  ,  CH₄  ,  H₂
 Product  :  FeCH₄⁺  ,  H₂
 
 Reaction rate : 1 case.
-       (1) 1.1 × 10⁻²⁹ × (T(neutral)/294)⁻¹·⁵
+       (1) 1.1 × 10⁻²⁹ × (T(neutral)/294)⁻¹·5)
                T type  : neutral Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -3872,12 +3858,12 @@ Reaction rate : 1 case.
 --------------------------------------------
  Fe⁺     +  C₂H₂    +  H₂       →   FeC₂H₂⁺ +  H₂  
 --------------------------------------------
-Reaction number : 277
+Reaction number : 276
 Reactant :  Fe⁺  ,  C₂H₂  ,  H₂
 Product  :  FeC₂H₂⁺  ,  H₂
 
 Reaction rate : 1 case.
-       (1) 1.4 × 10⁻²⁶ × (T(neutral)/294)⁻¹·⁰
+       (1) 1.4 × 10⁻²⁶ × (T(neutral)/294)⁻¹·0)
                T type  : neutral Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -3886,12 +3872,12 @@ Reaction rate : 1 case.
 --------------------------------------------
  Fe⁺     +  C₂H₄    +  H₂       →   FeC₂H₄⁺ +  H₂  
 --------------------------------------------
-Reaction number : 278
+Reaction number : 277
 Reactant :  Fe⁺  ,  C₂H₄  ,  H₂
 Product  :  FeC₂H₄⁺  ,  H₂
 
 Reaction rate : 1 case.
-       (1) 1.4 × 10⁻²⁶ × (T(neutral)/294)⁻¹·⁵
+       (1) 1.4 × 10⁻²⁶ × (T(neutral)/294)⁻¹·5)
                T type  : neutral Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -3900,12 +3886,12 @@ Reaction rate : 1 case.
 --------------------------------------------
  Fe⁺     +  C₂H₆     →   Fe      +  C₂H₄⁺   +  H₂  
 --------------------------------------------
-Reaction number : 279
+Reaction number : 278
 Reactant :  Fe⁺  ,  C₂H₆
 Product  :  Fe  ,  C₂H₄⁺  ,  H₂
 
 Reaction rate : 1 case.
-       (1) 1.1 × 10⁻¹² × (T(neutral)/300)⁻⁰·⁶
+       (1) 1.1 × 10⁻¹² × (T(neutral)/300)⁻⁰·6)
                T type  : neutral Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -3914,7 +3900,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Fe⁺     +  Na       →   Fe      +  Na⁺            
 --------------------------------------------
-Reaction number : 280
+Reaction number : 279
 Reactant :  Fe⁺  ,  Na
 Product  :  Fe  ,  Na⁺
 
@@ -3928,7 +3914,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  FeH⁺    +  H        →   Fe⁺     +  H₂             
 --------------------------------------------
-Reaction number : 281
+Reaction number : 280
 Reactant :  FeH⁺  ,  H
 Product  :  Fe⁺  ,  H₂
 
@@ -3942,7 +3928,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  FeH₂⁺   +  H        →   FeH⁺    +  H₂             
 --------------------------------------------
-Reaction number : 282
+Reaction number : 281
 Reactant :  FeH₂⁺  ,  H
 Product  :  FeH⁺  ,  H₂
 
@@ -3956,7 +3942,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Fe      +  H⁺       →   Fe⁺     +  H              
 --------------------------------------------
-Reaction number : 283
+Reaction number : 282
 Reactant :  Fe  ,  H⁺
 Product  :  Fe⁺  ,  H
 
@@ -3970,7 +3956,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Fe      +  H₃⁺      →   Fe⁺     +  H       +  H₂  
 --------------------------------------------
-Reaction number : 284
+Reaction number : 283
 Reactant :  Fe  ,  H₃⁺
 Product  :  Fe⁺  ,  H  ,  H₂
 
@@ -3984,7 +3970,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Fe      +  C⁺       →   Fe⁺     +  C              
 --------------------------------------------
-Reaction number : 285
+Reaction number : 284
 Reactant :  Fe  ,  C⁺
 Product  :  Fe⁺  ,  C
 
@@ -3998,7 +3984,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Fe      +  CH₃⁺     →   Fe⁺     +  CH₃            
 --------------------------------------------
-Reaction number : 286
+Reaction number : 285
 Reactant :  Fe  ,  CH₃⁺
 Product  :  Fe⁺  ,  CH₃
 
@@ -4012,7 +3998,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Fe      +  C₂H₂⁺    →   Fe⁺     +  C₂H₂           
 --------------------------------------------
-Reaction number : 287
+Reaction number : 286
 Reactant :  Fe  ,  C₂H₂⁺
 Product  :  Fe⁺  ,  C₂H₂
 
@@ -4026,7 +4012,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Fe      +  C₃H⁺     →   Fe⁺     +  products       
 --------------------------------------------
-Reaction number : 288
+Reaction number : 287
 Reactant :  Fe  ,  C₃H⁺
 Product  :  Fe⁺
 
@@ -4040,7 +4026,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Fe      +  C₃H₂⁺    →   Fe⁺     +  products       
 --------------------------------------------
-Reaction number : 289
+Reaction number : 288
 Reactant :  Fe  ,  C₃H₂⁺
 Product  :  Fe⁺
 
@@ -4054,7 +4040,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Fe      +  C₃H₃⁺    →   Fe⁺     +  products       
 --------------------------------------------
-Reaction number : 290
+Reaction number : 289
 Reactant :  Fe  ,  C₃H₃⁺
 Product  :  Fe⁺
 
@@ -4068,7 +4054,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Fe      +  C₃H₄⁺    →   Fe⁺     +  products       
 --------------------------------------------
-Reaction number : 291
+Reaction number : 290
 Reactant :  Fe  ,  C₃H₄⁺
 Product  :  Fe⁺
 
@@ -4082,7 +4068,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Fe      +  C₃H₅⁺    →   Fe⁺     +  products       
 --------------------------------------------
-Reaction number : 292
+Reaction number : 291
 Reactant :  Fe  ,  C₃H₅⁺
 Product  :  Fe⁺
 
@@ -4096,7 +4082,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Fe      +  C₃H₆⁺    →   Fe⁺     +  products       
 --------------------------------------------
-Reaction number : 293
+Reaction number : 292
 Reactant :  Fe  ,  C₃H₆⁺
 Product  :  Fe⁺
 
@@ -4110,7 +4096,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Fe      +  C₃H₇⁺    →   Fe⁺     +  products       
 --------------------------------------------
-Reaction number : 294
+Reaction number : 293
 Reactant :  Fe  ,  C₃H₇⁺
 Product  :  Fe⁺
 
@@ -4124,7 +4110,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Fe      +  C₃H₈⁺    →   Fe⁺     +  products       
 --------------------------------------------
-Reaction number : 295
+Reaction number : 294
 Reactant :  Fe  ,  C₃H₈⁺
 Product  :  Fe⁺
 
@@ -4138,7 +4124,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Fe      +  C₃H₉⁺    →   Fe⁺     +  products       
 --------------------------------------------
-Reaction number : 296
+Reaction number : 295
 Reactant :  Fe  ,  C₃H₉⁺
 Product  :  Fe⁺
 
@@ -4152,7 +4138,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Fe      +  C₄H⁺     →   Fe⁺     +  products       
 --------------------------------------------
-Reaction number : 297
+Reaction number : 296
 Reactant :  Fe  ,  C₄H⁺
 Product  :  Fe⁺
 
@@ -4166,7 +4152,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Fe      +  C₄H₂⁺    →   Fe⁺     +  products       
 --------------------------------------------
-Reaction number : 298
+Reaction number : 297
 Reactant :  Fe  ,  C₄H₂⁺
 Product  :  Fe⁺
 
@@ -4180,7 +4166,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Fe      +  C₄H₃⁺    →   Fe⁺     +  products       
 --------------------------------------------
-Reaction number : 299
+Reaction number : 298
 Reactant :  Fe  ,  C₄H₃⁺
 Product  :  Fe⁺
 
@@ -4194,7 +4180,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Fe      +  C₄H₅⁺    →   Fe⁺     +  products       
 --------------------------------------------
-Reaction number : 300
+Reaction number : 299
 Reactant :  Fe  ,  C₄H₅⁺
 Product  :  Fe⁺
 
@@ -4208,7 +4194,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Fe      +  C₄H₇⁺    →   Fe⁺     +  products       
 --------------------------------------------
-Reaction number : 301
+Reaction number : 300
 Reactant :  Fe  ,  C₄H₇⁺
 Product  :  Fe⁺
 
@@ -4222,7 +4208,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Fe      +  C₄H₉⁺    →   Fe⁺     +  products       
 --------------------------------------------
-Reaction number : 302
+Reaction number : 301
 Reactant :  Fe  ,  C₄H₉⁺
 Product  :  Fe⁺
 
@@ -4236,7 +4222,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Fe      +  Si⁺      →   Fe⁺     +  Si             
 --------------------------------------------
-Reaction number : 303
+Reaction number : 302
 Reactant :  Fe  ,  Si⁺
 Product  :  Fe⁺  ,  Si
 
@@ -4250,7 +4236,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  FeH     +  H        →   Fe      +  H₂             
 --------------------------------------------
-Reaction number : 304
+Reaction number : 303
 Reactant :  FeH  ,  H
 Product  :  Fe  ,  H₂
 
@@ -4264,12 +4250,12 @@ Reaction rate : 1 case.
 --------------------------------------------
  Fe⁺     +  e⁻       →   Fe                        
 --------------------------------------------
-Reaction number : 305
+Reaction number : 304
 Reactant :  Fe⁺  ,  e⁻
 Product  :  Fe
 
 Reaction rate : 1 case.
-       (1) 3.7 × 10⁻¹² × (T(electron)/300)⁻⁰·⁶
+       (1) 3.7 × 10⁻¹² × (T(electron)/300)⁻⁰·6)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -4278,12 +4264,12 @@ Reaction rate : 1 case.
 --------------------------------------------
  FeH⁺    +  e⁻       →   Fe      +  H              
 --------------------------------------------
-Reaction number : 306
+Reaction number : 305
 Reactant :  FeH⁺  ,  e⁻
 Product  :  Fe  ,  H
 
 Reaction rate : 1 case.
-       (1) 3.0 × 10⁻⁷  × (T(electron)/300)⁻⁰·⁵
+       (1) 3.0 × 10⁻⁷  × (T(electron)/300)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -4292,12 +4278,12 @@ Reaction rate : 1 case.
 --------------------------------------------
  FeH₂⁺   +  e⁻       →   FeH     +  H              
 --------------------------------------------
-Reaction number : 307
+Reaction number : 306
 Reactant :  FeH₂⁺  ,  e⁻
 Product  :  FeH  ,  H
 
 Reaction rate : 1 case.
-       (1) 1.5 × 10⁻⁷  × (T(electron)/300)⁻⁰·⁵
+       (1) 1.5 × 10⁻⁷  × (T(electron)/300)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -4306,12 +4292,12 @@ Reaction rate : 1 case.
 --------------------------------------------
  FeH₂⁺   +  e⁻       →   Fe      +  H₂             
 --------------------------------------------
-Reaction number : 308
+Reaction number : 307
 Reactant :  FeH₂⁺  ,  e⁻
 Product  :  Fe  ,  H₂
 
 Reaction rate : 1 case.
-       (1) 1.5 × 10⁻⁷  × (T(electron)/300)⁻⁰·⁵
+       (1) 1.5 × 10⁻⁷  × (T(electron)/300)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -4320,12 +4306,12 @@ Reaction rate : 1 case.
 --------------------------------------------
  FeCH₄⁺  +  e⁻       →   Fe      +  products       
 --------------------------------------------
-Reaction number : 309
+Reaction number : 308
 Reactant :  FeCH₄⁺  ,  e⁻
 Product  :  Fe
 
 Reaction rate : 1 case.
-       (1) 1.5 × 10⁻⁷  × (T(electron)/300)⁻⁰·⁵
+       (1) 1.5 × 10⁻⁷  × (T(electron)/300)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -4334,12 +4320,12 @@ Reaction rate : 1 case.
 --------------------------------------------
  FeC₂H₂⁺ +  e⁻       →   Fe      +  products       
 --------------------------------------------
-Reaction number : 310
+Reaction number : 309
 Reactant :  FeC₂H₂⁺  ,  e⁻
 Product  :  Fe
 
 Reaction rate : 1 case.
-       (1) 1.5 × 10⁻⁷  × (T(electron)/300)⁻⁰·⁵
+       (1) 1.5 × 10⁻⁷  × (T(electron)/300)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -4348,12 +4334,12 @@ Reaction rate : 1 case.
 --------------------------------------------
  FeC₂H₄⁺ +  e⁻       →   Fe      +  products       
 --------------------------------------------
-Reaction number : 311
+Reaction number : 310
 Reactant :  FeC₂H₄⁺  ,  e⁻
 Product  :  Fe
 
 Reaction rate : 1 case.
-       (1) 1.5 × 10⁻⁷  × (T(electron)/300)⁻⁰·⁵
+       (1) 1.5 × 10⁻⁷  × (T(electron)/300)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -4362,12 +4348,12 @@ Reaction rate : 1 case.
 --------------------------------------------
  FeCH₄⁺  +  e⁻       →   products                  
 --------------------------------------------
-Reaction number : 312
+Reaction number : 311
 Reactant :  FeCH₄⁺  ,  e⁻
 Product  :  
 
 Reaction rate : 1 case.
-       (1) 1.5 × 10⁻⁷  × (T(electron)/300)⁻⁰·⁵
+       (1) 1.5 × 10⁻⁷  × (T(electron)/300)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -4376,12 +4362,12 @@ Reaction rate : 1 case.
 --------------------------------------------
  FeC₂H₂⁺ +  e⁻       →   products                  
 --------------------------------------------
-Reaction number : 313
+Reaction number : 312
 Reactant :  FeC₂H₂⁺  ,  e⁻
 Product  :  
 
 Reaction rate : 1 case.
-       (1) 1.5 × 10⁻⁷  × (T(electron)/300)⁻⁰·⁵
+       (1) 1.5 × 10⁻⁷  × (T(electron)/300)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -4390,12 +4376,12 @@ Reaction rate : 1 case.
 --------------------------------------------
  FeC₂H₄⁺ +  e⁻       →   products                  
 --------------------------------------------
-Reaction number : 314
+Reaction number : 313
 Reactant :  FeC₂H₄⁺  ,  e⁻
 Product  :  
 
 Reaction rate : 1 case.
-       (1) 1.5 × 10⁻⁷  × (T(electron)/300)⁻⁰·⁵
+       (1) 1.5 × 10⁻⁷  × (T(electron)/300)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -4404,12 +4390,12 @@ Reaction rate : 1 case.
 --------------------------------------------
  Mg      +  H       +  H₂       →   MgH     +  H₂  
 --------------------------------------------
-Reaction number : 315
+Reaction number : 314
 Reactant :  Mg  ,  H  ,  H₂
 Product  :  MgH  ,  H₂
 
 Reaction rate : 1 case.
-       (1) 1.2 × 10⁻³⁰ × (T(neutral)/1.0)⁻⁰·⁶
+       (1) 1.2 × 10⁻³⁰ × (T(neutral)/1.0)⁻⁰·6)
                T type  : neutral Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -4418,12 +4404,12 @@ Reaction rate : 1 case.
 --------------------------------------------
  Mg⁺     +  H       +  H₂       →   MgH⁺    +  H₂  
 --------------------------------------------
-Reaction number : 316
+Reaction number : 315
 Reactant :  Mg⁺  ,  H  ,  H₂
 Product  :  MgH⁺  ,  H₂
 
 Reaction rate : 1 case.
-       (1) 3.0 × 10⁻³⁰ × (T(neutral)/1.0)⁻¹·⁰
+       (1) 3.0 × 10⁻³⁰ × (T(neutral)/1.0)⁻¹·0)
                T type  : neutral Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -4432,12 +4418,12 @@ Reaction rate : 1 case.
 --------------------------------------------
  Mg⁺     +  H₂      +  H₂       →   MgH₂⁺   +  H₂  
 --------------------------------------------
-Reaction number : 317
+Reaction number : 316
 Reactant :  Mg⁺  ,  H₂  ,  H₂
 Product  :  MgH₂⁺  ,  H₂
 
 Reaction rate : 1 case.
-       (1) 1.6 × 10⁻³⁰ × (T(neutral)/80.0)⁻⁰·⁵
+       (1) 1.6 × 10⁻³⁰ × (T(neutral)/80.0)⁻⁰·5)
                T type  : neutral Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -4446,12 +4432,12 @@ Reaction rate : 1 case.
 --------------------------------------------
  Mg⁺     +  CH₄     +  H₂       →   MgCH₄⁺  +  H₂  
 --------------------------------------------
-Reaction number : 318
+Reaction number : 317
 Reactant :  Mg⁺  ,  CH₄  ,  H₂
 Product  :  MgCH₄⁺  ,  H₂
 
 Reaction rate : 1 case.
-       (1) 1.5 × 10⁻²⁸ × (T(neutral)/80.0)⁻¹·⁵
+       (1) 1.5 × 10⁻²⁸ × (T(neutral)/80.0)⁻¹·5)
                T type  : neutral Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -4460,12 +4446,12 @@ Reaction rate : 1 case.
 --------------------------------------------
  Mg⁺     +  C₂H₂    +  H₂       →   MgC₂H₂⁺ +  H₂  
 --------------------------------------------
-Reaction number : 319
+Reaction number : 318
 Reactant :  Mg⁺  ,  C₂H₂  ,  H₂
 Product  :  MgC₂H₂⁺  ,  H₂
 
 Reaction rate : 1 case.
-       (1) 1.3 × 10⁻²⁸ × (T(neutral)/80.0)⁻¹·⁰
+       (1) 1.3 × 10⁻²⁸ × (T(neutral)/80.0)⁻¹·0)
                T type  : neutral Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -4474,12 +4460,12 @@ Reaction rate : 1 case.
 --------------------------------------------
  Mg⁺     +  C₂H₄    +  H₂       →   MgC₂H₄⁺ +  H₂  
 --------------------------------------------
-Reaction number : 320
+Reaction number : 319
 Reactant :  Mg⁺  ,  C₂H₄  ,  H₂
 Product  :  MgC₂H₄⁺  ,  H₂
 
 Reaction rate : 1 case.
-       (1) 1.3 × 10⁻²⁸ × (T(neutral)/80.0)⁻¹·⁵
+       (1) 1.3 × 10⁻²⁸ × (T(neutral)/80.0)⁻¹·5)
                T type  : neutral Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -4488,7 +4474,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Mg⁺     +  Na       →   Mg      +  Na⁺            
 --------------------------------------------
-Reaction number : 321
+Reaction number : 320
 Reactant :  Mg⁺  ,  Na
 Product  :  Mg  ,  Na⁺
 
@@ -4502,7 +4488,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  MgH⁺    +  H        →   Mg⁺     +  H₂             
 --------------------------------------------
-Reaction number : 322
+Reaction number : 321
 Reactant :  MgH⁺  ,  H
 Product  :  Mg⁺  ,  H₂
 
@@ -4516,7 +4502,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  MgH₂⁺   +  H        →   MgH⁺    +  H₂             
 --------------------------------------------
-Reaction number : 323
+Reaction number : 322
 Reactant :  MgH₂⁺  ,  H
 Product  :  MgH⁺  ,  H₂
 
@@ -4530,7 +4516,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Mg      +  H⁺       →   Mg⁺     +  H              
 --------------------------------------------
-Reaction number : 324
+Reaction number : 323
 Reactant :  Mg  ,  H⁺
 Product  :  Mg⁺  ,  H
 
@@ -4544,7 +4530,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Mg      +  H₃⁺      →   Mg⁺     +  H       +  H₂  
 --------------------------------------------
-Reaction number : 325
+Reaction number : 324
 Reactant :  Mg  ,  H₃⁺
 Product  :  Mg⁺  ,  H  ,  H₂
 
@@ -4558,7 +4544,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Mg      +  C⁺       →   Mg⁺     +  C              
 --------------------------------------------
-Reaction number : 326
+Reaction number : 325
 Reactant :  Mg  ,  C⁺
 Product  :  Mg⁺  ,  C
 
@@ -4572,7 +4558,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Mg      +  CH₃⁺     →   Mg⁺     +  CH₃            
 --------------------------------------------
-Reaction number : 327
+Reaction number : 326
 Reactant :  Mg  ,  CH₃⁺
 Product  :  Mg⁺  ,  CH₃
 
@@ -4586,7 +4572,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Mg      +  CH₅⁺     →   Mg⁺     +  CH₄     +  H   
 --------------------------------------------
-Reaction number : 328
+Reaction number : 327
 Reactant :  Mg  ,  CH₅⁺
 Product  :  Mg⁺  ,  CH₄  ,  H
 
@@ -4600,7 +4586,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Mg      +  C₂H₂⁺    →   Mg⁺     +  C₂H₂           
 --------------------------------------------
-Reaction number : 329
+Reaction number : 328
 Reactant :  Mg  ,  C₂H₂⁺
 Product  :  Mg⁺  ,  C₂H₂
 
@@ -4614,7 +4600,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Mg      +  C₃H⁺     →   Mg⁺     +  products       
 --------------------------------------------
-Reaction number : 330
+Reaction number : 329
 Reactant :  Mg  ,  C₃H⁺
 Product  :  Mg⁺
 
@@ -4628,7 +4614,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Mg      +  C₃H₂⁺    →   Mg⁺     +  products       
 --------------------------------------------
-Reaction number : 331
+Reaction number : 330
 Reactant :  Mg  ,  C₃H₂⁺
 Product  :  Mg⁺
 
@@ -4642,7 +4628,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Mg      +  C₃H₃⁺    →   Mg⁺     +  products       
 --------------------------------------------
-Reaction number : 332
+Reaction number : 331
 Reactant :  Mg  ,  C₃H₃⁺
 Product  :  Mg⁺
 
@@ -4656,7 +4642,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Mg      +  C₃H₄⁺    →   Mg⁺     +  products       
 --------------------------------------------
-Reaction number : 333
+Reaction number : 332
 Reactant :  Mg  ,  C₃H₄⁺
 Product  :  Mg⁺
 
@@ -4670,7 +4656,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Mg      +  C₃H₅⁺    →   Mg⁺     +  products       
 --------------------------------------------
-Reaction number : 334
+Reaction number : 333
 Reactant :  Mg  ,  C₃H₅⁺
 Product  :  Mg⁺
 
@@ -4684,7 +4670,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Mg      +  C₃H₆⁺    →   Mg⁺     +  products       
 --------------------------------------------
-Reaction number : 335
+Reaction number : 334
 Reactant :  Mg  ,  C₃H₆⁺
 Product  :  Mg⁺
 
@@ -4698,7 +4684,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Mg      +  C₃H₇⁺    →   Mg⁺     +  products       
 --------------------------------------------
-Reaction number : 336
+Reaction number : 335
 Reactant :  Mg  ,  C₃H₇⁺
 Product  :  Mg⁺
 
@@ -4712,7 +4698,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Mg      +  C₃H₈⁺    →   Mg⁺     +  products       
 --------------------------------------------
-Reaction number : 337
+Reaction number : 336
 Reactant :  Mg  ,  C₃H₈⁺
 Product  :  Mg⁺
 
@@ -4726,7 +4712,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Mg      +  C₃H₉⁺    →   Mg⁺     +  products       
 --------------------------------------------
-Reaction number : 338
+Reaction number : 337
 Reactant :  Mg  ,  C₃H₉⁺
 Product  :  Mg⁺
 
@@ -4740,7 +4726,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Mg      +  C₄H⁺     →   Mg⁺     +  products       
 --------------------------------------------
-Reaction number : 339
+Reaction number : 338
 Reactant :  Mg  ,  C₄H⁺
 Product  :  Mg⁺
 
@@ -4754,7 +4740,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Mg      +  C₄H₂⁺    →   Mg⁺     +  products       
 --------------------------------------------
-Reaction number : 340
+Reaction number : 339
 Reactant :  Mg  ,  C₄H₂⁺
 Product  :  Mg⁺
 
@@ -4768,7 +4754,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Mg      +  C₄H₃⁺    →   Mg⁺     +  products       
 --------------------------------------------
-Reaction number : 341
+Reaction number : 340
 Reactant :  Mg  ,  C₄H₃⁺
 Product  :  Mg⁺
 
@@ -4782,7 +4768,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Mg      +  C₄H₅⁺    →   Mg⁺     +  products       
 --------------------------------------------
-Reaction number : 342
+Reaction number : 341
 Reactant :  Mg  ,  C₄H₅⁺
 Product  :  Mg⁺
 
@@ -4796,7 +4782,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Mg      +  C₄H₇⁺    →   Mg⁺     +  products       
 --------------------------------------------
-Reaction number : 343
+Reaction number : 342
 Reactant :  Mg  ,  C₄H₇⁺
 Product  :  Mg⁺
 
@@ -4810,7 +4796,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Mg      +  C₄H₉⁺    →   Mg⁺     +  products       
 --------------------------------------------
-Reaction number : 344
+Reaction number : 343
 Reactant :  Mg  ,  C₄H₉⁺
 Product  :  Mg⁺
 
@@ -4824,7 +4810,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Mg      +  Si⁺      →   Mg⁺     +  Si             
 --------------------------------------------
-Reaction number : 345
+Reaction number : 344
 Reactant :  Mg  ,  Si⁺
 Product  :  Mg⁺  ,  Si
 
@@ -4838,7 +4824,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  MgH     +  H        →   Mg      +  H₂             
 --------------------------------------------
-Reaction number : 346
+Reaction number : 345
 Reactant :  MgH  ,  H
 Product  :  Mg  ,  H₂
 
@@ -4852,12 +4838,12 @@ Reaction rate : 1 case.
 --------------------------------------------
  Mg⁺     +  e⁻       →   Mg                        
 --------------------------------------------
-Reaction number : 347
+Reaction number : 346
 Reactant :  Mg⁺  ,  e⁻
 Product  :  Mg
 
 Reaction rate : 1 case.
-       (1) 2.8 × 10⁻¹² × (T(electron)/300)⁻⁰·⁸
+       (1) 2.8 × 10⁻¹² × (T(electron)/300)⁻⁰·8)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -4866,12 +4852,12 @@ Reaction rate : 1 case.
 --------------------------------------------
  MgH⁺    +  e⁻       →   Mg      +  H              
 --------------------------------------------
-Reaction number : 348
+Reaction number : 347
 Reactant :  MgH⁺  ,  e⁻
 Product  :  Mg  ,  H
 
 Reaction rate : 1 case.
-       (1) 3.0 × 10⁻⁷  × (T(electron)/300)⁻⁰·⁵
+       (1) 3.0 × 10⁻⁷  × (T(electron)/300)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -4880,12 +4866,12 @@ Reaction rate : 1 case.
 --------------------------------------------
  MgH₂⁺   +  e⁻       →   Mg      +  H₂             
 --------------------------------------------
-Reaction number : 349
+Reaction number : 348
 Reactant :  MgH₂⁺  ,  e⁻
 Product  :  Mg  ,  H₂
 
 Reaction rate : 1 case.
-       (1) 1.5 × 10⁻⁷  × (T(electron)/300)⁻⁰·⁵
+       (1) 1.5 × 10⁻⁷  × (T(electron)/300)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -4894,12 +4880,12 @@ Reaction rate : 1 case.
 --------------------------------------------
  MgH₂⁺   +  e⁻       →   MgH     +  H              
 --------------------------------------------
-Reaction number : 350
+Reaction number : 349
 Reactant :  MgH₂⁺  ,  e⁻
 Product  :  MgH  ,  H
 
 Reaction rate : 1 case.
-       (1) 1.5 × 10⁻⁷  × (T(electron)/300)⁻⁰·⁵
+       (1) 1.5 × 10⁻⁷  × (T(electron)/300)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -4908,12 +4894,12 @@ Reaction rate : 1 case.
 --------------------------------------------
  MgCH₄⁺  +  e⁻       →   Mg      +  products       
 --------------------------------------------
-Reaction number : 351
+Reaction number : 350
 Reactant :  MgCH₄⁺  ,  e⁻
 Product  :  Mg
 
 Reaction rate : 1 case.
-       (1) 1.5 × 10⁻⁷  × (T(electron)/300)⁻⁰·⁵
+       (1) 1.5 × 10⁻⁷  × (T(electron)/300)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -4922,12 +4908,12 @@ Reaction rate : 1 case.
 --------------------------------------------
  MgC₂H₂⁺ +  e⁻       →   Mg      +  products       
 --------------------------------------------
-Reaction number : 352
+Reaction number : 351
 Reactant :  MgC₂H₂⁺  ,  e⁻
 Product  :  Mg
 
 Reaction rate : 1 case.
-       (1) 1.5 × 10⁻⁷  × (T(electron)/300)⁻⁰·⁵
+       (1) 1.5 × 10⁻⁷  × (T(electron)/300)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -4936,12 +4922,12 @@ Reaction rate : 1 case.
 --------------------------------------------
  MgC₂H₄⁺ +  e⁻       →   Mg      +  products       
 --------------------------------------------
-Reaction number : 353
+Reaction number : 352
 Reactant :  MgC₂H₄⁺  ,  e⁻
 Product  :  Mg
 
 Reaction rate : 1 case.
-       (1) 1.5 × 10⁻⁷  × (T(electron)/300)⁻⁰·⁵
+       (1) 1.5 × 10⁻⁷  × (T(electron)/300)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -4950,12 +4936,12 @@ Reaction rate : 1 case.
 --------------------------------------------
  MgCH₄⁺  +  e⁻       →   products                  
 --------------------------------------------
-Reaction number : 354
+Reaction number : 353
 Reactant :  MgCH₄⁺  ,  e⁻
 Product  :  
 
 Reaction rate : 1 case.
-       (1) 1.5 × 10⁻⁷  × (T(electron)/300)⁻⁰·⁵
+       (1) 1.5 × 10⁻⁷  × (T(electron)/300)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -4964,12 +4950,12 @@ Reaction rate : 1 case.
 --------------------------------------------
  MgC₂H₂⁺ +  e⁻       →   products                  
 --------------------------------------------
-Reaction number : 355
+Reaction number : 354
 Reactant :  MgC₂H₂⁺  ,  e⁻
 Product  :  
 
 Reaction rate : 1 case.
-       (1) 1.5 × 10⁻⁷  × (T(electron)/300)⁻⁰·⁵
+       (1) 1.5 × 10⁻⁷  × (T(electron)/300)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -4978,12 +4964,12 @@ Reaction rate : 1 case.
 --------------------------------------------
  MgC₂H₄⁺ +  e⁻       →   products                  
 --------------------------------------------
-Reaction number : 356
+Reaction number : 355
 Reactant :  MgC₂H₄⁺  ,  e⁻
 Product  :  
 
 Reaction rate : 1 case.
-       (1) 1.5 × 10⁻⁷  × (T(electron)/300)⁻⁰·⁵
+       (1) 1.5 × 10⁻⁷  × (T(electron)/300)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -4992,12 +4978,12 @@ Reaction rate : 1 case.
 --------------------------------------------
  Si      +  H       +  H₂       →   SiH     +  H₂  
 --------------------------------------------
-Reaction number : 357
+Reaction number : 356
 Reactant :  Si  ,  H  ,  H₂
 Product  :  SiH  ,  H₂
 
 Reaction rate : 1 case.
-       (1) 1.2 × 10⁻³⁰ × (T(neutral)/1.0)⁻⁰·⁶
+       (1) 1.2 × 10⁻³⁰ × (T(neutral)/1.0)⁻⁰·6)
                T type  : neutral Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -5006,12 +4992,12 @@ Reaction rate : 1 case.
 --------------------------------------------
  Si⁺     +  H       +  H₂       →   SiH⁺    +  H₂  
 --------------------------------------------
-Reaction number : 358
+Reaction number : 357
 Reactant :  Si⁺  ,  H  ,  H₂
 Product  :  SiH⁺  ,  H₂
 
 Reaction rate : 1 case.
-       (1) 3.0 × 10⁻³⁰ × (T(neutral)/1.0)⁻¹·⁰
+       (1) 3.0 × 10⁻³⁰ × (T(neutral)/1.0)⁻¹·0)
                T type  : neutral Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -5020,12 +5006,12 @@ Reaction rate : 1 case.
 --------------------------------------------
  Si⁺     +  H₂      +  H₂       →   SiH₂⁺   +  H₂  
 --------------------------------------------
-Reaction number : 359
+Reaction number : 358
 Reactant :  Si⁺  ,  H₂  ,  H₂
 Product  :  SiH₂⁺  ,  H₂
 
 Reaction rate : 1 case.
-       (1) 1.6 × 10⁻³⁰ × (T(neutral)/80)⁻⁰·⁵
+       (1) 1.6 × 10⁻³⁰ × (T(neutral)/80)⁻⁰·5)
                T type  : neutral Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -5034,12 +5020,12 @@ Reaction rate : 1 case.
 --------------------------------------------
  Si⁺     +  CH₄     +  H₂       →   SiCnHm⁺ +  H₂  
 --------------------------------------------
-Reaction number : 360
+Reaction number : 359
 Reactant :  Si⁺  ,  CH₄  ,  H₂
 Product  :  SiCnHm⁺  ,  H₂
 
 Reaction rate : 1 case.
-       (1) 1.4 × 10⁻²⁸ × (T(neutral)/80)⁻¹·⁵
+       (1) 1.4 × 10⁻²⁸ × (T(neutral)/80)⁻¹·5)
                T type  : neutral Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -5048,12 +5034,12 @@ Reaction rate : 1 case.
 --------------------------------------------
  Si⁺     +  C₂H₂    +  H₂       →   SiCnHm⁺ +  H₂  
 --------------------------------------------
-Reaction number : 361
+Reaction number : 360
 Reactant :  Si⁺  ,  C₂H₂  ,  H₂
 Product  :  SiCnHm⁺  ,  H₂
 
 Reaction rate : 1 case.
-       (1) 1.2 × 10⁻²⁸ × (T(neutral)/80)⁻¹·⁰
+       (1) 1.2 × 10⁻²⁸ × (T(neutral)/80)⁻¹·0)
                T type  : neutral Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -5062,12 +5048,12 @@ Reaction rate : 1 case.
 --------------------------------------------
  Si⁺     +  C₂H₄    +  H₂       →   SiCnHm⁺ +  H₂  
 --------------------------------------------
-Reaction number : 362
+Reaction number : 361
 Reactant :  Si⁺  ,  C₂H₄  ,  H₂
 Product  :  SiCnHm⁺  ,  H₂
 
 Reaction rate : 1 case.
-       (1) 1.2 × 10⁻²⁸ × (T(neutral)/80)⁻¹·⁵
+       (1) 1.2 × 10⁻²⁸ × (T(neutral)/80)⁻¹·5)
                T type  : neutral Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -5076,7 +5062,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Si⁺     +  H₂       →   SiH₂⁺                      
 --------------------------------------------
-Reaction number : 363
+Reaction number : 362
 Reactant :  Si⁺  ,  H₂
 Product  :  SiH₂⁺
 
@@ -5090,7 +5076,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Si⁺     +  CH₃      →   SiCnHm⁺ +  H               
 --------------------------------------------
-Reaction number : 364
+Reaction number : 363
 Reactant :  Si⁺  ,  CH₃
 Product  :  SiCnHm⁺  ,  H
 
@@ -5104,7 +5090,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Si⁺     +  CH₃      →   SiCnHm⁺ +  H₂              
 --------------------------------------------
-Reaction number : 365
+Reaction number : 364
 Reactant :  Si⁺  ,  CH₃
 Product  :  SiCnHm⁺  ,  H₂
 
@@ -5118,7 +5104,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Si⁺     +  CH₄      →   SiCnHm⁺ +  H               
 --------------------------------------------
-Reaction number : 366
+Reaction number : 365
 Reactant :  Si⁺  ,  CH₄
 Product  :  SiCnHm⁺  ,  H
 
@@ -5132,7 +5118,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Si⁺     +  C₂H₂     →   SiCnHm⁺ +  H               
 --------------------------------------------
-Reaction number : 367
+Reaction number : 366
 Reactant :  Si⁺  ,  C₂H₂
 Product  :  SiCnHm⁺  ,  H
 
@@ -5146,7 +5132,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Si⁺     +  C₂H₄     →   SiCnHm⁺ +  CH₃     +  H    
 --------------------------------------------
-Reaction number : 368
+Reaction number : 367
 Reactant :  Si⁺  ,  C₂H₄
 Product  :  SiCnHm⁺  ,  CH₃  ,  H
 
@@ -5160,7 +5146,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Si⁺     +  C₂H₄     →   SiCnHm⁺ +  H               
 --------------------------------------------
-Reaction number : 369
+Reaction number : 368
 Reactant :  Si⁺  ,  C₂H₄
 Product  :  SiCnHm⁺  ,  H
 
@@ -5174,7 +5160,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Si⁺     +  C₂H₆     →   SiCnHm⁺ +  CH₄             
 --------------------------------------------
-Reaction number : 370
+Reaction number : 369
 Reactant :  Si⁺  ,  C₂H₆
 Product  :  SiCnHm⁺  ,  CH₄
 
@@ -5188,7 +5174,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Si⁺     +  C₂H₆     →   SiCnHm⁺ +  CH₃             
 --------------------------------------------
-Reaction number : 371
+Reaction number : 370
 Reactant :  Si⁺  ,  C₂H₆
 Product  :  SiCnHm⁺  ,  CH₃
 
@@ -5202,7 +5188,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Si⁺     +  C₂H₆     →   SiCnHm⁺ +  CH₃     +  H₂   
 --------------------------------------------
-Reaction number : 372
+Reaction number : 371
 Reactant :  Si⁺  ,  C₂H₆
 Product  :  SiCnHm⁺  ,  CH₃  ,  H₂
 
@@ -5214,23 +5200,9 @@ Reaction rate : 1 case.
 
 
 --------------------------------------------
- Si⁺     +  H₂O      →   SiOH⁺   +  H               
---------------------------------------------
-Reaction number : 373
-Reactant :  Si⁺  ,  H₂O
-Product  :  SiOH⁺  ,  H
-
-Reaction rate : 1 case.
-       (1) 2.3 × 10⁻¹⁰
-               T type  : 
-               T range :   0.00 [K]  ~  100000.00 [K]
-
-
-
---------------------------------------------
  SiH⁺    +  H        →   Si⁺     +  H₂              
 --------------------------------------------
-Reaction number : 374
+Reaction number : 372
 Reactant :  SiH⁺  ,  H
 Product  :  Si⁺  ,  H₂
 
@@ -5244,7 +5216,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  SiH₂⁺   +  H        →   SiH⁺    +  H₂              
 --------------------------------------------
-Reaction number : 375
+Reaction number : 373
 Reactant :  SiH₂⁺  ,  H
 Product  :  SiH⁺  ,  H₂
 
@@ -5258,7 +5230,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Si      +  H⁺       →   Si⁺     +  H               
 --------------------------------------------
-Reaction number : 376
+Reaction number : 374
 Reactant :  Si  ,  H⁺
 Product  :  Si⁺  ,  H
 
@@ -5272,7 +5244,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Si      +  H₃⁺      →   SiH⁺    +  H₂              
 --------------------------------------------
-Reaction number : 377
+Reaction number : 375
 Reactant :  Si  ,  H₃⁺
 Product  :  SiH⁺  ,  H₂
 
@@ -5286,7 +5258,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Si      +  CH₃⁺     →   SiCnHm⁺ +  H               
 --------------------------------------------
-Reaction number : 378
+Reaction number : 376
 Reactant :  Si  ,  CH₃⁺
 Product  :  SiCnHm⁺  ,  H
 
@@ -5300,7 +5272,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Si      +  CH₃⁺     →   SiCnHm⁺ +  H₂              
 --------------------------------------------
-Reaction number : 379
+Reaction number : 377
 Reactant :  Si  ,  CH₃⁺
 Product  :  SiCnHm⁺  ,  H₂
 
@@ -5314,7 +5286,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Si      +  CH₅⁺     →   SiCnHm⁺ +  H               
 --------------------------------------------
-Reaction number : 380
+Reaction number : 378
 Reactant :  Si  ,  CH₅⁺
 Product  :  SiCnHm⁺  ,  H
 
@@ -5328,7 +5300,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Si      +  CH₅⁺     →   SiCnHm⁺ +  H₂              
 --------------------------------------------
-Reaction number : 381
+Reaction number : 379
 Reactant :  Si  ,  CH₅⁺
 Product  :  SiCnHm⁺  ,  H₂
 
@@ -5342,7 +5314,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Si      +  C₂H₃⁺    →   SiCnHm⁺ +  H₂              
 --------------------------------------------
-Reaction number : 382
+Reaction number : 380
 Reactant :  Si  ,  C₂H₃⁺
 Product  :  SiCnHm⁺  ,  H₂
 
@@ -5356,7 +5328,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Si      +  C₂H₃⁺    →   SiCnHm⁺ +  H               
 --------------------------------------------
-Reaction number : 383
+Reaction number : 381
 Reactant :  Si  ,  C₂H₃⁺
 Product  :  SiCnHm⁺  ,  H
 
@@ -5370,7 +5342,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Si      +  C₃H⁺     →   SiCnHm⁺ +  products        
 --------------------------------------------
-Reaction number : 384
+Reaction number : 382
 Reactant :  Si  ,  C₃H⁺
 Product  :  SiCnHm⁺
 
@@ -5384,7 +5356,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Si      +  C₃H₂⁺    →   SiCnHm⁺ +  products        
 --------------------------------------------
-Reaction number : 385
+Reaction number : 383
 Reactant :  Si  ,  C₃H₂⁺
 Product  :  SiCnHm⁺
 
@@ -5398,7 +5370,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Si      +  C₃H₃⁺    →   SiCnHm⁺ +  products        
 --------------------------------------------
-Reaction number : 386
+Reaction number : 384
 Reactant :  Si  ,  C₃H₃⁺
 Product  :  SiCnHm⁺
 
@@ -5412,7 +5384,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Si      +  C₃H₄⁺    →   SiCnHm⁺ +  products        
 --------------------------------------------
-Reaction number : 387
+Reaction number : 385
 Reactant :  Si  ,  C₃H₄⁺
 Product  :  SiCnHm⁺
 
@@ -5426,7 +5398,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Si      +  C₃H₅⁺    →   SiCnHm⁺ +  products        
 --------------------------------------------
-Reaction number : 388
+Reaction number : 386
 Reactant :  Si  ,  C₃H₅⁺
 Product  :  SiCnHm⁺
 
@@ -5440,7 +5412,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Si      +  C₃H₆⁺    →   SiCnHm⁺ +  products        
 --------------------------------------------
-Reaction number : 389
+Reaction number : 387
 Reactant :  Si  ,  C₃H₆⁺
 Product  :  SiCnHm⁺
 
@@ -5454,7 +5426,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Si      +  C₃H₇⁺    →   SiCnHm⁺ +  products        
 --------------------------------------------
-Reaction number : 390
+Reaction number : 388
 Reactant :  Si  ,  C₃H₇⁺
 Product  :  SiCnHm⁺
 
@@ -5468,7 +5440,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Si      +  C₃H₈⁺    →   SiCnHm⁺ +  products        
 --------------------------------------------
-Reaction number : 391
+Reaction number : 389
 Reactant :  Si  ,  C₃H₈⁺
 Product  :  SiCnHm⁺
 
@@ -5482,7 +5454,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Si      +  C₃H₉⁺    →   SiCnHm⁺ +  products        
 --------------------------------------------
-Reaction number : 392
+Reaction number : 390
 Reactant :  Si  ,  C₃H₉⁺
 Product  :  SiCnHm⁺
 
@@ -5496,7 +5468,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Si      +  C₄H⁺     →   SiCnHm⁺ +  products        
 --------------------------------------------
-Reaction number : 393
+Reaction number : 391
 Reactant :  Si  ,  C₄H⁺
 Product  :  SiCnHm⁺
 
@@ -5510,7 +5482,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Si      +  C₄H₂⁺    →   SiCnHm⁺ +  products        
 --------------------------------------------
-Reaction number : 394
+Reaction number : 392
 Reactant :  Si  ,  C₄H₂⁺
 Product  :  SiCnHm⁺
 
@@ -5524,7 +5496,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Si      +  C₄H₃⁺    →   SiCnHm⁺ +  products        
 --------------------------------------------
-Reaction number : 395
+Reaction number : 393
 Reactant :  Si  ,  C₄H₃⁺
 Product  :  SiCnHm⁺
 
@@ -5538,7 +5510,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Si      +  C₄H₅⁺    →   SiCnHm⁺ +  products        
 --------------------------------------------
-Reaction number : 396
+Reaction number : 394
 Reactant :  Si  ,  C₄H₅⁺
 Product  :  SiCnHm⁺
 
@@ -5552,7 +5524,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Si      +  C₄H₇⁺    →   SiCnHm⁺ +  products        
 --------------------------------------------
-Reaction number : 397
+Reaction number : 395
 Reactant :  Si  ,  C₄H₇⁺
 Product  :  SiCnHm⁺
 
@@ -5566,7 +5538,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Si      +  C₄H₉⁺    →   SiCnHm⁺ +  products        
 --------------------------------------------
-Reaction number : 398
+Reaction number : 396
 Reactant :  Si  ,  C₄H₉⁺
 Product  :  SiCnHm⁺
 
@@ -5578,28 +5550,14 @@ Reaction rate : 1 case.
 
 
 --------------------------------------------
- Si      +  H₃O⁺     →   SiH⁺    +  H₃O             
---------------------------------------------
-Reaction number : 399
-Reactant :  Si  ,  H₃O⁺
-Product  :  SiH⁺  ,  H₃O
-
-Reaction rate : 1 case.
-       (1) 1.8 × 10⁻⁹
-               T type  : 
-               T range :   0.00 [K]  ~  100000.00 [K]
-
-
-
---------------------------------------------
  Si      +  CH₂      →   SiCH    +  H               
 --------------------------------------------
-Reaction number : 400
+Reaction number : 397
 Reactant :  Si  ,  CH₂
 Product  :  SiCH  ,  H
 
 Reaction rate : 1 case.
-       (1) 2.0 × 10⁻¹¹ × (T(neutral)/300)⁻⁰·⁵
+       (1) 2.0 × 10⁻¹¹ × (T(neutral)/300)⁻⁰·5)
                T type  : neutral Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -5608,7 +5566,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  Si      +  CH₃      →   SiCH₂   +  H               
 --------------------------------------------
-Reaction number : 401
+Reaction number : 398
 Reactant :  Si  ,  CH₃
 Product  :  SiCH₂  ,  H
 
@@ -5622,7 +5580,7 @@ Reaction rate : 1 case.
 --------------------------------------------
  SiH     +  H        →   Si      +  H₂              
 --------------------------------------------
-Reaction number : 402
+Reaction number : 399
 Reactant :  SiH  ,  H
 Product  :  Si  ,  H₂
 
@@ -5636,12 +5594,12 @@ Reaction rate : 1 case.
 --------------------------------------------
  Si⁺     +  e⁻       →   Si                         
 --------------------------------------------
-Reaction number : 403
+Reaction number : 400
 Reactant :  Si⁺  ,  e⁻
 Product  :  Si
 
 Reaction rate : 1 case.
-       (1) 4.9 × 10⁻¹² × (T(electron)/300)⁻⁰·⁶
+       (1) 4.9 × 10⁻¹² × (T(electron)/300)⁻⁰·6)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -5650,12 +5608,12 @@ Reaction rate : 1 case.
 --------------------------------------------
  SiH⁺    +  e⁻       →   Si      +  H               
 --------------------------------------------
-Reaction number : 404
+Reaction number : 401
 Reactant :  SiH⁺  ,  e⁻
 Product  :  Si  ,  H
 
 Reaction rate : 1 case.
-       (1) 2.0 × 10⁻⁷ × (T(electron)/300)⁻⁰·⁵
+       (1) 2.0 × 10⁻⁷ × (T(electron)/300)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -5664,12 +5622,12 @@ Reaction rate : 1 case.
 --------------------------------------------
  SiH₂⁺   +  e⁻       →   Si      +  H       +  H    
 --------------------------------------------
-Reaction number : 405
+Reaction number : 402
 Reactant :  SiH₂⁺  ,  e⁻
 Product  :  Si  ,  H  ,  H
 
 Reaction rate : 1 case.
-       (1) 2.0 × 10⁻⁷ × (T(electron)/300)⁻⁰·⁵
+       (1) 2.0 × 10⁻⁷ × (T(electron)/300)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -5678,12 +5636,12 @@ Reaction rate : 1 case.
 --------------------------------------------
  SiH₂⁺   +  e⁻       →   SiH     +  H               
 --------------------------------------------
-Reaction number : 406
+Reaction number : 403
 Reactant :  SiH₂⁺  ,  e⁻
 Product  :  SiH  ,  H
 
 Reaction rate : 1 case.
-       (1) 1.5 × 10⁻⁷ × (T(electron)/300)⁻⁰·⁵
+       (1) 1.5 × 10⁻⁷ × (T(electron)/300)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -5692,12 +5650,12 @@ Reaction rate : 1 case.
 --------------------------------------------
  SiH₂⁺   +  e⁻       →   Si      +  H₂              
 --------------------------------------------
-Reaction number : 407
+Reaction number : 404
 Reactant :  SiH₂⁺  ,  e⁻
 Product  :  Si  ,  H₂
 
 Reaction rate : 1 case.
-       (1) 1.5 × 10⁻⁷ × (T(electron)/300)⁻⁰·⁵
+       (1) 1.5 × 10⁻⁷ × (T(electron)/300)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -5706,12 +5664,12 @@ Reaction rate : 1 case.
 --------------------------------------------
  SiCnHm⁺ +  e⁻       →   Si                         
 --------------------------------------------
-Reaction number : 408
+Reaction number : 405
 Reactant :  SiCnHm⁺  ,  e⁻
 Product  :  Si
 
 Reaction rate : 1 case.
-       (1) 1.5 × 10⁻⁷ × (T(electron)/300)⁻⁰·⁵
+       (1) 1.5 × 10⁻⁷ × (T(electron)/300)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 
@@ -5720,12 +5678,12 @@ Reaction rate : 1 case.
 --------------------------------------------
  SiCnHm⁺ +  e⁻       →   products                   
 --------------------------------------------
-Reaction number : 409
+Reaction number : 406
 Reactant :  SiCnHm⁺  ,  e⁻
 Product  :  
 
 Reaction rate : 1 case.
-       (1) 1.5 × 10⁻⁷ × (T(electron)/300)⁻⁰·⁵
+       (1) 1.5 × 10⁻⁷ × (T(electron)/300)⁻⁰·5)
                T type  : electron Temperature
                T range :   0.00 [K]  ~  100000.00 [K]
 

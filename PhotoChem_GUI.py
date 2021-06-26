@@ -5620,7 +5620,6 @@ def plot(Planet, dir0, species, action, adv, fs,
                         x2[j] = x2[j] / 1e6
                     ax2.plot(x2, y2, label=reaction_unicode(sp_order[i]), color = sp_color[i])
 
-
         ax2.set_xlabel('density [cm'+rf'$^{{{-3}}}$'+']', fontsize=fs_xlabel)
         ax2.set_ylabel('altitude [km]', fontsize=fs_ylabel)
         plt.tick_params(labelsize=fs_tick)

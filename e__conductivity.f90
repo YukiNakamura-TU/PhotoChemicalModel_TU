@@ -229,7 +229,7 @@ program e__conductivity
 
     print *, 'calculating ionospheric conductivity...'
     do iz = 1, grd%nz
-    do iy = 1, grd%ny
+    do iy = 91, grd%ny
     do ix = 1, grd%nx
 
       jsp  = sp_index(spl, 'H2')
@@ -320,7 +320,7 @@ program e__conductivity
     hi_sigma_H = 0.0_dp
     hi_sigma_P = 0.0_dp
     hi_sigma_0 = 0.0_dp
-    do iy = 1, grd%ny
+    do iy = 91, grd%ny
     do ix = 1, grd%nx
       do iz = 1, grd%nz
         hi_sigma_H(ix,iy) = hi_sigma_H(ix,iy) + sigma_H(ix,iy,iz)*grd%dalt(iz)
@@ -328,6 +328,15 @@ program e__conductivity
         hi_sigma_0(ix,iy) = hi_sigma_0(ix,iy) + sigma_0(ix,iy,iz)*grd%dalt(iz)
       end do
     end do 
+    end do
+
+    ! southern hemisphere
+    do iy = 1, 90
+    do ix = 1, grd%nx
+      hi_sigma_H(ix,iy) = hi_sigma_H(ix,182-iy) 
+      hi_sigma_P(ix,iy) = hi_sigma_P(ix,182-iy) 
+      hi_sigma_0(ix,iy) = hi_sigma_0(ix,182-iy) 
+    end do
     end do
 
     ! transforming coordinate --------------------------------------------- 

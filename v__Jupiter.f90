@@ -363,7 +363,7 @@ contains
           end do
         close(11)
         
-        if( set%mode == '3D Rot' .or. set%mode == '3D Global' ) then
+        if( set%mode == '2D Lat' .or. set%mode == '3D Rot' .or. set%mode == '3D Global' ) then
           isp = sp_index(spl, 'H2')
           do iz = 1, grd%nz
           do iy = 1, grd%ny

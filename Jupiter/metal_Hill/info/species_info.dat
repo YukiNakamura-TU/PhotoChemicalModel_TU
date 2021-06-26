@@ -3,139 +3,127 @@
 ############################################
 
 
-### Fixed : 19 species ###
+### Fixed : 17 species ###
 
 --------------------------------------------
  H₂
 --------------------------------------------
 # path    : ./Jupiter/metal/input/density/H2.dat
-# mass    : 2.01588000
+# mass    : 2.00000000
 # charge  : 0
 
 --------------------------------------------
  He
 --------------------------------------------
 # path    : ./Jupiter/metal/input/density/He.dat
-# mass    : 4.00260200
+# mass    : 4.00000000
 # charge  : 0
 
 --------------------------------------------
  CH₄
 --------------------------------------------
 # path    : ./Jupiter/metal/input/density/CH4.dat
-# mass    : 16.04246000
+# mass    : 16.00000000
 # charge  : 0
 
 --------------------------------------------
  C₂H₂
 --------------------------------------------
 # path    : ./Jupiter/metal/input/density/C2H2.dat
-# mass    : 26.03728000
+# mass    : 26.00000000
 # charge  : 0
 
 --------------------------------------------
  C₂H₄
 --------------------------------------------
 # path    : ./Jupiter/metal/input/density/C2H4.dat
-# mass    : 28.05316000
+# mass    : 28.00000000
 # charge  : 0
 
 --------------------------------------------
  C₂H₆
 --------------------------------------------
 # path    : ./Jupiter/metal/input/density/C2H6.dat
-# mass    : 30.06904000
+# mass    : 30.00000000
 # charge  : 0
 
 --------------------------------------------
  C
 --------------------------------------------
-# mass    : 12.01070000
+# mass    : 12.00000000
 # charge  : 0
 
 --------------------------------------------
  CH
 --------------------------------------------
-# mass    : 13.01864000
+# mass    : 13.00000000
 # charge  : 0
 
 --------------------------------------------
  C₂
 --------------------------------------------
-# mass    : 24.02140000
+# mass    : 24.00000000
 # charge  : 0
 
 --------------------------------------------
  C₂H
 --------------------------------------------
-# mass    : 25.02934000
+# mass    : 25.00000000
 # charge  : 0
 
 --------------------------------------------
  C₂H₃
 --------------------------------------------
-# mass    : 27.04522000
+# mass    : 27.00000000
 # charge  : 0
 
 --------------------------------------------
  C₂H₅
 --------------------------------------------
-# mass    : 29.06110000
+# mass    : 29.00000000
 # charge  : 0
 
 --------------------------------------------
  H₂(v>=2)
 --------------------------------------------
 # path    : ./Jupiter/metal/input/density/H2_v2.dat
-# mass    : 2.01588000
+# mass    : 2.00000000
 # charge  : 0
 
 --------------------------------------------
  H₂(v>=4)
 --------------------------------------------
 # path    : ./Jupiter/metal/input/density/H2_v4.dat
-# mass    : 2.01588000
+# mass    : 2.00000000
 # charge  : 0
 
 --------------------------------------------
  NaCH₃
 --------------------------------------------
-# mass    : 38.02352000
-# charge  : 0
-
---------------------------------------------
- SiOH⁺
---------------------------------------------
-# mass    : 45.09229142
-# charge  : 1
-
---------------------------------------------
- H₃O
---------------------------------------------
-# mass    : 19.02322000
+# mass    : 38.00000000
 # charge  : 0
 
 --------------------------------------------
  SiCH
 --------------------------------------------
-# mass    : 41.10414000
+# mass    : 41.00000000
 # charge  : 0
 
 --------------------------------------------
  SiCH₂
 --------------------------------------------
-# mass    : 42.11208000
+# mass    : 42.00000000
 # charge  : 0
 
 --------------------------------------------
 
 
-### Variable : 69 species ###
+### Variable : 67 species ###
 
 --------------------------------------------
  H₂⁺
 --------------------------------------------
-# mass    : 2.01533142
+# mass    : 1.99945142
 # charge  : 1
 # Produced by following 6 reactions:
 
@@ -242,49 +230,49 @@
     * R59     C₄H₅⁺ + e⁻  →  products        
     * R60     C₄H₇⁺ + e⁻  →  products        
     * R61     C₄H₉⁺ + e⁻  →  products        
-    * R264    Na⁺     +  e⁻       →   Na                        
-    * R265    NaH₂⁺   +  e⁻       →   Na      +  H₂             
-    * R266    NaH₂⁺   +  e⁻       →   NaH     +  H              
-    * R267    NaCH₄⁺  +  e⁻       →   Na      +  products       
-    * R268    NaC₂H₂⁺ +  e⁻       →   Na      +  products       
-    * R269    NaC₂H₄⁺ +  e⁻       →   Na      +  products       
-    * R270    NaCH₄⁺  +  e⁻       →   products                  
-    * R271    NaC₂H₂⁺ +  e⁻       →   products                  
-    * R272    NaC₂H₄⁺ +  e⁻       →   products                  
-    * R305    Fe⁺     +  e⁻       →   Fe                        
-    * R306    FeH⁺    +  e⁻       →   Fe      +  H              
-    * R307    FeH₂⁺   +  e⁻       →   FeH     +  H              
-    * R308    FeH₂⁺   +  e⁻       →   Fe      +  H₂             
-    * R309    FeCH₄⁺  +  e⁻       →   Fe      +  products       
-    * R310    FeC₂H₂⁺ +  e⁻       →   Fe      +  products       
-    * R311    FeC₂H₄⁺ +  e⁻       →   Fe      +  products       
-    * R312    FeCH₄⁺  +  e⁻       →   products                  
-    * R313    FeC₂H₂⁺ +  e⁻       →   products                  
-    * R314    FeC₂H₄⁺ +  e⁻       →   products                  
-    * R347    Mg⁺     +  e⁻       →   Mg                        
-    * R348    MgH⁺    +  e⁻       →   Mg      +  H              
-    * R349    MgH₂⁺   +  e⁻       →   Mg      +  H₂             
-    * R350    MgH₂⁺   +  e⁻       →   MgH     +  H              
-    * R351    MgCH₄⁺  +  e⁻       →   Mg      +  products       
-    * R352    MgC₂H₂⁺ +  e⁻       →   Mg      +  products       
-    * R353    MgC₂H₄⁺ +  e⁻       →   Mg      +  products       
-    * R354    MgCH₄⁺  +  e⁻       →   products                  
-    * R355    MgC₂H₂⁺ +  e⁻       →   products                  
-    * R356    MgC₂H₄⁺ +  e⁻       →   products                  
-    * R403    Si⁺     +  e⁻       →   Si                         
-    * R404    SiH⁺    +  e⁻       →   Si      +  H               
-    * R405    SiH₂⁺   +  e⁻       →   Si      +  H       +  H    
-    * R406    SiH₂⁺   +  e⁻       →   SiH     +  H               
-    * R407    SiH₂⁺   +  e⁻       →   Si      +  H₂              
-    * R408    SiCnHm⁺ +  e⁻       →   Si                         
-    * R409    SiCnHm⁺ +  e⁻       →   products                   
+    * R263    Na⁺     +  e⁻       →   Na                        
+    * R264    NaH₂⁺   +  e⁻       →   Na      +  H₂             
+    * R265    NaH₂⁺   +  e⁻       →   NaH     +  H              
+    * R266    NaCH₄⁺  +  e⁻       →   Na      +  products       
+    * R267    NaC₂H₂⁺ +  e⁻       →   Na      +  products       
+    * R268    NaC₂H₄⁺ +  e⁻       →   Na      +  products       
+    * R269    NaCH₄⁺  +  e⁻       →   products                  
+    * R270    NaC₂H₂⁺ +  e⁻       →   products                  
+    * R271    NaC₂H₄⁺ +  e⁻       →   products                  
+    * R304    Fe⁺     +  e⁻       →   Fe                        
+    * R305    FeH⁺    +  e⁻       →   Fe      +  H              
+    * R306    FeH₂⁺   +  e⁻       →   FeH     +  H              
+    * R307    FeH₂⁺   +  e⁻       →   Fe      +  H₂             
+    * R308    FeCH₄⁺  +  e⁻       →   Fe      +  products       
+    * R309    FeC₂H₂⁺ +  e⁻       →   Fe      +  products       
+    * R310    FeC₂H₄⁺ +  e⁻       →   Fe      +  products       
+    * R311    FeCH₄⁺  +  e⁻       →   products                  
+    * R312    FeC₂H₂⁺ +  e⁻       →   products                  
+    * R313    FeC₂H₄⁺ +  e⁻       →   products                  
+    * R346    Mg⁺     +  e⁻       →   Mg                        
+    * R347    MgH⁺    +  e⁻       →   Mg      +  H              
+    * R348    MgH₂⁺   +  e⁻       →   Mg      +  H₂             
+    * R349    MgH₂⁺   +  e⁻       →   MgH     +  H              
+    * R350    MgCH₄⁺  +  e⁻       →   Mg      +  products       
+    * R351    MgC₂H₂⁺ +  e⁻       →   Mg      +  products       
+    * R352    MgC₂H₄⁺ +  e⁻       →   Mg      +  products       
+    * R353    MgCH₄⁺  +  e⁻       →   products                  
+    * R354    MgC₂H₂⁺ +  e⁻       →   products                  
+    * R355    MgC₂H₄⁺ +  e⁻       →   products                  
+    * R400    Si⁺     +  e⁻       →   Si                         
+    * R401    SiH⁺    +  e⁻       →   Si      +  H               
+    * R402    SiH₂⁺   +  e⁻       →   Si      +  H       +  H    
+    * R403    SiH₂⁺   +  e⁻       →   SiH     +  H               
+    * R404    SiH₂⁺   +  e⁻       →   Si      +  H₂              
+    * R405    SiCnHm⁺ +  e⁻       →   Si                         
+    * R406    SiCnHm⁺ +  e⁻       →   products                   
 
 --------------------------------------------
  H
 --------------------------------------------
-# mass    : 1.00794000
+# mass    : 1.00000000
 # charge  : 0
-# Produced by following 101 reactions:
+# Produced by following 99 reactions:
 
     * R4      H₂   + hv   →  H⁺    + e⁻ + H        
     * R7      CH₄  + hv   →  CH₃⁺  + e⁻ + H        
@@ -361,32 +349,30 @@
     * R209    C₂H₆⁺ + C₂H₂      →  C₄H₇⁺ + H             
     * R242    Na      +  H⁺       →   Na⁺     +  H              
     * R243    Na      +  H₃⁺      →   Na⁺     +  H       +  H₂  
-    * R262    Na      +  H₃O⁺     →   Na⁺     +  H₂O     +  H   
-    * R266    NaH₂⁺   +  e⁻       →   NaH     +  H              
-    * R283    Fe      +  H⁺       →   Fe⁺     +  H              
-    * R284    Fe      +  H₃⁺      →   Fe⁺     +  H       +  H₂  
-    * R306    FeH⁺    +  e⁻       →   Fe      +  H              
-    * R307    FeH₂⁺   +  e⁻       →   FeH     +  H              
-    * R324    Mg      +  H⁺       →   Mg⁺     +  H              
-    * R325    Mg      +  H₃⁺      →   Mg⁺     +  H       +  H₂  
-    * R328    Mg      +  CH₅⁺     →   Mg⁺     +  CH₄     +  H   
-    * R348    MgH⁺    +  e⁻       →   Mg      +  H              
-    * R350    MgH₂⁺   +  e⁻       →   MgH     +  H              
-    * R364    Si⁺     +  CH₃      →   SiCnHm⁺ +  H               
-    * R366    Si⁺     +  CH₄      →   SiCnHm⁺ +  H               
-    * R367    Si⁺     +  C₂H₂     →   SiCnHm⁺ +  H               
-    * R368    Si⁺     +  C₂H₄     →   SiCnHm⁺ +  CH₃     +  H    
-    * R369    Si⁺     +  C₂H₄     →   SiCnHm⁺ +  H               
-    * R373    Si⁺     +  H₂O      →   SiOH⁺   +  H               
-    * R376    Si      +  H⁺       →   Si⁺     +  H               
-    * R378    Si      +  CH₃⁺     →   SiCnHm⁺ +  H               
-    * R380    Si      +  CH₅⁺     →   SiCnHm⁺ +  H               
-    * R383    Si      +  C₂H₃⁺    →   SiCnHm⁺ +  H               
-    * R400    Si      +  CH₂      →   SiCH    +  H               
-    * R401    Si      +  CH₃      →   SiCH₂   +  H               
-    * R404    SiH⁺    +  e⁻       →   Si      +  H               
-    * R405    SiH₂⁺   +  e⁻       →   Si      +  H       +  H    
-    * R406    SiH₂⁺   +  e⁻       →   SiH     +  H               
+    * R265    NaH₂⁺   +  e⁻       →   NaH     +  H              
+    * R282    Fe      +  H⁺       →   Fe⁺     +  H              
+    * R283    Fe      +  H₃⁺      →   Fe⁺     +  H       +  H₂  
+    * R305    FeH⁺    +  e⁻       →   Fe      +  H              
+    * R306    FeH₂⁺   +  e⁻       →   FeH     +  H              
+    * R323    Mg      +  H⁺       →   Mg⁺     +  H              
+    * R324    Mg      +  H₃⁺      →   Mg⁺     +  H       +  H₂  
+    * R327    Mg      +  CH₅⁺     →   Mg⁺     +  CH₄     +  H   
+    * R347    MgH⁺    +  e⁻       →   Mg      +  H              
+    * R349    MgH₂⁺   +  e⁻       →   MgH     +  H              
+    * R363    Si⁺     +  CH₃      →   SiCnHm⁺ +  H               
+    * R365    Si⁺     +  CH₄      →   SiCnHm⁺ +  H               
+    * R366    Si⁺     +  C₂H₂     →   SiCnHm⁺ +  H               
+    * R367    Si⁺     +  C₂H₄     →   SiCnHm⁺ +  CH₃     +  H    
+    * R368    Si⁺     +  C₂H₄     →   SiCnHm⁺ +  H               
+    * R374    Si      +  H⁺       →   Si⁺     +  H               
+    * R376    Si      +  CH₃⁺     →   SiCnHm⁺ +  H               
+    * R378    Si      +  CH₅⁺     →   SiCnHm⁺ +  H               
+    * R381    Si      +  C₂H₃⁺    →   SiCnHm⁺ +  H               
+    * R397    Si      +  CH₂      →   SiCH    +  H               
+    * R398    Si      +  CH₃      →   SiCH₂   +  H               
+    * R401    SiH⁺    +  e⁻       →   Si      +  H               
+    * R402    SiH₂⁺   +  e⁻       →   Si      +  H       +  H    
+    * R403    SiH₂⁺   +  e⁻       →   SiH     +  H               
 
 # Lost by following 27 reactions:
 
@@ -401,27 +387,27 @@
     * R206    C₂H₆⁺ + H         →  C₂H₅⁺ + H₂            
     * R219    H     + H  + H₂  →  H₂    + H₂ 
     * R236    Na      +  H       +  H₂       →   NaH     +  H₂  
-    * R263    NaH     +  H        →   Na      +  H₂             
-    * R273    Fe      +  H       +  H₂       →   FeH     +  H₂  
-    * R274    Fe⁺     +  H       +  H₂       →   FeH⁺    +  H₂  
-    * R281    FeH⁺    +  H        →   Fe⁺     +  H₂             
-    * R282    FeH₂⁺   +  H        →   FeH⁺    +  H₂             
-    * R304    FeH     +  H        →   Fe      +  H₂             
-    * R315    Mg      +  H       +  H₂       →   MgH     +  H₂  
-    * R316    Mg⁺     +  H       +  H₂       →   MgH⁺    +  H₂  
-    * R322    MgH⁺    +  H        →   Mg⁺     +  H₂             
-    * R323    MgH₂⁺   +  H        →   MgH⁺    +  H₂             
-    * R346    MgH     +  H        →   Mg      +  H₂             
-    * R357    Si      +  H       +  H₂       →   SiH     +  H₂  
-    * R358    Si⁺     +  H       +  H₂       →   SiH⁺    +  H₂  
-    * R374    SiH⁺    +  H        →   Si⁺     +  H₂              
-    * R375    SiH₂⁺   +  H        →   SiH⁺    +  H₂              
-    * R402    SiH     +  H        →   Si      +  H₂              
+    * R262    NaH     +  H        →   Na      +  H₂             
+    * R272    Fe      +  H       +  H₂       →   FeH     +  H₂  
+    * R273    Fe⁺     +  H       +  H₂       →   FeH⁺    +  H₂  
+    * R280    FeH⁺    +  H        →   Fe⁺     +  H₂             
+    * R281    FeH₂⁺   +  H        →   FeH⁺    +  H₂             
+    * R303    FeH     +  H        →   Fe      +  H₂             
+    * R314    Mg      +  H       +  H₂       →   MgH     +  H₂  
+    * R315    Mg⁺     +  H       +  H₂       →   MgH⁺    +  H₂  
+    * R321    MgH⁺    +  H        →   Mg⁺     +  H₂             
+    * R322    MgH₂⁺   +  H        →   MgH⁺    +  H₂             
+    * R345    MgH     +  H        →   Mg      +  H₂             
+    * R356    Si      +  H       +  H₂       →   SiH     +  H₂  
+    * R357    Si⁺     +  H       +  H₂       →   SiH⁺    +  H₂  
+    * R372    SiH⁺    +  H        →   Si⁺     +  H₂              
+    * R373    SiH₂⁺   +  H        →   SiH⁺    +  H₂              
+    * R399    SiH     +  H        →   Si      +  H₂              
 
 --------------------------------------------
  H⁺
 --------------------------------------------
-# mass    : 1.00739142
+# mass    : 0.99945142
 # charge  : 1
 # Produced by following 6 reactions:
 
@@ -443,14 +429,14 @@
     * R100    H⁺    + H₂(v>=4)  →  H₂⁺   + H             
     * R215    H⁺    + H₂ + H₂  →  H₃⁺   + H₂ 
     * R242    Na      +  H⁺       →   Na⁺     +  H              
-    * R283    Fe      +  H⁺       →   Fe⁺     +  H              
-    * R324    Mg      +  H⁺       →   Mg⁺     +  H              
-    * R376    Si      +  H⁺       →   Si⁺     +  H               
+    * R282    Fe      +  H⁺       →   Fe⁺     +  H              
+    * R323    Mg      +  H⁺       →   Mg⁺     +  H              
+    * R374    Si      +  H⁺       →   Si⁺     +  H               
 
 --------------------------------------------
  He⁺
 --------------------------------------------
-# mass    : 4.00205342
+# mass    : 3.99945142
 # charge  : 1
 # Produced by following 1 reactions:
 
@@ -483,7 +469,7 @@
 --------------------------------------------
  CH₄⁺
 --------------------------------------------
-# mass    : 16.04191142
+# mass    : 15.99945142
 # charge  : 1
 # Produced by following 5 reactions:
 
@@ -510,7 +496,7 @@
 --------------------------------------------
  CH₃⁺
 --------------------------------------------
-# mass    : 15.03397142
+# mass    : 14.99945142
 # charge  : 1
 # Produced by following 5 reactions:
 
@@ -534,15 +520,15 @@
     * R216    CH₃⁺  + H₂ + H₂  →  CH₅⁺  + H₂ 
     * R217    CH₃⁺  + H₂ + He  →  CH₅⁺  + He 
     * R244    Na      +  CH₃⁺     →   Na⁺     +  CH₃            
-    * R286    Fe      +  CH₃⁺     →   Fe⁺     +  CH₃            
-    * R327    Mg      +  CH₃⁺     →   Mg⁺     +  CH₃            
-    * R378    Si      +  CH₃⁺     →   SiCnHm⁺ +  H               
-    * R379    Si      +  CH₃⁺     →   SiCnHm⁺ +  H₂              
+    * R285    Fe      +  CH₃⁺     →   Fe⁺     +  CH₃            
+    * R326    Mg      +  CH₃⁺     →   Mg⁺     +  CH₃            
+    * R376    Si      +  CH₃⁺     →   SiCnHm⁺ +  H               
+    * R377    Si      +  CH₃⁺     →   SiCnHm⁺ +  H₂              
 
 --------------------------------------------
  C₂H₂⁺
 --------------------------------------------
-# mass    : 26.03673142
+# mass    : 25.99945142
 # charge  : 1
 # Produced by following 16 reactions:
 
@@ -584,13 +570,13 @@
     * R185    C₂H₂⁺ + C₂H₆      →  C₄H₇⁺ + H             
     * R218    C₂H₂⁺ + H₂ + He  →  C₂H₄⁺ + He 
     * R245    Na      +  C₂H₂⁺    →   Na⁺     +  C₂H₂           
-    * R287    Fe      +  C₂H₂⁺    →   Fe⁺     +  C₂H₂           
-    * R329    Mg      +  C₂H₂⁺    →   Mg⁺     +  C₂H₂           
+    * R286    Fe      +  C₂H₂⁺    →   Fe⁺     +  C₂H₂           
+    * R328    Mg      +  C₂H₂⁺    →   Mg⁺     +  C₂H₂           
 
 --------------------------------------------
  C₂H₄⁺
 --------------------------------------------
-# mass    : 28.05261142
+# mass    : 27.99945142
 # charge  : 1
 # Produced by following 18 reactions:
 
@@ -611,7 +597,7 @@
     * R200    C₂H₅⁺ + H         →  C₂H₄⁺ + H₂            
     * R210    C₂H₆⁺ + C₂H₄      →  C₂H₄⁺ + C₂H₆          
     * R218    C₂H₂⁺ + H₂ + He  →  C₂H₄⁺ + He 
-    * R279    Fe⁺     +  C₂H₆     →   Fe      +  C₂H₄⁺   +  H₂  
+    * R278    Fe⁺     +  C₂H₆     →   Fe      +  C₂H₄⁺   +  H₂  
 
 # Lost by following 9 reactions:
 
@@ -628,7 +614,7 @@
 --------------------------------------------
  C₂H₃⁺
 --------------------------------------------
-# mass    : 27.04467142
+# mass    : 26.99945142
 # charge  : 1
 # Produced by following 21 reactions:
 
@@ -665,13 +651,13 @@
     * R190    C₂H₃⁺ + C₂H₆      →  C₂H₅⁺ + C₂H₄          
     * R191    C₂H₃⁺ + C₂H₆      →  C₃H₅⁺ + CH₄           
     * R192    C₂H₃⁺ + C₂H₆      →  C₄H₇⁺ + H₂            
-    * R382    Si      +  C₂H₃⁺    →   SiCnHm⁺ +  H₂              
-    * R383    Si      +  C₂H₃⁺    →   SiCnHm⁺ +  H               
+    * R380    Si      +  C₂H₃⁺    →   SiCnHm⁺ +  H₂              
+    * R381    Si      +  C₂H₃⁺    →   SiCnHm⁺ +  H               
 
 --------------------------------------------
  C₂H⁺
 --------------------------------------------
-# mass    : 25.02879142
+# mass    : 24.99945142
 # charge  : 1
 # Produced by following 5 reactions:
 
@@ -696,7 +682,7 @@
 --------------------------------------------
  C₂H₆⁺
 --------------------------------------------
-# mass    : 30.06849142
+# mass    : 29.99945142
 # charge  : 1
 # Produced by following 2 reactions:
 
@@ -718,7 +704,7 @@
 --------------------------------------------
  C₂H₅⁺
 --------------------------------------------
-# mass    : 29.06055142
+# mass    : 28.99945142
 # charge  : 1
 # Produced by following 19 reactions:
 
@@ -756,7 +742,7 @@
 --------------------------------------------
  HeH⁺
 --------------------------------------------
-# mass    : 5.00999342
+# mass    : 4.99945142
 # charge  : 1
 # Produced by following 1 reactions:
 
@@ -775,7 +761,7 @@
 --------------------------------------------
  H₃⁺
 --------------------------------------------
-# mass    : 3.02327142
+# mass    : 2.99945142
 # charge  : 1
 # Produced by following 3 reactions:
 
@@ -793,14 +779,14 @@
     * R110    H₃⁺   + C₂H₄      →  C₂H₃⁺ + H₂  +  H₂     
     * R111    H₃⁺   + C₂H₆      →  C₂H₅⁺ + H₂  +  H₂     
     * R243    Na      +  H₃⁺      →   Na⁺     +  H       +  H₂  
-    * R284    Fe      +  H₃⁺      →   Fe⁺     +  H       +  H₂  
-    * R325    Mg      +  H₃⁺      →   Mg⁺     +  H       +  H₂  
-    * R377    Si      +  H₃⁺      →   SiH⁺    +  H₂              
+    * R283    Fe      +  H₃⁺      →   Fe⁺     +  H       +  H₂  
+    * R324    Mg      +  H₃⁺      →   Mg⁺     +  H       +  H₂  
+    * R375    Si      +  H₃⁺      →   SiH⁺    +  H₂              
 
 --------------------------------------------
  C⁺
 --------------------------------------------
-# mass    : 12.01015142
+# mass    : 11.99945142
 # charge  : 1
 # Produced by following 1 reactions:
 
@@ -821,13 +807,13 @@
     * R121    C⁺    + C₂H₆      →  C₂H₃⁺ + CH₃           
     * R122    C⁺    + C₂H₆      →  C₂H₅⁺ + CH            
     * R123    C⁺    + C₂H₆      →  C₃H₃⁺ + H   +  H₂     
-    * R285    Fe      +  C⁺       →   Fe⁺     +  C              
-    * R326    Mg      +  C⁺       →   Mg⁺     +  C              
+    * R284    Fe      +  C⁺       →   Fe⁺     +  C              
+    * R325    Mg      +  C⁺       →   Mg⁺     +  C              
 
 --------------------------------------------
  CH⁺
 --------------------------------------------
-# mass    : 13.01809142
+# mass    : 12.99945142
 # charge  : 1
 # Produced by following 2 reactions:
 
@@ -847,7 +833,7 @@
 --------------------------------------------
  CH₂⁺
 --------------------------------------------
-# mass    : 14.02603142
+# mass    : 13.99945142
 # charge  : 1
 # Produced by following 3 reactions:
 
@@ -866,7 +852,7 @@
 --------------------------------------------
  CH₂
 --------------------------------------------
-# mass    : 14.02658000
+# mass    : 14.00000000
 # charge  : 0
 # Produced by following 8 reactions:
 
@@ -881,12 +867,12 @@
 
 # Lost by following 1 reactions:
 
-    * R400    Si      +  CH₂      →   SiCH    +  H               
+    * R397    Si      +  CH₂      →   SiCH    +  H               
 
 --------------------------------------------
  CH₃
 --------------------------------------------
-# mass    : 15.03452000
+# mass    : 15.00000000
 # charge  : 0
 # Produced by following 25 reactions:
 
@@ -910,23 +896,23 @@
     * R208    C₂H₆⁺ + C₂H₂      →  C₃H₅⁺ + CH₃           
     * R212    C₂H₆⁺ + C₂H₆      →  C₃H₉⁺ + CH₃           
     * R244    Na      +  CH₃⁺     →   Na⁺     +  CH₃            
-    * R286    Fe      +  CH₃⁺     →   Fe⁺     +  CH₃            
-    * R327    Mg      +  CH₃⁺     →   Mg⁺     +  CH₃            
-    * R368    Si⁺     +  C₂H₄     →   SiCnHm⁺ +  CH₃     +  H    
-    * R371    Si⁺     +  C₂H₆     →   SiCnHm⁺ +  CH₃             
-    * R372    Si⁺     +  C₂H₆     →   SiCnHm⁺ +  CH₃     +  H₂   
+    * R285    Fe      +  CH₃⁺     →   Fe⁺     +  CH₃            
+    * R326    Mg      +  CH₃⁺     →   Mg⁺     +  CH₃            
+    * R367    Si⁺     +  C₂H₄     →   SiCnHm⁺ +  CH₃     +  H    
+    * R370    Si⁺     +  C₂H₆     →   SiCnHm⁺ +  CH₃             
+    * R371    Si⁺     +  C₂H₆     →   SiCnHm⁺ +  CH₃     +  H₂   
 
 # Lost by following 4 reactions:
 
     * R237    Na      +  CH₃     +  H₂       →   NaCH₃   +  H₂  
-    * R364    Si⁺     +  CH₃      →   SiCnHm⁺ +  H               
-    * R365    Si⁺     +  CH₃      →   SiCnHm⁺ +  H₂              
-    * R401    Si      +  CH₃      →   SiCH₂   +  H               
+    * R363    Si⁺     +  CH₃      →   SiCnHm⁺ +  H               
+    * R364    Si⁺     +  CH₃      →   SiCnHm⁺ +  H₂              
+    * R398    Si      +  CH₃      →   SiCH₂   +  H               
 
 --------------------------------------------
  CH₅⁺
 --------------------------------------------
-# mass    : 17.04985142
+# mass    : 16.99945142
 # charge  : 1
 # Produced by following 6 reactions:
 
@@ -946,14 +932,14 @@
     * R153    CH₅⁺  + C₂H₄      →  C₂H₅⁺ + CH₄           
     * R154    CH₅⁺  + C₂H₆      →  C₂H₅⁺ + CH₄ +  H₂     
     * R155    CH₅⁺  + C₂H₆      →  C₂H₇⁺ + CH₄           
-    * R328    Mg      +  CH₅⁺     →   Mg⁺     +  CH₄     +  H   
-    * R380    Si      +  CH₅⁺     →   SiCnHm⁺ +  H               
-    * R381    Si      +  CH₅⁺     →   SiCnHm⁺ +  H₂              
+    * R327    Mg      +  CH₅⁺     →   Mg⁺     +  CH₄     +  H   
+    * R378    Si      +  CH₅⁺     →   SiCnHm⁺ +  H               
+    * R379    Si      +  CH₅⁺     →   SiCnHm⁺ +  H₂              
 
 --------------------------------------------
  C₂⁺
 --------------------------------------------
-# mass    : 24.02085142
+# mass    : 23.99945142
 # charge  : 1
 # Produced by following 1 reactions:
 
@@ -974,7 +960,7 @@
 --------------------------------------------
  C₂H₇⁺
 --------------------------------------------
-# mass    : 31.07643142
+# mass    : 30.99945142
 # charge  : 1
 # Produced by following 1 reactions:
 
@@ -989,7 +975,7 @@
 --------------------------------------------
  C₃H⁺
 --------------------------------------------
-# mass    : 37.03949142
+# mass    : 36.99945142
 # charge  : 1
 # Produced by following 3 reactions:
 
@@ -1001,14 +987,14 @@
 
     * R47     C₃H⁺  + e⁻  →  products        
     * R246    Na      +  C₃H⁺     →   Na⁺     +  products       
-    * R288    Fe      +  C₃H⁺     →   Fe⁺     +  products       
-    * R330    Mg      +  C₃H⁺     →   Mg⁺     +  products       
-    * R384    Si      +  C₃H⁺     →   SiCnHm⁺ +  products        
+    * R287    Fe      +  C₃H⁺     →   Fe⁺     +  products       
+    * R329    Mg      +  C₃H⁺     →   Mg⁺     +  products       
+    * R382    Si      +  C₃H⁺     →   SiCnHm⁺ +  products        
 
 --------------------------------------------
  C₃H₂⁺
 --------------------------------------------
-# mass    : 38.04743142
+# mass    : 37.99945142
 # charge  : 1
 # Produced by following 3 reactions:
 
@@ -1020,14 +1006,14 @@
 
     * R48     C₃H₂⁺ + e⁻  →  products        
     * R247    Na      +  C₃H₂⁺    →   Na⁺     +  products       
-    * R289    Fe      +  C₃H₂⁺    →   Fe⁺     +  products       
-    * R331    Mg      +  C₃H₂⁺    →   Mg⁺     +  products       
-    * R385    Si      +  C₃H₂⁺    →   SiCnHm⁺ +  products        
+    * R288    Fe      +  C₃H₂⁺    →   Fe⁺     +  products       
+    * R330    Mg      +  C₃H₂⁺    →   Mg⁺     +  products       
+    * R383    Si      +  C₃H₂⁺    →   SiCnHm⁺ +  products        
 
 --------------------------------------------
  C₃H₃⁺
 --------------------------------------------
-# mass    : 39.05537142
+# mass    : 38.99945142
 # charge  : 1
 # Produced by following 12 reactions:
 
@@ -1048,14 +1034,14 @@
 
     * R49     C₃H₃⁺ + e⁻  →  products        
     * R248    Na      +  C₃H₃⁺    →   Na⁺     +  products       
-    * R290    Fe      +  C₃H₃⁺    →   Fe⁺     +  products       
-    * R332    Mg      +  C₃H₃⁺    →   Mg⁺     +  products       
-    * R386    Si      +  C₃H₃⁺    →   SiCnHm⁺ +  products        
+    * R289    Fe      +  C₃H₃⁺    →   Fe⁺     +  products       
+    * R331    Mg      +  C₃H₃⁺    →   Mg⁺     +  products       
+    * R384    Si      +  C₃H₃⁺    →   SiCnHm⁺ +  products        
 
 --------------------------------------------
  C₃H₄⁺
 --------------------------------------------
-# mass    : 40.06331142
+# mass    : 39.99945142
 # charge  : 1
 # Produced by following 3 reactions:
 
@@ -1067,14 +1053,14 @@
 
     * R50     C₃H₄⁺ + e⁻  →  products        
     * R249    Na      +  C₃H₄⁺    →   Na⁺     +  products       
-    * R291    Fe      +  C₃H₄⁺    →   Fe⁺     +  products       
-    * R333    Mg      +  C₃H₄⁺    →   Mg⁺     +  products       
-    * R387    Si      +  C₃H₄⁺    →   SiCnHm⁺ +  products        
+    * R290    Fe      +  C₃H₄⁺    →   Fe⁺     +  products       
+    * R332    Mg      +  C₃H₄⁺    →   Mg⁺     +  products       
+    * R385    Si      +  C₃H₄⁺    →   SiCnHm⁺ +  products        
 
 --------------------------------------------
  C₃H₅⁺
 --------------------------------------------
-# mass    : 41.07125142
+# mass    : 40.99945142
 # charge  : 1
 # Produced by following 11 reactions:
 
@@ -1094,14 +1080,14 @@
 
     * R51     C₃H₅⁺ + e⁻  →  products        
     * R250    Na      +  C₃H₅⁺    →   Na⁺     +  products       
-    * R292    Fe      +  C₃H₅⁺    →   Fe⁺     +  products       
-    * R334    Mg      +  C₃H₅⁺    →   Mg⁺     +  products       
-    * R388    Si      +  C₃H₅⁺    →   SiCnHm⁺ +  products        
+    * R291    Fe      +  C₃H₅⁺    →   Fe⁺     +  products       
+    * R333    Mg      +  C₃H₅⁺    →   Mg⁺     +  products       
+    * R386    Si      +  C₃H₅⁺    →   SiCnHm⁺ +  products        
 
 --------------------------------------------
  C₃H₆⁺
 --------------------------------------------
-# mass    : 42.07919142
+# mass    : 41.99945142
 # charge  : 1
 # Produced by following 1 reactions:
 
@@ -1111,14 +1097,14 @@
 
     * R52     C₃H₆⁺ + e⁻  →  products        
     * R251    Na      +  C₃H₆⁺    →   Na⁺     +  products       
-    * R293    Fe      +  C₃H₆⁺    →   Fe⁺     +  products       
-    * R335    Mg      +  C₃H₆⁺    →   Mg⁺     +  products       
-    * R389    Si      +  C₃H₆⁺    →   SiCnHm⁺ +  products        
+    * R292    Fe      +  C₃H₆⁺    →   Fe⁺     +  products       
+    * R334    Mg      +  C₃H₆⁺    →   Mg⁺     +  products       
+    * R387    Si      +  C₃H₆⁺    →   SiCnHm⁺ +  products        
 
 --------------------------------------------
  C₃H₇⁺
 --------------------------------------------
-# mass    : 43.08713142
+# mass    : 42.99945142
 # charge  : 1
 # Produced by following 3 reactions:
 
@@ -1130,14 +1116,14 @@
 
     * R53     C₃H₇⁺ + e⁻  →  products        
     * R252    Na      +  C₃H₇⁺    →   Na⁺     +  products       
-    * R294    Fe      +  C₃H₇⁺    →   Fe⁺     +  products       
-    * R336    Mg      +  C₃H₇⁺    →   Mg⁺     +  products       
-    * R390    Si      +  C₃H₇⁺    →   SiCnHm⁺ +  products        
+    * R293    Fe      +  C₃H₇⁺    →   Fe⁺     +  products       
+    * R335    Mg      +  C₃H₇⁺    →   Mg⁺     +  products       
+    * R388    Si      +  C₃H₇⁺    →   SiCnHm⁺ +  products        
 
 --------------------------------------------
  C₃H₈⁺
 --------------------------------------------
-# mass    : 44.09507142
+# mass    : 43.99945142
 # charge  : 1
 # Produced by following 1 reactions:
 
@@ -1147,14 +1133,14 @@
 
     * R54     C₃H₈⁺ + e⁻  →  products        
     * R253    Na      +  C₃H₈⁺    →   Na⁺     +  products       
-    * R295    Fe      +  C₃H₈⁺    →   Fe⁺     +  products       
-    * R337    Mg      +  C₃H₈⁺    →   Mg⁺     +  products       
-    * R391    Si      +  C₃H₈⁺    →   SiCnHm⁺ +  products        
+    * R294    Fe      +  C₃H₈⁺    →   Fe⁺     +  products       
+    * R336    Mg      +  C₃H₈⁺    →   Mg⁺     +  products       
+    * R389    Si      +  C₃H₈⁺    →   SiCnHm⁺ +  products        
 
 --------------------------------------------
  C₃H₉⁺
 --------------------------------------------
-# mass    : 45.10301142
+# mass    : 44.99945142
 # charge  : 1
 # Produced by following 1 reactions:
 
@@ -1164,14 +1150,14 @@
 
     * R55     C₃H₉⁺ + e⁻  →  products        
     * R254    Na      +  C₃H₉⁺    →   Na⁺     +  products       
-    * R296    Fe      +  C₃H₉⁺    →   Fe⁺     +  products       
-    * R338    Mg      +  C₃H₉⁺    →   Mg⁺     +  products       
-    * R392    Si      +  C₃H₉⁺    →   SiCnHm⁺ +  products        
+    * R295    Fe      +  C₃H₉⁺    →   Fe⁺     +  products       
+    * R337    Mg      +  C₃H₉⁺    →   Mg⁺     +  products       
+    * R390    Si      +  C₃H₉⁺    →   SiCnHm⁺ +  products        
 
 --------------------------------------------
  C₄H⁺
 --------------------------------------------
-# mass    : 49.05019142
+# mass    : 48.99945142
 # charge  : 1
 # Produced by following 1 reactions:
 
@@ -1181,14 +1167,14 @@
 
     * R56     C₄H⁺  + e⁻  →  products        
     * R255    Na      +  C₄H⁺     →   Na⁺     +  products       
-    * R297    Fe      +  C₄H⁺     →   Fe⁺     +  products       
-    * R339    Mg      +  C₄H⁺     →   Mg⁺     +  products       
-    * R393    Si      +  C₄H⁺     →   SiCnHm⁺ +  products        
+    * R296    Fe      +  C₄H⁺     →   Fe⁺     +  products       
+    * R338    Mg      +  C₄H⁺     →   Mg⁺     +  products       
+    * R391    Si      +  C₄H⁺     →   SiCnHm⁺ +  products        
 
 --------------------------------------------
  C₄H₂⁺
 --------------------------------------------
-# mass    : 50.05813142
+# mass    : 49.99945142
 # charge  : 1
 # Produced by following 2 reactions:
 
@@ -1199,14 +1185,14 @@
 
     * R57     C₄H₂⁺ + e⁻  →  products        
     * R256    Na      +  C₄H₂⁺    →   Na⁺     +  products       
-    * R298    Fe      +  C₄H₂⁺    →   Fe⁺     +  products       
-    * R340    Mg      +  C₄H₂⁺    →   Mg⁺     +  products       
-    * R394    Si      +  C₄H₂⁺    →   SiCnHm⁺ +  products        
+    * R297    Fe      +  C₄H₂⁺    →   Fe⁺     +  products       
+    * R339    Mg      +  C₄H₂⁺    →   Mg⁺     +  products       
+    * R392    Si      +  C₄H₂⁺    →   SiCnHm⁺ +  products        
 
 --------------------------------------------
  C₄H₃⁺
 --------------------------------------------
-# mass    : 51.06607142
+# mass    : 50.99945142
 # charge  : 1
 # Produced by following 2 reactions:
 
@@ -1217,14 +1203,14 @@
 
     * R58     C₄H₃⁺ + e⁻  →  products        
     * R257    Na      +  C₄H₃⁺    →   Na⁺     +  products       
-    * R299    Fe      +  C₄H₃⁺    →   Fe⁺     +  products       
-    * R341    Mg      +  C₄H₃⁺    →   Mg⁺     +  products       
-    * R395    Si      +  C₄H₃⁺    →   SiCnHm⁺ +  products        
+    * R298    Fe      +  C₄H₃⁺    →   Fe⁺     +  products       
+    * R340    Mg      +  C₄H₃⁺    →   Mg⁺     +  products       
+    * R393    Si      +  C₄H₃⁺    →   SiCnHm⁺ +  products        
 
 --------------------------------------------
  C₄H₅⁺
 --------------------------------------------
-# mass    : 53.08195142
+# mass    : 52.99945142
 # charge  : 1
 # Produced by following 4 reactions:
 
@@ -1237,14 +1223,14 @@
 
     * R59     C₄H₅⁺ + e⁻  →  products        
     * R258    Na      +  C₄H₅⁺    →   Na⁺     +  products       
-    * R300    Fe      +  C₄H₅⁺    →   Fe⁺     +  products       
-    * R342    Mg      +  C₄H₅⁺    →   Mg⁺     +  products       
-    * R396    Si      +  C₄H₅⁺    →   SiCnHm⁺ +  products        
+    * R299    Fe      +  C₄H₅⁺    →   Fe⁺     +  products       
+    * R341    Mg      +  C₄H₅⁺    →   Mg⁺     +  products       
+    * R394    Si      +  C₄H₅⁺    →   SiCnHm⁺ +  products        
 
 --------------------------------------------
  C₄H₇⁺
 --------------------------------------------
-# mass    : 55.09783142
+# mass    : 54.99945142
 # charge  : 1
 # Produced by following 4 reactions:
 
@@ -1257,14 +1243,14 @@
 
     * R60     C₄H₇⁺ + e⁻  →  products        
     * R259    Na      +  C₄H₇⁺    →   Na⁺     +  products       
-    * R301    Fe      +  C₄H₇⁺    →   Fe⁺     +  products       
-    * R343    Mg      +  C₄H₇⁺    →   Mg⁺     +  products       
-    * R397    Si      +  C₄H₇⁺    →   SiCnHm⁺ +  products        
+    * R300    Fe      +  C₄H₇⁺    →   Fe⁺     +  products       
+    * R342    Mg      +  C₄H₇⁺    →   Mg⁺     +  products       
+    * R395    Si      +  C₄H₇⁺    →   SiCnHm⁺ +  products        
 
 --------------------------------------------
  C₄H₉⁺
 --------------------------------------------
-# mass    : 57.11371142
+# mass    : 56.99945142
 # charge  : 1
 # Produced by following 1 reactions:
 
@@ -1274,26 +1260,26 @@
 
     * R61     C₄H₉⁺ + e⁻  →  products        
     * R260    Na      +  C₄H₉⁺    →   Na⁺     +  products       
-    * R302    Fe      +  C₄H₉⁺    →   Fe⁺     +  products       
-    * R344    Mg      +  C₄H₉⁺    →   Mg⁺     +  products       
-    * R398    Si      +  C₄H₉⁺    →   SiCnHm⁺ +  products        
+    * R301    Fe      +  C₄H₉⁺    →   Fe⁺     +  products       
+    * R343    Mg      +  C₄H₉⁺    →   Mg⁺     +  products       
+    * R396    Si      +  C₄H₉⁺    →   SiCnHm⁺ +  products        
 
 --------------------------------------------
  Na
 --------------------------------------------
-# mass    : 22.98900000
+# mass    : 23.00000000
 # charge  : 0
 # Produced by following 7 reactions:
 
     * R224    Meteoroid            →   Na                        
-    * R263    NaH     +  H        →   Na      +  H₂             
-    * R264    Na⁺     +  e⁻       →   Na                        
-    * R265    NaH₂⁺   +  e⁻       →   Na      +  H₂             
-    * R267    NaCH₄⁺  +  e⁻       →   Na      +  products       
-    * R268    NaC₂H₂⁺ +  e⁻       →   Na      +  products       
-    * R269    NaC₂H₄⁺ +  e⁻       →   Na      +  products       
+    * R262    NaH     +  H        →   Na      +  H₂             
+    * R263    Na⁺     +  e⁻       →   Na                        
+    * R264    NaH₂⁺   +  e⁻       →   Na      +  H₂             
+    * R266    NaCH₄⁺  +  e⁻       →   Na      +  products       
+    * R267    NaC₂H₂⁺ +  e⁻       →   Na      +  products       
+    * R268    NaC₂H₄⁺ +  e⁻       →   Na      +  products       
 
-# Lost by following 27 reactions:
+# Lost by following 26 reactions:
 
     * R220     Na      +  hv       →   Na⁺     +  e⁻             
     * R232    Na                   →   Condensation              
@@ -1319,16 +1305,15 @@
     * R259    Na      +  C₄H₇⁺    →   Na⁺     +  products       
     * R260    Na      +  C₄H₉⁺    →   Na⁺     +  products       
     * R261    Na      +  Si⁺      →   Na⁺     +  Si             
-    * R262    Na      +  H₃O⁺     →   Na⁺     +  H₂O     +  H   
-    * R280    Fe⁺     +  Na       →   Fe      +  Na⁺            
-    * R321    Mg⁺     +  Na       →   Mg      +  Na⁺            
+    * R279    Fe⁺     +  Na       →   Fe      +  Na⁺            
+    * R320    Mg⁺     +  Na       →   Mg      +  Na⁺            
 
 --------------------------------------------
  Na⁺
 --------------------------------------------
-# mass    : 22.98845142
+# mass    : 22.99945142
 # charge  : 1
-# Produced by following 25 reactions:
+# Produced by following 24 reactions:
 
     * R220     Na      +  hv       →   Na⁺     +  e⁻             
     * R228    Meteoroid            →   Na⁺     + e⁻              
@@ -1352,9 +1337,8 @@
     * R259    Na      +  C₄H₇⁺    →   Na⁺     +  products       
     * R260    Na      +  C₄H₉⁺    →   Na⁺     +  products       
     * R261    Na      +  Si⁺      →   Na⁺     +  Si             
-    * R262    Na      +  H₃O⁺     →   Na⁺     +  H₂O     +  H   
-    * R280    Fe⁺     +  Na       →   Fe      +  Na⁺            
-    * R321    Mg⁺     +  Na       →   Mg      +  Na⁺            
+    * R279    Fe⁺     +  Na       →   Fe      +  Na⁺            
+    * R320    Mg⁺     +  Na       →   Mg      +  Na⁺            
 
 # Lost by following 5 reactions:
 
@@ -1362,287 +1346,285 @@
     * R239    Na⁺     +  CH₄     +  H₂       →   NaCH₄⁺  +  H₂  
     * R240    Na⁺     +  C₂H₂    +  H₂       →   NaC₂H₂⁺ +  H₂  
     * R241    Na⁺     +  C₂H₄    +  H₂       →   NaC₂H₄⁺ +  H₂  
-    * R264    Na⁺     +  e⁻       →   Na                        
+    * R263    Na⁺     +  e⁻       →   Na                        
 
 --------------------------------------------
  Fe
 --------------------------------------------
-# mass    : 55.84500000
+# mass    : 56.00000000
 # charge  : 0
 # Produced by following 10 reactions:
 
     * R225    Meteoroid            →   Fe                        
-    * R279    Fe⁺     +  C₂H₆     →   Fe      +  C₂H₄⁺   +  H₂  
-    * R280    Fe⁺     +  Na       →   Fe      +  Na⁺            
-    * R304    FeH     +  H        →   Fe      +  H₂             
-    * R305    Fe⁺     +  e⁻       →   Fe                        
-    * R306    FeH⁺    +  e⁻       →   Fe      +  H              
-    * R308    FeH₂⁺   +  e⁻       →   Fe      +  H₂             
-    * R309    FeCH₄⁺  +  e⁻       →   Fe      +  products       
-    * R310    FeC₂H₂⁺ +  e⁻       →   Fe      +  products       
-    * R311    FeC₂H₄⁺ +  e⁻       →   Fe      +  products       
+    * R278    Fe⁺     +  C₂H₆     →   Fe      +  C₂H₄⁺   +  H₂  
+    * R279    Fe⁺     +  Na       →   Fe      +  Na⁺            
+    * R303    FeH     +  H        →   Fe      +  H₂             
+    * R304    Fe⁺     +  e⁻       →   Fe                        
+    * R305    FeH⁺    +  e⁻       →   Fe      +  H              
+    * R307    FeH₂⁺   +  e⁻       →   Fe      +  H₂             
+    * R308    FeCH₄⁺  +  e⁻       →   Fe      +  products       
+    * R309    FeC₂H₂⁺ +  e⁻       →   Fe      +  products       
+    * R310    FeC₂H₄⁺ +  e⁻       →   Fe      +  products       
 
 # Lost by following 24 reactions:
 
     * R221     Fe      +  hv       →   Fe⁺     +  e⁻             
     * R233    Fe                   →   Condensation              
-    * R273    Fe      +  H       +  H₂       →   FeH     +  H₂  
-    * R283    Fe      +  H⁺       →   Fe⁺     +  H              
-    * R284    Fe      +  H₃⁺      →   Fe⁺     +  H       +  H₂  
-    * R285    Fe      +  C⁺       →   Fe⁺     +  C              
-    * R286    Fe      +  CH₃⁺     →   Fe⁺     +  CH₃            
-    * R287    Fe      +  C₂H₂⁺    →   Fe⁺     +  C₂H₂           
-    * R288    Fe      +  C₃H⁺     →   Fe⁺     +  products       
-    * R289    Fe      +  C₃H₂⁺    →   Fe⁺     +  products       
-    * R290    Fe      +  C₃H₃⁺    →   Fe⁺     +  products       
-    * R291    Fe      +  C₃H₄⁺    →   Fe⁺     +  products       
-    * R292    Fe      +  C₃H₅⁺    →   Fe⁺     +  products       
-    * R293    Fe      +  C₃H₆⁺    →   Fe⁺     +  products       
-    * R294    Fe      +  C₃H₇⁺    →   Fe⁺     +  products       
-    * R295    Fe      +  C₃H₈⁺    →   Fe⁺     +  products       
-    * R296    Fe      +  C₃H₉⁺    →   Fe⁺     +  products       
-    * R297    Fe      +  C₄H⁺     →   Fe⁺     +  products       
-    * R298    Fe      +  C₄H₂⁺    →   Fe⁺     +  products       
-    * R299    Fe      +  C₄H₃⁺    →   Fe⁺     +  products       
-    * R300    Fe      +  C₄H₅⁺    →   Fe⁺     +  products       
-    * R301    Fe      +  C₄H₇⁺    →   Fe⁺     +  products       
-    * R302    Fe      +  C₄H₉⁺    →   Fe⁺     +  products       
-    * R303    Fe      +  Si⁺      →   Fe⁺     +  Si             
+    * R272    Fe      +  H       +  H₂       →   FeH     +  H₂  
+    * R282    Fe      +  H⁺       →   Fe⁺     +  H              
+    * R283    Fe      +  H₃⁺      →   Fe⁺     +  H       +  H₂  
+    * R284    Fe      +  C⁺       →   Fe⁺     +  C              
+    * R285    Fe      +  CH₃⁺     →   Fe⁺     +  CH₃            
+    * R286    Fe      +  C₂H₂⁺    →   Fe⁺     +  C₂H₂           
+    * R287    Fe      +  C₃H⁺     →   Fe⁺     +  products       
+    * R288    Fe      +  C₃H₂⁺    →   Fe⁺     +  products       
+    * R289    Fe      +  C₃H₃⁺    →   Fe⁺     +  products       
+    * R290    Fe      +  C₃H₄⁺    →   Fe⁺     +  products       
+    * R291    Fe      +  C₃H₅⁺    →   Fe⁺     +  products       
+    * R292    Fe      +  C₃H₆⁺    →   Fe⁺     +  products       
+    * R293    Fe      +  C₃H₇⁺    →   Fe⁺     +  products       
+    * R294    Fe      +  C₃H₈⁺    →   Fe⁺     +  products       
+    * R295    Fe      +  C₃H₉⁺    →   Fe⁺     +  products       
+    * R296    Fe      +  C₄H⁺     →   Fe⁺     +  products       
+    * R297    Fe      +  C₄H₂⁺    →   Fe⁺     +  products       
+    * R298    Fe      +  C₄H₃⁺    →   Fe⁺     +  products       
+    * R299    Fe      +  C₄H₅⁺    →   Fe⁺     +  products       
+    * R300    Fe      +  C₄H₇⁺    →   Fe⁺     +  products       
+    * R301    Fe      +  C₄H₉⁺    →   Fe⁺     +  products       
+    * R302    Fe      +  Si⁺      →   Fe⁺     +  Si             
 
 --------------------------------------------
  Fe⁺
 --------------------------------------------
-# mass    : 55.84445142
+# mass    : 55.99945142
 # charge  : 1
 # Produced by following 24 reactions:
 
     * R221     Fe      +  hv       →   Fe⁺     +  e⁻             
     * R229    Meteoroid            →   Fe⁺     + e⁻              
-    * R281    FeH⁺    +  H        →   Fe⁺     +  H₂             
-    * R283    Fe      +  H⁺       →   Fe⁺     +  H              
-    * R284    Fe      +  H₃⁺      →   Fe⁺     +  H       +  H₂  
-    * R285    Fe      +  C⁺       →   Fe⁺     +  C              
-    * R286    Fe      +  CH₃⁺     →   Fe⁺     +  CH₃            
-    * R287    Fe      +  C₂H₂⁺    →   Fe⁺     +  C₂H₂           
-    * R288    Fe      +  C₃H⁺     →   Fe⁺     +  products       
-    * R289    Fe      +  C₃H₂⁺    →   Fe⁺     +  products       
-    * R290    Fe      +  C₃H₃⁺    →   Fe⁺     +  products       
-    * R291    Fe      +  C₃H₄⁺    →   Fe⁺     +  products       
-    * R292    Fe      +  C₃H₅⁺    →   Fe⁺     +  products       
-    * R293    Fe      +  C₃H₆⁺    →   Fe⁺     +  products       
-    * R294    Fe      +  C₃H₇⁺    →   Fe⁺     +  products       
-    * R295    Fe      +  C₃H₈⁺    →   Fe⁺     +  products       
-    * R296    Fe      +  C₃H₉⁺    →   Fe⁺     +  products       
-    * R297    Fe      +  C₄H⁺     →   Fe⁺     +  products       
-    * R298    Fe      +  C₄H₂⁺    →   Fe⁺     +  products       
-    * R299    Fe      +  C₄H₃⁺    →   Fe⁺     +  products       
-    * R300    Fe      +  C₄H₅⁺    →   Fe⁺     +  products       
-    * R301    Fe      +  C₄H₇⁺    →   Fe⁺     +  products       
-    * R302    Fe      +  C₄H₉⁺    →   Fe⁺     +  products       
-    * R303    Fe      +  Si⁺      →   Fe⁺     +  Si             
+    * R280    FeH⁺    +  H        →   Fe⁺     +  H₂             
+    * R282    Fe      +  H⁺       →   Fe⁺     +  H              
+    * R283    Fe      +  H₃⁺      →   Fe⁺     +  H       +  H₂  
+    * R284    Fe      +  C⁺       →   Fe⁺     +  C              
+    * R285    Fe      +  CH₃⁺     →   Fe⁺     +  CH₃            
+    * R286    Fe      +  C₂H₂⁺    →   Fe⁺     +  C₂H₂           
+    * R287    Fe      +  C₃H⁺     →   Fe⁺     +  products       
+    * R288    Fe      +  C₃H₂⁺    →   Fe⁺     +  products       
+    * R289    Fe      +  C₃H₃⁺    →   Fe⁺     +  products       
+    * R290    Fe      +  C₃H₄⁺    →   Fe⁺     +  products       
+    * R291    Fe      +  C₃H₅⁺    →   Fe⁺     +  products       
+    * R292    Fe      +  C₃H₆⁺    →   Fe⁺     +  products       
+    * R293    Fe      +  C₃H₇⁺    →   Fe⁺     +  products       
+    * R294    Fe      +  C₃H₈⁺    →   Fe⁺     +  products       
+    * R295    Fe      +  C₃H₉⁺    →   Fe⁺     +  products       
+    * R296    Fe      +  C₄H⁺     →   Fe⁺     +  products       
+    * R297    Fe      +  C₄H₂⁺    →   Fe⁺     +  products       
+    * R298    Fe      +  C₄H₃⁺    →   Fe⁺     +  products       
+    * R299    Fe      +  C₄H₅⁺    →   Fe⁺     +  products       
+    * R300    Fe      +  C₄H₇⁺    →   Fe⁺     +  products       
+    * R301    Fe      +  C₄H₉⁺    →   Fe⁺     +  products       
+    * R302    Fe      +  Si⁺      →   Fe⁺     +  Si             
 
 # Lost by following 8 reactions:
 
-    * R274    Fe⁺     +  H       +  H₂       →   FeH⁺    +  H₂  
-    * R275    Fe⁺     +  H₂      +  H₂       →   FeH₂⁺   +  H₂  
-    * R276    Fe⁺     +  CH₄     +  H₂       →   FeCH₄⁺  +  H₂  
-    * R277    Fe⁺     +  C₂H₂    +  H₂       →   FeC₂H₂⁺ +  H₂  
-    * R278    Fe⁺     +  C₂H₄    +  H₂       →   FeC₂H₄⁺ +  H₂  
-    * R279    Fe⁺     +  C₂H₆     →   Fe      +  C₂H₄⁺   +  H₂  
-    * R280    Fe⁺     +  Na       →   Fe      +  Na⁺            
-    * R305    Fe⁺     +  e⁻       →   Fe                        
+    * R273    Fe⁺     +  H       +  H₂       →   FeH⁺    +  H₂  
+    * R274    Fe⁺     +  H₂      +  H₂       →   FeH₂⁺   +  H₂  
+    * R275    Fe⁺     +  CH₄     +  H₂       →   FeCH₄⁺  +  H₂  
+    * R276    Fe⁺     +  C₂H₂    +  H₂       →   FeC₂H₂⁺ +  H₂  
+    * R277    Fe⁺     +  C₂H₄    +  H₂       →   FeC₂H₄⁺ +  H₂  
+    * R278    Fe⁺     +  C₂H₆     →   Fe      +  C₂H₄⁺   +  H₂  
+    * R279    Fe⁺     +  Na       →   Fe      +  Na⁺            
+    * R304    Fe⁺     +  e⁻       →   Fe                        
 
 --------------------------------------------
  Mg
 --------------------------------------------
-# mass    : 24.30500000
+# mass    : 24.00000000
 # charge  : 0
 # Produced by following 9 reactions:
 
     * R226    Meteoroid            →   Mg                        
-    * R321    Mg⁺     +  Na       →   Mg      +  Na⁺            
-    * R346    MgH     +  H        →   Mg      +  H₂             
-    * R347    Mg⁺     +  e⁻       →   Mg                        
-    * R348    MgH⁺    +  e⁻       →   Mg      +  H              
-    * R349    MgH₂⁺   +  e⁻       →   Mg      +  H₂             
-    * R351    MgCH₄⁺  +  e⁻       →   Mg      +  products       
-    * R352    MgC₂H₂⁺ +  e⁻       →   Mg      +  products       
-    * R353    MgC₂H₄⁺ +  e⁻       →   Mg      +  products       
+    * R320    Mg⁺     +  Na       →   Mg      +  Na⁺            
+    * R345    MgH     +  H        →   Mg      +  H₂             
+    * R346    Mg⁺     +  e⁻       →   Mg                        
+    * R347    MgH⁺    +  e⁻       →   Mg      +  H              
+    * R348    MgH₂⁺   +  e⁻       →   Mg      +  H₂             
+    * R350    MgCH₄⁺  +  e⁻       →   Mg      +  products       
+    * R351    MgC₂H₂⁺ +  e⁻       →   Mg      +  products       
+    * R352    MgC₂H₄⁺ +  e⁻       →   Mg      +  products       
 
 # Lost by following 25 reactions:
 
     * R222     Mg      +  hv       →   Mg⁺     +  e⁻             
     * R234    Mg                   →   Condensation              
-    * R315    Mg      +  H       +  H₂       →   MgH     +  H₂  
-    * R324    Mg      +  H⁺       →   Mg⁺     +  H              
-    * R325    Mg      +  H₃⁺      →   Mg⁺     +  H       +  H₂  
-    * R326    Mg      +  C⁺       →   Mg⁺     +  C              
-    * R327    Mg      +  CH₃⁺     →   Mg⁺     +  CH₃            
-    * R328    Mg      +  CH₅⁺     →   Mg⁺     +  CH₄     +  H   
-    * R329    Mg      +  C₂H₂⁺    →   Mg⁺     +  C₂H₂           
-    * R330    Mg      +  C₃H⁺     →   Mg⁺     +  products       
-    * R331    Mg      +  C₃H₂⁺    →   Mg⁺     +  products       
-    * R332    Mg      +  C₃H₃⁺    →   Mg⁺     +  products       
-    * R333    Mg      +  C₃H₄⁺    →   Mg⁺     +  products       
-    * R334    Mg      +  C₃H₅⁺    →   Mg⁺     +  products       
-    * R335    Mg      +  C₃H₆⁺    →   Mg⁺     +  products       
-    * R336    Mg      +  C₃H₇⁺    →   Mg⁺     +  products       
-    * R337    Mg      +  C₃H₈⁺    →   Mg⁺     +  products       
-    * R338    Mg      +  C₃H₉⁺    →   Mg⁺     +  products       
-    * R339    Mg      +  C₄H⁺     →   Mg⁺     +  products       
-    * R340    Mg      +  C₄H₂⁺    →   Mg⁺     +  products       
-    * R341    Mg      +  C₄H₃⁺    →   Mg⁺     +  products       
-    * R342    Mg      +  C₄H₅⁺    →   Mg⁺     +  products       
-    * R343    Mg      +  C₄H₇⁺    →   Mg⁺     +  products       
-    * R344    Mg      +  C₄H₉⁺    →   Mg⁺     +  products       
-    * R345    Mg      +  Si⁺      →   Mg⁺     +  Si             
+    * R314    Mg      +  H       +  H₂       →   MgH     +  H₂  
+    * R323    Mg      +  H⁺       →   Mg⁺     +  H              
+    * R324    Mg      +  H₃⁺      →   Mg⁺     +  H       +  H₂  
+    * R325    Mg      +  C⁺       →   Mg⁺     +  C              
+    * R326    Mg      +  CH₃⁺     →   Mg⁺     +  CH₃            
+    * R327    Mg      +  CH₅⁺     →   Mg⁺     +  CH₄     +  H   
+    * R328    Mg      +  C₂H₂⁺    →   Mg⁺     +  C₂H₂           
+    * R329    Mg      +  C₃H⁺     →   Mg⁺     +  products       
+    * R330    Mg      +  C₃H₂⁺    →   Mg⁺     +  products       
+    * R331    Mg      +  C₃H₃⁺    →   Mg⁺     +  products       
+    * R332    Mg      +  C₃H₄⁺    →   Mg⁺     +  products       
+    * R333    Mg      +  C₃H₅⁺    →   Mg⁺     +  products       
+    * R334    Mg      +  C₃H₆⁺    →   Mg⁺     +  products       
+    * R335    Mg      +  C₃H₇⁺    →   Mg⁺     +  products       
+    * R336    Mg      +  C₃H₈⁺    →   Mg⁺     +  products       
+    * R337    Mg      +  C₃H₉⁺    →   Mg⁺     +  products       
+    * R338    Mg      +  C₄H⁺     →   Mg⁺     +  products       
+    * R339    Mg      +  C₄H₂⁺    →   Mg⁺     +  products       
+    * R340    Mg      +  C₄H₃⁺    →   Mg⁺     +  products       
+    * R341    Mg      +  C₄H₅⁺    →   Mg⁺     +  products       
+    * R342    Mg      +  C₄H₇⁺    →   Mg⁺     +  products       
+    * R343    Mg      +  C₄H₉⁺    →   Mg⁺     +  products       
+    * R344    Mg      +  Si⁺      →   Mg⁺     +  Si             
 
 --------------------------------------------
  Mg⁺
 --------------------------------------------
-# mass    : 24.30445142
+# mass    : 23.99945142
 # charge  : 1
 # Produced by following 25 reactions:
 
     * R222     Mg      +  hv       →   Mg⁺     +  e⁻             
     * R230    Meteoroid            →   Mg⁺     + e⁻              
-    * R322    MgH⁺    +  H        →   Mg⁺     +  H₂             
-    * R324    Mg      +  H⁺       →   Mg⁺     +  H              
-    * R325    Mg      +  H₃⁺      →   Mg⁺     +  H       +  H₂  
-    * R326    Mg      +  C⁺       →   Mg⁺     +  C              
-    * R327    Mg      +  CH₃⁺     →   Mg⁺     +  CH₃            
-    * R328    Mg      +  CH₅⁺     →   Mg⁺     +  CH₄     +  H   
-    * R329    Mg      +  C₂H₂⁺    →   Mg⁺     +  C₂H₂           
-    * R330    Mg      +  C₃H⁺     →   Mg⁺     +  products       
-    * R331    Mg      +  C₃H₂⁺    →   Mg⁺     +  products       
-    * R332    Mg      +  C₃H₃⁺    →   Mg⁺     +  products       
-    * R333    Mg      +  C₃H₄⁺    →   Mg⁺     +  products       
-    * R334    Mg      +  C₃H₅⁺    →   Mg⁺     +  products       
-    * R335    Mg      +  C₃H₆⁺    →   Mg⁺     +  products       
-    * R336    Mg      +  C₃H₇⁺    →   Mg⁺     +  products       
-    * R337    Mg      +  C₃H₈⁺    →   Mg⁺     +  products       
-    * R338    Mg      +  C₃H₉⁺    →   Mg⁺     +  products       
-    * R339    Mg      +  C₄H⁺     →   Mg⁺     +  products       
-    * R340    Mg      +  C₄H₂⁺    →   Mg⁺     +  products       
-    * R341    Mg      +  C₄H₃⁺    →   Mg⁺     +  products       
-    * R342    Mg      +  C₄H₅⁺    →   Mg⁺     +  products       
-    * R343    Mg      +  C₄H₇⁺    →   Mg⁺     +  products       
-    * R344    Mg      +  C₄H₉⁺    →   Mg⁺     +  products       
-    * R345    Mg      +  Si⁺      →   Mg⁺     +  Si             
+    * R321    MgH⁺    +  H        →   Mg⁺     +  H₂             
+    * R323    Mg      +  H⁺       →   Mg⁺     +  H              
+    * R324    Mg      +  H₃⁺      →   Mg⁺     +  H       +  H₂  
+    * R325    Mg      +  C⁺       →   Mg⁺     +  C              
+    * R326    Mg      +  CH₃⁺     →   Mg⁺     +  CH₃            
+    * R327    Mg      +  CH₅⁺     →   Mg⁺     +  CH₄     +  H   
+    * R328    Mg      +  C₂H₂⁺    →   Mg⁺     +  C₂H₂           
+    * R329    Mg      +  C₃H⁺     →   Mg⁺     +  products       
+    * R330    Mg      +  C₃H₂⁺    →   Mg⁺     +  products       
+    * R331    Mg      +  C₃H₃⁺    →   Mg⁺     +  products       
+    * R332    Mg      +  C₃H₄⁺    →   Mg⁺     +  products       
+    * R333    Mg      +  C₃H₅⁺    →   Mg⁺     +  products       
+    * R334    Mg      +  C₃H₆⁺    →   Mg⁺     +  products       
+    * R335    Mg      +  C₃H₇⁺    →   Mg⁺     +  products       
+    * R336    Mg      +  C₃H₈⁺    →   Mg⁺     +  products       
+    * R337    Mg      +  C₃H₉⁺    →   Mg⁺     +  products       
+    * R338    Mg      +  C₄H⁺     →   Mg⁺     +  products       
+    * R339    Mg      +  C₄H₂⁺    →   Mg⁺     +  products       
+    * R340    Mg      +  C₄H₃⁺    →   Mg⁺     +  products       
+    * R341    Mg      +  C₄H₅⁺    →   Mg⁺     +  products       
+    * R342    Mg      +  C₄H₇⁺    →   Mg⁺     +  products       
+    * R343    Mg      +  C₄H₉⁺    →   Mg⁺     +  products       
+    * R344    Mg      +  Si⁺      →   Mg⁺     +  Si             
 
 # Lost by following 7 reactions:
 
-    * R316    Mg⁺     +  H       +  H₂       →   MgH⁺    +  H₂  
-    * R317    Mg⁺     +  H₂      +  H₂       →   MgH₂⁺   +  H₂  
-    * R318    Mg⁺     +  CH₄     +  H₂       →   MgCH₄⁺  +  H₂  
-    * R319    Mg⁺     +  C₂H₂    +  H₂       →   MgC₂H₂⁺ +  H₂  
-    * R320    Mg⁺     +  C₂H₄    +  H₂       →   MgC₂H₄⁺ +  H₂  
-    * R321    Mg⁺     +  Na       →   Mg      +  Na⁺            
-    * R347    Mg⁺     +  e⁻       →   Mg                        
+    * R315    Mg⁺     +  H       +  H₂       →   MgH⁺    +  H₂  
+    * R316    Mg⁺     +  H₂      +  H₂       →   MgH₂⁺   +  H₂  
+    * R317    Mg⁺     +  CH₄     +  H₂       →   MgCH₄⁺  +  H₂  
+    * R318    Mg⁺     +  C₂H₂    +  H₂       →   MgC₂H₂⁺ +  H₂  
+    * R319    Mg⁺     +  C₂H₄    +  H₂       →   MgC₂H₄⁺ +  H₂  
+    * R320    Mg⁺     +  Na       →   Mg      +  Na⁺            
+    * R346    Mg⁺     +  e⁻       →   Mg                        
 
 --------------------------------------------
  Si
 --------------------------------------------
-# mass    : 28.08550000
+# mass    : 28.00000000
 # charge  : 0
 # Produced by following 10 reactions:
 
     * R227    Meteoroid            →   Si                        
     * R261    Na      +  Si⁺      →   Na⁺     +  Si             
-    * R303    Fe      +  Si⁺      →   Fe⁺     +  Si             
-    * R345    Mg      +  Si⁺      →   Mg⁺     +  Si             
-    * R402    SiH     +  H        →   Si      +  H₂              
-    * R403    Si⁺     +  e⁻       →   Si                         
-    * R404    SiH⁺    +  e⁻       →   Si      +  H               
-    * R405    SiH₂⁺   +  e⁻       →   Si      +  H       +  H    
-    * R407    SiH₂⁺   +  e⁻       →   Si      +  H₂              
-    * R408    SiCnHm⁺ +  e⁻       →   Si                         
+    * R302    Fe      +  Si⁺      →   Fe⁺     +  Si             
+    * R344    Mg      +  Si⁺      →   Mg⁺     +  Si             
+    * R399    SiH     +  H        →   Si      +  H₂              
+    * R400    Si⁺     +  e⁻       →   Si                         
+    * R401    SiH⁺    +  e⁻       →   Si      +  H               
+    * R402    SiH₂⁺   +  e⁻       →   Si      +  H       +  H    
+    * R404    SiH₂⁺   +  e⁻       →   Si      +  H₂              
+    * R405    SiCnHm⁺ +  e⁻       →   Si                         
 
-# Lost by following 29 reactions:
+# Lost by following 28 reactions:
 
     * R223     Si      +  hv       →   Si⁺     +  e⁻             
     * R235    Si                   →   Condensation              
-    * R357    Si      +  H       +  H₂       →   SiH     +  H₂  
-    * R376    Si      +  H⁺       →   Si⁺     +  H               
-    * R377    Si      +  H₃⁺      →   SiH⁺    +  H₂              
-    * R378    Si      +  CH₃⁺     →   SiCnHm⁺ +  H               
-    * R379    Si      +  CH₃⁺     →   SiCnHm⁺ +  H₂              
-    * R380    Si      +  CH₅⁺     →   SiCnHm⁺ +  H               
-    * R381    Si      +  CH₅⁺     →   SiCnHm⁺ +  H₂              
-    * R382    Si      +  C₂H₃⁺    →   SiCnHm⁺ +  H₂              
-    * R383    Si      +  C₂H₃⁺    →   SiCnHm⁺ +  H               
-    * R384    Si      +  C₃H⁺     →   SiCnHm⁺ +  products        
-    * R385    Si      +  C₃H₂⁺    →   SiCnHm⁺ +  products        
-    * R386    Si      +  C₃H₃⁺    →   SiCnHm⁺ +  products        
-    * R387    Si      +  C₃H₄⁺    →   SiCnHm⁺ +  products        
-    * R388    Si      +  C₃H₅⁺    →   SiCnHm⁺ +  products        
-    * R389    Si      +  C₃H₆⁺    →   SiCnHm⁺ +  products        
-    * R390    Si      +  C₃H₇⁺    →   SiCnHm⁺ +  products        
-    * R391    Si      +  C₃H₈⁺    →   SiCnHm⁺ +  products        
-    * R392    Si      +  C₃H₉⁺    →   SiCnHm⁺ +  products        
-    * R393    Si      +  C₄H⁺     →   SiCnHm⁺ +  products        
-    * R394    Si      +  C₄H₂⁺    →   SiCnHm⁺ +  products        
-    * R395    Si      +  C₄H₃⁺    →   SiCnHm⁺ +  products        
-    * R396    Si      +  C₄H₅⁺    →   SiCnHm⁺ +  products        
-    * R397    Si      +  C₄H₇⁺    →   SiCnHm⁺ +  products        
-    * R398    Si      +  C₄H₉⁺    →   SiCnHm⁺ +  products        
-    * R399    Si      +  H₃O⁺     →   SiH⁺    +  H₃O             
-    * R400    Si      +  CH₂      →   SiCH    +  H               
-    * R401    Si      +  CH₃      →   SiCH₂   +  H               
+    * R356    Si      +  H       +  H₂       →   SiH     +  H₂  
+    * R374    Si      +  H⁺       →   Si⁺     +  H               
+    * R375    Si      +  H₃⁺      →   SiH⁺    +  H₂              
+    * R376    Si      +  CH₃⁺     →   SiCnHm⁺ +  H               
+    * R377    Si      +  CH₃⁺     →   SiCnHm⁺ +  H₂              
+    * R378    Si      +  CH₅⁺     →   SiCnHm⁺ +  H               
+    * R379    Si      +  CH₅⁺     →   SiCnHm⁺ +  H₂              
+    * R380    Si      +  C₂H₃⁺    →   SiCnHm⁺ +  H₂              
+    * R381    Si      +  C₂H₃⁺    →   SiCnHm⁺ +  H               
+    * R382    Si      +  C₃H⁺     →   SiCnHm⁺ +  products        
+    * R383    Si      +  C₃H₂⁺    →   SiCnHm⁺ +  products        
+    * R384    Si      +  C₃H₃⁺    →   SiCnHm⁺ +  products        
+    * R385    Si      +  C₃H₄⁺    →   SiCnHm⁺ +  products        
+    * R386    Si      +  C₃H₅⁺    →   SiCnHm⁺ +  products        
+    * R387    Si      +  C₃H₆⁺    →   SiCnHm⁺ +  products        
+    * R388    Si      +  C₃H₇⁺    →   SiCnHm⁺ +  products        
+    * R389    Si      +  C₃H₈⁺    →   SiCnHm⁺ +  products        
+    * R390    Si      +  C₃H₉⁺    →   SiCnHm⁺ +  products        
+    * R391    Si      +  C₄H⁺     →   SiCnHm⁺ +  products        
+    * R392    Si      +  C₄H₂⁺    →   SiCnHm⁺ +  products        
+    * R393    Si      +  C₄H₃⁺    →   SiCnHm⁺ +  products        
+    * R394    Si      +  C₄H₅⁺    →   SiCnHm⁺ +  products        
+    * R395    Si      +  C₄H₇⁺    →   SiCnHm⁺ +  products        
+    * R396    Si      +  C₄H₉⁺    →   SiCnHm⁺ +  products        
+    * R397    Si      +  CH₂      →   SiCH    +  H               
+    * R398    Si      +  CH₃      →   SiCH₂   +  H               
 
 --------------------------------------------
  Si⁺
 --------------------------------------------
-# mass    : 28.08495142
+# mass    : 27.99945142
 # charge  : 1
 # Produced by following 4 reactions:
 
     * R223     Si      +  hv       →   Si⁺     +  e⁻             
     * R231    Meteoroid            →   Si⁺     + e⁻              
-    * R374    SiH⁺    +  H        →   Si⁺     +  H₂              
-    * R376    Si      +  H⁺       →   Si⁺     +  H               
+    * R372    SiH⁺    +  H        →   Si⁺     +  H₂              
+    * R374    Si      +  H⁺       →   Si⁺     +  H               
 
-# Lost by following 20 reactions:
+# Lost by following 19 reactions:
 
     * R261    Na      +  Si⁺      →   Na⁺     +  Si             
-    * R303    Fe      +  Si⁺      →   Fe⁺     +  Si             
-    * R345    Mg      +  Si⁺      →   Mg⁺     +  Si             
-    * R358    Si⁺     +  H       +  H₂       →   SiH⁺    +  H₂  
-    * R359    Si⁺     +  H₂      +  H₂       →   SiH₂⁺   +  H₂  
-    * R360    Si⁺     +  CH₄     +  H₂       →   SiCnHm⁺ +  H₂  
-    * R361    Si⁺     +  C₂H₂    +  H₂       →   SiCnHm⁺ +  H₂  
-    * R362    Si⁺     +  C₂H₄    +  H₂       →   SiCnHm⁺ +  H₂  
-    * R363    Si⁺     +  H₂       →   SiH₂⁺                      
-    * R364    Si⁺     +  CH₃      →   SiCnHm⁺ +  H               
-    * R365    Si⁺     +  CH₃      →   SiCnHm⁺ +  H₂              
-    * R366    Si⁺     +  CH₄      →   SiCnHm⁺ +  H               
-    * R367    Si⁺     +  C₂H₂     →   SiCnHm⁺ +  H               
-    * R368    Si⁺     +  C₂H₄     →   SiCnHm⁺ +  CH₃     +  H    
-    * R369    Si⁺     +  C₂H₄     →   SiCnHm⁺ +  H               
-    * R370    Si⁺     +  C₂H₆     →   SiCnHm⁺ +  CH₄             
-    * R371    Si⁺     +  C₂H₆     →   SiCnHm⁺ +  CH₃             
-    * R372    Si⁺     +  C₂H₆     →   SiCnHm⁺ +  CH₃     +  H₂   
-    * R373    Si⁺     +  H₂O      →   SiOH⁺   +  H               
-    * R403    Si⁺     +  e⁻       →   Si                         
+    * R302    Fe      +  Si⁺      →   Fe⁺     +  Si             
+    * R344    Mg      +  Si⁺      →   Mg⁺     +  Si             
+    * R357    Si⁺     +  H       +  H₂       →   SiH⁺    +  H₂  
+    * R358    Si⁺     +  H₂      +  H₂       →   SiH₂⁺   +  H₂  
+    * R359    Si⁺     +  CH₄     +  H₂       →   SiCnHm⁺ +  H₂  
+    * R360    Si⁺     +  C₂H₂    +  H₂       →   SiCnHm⁺ +  H₂  
+    * R361    Si⁺     +  C₂H₄    +  H₂       →   SiCnHm⁺ +  H₂  
+    * R362    Si⁺     +  H₂       →   SiH₂⁺                      
+    * R363    Si⁺     +  CH₃      →   SiCnHm⁺ +  H               
+    * R364    Si⁺     +  CH₃      →   SiCnHm⁺ +  H₂              
+    * R365    Si⁺     +  CH₄      →   SiCnHm⁺ +  H               
+    * R366    Si⁺     +  C₂H₂     →   SiCnHm⁺ +  H               
+    * R367    Si⁺     +  C₂H₄     →   SiCnHm⁺ +  CH₃     +  H    
+    * R368    Si⁺     +  C₂H₄     →   SiCnHm⁺ +  H               
+    * R369    Si⁺     +  C₂H₆     →   SiCnHm⁺ +  CH₄             
+    * R370    Si⁺     +  C₂H₆     →   SiCnHm⁺ +  CH₃             
+    * R371    Si⁺     +  C₂H₆     →   SiCnHm⁺ +  CH₃     +  H₂   
+    * R400    Si⁺     +  e⁻       →   Si                         
 
 --------------------------------------------
  NaH
 --------------------------------------------
-# mass    : 23.99694000
+# mass    : 24.00000000
 # charge  : 0
 # Produced by following 2 reactions:
 
     * R236    Na      +  H       +  H₂       →   NaH     +  H₂  
-    * R266    NaH₂⁺   +  e⁻       →   NaH     +  H              
+    * R265    NaH₂⁺   +  e⁻       →   NaH     +  H              
 
 # Lost by following 1 reactions:
 
-    * R263    NaH     +  H        →   Na      +  H₂             
+    * R262    NaH     +  H        →   Na      +  H₂             
 
 --------------------------------------------
  NaH₂⁺
 --------------------------------------------
-# mass    : 25.00433142
+# mass    : 24.99945142
 # charge  : 1
 # Produced by following 1 reactions:
 
@@ -1650,13 +1632,13 @@
 
 # Lost by following 2 reactions:
 
-    * R265    NaH₂⁺   +  e⁻       →   Na      +  H₂             
-    * R266    NaH₂⁺   +  e⁻       →   NaH     +  H              
+    * R264    NaH₂⁺   +  e⁻       →   Na      +  H₂             
+    * R265    NaH₂⁺   +  e⁻       →   NaH     +  H              
 
 --------------------------------------------
  NaCH₄⁺
 --------------------------------------------
-# mass    : 39.03091142
+# mass    : 38.99945142
 # charge  : 1
 # Produced by following 1 reactions:
 
@@ -1664,13 +1646,13 @@
 
 # Lost by following 2 reactions:
 
-    * R267    NaCH₄⁺  +  e⁻       →   Na      +  products       
-    * R270    NaCH₄⁺  +  e⁻       →   products                  
+    * R266    NaCH₄⁺  +  e⁻       →   Na      +  products       
+    * R269    NaCH₄⁺  +  e⁻       →   products                  
 
 --------------------------------------------
  NaC₂H₂⁺
 --------------------------------------------
-# mass    : 49.02573142
+# mass    : 48.99945142
 # charge  : 1
 # Produced by following 1 reactions:
 
@@ -1678,13 +1660,13 @@
 
 # Lost by following 2 reactions:
 
-    * R268    NaC₂H₂⁺ +  e⁻       →   Na      +  products       
-    * R271    NaC₂H₂⁺ +  e⁻       →   products                  
+    * R267    NaC₂H₂⁺ +  e⁻       →   Na      +  products       
+    * R270    NaC₂H₂⁺ +  e⁻       →   products                  
 
 --------------------------------------------
  NaC₂H₄⁺
 --------------------------------------------
-# mass    : 51.04161142
+# mass    : 50.99945142
 # charge  : 1
 # Produced by following 1 reactions:
 
@@ -1692,299 +1674,273 @@
 
 # Lost by following 2 reactions:
 
-    * R269    NaC₂H₄⁺ +  e⁻       →   Na      +  products       
-    * R272    NaC₂H₄⁺ +  e⁻       →   products                  
-
---------------------------------------------
- H₃O⁺
---------------------------------------------
-# mass    : 19.02267142
-# charge  : 1
-# There are no reactions producing H₃O⁺.
-
-# Lost by following 2 reactions:
-
-    * R262    Na      +  H₃O⁺     →   Na⁺     +  H₂O     +  H   
-    * R399    Si      +  H₃O⁺     →   SiH⁺    +  H₃O             
-
---------------------------------------------
- H₂O
---------------------------------------------
-# mass    : 18.01528000
-# charge  : 0
-# Produced by following 1 reactions:
-
-    * R262    Na      +  H₃O⁺     →   Na⁺     +  H₂O     +  H   
-
-# Lost by following 1 reactions:
-
-    * R373    Si⁺     +  H₂O      →   SiOH⁺   +  H               
+    * R268    NaC₂H₄⁺ +  e⁻       →   Na      +  products       
+    * R271    NaC₂H₄⁺ +  e⁻       →   products                  
 
 --------------------------------------------
  FeH
 --------------------------------------------
-# mass    : 56.85294000
+# mass    : 57.00000000
 # charge  : 0
 # Produced by following 2 reactions:
 
-    * R273    Fe      +  H       +  H₂       →   FeH     +  H₂  
-    * R307    FeH₂⁺   +  e⁻       →   FeH     +  H              
+    * R272    Fe      +  H       +  H₂       →   FeH     +  H₂  
+    * R306    FeH₂⁺   +  e⁻       →   FeH     +  H              
 
 # Lost by following 1 reactions:
 
-    * R304    FeH     +  H        →   Fe      +  H₂             
+    * R303    FeH     +  H        →   Fe      +  H₂             
 
 --------------------------------------------
  FeH⁺
 --------------------------------------------
-# mass    : 56.85239142
+# mass    : 56.99945142
 # charge  : 1
 # Produced by following 2 reactions:
 
-    * R274    Fe⁺     +  H       +  H₂       →   FeH⁺    +  H₂  
-    * R282    FeH₂⁺   +  H        →   FeH⁺    +  H₂             
+    * R273    Fe⁺     +  H       +  H₂       →   FeH⁺    +  H₂  
+    * R281    FeH₂⁺   +  H        →   FeH⁺    +  H₂             
 
 # Lost by following 2 reactions:
 
-    * R281    FeH⁺    +  H        →   Fe⁺     +  H₂             
-    * R306    FeH⁺    +  e⁻       →   Fe      +  H              
+    * R280    FeH⁺    +  H        →   Fe⁺     +  H₂             
+    * R305    FeH⁺    +  e⁻       →   Fe      +  H              
 
 --------------------------------------------
  FeH₂⁺
 --------------------------------------------
-# mass    : 57.86033142
+# mass    : 57.99945142
 # charge  : 1
 # Produced by following 1 reactions:
 
-    * R275    Fe⁺     +  H₂      +  H₂       →   FeH₂⁺   +  H₂  
+    * R274    Fe⁺     +  H₂      +  H₂       →   FeH₂⁺   +  H₂  
 
 # Lost by following 3 reactions:
 
-    * R282    FeH₂⁺   +  H        →   FeH⁺    +  H₂             
-    * R307    FeH₂⁺   +  e⁻       →   FeH     +  H              
-    * R308    FeH₂⁺   +  e⁻       →   Fe      +  H₂             
+    * R281    FeH₂⁺   +  H        →   FeH⁺    +  H₂             
+    * R306    FeH₂⁺   +  e⁻       →   FeH     +  H              
+    * R307    FeH₂⁺   +  e⁻       →   Fe      +  H₂             
 
 --------------------------------------------
  FeCH₄⁺
 --------------------------------------------
-# mass    : 71.88691142
+# mass    : 71.99945142
 # charge  : 1
 # Produced by following 1 reactions:
 
-    * R276    Fe⁺     +  CH₄     +  H₂       →   FeCH₄⁺  +  H₂  
+    * R275    Fe⁺     +  CH₄     +  H₂       →   FeCH₄⁺  +  H₂  
 
 # Lost by following 2 reactions:
 
-    * R309    FeCH₄⁺  +  e⁻       →   Fe      +  products       
-    * R312    FeCH₄⁺  +  e⁻       →   products                  
+    * R308    FeCH₄⁺  +  e⁻       →   Fe      +  products       
+    * R311    FeCH₄⁺  +  e⁻       →   products                  
 
 --------------------------------------------
  FeC₂H₂⁺
 --------------------------------------------
-# mass    : 81.88173142
+# mass    : 81.99945142
 # charge  : 1
 # Produced by following 1 reactions:
 
-    * R277    Fe⁺     +  C₂H₂    +  H₂       →   FeC₂H₂⁺ +  H₂  
+    * R276    Fe⁺     +  C₂H₂    +  H₂       →   FeC₂H₂⁺ +  H₂  
 
 # Lost by following 2 reactions:
 
-    * R310    FeC₂H₂⁺ +  e⁻       →   Fe      +  products       
-    * R313    FeC₂H₂⁺ +  e⁻       →   products                  
+    * R309    FeC₂H₂⁺ +  e⁻       →   Fe      +  products       
+    * R312    FeC₂H₂⁺ +  e⁻       →   products                  
 
 --------------------------------------------
  FeC₂H₄⁺
 --------------------------------------------
-# mass    : 83.89761142
+# mass    : 83.99945142
 # charge  : 1
 # Produced by following 1 reactions:
 
-    * R278    Fe⁺     +  C₂H₄    +  H₂       →   FeC₂H₄⁺ +  H₂  
+    * R277    Fe⁺     +  C₂H₄    +  H₂       →   FeC₂H₄⁺ +  H₂  
 
 # Lost by following 2 reactions:
 
-    * R311    FeC₂H₄⁺ +  e⁻       →   Fe      +  products       
-    * R314    FeC₂H₄⁺ +  e⁻       →   products                  
+    * R310    FeC₂H₄⁺ +  e⁻       →   Fe      +  products       
+    * R313    FeC₂H₄⁺ +  e⁻       →   products                  
 
 --------------------------------------------
  MgH
 --------------------------------------------
-# mass    : 25.31294000
+# mass    : 25.00000000
 # charge  : 0
 # Produced by following 2 reactions:
 
-    * R315    Mg      +  H       +  H₂       →   MgH     +  H₂  
-    * R350    MgH₂⁺   +  e⁻       →   MgH     +  H              
+    * R314    Mg      +  H       +  H₂       →   MgH     +  H₂  
+    * R349    MgH₂⁺   +  e⁻       →   MgH     +  H              
 
 # Lost by following 1 reactions:
 
-    * R346    MgH     +  H        →   Mg      +  H₂             
+    * R345    MgH     +  H        →   Mg      +  H₂             
 
 --------------------------------------------
  MgH⁺
 --------------------------------------------
-# mass    : 25.31239142
+# mass    : 24.99945142
 # charge  : 1
 # Produced by following 2 reactions:
 
-    * R316    Mg⁺     +  H       +  H₂       →   MgH⁺    +  H₂  
-    * R323    MgH₂⁺   +  H        →   MgH⁺    +  H₂             
+    * R315    Mg⁺     +  H       +  H₂       →   MgH⁺    +  H₂  
+    * R322    MgH₂⁺   +  H        →   MgH⁺    +  H₂             
 
 # Lost by following 2 reactions:
 
-    * R322    MgH⁺    +  H        →   Mg⁺     +  H₂             
-    * R348    MgH⁺    +  e⁻       →   Mg      +  H              
+    * R321    MgH⁺    +  H        →   Mg⁺     +  H₂             
+    * R347    MgH⁺    +  e⁻       →   Mg      +  H              
 
 --------------------------------------------
  MgH₂⁺
 --------------------------------------------
-# mass    : 26.32033142
+# mass    : 25.99945142
 # charge  : 1
 # Produced by following 1 reactions:
 
-    * R317    Mg⁺     +  H₂      +  H₂       →   MgH₂⁺   +  H₂  
+    * R316    Mg⁺     +  H₂      +  H₂       →   MgH₂⁺   +  H₂  
 
 # Lost by following 3 reactions:
 
-    * R323    MgH₂⁺   +  H        →   MgH⁺    +  H₂             
-    * R349    MgH₂⁺   +  e⁻       →   Mg      +  H₂             
-    * R350    MgH₂⁺   +  e⁻       →   MgH     +  H              
+    * R322    MgH₂⁺   +  H        →   MgH⁺    +  H₂             
+    * R348    MgH₂⁺   +  e⁻       →   Mg      +  H₂             
+    * R349    MgH₂⁺   +  e⁻       →   MgH     +  H              
 
 --------------------------------------------
  MgCH₄⁺
 --------------------------------------------
-# mass    : 40.34691142
+# mass    : 39.99945142
 # charge  : 1
 # Produced by following 1 reactions:
 
-    * R318    Mg⁺     +  CH₄     +  H₂       →   MgCH₄⁺  +  H₂  
+    * R317    Mg⁺     +  CH₄     +  H₂       →   MgCH₄⁺  +  H₂  
 
 # Lost by following 2 reactions:
 
-    * R351    MgCH₄⁺  +  e⁻       →   Mg      +  products       
-    * R354    MgCH₄⁺  +  e⁻       →   products                  
+    * R350    MgCH₄⁺  +  e⁻       →   Mg      +  products       
+    * R353    MgCH₄⁺  +  e⁻       →   products                  
 
 --------------------------------------------
  MgC₂H₂⁺
 --------------------------------------------
-# mass    : 50.34173142
+# mass    : 49.99945142
 # charge  : 1
 # Produced by following 1 reactions:
 
-    * R319    Mg⁺     +  C₂H₂    +  H₂       →   MgC₂H₂⁺ +  H₂  
+    * R318    Mg⁺     +  C₂H₂    +  H₂       →   MgC₂H₂⁺ +  H₂  
 
 # Lost by following 2 reactions:
 
-    * R352    MgC₂H₂⁺ +  e⁻       →   Mg      +  products       
-    * R355    MgC₂H₂⁺ +  e⁻       →   products                  
+    * R351    MgC₂H₂⁺ +  e⁻       →   Mg      +  products       
+    * R354    MgC₂H₂⁺ +  e⁻       →   products                  
 
 --------------------------------------------
  MgC₂H₄⁺
 --------------------------------------------
-# mass    : 52.35761142
+# mass    : 51.99945142
 # charge  : 1
 # Produced by following 1 reactions:
 
-    * R320    Mg⁺     +  C₂H₄    +  H₂       →   MgC₂H₄⁺ +  H₂  
+    * R319    Mg⁺     +  C₂H₄    +  H₂       →   MgC₂H₄⁺ +  H₂  
 
 # Lost by following 2 reactions:
 
-    * R353    MgC₂H₄⁺ +  e⁻       →   Mg      +  products       
-    * R356    MgC₂H₄⁺ +  e⁻       →   products                  
+    * R352    MgC₂H₄⁺ +  e⁻       →   Mg      +  products       
+    * R355    MgC₂H₄⁺ +  e⁻       →   products                  
 
 --------------------------------------------
  SiH
 --------------------------------------------
-# mass    : 29.09344000
+# mass    : 29.00000000
 # charge  : 0
 # Produced by following 2 reactions:
 
-    * R357    Si      +  H       +  H₂       →   SiH     +  H₂  
-    * R406    SiH₂⁺   +  e⁻       →   SiH     +  H               
+    * R356    Si      +  H       +  H₂       →   SiH     +  H₂  
+    * R403    SiH₂⁺   +  e⁻       →   SiH     +  H               
 
 # Lost by following 1 reactions:
 
-    * R402    SiH     +  H        →   Si      +  H₂              
+    * R399    SiH     +  H        →   Si      +  H₂              
 
 --------------------------------------------
  SiH⁺
 --------------------------------------------
-# mass    : 29.09289142
+# mass    : 28.99945142
 # charge  : 1
-# Produced by following 4 reactions:
+# Produced by following 3 reactions:
 
-    * R358    Si⁺     +  H       +  H₂       →   SiH⁺    +  H₂  
-    * R375    SiH₂⁺   +  H        →   SiH⁺    +  H₂              
-    * R377    Si      +  H₃⁺      →   SiH⁺    +  H₂              
-    * R399    Si      +  H₃O⁺     →   SiH⁺    +  H₃O             
+    * R357    Si⁺     +  H       +  H₂       →   SiH⁺    +  H₂  
+    * R373    SiH₂⁺   +  H        →   SiH⁺    +  H₂              
+    * R375    Si      +  H₃⁺      →   SiH⁺    +  H₂              
 
 # Lost by following 2 reactions:
 
-    * R374    SiH⁺    +  H        →   Si⁺     +  H₂              
-    * R404    SiH⁺    +  e⁻       →   Si      +  H               
+    * R372    SiH⁺    +  H        →   Si⁺     +  H₂              
+    * R401    SiH⁺    +  e⁻       →   Si      +  H               
 
 --------------------------------------------
  SiH₂⁺
 --------------------------------------------
-# mass    : 30.10083142
+# mass    : 29.99945142
 # charge  : 1
 # Produced by following 2 reactions:
 
-    * R359    Si⁺     +  H₂      +  H₂       →   SiH₂⁺   +  H₂  
-    * R363    Si⁺     +  H₂       →   SiH₂⁺                      
+    * R358    Si⁺     +  H₂      +  H₂       →   SiH₂⁺   +  H₂  
+    * R362    Si⁺     +  H₂       →   SiH₂⁺                      
 
 # Lost by following 4 reactions:
 
-    * R375    SiH₂⁺   +  H        →   SiH⁺    +  H₂              
-    * R405    SiH₂⁺   +  e⁻       →   Si      +  H       +  H    
-    * R406    SiH₂⁺   +  e⁻       →   SiH     +  H               
-    * R407    SiH₂⁺   +  e⁻       →   Si      +  H₂              
+    * R373    SiH₂⁺   +  H        →   SiH⁺    +  H₂              
+    * R402    SiH₂⁺   +  e⁻       →   Si      +  H       +  H    
+    * R403    SiH₂⁺   +  e⁻       →   SiH     +  H               
+    * R404    SiH₂⁺   +  e⁻       →   Si      +  H₂              
 
 --------------------------------------------
  SiCnHm⁺
 --------------------------------------------
-# mass    : 28.08495142
+# mass    : 27.99945142
 # charge  : 1
 # Produced by following 33 reactions:
 
-    * R360    Si⁺     +  CH₄     +  H₂       →   SiCnHm⁺ +  H₂  
-    * R361    Si⁺     +  C₂H₂    +  H₂       →   SiCnHm⁺ +  H₂  
-    * R362    Si⁺     +  C₂H₄    +  H₂       →   SiCnHm⁺ +  H₂  
-    * R364    Si⁺     +  CH₃      →   SiCnHm⁺ +  H               
-    * R365    Si⁺     +  CH₃      →   SiCnHm⁺ +  H₂              
-    * R366    Si⁺     +  CH₄      →   SiCnHm⁺ +  H               
-    * R367    Si⁺     +  C₂H₂     →   SiCnHm⁺ +  H               
-    * R368    Si⁺     +  C₂H₄     →   SiCnHm⁺ +  CH₃     +  H    
-    * R369    Si⁺     +  C₂H₄     →   SiCnHm⁺ +  H               
-    * R370    Si⁺     +  C₂H₆     →   SiCnHm⁺ +  CH₄             
-    * R371    Si⁺     +  C₂H₆     →   SiCnHm⁺ +  CH₃             
-    * R372    Si⁺     +  C₂H₆     →   SiCnHm⁺ +  CH₃     +  H₂   
-    * R378    Si      +  CH₃⁺     →   SiCnHm⁺ +  H               
-    * R379    Si      +  CH₃⁺     →   SiCnHm⁺ +  H₂              
-    * R380    Si      +  CH₅⁺     →   SiCnHm⁺ +  H               
-    * R381    Si      +  CH₅⁺     →   SiCnHm⁺ +  H₂              
-    * R382    Si      +  C₂H₃⁺    →   SiCnHm⁺ +  H₂              
-    * R383    Si      +  C₂H₃⁺    →   SiCnHm⁺ +  H               
-    * R384    Si      +  C₃H⁺     →   SiCnHm⁺ +  products        
-    * R385    Si      +  C₃H₂⁺    →   SiCnHm⁺ +  products        
-    * R386    Si      +  C₃H₃⁺    →   SiCnHm⁺ +  products        
-    * R387    Si      +  C₃H₄⁺    →   SiCnHm⁺ +  products        
-    * R388    Si      +  C₃H₅⁺    →   SiCnHm⁺ +  products        
-    * R389    Si      +  C₃H₆⁺    →   SiCnHm⁺ +  products        
-    * R390    Si      +  C₃H₇⁺    →   SiCnHm⁺ +  products        
-    * R391    Si      +  C₃H₈⁺    →   SiCnHm⁺ +  products        
-    * R392    Si      +  C₃H₉⁺    →   SiCnHm⁺ +  products        
-    * R393    Si      +  C₄H⁺     →   SiCnHm⁺ +  products        
-    * R394    Si      +  C₄H₂⁺    →   SiCnHm⁺ +  products        
-    * R395    Si      +  C₄H₃⁺    →   SiCnHm⁺ +  products        
-    * R396    Si      +  C₄H₅⁺    →   SiCnHm⁺ +  products        
-    * R397    Si      +  C₄H₇⁺    →   SiCnHm⁺ +  products        
-    * R398    Si      +  C₄H₉⁺    →   SiCnHm⁺ +  products        
+    * R359    Si⁺     +  CH₄     +  H₂       →   SiCnHm⁺ +  H₂  
+    * R360    Si⁺     +  C₂H₂    +  H₂       →   SiCnHm⁺ +  H₂  
+    * R361    Si⁺     +  C₂H₄    +  H₂       →   SiCnHm⁺ +  H₂  
+    * R363    Si⁺     +  CH₃      →   SiCnHm⁺ +  H               
+    * R364    Si⁺     +  CH₃      →   SiCnHm⁺ +  H₂              
+    * R365    Si⁺     +  CH₄      →   SiCnHm⁺ +  H               
+    * R366    Si⁺     +  C₂H₂     →   SiCnHm⁺ +  H               
+    * R367    Si⁺     +  C₂H₄     →   SiCnHm⁺ +  CH₃     +  H    
+    * R368    Si⁺     +  C₂H₄     →   SiCnHm⁺ +  H               
+    * R369    Si⁺     +  C₂H₆     →   SiCnHm⁺ +  CH₄             
+    * R370    Si⁺     +  C₂H₆     →   SiCnHm⁺ +  CH₃             
+    * R371    Si⁺     +  C₂H₆     →   SiCnHm⁺ +  CH₃     +  H₂   
+    * R376    Si      +  CH₃⁺     →   SiCnHm⁺ +  H               
+    * R377    Si      +  CH₃⁺     →   SiCnHm⁺ +  H₂              
+    * R378    Si      +  CH₅⁺     →   SiCnHm⁺ +  H               
+    * R379    Si      +  CH₅⁺     →   SiCnHm⁺ +  H₂              
+    * R380    Si      +  C₂H₃⁺    →   SiCnHm⁺ +  H₂              
+    * R381    Si      +  C₂H₃⁺    →   SiCnHm⁺ +  H               
+    * R382    Si      +  C₃H⁺     →   SiCnHm⁺ +  products        
+    * R383    Si      +  C₃H₂⁺    →   SiCnHm⁺ +  products        
+    * R384    Si      +  C₃H₃⁺    →   SiCnHm⁺ +  products        
+    * R385    Si      +  C₃H₄⁺    →   SiCnHm⁺ +  products        
+    * R386    Si      +  C₃H₅⁺    →   SiCnHm⁺ +  products        
+    * R387    Si      +  C₃H₆⁺    →   SiCnHm⁺ +  products        
+    * R388    Si      +  C₃H₇⁺    →   SiCnHm⁺ +  products        
+    * R389    Si      +  C₃H₈⁺    →   SiCnHm⁺ +  products        
+    * R390    Si      +  C₃H₉⁺    →   SiCnHm⁺ +  products        
+    * R391    Si      +  C₄H⁺     →   SiCnHm⁺ +  products        
+    * R392    Si      +  C₄H₂⁺    →   SiCnHm⁺ +  products        
+    * R393    Si      +  C₄H₃⁺    →   SiCnHm⁺ +  products        
+    * R394    Si      +  C₄H₅⁺    →   SiCnHm⁺ +  products        
+    * R395    Si      +  C₄H₇⁺    →   SiCnHm⁺ +  products        
+    * R396    Si      +  C₄H₉⁺    →   SiCnHm⁺ +  products        
 
 # Lost by following 2 reactions:
 
-    * R408    SiCnHm⁺ +  e⁻       →   Si                         
-    * R409    SiCnHm⁺ +  e⁻       →   products                   
+    * R405    SiCnHm⁺ +  e⁻       →   Si                         
+    * R406    SiCnHm⁺ +  e⁻       →   products                   
 
 --------------------------------------------
 

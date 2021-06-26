@@ -19,11 +19,11 @@ contains
     spl%planet = 'Jupiter'
 
     ! Calculation settings
-    set%mode = '3D Rot'
+    set%mode = '1D'
     set%nstep = 30000
     set%fin_sec = 35729.685e3_dp
     set%dtime_limit = 1.0e5_dp
-    set%latitude = 0.0_dp
+    set%latitude = 73.0_dp
     set%Ls = 0.0_dp
     set%nday = 3.0_dp
     set%scheme = 'implicit'
@@ -60,12 +60,12 @@ contains
     end do
 
     ! reactions, chemical species
-    spl%nsp     = 88
-    spl%nsp_i   = 69
-    spl%nch     = 409
-    spl%nch_P   = 203
+    spl%nsp     = 84
+    spl%nsp_i   = 67
+    spl%nch     = 406
+    spl%nch_P   = 199
     spl%nch_L   = 159
-    spl%n_Jlist = 746
+    spl%n_Jlist = 732
     spl%nch_J   = 161
     spl%nrpn    = 8
 
@@ -113,6 +113,9 @@ contains
     allocate(var%d_dniu_dPhi_dz(spl%nsp_i,grd%nz))
     allocate(var%d_dni0_dPhi_dz(spl%nsp_i,grd%nz))
     allocate(var%d_dnil_dPhi_dz(spl%nsp_i,grd%nz))
+    allocate(var%d_dneu_dPhi_dz_add(spl%nsp_i,grd%nz))
+    allocate(var%d_dne0_dPhi_dz_add(spl%nsp_i,grd%nz))
+    allocate(var%d_dnel_dPhi_dz_add(spl%nsp_i,grd%nz))
     allocate(var%barr(spl%nsp_i*grd%nz), var%xarr(spl%nsp_i*grd%nz))
     allocate(var%yarr(spl%nsp_i*grd%nz), var%dxarr(spl%nsp_i*grd%nz))
     allocate(var%Amtx(spl%nsp_i*grd%nz,2*spl%nsp_i+1))
@@ -186,28 +189,24 @@ contains
     spl%species(64) = 'NaCH4+'
     spl%species(65) = 'NaC2H2+'
     spl%species(66) = 'NaC2H4+'
-    spl%species(67) = 'H3O+'
-    spl%species(68) = 'H2O'
-    spl%species(69) = 'FeH'
-    spl%species(70) = 'FeH+'
-    spl%species(71) = 'FeH2+'
-    spl%species(72) = 'FeCH4+'
-    spl%species(73) = 'FeC2H2+'
-    spl%species(74) = 'FeC2H4+'
-    spl%species(75) = 'MgH'
-    spl%species(76) = 'MgH+'
-    spl%species(77) = 'MgH2+'
-    spl%species(78) = 'MgCH4+'
-    spl%species(79) = 'MgC2H2+'
-    spl%species(80) = 'MgC2H4+'
-    spl%species(81) = 'SiH'
-    spl%species(82) = 'SiH+'
-    spl%species(83) = 'SiH2+'
-    spl%species(84) = 'SiCnHm+'
-    spl%species(85) = 'SiOH+'
-    spl%species(86) = 'H3O'
-    spl%species(87) = 'SiCH'
-    spl%species(88) = 'SiCH2'
+    spl%species(67) = 'FeH'
+    spl%species(68) = 'FeH+'
+    spl%species(69) = 'FeH2+'
+    spl%species(70) = 'FeCH4+'
+    spl%species(71) = 'FeC2H2+'
+    spl%species(72) = 'FeC2H4+'
+    spl%species(73) = 'MgH'
+    spl%species(74) = 'MgH+'
+    spl%species(75) = 'MgH2+'
+    spl%species(76) = 'MgCH4+'
+    spl%species(77) = 'MgC2H2+'
+    spl%species(78) = 'MgC2H4+'
+    spl%species(79) = 'SiH'
+    spl%species(80) = 'SiH+'
+    spl%species(81) = 'SiH2+'
+    spl%species(82) = 'SiCnHm+'
+    spl%species(83) = 'SiCH'
+    spl%species(84) = 'SiCH2'
 
     ! label_fix
     spl%label_fix(1) = 1 ! H2: fixed
@@ -276,28 +275,24 @@ contains
     spl%label_fix(64) = 0 ! NaCH4+: variable
     spl%label_fix(65) = 0 ! NaC2H2+: variable
     spl%label_fix(66) = 0 ! NaC2H4+: variable
-    spl%label_fix(67) = 0 ! H3O+: variable
-    spl%label_fix(68) = 0 ! H2O: variable
-    spl%label_fix(69) = 0 ! FeH: variable
-    spl%label_fix(70) = 0 ! FeH+: variable
-    spl%label_fix(71) = 0 ! FeH2+: variable
-    spl%label_fix(72) = 0 ! FeCH4+: variable
-    spl%label_fix(73) = 0 ! FeC2H2+: variable
-    spl%label_fix(74) = 0 ! FeC2H4+: variable
-    spl%label_fix(75) = 0 ! MgH: variable
-    spl%label_fix(76) = 0 ! MgH+: variable
-    spl%label_fix(77) = 0 ! MgH2+: variable
-    spl%label_fix(78) = 0 ! MgCH4+: variable
-    spl%label_fix(79) = 0 ! MgC2H2+: variable
-    spl%label_fix(80) = 0 ! MgC2H4+: variable
-    spl%label_fix(81) = 0 ! SiH: variable
-    spl%label_fix(82) = 0 ! SiH+: variable
-    spl%label_fix(83) = 0 ! SiH2+: variable
-    spl%label_fix(84) = 0 ! SiCnHm+: variable
-    spl%label_fix(85) = 1 ! SiOH+: fixed
-    spl%label_fix(86) = 1 ! H3O: fixed
-    spl%label_fix(87) = 1 ! SiCH: fixed
-    spl%label_fix(88) = 1 ! SiCH2: fixed
+    spl%label_fix(67) = 0 ! FeH: variable
+    spl%label_fix(68) = 0 ! FeH+: variable
+    spl%label_fix(69) = 0 ! FeH2+: variable
+    spl%label_fix(70) = 0 ! FeCH4+: variable
+    spl%label_fix(71) = 0 ! FeC2H2+: variable
+    spl%label_fix(72) = 0 ! FeC2H4+: variable
+    spl%label_fix(73) = 0 ! MgH: variable
+    spl%label_fix(74) = 0 ! MgH+: variable
+    spl%label_fix(75) = 0 ! MgH2+: variable
+    spl%label_fix(76) = 0 ! MgCH4+: variable
+    spl%label_fix(77) = 0 ! MgC2H2+: variable
+    spl%label_fix(78) = 0 ! MgC2H4+: variable
+    spl%label_fix(79) = 0 ! SiH: variable
+    spl%label_fix(80) = 0 ! SiH+: variable
+    spl%label_fix(81) = 0 ! SiH2+: variable
+    spl%label_fix(82) = 0 ! SiCnHm+: variable
+    spl%label_fix(83) = 1 ! SiCH: fixed
+    spl%label_fix(84) = 1 ! SiCH2: fixed
 
     ! all_to_var
     spl%all_to_var = 0
@@ -352,24 +347,22 @@ contains
     spl%all_to_var(64) = 49 ! NaCH4+: variable
     spl%all_to_var(65) = 50 ! NaC2H2+: variable
     spl%all_to_var(66) = 51 ! NaC2H4+: variable
-    spl%all_to_var(67) = 52 ! H3O+: variable
-    spl%all_to_var(68) = 53 ! H2O: variable
-    spl%all_to_var(69) = 54 ! FeH: variable
-    spl%all_to_var(70) = 55 ! FeH+: variable
-    spl%all_to_var(71) = 56 ! FeH2+: variable
-    spl%all_to_var(72) = 57 ! FeCH4+: variable
-    spl%all_to_var(73) = 58 ! FeC2H2+: variable
-    spl%all_to_var(74) = 59 ! FeC2H4+: variable
-    spl%all_to_var(75) = 60 ! MgH: variable
-    spl%all_to_var(76) = 61 ! MgH+: variable
-    spl%all_to_var(77) = 62 ! MgH2+: variable
-    spl%all_to_var(78) = 63 ! MgCH4+: variable
-    spl%all_to_var(79) = 64 ! MgC2H2+: variable
-    spl%all_to_var(80) = 65 ! MgC2H4+: variable
-    spl%all_to_var(81) = 66 ! SiH: variable
-    spl%all_to_var(82) = 67 ! SiH+: variable
-    spl%all_to_var(83) = 68 ! SiH2+: variable
-    spl%all_to_var(84) = 69 ! SiCnHm+: variable
+    spl%all_to_var(67) = 52 ! FeH: variable
+    spl%all_to_var(68) = 53 ! FeH+: variable
+    spl%all_to_var(69) = 54 ! FeH2+: variable
+    spl%all_to_var(70) = 55 ! FeCH4+: variable
+    spl%all_to_var(71) = 56 ! FeC2H2+: variable
+    spl%all_to_var(72) = 57 ! FeC2H4+: variable
+    spl%all_to_var(73) = 58 ! MgH: variable
+    spl%all_to_var(74) = 59 ! MgH+: variable
+    spl%all_to_var(75) = 60 ! MgH2+: variable
+    spl%all_to_var(76) = 61 ! MgCH4+: variable
+    spl%all_to_var(77) = 62 ! MgC2H2+: variable
+    spl%all_to_var(78) = 63 ! MgC2H4+: variable
+    spl%all_to_var(79) = 64 ! SiH: variable
+    spl%all_to_var(80) = 65 ! SiH+: variable
+    spl%all_to_var(81) = 66 ! SiH2+: variable
+    spl%all_to_var(82) = 67 ! SiCnHm+: variable
 
     ! var_to_all
     spl%var_to_all(1) = 2 ! H2+: variable
@@ -423,118 +416,112 @@ contains
     spl%var_to_all(49) = 64 ! NaCH4+: variable
     spl%var_to_all(50) = 65 ! NaC2H2+: variable
     spl%var_to_all(51) = 66 ! NaC2H4+: variable
-    spl%var_to_all(52) = 67 ! H3O+: variable
-    spl%var_to_all(53) = 68 ! H2O: variable
-    spl%var_to_all(54) = 69 ! FeH: variable
-    spl%var_to_all(55) = 70 ! FeH+: variable
-    spl%var_to_all(56) = 71 ! FeH2+: variable
-    spl%var_to_all(57) = 72 ! FeCH4+: variable
-    spl%var_to_all(58) = 73 ! FeC2H2+: variable
-    spl%var_to_all(59) = 74 ! FeC2H4+: variable
-    spl%var_to_all(60) = 75 ! MgH: variable
-    spl%var_to_all(61) = 76 ! MgH+: variable
-    spl%var_to_all(62) = 77 ! MgH2+: variable
-    spl%var_to_all(63) = 78 ! MgCH4+: variable
-    spl%var_to_all(64) = 79 ! MgC2H2+: variable
-    spl%var_to_all(65) = 80 ! MgC2H4+: variable
-    spl%var_to_all(66) = 81 ! SiH: variable
-    spl%var_to_all(67) = 82 ! SiH+: variable
-    spl%var_to_all(68) = 83 ! SiH2+: variable
-    spl%var_to_all(69) = 84 ! SiCnHm+: variable
+    spl%var_to_all(52) = 67 ! FeH: variable
+    spl%var_to_all(53) = 68 ! FeH+: variable
+    spl%var_to_all(54) = 69 ! FeH2+: variable
+    spl%var_to_all(55) = 70 ! FeCH4+: variable
+    spl%var_to_all(56) = 71 ! FeC2H2+: variable
+    spl%var_to_all(57) = 72 ! FeC2H4+: variable
+    spl%var_to_all(58) = 73 ! MgH: variable
+    spl%var_to_all(59) = 74 ! MgH+: variable
+    spl%var_to_all(60) = 75 ! MgH2+: variable
+    spl%var_to_all(61) = 76 ! MgCH4+: variable
+    spl%var_to_all(62) = 77 ! MgC2H2+: variable
+    spl%var_to_all(63) = 78 ! MgC2H4+: variable
+    spl%var_to_all(64) = 79 ! SiH: variable
+    spl%var_to_all(65) = 80 ! SiH+: variable
+    spl%var_to_all(66) = 81 ! SiH2+: variable
+    spl%var_to_all(67) = 82 ! SiCnHm+: variable
 
     ! mass
-    var%m(1) = 2.01588000_dp * cst%m_u !H2
-    var%m(2) = 2.01533142_dp * cst%m_u !H2+
+    var%m(1) = 2.00000000_dp * cst%m_u !H2
+    var%m(2) = 1.99945142_dp * cst%m_u !H2+
     var%m(3) = 0.00054858_dp * cst%m_u !e-
-    var%m(4) = 1.00794000_dp * cst%m_u !H
-    var%m(5) = 1.00739142_dp * cst%m_u !H+
-    var%m(6) = 4.00260200_dp * cst%m_u !He
-    var%m(7) = 4.00205342_dp * cst%m_u !He+
-    var%m(8) = 16.04246000_dp * cst%m_u !CH4
-    var%m(9) = 16.04191142_dp * cst%m_u !CH4+
-    var%m(10) = 15.03397142_dp * cst%m_u !CH3+
-    var%m(11) = 26.03728000_dp * cst%m_u !C2H2
-    var%m(12) = 26.03673142_dp * cst%m_u !C2H2+
-    var%m(13) = 28.05316000_dp * cst%m_u !C2H4
-    var%m(14) = 28.05261142_dp * cst%m_u !C2H4+
-    var%m(15) = 27.04467142_dp * cst%m_u !C2H3+
-    var%m(16) = 25.02879142_dp * cst%m_u !C2H+
-    var%m(17) = 30.06904000_dp * cst%m_u !C2H6
-    var%m(18) = 30.06849142_dp * cst%m_u !C2H6+
-    var%m(19) = 29.06055142_dp * cst%m_u !C2H5+
-    var%m(20) = 5.00999342_dp * cst%m_u !HeH+
-    var%m(21) = 3.02327142_dp * cst%m_u !H3+
-    var%m(22) = 12.01015142_dp * cst%m_u !C+
-    var%m(23) = 12.01070000_dp * cst%m_u !C
-    var%m(24) = 13.01809142_dp * cst%m_u !CH+
-    var%m(25) = 14.02603142_dp * cst%m_u !CH2+
-    var%m(26) = 13.01864000_dp * cst%m_u !CH
-    var%m(27) = 14.02658000_dp * cst%m_u !CH2
-    var%m(28) = 15.03452000_dp * cst%m_u !CH3
-    var%m(29) = 17.04985142_dp * cst%m_u !CH5+
-    var%m(30) = 24.02085142_dp * cst%m_u !C2+
-    var%m(31) = 24.02140000_dp * cst%m_u !C2
-    var%m(32) = 25.02934000_dp * cst%m_u !C2H
-    var%m(33) = 27.04522000_dp * cst%m_u !C2H3
-    var%m(34) = 29.06110000_dp * cst%m_u !C2H5
-    var%m(35) = 31.07643142_dp * cst%m_u !C2H7+
-    var%m(36) = 37.03949142_dp * cst%m_u !C3H+
-    var%m(37) = 38.04743142_dp * cst%m_u !C3H2+
-    var%m(38) = 39.05537142_dp * cst%m_u !C3H3+
-    var%m(39) = 40.06331142_dp * cst%m_u !C3H4+
-    var%m(40) = 41.07125142_dp * cst%m_u !C3H5+
-    var%m(41) = 42.07919142_dp * cst%m_u !C3H6+
-    var%m(42) = 43.08713142_dp * cst%m_u !C3H7+
-    var%m(43) = 44.09507142_dp * cst%m_u !C3H8+
-    var%m(44) = 45.10301142_dp * cst%m_u !C3H9+
-    var%m(45) = 49.05019142_dp * cst%m_u !C4H+
-    var%m(46) = 50.05813142_dp * cst%m_u !C4H2+
-    var%m(47) = 51.06607142_dp * cst%m_u !C4H3+
-    var%m(48) = 53.08195142_dp * cst%m_u !C4H5+
-    var%m(49) = 55.09783142_dp * cst%m_u !C4H7+
-    var%m(50) = 57.11371142_dp * cst%m_u !C4H9+
-    var%m(51) = 2.01588000_dp * cst%m_u !H2(v>=2)
-    var%m(52) = 2.01588000_dp * cst%m_u !H2(v>=4)
-    var%m(53) = 22.98900000_dp * cst%m_u !Na
-    var%m(54) = 22.98845142_dp * cst%m_u !Na+
-    var%m(55) = 55.84500000_dp * cst%m_u !Fe
-    var%m(56) = 55.84445142_dp * cst%m_u !Fe+
-    var%m(57) = 24.30500000_dp * cst%m_u !Mg
-    var%m(58) = 24.30445142_dp * cst%m_u !Mg+
-    var%m(59) = 28.08550000_dp * cst%m_u !Si
-    var%m(60) = 28.08495142_dp * cst%m_u !Si+
-    var%m(61) = 23.99694000_dp * cst%m_u !NaH
-    var%m(62) = 38.02352000_dp * cst%m_u !NaCH3
-    var%m(63) = 25.00433142_dp * cst%m_u !NaH2+
-    var%m(64) = 39.03091142_dp * cst%m_u !NaCH4+
-    var%m(65) = 49.02573142_dp * cst%m_u !NaC2H2+
-    var%m(66) = 51.04161142_dp * cst%m_u !NaC2H4+
-    var%m(67) = 19.02267142_dp * cst%m_u !H3O+
-    var%m(68) = 18.01528000_dp * cst%m_u !H2O
-    var%m(69) = 56.85294000_dp * cst%m_u !FeH
-    var%m(70) = 56.85239142_dp * cst%m_u !FeH+
-    var%m(71) = 57.86033142_dp * cst%m_u !FeH2+
-    var%m(72) = 71.88691142_dp * cst%m_u !FeCH4+
-    var%m(73) = 81.88173142_dp * cst%m_u !FeC2H2+
-    var%m(74) = 83.89761142_dp * cst%m_u !FeC2H4+
-    var%m(75) = 25.31294000_dp * cst%m_u !MgH
-    var%m(76) = 25.31239142_dp * cst%m_u !MgH+
-    var%m(77) = 26.32033142_dp * cst%m_u !MgH2+
-    var%m(78) = 40.34691142_dp * cst%m_u !MgCH4+
-    var%m(79) = 50.34173142_dp * cst%m_u !MgC2H2+
-    var%m(80) = 52.35761142_dp * cst%m_u !MgC2H4+
-    var%m(81) = 29.09344000_dp * cst%m_u !SiH
-    var%m(82) = 29.09289142_dp * cst%m_u !SiH+
-    var%m(83) = 30.10083142_dp * cst%m_u !SiH2+
-    var%m(84) = 28.08495142_dp * cst%m_u !SiCnHm+
-    var%m(85) = 45.09229142_dp * cst%m_u !SiOH+
-    var%m(86) = 19.02322000_dp * cst%m_u !H3O
-    var%m(87) = 41.10414000_dp * cst%m_u !SiCH
-    var%m(88) = 42.11208000_dp * cst%m_u !SiCH2
+    var%m(4) = 1.00000000_dp * cst%m_u !H
+    var%m(5) = 0.99945142_dp * cst%m_u !H+
+    var%m(6) = 4.00000000_dp * cst%m_u !He
+    var%m(7) = 3.99945142_dp * cst%m_u !He+
+    var%m(8) = 16.00000000_dp * cst%m_u !CH4
+    var%m(9) = 15.99945142_dp * cst%m_u !CH4+
+    var%m(10) = 14.99945142_dp * cst%m_u !CH3+
+    var%m(11) = 26.00000000_dp * cst%m_u !C2H2
+    var%m(12) = 25.99945142_dp * cst%m_u !C2H2+
+    var%m(13) = 28.00000000_dp * cst%m_u !C2H4
+    var%m(14) = 27.99945142_dp * cst%m_u !C2H4+
+    var%m(15) = 26.99945142_dp * cst%m_u !C2H3+
+    var%m(16) = 24.99945142_dp * cst%m_u !C2H+
+    var%m(17) = 30.00000000_dp * cst%m_u !C2H6
+    var%m(18) = 29.99945142_dp * cst%m_u !C2H6+
+    var%m(19) = 28.99945142_dp * cst%m_u !C2H5+
+    var%m(20) = 4.99945142_dp * cst%m_u !HeH+
+    var%m(21) = 2.99945142_dp * cst%m_u !H3+
+    var%m(22) = 11.99945142_dp * cst%m_u !C+
+    var%m(23) = 12.00000000_dp * cst%m_u !C
+    var%m(24) = 12.99945142_dp * cst%m_u !CH+
+    var%m(25) = 13.99945142_dp * cst%m_u !CH2+
+    var%m(26) = 13.00000000_dp * cst%m_u !CH
+    var%m(27) = 14.00000000_dp * cst%m_u !CH2
+    var%m(28) = 15.00000000_dp * cst%m_u !CH3
+    var%m(29) = 16.99945142_dp * cst%m_u !CH5+
+    var%m(30) = 23.99945142_dp * cst%m_u !C2+
+    var%m(31) = 24.00000000_dp * cst%m_u !C2
+    var%m(32) = 25.00000000_dp * cst%m_u !C2H
+    var%m(33) = 27.00000000_dp * cst%m_u !C2H3
+    var%m(34) = 29.00000000_dp * cst%m_u !C2H5
+    var%m(35) = 30.99945142_dp * cst%m_u !C2H7+
+    var%m(36) = 36.99945142_dp * cst%m_u !C3H+
+    var%m(37) = 37.99945142_dp * cst%m_u !C3H2+
+    var%m(38) = 38.99945142_dp * cst%m_u !C3H3+
+    var%m(39) = 39.99945142_dp * cst%m_u !C3H4+
+    var%m(40) = 40.99945142_dp * cst%m_u !C3H5+
+    var%m(41) = 41.99945142_dp * cst%m_u !C3H6+
+    var%m(42) = 42.99945142_dp * cst%m_u !C3H7+
+    var%m(43) = 43.99945142_dp * cst%m_u !C3H8+
+    var%m(44) = 44.99945142_dp * cst%m_u !C3H9+
+    var%m(45) = 48.99945142_dp * cst%m_u !C4H+
+    var%m(46) = 49.99945142_dp * cst%m_u !C4H2+
+    var%m(47) = 50.99945142_dp * cst%m_u !C4H3+
+    var%m(48) = 52.99945142_dp * cst%m_u !C4H5+
+    var%m(49) = 54.99945142_dp * cst%m_u !C4H7+
+    var%m(50) = 56.99945142_dp * cst%m_u !C4H9+
+    var%m(51) = 2.00000000_dp * cst%m_u !H2(v>=2)
+    var%m(52) = 2.00000000_dp * cst%m_u !H2(v>=4)
+    var%m(53) = 23.00000000_dp * cst%m_u !Na
+    var%m(54) = 22.99945142_dp * cst%m_u !Na+
+    var%m(55) = 56.00000000_dp * cst%m_u !Fe
+    var%m(56) = 55.99945142_dp * cst%m_u !Fe+
+    var%m(57) = 24.00000000_dp * cst%m_u !Mg
+    var%m(58) = 23.99945142_dp * cst%m_u !Mg+
+    var%m(59) = 28.00000000_dp * cst%m_u !Si
+    var%m(60) = 27.99945142_dp * cst%m_u !Si+
+    var%m(61) = 24.00000000_dp * cst%m_u !NaH
+    var%m(62) = 38.00000000_dp * cst%m_u !NaCH3
+    var%m(63) = 24.99945142_dp * cst%m_u !NaH2+
+    var%m(64) = 38.99945142_dp * cst%m_u !NaCH4+
+    var%m(65) = 48.99945142_dp * cst%m_u !NaC2H2+
+    var%m(66) = 50.99945142_dp * cst%m_u !NaC2H4+
+    var%m(67) = 57.00000000_dp * cst%m_u !FeH
+    var%m(68) = 56.99945142_dp * cst%m_u !FeH+
+    var%m(69) = 57.99945142_dp * cst%m_u !FeH2+
+    var%m(70) = 71.99945142_dp * cst%m_u !FeCH4+
+    var%m(71) = 81.99945142_dp * cst%m_u !FeC2H2+
+    var%m(72) = 83.99945142_dp * cst%m_u !FeC2H4+
+    var%m(73) = 25.00000000_dp * cst%m_u !MgH
+    var%m(74) = 24.99945142_dp * cst%m_u !MgH+
+    var%m(75) = 25.99945142_dp * cst%m_u !MgH2+
+    var%m(76) = 39.99945142_dp * cst%m_u !MgCH4+
+    var%m(77) = 49.99945142_dp * cst%m_u !MgC2H2+
+    var%m(78) = 51.99945142_dp * cst%m_u !MgC2H4+
+    var%m(79) = 29.00000000_dp * cst%m_u !SiH
+    var%m(80) = 28.99945142_dp * cst%m_u !SiH+
+    var%m(81) = 29.99945142_dp * cst%m_u !SiH2+
+    var%m(82) = 27.99945142_dp * cst%m_u !SiCnHm+
+    var%m(83) = 41.00000000_dp * cst%m_u !SiCH
+    var%m(84) = 42.00000000_dp * cst%m_u !SiCH2
 
     ! mass zero error
     do isp = 1, spl%nsp
-      if ( var%m(isp) == 0_dp ) then 
+      if ( var%m(isp) == 0.0_dp ) then 
         write(*,*) 'mass zero error'
         write(*,*) 'please check species list.'
         stop
@@ -608,28 +595,24 @@ contains
     var%q(64) = 1.0_dp * cst%q_e !NaCH4+
     var%q(65) = 1.0_dp * cst%q_e !NaC2H2+
     var%q(66) = 1.0_dp * cst%q_e !NaC2H4+
-    var%q(67) = 1.0_dp * cst%q_e !H3O+
-    var%q(68) = 0.0_dp * cst%q_e !H2O
-    var%q(69) = 0.0_dp * cst%q_e !FeH
-    var%q(70) = 1.0_dp * cst%q_e !FeH+
-    var%q(71) = 1.0_dp * cst%q_e !FeH2+
-    var%q(72) = 1.0_dp * cst%q_e !FeCH4+
-    var%q(73) = 1.0_dp * cst%q_e !FeC2H2+
-    var%q(74) = 1.0_dp * cst%q_e !FeC2H4+
-    var%q(75) = 0.0_dp * cst%q_e !MgH
-    var%q(76) = 1.0_dp * cst%q_e !MgH+
-    var%q(77) = 1.0_dp * cst%q_e !MgH2+
-    var%q(78) = 1.0_dp * cst%q_e !MgCH4+
-    var%q(79) = 1.0_dp * cst%q_e !MgC2H2+
-    var%q(80) = 1.0_dp * cst%q_e !MgC2H4+
-    var%q(81) = 0.0_dp * cst%q_e !SiH
-    var%q(82) = 1.0_dp * cst%q_e !SiH+
-    var%q(83) = 1.0_dp * cst%q_e !SiH2+
-    var%q(84) = 1.0_dp * cst%q_e !SiCnHm+
-    var%q(85) = 1.0_dp * cst%q_e !SiOH+
-    var%q(86) = 0.0_dp * cst%q_e !H3O
-    var%q(87) = 0.0_dp * cst%q_e !SiCH
-    var%q(88) = 0.0_dp * cst%q_e !SiCH2
+    var%q(67) = 0.0_dp * cst%q_e !FeH
+    var%q(68) = 1.0_dp * cst%q_e !FeH+
+    var%q(69) = 1.0_dp * cst%q_e !FeH2+
+    var%q(70) = 1.0_dp * cst%q_e !FeCH4+
+    var%q(71) = 1.0_dp * cst%q_e !FeC2H2+
+    var%q(72) = 1.0_dp * cst%q_e !FeC2H4+
+    var%q(73) = 0.0_dp * cst%q_e !MgH
+    var%q(74) = 1.0_dp * cst%q_e !MgH+
+    var%q(75) = 1.0_dp * cst%q_e !MgH2+
+    var%q(76) = 1.0_dp * cst%q_e !MgCH4+
+    var%q(77) = 1.0_dp * cst%q_e !MgC2H2+
+    var%q(78) = 1.0_dp * cst%q_e !MgC2H4+
+    var%q(79) = 0.0_dp * cst%q_e !SiH
+    var%q(80) = 1.0_dp * cst%q_e !SiH+
+    var%q(81) = 1.0_dp * cst%q_e !SiH2+
+    var%q(82) = 1.0_dp * cst%q_e !SiCnHm+
+    var%q(83) = 0.0_dp * cst%q_e !SiCH
+    var%q(84) = 0.0_dp * cst%q_e !SiCH2
 
     ! read P, L, J list
     open(11, file = './Jupiter/metal_Hill/input/PLJ_list/Production_list.dat', status = 'unknown' )

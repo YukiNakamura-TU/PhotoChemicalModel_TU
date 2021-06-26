@@ -2,7 +2,7 @@ Dimension : 1
 LAT : 73.0
 Ls : 0.0
 stepmax : 30000
-sumdtst : 35729.685e1
+sumdtst : 35729.685e3
 dtmaxst : 1.0e5
 sumdtrot : 3.0
 dtmaxrot : 100.0
