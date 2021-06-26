@@ -63,7 +63,7 @@ for lt in range(25): # 0-24
         sigma_P_ratio[ib][lt] = hi_sigma_P_1[x][y][ib]/hi_sigma_P_0[x][y][ib]
         sigma_H_ratio[ib][lt] = hi_sigma_H_1[x][y][ib]/hi_sigma_H_0[x][y][ib]
 
-path = './sigma_ratio.dat'
+path = './figures/sigma_ratio.dat'
 with open(path, mode = 'w') as f:
     for i in range(25):
         for j in range(11):
@@ -344,4 +344,4 @@ cbar6.set_label('Ratio', size=fs_label)
 ax6.set_title("$\Sigma_H$ ratio (Latitude = 73$^\circ$)", loc='center',size=fs_title)
 
 #plt.show()
-plt.savefig("sigma_ratio.png")
+plt.savefig("figures/sigma_ratio.png")

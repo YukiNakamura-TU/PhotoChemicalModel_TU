@@ -37,9 +37,9 @@ set yr [0.1:10]
 
 set xr [0:24]
 
-set out 'P_ratio.eps'
+set out 'figures/P_ratio.eps'
 splot 'sigma_ratio.dat' u 1:2:4
 
-set out 'H_ratio.eps'
+set out 'figures/H_ratio.eps'
 splot 'sigma_ratio.dat' u 1:2:3
 
