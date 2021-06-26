@@ -10,7 +10,8 @@ Jupiter/*/input/density
 Jupiter/*/output/
 Jupiter/dipole_Jupiter.dat
 Jupiter/b_function
-Jupiter/OLD/
+Jupiter/OLD
+Jupiter/figures
 Mars/OHtest/input/
 Mars/OHtest/output/
 Mars/OHtest/settings/
