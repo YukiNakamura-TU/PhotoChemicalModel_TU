@@ -178,7 +178,7 @@ contains
     integer i, j, ix, iy, iz, isp, ich, jch, nspecial, Metal_label
     integer N1, N2, N3, N4, N5, N6, N7, N8, N9, N0
     real(dp) tmp, tmp1, tmp2, tmpzarr(grd%nz)
-    real(dp) tmp_ijh1(361,181,141), tmp_ijh2(361,181,141)
+    real(dp) tmp_ijh1(361,181,141), tmp_ijh2(361,181,141), k1(1000,141)
     character(len=256) fname, FAC
 
     if ( spl%planet == 'Jupiter' ) then
@@ -200,7 +200,7 @@ contains
           !
           ! Meteoroid flux settings
           !
-          tmpzarr(iz) = tmpzarr(iz) * 10.0_dp
+          tmpzarr(iz) = tmpzarr(iz) / 1.0_dp
 
         end do
       close(11)
@@ -357,13 +357,14 @@ contains
           do iz = 1, 141
           do iy = 1, 181
           do ix = 1, 361
-              read(11,*) tmp_ijh1(ix,iy,iz), tmp_ijh2(ix,iy,iz) ! Hill , Hill + R2
+            read(11,*) tmp_ijh1(ix,iy,iz), tmp_ijh2(ix,iy,iz) ! Hill , Hill + R2
           end do
           end do
           end do
         close(11)
         
         if( set%mode == '2D Lat' .or. set%mode == '3D Rot' .or. set%mode == '3D Global' ) then
+
           isp = sp_index(spl, 'H2')
           do iz = 1, grd%nz
           do iy = 1, grd%ny
@@ -376,16 +377,23 @@ contains
           end do
           end do
           end do
+
         else if( set%mode == '1D' ) then
+
+          fname = './Jupiter/k1.dat'
+          open(11, file = fname, status = 'unknown' )
+            do iz = 1, 141
+              read(11,*) tmp, (k1(i,iz), i = 1, 100) ! Hill , Hill + R2
+            end do
+          close(11)
+
+          i = 20
+
           isp = sp_index(spl, 'H2')
-          iy = nint(set%latitude)+91
           do iz = 1, grd%nz
-            if ( FAC == 'Hill' ) then
-              var%ki_special(jch,1,1,iz) = tmp_ijh1(181,iy,iz)/var%ni(isp,iz)
-            else if ( FAC == 'Hill+R2' ) then
-              var%ki_special(jch,1,1,iz) = tmp_ijh2(181,iy,iz)/var%ni(isp,iz)
-            end if
+            var%ki_special(jch,1,1,iz) = k1(i,iz)/var%ni(isp,iz)
           end do
+
         end if
 
         !do iz = 1, grd%nz

@@ -144,7 +144,7 @@ program jupiter
         end do
     close(11)
 
-    open(12, file = './dipole.dat', status = 'old')
+    open(12, file = './dipole_Jupiter.dat', status = 'old')
         do h = 1, tn_h
         do j = 1, tn_j
         do i = 1, tn_i
@@ -185,7 +185,7 @@ program jupiter
 do n = 1, 2
 
     if( n == 1 ) then
-        open(13, file = './parallel/cond_Metal_60MA/hic_Hill.dat', status = 'unknown' )
+        open(13, file = './data/metal/hic_Hill.dat', status = 'unknown' )
             do j = 1, tn_j
             do i = 1, tn_i
                 read(13,*) hic_tt(i,j), hic_pp(i,j), hic_tp(i,j)
@@ -193,7 +193,7 @@ do n = 1, 2
             end do
         close(13)
     else if( n == 2) then
-        open(14, file = './parallel/cond_Metal_60MA/hic_H_R2.dat', status = 'unknown' )
+        open(14, file = './data/metal/hic_H_R2.dat', status = 'unknown' )
             do j = 1, tn_j
             do i = 1, tn_i
                 read(14,*) hic_tt(i,j), hic_pp(i,j), hic_tp(i,j)
@@ -339,12 +339,19 @@ open(200, file = './parallel/Progress_Phi.dat', status = 'unknown' )
 close(200)
 
 !L-shell
-    do j = 1, tn_j-1
-        Lv(j) = 1 / ( dcos(theta(j))**2.0d0 )
-    end do
+
+    open(11, file = './theta_L.dat', status = 'unknown' )
+        do j = 92, 165
+            read(11, *) tmp, tmp, tmp, Lv(j), tmp
+        end do
+    close(11)
+
+    !do j = 1, tn_j-1
+    !    Lv(j) = 1 / ( dcos(theta(j))**2.0d0 )
+    !end do
 
 !Electrical potential by Hill current at equatorial plane
-    do j = 92, tn_j-2
+    do j = 92, 164
         do i = 2, 360
             E_phi_long(i,j) = -( phi_Hill(i+1,j) - phi_Hill(i-1,j) ) * 0.5d0 &
 &                           / ( delta_p * Lv(j) * dabs(R0) )
@@ -356,7 +363,7 @@ close(200)
         E_phi_long(361,j) = E_phi_long(1,j)
     end do
 
-    do j = 92, tn_j-2
+    do j = 92, 164
     do i = 1, tn_i
         E_x_Hill(i,j) = E_Lv(i,j) * dcos(phi_long(i)) &
 &                     - E_phi_long(i,j) * dsin(phi_long(i))
@@ -366,7 +373,7 @@ close(200)
     end do
 
 !Electrical potential by Hill + R2 at equatorial plane
-    do j = 92, tn_j-2
+    do j = 92, 164
         do i = 2, 360
             E_phi_long(i,j) = -( phi_R2(i+1,j) - phi_R2(i-1,j) ) * 0.5d0 &
 &                           / ( delta_p * Lv(j) * dabs(R0) )
@@ -378,7 +385,7 @@ close(200)
         E_phi_long(361,j) = E_phi_long(1,j)
     end do
 
-    do j = 92, tn_j-2
+    do j = 92, 164
     do i = 1, tn_i
         E_x_R2(i,j) = E_Lv(i,j) * dcos(phi_long(i)) &
 &                   - E_phi_long(i,j) * dsin(phi_long(i))
@@ -388,7 +395,7 @@ close(200)
     end do
 
 !Electrical field and potential by Hill current at dawn-dusk cross section
-    do j = 92, tn_j-2
+    do j = 92, 164
         E_Hill_dawn(j) = -( phi_Hill(91,j-1) - phi_Hill(91,j+1) ) &
 &                      / ( abs(Lv(j+1) - Lv(j-1)) *  abs(R0) )
         E_Hill_dusk(j) = -( phi_Hill(271,j+1) - phi_Hill(271,j-1) ) &
@@ -396,7 +403,7 @@ close(200)
     end do
 
 !Electric field and potential by Hill and R2 current at dawn-dusk cross section
-    do j = 91, tn_j-2
+    do j = 91, 164
         E_R2_dawn(j) = -( phi_R2(91,j-1) - phi_R2(91,j+1) ) &
 &                    / ( abs(Lv(j+1) - Lv(j-1)) *  abs(R0) )
         E_R2_dusk(j) = -( phi_R2(271,j+1) - phi_R2(271,j-1) ) &
@@ -404,27 +411,27 @@ close(200)
     end do
 
 !Corotation Electric field and Potential
-    do j = 91, 180
+    do j = 91, 165
         E_cr_dawn(j) = -2.0d0 * pi * dabs(m(3)) &
 &                    / ( T_rot * (Lv(j) * dabs(R0))**2.0d0 )
         E_cr_dusk(j) = 2.0d0 * pi * dabs(m(3)) &
 &                    / ( T_rot * (Lv(j) * dabs(R0))**2.0d0 )
     end do
 
-    do j = 91, 180
+    do j = 91, 165
     do i = 1, tn_i
         phi_cr(i,j) = 2.0d0 * pi * dabs(m(3)) / ( T_rot * Lv(j) * dabs(R0) )
     end do
     end do
 
 !Sub-Corotetion Electric field and potential
-    do j = 91, tn_j-1
+    do j = 91, 165
     do i = 1, tn_i
         phi_scr(i,j) = phi_cr(i,j) + phi_Hill(i,j)
     end do
     end do
 
-    do j = 91, tn_j-2
+    do j = 91, 164
         E_scr_dawn(j) = -( phi_scr(91,j-1) - phi_scr(91,j+1) ) &
 &                    / ( dabs(Lv(j+1) - Lv(j-1)) *  dabs(R0) )
         E_scr_dusk(j) = -( phi_scr(271,j+1) - phi_scr(271,j-1) ) &
@@ -432,13 +439,13 @@ close(200)
     end do
 
 !Actual electric field and potential
-    do j = 91, tn_j-1
+    do j = 91, 165
     do i = 1, tn_i
         phi_act(i,j) = phi_cr(i,j) + phi_R2(i,j)
     end do
     end do
 
-    do j = 91, tn_j-2
+    do j = 91, 164
         E_act_dawn(j) = -( phi_act(91,j-1) - phi_act(91,j+1) ) &
 &                    / ( dabs(Lv(j+1) - Lv(j-1)) *  dabs(R0) )
         E_act_dusk(j) = -( phi_act(271,j+1) - phi_act(271,j-1) ) &
@@ -446,13 +453,13 @@ close(200)
     end do
 
 !Dawn-to-Dusk electric field and potential
-    do j = 91, tn_j-1
+    do j = 91, 164
     do i = 1, tn_i
         phi_dd(i,j) = phi_act(i,j) - phi_scr(i,j)
     end do
     end do
 
-    do j = 91, tn_j-2
+    do j = 91, 164
         E_dd_dawn(j) = -( phi_dd(91,j-1) - phi_dd(91,j+1) ) &
 &                    / ( dabs(Lv(j+1) - Lv(j-1)) *  dabs(R0) )
         E_dd_dusk(j) = -( phi_dd(271,j+1) - phi_dd(271,j-1) ) &
@@ -460,7 +467,7 @@ close(200)
     end do
 
 !Dawn-to-Dusk Electrical potential of LT variation
-    do j = 92, tn_j-2
+    do j = 92, 164
         do i = 2, 360
             E_phi_long(i,j) = -( phi_dd(i+1,j) - phi_dd(i-1,j) ) * 0.5d0 &
 &                           / ( delta_p * Lv(j) * dabs(R0) )
@@ -472,7 +479,7 @@ close(200)
         E_phi_long(361,j) = E_phi_long(1,j)
     end do
 
-    do j = 92, tn_j-2
+    do j = 92, 164
     do i = 1, tn_i
         E_x_dd(i,j) = E_Lv(i,j) * dcos(phi_long(i)) &
 &                   - E_phi_long(i,j) * dsin(phi_long(i))
@@ -482,7 +489,7 @@ close(200)
     end do
 
 !IPT shift amount at dawn side
-    do j = 91, tn_j-1
+    do j = 91, 165
         if( Lv(j) <= 5.9d0 .and. 5.9d0 < Lv(j+1) ) then
             phi_cr_IPT_dawn &
 &           = phi_cr(91,j) + ( phi_cr(91,j+1) - phi_cr(91,j) ) &
@@ -492,7 +499,7 @@ close(200)
         end if
     end do
 
-    do j = 91, tn_j-1
+    do j = 91, 165
         if( phi_scr(91,j+1) <= phi_cr_IPT_dawn &
 &           .and. phi_cr_IPT_dawn < phi_scr(91,j) ) then
             Lv_shift_scr_dawn &
@@ -503,7 +510,7 @@ close(200)
         end if
     end do
 
-    do j = 91, tn_j-1
+    do j = 91, 165
         if( phi_act(91,j+1) <= phi_cr_IPT_dawn &
 &           .and. phi_cr_IPT_dawn < phi_act(91,j) ) then
             Lv_shift_act_dawn &
@@ -515,7 +522,7 @@ close(200)
     end do
 
 !IPT shift amount at dusk side
-    do j = 91, tn_j-1
+    do j = 91, 165
         if( Lv(j) <= 5.9d0 .and. 5.9d0 < Lv(j+1) ) then
             phi_cr_IPT_dusk &
 &           = phi_cr(271,j) + ( phi_cr(271,j+1) - phi_cr(271,j) ) &
@@ -525,7 +532,7 @@ close(200)
         end if
     end do
 
-    do j = 91, tn_j-1
+    do j = 91, 165
         if( phi_scr(271,j+1) <= phi_cr_IPT_dusk &
 &           .and. phi_cr_IPT_dusk < phi_scr(271,j) ) then
             Lv_shift_scr_dusk &
@@ -536,7 +543,7 @@ close(200)
         end if
     end do
 
-    do j = 91, tn_j-1
+    do j = 91, 165
         if( phi_act(271,j+1) <= phi_cr_IPT_dusk &
 &           .and. phi_cr_IPT_dusk < phi_act(271,j) ) then
             Lv_shift_act_dusk &
@@ -548,7 +555,7 @@ close(200)
     end do
 
 !bird's eye view
-    do j = 1, tn_j
+    do j = 1, 165
         rv(j) = dabs(R0) * ( 0.5d0 * pi - dabs(theta(j)) )
     end do
 

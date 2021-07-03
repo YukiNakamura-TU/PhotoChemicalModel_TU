@@ -1,0 +1,4222 @@
+
+
+*******************************************************************************
+Fri Jul  2 03:27:55 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 1.00000]
+        #datapoints = 7
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=a*x**3 + b*x**2 + c*x + d
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c             d            
+   0 1.0226628755e+02   0.00e+00  5.02e-01    1.000000e+00   1.000000e+00  -1.000000e+00  -1.000000e+00
+   7 2.1890843463e-02  -6.06e-06  5.02e-08   -9.741877e+02   2.555466e+02   1.713086e+01   1.299058e-01
+
+After 7 iterations the fit converged.
+final sum of squares of residuals : 0.0218908
+rel. change during last iteration : -6.06051e-11
+
+degrees of freedom    (FIT_NDF)                        : 3
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0854222
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00729695
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = -974.188         +/- 245.3        (25.18%)
+b               = 255.547          +/- 70.67        (27.65%)
+c               = 17.1309          +/- 4.812        (28.09%)
+d               = 0.129906         +/- 0.08005      (61.62%)
+
+correlation matrix of the fit parameters:
+                a      b      c      d      
+a               1.000 
+b              -0.993  1.000 
+c               0.932 -0.965  1.000 
+d              -0.524  0.588 -0.742  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 03:30:05 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 1.00000]
+        #datapoints = 7
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*x + b*log(x+c) +d
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c             d            
+   0 9.8643978958e+01   0.00e+00  7.41e-01    1.000000e+00   1.000000e+00  -1.000000e+00  -1.000000e+00
+ 118 1.9657480617e-01  -9.97e-01  7.41e-03    2.968851e+01  -2.382331e+00  -4.852611e+00   3.859908e+00
+
+After 118 iterations the fit converged.
+final sum of squares of residuals : 0.196575
+rel. change during last iteration : -9.96855e-06
+
+degrees of freedom    (FIT_NDF)                        : 3
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.255978
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.0655249
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 29.6885          +/- 5.06e+04     (1.704e+05%)
+b               = -2.38233         +/- 4.817e+05    (2.022e+07%)
+c               = -4.85261         +/- 4.815e+05    (9.923e+06%)
+d               = 3.85991          +/- 9.971e+05    (2.583e+07%)
+
+correlation matrix of the fit parameters:
+                a      b      c      d      
+a               1.000 
+b               1.000  1.000 
+c               1.000  1.000  1.000 
+d              -1.000 -1.000 -1.000  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 03:30:41 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 1.00000]
+        #datapoints = 7
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*x + b*log(x+c) +d
+fitted parameters initialized with current variable values
+
+Warning: Initial value of parameter 'c' is zero.
+Warning: Initial value of parameter 'd' is zero.
+iter      chisq       delta/lim  lambda   a             b             c             d            
+   0 4.9683316427e+03   0.00e+00  1.89e+29    1.000000e+00   1.000000e+00   1.000000e-30   1.000000e-30
+BREAK: Singular matrix in Invert_RtR
+
+*******************************************************************************
+Fri Jul  2 03:31:23 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 1.00000]
+        #datapoints = 7
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*x + b*log(x+c) +d
+fitted parameters initialized with current variable values
+
+Warning: Initial value of parameter 'd' is zero.
+iter      chisq       delta/lim  lambda   a             b             c             d            
+   0 5.2508420919e+01   0.00e+00  5.09e-01    1.000000e+00   1.000000e+00   1.000000e+00   1.000000e-30
+ 691 1.4209072203e-01  -1.00e+00  5.09e-03   -2.024831e+00   2.449329e+01   6.619737e-01   1.007370e+01
+
+After 691 iterations the fit converged.
+final sum of squares of residuals : 0.142091
+rel. change during last iteration : -9.99561e-06
+
+degrees of freedom    (FIT_NDF)                        : 3
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.217632
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.0473636
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = -2.02483         +/- 985.9        (4.869e+04%)
+b               = 24.4933          +/- 1487         (6073%)
+c               = 0.661974         +/- 22.81        (3446%)
+d               = 10.0737          +/- 230.2        (2285%)
+
+correlation matrix of the fit parameters:
+                a      b      c      d      
+a               1.000 
+b              -1.000  1.000 
+c              -1.000  1.000  1.000 
+d               0.997 -0.998 -0.999  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 03:32:00 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 1.00000]
+        #datapoints = 7
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*x + b*log(x+c) +d
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c             d            
+   0 4.6868525808e+01   0.00e+00  4.83e-01    1.000000e+00   1.000000e+00   1.000000e+00   2.000000e-01
+ 295 1.4019371608e-01  -9.98e-01  4.83e-04   -2.230401e+01   6.186602e+01   1.078852e+00  -4.730308e+00
+
+After 295 iterations the fit converged.
+final sum of squares of residuals : 0.140194
+rel. change during last iteration : -9.98169e-06
+
+degrees of freedom    (FIT_NDF)                        : 3
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.216174
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.0467312
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = -22.304          +/- 2432         (1.09e+04%)
+b               = 61.866           +/- 5704         (9220%)
+c               = 1.07885          +/- 54           (5005%)
+d               = -4.73031         +/- 3528         (7.457e+04%)
+
+correlation matrix of the fit parameters:
+                a      b      c      d      
+a               1.000 
+b              -1.000  1.000 
+c              -1.000  1.000  1.000 
+d               1.000 -1.000 -1.000  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 03:32:32 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 1.00000]
+        #datapoints = 7
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*x + b*exp(-c/x) +d
+fitted parameters initialized with current variable values
+
+
+Current data point
+=========================
+#               = 1 out of 7
+x               = 1              
+z               = 0.179633       
+
+Current set of parameters
+=========================
+a               = 1              
+b               = 1              
+c               = 1              
+d               = 0.2            
+
+BREAK: Undefined value during function evaluation
+
+*******************************************************************************
+Fri Jul  2 03:33:03 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 1.00000]
+        #datapoints = 7
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*x + b*10.0**(-c/x) +d
+fitted parameters initialized with current variable values
+
+
+Current data point
+=========================
+#               = 1 out of 7
+x               = 1              
+z               = 0.179633       
+
+Current set of parameters
+=========================
+a               = 1              
+b               = 1              
+c               = 1              
+d               = 0.2            
+
+BREAK: Undefined value during function evaluation
+
+*******************************************************************************
+Fri Jul  2 03:33:41 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 1.00000]
+        #datapoints = 7
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*x + b**(-c/x) + d
+fitted parameters initialized with current variable values
+
+
+Current data point
+=========================
+#               = 1 out of 7
+x               = 1              
+z               = 0.179633       
+
+Current set of parameters
+=========================
+a               = 1              
+b               = 1              
+c               = 1              
+d               = 0.2            
+
+BREAK: Undefined value during function evaluation
+
+*******************************************************************************
+Fri Jul  2 03:34:01 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 1.00000]
+        #datapoints = 7
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*x + b**(-c/x+d) + e
+fitted parameters initialized with current variable values
+
+
+Current data point
+=========================
+#               = 1 out of 7
+x               = 1              
+z               = 0.179633       
+
+Current set of parameters
+=========================
+a               = 1              
+b               = 1              
+c               = 1              
+d               = 0.2            
+e               = 1              
+
+BREAK: Undefined value during function evaluation
+
+*******************************************************************************
+Fri Jul  2 03:34:16 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 1.00000]
+        #datapoints = 7
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*x + b*log(x+c) +d
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c             d            
+   0 4.6868525808e+01   0.00e+00  4.83e-01    1.000000e+00   1.000000e+00   1.000000e+00   2.000000e-01
+ 295 1.4019371608e-01  -9.98e-01  4.83e-04   -2.230401e+01   6.186602e+01   1.078852e+00  -4.730308e+00
+
+After 295 iterations the fit converged.
+final sum of squares of residuals : 0.140194
+rel. change during last iteration : -9.98169e-06
+
+degrees of freedom    (FIT_NDF)                        : 3
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.216174
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.0467312
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = -22.304          +/- 2432         (1.09e+04%)
+b               = 61.866           +/- 5704         (9220%)
+c               = 1.07885          +/- 54           (5005%)
+d               = -4.73031         +/- 3528         (7.457e+04%)
+
+correlation matrix of the fit parameters:
+                a      b      c      d      
+a               1.000 
+b              -1.000  1.000 
+c              -1.000  1.000  1.000 
+d               1.000 -1.000 -1.000  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 03:34:23 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 1.00000]
+        #datapoints = 7
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*x + b*exp(x+c) +d
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c             d            
+   0 2.4445226543e+01   0.00e+00  2.08e+00    1.000000e+00   1.000000e+00   1.000000e+00   2.000000e-01
+ 957 1.3540098836e-01  -9.95e-01  2.08e-03    7.482174e+01  -2.226101e+00   2.894522e+00   4.020722e+01
+
+After 957 iterations the fit converged.
+final sum of squares of residuals : 0.135401
+rel. change during last iteration : -9.9472e-06
+
+degrees of freedom    (FIT_NDF)                        : 3
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.212447
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.0451337
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 74.8217          +/- 51.1         (68.3%)
+b               = -2.2261          +/- 8.929e+10    (4.011e+12%)
+c               = 2.89452          +/- 4.005e+10    (1.384e+12%)
+d               = 40.2072          +/- 45.86        (114.1%)
+
+correlation matrix of the fit parameters:
+                a      b      c      d      
+a               1.000 
+b               0.601  1.000 
+c               0.601  1.000  1.000 
+d               1.000  0.600  0.600  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 03:34:38 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 1.00000]
+        #datapoints = 7
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*x + b*exp(-c/x) +d
+fitted parameters initialized with current variable values
+
+
+Current data point
+=========================
+#               = 1 out of 7
+x               = 1              
+z               = 0.179633       
+
+Current set of parameters
+=========================
+a               = 1              
+b               = 1              
+c               = 1              
+d               = 0.2            
+
+BREAK: Undefined value during function evaluation
+
+*******************************************************************************
+Fri Jul  2 03:35:07 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 1.00000]
+        #datapoints = 7
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*x + b*exp(-c/x+0.01) +d
+fitted parameters initialized with current variable values
+
+
+Current data point
+=========================
+#               = 1 out of 7
+x               = 1              
+z               = 0.179633       
+
+Current set of parameters
+=========================
+a               = 1              
+b               = 1              
+c               = 1              
+d               = 0.2            
+
+BREAK: Undefined value during function evaluation
+
+*******************************************************************************
+Fri Jul  2 03:35:24 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 1.00000]
+        #datapoints = 7
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*x + b*exp(-1/x+0.01) +d
+fitted parameters initialized with current variable values
+
+
+Current data point
+=========================
+#               = 1 out of 7
+x               = 1              
+z               = 0.179633       
+
+Current set of parameters
+=========================
+a               = 1              
+b               = 1              
+c               = 1              
+d               = 0.2            
+
+BREAK: Undefined value during function evaluation
+
+*******************************************************************************
+Fri Jul  2 03:35:35 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 1.00000]
+        #datapoints = 7
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*x + b*exp(x) +d
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c             d            
+   0 2.6667431904e+01   0.00e+00  5.50e-01    1.000000e+00   1.000000e+00   1.000000e+00   2.000000e-01
+BREAK: Singular matrix in Invert_RtR
+
+*******************************************************************************
+Fri Jul  2 03:35:46 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 1.00000]
+        #datapoints = 7
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*x + b*exp(x**c) +d
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c             d            
+   0 2.6667431904e+01   0.00e+00  5.61e-01    1.000000e+00   1.000000e+00   1.000000e+00   2.000000e-01
+
+Current data point
+=========================
+#               = 1 out of 7
+x               = 2.61463        
+z               = 0.179633       
+
+Current set of parameters
+=========================
+a               = 2.61463        
+b               = 1.35531        
+c               = -1.94965       
+d               = 0.142442       
+
+BREAK: Undefined value during function evaluation
+
+*******************************************************************************
+Fri Jul  2 03:36:59 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 1.00000]
+        #datapoints = 7
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*x + b*(log(1+x))**2 +d
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c             d            
+   0 4.9614248658e+01   0.00e+00  1.11e-01    1.000000e+00   1.000000e+00   1.000000e+00   2.000000e-01
+BREAK: Singular matrix in Invert_RtR
+
+*******************************************************************************
+Fri Jul  2 03:37:10 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 1.00000]
+        #datapoints = 7
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*x + b*(log(1+x))**2 + c
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c            
+   0 3.1985370342e+01   0.00e+00  5.80e-01    1.000000e+00   1.000000e+00   1.000000e+00
+   5 1.4233909272e-01  -1.87e-01  5.80e-06    3.513145e+01  -2.900995e+01  -3.427502e-02
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 0.142339
+rel. change during last iteration : -1.86516e-06
+
+degrees of freedom    (FIT_NDF)                        : 4
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.188639
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.0355848
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 35.1314          +/- 4.177        (11.89%)
+b               = -29.0099         +/- 23.56        (81.2%)
+c               = -0.034275        +/- 0.1526       (445.2%)
+
+correlation matrix of the fit parameters:
+                a      b      c      
+a               1.000 
+b              -0.960  1.000 
+c              -0.821  0.697  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 03:40:53 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 1.00000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*x + b*(log(1+x))**2 + c
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c            
+   0 8.8542224523e+01   0.00e+00  5.86e-01    1.000000e+00   1.000000e+00   1.000000e+00
+   5 2.0862715861e-01  -1.75e-03  5.86e-06    3.977998e+01  -5.916491e+01  -1.410944e-01
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 0.208627
+rel. change during last iteration : -1.75219e-08
+
+degrees of freedom    (FIT_NDF)                        : 5
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.204268
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.0417254
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 39.78            +/- 2.619        (6.584%)
+b               = -59.1649         +/- 8.85         (14.96%)
+c               = -0.141094        +/- 0.1419       (100.5%)
+
+correlation matrix of the fit parameters:
+                a      b      c      
+a               1.000 
+b              -0.974  1.000 
+c              -0.810  0.724  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 03:41:58 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 1.00000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*x + b*(log(1+x))**3 + c
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c            
+   0 8.9997037679e+01   0.00e+00  5.85e-01    1.000000e+00   1.000000e+00   1.000000e+00
+   5 1.2066866588e-01  -3.44e-01  5.85e-06    3.377812e+01  -1.167485e+02  -3.185123e-02
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 0.120669
+rel. change during last iteration : -3.43761e-06
+
+degrees of freedom    (FIT_NDF)                        : 5
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.15535
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.0241337
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 33.7781          +/- 1.308        (3.874%)
+b               = -116.748         +/- 12.98        (11.12%)
+c               = -0.0318512       +/- 0.09828      (308.6%)
+
+correlation matrix of the fit parameters:
+                a      b      c      
+a               1.000 
+b              -0.940  1.000 
+c              -0.788  0.653  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 03:43:09 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 1.00000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*x**2 + b*x + c + d*sqrt(x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c            
+   0 8.4537660024e+01   0.00e+00  5.86e-01    1.000000e+00   1.000000e+00   1.000000e+00
+   5 1.6976366195e-01  -4.82e-05  5.86e-06   -3.558515e+01   3.682783e+01  -1.116127e-01
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 0.169764
+rel. change during last iteration : -4.82161e-10
+
+degrees of freedom    (FIT_NDF)                        : 5
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.184263
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.0339527
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = -35.5851         +/- 4.833        (13.58%)
+b               = 36.8278          +/- 2.025        (5.498%)
+c               = -0.111613        +/- 0.1231       (110.3%)
+
+correlation matrix of the fit parameters:
+                a      b      c      
+a               1.000 
+b              -0.965  1.000 
+c               0.696 -0.799  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 03:43:37 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 1.00000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*x**3 + b*x + c + d*sqrt(x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c            
+   0 8.6319692074e+01   0.00e+00  5.85e-01    1.000000e+00   1.000000e+00   1.000000e+00
+   5 1.3176170658e-01  -3.30e-03  5.85e-06   -6.297523e+01   3.237644e+01  -1.737214e-02
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 0.131762
+rel. change during last iteration : -3.29714e-08
+
+degrees of freedom    (FIT_NDF)                        : 5
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.162334
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.0263523
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = -62.9752         +/- 7.458        (11.84%)
+b               = 32.3764          +/- 1.266        (3.911%)
+c               = -0.0173721       +/- 0.1005       (578.5%)
+
+correlation matrix of the fit parameters:
+                a      b      c      
+a               1.000 
+b              -0.929  1.000 
+c               0.633 -0.781  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 03:43:58 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 1.00000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*x**3 + b*x**2 + c + d*sqrt(x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c            
+   0 9.2194518406e+01   0.00e+00  5.78e-01    1.000000e+00   1.000000e+00   1.000000e+00
+   6 1.7279526348e+00  -3.75e-08  5.78e-07   -4.363463e+02   2.247688e+02   8.319904e-01
+
+After 6 iterations the fit converged.
+final sum of squares of residuals : 1.72795
+rel. change during last iteration : -3.74839e-13
+
+degrees of freedom    (FIT_NDF)                        : 5
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.587869
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.345591
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = -436.346         +/- 82.47        (18.9%)
+b               = 224.769          +/- 33.42        (14.87%)
+c               = 0.83199          +/- 0.2851       (34.27%)
+
+correlation matrix of the fit parameters:
+                a      b      c      
+a               1.000 
+b              -0.993  1.000 
+c               0.560 -0.604  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 03:44:34 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 1.00000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*x**3 + b*x**2 + c*x + d*sqrt(x) + e
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c             d             e            
+   0 8.3520545347e+01   0.00e+00  4.55e-01    1.000000e+00   1.000000e+00   1.000000e+00   2.000000e-01   1.000000e+00
+   6 2.8306187601e-03  -2.01e-02  4.55e-07    1.145418e+02  -1.267303e+02   6.579755e+01  -7.151283e+00   1.833576e-01
+
+After 6 iterations the fit converged.
+final sum of squares of residuals : 0.00283062
+rel. change during last iteration : -2.00617e-07
+
+degrees of freedom    (FIT_NDF)                        : 3
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0307171
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00094354
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 114.542          +/- 18.25        (15.93%)
+b               = -126.73          +/- 12.29        (9.699%)
+c               = 65.7975          +/- 2.97         (4.513%)
+d               = -7.15128         +/- 0.6289       (8.794%)
+e               = 0.183358         +/- 0.03064      (16.71%)
+
+correlation matrix of the fit parameters:
+                a      b      c      d      e      
+a               1.000 
+b              -0.993  1.000 
+c               0.937 -0.971  1.000 
+d              -0.835  0.885 -0.964  1.000 
+e               0.196 -0.236  0.359 -0.557  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 03:45:21 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 1.00000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*x**3 + b*x**2 + c*x + d*log(1+x) + e
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c             d             e            
+   0 8.5246586082e+01   0.00e+00  4.54e-01    1.000000e+00   1.000000e+00   1.000000e+00   2.000000e-01   1.000000e+00
+   9 1.3544423144e-02  -3.19e-06  4.54e-10    3.973036e+03  -9.099346e+03   1.898506e+04  -1.897189e+04   1.451376e-01
+
+After 9 iterations the fit converged.
+final sum of squares of residuals : 0.0135444
+rel. change during last iteration : -3.18826e-11
+
+degrees of freedom    (FIT_NDF)                        : 3
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0671923
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00451481
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 3973.04          +/- 812.4        (20.45%)
+b               = -9099.35         +/- 1832         (20.13%)
+c               = 18985.1          +/- 3817         (20.11%)
+d               = -18971.9         +/- 3821         (20.14%)
+e               = 0.145138         +/- 0.06389      (44.02%)
+
+correlation matrix of the fit parameters:
+                a      b      c      d      e      
+a               1.000 
+b              -1.000  1.000 
+c               1.000 -1.000  1.000 
+d              -1.000  1.000 -1.000  1.000 
+e               0.477 -0.487  0.491 -0.491  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 03:46:08 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 1.00000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*x**2 + b*x + c + d*log(1+x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c             d            
+   0 8.6272276753e+01   0.00e+00  5.08e-01    1.000000e+00   1.000000e+00   1.000000e+00   2.000000e-01
+   7 1.2153431172e-01  -1.25e-03  5.08e-08   -1.406812e+02   3.231858e+02  -4.016097e-03  -2.904639e+02
+
+After 7 iterations the fit converged.
+final sum of squares of residuals : 0.121534
+rel. change during last iteration : -1.24883e-08
+
+degrees of freedom    (FIT_NDF)                        : 4
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.174309
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.0303836
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = -140.681         +/- 96.34        (68.48%)
+b               = 323.186          +/- 263.5        (81.53%)
+c               = -0.0040161       +/- 0.1457       (3627%)
+d               = -290.464         +/- 267.8        (92.2%)
+
+correlation matrix of the fit parameters:
+                a      b      c      d      
+a               1.000 
+b              -0.999  1.000 
+c              -0.574  0.596  1.000 
+d               0.999 -1.000 -0.601  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 03:46:59 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 1.00000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a**log(1+x) + b
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c             d             e            
+   0 7.4075526181e+01   0.00e+00  4.52e-01    1.000000e+00   1.000000e+00   1.000000e+00   2.000000e-01   1.000000e+00
+BREAK: Singular matrix in Invert_RtR
+
+*******************************************************************************
+Fri Jul  2 03:47:07 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 1.00000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a**log(1+x) + b
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b            
+   0 7.4075526181e+01   0.00e+00  7.14e-01    1.000000e+00   1.000000e+00
+   7 9.8481840354e+00  -1.65e-03  7.14e-08    6.886475e+02   5.110362e-01
+
+After 7 iterations the fit converged.
+final sum of squares of residuals : 9.84818
+rel. change during last iteration : -1.64639e-08
+
+degrees of freedom    (FIT_NDF)                        : 6
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 1.28116
+variance of residuals (reduced chisquare) = WSSR/ndf   : 1.64136
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 688.648          +/- 321.9        (46.74%)
+b               = 0.511036         +/- 0.5123       (100.2%)
+
+correlation matrix of the fit parameters:
+                a      b      
+a               1.000 
+b              -0.467  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 03:47:43 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 1.00000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*log(1+x)**b + c
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b            
+   0 9.1818404253e+01   0.00e+00  1.83e-01    1.000000e+00   1.000000e+00
+
+Current data point
+=========================
+#               = 1 out of 8
+x               = 13.3779        
+z               = 0.179633       
+
+Current set of parameters
+=========================
+a               = 13.3779        
+b               = -4.90181       
+
+BREAK: Undefined value during function evaluation
+
+*******************************************************************************
+Fri Jul  2 03:47:49 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 1.00000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*log(1+x)**b + c
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c            
+   0 9.1818404253e+01   0.00e+00  5.96e-01    1.000000e+00   1.000000e+00   1.000000e+00
+
+Current data point
+=========================
+#               = 1 out of 8
+x               = 5.28751        
+z               = 0.179633       
+
+Current set of parameters
+=========================
+a               = 5.28751        
+b               = -3.39986       
+c               = 1.72725        
+
+BREAK: Undefined value during function evaluation
+
+*******************************************************************************
+Fri Jul  2 03:47:58 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 1.00000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*log(1+x)**b + c
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c            
+   0 9.1818404253e+01   0.00e+00  5.96e-01    1.000000e+00   1.000000e+00   1.000000e+00
+
+Current data point
+=========================
+#               = 1 out of 8
+x               = 5.28751        
+z               = 0.179633       
+
+Current set of parameters
+=========================
+a               = 5.28751        
+b               = -3.39986       
+c               = 1.72725        
+
+BREAK: Undefined value during function evaluation
+
+*******************************************************************************
+Fri Jul  2 03:48:30 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 1.00000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*atan(x) + b
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c            
+   0 9.0966002153e+01   0.00e+00  5.85e-01    1.000000e+00   1.000000e+00   1.000000e+00
+BREAK: Singular matrix in Invert_RtR
+
+*******************************************************************************
+Fri Jul  2 03:48:35 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 1.00000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*atan(x) + b
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b            
+   0 9.0966002153e+01   0.00e+00  7.16e-01    1.000000e+00   1.000000e+00
+   4 1.6632611495e+00  -1.07e-03  7.16e-05    2.393980e+01   4.753457e-01
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 1.66326
+rel. change during last iteration : -1.06786e-08
+
+degrees of freedom    (FIT_NDF)                        : 6
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.526508
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.27721
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 23.9398          +/- 1.592        (6.648%)
+b               = 0.475346         +/- 0.2552       (53.68%)
+
+correlation matrix of the fit parameters:
+                a      b      
+a               1.000 
+b              -0.684  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 03:49:22 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 1.00000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a/(1+x*x) + b
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b            
+   0 7.6374522682e+01   0.00e+00  9.88e-01    1.000000e+00   1.000000e+00
+   5 1.0516501867e+01  -3.34e-07  9.88e-06   -5.848941e+01   6.014072e+01
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 10.5165
+rel. change during last iteration : -3.33735e-12
+
+degrees of freedom    (FIT_NDF)                        : 6
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 1.32391
+variance of residuals (reduced chisquare) = WSSR/ndf   : 1.75275
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = -58.4894         +/- 10.55        (18.04%)
+b               = 60.1407          +/- 10.3         (17.13%)
+
+correlation matrix of the fit parameters:
+                a      b      
+a               1.000 
+b              -0.999  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 03:49:53 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 1.00000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a/(1+b*x*x) + c
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c            
+   0 7.6374522682e+01   0.00e+00  8.07e-01    1.000000e+00   1.000000e+00   1.000000e+00
+ 573 1.1846186752e+01  -5.39e-01  8.07e-05    6.693939e+02  -7.252748e-02  -6.676697e+02
+
+After 573 iterations the fit converged.
+final sum of squares of residuals : 11.8462
+rel. change during last iteration : -5.39346e-06
+
+degrees of freedom    (FIT_NDF)                        : 5
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 1.53923
+variance of residuals (reduced chisquare) = WSSR/ndf   : 2.36924
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 669.394          +/- 6.793e+04    (1.015e+04%)
+b               = -0.0725275       +/- 7.275        (1.003e+04%)
+c               = -667.67          +/- 6.793e+04    (1.017e+04%)
+
+correlation matrix of the fit parameters:
+                a      b      c      
+a               1.000 
+b               1.000  1.000 
+c              -1.000 -1.000  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 03:54:09 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 1.00000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a + b/2 * (sqrt(x*x + c)+x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c            
+   0 8.0089554033e+01   0.00e+00  6.79e-01    1.000000e+00   1.000000e+00   1.000000e+00
+BREAK: Singular matrix in Invert_RtR
+
+*******************************************************************************
+Fri Jul  2 03:54:32 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 1.00000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a + b/2 * (sqrt(x*x + c)+x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c            
+   0 8.0089554033e+01   0.00e+00  6.79e-01    1.000000e+00   1.000000e+00   1.000000e+00
+BREAK: Singular matrix in Invert_RtR
+
+*******************************************************************************
+Fri Jul  2 03:55:47 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 1.00000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a + b/2 * (sqrt(x*x + c*c)-c)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c            
+   0 9.8951158008e+01   0.00e+00  5.77e-01    1.000000e+00   1.000000e+00   1.000000e+00
+  37 5.9397460009e+01  -8.30e-02  5.77e+01    3.012728e+00   1.857102e+00   2.445437e-04
+
+After 37 iterations the fit converged.
+final sum of squares of residuals : 59.3975
+rel. change during last iteration : -8.30287e-07
+
+degrees of freedom    (FIT_NDF)                        : 5
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 3.44666
+variance of residuals (reduced chisquare) = WSSR/ndf   : 11.8795
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 3.01273          +/- 3.447        (114.4%)
+b               = 1.8571           +/- 21.2         (1142%)
+c               = 0.000244544      +/- 4.257        (1.741e+06%)
+
+correlation matrix of the fit parameters:
+                a      b      c      
+a               1.000 
+b               0.006  1.000 
+c               0.878  0.352  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 03:56:29 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 1.00000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a + b/2 * (sqrt(x*x + c*c)-x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c            
+   0 8.8421048366e+01   0.00e+00  6.95e-01    1.000000e+00   1.000000e+00   1.000000e+00
+  18 1.9664410570e-01  -2.62e-02  6.95e-06    1.580524e+01  -7.754177e+01  -4.107861e-01
+
+After 18 iterations the fit converged.
+final sum of squares of residuals : 0.196644
+rel. change during last iteration : -2.6237e-07
+
+degrees of freedom    (FIT_NDF)                        : 5
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.198315
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.0393288
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 15.8052          +/- 1.308        (8.276%)
+b               = -77.5418         +/- 5.674        (7.318%)
+c               = -0.410786        +/- 0.05854      (14.25%)
+
+correlation matrix of the fit parameters:
+                a      b      c      
+a               1.000 
+b               0.831  1.000 
+c              -0.969 -0.941  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 03:57:43 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 1.00000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a + b/2 * (sqrt(x*x + c*c)-x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c            
+   0 9.1631246560e+01   0.00e+00  8.74e-01    1.000000e+00   1.000000e+01   2.000000e-01
+  13 1.9664410419e-01  -3.14e-03  8.74e-07    1.580535e+01  -7.754132e+01   4.107911e-01
+
+After 13 iterations the fit converged.
+final sum of squares of residuals : 0.196644
+rel. change during last iteration : -3.14214e-08
+
+degrees of freedom    (FIT_NDF)                        : 5
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.198315
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.0393288
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 15.8053          +/- 1.308        (8.276%)
+b               = -77.5413         +/- 5.674        (7.318%)
+c               = 0.410791         +/- 0.05854      (14.25%)
+
+correlation matrix of the fit parameters:
+                a      b      c      
+a               1.000 
+b               0.831  1.000 
+c               0.969  0.941  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 03:59:03 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 1.00000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = 0.02 - b*c/2 + b/2 * (sqrt(x*x + c*c)-x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c            
+   0 1.6810318231e+02   0.00e+00  2.66e-01    1.000000e+00   1.000000e+01   2.000000e-01
+BREAK: Singular matrix in Invert_RtR
+
+*******************************************************************************
+Fri Jul  2 03:59:35 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 1.00000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = 0.02 + b/2 * (sqrt(x*x + c*c)-x-c)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c            
+   0 1.6810318231e+02   0.00e+00  2.66e-01    1.000000e+00   1.000000e+01   2.000000e-01
+BREAK: Singular matrix in Invert_RtR
+
+*******************************************************************************
+Fri Jul  2 03:59:48 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 1.00000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = 0.02 + b/2 * (sqrt(x*x + c*c)-x-c)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c            
+   0 1.4297158143e+02   0.00e+00  2.66e-02    1.000000e+00   1.000000e+00   2.000000e-01
+BREAK: Singular matrix in Invert_RtR
+
+*******************************************************************************
+Fri Jul  2 03:59:55 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 1.00000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = 0.02 + b/2 * (sqrt(x*x + c*c)-x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c            
+   0 1.3807081175e+02   0.00e+00  6.57e-02    1.000000e+00   1.000000e+00   2.000000e-01
+BREAK: Singular matrix in Invert_RtR
+
+*******************************************************************************
+Fri Jul  2 04:00:15 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 1.00000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = 0.01 + b/2 * (sqrt(x*x + c*c)-x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c            
+   0 1.3855368872e+02   0.00e+00  6.57e-02    1.000000e+00   1.000000e+00   2.000000e-01
+BREAK: Singular matrix in Invert_RtR
+
+*******************************************************************************
+Fri Jul  2 04:01:06 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 1.00000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = 0.01 + b/2 * (sqrt(x*x + 0.01*0.01)-x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c            
+   0 1.4078956996e+02   0.00e+00  1.06e-03    1.000000e+00   1.000000e+00   2.000000e-01
+BREAK: Singular matrix in Invert_RtR
+
+*******************************************************************************
+Fri Jul  2 04:01:13 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 1.00000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = 0.01 + b/2 * (sqrt(x*x + 0.01*0.01)-x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b            
+   0 1.4078956996e+02   0.00e+00  1.30e-03    1.000000e+00   1.000000e+00
+BREAK: Singular matrix in Invert_RtR
+
+*******************************************************************************
+Fri Jul  2 04:01:32 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 1.00000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = 0.01 + a/2 * (sqrt(x*x + 0.01*0.01)-x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a            
+   0 1.4078956996e+02   0.00e+00  1.84e-03    1.000000e+00
+   3 1.3953083763e+02  -1.74e-05  1.84e-06    2.164302e+02
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 139.531
+rel. change during last iteration : -1.73585e-10
+
+degrees of freedom    (FIT_NDF)                        : 7
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 4.46464
+variance of residuals (reduced chisquare) = WSSR/ndf   : 19.933
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 216.43           +/- 857.3        (396.1%)
+
+
+*******************************************************************************
+Fri Jul  2 04:02:00 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 1.00000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = 0.01 + a/2 * (sqrt(x*x + b*b)-x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a            
+   0 1.2240053485e+02   0.00e+00  4.53e-01    1.000000e+00
+   3 7.9675547879e+01  -1.03e-03  4.53e-04    6.099182e+00
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 79.6755
+rel. change during last iteration : -1.03183e-08
+
+degrees of freedom    (FIT_NDF)                        : 7
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 3.37375
+variance of residuals (reduced chisquare) = WSSR/ndf   : 11.3822
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 6.09918          +/- 2.632        (43.15%)
+
+
+*******************************************************************************
+Fri Jul  2 04:02:06 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 1.00000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = 0.01 + a/2 * (sqrt(x*x + b*b)-x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b            
+   0 1.2240053485e+02   0.00e+00  4.74e-01    1.000000e+00   1.000000e+00
+ 263 6.4553010962e+01  -9.91e-01  4.74e-03    6.167943e-02   1.002163e+02
+
+After 263 iterations the fit converged.
+final sum of squares of residuals : 64.553
+rel. change during last iteration : -9.91348e-06
+
+degrees of freedom    (FIT_NDF)                        : 6
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 3.28007
+variance of residuals (reduced chisquare) = WSSR/ndf   : 10.7588
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 0.0616794        +/- 18.95        (3.073e+04%)
+b               = 100.216          +/- 3.076e+04    (3.07e+04%)
+
+correlation matrix of the fit parameters:
+                a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 04:02:32 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 1.00000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = 0.02 + a/2 * (sqrt(x*x + b*b)-x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b            
+   0 1.2197890771e+02   0.00e+00  4.74e-01    1.000000e+00   1.000000e+00
+ 263 6.4552646116e+01  -9.89e-01  4.74e-03    6.154640e-02   1.001076e+02
+
+After 263 iterations the fit converged.
+final sum of squares of residuals : 64.5526
+rel. change during last iteration : -9.89215e-06
+
+degrees of freedom    (FIT_NDF)                        : 6
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 3.28006
+variance of residuals (reduced chisquare) = WSSR/ndf   : 10.7588
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 0.0615464        +/- 18.95        (3.08e+04%)
+b               = 100.108          +/- 3.08e+04     (3.076e+04%)
+
+correlation matrix of the fit parameters:
+                a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 04:03:36 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 1.00000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a * log(1+b*x*x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b            
+   0 1.3804995609e+02   0.00e+00  5.27e-02    1.000000e+00   1.000000e+00
+  71 8.6201658698e-02  -5.18e-03  5.27e-08    2.163876e+00   3.885681e+02
+
+After 71 iterations the fit converged.
+final sum of squares of residuals : 0.0862017
+rel. change during last iteration : -5.17989e-08
+
+degrees of freedom    (FIT_NDF)                        : 6
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.119862
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.0143669
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 2.16388          +/- 0.06071      (2.806%)
+b               = 388.568          +/- 32.02        (8.242%)
+
+correlation matrix of the fit parameters:
+                a      b      
+a               1.000 
+b              -0.933  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 04:04:10 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 1.00000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a * log(1+b*x*x*x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b            
+   0 1.4007381112e+02   0.00e+00  2.18e-02    1.000000e+00   1.000000e+00
+ 100 3.4703485813e-01  -3.07e-02  2.18e-10    1.296984e+00   1.445730e+04
+
+After 100 iterations the fit converged.
+final sum of squares of residuals : 0.347035
+rel. change during last iteration : -3.07267e-07
+
+degrees of freedom    (FIT_NDF)                        : 6
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.240498
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.0578391
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 1.29698          +/- 0.06033      (4.652%)
+b               = 14457.3          +/- 2920         (20.2%)
+
+correlation matrix of the fit parameters:
+                a      b      
+a               1.000 
+b              -0.900  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 04:04:34 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 1.00000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a * log(c+b*x*x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c            
+   0 2.2603010141e+02   0.00e+00  1.03e+00    1.000000e+00   1.000000e+00   2.000000e-01
+  46 6.8449410313e-03  -6.14e-01  1.03e-07    2.232941e+00  -3.458241e+02  -1.097968e+00
+
+After 46 iterations the fit converged.
+final sum of squares of residuals : 0.00684494
+rel. change during last iteration : -6.1388e-06
+
+degrees of freedom    (FIT_NDF)                        : 5
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0369998
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00136899
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 2.23294          +/- 0.02232      (0.9996%)
+b               = -345.824         +/- 10.65        (3.079%)
+c               = -1.09797         +/- 0.01283      (1.169%)
+
+correlation matrix of the fit parameters:
+                a      b      c      
+a               1.000 
+b               0.947  1.000 
+c              -0.341 -0.433  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 04:05:17 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 1.00000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a * log(c+b*x*x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c            
+   0 1.3804995609e+02   0.00e+00  5.65e-01    1.000000e+00   1.000000e+00   1.000000e+00
+ 157 6.8449408838e-03  -5.75e-04  5.65e-04    2.232948e+00   3.458205e+02   1.097971e+00
+
+After 157 iterations the fit converged.
+final sum of squares of residuals : 0.00684494
+rel. change during last iteration : -5.7509e-09
+
+degrees of freedom    (FIT_NDF)                        : 5
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0369998
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00136899
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 2.23295          +/- 0.02232      (0.9996%)
+b               = 345.821          +/- 10.65        (3.079%)
+c               = 1.09797          +/- 0.01283      (1.169%)
+
+correlation matrix of the fit parameters:
+                a      b      c      
+a               1.000 
+b              -0.947  1.000 
+c               0.341 -0.433  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 04:05:44 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 1.00000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a * log(b+c*x*x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c            
+   0 1.3804995609e+02   0.00e+00  5.65e-01    1.000000e+00   1.000000e+00   1.000000e+00
+ 157 6.8449408838e-03  -5.75e-04  5.65e-04    2.232948e+00   1.097971e+00   3.458205e+02
+
+After 157 iterations the fit converged.
+final sum of squares of residuals : 0.00684494
+rel. change during last iteration : -5.75091e-09
+
+degrees of freedom    (FIT_NDF)                        : 5
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0369998
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00136899
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 2.23295          +/- 0.02232      (0.9996%)
+b               = 1.09797          +/- 0.01283      (1.169%)
+c               = 345.821          +/- 10.65        (3.079%)
+
+correlation matrix of the fit parameters:
+                a      b      c      
+a               1.000 
+b               0.341  1.000 
+c              -0.947 -0.433  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 04:08:14 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.0.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 1.00000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a * log(b+c*x*x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c            
+   0 6.8449410537e-03   0.00e+00  2.67e+00    2.232950e+00   1.097970e+00   3.458210e+02
+   1 6.8449408878e-03  -2.42e-03  2.67e-01    2.232947e+00   1.097970e+00   3.458212e+02
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 0.00684494
+rel. change during last iteration : -2.42313e-08
+
+degrees of freedom    (FIT_NDF)                        : 5
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0369998
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00136899
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 2.23295          +/- 0.02232      (0.9996%)
+b               = 1.09797          +/- 0.01283      (1.169%)
+c               = 345.821          +/- 10.65        (3.079%)
+
+correlation matrix of the fit parameters:
+                a      b      c      
+a               1.000 
+b               0.341  1.000 
+c              -0.947 -0.433  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 04:08:14 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x0.1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 1.00000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a * log(b+c*x*x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c            
+   0 3.4629254851e+01   0.00e+00  3.06e+00    2.232947e+00   1.097970e+00   3.458212e+02
+   5 1.4552270589e-02  -3.29e-02  3.06e-05    1.444869e+00   1.050077e+00   2.428360e+02
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 0.0145523
+rel. change during last iteration : -3.28511e-07
+
+degrees of freedom    (FIT_NDF)                        : 5
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0539486
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00291045
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 1.44487          +/- 0.03994      (2.764%)
+b               = 1.05008          +/- 0.02684      (2.556%)
+c               = 242.836          +/- 20.76        (8.549%)
+
+correlation matrix of the fit parameters:
+                a      b      c      
+a               1.000 
+b               0.400  1.000 
+c              -0.969 -0.452  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 04:23:34 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.0.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 0.400000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a * log(b+c*x*x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c            
+   0 6.8449410537e-03   0.00e+00  2.67e+00    2.232950e+00   1.097970e+00   3.458210e+02
+   1 6.8449408878e-03  -2.42e-03  2.67e-01    2.232947e+00   1.097970e+00   3.458212e+02
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 0.00684494
+rel. change during last iteration : -2.42313e-08
+
+degrees of freedom    (FIT_NDF)                        : 5
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0369998
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00136899
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 2.23295          +/- 0.02232      (0.9996%)
+b               = 1.09797          +/- 0.01283      (1.169%)
+c               = 345.821          +/- 10.65        (3.079%)
+
+correlation matrix of the fit parameters:
+                a      b      c      
+a               1.000 
+b               0.341  1.000 
+c              -0.947 -0.433  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 04:23:34 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x0.1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 0.400000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a * log(b+c*x*x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c            
+   0 1.4552270768e-02   0.00e+00  1.80e+00    1.444870e+00   1.050080e+00   2.428360e+02
+   1 1.4552270599e-02  -1.16e-03  1.80e-01    1.444869e+00   1.050078e+00   2.428358e+02
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 0.0145523
+rel. change during last iteration : -1.15605e-08
+
+degrees of freedom    (FIT_NDF)                        : 5
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0539486
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00291045
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 1.44487          +/- 0.03994      (2.764%)
+b               = 1.05008          +/- 0.02684      (2.556%)
+c               = 242.836          +/- 20.76        (8.549%)
+
+correlation matrix of the fit parameters:
+                a      b      c      
+a               1.000 
+b               0.400  1.000 
+c              -0.969 -0.452  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 04:24:34 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.0.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 0.400000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a * log(b+c*x*x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c            
+   0 6.8449410537e-03   0.00e+00  2.67e+00    2.232950e+00   1.097970e+00   3.458210e+02
+   1 6.8449408878e-03  -2.42e-03  2.67e-01    2.232947e+00   1.097970e+00   3.458212e+02
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 0.00684494
+rel. change during last iteration : -2.42313e-08
+
+degrees of freedom    (FIT_NDF)                        : 5
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0369998
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00136899
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 2.23295          +/- 0.02232      (0.9996%)
+b               = 1.09797          +/- 0.01283      (1.169%)
+c               = 345.821          +/- 10.65        (3.079%)
+
+correlation matrix of the fit parameters:
+                a      b      c      
+a               1.000 
+b               0.341  1.000 
+c              -0.947 -0.433  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 04:24:34 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x0.1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 0.400000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a * log(b+c*x*x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c            
+   0 1.4552270768e-02   0.00e+00  1.80e+00    1.444870e+00   1.050080e+00   2.428360e+02
+   1 1.4552270599e-02  -1.16e-03  1.80e-01    1.444869e+00   1.050078e+00   2.428358e+02
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 0.0145523
+rel. change during last iteration : -1.15605e-08
+
+degrees of freedom    (FIT_NDF)                        : 5
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0539486
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00291045
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 1.44487          +/- 0.03994      (2.764%)
+b               = 1.05008          +/- 0.02684      (2.556%)
+c               = 242.836          +/- 20.76        (8.549%)
+
+correlation matrix of the fit parameters:
+                a      b      c      
+a               1.000 
+b               0.400  1.000 
+c              -0.969 -0.452  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 04:26:51 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.0.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 0.400000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+*******************************************************************************
+Fri Jul  2 04:27:35 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.0.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 0.400000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+*******************************************************************************
+Fri Jul  2 04:27:46 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.0.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 0.400000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f1(x)
+	f1(x) = a1 * log(b1+c1*x*x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a1            b1            c1           
+   0 6.8449410537e-03   0.00e+00  2.67e+00    2.232950e+00   1.097970e+00   3.458210e+02
+   1 6.8449408878e-03  -2.42e-03  2.67e-01    2.232947e+00   1.097970e+00   3.458212e+02
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 0.00684494
+rel. change during last iteration : -2.42313e-08
+
+degrees of freedom    (FIT_NDF)                        : 5
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0369998
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00136899
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a1              = 2.23295          +/- 0.02232      (0.9996%)
+b1              = 1.09797          +/- 0.01283      (1.169%)
+c1              = 345.821          +/- 10.65        (3.079%)
+
+correlation matrix of the fit parameters:
+                a1     b1     c1     
+a1              1.000 
+b1              0.341  1.000 
+c1             -0.947 -0.433  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 04:27:55 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.0.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 0.400000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f1(x)
+	f1(x) = a1 * log(b1+c1*x*x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a1            b1            c1           
+   0 6.8449410537e-03   0.00e+00  2.67e+00    2.232950e+00   1.097970e+00   3.458210e+02
+   1 6.8449408878e-03  -2.42e-03  2.67e-01    2.232947e+00   1.097970e+00   3.458212e+02
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 0.00684494
+rel. change during last iteration : -2.42313e-08
+
+degrees of freedom    (FIT_NDF)                        : 5
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0369998
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00136899
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a1              = 2.23295          +/- 0.02232      (0.9996%)
+b1              = 1.09797          +/- 0.01283      (1.169%)
+c1              = 345.821          +/- 10.65        (3.079%)
+
+correlation matrix of the fit parameters:
+                a1     b1     c1     
+a1              1.000 
+b1              0.341  1.000 
+c1             -0.947 -0.433  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 04:27:55 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x0.1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 0.400000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f2(x)
+	f2(x) = a2 * log(b2+c2*x*x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c            
+   0 1.4552270768e-02   0.00e+00  0.00e+00    1.000000e+00   1.000000e+00   1.000000e+00
+BREAK: Singular matrix in Givens()
+
+*******************************************************************************
+Fri Jul  2 04:28:11 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.0.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 0.400000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f1(x)
+	f1(x) = a1 * log(b1+c1*x*x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a1            b1            c1           
+   0 6.8449410537e-03   0.00e+00  2.67e+00    2.232950e+00   1.097970e+00   3.458210e+02
+   1 6.8449408878e-03  -2.42e-03  2.67e-01    2.232947e+00   1.097970e+00   3.458212e+02
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 0.00684494
+rel. change during last iteration : -2.42313e-08
+
+degrees of freedom    (FIT_NDF)                        : 5
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0369998
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00136899
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a1              = 2.23295          +/- 0.02232      (0.9996%)
+b1              = 1.09797          +/- 0.01283      (1.169%)
+c1              = 345.821          +/- 10.65        (3.079%)
+
+correlation matrix of the fit parameters:
+                a1     b1     c1     
+a1              1.000 
+b1              0.341  1.000 
+c1             -0.947 -0.433  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 04:28:11 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x0.1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 0.400000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f2(x)
+	f2(x) = a2 * log(b2+c2*x*x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a2            b2            c2           
+   0 1.4552270768e-02   0.00e+00  1.80e+00    1.444870e+00   1.050080e+00   2.428360e+02
+   1 1.4552270599e-02  -1.16e-03  1.80e-01    1.444869e+00   1.050078e+00   2.428358e+02
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 0.0145523
+rel. change during last iteration : -1.15605e-08
+
+degrees of freedom    (FIT_NDF)                        : 5
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0539486
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00291045
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a2              = 1.44487          +/- 0.03994      (2.764%)
+b2              = 1.05008          +/- 0.02684      (2.556%)
+c2              = 242.836          +/- 20.76        (8.549%)
+
+correlation matrix of the fit parameters:
+                a2     b2     c2     
+a2              1.000 
+b2              0.400  1.000 
+c2             -0.969 -0.452  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 04:29:21 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.0.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 0.400000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f1(x)
+	f1(x) = a1 * log(b1+c1*x*x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a1            b1            c1           
+   0 6.8449410537e-03   0.00e+00  2.67e+00    2.232950e+00   1.097970e+00   3.458210e+02
+   1 6.8449408878e-03  -2.42e-03  2.67e-01    2.232947e+00   1.097970e+00   3.458212e+02
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 0.00684494
+rel. change during last iteration : -2.42313e-08
+
+degrees of freedom    (FIT_NDF)                        : 5
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0369998
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00136899
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a1              = 2.23295          +/- 0.02232      (0.9996%)
+b1              = 1.09797          +/- 0.01283      (1.169%)
+c1              = 345.821          +/- 10.65        (3.079%)
+
+correlation matrix of the fit parameters:
+                a1     b1     c1     
+a1              1.000 
+b1              0.341  1.000 
+c1             -0.947 -0.433  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 04:29:21 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x0.1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 0.400000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f2(x)
+	f2(x) = a2 * log(b2+c2*x*x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a2            b2            c2           
+   0 1.4552270768e-02   0.00e+00  1.80e+00    1.444870e+00   1.050080e+00   2.428360e+02
+   1 1.4552270599e-02  -1.16e-03  1.80e-01    1.444869e+00   1.050078e+00   2.428358e+02
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 0.0145523
+rel. change during last iteration : -1.15605e-08
+
+degrees of freedom    (FIT_NDF)                        : 5
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0539486
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00291045
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a2              = 1.44487          +/- 0.03994      (2.764%)
+b2              = 1.05008          +/- 0.02684      (2.556%)
+c2              = 242.836          +/- 20.76        (8.549%)
+
+correlation matrix of the fit parameters:
+                a2     b2     c2     
+a2              1.000 
+b2              0.400  1.000 
+c2             -0.969 -0.452  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 04:29:21 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x0.1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 0.400000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f3(x)
+	f3(x) = a3 * log(b3+c3*x*x)
+fitted parameters initialized with current variable values
+
+Warning: Initial value of parameter 'a3' is zero.
+Warning: Initial value of parameter 'c3' is zero.
+iter      chisq       delta/lim  lambda   a3            b3            c3           
+   0 6.5102381273e+01   0.00e+00  2.82e-02    1.000000e-30   1.050080e+00   1.000000e-30
+BREAK: Singular matrix in Invert_RtR
+
+*******************************************************************************
+Fri Jul  2 04:30:55 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.0.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 0.400000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f1(x)
+	f1(x) = a1 * log(b1+c1*x*x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a1            b1            c1           
+   0 6.8449410537e-03   0.00e+00  2.67e+00    2.232950e+00   1.097970e+00   3.458210e+02
+   1 6.8449408878e-03  -2.42e-03  2.67e-01    2.232947e+00   1.097970e+00   3.458212e+02
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 0.00684494
+rel. change during last iteration : -2.42313e-08
+
+degrees of freedom    (FIT_NDF)                        : 5
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0369998
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00136899
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a1              = 2.23295          +/- 0.02232      (0.9996%)
+b1              = 1.09797          +/- 0.01283      (1.169%)
+c1              = 345.821          +/- 10.65        (3.079%)
+
+correlation matrix of the fit parameters:
+                a1     b1     c1     
+a1              1.000 
+b1              0.341  1.000 
+c1             -0.947 -0.433  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 04:30:55 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x0.1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 0.400000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f2(x)
+	f2(x) = a2 * log(b2+c2*x*x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a2            b2            c2           
+   0 1.4552270768e-02   0.00e+00  1.80e+00    1.444870e+00   1.050080e+00   2.428360e+02
+   1 1.4552270599e-02  -1.16e-03  1.80e-01    1.444869e+00   1.050078e+00   2.428358e+02
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 0.0145523
+rel. change during last iteration : -1.15605e-08
+
+degrees of freedom    (FIT_NDF)                        : 5
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0539486
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00291045
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a2              = 1.44487          +/- 0.03994      (2.764%)
+b2              = 1.05008          +/- 0.02684      (2.556%)
+c2              = 242.836          +/- 20.76        (8.549%)
+
+correlation matrix of the fit parameters:
+                a2     b2     c2     
+a2              1.000 
+b2              0.400  1.000 
+c2             -0.969 -0.452  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 04:30:55 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x0.1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 0.400000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f3(x)
+	f3(x) = a3 * log(b3+c3*x*x)
+fitted parameters initialized with current variable values
+
+Warning: Initial value of parameter 'a3' is zero.
+Warning: Initial value of parameter 'c3' is zero.
+iter      chisq       delta/lim  lambda   a3            b3            c3           
+   0 6.5102381273e+01   0.00e+00  2.82e-02    1.000000e-30   1.050080e+00   1.000000e-30
+BREAK: Singular matrix in Invert_RtR
+
+*******************************************************************************
+Fri Jul  2 04:31:07 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.0.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 0.400000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f1(x)
+	f1(x) = a1 * log(b1+c1*x*x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a1            b1            c1           
+   0 6.8449410537e-03   0.00e+00  2.67e+00    2.232950e+00   1.097970e+00   3.458210e+02
+   1 6.8449408878e-03  -2.42e-03  2.67e-01    2.232947e+00   1.097970e+00   3.458212e+02
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 0.00684494
+rel. change during last iteration : -2.42313e-08
+
+degrees of freedom    (FIT_NDF)                        : 5
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0369998
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00136899
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a1              = 2.23295          +/- 0.02232      (0.9996%)
+b1              = 1.09797          +/- 0.01283      (1.169%)
+c1              = 345.821          +/- 10.65        (3.079%)
+
+correlation matrix of the fit parameters:
+                a1     b1     c1     
+a1              1.000 
+b1              0.341  1.000 
+c1             -0.947 -0.433  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 04:31:07 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x0.1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 0.400000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f2(x)
+	f2(x) = a2 * log(b2+c2*x*x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a2            b2            c2           
+   0 1.4552270768e-02   0.00e+00  1.80e+00    1.444870e+00   1.050080e+00   2.428360e+02
+   1 1.4552270599e-02  -1.16e-03  1.80e-01    1.444869e+00   1.050078e+00   2.428358e+02
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 0.0145523
+rel. change during last iteration : -1.15605e-08
+
+degrees of freedom    (FIT_NDF)                        : 5
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0539486
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00291045
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a2              = 1.44487          +/- 0.03994      (2.764%)
+b2              = 1.05008          +/- 0.02684      (2.556%)
+c2              = 242.836          +/- 20.76        (8.549%)
+
+correlation matrix of the fit parameters:
+                a2     b2     c2     
+a2              1.000 
+b2              0.400  1.000 
+c2             -0.969 -0.452  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 04:31:07 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x0.1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 0.400000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f3(x)
+	f3(x) = a3 * log(b3+c3*x*x)
+fitted parameters initialized with current variable values
+
+Warning: Initial value of parameter 'a3' is zero.
+Warning: Initial value of parameter 'c3' is zero.
+iter      chisq       delta/lim  lambda   a3            b3            c3           
+   0 6.5102381273e+01   0.00e+00  2.82e-02    1.000000e-30   1.050080e+00   1.000000e-30
+BREAK: Singular matrix in Invert_RtR
+
+*******************************************************************************
+Fri Jul  2 04:31:21 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.0.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 0.400000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f1(x)
+	f1(x) = a1 * log(b1+c1*x*x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a1            b1            c1           
+   0 6.8449410537e-03   0.00e+00  2.67e+00    2.232950e+00   1.097970e+00   3.458210e+02
+   1 6.8449408878e-03  -2.42e-03  2.67e-01    2.232947e+00   1.097970e+00   3.458212e+02
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 0.00684494
+rel. change during last iteration : -2.42313e-08
+
+degrees of freedom    (FIT_NDF)                        : 5
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0369998
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00136899
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a1              = 2.23295          +/- 0.02232      (0.9996%)
+b1              = 1.09797          +/- 0.01283      (1.169%)
+c1              = 345.821          +/- 10.65        (3.079%)
+
+correlation matrix of the fit parameters:
+                a1     b1     c1     
+a1              1.000 
+b1              0.341  1.000 
+c1             -0.947 -0.433  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 04:31:21 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x0.1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 0.400000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f2(x)
+	f2(x) = a2 * log(b2+c2*x*x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a2            b2            c2           
+   0 1.4552270768e-02   0.00e+00  1.80e+00    1.444870e+00   1.050080e+00   2.428360e+02
+   1 1.4552270599e-02  -1.16e-03  1.80e-01    1.444869e+00   1.050078e+00   2.428358e+02
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 0.0145523
+rel. change during last iteration : -1.15605e-08
+
+degrees of freedom    (FIT_NDF)                        : 5
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0539486
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00291045
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a2              = 1.44487          +/- 0.03994      (2.764%)
+b2              = 1.05008          +/- 0.02684      (2.556%)
+c2              = 242.836          +/- 20.76        (8.549%)
+
+correlation matrix of the fit parameters:
+                a2     b2     c2     
+a2              1.000 
+b2              0.400  1.000 
+c2             -0.969 -0.452  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 04:32:02 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.0.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 0.400000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f1(x)
+	f1(x) = a1 * log(b1+c1*x*x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a1            b1            c1           
+   0 6.8449410537e-03   0.00e+00  2.67e+00    2.232950e+00   1.097970e+00   3.458210e+02
+   1 6.8449408878e-03  -2.42e-03  2.67e-01    2.232947e+00   1.097970e+00   3.458212e+02
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 0.00684494
+rel. change during last iteration : -2.42313e-08
+
+degrees of freedom    (FIT_NDF)                        : 5
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0369998
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00136899
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a1              = 2.23295          +/- 0.02232      (0.9996%)
+b1              = 1.09797          +/- 0.01283      (1.169%)
+c1              = 345.821          +/- 10.65        (3.079%)
+
+correlation matrix of the fit parameters:
+                a1     b1     c1     
+a1              1.000 
+b1              0.341  1.000 
+c1             -0.947 -0.433  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 04:32:02 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x0.1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 0.400000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f2(x)
+	f2(x) = a2 * log(b2+c2*x*x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a2            b2            c2           
+   0 1.4552270768e-02   0.00e+00  1.80e+00    1.444870e+00   1.050080e+00   2.428360e+02
+   1 1.4552270599e-02  -1.16e-03  1.80e-01    1.444869e+00   1.050078e+00   2.428358e+02
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 0.0145523
+rel. change during last iteration : -1.15605e-08
+
+degrees of freedom    (FIT_NDF)                        : 5
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0539486
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00291045
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a2              = 1.44487          +/- 0.03994      (2.764%)
+b2              = 1.05008          +/- 0.02684      (2.556%)
+c2              = 242.836          +/- 20.76        (8.549%)
+
+correlation matrix of the fit parameters:
+                a2     b2     c2     
+a2              1.000 
+b2              0.400  1.000 
+c2             -0.969 -0.452  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 04:37:14 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.0.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 0.400000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f1(x)
+	f1(x) = a1 * log(b1+c1*x*x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a1            b1            c1           
+   0 6.8449410537e-03   0.00e+00  2.67e+00    2.232950e+00   1.097970e+00   3.458210e+02
+   1 6.8449408878e-03  -2.42e-03  2.67e-01    2.232947e+00   1.097970e+00   3.458212e+02
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 0.00684494
+rel. change during last iteration : -2.42313e-08
+
+degrees of freedom    (FIT_NDF)                        : 5
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0369998
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00136899
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a1              = 2.23295          +/- 0.02232      (0.9996%)
+b1              = 1.09797          +/- 0.01283      (1.169%)
+c1              = 345.821          +/- 10.65        (3.079%)
+
+correlation matrix of the fit parameters:
+                a1     b1     c1     
+a1              1.000 
+b1              0.341  1.000 
+c1             -0.947 -0.433  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 04:37:14 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x0.1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 0.400000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f2(x)
+	f2(x) = a2 * log(b2+c2*x*x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a2            b2            c2           
+   0 1.4552270768e-02   0.00e+00  1.80e+00    1.444870e+00   1.050080e+00   2.428360e+02
+   1 1.4552270599e-02  -1.16e-03  1.80e-01    1.444869e+00   1.050078e+00   2.428358e+02
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 0.0145523
+rel. change during last iteration : -1.15605e-08
+
+degrees of freedom    (FIT_NDF)                        : 5
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0539486
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00291045
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a2              = 1.44487          +/- 0.03994      (2.764%)
+b2              = 1.05008          +/- 0.02684      (2.556%)
+c2              = 242.836          +/- 20.76        (8.549%)
+
+correlation matrix of the fit parameters:
+                a2     b2     c2     
+a2              1.000 
+b2              0.400  1.000 
+c2             -0.969 -0.452  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 04:37:14 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x0.1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 0.400000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f3(x)
+	f3(x) = a3 * log(b3+c3*x*x)
+fitted parameters initialized with current variable values
+
+Warning: Initial value of parameter 'a3' is zero.
+Warning: Initial value of parameter 'c3' is zero.
+iter      chisq       delta/lim  lambda   a3            b3            c3           
+   0 6.5102381273e+01   0.00e+00  2.82e-02    1.000000e-30   1.050080e+00   1.000000e-30
+BREAK: Singular matrix in Invert_RtR
+
+*******************************************************************************
+Fri Jul  2 04:38:06 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.0.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 0.400000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f1(x)
+	f1(x) = a1 * log(b1+c1*x*x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a1            b1            c1           
+   0 6.8449410537e-03   0.00e+00  2.67e+00    2.232950e+00   1.097970e+00   3.458210e+02
+   1 6.8449408878e-03  -2.42e-03  2.67e-01    2.232947e+00   1.097970e+00   3.458212e+02
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 0.00684494
+rel. change during last iteration : -2.42313e-08
+
+degrees of freedom    (FIT_NDF)                        : 5
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0369998
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00136899
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a1              = 2.23295          +/- 0.02232      (0.9996%)
+b1              = 1.09797          +/- 0.01283      (1.169%)
+c1              = 345.821          +/- 10.65        (3.079%)
+
+correlation matrix of the fit parameters:
+                a1     b1     c1     
+a1              1.000 
+b1              0.341  1.000 
+c1             -0.947 -0.433  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 04:38:06 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x0.1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 0.400000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f2(x)
+	f2(x) = a2 * log(b2+c2*x*x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a2            b2            c2           
+   0 1.4552270768e-02   0.00e+00  1.80e+00    1.444870e+00   1.050080e+00   2.428360e+02
+   1 1.4552270599e-02  -1.16e-03  1.80e-01    1.444869e+00   1.050078e+00   2.428358e+02
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 0.0145523
+rel. change during last iteration : -1.15605e-08
+
+degrees of freedom    (FIT_NDF)                        : 5
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0539486
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00291045
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a2              = 1.44487          +/- 0.03994      (2.764%)
+b2              = 1.05008          +/- 0.02684      (2.556%)
+c2              = 242.836          +/- 20.76        (8.549%)
+
+correlation matrix of the fit parameters:
+                a2     b2     c2     
+a2              1.000 
+b2              0.400  1.000 
+c2             -0.969 -0.452  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 04:38:15 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.0.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 0.400000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f1(x)
+	f1(x) = a1 * log(b1+c1*x*x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a1            b1            c1           
+   0 6.8449410537e-03   0.00e+00  2.67e+00    2.232950e+00   1.097970e+00   3.458210e+02
+   1 6.8449408878e-03  -2.42e-03  2.67e-01    2.232947e+00   1.097970e+00   3.458212e+02
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 0.00684494
+rel. change during last iteration : -2.42313e-08
+
+degrees of freedom    (FIT_NDF)                        : 5
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0369998
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00136899
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a1              = 2.23295          +/- 0.02232      (0.9996%)
+b1              = 1.09797          +/- 0.01283      (1.169%)
+c1              = 345.821          +/- 10.65        (3.079%)
+
+correlation matrix of the fit parameters:
+                a1     b1     c1     
+a1              1.000 
+b1              0.341  1.000 
+c1             -0.947 -0.433  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 04:38:15 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x0.1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 0.400000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f2(x)
+	f2(x) = a2 * log(b2+c2*x*x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a2            b2            c2           
+   0 1.4552270768e-02   0.00e+00  1.80e+00    1.444870e+00   1.050080e+00   2.428360e+02
+   1 1.4552270599e-02  -1.16e-03  1.80e-01    1.444869e+00   1.050078e+00   2.428358e+02
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 0.0145523
+rel. change during last iteration : -1.15605e-08
+
+degrees of freedom    (FIT_NDF)                        : 5
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0539486
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00291045
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a2              = 1.44487          +/- 0.03994      (2.764%)
+b2              = 1.05008          +/- 0.02684      (2.556%)
+c2              = 242.836          +/- 20.76        (8.549%)
+
+correlation matrix of the fit parameters:
+                a2     b2     c2     
+a2              1.000 
+b2              0.400  1.000 
+c2             -0.969 -0.452  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 04:38:15 2021
+
+
+FIT:    data read from dir2.'/output/conductivity/j_sigma_no_metal.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 0.400000]
+        #datapoints = 3
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f3(x)
+	f3(x) = a3 * log(b3+c3*x*x)
+fitted parameters initialized with current variable values
+
+Warning: Initial value of parameter 'a3' is zero.
+iter      chisq       delta/lim  lambda   a3            b3            c3           
+   0 1.1957945951e-01   0.00e+00  2.86e-02    1.000000e-30   1.050080e+00   1.000000e+00
+ 283 3.1058735098e-04  -9.96e-01  2.86e-05    1.136088e+02   1.000008e+00   1.840207e+00
+
+After 283 iterations the fit converged.
+final sum of squares of residuals : 0.000310587
+rel. change during last iteration : -9.95914e-06
+
+
+Exactly as many data points as there are parameters.
+In this degenerate case, all errors are zero by definition.
+
+Final set of parameters 
+======================= 
+
+a3              = 113.609        
+b3              = 1.00001        
+c3              = 1.84021        
+
+
+*******************************************************************************
+Fri Jul  2 04:40:38 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.0.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 0.400000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f1(x)
+	f1(x) = a1 * log(b1+c1*x*x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a1            b1            c1           
+   0 6.8449410537e-03   0.00e+00  2.67e+00    2.232950e+00   1.097970e+00   3.458210e+02
+   1 6.8449408878e-03  -2.42e-03  2.67e-01    2.232947e+00   1.097970e+00   3.458212e+02
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 0.00684494
+rel. change during last iteration : -2.42313e-08
+
+degrees of freedom    (FIT_NDF)                        : 5
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0369998
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00136899
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a1              = 2.23295          +/- 0.02232      (0.9996%)
+b1              = 1.09797          +/- 0.01283      (1.169%)
+c1              = 345.821          +/- 10.65        (3.079%)
+
+correlation matrix of the fit parameters:
+                a1     b1     c1     
+a1              1.000 
+b1              0.341  1.000 
+c1             -0.947 -0.433  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 04:40:38 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x0.1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 0.400000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f2(x)
+	f2(x) = a2 * log(b2+c2*x*x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a2            b2            c2           
+   0 1.4552270768e-02   0.00e+00  1.80e+00    1.444870e+00   1.050080e+00   2.428360e+02
+   1 1.4552270599e-02  -1.16e-03  1.80e-01    1.444869e+00   1.050078e+00   2.428358e+02
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 0.0145523
+rel. change during last iteration : -1.15605e-08
+
+degrees of freedom    (FIT_NDF)                        : 5
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0539486
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00291045
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a2              = 1.44487          +/- 0.03994      (2.764%)
+b2              = 1.05008          +/- 0.02684      (2.556%)
+c2              = 242.836          +/- 20.76        (8.549%)
+
+correlation matrix of the fit parameters:
+                a2     b2     c2     
+a2              1.000 
+b2              0.400  1.000 
+c2             -0.969 -0.452  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 04:40:38 2021
+
+
+FIT:    data read from dir2.'/output/conductivity/j_sigma_no_metal.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 0.400000]
+        #datapoints = 4
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f3(x)
+	f3(x) = a3 * log(b3+c3*x*x)
+fitted parameters initialized with current variable values
+
+Warning: Initial value of parameter 'a3' is zero.
+iter      chisq       delta/lim  lambda   a3            b3            c3           
+   0 5.3367771967e-01   0.00e+00  2.90e-02    1.000000e-30   1.050080e+00   1.000000e+00
+ 327 6.2443168988e-04  -6.68e-03  2.90e-08    1.250686e+00   9.995239e-01   1.879116e+02
+
+After 327 iterations the fit converged.
+final sum of squares of residuals : 0.000624432
+rel. change during last iteration : -6.68487e-08
+
+degrees of freedom    (FIT_NDF)                        : 1
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0249886
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.000624432
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a3              = 1.25069          +/- 0.9059       (72.43%)
+b3              = 0.999524         +/- 0.01779      (1.78%)
+c3              = 187.912          +/- 172.8        (91.98%)
+
+correlation matrix of the fit parameters:
+                a3     b3     c3     
+a3              1.000 
+b3              0.530  1.000 
+c3             -0.998 -0.560  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 04:41:23 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.0.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 0.400000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f1(x)
+	f1(x) = a1 * log(b1+c1*x*x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a1            b1            c1           
+   0 6.8449410537e-03   0.00e+00  2.67e+00    2.232950e+00   1.097970e+00   3.458210e+02
+   1 6.8449408878e-03  -2.42e-03  2.67e-01    2.232947e+00   1.097970e+00   3.458212e+02
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 0.00684494
+rel. change during last iteration : -2.42313e-08
+
+degrees of freedom    (FIT_NDF)                        : 5
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0369998
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00136899
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a1              = 2.23295          +/- 0.02232      (0.9996%)
+b1              = 1.09797          +/- 0.01283      (1.169%)
+c1              = 345.821          +/- 10.65        (3.079%)
+
+correlation matrix of the fit parameters:
+                a1     b1     c1     
+a1              1.000 
+b1              0.341  1.000 
+c1             -0.947 -0.433  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 04:41:23 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x0.1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 0.400000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f2(x)
+	f2(x) = a2 * log(b2+c2*x*x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a2            b2            c2           
+   0 1.4552270768e-02   0.00e+00  1.80e+00    1.444870e+00   1.050080e+00   2.428360e+02
+   1 1.4552270599e-02  -1.16e-03  1.80e-01    1.444869e+00   1.050078e+00   2.428358e+02
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 0.0145523
+rel. change during last iteration : -1.15605e-08
+
+degrees of freedom    (FIT_NDF)                        : 5
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0539486
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00291045
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a2              = 1.44487          +/- 0.03994      (2.764%)
+b2              = 1.05008          +/- 0.02684      (2.556%)
+c2              = 242.836          +/- 20.76        (8.549%)
+
+correlation matrix of the fit parameters:
+                a2     b2     c2     
+a2              1.000 
+b2              0.400  1.000 
+c2             -0.969 -0.452  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 04:41:23 2021
+
+
+FIT:    data read from dir2.'/output/conductivity/j_sigma_no_metal.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 0.400000]
+        #datapoints = 4
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f3(x)
+	f3(x) = a3 * log(b3+c3*x*x)
+fitted parameters initialized with current variable values
+
+Warning: Initial value of parameter 'a3' is zero.
+iter      chisq       delta/lim  lambda   a3            b3            c3           
+   0 5.3367771967e-01   0.00e+00  2.90e-02    1.000000e-30   1.050080e+00   1.000000e+00
+ 327 6.2443168988e-04  -6.68e-03  2.90e-08    1.250686e+00   9.995239e-01   1.879116e+02
+
+After 327 iterations the fit converged.
+final sum of squares of residuals : 0.000624432
+rel. change during last iteration : -6.68487e-08
+
+degrees of freedom    (FIT_NDF)                        : 1
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0249886
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.000624432
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a3              = 1.25069          +/- 0.9059       (72.43%)
+b3              = 0.999524         +/- 0.01779      (1.78%)
+c3              = 187.912          +/- 172.8        (91.98%)
+
+correlation matrix of the fit parameters:
+                a3     b3     c3     
+a3              1.000 
+b3              0.530  1.000 
+c3             -0.998 -0.560  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 04:42:16 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.0.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 0.400000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f1(x)
+	f1(x) = a1 * log(b1+c1*x*x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a1            b1            c1           
+   0 6.8449410537e-03   0.00e+00  2.67e+00    2.232950e+00   1.097970e+00   3.458210e+02
+   1 6.8449408878e-03  -2.42e-03  2.67e-01    2.232947e+00   1.097970e+00   3.458212e+02
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 0.00684494
+rel. change during last iteration : -2.42313e-08
+
+degrees of freedom    (FIT_NDF)                        : 5
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0369998
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00136899
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a1              = 2.23295          +/- 0.02232      (0.9996%)
+b1              = 1.09797          +/- 0.01283      (1.169%)
+c1              = 345.821          +/- 10.65        (3.079%)
+
+correlation matrix of the fit parameters:
+                a1     b1     c1     
+a1              1.000 
+b1              0.341  1.000 
+c1             -0.947 -0.433  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 04:42:16 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x0.1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 0.400000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f2(x)
+	f2(x) = a2 * log(b2+c2*x*x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a2            b2            c2           
+   0 1.4552270768e-02   0.00e+00  1.80e+00    1.444870e+00   1.050080e+00   2.428360e+02
+   1 1.4552270599e-02  -1.16e-03  1.80e-01    1.444869e+00   1.050078e+00   2.428358e+02
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 0.0145523
+rel. change during last iteration : -1.15605e-08
+
+degrees of freedom    (FIT_NDF)                        : 5
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0539486
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00291045
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a2              = 1.44487          +/- 0.03994      (2.764%)
+b2              = 1.05008          +/- 0.02684      (2.556%)
+c2              = 242.836          +/- 20.76        (8.549%)
+
+correlation matrix of the fit parameters:
+                a2     b2     c2     
+a2              1.000 
+b2              0.400  1.000 
+c2             -0.969 -0.452  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 04:42:16 2021
+
+
+FIT:    data read from dir2.'/output/conductivity/j_sigma_no_metal.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 0.400000]
+        #datapoints = 4
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f3(x)
+	f3(x) = a3 * log(b3+c3*x*x)
+fitted parameters initialized with current variable values
+
+Warning: Initial value of parameter 'a3' is zero.
+iter      chisq       delta/lim  lambda   a3            b3            c3           
+   0 5.3367771967e-01   0.00e+00  2.90e-02    1.000000e-30   1.050080e+00   1.000000e+00
+ 327 6.2443168988e-04  -6.68e-03  2.90e-08    1.250686e+00   9.995239e-01   1.879116e+02
+
+After 327 iterations the fit converged.
+final sum of squares of residuals : 0.000624432
+rel. change during last iteration : -6.68487e-08
+
+degrees of freedom    (FIT_NDF)                        : 1
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0249886
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.000624432
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a3              = 1.25069          +/- 0.9059       (72.43%)
+b3              = 0.999524         +/- 0.01779      (1.78%)
+c3              = 187.912          +/- 172.8        (91.98%)
+
+correlation matrix of the fit parameters:
+                a3     b3     c3     
+a3              1.000 
+b3              0.530  1.000 
+c3             -0.998 -0.560  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 04:48:11 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.0.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 0.400000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f1(x)
+	f1(x) = a1 * log(b1+c1*x*x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a1            b1            c1           
+   0 6.8449410537e-03   0.00e+00  2.67e+00    2.232950e+00   1.097970e+00   3.458210e+02
+   1 6.8449408878e-03  -2.42e-03  2.67e-01    2.232947e+00   1.097970e+00   3.458212e+02
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 0.00684494
+rel. change during last iteration : -2.42313e-08
+
+degrees of freedom    (FIT_NDF)                        : 5
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0369998
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00136899
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a1              = 2.23295          +/- 0.02232      (0.9996%)
+b1              = 1.09797          +/- 0.01283      (1.169%)
+c1              = 345.821          +/- 10.65        (3.079%)
+
+correlation matrix of the fit parameters:
+                a1     b1     c1     
+a1              1.000 
+b1              0.341  1.000 
+c1             -0.947 -0.433  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 04:48:11 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x0.1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 0.400000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f2(x)
+	f2(x) = a2 * log(b2+c2*x*x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a2            b2            c2           
+   0 1.4552270768e-02   0.00e+00  1.80e+00    1.444870e+00   1.050080e+00   2.428360e+02
+   1 1.4552270599e-02  -1.16e-03  1.80e-01    1.444869e+00   1.050078e+00   2.428358e+02
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 0.0145523
+rel. change during last iteration : -1.15605e-08
+
+degrees of freedom    (FIT_NDF)                        : 5
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0539486
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00291045
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a2              = 1.44487          +/- 0.03994      (2.764%)
+b2              = 1.05008          +/- 0.02684      (2.556%)
+c2              = 242.836          +/- 20.76        (8.549%)
+
+correlation matrix of the fit parameters:
+                a2     b2     c2     
+a2              1.000 
+b2              0.400  1.000 
+c2             -0.969 -0.452  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 04:48:11 2021
+
+
+FIT:    data read from dir2.'/output/conductivity/j_sigma_no_metal.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 0.400000]
+        #datapoints = 5
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f3(x)
+	f3(x) = a3 * log(b3+c3*x*x)
+fitted parameters initialized with current variable values
+
+Warning: Initial value of parameter 'a3' is zero.
+iter      chisq       delta/lim  lambda   a3            b3            c3           
+   0 2.1520339531e+00   0.00e+00  3.00e-02    1.000000e-30   1.050080e+00   1.000000e+00
+ 328 6.6501561529e-04  -1.10e-03  3.00e-08    1.067758e+00   9.974567e-01   2.296929e+02
+
+After 328 iterations the fit converged.
+final sum of squares of residuals : 0.000665016
+rel. change during last iteration : -1.10434e-08
+
+degrees of freedom    (FIT_NDF)                        : 2
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0182348
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.000332508
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a3              = 1.06776          +/- 0.1126       (10.55%)
+b3              = 0.997457         +/- 0.01391      (1.394%)
+c3              = 229.693          +/- 39.47        (17.19%)
+
+correlation matrix of the fit parameters:
+                a3     b3     c3     
+a3              1.000 
+b3              0.523  1.000 
+c3             -0.991 -0.574  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 04:49:03 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.0.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 0.400000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f1(x)
+	f1(x) = a1 * log(b1+c1*x*x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a1            b1            c1           
+   0 6.8449410537e-03   0.00e+00  2.67e+00    2.232950e+00   1.097970e+00   3.458210e+02
+   1 6.8449408878e-03  -2.42e-03  2.67e-01    2.232947e+00   1.097970e+00   3.458212e+02
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 0.00684494
+rel. change during last iteration : -2.42313e-08
+
+degrees of freedom    (FIT_NDF)                        : 5
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0369998
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00136899
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a1              = 2.23295          +/- 0.02232      (0.9996%)
+b1              = 1.09797          +/- 0.01283      (1.169%)
+c1              = 345.821          +/- 10.65        (3.079%)
+
+correlation matrix of the fit parameters:
+                a1     b1     c1     
+a1              1.000 
+b1              0.341  1.000 
+c1             -0.947 -0.433  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 04:49:03 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x0.1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 0.400000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f2(x)
+	f2(x) = a2 * log(b2+c2*x*x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a2            b2            c2           
+   0 1.4552270768e-02   0.00e+00  1.80e+00    1.444870e+00   1.050080e+00   2.428360e+02
+   1 1.4552270599e-02  -1.16e-03  1.80e-01    1.444869e+00   1.050078e+00   2.428358e+02
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 0.0145523
+rel. change during last iteration : -1.15605e-08
+
+degrees of freedom    (FIT_NDF)                        : 5
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0539486
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00291045
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a2              = 1.44487          +/- 0.03994      (2.764%)
+b2              = 1.05008          +/- 0.02684      (2.556%)
+c2              = 242.836          +/- 20.76        (8.549%)
+
+correlation matrix of the fit parameters:
+                a2     b2     c2     
+a2              1.000 
+b2              0.400  1.000 
+c2             -0.969 -0.452  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 04:49:03 2021
+
+
+FIT:    data read from dir2.'/output/conductivity/j_sigma_no_metal.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 0.400000]
+        #datapoints = 5
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f3(x)
+	f3(x) = a3 * log(b3+c3*x*x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a3            b3            c3           
+   0 1.9076347382e+00   0.00e+00  5.76e-01    1.000000e+00   1.050080e+00   1.000000e+00
+ 191 6.6501561615e-04  -3.44e-01  5.76e-08    1.067760e+00   9.974569e-01   2.296921e+02
+
+After 191 iterations the fit converged.
+final sum of squares of residuals : 0.000665016
+rel. change during last iteration : -3.43626e-06
+
+degrees of freedom    (FIT_NDF)                        : 2
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0182348
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.000332508
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a3              = 1.06776          +/- 0.1126       (10.55%)
+b3              = 0.997457         +/- 0.01391      (1.394%)
+c3              = 229.692          +/- 39.47        (17.19%)
+
+correlation matrix of the fit parameters:
+                a3     b3     c3     
+a3              1.000 
+b3              0.523  1.000 
+c3             -0.991 -0.574  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 04:49:38 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.0.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 0.400000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f1(x)
+	f1(x) = a1 * log(b1+c1*x*x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a1            b1            c1           
+   0 6.8449410537e-03   0.00e+00  2.67e+00    2.232950e+00   1.097970e+00   3.458210e+02
+   1 6.8449408878e-03  -2.42e-03  2.67e-01    2.232947e+00   1.097970e+00   3.458212e+02
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 0.00684494
+rel. change during last iteration : -2.42313e-08
+
+degrees of freedom    (FIT_NDF)                        : 5
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0369998
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00136899
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a1              = 2.23295          +/- 0.02232      (0.9996%)
+b1              = 1.09797          +/- 0.01283      (1.169%)
+c1              = 345.821          +/- 10.65        (3.079%)
+
+correlation matrix of the fit parameters:
+                a1     b1     c1     
+a1              1.000 
+b1              0.341  1.000 
+c1             -0.947 -0.433  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 04:49:38 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x0.1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 0.400000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f2(x)
+	f2(x) = a2 * log(b2+c2*x*x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a2            b2            c2           
+   0 1.4552270768e-02   0.00e+00  1.80e+00    1.444870e+00   1.050080e+00   2.428360e+02
+   1 1.4552270599e-02  -1.16e-03  1.80e-01    1.444869e+00   1.050078e+00   2.428358e+02
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 0.0145523
+rel. change during last iteration : -1.15605e-08
+
+degrees of freedom    (FIT_NDF)                        : 5
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0539486
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00291045
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a2              = 1.44487          +/- 0.03994      (2.764%)
+b2              = 1.05008          +/- 0.02684      (2.556%)
+c2              = 242.836          +/- 20.76        (8.549%)
+
+correlation matrix of the fit parameters:
+                a2     b2     c2     
+a2              1.000 
+b2              0.400  1.000 
+c2             -0.969 -0.452  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 04:49:38 2021
+
+
+FIT:    data read from dir2.'/output/conductivity/j_sigma_no_metal.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 0.400000]
+        #datapoints = 5
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f3(x)
+	f3(x) = a3 * log(b3+c3*x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a3            b3            c3           
+   0 1.6377047247e+00   0.00e+00  5.58e-01    1.000000e+00   1.050080e+00   1.000000e+00
+ 825 3.3836872290e-02  -6.22e-02  5.58e-05    1.284145e+02   9.991231e-01   1.025708e-01
+
+After 825 iterations the fit converged.
+final sum of squares of residuals : 0.0338369
+rel. change during last iteration : -6.22063e-07
+
+degrees of freedom    (FIT_NDF)                        : 2
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.130071
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.0169184
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a3              = 128.415          +/- 1.028e+04    (8002%)
+b3              = 0.999123         +/- 0.07074      (7.08%)
+c3              = 0.102571         +/- 8.243        (8036%)
+
+correlation matrix of the fit parameters:
+                a3     b3     c3     
+a3              1.000 
+b3              1.000  1.000 
+c3             -1.000 -1.000  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 04:50:10 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.0.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 0.400000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f1(x)
+	f1(x) = a1 * log(b1+c1*x*x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a1            b1            c1           
+   0 6.8449410537e-03   0.00e+00  2.67e+00    2.232950e+00   1.097970e+00   3.458210e+02
+   1 6.8449408878e-03  -2.42e-03  2.67e-01    2.232947e+00   1.097970e+00   3.458212e+02
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 0.00684494
+rel. change during last iteration : -2.42313e-08
+
+degrees of freedom    (FIT_NDF)                        : 5
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0369998
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00136899
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a1              = 2.23295          +/- 0.02232      (0.9996%)
+b1              = 1.09797          +/- 0.01283      (1.169%)
+c1              = 345.821          +/- 10.65        (3.079%)
+
+correlation matrix of the fit parameters:
+                a1     b1     c1     
+a1              1.000 
+b1              0.341  1.000 
+c1             -0.947 -0.433  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 04:50:10 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x0.1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 0.400000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f2(x)
+	f2(x) = a2 * log(b2+c2*x*x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a2            b2            c2           
+   0 1.4552270768e-02   0.00e+00  1.80e+00    1.444870e+00   1.050080e+00   2.428360e+02
+   1 1.4552270599e-02  -1.16e-03  1.80e-01    1.444869e+00   1.050078e+00   2.428358e+02
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 0.0145523
+rel. change during last iteration : -1.15605e-08
+
+degrees of freedom    (FIT_NDF)                        : 5
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0539486
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00291045
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a2              = 1.44487          +/- 0.03994      (2.764%)
+b2              = 1.05008          +/- 0.02684      (2.556%)
+c2              = 242.836          +/- 20.76        (8.549%)
+
+correlation matrix of the fit parameters:
+                a2     b2     c2     
+a2              1.000 
+b2              0.400  1.000 
+c2             -0.969 -0.452  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 04:50:10 2021
+
+
+FIT:    data read from dir2.'/output/conductivity/j_sigma_no_metal.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 0.400000]
+        #datapoints = 5
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f3(x)
+	f3(x) = a3 * log(b3+c3*x*x) + d3
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a3            b3            c3            d3           
+   0 2.7542654275e+00   0.00e+00  7.06e-01    1.000000e+00   1.050080e+00   1.000000e+00   1.000000e+00
+ 109 6.6501561659e-04  -5.16e-03  7.06e-04    1.067744e+00   1.422099e-02   3.274863e+00   4.538434e+00
+
+After 109 iterations the fit converged.
+final sum of squares of residuals : 0.000665016
+rel. change during last iteration : -5.16482e-08
+
+degrees of freedom    (FIT_NDF)                        : 1
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0257879
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.000665016
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a3              = 1.06774          +/- 1.053        (98.59%)
+b3              = 0.014221         +/- 20.12        (1.415e+05%)
+c3              = 3.27486          +/- 4626         (1.412e+05%)
+d3              = 4.53843          +/- 1505         (3.317e+04%)
+
+correlation matrix of the fit parameters:
+                a3     b3     c3     d3     
+a3              1.000 
+b3              0.988  1.000 
+c3              0.988  1.000  1.000 
+d3             -0.988 -1.000 -1.000  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 04:54:36 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.0.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 0.400000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f1(x)
+	f1(x) = a1 * log(b1+c1*x*x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a1            b1            c1           
+   0 6.8449410537e-03   0.00e+00  2.67e+00    2.232950e+00   1.097970e+00   3.458210e+02
+   1 6.8449408878e-03  -2.42e-03  2.67e-01    2.232947e+00   1.097970e+00   3.458212e+02
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 0.00684494
+rel. change during last iteration : -2.42313e-08
+
+degrees of freedom    (FIT_NDF)                        : 5
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0369998
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00136899
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a1              = 2.23295          +/- 0.02232      (0.9996%)
+b1              = 1.09797          +/- 0.01283      (1.169%)
+c1              = 345.821          +/- 10.65        (3.079%)
+
+correlation matrix of the fit parameters:
+                a1     b1     c1     
+a1              1.000 
+b1              0.341  1.000 
+c1             -0.947 -0.433  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 04:54:36 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x0.1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 0.400000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f2(x)
+	f2(x) = a2 * log(b2+c2*x*x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a2            b2            c2           
+   0 1.4552270768e-02   0.00e+00  1.80e+00    1.444870e+00   1.050080e+00   2.428360e+02
+   1 1.4552270599e-02  -1.16e-03  1.80e-01    1.444869e+00   1.050078e+00   2.428358e+02
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 0.0145523
+rel. change during last iteration : -1.15605e-08
+
+degrees of freedom    (FIT_NDF)                        : 5
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0539486
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00291045
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a2              = 1.44487          +/- 0.03994      (2.764%)
+b2              = 1.05008          +/- 0.02684      (2.556%)
+c2              = 242.836          +/- 20.76        (8.549%)
+
+correlation matrix of the fit parameters:
+                a2     b2     c2     
+a2              1.000 
+b2              0.400  1.000 
+c2             -0.969 -0.452  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 04:54:36 2021
+
+
+FIT:    data read from dir2.'/output/conductivity/j_sigma_no_metal.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 0.400000]
+        #datapoints = 6
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f3(x)
+	f3(x) = a3 * log(b3+c3*x*x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a3            b3            c3           
+   0 8.5409869682e+00   0.00e+00  5.73e-01    1.000000e+00   1.050080e+00   1.000000e+00
+ 142 1.5756058585e-03  -6.97e-04  5.73e-08    1.282668e+00   1.006122e+00   1.733007e+02
+
+After 142 iterations the fit converged.
+final sum of squares of residuals : 0.00157561
+rel. change during last iteration : -6.97283e-09
+
+degrees of freedom    (FIT_NDF)                        : 3
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0229173
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.000525202
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a3              = 1.28267          +/- 0.04855      (3.785%)
+b3              = 1.00612          +/- 0.01276      (1.268%)
+c3              = 173.301          +/- 13.9         (8.022%)
+
+correlation matrix of the fit parameters:
+                a3     b3     c3     
+a3              1.000 
+b3              0.467  1.000 
+c3             -0.978 -0.530  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 04:55:47 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.0.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 0.400000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f1(x)
+	f1(x) = a1 * log(b1+c1*x*x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a1            b1            c1           
+   0 6.8449410537e-03   0.00e+00  2.67e+00    2.232950e+00   1.097970e+00   3.458210e+02
+   1 6.8449408878e-03  -2.42e-03  2.67e-01    2.232947e+00   1.097970e+00   3.458212e+02
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 0.00684494
+rel. change during last iteration : -2.42313e-08
+
+degrees of freedom    (FIT_NDF)                        : 5
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0369998
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00136899
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a1              = 2.23295          +/- 0.02232      (0.9996%)
+b1              = 1.09797          +/- 0.01283      (1.169%)
+c1              = 345.821          +/- 10.65        (3.079%)
+
+correlation matrix of the fit parameters:
+                a1     b1     c1     
+a1              1.000 
+b1              0.341  1.000 
+c1             -0.947 -0.433  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 04:55:47 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x0.1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 0.400000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f2(x)
+	f2(x) = a2 * log(b2+c2*x*x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a2            b2            c2           
+   0 1.4552270768e-02   0.00e+00  1.80e+00    1.444870e+00   1.050080e+00   2.428360e+02
+   1 1.4552270599e-02  -1.16e-03  1.80e-01    1.444869e+00   1.050078e+00   2.428358e+02
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 0.0145523
+rel. change during last iteration : -1.15605e-08
+
+degrees of freedom    (FIT_NDF)                        : 5
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0539486
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00291045
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a2              = 1.44487          +/- 0.03994      (2.764%)
+b2              = 1.05008          +/- 0.02684      (2.556%)
+c2              = 242.836          +/- 20.76        (8.549%)
+
+correlation matrix of the fit parameters:
+                a2     b2     c2     
+a2              1.000 
+b2              0.400  1.000 
+c2             -0.969 -0.452  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 04:55:47 2021
+
+
+FIT:    data read from dir2.'/output/conductivity/j_sigma_no_metal.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 0.400000]
+        #datapoints = 6
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f3(x)
+	f3(x) = a3 * log(b3+c3*x*x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a3            b3            c3           
+   0 8.5409869682e+00   0.00e+00  5.73e-01    1.000000e+00   1.050080e+00   1.000000e+00
+ 142 1.5756058585e-03  -6.97e-04  5.73e-08    1.282668e+00   1.006122e+00   1.733007e+02
+
+After 142 iterations the fit converged.
+final sum of squares of residuals : 0.00157561
+rel. change during last iteration : -6.97283e-09
+
+degrees of freedom    (FIT_NDF)                        : 3
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0229173
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.000525202
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a3              = 1.28267          +/- 0.04855      (3.785%)
+b3              = 1.00612          +/- 0.01276      (1.268%)
+c3              = 173.301          +/- 13.9         (8.022%)
+
+correlation matrix of the fit parameters:
+                a3     b3     c3     
+a3              1.000 
+b3              0.467  1.000 
+c3             -0.978 -0.530  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 05:02:02 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.0.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 0.400000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f1(x)
+	f1(x) = a1 * log(b1+c1*x*x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a1            b1            c1           
+   0 6.8449410537e-03   0.00e+00  2.67e+00    2.232950e+00   1.097970e+00   3.458210e+02
+   1 6.8449408878e-03  -2.42e-03  2.67e-01    2.232947e+00   1.097970e+00   3.458212e+02
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 0.00684494
+rel. change during last iteration : -2.42313e-08
+
+degrees of freedom    (FIT_NDF)                        : 5
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0369998
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00136899
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a1              = 2.23295          +/- 0.02232      (0.9996%)
+b1              = 1.09797          +/- 0.01283      (1.169%)
+c1              = 345.821          +/- 10.65        (3.079%)
+
+correlation matrix of the fit parameters:
+                a1     b1     c1     
+a1              1.000 
+b1              0.341  1.000 
+c1             -0.947 -0.433  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 05:02:02 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x0.1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 0.400000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f2(x)
+	f2(x) = a2 * log(b2+c2*x*x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a2            b2            c2           
+   0 1.4552270768e-02   0.00e+00  1.80e+00    1.444870e+00   1.050080e+00   2.428360e+02
+   1 1.4552270599e-02  -1.16e-03  1.80e-01    1.444869e+00   1.050078e+00   2.428358e+02
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 0.0145523
+rel. change during last iteration : -1.15605e-08
+
+degrees of freedom    (FIT_NDF)                        : 5
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0539486
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00291045
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a2              = 1.44487          +/- 0.03994      (2.764%)
+b2              = 1.05008          +/- 0.02684      (2.556%)
+c2              = 242.836          +/- 20.76        (8.549%)
+
+correlation matrix of the fit parameters:
+                a2     b2     c2     
+a2              1.000 
+b2              0.400  1.000 
+c2             -0.969 -0.452  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 05:02:02 2021
+
+
+FIT:    data read from dir2.'/output/conductivity/j_sigma_no_metal.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 0.400000]
+        #datapoints = 7
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f3(x)
+	f3(x) = a3 * log(b3+c3*x*x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a3            b3            c3           
+   0 1.0018277913e-01   0.00e+00  1.32e+00    1.282670e+00   1.006120e+00   1.733010e+02
+   4 9.9554682690e-03  -1.34e-01  1.32e-04    1.492669e+00   1.022646e+00   1.295108e+02
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 0.00995547
+rel. change during last iteration : -1.33797e-06
+
+degrees of freedom    (FIT_NDF)                        : 4
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0498885
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00248887
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a3              = 1.49267          +/- 0.05289      (3.543%)
+b3              = 1.02265          +/- 0.02172      (2.124%)
+c3              = 129.511          +/- 12.29        (9.491%)
+
+correlation matrix of the fit parameters:
+                a3     b3     c3     
+a3              1.000 
+b3              0.402  1.000 
+c3             -0.966 -0.465  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 05:03:24 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x1.0.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 0.400000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f1(x)
+	f1(x) = a1 * log(b1+c1*x*x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a1            b1            c1           
+   0 6.8449410537e-03   0.00e+00  2.67e+00    2.232950e+00   1.097970e+00   3.458210e+02
+   1 6.8449408878e-03  -2.42e-03  2.67e-01    2.232947e+00   1.097970e+00   3.458212e+02
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 0.00684494
+rel. change during last iteration : -2.42313e-08
+
+degrees of freedom    (FIT_NDF)                        : 5
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0369998
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00136899
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a1              = 2.23295          +/- 0.02232      (0.9996%)
+b1              = 1.09797          +/- 0.01283      (1.169%)
+c1              = 345.821          +/- 10.65        (3.079%)
+
+correlation matrix of the fit parameters:
+                a1     b1     c1     
+a1              1.000 
+b1              0.341  1.000 
+c1             -0.947 -0.433  1.000 
+
+
+*******************************************************************************
+Fri Jul  2 05:03:24 2021
+
+
+FIT:    data read from dir1.'/output/conductivity/j_sigma_metal_x0.1.dat' u 1:3
+        format = x:z
+        x range restricted to [0.00000 : 0.400000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f2(x)
+	f2(x) = a2 * log(b2+c2*x*x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a2            b2            c2           
+   0 1.4552270768e-02   0.00e+00  1.80e+00    1.444870e+00   1.050080e+00   2.428360e+02
+   1 1.4552270599e-02  -1.16e-03  1.80e-01    1.444869e+00   1.050078e+00   2.428358e+02
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 0.0145523
+rel. change during last iteration : -1.15605e-08
+
+degrees of freedom    (FIT_NDF)                        : 5
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0539486
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00291045
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a2              = 1.44487          +/- 0.03994      (2.764%)
+b2              = 1.05008          +/- 0.02684      (2.556%)
+c2              = 242.836          +/- 20.76        (8.549%)
+
+correlation matrix of the fit parameters:
+                a2     b2     c2     
+a2              1.000 
+b2              0.400  1.000 
+c2             -0.969 -0.452  1.000 

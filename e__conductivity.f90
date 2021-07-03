@@ -20,7 +20,7 @@ include "p__photochem_transport.f90"
 include "p__photochem_scheme.f90"
 include "p__airglow.f90" ! not yet
 
-include "./Jupiter/metal_x10_Hill/v__in.f90"
+include "./Jupiter/no_metal_Hill/v__in.f90"
 
 program e__conductivity
 
@@ -51,7 +51,7 @@ program e__conductivity
   type(flx_) :: flx ! type of solar flux
   integer i, j, k, ix, xs, iy, iz, ich, isp, jsp, is, iday, s, NB, iB
   real(dp) tmp
-  character(len=256) fname, num, char
+  character(len=256) fname, num, char, command, outdir
 
   real(dp) a0, aH2, nu_e_H2, nu_i_H2, omega_e, omega_i, n_H2, m_H2, n_e, n_i, m_i, m_e
   real(dp) tmp1, tmp2, tmp3
@@ -171,7 +171,7 @@ program e__conductivity
   ! i = N  ->  1
   ! i = 2N -> 10
 
-  do iB = NB, NB
+  do iB = 0, 2*NB
 
     B_factor = 10.0_dp**(dble(iB-NB)/dble(NB))
     print *, iB, ':   B_factor = ', B_factor
@@ -341,7 +341,7 @@ program e__conductivity
 
     ! transforming coordinate --------------------------------------------- 
     do iz = 1, grd%nz
-    do iy = 1, grd%ny
+    do iy = 91, grd%ny
     do ix = 1, grd%nx
 
       tmp1 = sigma_P(ix,iy,iz) * cosI(ix,iy,iz)**2.0d0 &
@@ -363,7 +363,7 @@ program e__conductivity
     hi_sigma_tt = 0.0_dp
     hi_sigma_tp = 0.0_dp
     hi_sigma_pp = 0.0_dp
-    do iy = 1, grd%ny
+    do iy = 91, grd%ny
     do ix = 1, grd%nx
       do iz = 1, grd%nz
         hi_sigma_tt(ix,iy) = hi_sigma_tt(ix,iy) + sigma_tt(ix,iy,iz)*grd%dalt(iz)
@@ -371,6 +371,15 @@ program e__conductivity
         hi_sigma_pp(ix,iy) = hi_sigma_pp(ix,iy) + sigma_pp(ix,iy,iz)*grd%dalt(iz)
       end do
     end do 
+    end do
+
+    ! southern hemisphere
+    do iy = 1, 90
+    do ix = 1, grd%nx
+      hi_sigma_tt(ix,iy) = hi_sigma_tt(ix,182-iy) 
+      hi_sigma_tp(ix,iy) = hi_sigma_tp(ix,182-iy) 
+      hi_sigma_pp(ix,iy) = hi_sigma_pp(ix,182-iy) 
+    end do
     end do
 
 
@@ -544,6 +553,10 @@ program e__conductivity
     ! output ----------------------------------
 
     write(char,*) iB
+
+    outdir = trim(ADJUSTL(set%dir_name))//'/output/conductivity/B_Jupiter_i='//trim(ADJUSTL(char))
+    write(command,*) 'if [ ! -d ', trim(outdir), ' ]; then mkdir -p ', trim(outdir), '; fi'
+    call system(command)
 
     fname = trim(ADJUSTL(set%dir_name))//'/output/conductivity/B_Jupiter_i='//trim(ADJUSTL(char))//'/sigma_HP0.dat'
     open(11, file = fname, status = 'unknown' )

@@ -136,6 +136,10 @@ contains
     real(dp) xx, yy, lat, lt
     integer i, ip, is, ix, iy, iz, isp
 
+    outdir = trim(ADJUSTL(set%dir_name))//'/output/density/3Drot/all'
+    write(command,*) 'if [ ! -d ', trim(outdir), ' ]; then mkdir -p ', trim(outdir), '; fi'
+    write(*,*) trim(ADJUSTL(command))
+    call system(command)
     do isp = 1, spl%nsp
       fname = trim(ADJUSTL(set%dir_name))//'/output/density/3Drot/all/'//trim(ADJUSTL(spl%species(isp)))//'.dat'
       open(11, file = fname, status = 'unknown' )

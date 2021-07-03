@@ -1537,7 +1537,7 @@ def lower_lower_unicode(char):
     return char
 
 def reaction_unicode(char):
-    nlabel0 = 0 # ex) if nH2O -> nlabel = 1
+    nlabel0 = 0 # ex) if " ... nH2O" -> nlabel0 = 1
     char = re.sub('->' , ' \u2192 ', char)
     if re.compile('\s\d').search(char):
         num0 = re.findall('\s+(\d{1,3})', char)
@@ -1554,7 +1554,7 @@ def reaction_unicode(char):
         char = re.sub('\s+\d{1,3}', ' ?nj?', char,1)
         #print(num0)
 
-    nlabel1 = 0
+    nlabel1 = 0 # ex) if "nH2O" -> nlabel1 = 1
     if re.compile('^\d').search(char):
         num1 = re.findall('^\d{1,3}', char)
         nlabel1 = 1
@@ -1610,7 +1610,7 @@ def reaction_unicode(char):
     # _***
     char = lower_lower_unicode(char)
     
-    # ex) nH2O
+    # ex) " ... nH2O"
     if nlabel0 >= 1:
         char = re.sub('\?na\?', num0[0], char)
     if nlabel0 >= 2:

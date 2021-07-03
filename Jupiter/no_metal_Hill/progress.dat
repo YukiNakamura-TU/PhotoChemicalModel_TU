@@ -6,10 +6,11 @@
 
 
  ----------------------------------------
-        3D rotational calculation     
+          1D stable calculation          
  ----------------------------------------
 
- skipped stable solution...
- calculating rotational mode...
- current progress =           59  %
- cpu_t  =    22790.803105999999       [s]
+ calculate stable solution...
+ finished stable calculation!
+ dt     =    100000.00000000000       [s]
+ sum_t  =    35739818.112237796       [s]
+ cpu_t  =    204.34637099999998       [s]
