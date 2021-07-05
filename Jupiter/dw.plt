@@ -5,7 +5,7 @@ set terminal postscript enhanced
 dir1 = "./metal_Hill"
 dir2 = "./no_metal_Hill"
 
-Mdot = "300"
+Mdot = "1000"
 LT   = "12"
 
 set xlabel font "Arial,30"
@@ -60,22 +60,57 @@ set out 'figures/wi_iter_Mdot'.Mdot.'_LT'.LT.'.eps'
 plot 	dir1.'/output/plasmav/wi_Mdot'.Mdot.'_LT'.LT.'.dat'  u 1:2  w l lw 2 title "iter = 1", \
 		dir1.'/output/plasmav/wi_Mdot'.Mdot.'_LT'.LT.'.dat'  u 1:3  w l lw 2 title "iter = 2", \
 		dir1.'/output/plasmav/wi_Mdot'.Mdot.'_LT'.LT.'.dat'  u 1:4  w l lw 2 title "iter = 3", \
-		dir1.'/output/plasmav/wi_Mdot'.Mdot.'_LT'.LT.'.dat'  u 1:5  w l lw 2 title "iter = 4"
+		dir1.'/output/plasmav/wi_Mdot'.Mdot.'_LT'.LT.'.dat'  u 1:5  w l lw 2 title "iter = 4", \
+		dir1.'/output/plasmav/wi_Mdot'.Mdot.'_LT'.LT.'.dat'  u 1:6  w l lw 2 title "iter = 5", \
+		dir1.'/output/plasmav/wi_Mdot'.Mdot.'_LT'.LT.'.dat'  u 1:7  w l lw 2 title "iter = 6", \
+		dir1.'/output/plasmav/wi_Mdot'.Mdot.'_LT'.LT.'.dat'  u 1:8  w l lw 2 title "iter = 7", \
+		dir1.'/output/plasmav/wi_Mdot'.Mdot.'_LT'.LT.'.dat'  u 1:9  w l lw 2 title "iter = 8", \
+		dir1.'/output/plasmav/wi_Mdot'.Mdot.'_LT'.LT.'.dat'  u 1:10 w l lw 2 title "iter = 9", \
+		dir1.'/output/plasmav/wi_Mdot'.Mdot.'_LT'.LT.'.dat'  u 1:11 w l lw 2 title "iter = 10"
 
-set yr [-0.3:0.3]
+
+set yr [0:800]
+set ylabel "v_{/Symbol f} [km/s]"
+set out 'figures/vi_iter_Mdot'.Mdot.'_LT'.LT.'.eps'
+plot 	dir1.'/output/plasmav/vi_Mdot'.Mdot.'_LT'.LT.'.dat'    u 1:2  w l lw 5 title "Rigid corotation", \
+		dir1.'/output/plasmav/vi_Mdot'.Mdot.'_LT'.LT.'.dat'    u 1:3  w l lw 5 title "iter = 1", \
+		dir1.'/output/plasmav/vi_Mdot'.Mdot.'_LT'.LT.'.dat'    u 1:4  w l lw 5 title "iter = 2", \
+		dir1.'/output/plasmav/vi_Mdot'.Mdot.'_LT'.LT.'.dat'    u 1:5  w l lw 5 title "iter = 3", \
+		dir1.'/output/plasmav/vi_Mdot'.Mdot.'_LT'.LT.'.dat'    u 1:6  w l lw 5 title "iter = 4", \
+		dir1.'/output/plasmav/vi_Mdot'.Mdot.'_LT'.LT.'.dat'    u 1:6  w l lw 2 title "iter = 5", \
+		dir1.'/output/plasmav/vi_Mdot'.Mdot.'_LT'.LT.'.dat'    u 1:7  w l lw 2 title "iter = 6", \
+		dir1.'/output/plasmav/vi_Mdot'.Mdot.'_LT'.LT.'.dat'    u 1:8  w l lw 2 title "iter = 7", \
+		dir1.'/output/plasmav/vi_Mdot'.Mdot.'_LT'.LT.'.dat'    u 1:9  w l lw 2 title "iter = 8", \
+		dir1.'/output/plasmav/vi_Mdot'.Mdot.'_LT'.LT.'.dat'    u 1:10 w l lw 2 title "iter = 9", \
+		dir1.'/output/plasmav/vi_Mdot'.Mdot.'_LT'.LT.'.dat'    u 1:11 w l lw 2 title "iter = 10"
+
+
+set yr [-0.5:0.5]
 set ylabel "j_{||i} [{/Symbol m}A/m^2]"
 set out 'figures/j_iter_Mdot'.Mdot.'_LT'.LT.'.eps'
-plot 	dir1.'/output/plasmav/j_para_i_Mdot'.Mdot.'_LT'.LT.'.dat'  u 1:($2*1e6) w l lw 2 title "iter = 1", \
-		dir1.'/output/plasmav/j_para_i_Mdot'.Mdot.'_LT'.LT.'.dat'  u 1:($3*1e6) w l lw 2 title "iter = 2", \
-		dir1.'/output/plasmav/j_para_i_Mdot'.Mdot.'_LT'.LT.'.dat'  u 1:($4*1e6) w l lw 2 title "iter = 3", \
-		dir1.'/output/plasmav/j_para_i_Mdot'.Mdot.'_LT'.LT.'.dat'  u 1:($5*1e6) w l lw 2 title "iter = 4", \
+plot 	dir1.'/output/plasmav/j_para_i_Mdot'.Mdot.'_LT'.LT.'.dat'  u 1:($2 *1e6) w l lw 2 title "iter = 1", \
+		dir1.'/output/plasmav/j_para_i_Mdot'.Mdot.'_LT'.LT.'.dat'  u 1:($3 *1e6) w l lw 2 title "iter = 2", \
+		dir1.'/output/plasmav/j_para_i_Mdot'.Mdot.'_LT'.LT.'.dat'  u 1:($4 *1e6) w l lw 2 title "iter = 3", \
+		dir1.'/output/plasmav/j_para_i_Mdot'.Mdot.'_LT'.LT.'.dat'  u 1:($5 *1e6) w l lw 2 title "iter = 4", \
+		dir1.'/output/plasmav/j_para_i_Mdot'.Mdot.'_LT'.LT.'.dat'  u 1:($6 *1e6) w l lw 2 title "iter = 5", \
+		dir1.'/output/plasmav/j_para_i_Mdot'.Mdot.'_LT'.LT.'.dat'  u 1:($7 *1e6) w l lw 2 title "iter = 6", \
+		dir1.'/output/plasmav/j_para_i_Mdot'.Mdot.'_LT'.LT.'.dat'  u 1:($8 *1e6) w l lw 2 title "iter = 7", \
+		dir1.'/output/plasmav/j_para_i_Mdot'.Mdot.'_LT'.LT.'.dat'  u 1:($9 *1e6) w l lw 2 title "iter = 8", \
+		dir1.'/output/plasmav/j_para_i_Mdot'.Mdot.'_LT'.LT.'.dat'  u 1:($10*1e6) w l lw 2 title "iter = 9", \
+		dir1.'/output/plasmav/j_para_i_Mdot'.Mdot.'_LT'.LT.'.dat'  u 1:($11*1e6) w l lw 2 title "iter = 10"
 
 
 
 set yr [0:5]
 set ylabel "{/Symbol S}_P [S]"
 set out 'figures/Sigma_P_Mdot'.Mdot.'_LT'.LT.'.eps'
-plot 	dir1.'/output/plasmav/Sigma_P_Mdot'.Mdot.'_LT'.LT.'.dat'  u 1:2 w l lw 2 title "iter = 1", \
-		dir1.'/output/plasmav/Sigma_P_Mdot'.Mdot.'_LT'.LT.'.dat'  u 1:3 w l lw 2 title "iter = 2", \
-		dir1.'/output/plasmav/Sigma_P_Mdot'.Mdot.'_LT'.LT.'.dat'  u 1:4 w l lw 2 title "iter = 3", \
-		dir1.'/output/plasmav/Sigma_P_Mdot'.Mdot.'_LT'.LT.'.dat'  u 1:5 w l lw 2 title "iter = 4", \
+plot 	dir1.'/output/plasmav/Sigma_P_Mdot'.Mdot.'_LT'.LT.'.dat'  u 1:2  w l lw 2 title "iter = 1", \
+		dir1.'/output/plasmav/Sigma_P_Mdot'.Mdot.'_LT'.LT.'.dat'  u 1:3  w l lw 2 title "iter = 2", \
+		dir1.'/output/plasmav/Sigma_P_Mdot'.Mdot.'_LT'.LT.'.dat'  u 1:4  w l lw 2 title "iter = 3", \
+		dir1.'/output/plasmav/Sigma_P_Mdot'.Mdot.'_LT'.LT.'.dat'  u 1:5  w l lw 2 title "iter = 4", \
+		dir1.'/output/plasmav/Sigma_P_Mdot'.Mdot.'_LT'.LT.'.dat'  u 1:6  w l lw 2 title "iter = 5", \
+		dir1.'/output/plasmav/Sigma_P_Mdot'.Mdot.'_LT'.LT.'.dat'  u 1:7  w l lw 2 title "iter = 6", \
+		dir1.'/output/plasmav/Sigma_P_Mdot'.Mdot.'_LT'.LT.'.dat'  u 1:8  w l lw 2 title "iter = 7", \
+		dir1.'/output/plasmav/Sigma_P_Mdot'.Mdot.'_LT'.LT.'.dat'  u 1:9  w l lw 2 title "iter = 8", \
+		dir1.'/output/plasmav/Sigma_P_Mdot'.Mdot.'_LT'.LT.'.dat'  u 1:10 w l lw 2 title "iter = 9", \
+		dir1.'/output/plasmav/Sigma_P_Mdot'.Mdot.'_LT'.LT.'.dat'  u 1:11 w l lw 2 title "iter = 10"

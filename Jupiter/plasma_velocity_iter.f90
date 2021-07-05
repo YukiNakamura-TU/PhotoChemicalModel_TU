@@ -34,11 +34,13 @@ end subroutine g_int
 double precision function K(N, M, j, j_para_i, b, db_dL, x)
   implicit none
   integer N, M, j, i
-  double precision Sigma_j, jpara, jpara0, jpara1
+  double precision Sigma_j, jpara, jpara0, jpara1, Bze, Bp
   double precision j_para_i(0:2*N*240)
   double precision b(0:2*N*M*240)
   double precision db_dL(0:2*N*M*240)
   double precision x
+
+  Bp = 4.2d-4
   
   !b(j) = 1.0d0/x
   !db_dL(j) = -1.0d0/x/x
@@ -49,7 +51,13 @@ double precision function K(N, M, j, j_para_i, b, db_dL, x)
   jpara  = (jpara0 * dble((i+1)*2*M - j) + jpara1 * dble(j - i*2*M)) / dble(2*M)
   if (jpara < 0.0d0) jpara = 0.0d0
 
+  Bze = 3.335d-4 / x**3.0d0 * dexp( -(x/14.501d0)**2.5d0 ) + 5.4d-5 / x**2.71d0
+
   K =  - Sigma_j(jpara) * b(j) / x**2.0d0 * dsqrt(1.0d0 - b(j)) * db_dL(j)
+
+
+  ! Nichols and Cowley 2004
+  K =  2.0d0 * Sigma_j(jpara) * b(j) * Bze / Bp / x
   
   return
 end function K
@@ -116,6 +124,7 @@ subroutine calc_j_para_i( N, M, Mdot, f, b, db_dL, j_para_i, j_para_i_new)
   double precision dx, xi
   double precision Mdot, Rp, Bp, tmp
   double precision L, dL, Bze, OmegaJ, dSpFef_dL, fj1, fj0, f1, f0, jpara0, jpara1
+  double precision b0, b1, bj, Sigma0, Sigma1, theta0, theta1, dtheta, LK, Sj, df_dLj
   double precision, parameter :: pi = dacos(-1.0d0)
 
   Rp = 7.1492d+7 ! planetary radius [m]
@@ -125,14 +134,16 @@ subroutine calc_j_para_i( N, M, Mdot, f, b, db_dL, j_para_i, j_para_i_new)
 
   OmegaJ = 2.0d0 * pi / 35729.0d0
 
-  j_para_i_new(0)     = 0.0d0
-  j_para_i_new(100*N) = 0.04d-6
+  j_para_i(0)     = 0.0d0
+  j_para_i(100*N-1:110*N) = -0.04d-6
 
-  do i = 1, N * 100 - 1
+  do i = 1, N * 110 - 1
     L   = 1.0d0 + (dble(i)+0.5d0) / dble(N)
     dL  = 1.0d0 / dble(N)
 
-    Bze = 3.335d-4 / L**3.0d0 * dexp( -(L/14.501d0)**2.5d0 ) + 5.4d-5 / L**2.71d0
+    Bze = dabs(3.335d-4 / L**3.0d0 * dexp( -(L/14.501d0)**2.5d0 ) + 5.4d-5 / L**2.71d0)
+
+
 
     f0 = f(i) 
     f1 = f(i+1)
@@ -142,11 +153,53 @@ subroutine calc_j_para_i( N, M, Mdot, f, b, db_dL, j_para_i, j_para_i_new)
 
     dSpFef_dL = ( Sigma_j(jpara1) * b((i+1)*2*M) * Bp * f1 &
       &         - Sigma_j(jpara0) * b((i  )*2*M) * Bp * f0 )  / dL
-    
+! 
+!    dSpFef_dL = ( b((i+1)*2*M) * Bp * f1 &
+!      &         - b((i  )*2*M) * Bp * f0 ) * Sigma_j((jpara0+jpara1)/2.0d0) / dL
+
     j_para_i_new(i) = 4.0d0 * Bp * OmegaJ / (pi * L * Bze) * dSpFef_dL
+    
+
+!    bj  = b(i*2*M+M)
+!    Sj  = Sigma_j((jpara0+jpara1)/2.0d0)
+!    LK  = 4.0d0 * pi * Rp**2.0d0 * Bp**2.0d0 / Mdot &
+!      & * 2.0d0 * Sj * bj * Bze / Bp
+!    df_dLj = (f1 - f0) / dL
+!
+!    j_para_i_new(i) = 4.0d0 * Bp * OmegaJ / (pi * L * Bze) &
+!      &             * (   2.0d0 / (2.0d0 + LK) / df_dLj * ( Sigma_j(jpara1) * b((i+1)*2*M) * Bp &
+!      &                                                   - Sigma_j(jpara0) * b((i  )*2*M) * Bp ) &
+!      &               + Sj * bj * Bp * df_dLj )
+
+
+!    ! Hill 2000
+!
+!    f0 = f(i) 
+!    f1 = f(i+1)
+!
+!    jpara0 = (j_para_i(i-1)+j_para_i(i  ))/2.0d0
+!    jpara1 = (j_para_i(i  )+j_para_i(i+1))/2.0d0
+!
+!    b0 = b((i  )*2*M)
+!    b1 = b((i+1)*2*M)
+!    bj = (b0+b1)/2.0d0
+!
+!    Sigma0 = Sigma_j(jpara0)
+!    Sigma1 = Sigma_j(jpara1)
+!
+!    theta0 = dasin(dsqrt(b0))
+!    theta1 = dasin(dsqrt(b1))
+!    dtheta = theta1 - theta0
+!
+!    j_para_i_new(i) = - 2.0d0 * Bp * OmegaJ / dsqrt(bj) &
+!      &             * ( b1 * dsqrt(1.0d0-b1) * Sigma1 * f1 &
+!      &               - b0 * dsqrt(1.0d0-b0) * Sigma0 * f0 ) &
+!      &             / dtheta
 
     if (mod(i,N) == 0) print *, L, j_para_i_new(i)*1.0d6, ' uA/m2'
   end do
+
+  j_para_i_new(100*N-1:110*N) = -0.04d-6
 
 end subroutine calc_j_para_i
 
@@ -223,7 +276,7 @@ program plasma_velocity
 
   ! Parameter settings ----------------------------------------
   dir_name = "./metal_Hill"
-  Mdot = 300.0d0
+  Mdot = 1000.0d0
   LT   = 12.0d0
 
 
@@ -252,18 +305,18 @@ program plasma_velocity
     end do
   close(11)
   
-  do iL = 0, 2 * M * 240 * N
-    loop: do i = 1, 90
-      if (L_theta(iL) < i .and. i <= L_theta(iL+1)) then 
-        print *, i, L_theta(iL), L_theta(iL+1), Lb(iL), 1.0d0 / ( dcos(dble(i)*pi/180.0d0)**2.0d0 )
-        exit loop
-      end if
-    end do loop
-  end do
+  !do iL = 0, 2 * M * 240 * N
+  !  loop: do i = 1, 90
+  !    if (L_theta(iL) < i .and. i <= L_theta(iL+1)) then 
+  !      print *, i, L_theta(iL), L_theta(iL+1), Lb(iL), 1.0d0 / ( dcos(dble(i)*pi/180.0d0)**2.0d0 )
+  !      exit loop
+  !    end if
+  !  end do loop
+  !end do
 
   print *, 'Finished reading b function and mapping data.'
 
-  stop
+  !stop
 
 
   ! Integration ------------------------------------------------
@@ -296,7 +349,7 @@ program plasma_velocity
 
     CALL g_int(N, M, Mdot, j_para_i, b, db_dL, g_x)
 
-    do i = 1, 100 * N
+    do i = 1, 110 * N
       L = 1.0d0 + ( dble(i) ) / dble(N)
  
       !integration
@@ -316,8 +369,10 @@ program plasma_velocity
     print *, 'Integration finished.'
 
     ! calculating field-aligned current
-    call calc_j_para_i(N, M, Mdot, f, b, db_dL, j_para_i, j_para_i_new)
-    j_para_i = j_para_i_new
+    do i = 1, 1
+      call calc_j_para_i(N, M, Mdot, f, b, db_dL, j_para_i, j_para_i_new)
+      j_para_i = j_para_i_new
+    end do
 
     !call p__smoothing_linear(5, 2*N*240, f)
     !call p__smoothing_linear(5, 2*N*240, f)

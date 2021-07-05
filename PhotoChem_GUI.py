@@ -670,7 +670,7 @@ reaction_rate_list.append(" CO    + OH  + M   -> HOCO + M        : k0 = 5.9e-33 
 reaction_rate_list.append(" HOCO  + O2        -> HO2  + CO2      : 2.0e-12 # Chaffin et al. [2017] ")
 reaction_rate_list.append(" CO2+  + H2        -> CO2  + H  + H   : 8.7e-10 # Chaffin et al. [2017] ") # it's only used to reproduce Chaffin+2017, otherwise remove it!
 
-reaction_rate_list.append(" CO    + OH  + M   -> ^13C^18O2(H2^18O2)2  + 3H  + M   : k0M = 1.5e-13 * (300/T(neutral))^(-0.6) && \
+reaction_rate_list.append(" CO    + OH  + M   -> 2^13C^18O2(H2^17O2)2  + 3H  + M   : k0M = 1.5e-13 * (300/T(neutral))^(-0.6) && \
                                                                    kinfM = 2.1e9 * (300/T(neutral))^(-6.1) # Chaffin et al. [2017] ")
 
 #reaction_rate_list.append(" CO    + OH        -> CO2  + H        : 1.5e-13 # Chaffin et al. [2017] ")
@@ -2139,155 +2139,155 @@ def reaction_analysis(action, iplnt, reaction_chk_bln, fix_species_bln, dir0):
                 species_split[i] = re.sub('Isotope-ab', isotopes[1], species_split[i],1)
         if nisotope >= 3:
             for i in range(len(species_split)):
-                species_split[i] = re.sub('Isotope-ac', isotopes[1], species_split[i],1)
+                species_split[i] = re.sub('Isotope-ac', isotopes[2], species_split[i],1)
         if nisotope >= 4:
             for i in range(len(species_split)):
-                species_split[i] = re.sub('Isotope-ad', isotopes[1], species_split[i],1)
+                species_split[i] = re.sub('Isotope-ad', isotopes[3], species_split[i],1)
         if nisotope >= 5:
             for i in range(len(species_split)):
-                species_split[i] = re.sub('Isotope-ae', isotopes[1], species_split[i],1)
+                species_split[i] = re.sub('Isotope-ae', isotopes[4], species_split[i],1)
         if nisotope >= 6:
             for i in range(len(species_split)):
-                species_split[i] = re.sub('Isotope-af', isotopes[1], species_split[i],1)
+                species_split[i] = re.sub('Isotope-af', isotopes[5], species_split[i],1)
         if nisotope >= 7:
             for i in range(len(species_split)):
-                species_split[i] = re.sub('Isotope-ag', isotopes[1], species_split[i],1)
+                species_split[i] = re.sub('Isotope-ag', isotopes[6], species_split[i],1)
         if nisotope >= 8:
             for i in range(len(species_split)):
-                species_split[i] = re.sub('Isotope-ah', isotopes[1], species_split[i],1)
+                species_split[i] = re.sub('Isotope-ah', isotopes[7], species_split[i],1)
         if nisotope >= 9:
             for i in range(len(species_split)):
-                species_split[i] = re.sub('Isotope-ai', isotopes[1], species_split[i],1)
+                species_split[i] = re.sub('Isotope-ai', isotopes[8], species_split[i],1)
         if nisotope >= 10:
             for i in range(len(species_split)):
-                species_split[i] = re.sub('Isotope-aj', isotopes[1], species_split[i],1)
+                species_split[i] = re.sub('Isotope-aj', isotopes[9], species_split[i],1)
         if nisotope >= 11:
             for i in range(len(species_split)):
-                species_split[i] = re.sub('Isotope-ak', isotopes[1], species_split[i],1)
+                species_split[i] = re.sub('Isotope-ak', isotopes[10], species_split[i],1)
         if nisotope >= 12:
             for i in range(len(species_split)):
-                species_split[i] = re.sub('Isotope-al', isotopes[1], species_split[i],1)
+                species_split[i] = re.sub('Isotope-al', isotopes[11], species_split[i],1)
         if nisotope >= 13:
             for i in range(len(species_split)):
-                species_split[i] = re.sub('Isotope-am', isotopes[1], species_split[i],1)
+                species_split[i] = re.sub('Isotope-am', isotopes[12], species_split[i],1)
         if nisotope >= 14:
             for i in range(len(species_split)):
-                species_split[i] = re.sub('Isotope-an', isotopes[1], species_split[i],1)
+                species_split[i] = re.sub('Isotope-an', isotopes[13], species_split[i],1)
         if nisotope >= 15:
             for i in range(len(species_split)):
-                species_split[i] = re.sub('Isotope-ao', isotopes[1], species_split[i],1)
+                species_split[i] = re.sub('Isotope-ao', isotopes[14], species_split[i],1)
         if nisotope >= 16:
             for i in range(len(species_split)):
-                species_split[i] = re.sub('Isotope-ap', isotopes[1], species_split[i],1)
+                species_split[i] = re.sub('Isotope-ap', isotopes[15], species_split[i],1)
         if nisotope >= 17:
             for i in range(len(species_split)):
-                species_split[i] = re.sub('Isotope-aq', isotopes[1], species_split[i],1)
+                species_split[i] = re.sub('Isotope-aq', isotopes[16], species_split[i],1)
         if nisotope >= 18:
             for i in range(len(species_split)):
-                species_split[i] = re.sub('Isotope-ar', isotopes[1], species_split[i],1)
+                species_split[i] = re.sub('Isotope-ar', isotopes[17], species_split[i],1)
         if nisotope >= 19:
             for i in range(len(species_split)):
-                species_split[i] = re.sub('Isotope-as', isotopes[1], species_split[i],1)
+                species_split[i] = re.sub('Isotope-as', isotopes[18], species_split[i],1)
         if nisotope >= 20:
             for i in range(len(species_split)):
-                species_split[i] = re.sub('Isotope-at', isotopes[1], species_split[i],1)
+                species_split[i] = re.sub('Isotope-at', isotopes[19], species_split[i],1)
         if nisotope >= 21:
             for i in range(len(species_split)):
-                species_split[i] = re.sub('Isotope-au', isotopes[1], species_split[i],1)
+                species_split[i] = re.sub('Isotope-au', isotopes[20], species_split[i],1)
         if nisotope >= 22:
             for i in range(len(species_split)):
-                species_split[i] = re.sub('Isotope-av', isotopes[1], species_split[i],1)
+                species_split[i] = re.sub('Isotope-av', isotopes[21], species_split[i],1)
         if nisotope >= 23:
             for i in range(len(species_split)):
-                species_split[i] = re.sub('Isotope-aw', isotopes[1], species_split[i],1)
+                species_split[i] = re.sub('Isotope-aw', isotopes[22], species_split[i],1)
         if nisotope >= 24:
             for i in range(len(species_split)):
-                species_split[i] = re.sub('Isotope-ax', isotopes[1], species_split[i],1)
+                species_split[i] = re.sub('Isotope-ax', isotopes[23], species_split[i],1)
         if nisotope >= 25:
             for i in range(len(species_split)):
-                species_split[i] = re.sub('Isotope-ay', isotopes[1], species_split[i],1)
+                species_split[i] = re.sub('Isotope-ay', isotopes[24], species_split[i],1)
         if nisotope >= 26:
             for i in range(len(species_split)):
-                species_split[i] = re.sub('Isotope-az', isotopes[1], species_split[i],1)
+                species_split[i] = re.sub('Isotope-az', isotopes[25], species_split[i],1)
 
         if nisotope >= 27:
             for i in range(len(species_split)):
-                species_split[i] = re.sub('Isotope-ba', isotopes[0], species_split[i],1)
+                species_split[i] = re.sub('Isotope-ba', isotopes[26], species_split[i],1)
         if nisotope >= 28:
             for i in range(len(species_split)):
-                species_split[i] = re.sub('Isotope-bb', isotopes[1], species_split[i],1)
+                species_split[i] = re.sub('Isotope-bb', isotopes[27], species_split[i],1)
         if nisotope >= 29:
             for i in range(len(species_split)):
-                species_split[i] = re.sub('Isotope-bc', isotopes[1], species_split[i],1)
+                species_split[i] = re.sub('Isotope-bc', isotopes[28], species_split[i],1)
         if nisotope >= 30:
             for i in range(len(species_split)):
-                species_split[i] = re.sub('Isotope-bd', isotopes[1], species_split[i],1)
+                species_split[i] = re.sub('Isotope-bd', isotopes[29], species_split[i],1)
         if nisotope >= 31:
             for i in range(len(species_split)):
-                species_split[i] = re.sub('Isotope-be', isotopes[1], species_split[i],1)
+                species_split[i] = re.sub('Isotope-be', isotopes[30], species_split[i],1)
         if nisotope >= 32:
             for i in range(len(species_split)):
-                species_split[i] = re.sub('Isotope-bf', isotopes[1], species_split[i],1)
+                species_split[i] = re.sub('Isotope-bf', isotopes[31], species_split[i],1)
         if nisotope >= 33:
             for i in range(len(species_split)):
-                species_split[i] = re.sub('Isotope-bg', isotopes[1], species_split[i],1)
+                species_split[i] = re.sub('Isotope-bg', isotopes[32], species_split[i],1)
         if nisotope >= 34:
             for i in range(len(species_split)):
-                species_split[i] = re.sub('Isotope-bh', isotopes[1], species_split[i],1)
+                species_split[i] = re.sub('Isotope-bh', isotopes[33], species_split[i],1)
         if nisotope >= 35:
             for i in range(len(species_split)):
-                species_split[i] = re.sub('Isotope-bi', isotopes[1], species_split[i],1)
+                species_split[i] = re.sub('Isotope-bi', isotopes[34], species_split[i],1)
         if nisotope >= 36:
             for i in range(len(species_split)):
-                species_split[i] = re.sub('Isotope-bj', isotopes[1], species_split[i],1)
+                species_split[i] = re.sub('Isotope-bj', isotopes[35], species_split[i],1)
         if nisotope >= 37:
             for i in range(len(species_split)):
-                species_split[i] = re.sub('Isotope-bk', isotopes[1], species_split[i],1)
+                species_split[i] = re.sub('Isotope-bk', isotopes[36], species_split[i],1)
         if nisotope >= 38:
             for i in range(len(species_split)):
-                species_split[i] = re.sub('Isotope-bl', isotopes[1], species_split[i],1)
+                species_split[i] = re.sub('Isotope-bl', isotopes[37], species_split[i],1)
         if nisotope >= 39:
             for i in range(len(species_split)):
-                species_split[i] = re.sub('Isotope-bm', isotopes[1], species_split[i],1)
+                species_split[i] = re.sub('Isotope-bm', isotopes[38], species_split[i],1)
         if nisotope >= 40:
             for i in range(len(species_split)):
-                species_split[i] = re.sub('Isotope-bn', isotopes[1], species_split[i],1)
+                species_split[i] = re.sub('Isotope-bn', isotopes[39], species_split[i],1)
         if nisotope >= 41:
             for i in range(len(species_split)):
-                species_split[i] = re.sub('Isotope-bo', isotopes[1], species_split[i],1)
+                species_split[i] = re.sub('Isotope-bo', isotopes[40], species_split[i],1)
         if nisotope >= 42:
             for i in range(len(species_split)):
-                species_split[i] = re.sub('Isotope-bp', isotopes[1], species_split[i],1)
+                species_split[i] = re.sub('Isotope-bp', isotopes[41], species_split[i],1)
         if nisotope >= 43:
             for i in range(len(species_split)):
-                species_split[i] = re.sub('Isotope-bq', isotopes[1], species_split[i],1)
+                species_split[i] = re.sub('Isotope-bq', isotopes[42], species_split[i],1)
         if nisotope >= 44:
             for i in range(len(species_split)):
-                species_split[i] = re.sub('Isotope-br', isotopes[1], species_split[i],1)
+                species_split[i] = re.sub('Isotope-br', isotopes[43], species_split[i],1)
         if nisotope >= 45:
             for i in range(len(species_split)):
-                species_split[i] = re.sub('Isotope-bs', isotopes[1], species_split[i],1)
+                species_split[i] = re.sub('Isotope-bs', isotopes[44], species_split[i],1)
         if nisotope >= 46:
             for i in range(len(species_split)):
-                species_split[i] = re.sub('Isotope-bt', isotopes[1], species_split[i],1)
+                species_split[i] = re.sub('Isotope-bt', isotopes[45], species_split[i],1)
         if nisotope >= 47:
             for i in range(len(species_split)):
-                species_split[i] = re.sub('Isotope-bu', isotopes[1], species_split[i],1)
+                species_split[i] = re.sub('Isotope-bu', isotopes[46], species_split[i],1)
         if nisotope >= 48:
             for i in range(len(species_split)):
-                species_split[i] = re.sub('Isotope-bv', isotopes[1], species_split[i],1)
+                species_split[i] = re.sub('Isotope-bv', isotopes[47], species_split[i],1)
         if nisotope >= 49:
             for i in range(len(species_split)):
-                species_split[i] = re.sub('Isotope-bw', isotopes[1], species_split[i],1)
+                species_split[i] = re.sub('Isotope-bw', isotopes[48], species_split[i],1)
         if nisotope >= 50:
             for i in range(len(species_split)):
-                species_split[i] = re.sub('Isotope-bx', isotopes[1], species_split[i],1)
+                species_split[i] = re.sub('Isotope-bx', isotopes[49], species_split[i],1)
         if nisotope >= 51:
             for i in range(len(species_split)):
-                species_split[i] = re.sub('Isotope-by', isotopes[1], species_split[i],1)
+                species_split[i] = re.sub('Isotope-by', isotopes[50], species_split[i],1)
         if nisotope >= 52:
             for i in range(len(species_split)):
-                species_split[i] = re.sub('Isotope-bz', isotopes[1], species_split[i],1)
+                species_split[i] = re.sub('Isotope-bz', isotopes[51], species_split[i],1)
         #print(species_split)
 
         for j in range(len(species_split)):
