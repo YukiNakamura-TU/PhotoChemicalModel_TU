@@ -2127,7 +2127,7 @@ def reaction_analysis(action, iplnt, reaction_chk_bln, fix_species_bln, dir0):
             species_tmp = re.sub('\^\d{1,3}[A-Z][^A-Z|\^]*', 'Isotope-bx', species_tmp,1)
             species_tmp = re.sub('\^\d{1,3}[A-Z][^A-Z|\^]*', 'Isotope-by', species_tmp,1)
             species_tmp = re.sub('\^\d{1,3}[A-Z][^A-Z|\^]*', 'Isotope-bz', species_tmp,1)
-            #print(species_tmp, isotopes)
+            print(species_tmp, isotopes)
 
         species_split = re.findall('[A-Z][^A-Z]*', species_tmp) #split elements
 
